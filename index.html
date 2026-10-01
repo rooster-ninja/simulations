@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulations</title>
+<meta property="og:title" content="Simulations">
+<meta property="og:description" content="Small interactive simulations, each a single self-contained page.">
+<meta name="theme-color" content="#0c1628">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1628;--panel:#122039;--line:#253858;--ink:#e3e9f3;--muted:#8fa0bb;--accent:#f2c45a}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Jost,"Avenir Next",Avenir,"Segoe UI",system-ui,sans-serif}
+main{max-width:820px;margin:0 auto;padding:32px 16px 48px}
+h1{font-weight:500;font-size:1.8rem;line-height:1.2;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 24px}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:inherit;text-decoration:none}
+a.card:hover{border-color:var(--muted)}
+a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card h2{font-size:1.1rem;font-weight:500;margin:0 0 4px;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Simulations</h1>
+<p class="sub">Small interactive simulations. Each one runs entirely in the browser.</p>
+<ul>
+  <li><a class="card" href="moon-shadow/">
+    <h2>Moon, Earth's shadow and the gegenschein</h2>
+    <p>Watch the Moon lap Earth, cross its nodes, and slip into (or just miss) Earth's shadow. Lunar eclipses 2026–2030.</p>
+  </a></li>
+</ul>
+</main>
+</body>
+</html>
