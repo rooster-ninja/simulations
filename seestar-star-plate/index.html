@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seestar S30 Star Plate</title>
+<meta property="og:title" content="Seestar S30 star plate: how big is an arcsecond?">
+<meta property="og:description" content="Zoom a simulated Seestar S30 frame from the full 2.1° field down to single 4″ pixels, with an adaptive arcsecond scale bar.">
+<style>
+:root{--bg:#f7f6f2;--card:#ecebe5;--text:#1f1e1c;--muted:#5f5e5a;--border:rgba(0,0,0,.15)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141413;--card:#22221f;--text:#ecebe5;--muted:#a8a69e;--border:rgba(255,255,255,.18)}}
+:root[data-theme="dark"]{--bg:#141413;--card:#22221f;--text:#ecebe5;--muted:#a8a69e;--border:rgba(255,255,255,.18)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:900px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:24px;font-weight:600;margin:0 0 4px}
+p.lead{color:var(--muted);margin:0 0 18px}
+canvas{width:100%;display:block;border-radius:12px;background:#05060a}
+.row{display:flex;align-items:center;gap:12px;margin:14px 0 8px}
+.row label{font-size:14px;color:var(--muted)}
+input[type=range]{flex:1}
+#zo{font-weight:600;min-width:70px;text-align:right}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+button{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer}
+button:hover{background:var(--card)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.m{background:var(--card);border-radius:8px;padding:10px 14px}
+.m .l{font-size:13px;color:var(--muted)}.m .v{font-size:20px;font-weight:600}
+.notes{margin-top:22px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<main>
+<p><a href="../" style="color:var(--muted)">← All simulations</a></p>
+<h1>Seestar S30 star plate</h1>
+<p class="lead">A simulated frame at the S30's real plate scale (about 3.99″ per pixel, 2.1° × 1.2° field). Zoom from the full frame down to individual pixels to see how small an arcsecond is.</p>
+<canvas id="cv"></canvas>
+<div class="row"><label for="z">Field width</label><input type="range" id="z" min="0" max="1000" step="1" value="0"><span id="zo"></span></div>
+<div class="btns"><button data-w="7661">Full frame</button><button data-w="600">10′</button><button data-w="120">2′</button><button data-w="40">Pixels</button></div>
+<div class="grid">
+<div class="m"><div class="l">1 pixel</div><div class="v">3.99″</div></div>
+<div class="m"><div class="l">Star FWHM</div><div class="v">~10″</div></div>
+<div class="m"><div class="l">Barnard's Star parallax</div><div class="v">0.55″</div></div>
+<div class="m"><div class="l">On screen, 1″ =</div><div class="v" id="ppa"></div></div>
+</div>
+<div class="notes">
+<p>One arcsecond is 1/3600 of a degree (4.85 µrad): a 28 mm coin at about 5.8 km, a human hair at about 15 m, or about 29 cm at 60 km.</p>
+<p>At the "Pixels" zoom, each square is one 4″ sensor pixel and a star's blur covers 2–3 of them. Barnard's Star's whole yearly parallax wobble fits inside a quarter of one pixel, so parallax work depends on fitting centroids to a few hundredths of a pixel and averaging hundreds of frames.</p>
+<p>Simulated data; specs approximate.</p>
+</div>
+</main>
+<script>
+const PX=3.99,W=1920,H=1080,SIG=10/2.355/PX;
+let s=12345;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+const img=new Float32Array(W*H);
+for(let i=0;i<img.length;i++)img[i]=20+(r()+r()+r()-1.5)*6;
+function star(x,y,p){const R=Math.ceil(SIG*5);for(let j=-R;j<=R;j++)for(let i=-R;i<=R;i++){const X=Math.floor(x)+i,Y=Math.floor(y)+j;if(X<0||Y<0||X>=W||Y>=H)continue;const dx=X+0.5-x,dy=Y+0.5-y;img[Y*W+X]+=p*Math.exp(-(dx*dx+dy*dy)/(2*SIG*SIG));}}
+for(let k=0;k<900;k++)star(r()*W,r()*H,Math.min(8000,15*Math.pow(r(),-1.6)));
+const CX=960.35,CY=540.6;star(CX,CY,3500);
+const off=document.createElement('canvas');off.width=W;off.height=H;const oc=off.getContext('2d');const id=oc.createImageData(W,H);
+const K=Math.asinh(4000/25);
+for(let i=0;i<img.length;i++){const v=Math.max(0,Math.min(255,255*Math.asinh(Math.max(0,img[i]-14)/25)/K));id.data[i*4]=v;id.data[i*4+1]=v;id.data[i*4+2]=Math.min(255,v*1.05+4);id.data[i*4+3]=255;}
+oc.putImageData(id,0,0);
+const cv=document.getElementById('cv'),c=cv.getContext('2d'),z=document.getElementById('z');
+const MAXW=W*PX,MINW=25;let viewA=MAXW;
+function fmt(a){if(a>=3600)return (a/3600).toFixed(a%3600?1:0)+'°';if(a>=60)return Math.round(a/60)+'′';return (a<1?a.toFixed(1):Math.round(a))+'″';}
+function draw(){
+const dpr=window.devicePixelRatio||1,cw=cv.clientWidth,ch=Math.round(cw*9/16);
+cv.width=cw*dpr;cv.height=ch*dpr;cv.style.height=ch+'px';c.setTransform(dpr,0,0,dpr,0,0);
+const vw=viewA/PX,vh=vw*9/16,sc=cw/vw,x0=CX-vw/2,y0=CY-vh/2;
+c.fillStyle='#05060a';c.fillRect(0,0,cw,ch);
+c.imageSmoothingEnabled=sc<1.5;
+const sx=Math.max(0,x0),sy=Math.max(0,y0),ex=Math.min(W,x0+vw),ey=Math.min(H,y0+vh);
+c.drawImage(off,sx,sy,ex-sx,ey-sy,(sx-x0)*sc,(sy-y0)*sc,(ex-sx)*sc,(ey-sy)*sc);
+const ux=x=>(x-x0)*sc,uy=y=>(y-y0)*sc,aps=sc/PX;
+if(sc>=10){c.strokeStyle='rgba(120,160,255,0.35)';c.lineWidth=0.5;c.beginPath();for(let X=Math.ceil(x0);X<x0+vw;X++){c.moveTo(ux(X),0);c.lineTo(ux(X),ch);}for(let Y=Math.ceil(y0);Y<y0+vh;Y++){c.moveTo(0,uy(Y));c.lineTo(cw,uy(Y));}c.stroke();}
+c.font='12px sans-serif';
+if(viewA>2400){c.strokeStyle='rgba(250,199,117,0.8)';c.setLineDash([4,4]);c.lineWidth=1;const mr=0.259*3600*aps/2;c.beginPath();c.arc(cw*0.2,ch*0.42,mr,0,7);c.stroke();c.setLineDash([]);c.fillStyle='#FAC775';c.fillText('Full Moon size (31′)',cw*0.2-mr*0.8,ch*0.42+mr+16);}
+if(viewA<=900){c.strokeStyle='rgba(93,202,165,0.9)';c.setLineDash([3,3]);c.lineWidth=1;c.beginPath();c.arc(ux(CX),uy(CY),5*aps,0,7);c.stroke();c.setLineDash([]);c.fillStyle='#5DCAA5';c.fillText('10″ FWHM',ux(CX)+5*aps+6,uy(CY)-4);}
+if(aps>=6){const bx=ux(CX)+9*aps,by=uy(CY)-0.5*aps;c.strokeStyle='#ED93B1';c.lineWidth=1.5;c.strokeRect(bx,by,aps,aps);c.fillStyle='#ED93B1';c.fillText('1″ box',bx,by-6);
+c.strokeStyle='#F0997B';c.beginPath();c.ellipse(ux(CX),uy(CY),0.547*aps,0.35*aps,0,0,7);c.stroke();c.fillStyle='#F0997B';c.fillText('Barnard parallax ellipse (±0.55″)',ux(CX)-0.6*aps,uy(CY)+Math.max(0.35*aps+16,26));}
+const nice=[0.5,1,2,5,10,20,30,60,120,300,600,900,1800,3600];let b=nice[0];for(const n of nice)if(n<=viewA/4)b=n;
+const bl=b*aps,bx0=16,by0=ch-22;c.fillStyle='rgba(5,6,10,0.6)';c.fillRect(bx0-8,by0-24,bl+16+60,36);
+c.strokeStyle='#fff';c.lineWidth=2;c.beginPath();c.moveTo(bx0,by0);c.lineTo(bx0+bl,by0);c.moveTo(bx0,by0-5);c.lineTo(bx0,by0+5);c.moveTo(bx0+bl,by0-5);c.lineTo(bx0+bl,by0+5);c.stroke();
+c.fillStyle='#fff';c.font='13px sans-serif';c.fillText(fmt(b)+'  ('+(b/PX<10?(b/PX).toFixed(2):Math.round(b/PX))+' px)',bx0,by0-9);
+document.getElementById('zo').textContent=fmt(viewA);
+document.getElementById('ppa').textContent=(aps<1?aps.toFixed(2):aps.toFixed(1))+' px';}
+function fromSlider(){viewA=Math.exp(Math.log(MAXW)+(Math.log(MINW)-Math.log(MAXW))*z.value/1000);draw();}
+z.addEventListener('input',fromSlider);
+document.querySelectorAll('button[data-w]').forEach(bt=>bt.addEventListener('click',()=>{const w=+bt.dataset.w;z.value=Math.round(1000*(Math.log(w)-Math.log(MAXW))/(Math.log(MINW)-Math.log(MAXW)));fromSlider();}));
+window.addEventListener('resize',draw);fromSlider();
+</script>
+</body>
+</html>
