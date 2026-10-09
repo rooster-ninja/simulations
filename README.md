@@ -6,6 +6,7 @@ https://rooster-ninja.github.io/simulations/
 | Simulation | Link |
 | --- | --- |
 | Moon, Earth's shadow and the gegenschein | [moon-shadow/](https://rooster-ninja.github.io/simulations/moon-shadow/) |
+| Seestar S30 star plate: how big is an arcsecond? | [seestar-star-plate/](https://rooster-ninja.github.io/simulations/seestar-star-plate/) |
 
 ## Layout
 
