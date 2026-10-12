@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plumb Line Curvature Test</title>
+<meta property="og:title" content="Plumb Line Curvature Test">
+<meta property="og:description" content="Null-hypothesis field test for surface curvature: zenith star cameras plus radio time-of-flight ranging. Equipment, diagrams, procedure and decision rule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: single field-notebook column, ~760px; diagrams and tables break wider in their own scroll boxes */
+:root{
+  --bg:#f3f5f7; --paper:#ffffff; --fg:#1b2430; --muted:#5a6676; --rule:#d5dbe3;
+  --ink:#1d5a8c;      /* globe / H1 */
+  --null:#8a5a9e;     /* flat / H0 */
+  --sig:#b8571b;      /* signal / emphasis */
+  --tint:#e8eff6;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161d; --paper:#171e27; --fg:#e3e8ee; --muted:#9aa6b4; --rule:#2c3643;
+  --ink:#6fa8dc; --null:#c39bd6; --sig:#e8935a; --tint:#1c2733; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161d; --paper:#171e27; --fg:#e3e8ee; --muted:#9aa6b4; --rule:#2c3643;
+  --ink:#6fa8dc; --null:#c39bd6; --sig:#e8935a; --tint:#1c2733; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:780px;margin:0 auto;padding-inline:20px;padding-block:40px 64px;display:grid;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,6vw,2.9rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.55rem;font-weight:700}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0;max-width:66ch}
+section{display:grid;gap:16px}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.15rem;color:var(--fg)}
+.sub{color:var(--muted)}
+code,.mono{font-family:var(--f-mono);font-size:.92em}
+.num{font-variant-numeric:tabular-nums}
+.flat{color:var(--null);font-weight:600}
+.globe{color:var(--ink);font-weight:600}
+
+.hyp{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.hcard{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:18px;display:grid;gap:8px;align-content:start}
+.hcard.h0{border-top:4px solid var(--null)}
+.hcard.h1{border-top:4px solid var(--ink)}
+.hcard .tag{font-family:var(--f-mono);font-size:.8rem;font-weight:600}
+.hcard.h0 .tag{color:var(--null)} .hcard.h1 .tag{color:var(--ink)}
+.hcard .big{font-family:var(--f-mono);font-size:1.35rem;font-weight:600}
+
+.fig{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:16px;display:grid;gap:10px}
+.fig .scroll{overflow-x:auto}
+.fig svg{display:block;width:100%;min-width:560px;height:auto}
+.fig figcaption{font-size:.9rem;color:var(--muted)}
+svg text{font-family:var(--f-body);fill:var(--fg)}
+svg .lbl-m{font-family:var(--f-mono);font-size:12px;fill:var(--muted)}
+svg .s-ground{stroke:var(--fg);fill:none;stroke-width:2}
+svg .s-flat{stroke:var(--null);fill:none;stroke-width:2}
+svg .s-globe{stroke:var(--ink);fill:none;stroke-width:2}
+svg .s-ray{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4;fill:none}
+svg .s-sig{stroke:var(--sig);fill:none;stroke-width:2}
+svg .f-flat{fill:var(--null)} svg .f-globe{fill:var(--ink)} svg .f-sig{fill:var(--sig)} svg .f-fg{fill:var(--fg)} svg .f-paper{fill:var(--paper)} svg .f-tint{fill:var(--tint)}
+svg .t-flat{fill:var(--null);font-weight:600} svg .t-globe{fill:var(--ink);font-weight:600} svg .t-sig{fill:var(--sig);font-weight:600}
+
+.steps{counter-reset:s;display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.2rem 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--f-mono);font-weight:600;color:var(--paper);background:var(--ink);border-radius:50%;width:2rem;height:2rem;display:grid;place-items:center;font-size:.9rem}
+.steps li>div{min-width:0;display:grid;gap:4px}
+
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:520px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--tint)}
+tr:last-child td{border-bottom:0}
+td.r{text-align:right}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.72rem;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.pill.have{color:var(--ink)} .pill.buy{color:var(--sig)}
+
+.formula{font-family:var(--f-mono);background:var(--tint);border-radius:6px;padding:14px 16px;overflow-x:auto;line-height:1.9}
+.rule{border-left:4px solid var(--sig);background:var(--paper);padding:14px 18px;border-radius:0 6px 6px 0;display:grid;gap:8px}
+.rule ul{margin:0;padding-left:1.2em;display:grid;gap:4px}
+footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header style="display:grid;gap:14px">
+  <p style="margin:0"><a href="../" style="color:var(--muted)">← All simulations</a></p>
+  <div class="eyebrow">Field experiment · null-hypothesis design · Alberta, ~50° N</div>
+  <h1>Plumb Line Curvature Test</h1>
+  <p class="lede">If the ground is flat, plumb lines at two distant spots point the same way. If the ground curves, they tilt apart. We measure that tilt with the stars straight overhead and the distance with a radio time-of-flight link, then test whether the tilt is zero.</p>
+</header>
+
+<section>
+  <div class="eyebrow">The question</div>
+  <h2>Hypotheses, stated before any data</h2>
+  <div class="hyp">
+    <div class="hcard h0">
+      <span class="tag">H₀ · NULL · FLAT</span>
+      <span class="big">κ = 0</span>
+      <p>Plumb lines at every station are parallel. The angle between zenith directions is zero at any distance.</p>
+    </div>
+    <div class="hcard h1">
+      <span class="tag">H₁ · ALTERNATIVE · CURVED (CONVEX)</span>
+      <span class="big">κ &gt; 0</span>
+      <p>Plumb lines converge below the ground. The zenith angle grows with distance: γ = d / R. Globe predicts R ≈ 6,373 km north–south, 6,391 km east–west at 50° N.</p>
+    </div>
+  </div>
+  <p class="sub">κ is the curvature along one line (radians per km). Two perpendicular legs give the surface's Gaussian curvature, K = κ<sub>NS</sub> × κ<sub>EW</sub>. The sign of κ is measurable too: a concave “bowl” gives κ &lt; 0, a saddle gives opposite signs on the two legs.</p>
+</section>
+
+<section>
+  <div class="eyebrow">The idea in one picture</div>
+  <h2>What is being measured</h2>
+  <figure class="fig" style="margin:0">
+    <div class="scroll">
+    <svg viewBox="0 0 760 360" role="img" aria-label="Flat versus curved ground: plumb lines and zenith directions at two stations">
+      <!-- starlight from far away: parallel rays -->
+      <text x="190" y="22" text-anchor="middle" class="lbl-m">starlight arrives parallel (stars ≈ infinitely far)</text>
+      <text x="570" y="22" text-anchor="middle" class="lbl-m">same stars, same parallel light</text>
+
+      <!-- FLAT PANEL -->
+      <text x="190" y="52" text-anchor="middle" class="t-flat" font-size="15">H₀ · Flat ground</text>
+      <line x1="40" y1="250" x2="340" y2="250" class="s-ground"/>
+      <!-- stations -->
+      <rect x="92" y="240" width="16" height="10" class="f-flat"/>
+      <rect x="272" y="240" width="16" height="10" class="f-flat"/>
+      <text x="100" y="272" text-anchor="middle" font-size="13">A</text>
+      <text x="280" y="272" text-anchor="middle" font-size="13">B</text>
+      <!-- zenith lines -->
+      <line x1="100" y1="240" x2="100" y2="80" class="s-flat"/>
+      <line x1="280" y1="240" x2="280" y2="80" class="s-flat"/>
+      <polygon points="100,72 95,84 105,84" class="f-flat"/>
+      <polygon points="280,72 275,84 285,84" class="f-flat"/>
+      <text x="108" y="100" font-size="12" class="lbl-m">zenith A</text>
+      <text x="288" y="100" font-size="12" class="lbl-m">zenith B</text>
+      <!-- plumb bobs -->
+      <line x1="100" y1="250" x2="100" y2="320" class="s-ray"/>
+      <line x1="280" y1="250" x2="280" y2="320" class="s-ray"/>
+      <text x="190" y="300" text-anchor="middle" font-size="13">plumb lines parallel</text>
+      <text x="190" y="322" text-anchor="middle" class="t-flat" font-size="15">γ = 0″</text>
+      <!-- distance -->
+      <line x1="100" y1="232" x2="280" y2="232" class="s-ray"/>
+      <text x="190" y="226" text-anchor="middle" class="lbl-m">d (radio TOF)</text>
+
+      <!-- divider -->
+      <line x1="380" y1="40" x2="380" y2="340" stroke="var(--rule)" stroke-width="1"/>
+
+      <!-- GLOBE PANEL (curvature exaggerated) -->
+      <text x="570" y="52" text-anchor="middle" class="t-globe" font-size="15">H₁ · Curved ground</text>
+      <!-- arc: circle centre (570, 560) r=330 -->
+      <path d="M 420 268 A 330 330 0 0 1 720 268" class="s-ground"/>
+      <!-- station A at angle -16deg from vertical, B at +16 -->
+      <!-- A: x=570-330*sin16=479, y=560-330*cos16=243 ; B: x=661 -->
+      <g transform="rotate(-16 570 560)"><rect x="562" y="220" width="16" height="10" class="f-globe"/></g>
+      <g transform="rotate(16 570 560)"><rect x="562" y="220" width="16" height="10" class="f-globe"/></g>
+      <text x="476" y="270" text-anchor="middle" font-size="13">A</text>
+      <text x="664" y="270" text-anchor="middle" font-size="13">B</text>
+      <!-- zenith directions: along radius outward -->
+      <line x1="479" y1="243" x2="435" y2="90" class="s-globe"/>
+      <line x1="661" y1="243" x2="705" y2="90" class="s-globe"/>
+      <polygon points="433,82 430,96 441,93" class="f-globe"/>
+      <polygon points="707,82 699,93 710,96" class="f-globe"/>
+      <text x="400" y="112" font-size="12" class="lbl-m">zenith A</text>
+      <text x="676" y="112" font-size="12" class="lbl-m">zenith B</text>
+      <!-- plumb lines converge toward centre -->
+      <line x1="479" y1="243" x2="530" y2="340" class="s-ray"/>
+      <line x1="661" y1="243" x2="610" y2="340" class="s-ray"/>
+      <text x="570" y="300" text-anchor="middle" font-size="13">plumb lines converge</text>
+      <text x="570" y="322" text-anchor="middle" class="t-globe" font-size="15">γ = d / R</text>
+      <!-- angle mark at top between zenith lines (sig) -->
+      <path d="M 452 150 Q 570 120 688 150" class="s-sig"/>
+      <text x="570" y="128" text-anchor="middle" class="t-sig" font-size="14">γ</text>
+      <text x="570" y="346" text-anchor="middle" class="lbl-m">curvature exaggerated ~200×</text>
+    </svg>
+    </div>
+    <figcaption>Each station's camera finds which star sits exactly overhead. On flat ground both see the same overhead point. On curved ground the overhead points differ by γ. At 55 km the globe predicts γ ≈ 1,780″ (about half a degree, the width of the full Moon).</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow">Plain-language walkthrough</div>
+  <h2>How it works</h2>
+  <p><b>A plumb line points “down” wherever you stand.</b> The opposite direction is your zenith, the point straight overhead. A camera that knows which way is level can photograph the stars and work out exactly which part of the sky is at its zenith.</p>
+  <p><b>Stars are a shared, fixed reference.</b> They are so far away that their light arrives parallel at both stations. Any difference between the two zenith points comes from the plumb lines themselves pointing different ways.</p>
+  <p><b>The radio link gives the distance.</b> Alpha and Chimp time a signal between the two stations. Light speed times travel time, corrected for air, gives d without relying on maps or GPS models.</p>
+  <p><b>Divide.</b> Curvature along the line is κ = γ / d. Flat predicts zero. A globe predicts 1 / R.</p>
+  <p><b>Why look straight up instead of at the horizon?</b> Horizon and mountain sightlines pass through tens of kilometres of low air that bends light by an unknown amount (refraction coefficient k). At k = 1 a globe looks perfectly flat. Overhead, starlight passes through the least air and refraction is near zero, so k drops out of the test.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Geometry on the ground</div>
+  <h2>Station layout</h2>
+  <figure class="fig" style="margin:0">
+    <div class="scroll">
+    <svg viewBox="0 0 760 330" role="img" aria-label="L-shaped station layout: A at corner, B 55 km north, C 55 km east">
+      <!-- compass -->
+      <g transform="translate(700,60)">
+        <line x1="0" y1="20" x2="0" y2="-22" class="s-ground"/>
+        <polygon points="0,-30 -6,-16 6,-16" class="f-fg"/>
+        <text x="0" y="40" text-anchor="middle" font-size="13" font-weight="600">N</text>
+      </g>
+      <!-- legs -->
+      <line x1="180" y1="270" x2="180" y2="70" class="s-sig" stroke-dasharray="8 6"/>
+      <line x1="180" y1="270" x2="520" y2="270" class="s-sig" stroke-dasharray="8 6"/>
+      <text x="166" y="170" text-anchor="end" font-size="13">North leg</text>
+      <text x="166" y="188" text-anchor="end" class="lbl-m">TOF ≈ 55 km+</text>
+      <text x="350" y="296" text-anchor="middle" font-size="13">East leg · TOF ≈ 55 km+</text>
+      <!-- stations -->
+      <g>
+        <circle cx="180" cy="270" r="14" class="f-globe"/>
+        <text x="180" y="275" text-anchor="middle" font-size="13" font-weight="700" fill="var(--paper)" style="fill:var(--paper)">A</text>
+        <text x="200" y="250" font-size="12" class="lbl-m">corner · zenith camera</text>
+      </g>
+      <g>
+        <circle cx="180" cy="70" r="14" class="f-globe"/>
+        <text x="180" y="75" text-anchor="middle" font-size="13" font-weight="700" style="fill:var(--paper)">B</text>
+        <text x="202" y="66" font-size="12" class="lbl-m">zenith camera</text>
+        <text x="202" y="82" font-size="12" class="lbl-m">→ κ_NS (latitude change)</text>
+      </g>
+      <g>
+        <circle cx="520" cy="270" r="14" class="f-globe"/>
+        <text x="520" y="275" text-anchor="middle" font-size="13" font-weight="700" style="fill:var(--paper)">C</text>
+        <text x="542" y="266" font-size="12" class="lbl-m">zenith camera</text>
+        <text x="542" y="282" font-size="12" class="lbl-m">→ κ_EW (longitude change)</text>
+      </g>
+      <!-- radio hint -->
+      <text x="350" y="40" text-anchor="middle" font-size="13">K = κ<tspan baseline-shift="sub" font-size="10">NS</tspan> × κ<tspan baseline-shift="sub" font-size="10">EW</tspan></text>
+      <text x="350" y="58" text-anchor="middle" class="lbl-m">long legs may be chained radio hops</text>
+    </svg>
+    </div>
+    <figcaption>Start with one leg (A–B, north–south): it needs no precise clock and settles H₀ on its own. Add the east leg for Gaussian curvature and, at 150 km+, the Earth's oblateness. One camera rig can visit each station on different nights, because the stars and the stations don't move.</figcaption>
+  </figure>
+
+  <figure class="fig" style="margin:0">
+    <div class="scroll">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Station rig: camera pointing up on a turntable with an inclinometer, shot at 0 and 180 degrees">
+      <!-- rig at 0 deg -->
+      <text x="190" y="24" text-anchor="middle" font-size="14" font-weight="600">Shot 1 · 0°</text>
+      <rect x="120" y="190" width="140" height="18" class="f-tint" stroke="var(--rule)"/>
+      <text x="190" y="228" text-anchor="middle" class="lbl-m">heavy base / paver</text>
+      <rect x="140" y="172" width="100" height="14" rx="3" class="f-paper" stroke="var(--fg)"/>
+      <text x="190" y="183" text-anchor="middle" class="lbl-m" font-size="10">turntable</text>
+      <g transform="rotate(-3 190 170)">
+        <rect x="160" y="110" width="44" height="60" rx="4" class="f-paper" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="170" y="80" width="24" height="30" class="f-paper" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="208" y="150" width="22" height="16" class="f-sig"/>
+        <line x1="182" y1="78" x2="182" y2="44" class="s-globe"/>
+      </g>
+      <line x1="190" y1="170" x2="190" y2="40" class="s-ray"/>
+      <text x="244" y="148" class="lbl-m">inclinometer</text>
+      <text x="86" y="60" class="lbl-m">camera axis</text>
+      <text x="196" y="40" class="lbl-m">true vertical</text>
+
+      <!-- arrow -->
+      <text x="380" y="125" text-anchor="middle" font-size="13">rotate 180°</text>
+      <path d="M 330 140 L 430 140" class="s-sig"/>
+      <polygon points="438,140 426,134 426,146" class="f-sig"/>
+
+      <!-- rig at 180 -->
+      <text x="570" y="24" text-anchor="middle" font-size="14" font-weight="600">Shot 2 · 180°</text>
+      <rect x="500" y="190" width="140" height="18" class="f-tint" stroke="var(--rule)"/>
+      <rect x="520" y="172" width="100" height="14" rx="3" class="f-paper" stroke="var(--fg)"/>
+      <g transform="rotate(3 570 170)">
+        <rect x="546" y="110" width="44" height="60" rx="4" class="f-paper" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="556" y="80" width="24" height="30" class="f-paper" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="510" y="150" width="22" height="16" class="f-sig"/>
+        <line x1="568" y1="78" x2="568" y2="44" class="s-globe"/>
+      </g>
+      <line x1="570" y1="170" x2="570" y2="40" class="s-ray"/>
+      <text x="570" y="240" text-anchor="middle" class="lbl-m">average of both shots cancels camera/sensor misalignment</text>
+    </svg>
+    </div>
+    <figcaption>Per station: a fixed camera looks straight up (no tracking), an inclinometer logs the residual tilt, and a 180° reversal cancels any offset between camera and sensor. The base only needs to be roughly level by eye.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow">What to bring</div>
+  <h2>Required equipment</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Item</th><th>Purpose</th><th>Spec / example</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Alpha &amp; Chimp ranging radios</td><td>Distance between stations (TOF)</td><td>LilyGo T3-S3 SX1280, 13 dBi Yagis, GRIN air-delay correction</td><td><span class="pill have">on hand</span></td></tr>
+        <tr><td>Weather logger at each radio</td><td>Air pressure, temperature, humidity for the TOF correction (~250–300 ppm)</td><td>BME280-class sensor</td><td><span class="pill have">likely on hand</span></td></tr>
+        <tr><td>Zenith camera</td><td>Photograph the stars overhead</td><td>Raspberry Pi HQ Camera</td><td><span class="pill buy">buy</span></td></tr>
+        <tr><td>Lens</td><td>Field wide enough for dozens of stars</td><td>25 mm C-mount (~13″/pixel, ~9° × 7° field)</td><td><span class="pill buy">buy</span></td></tr>
+        <tr><td>Pi computer</td><td>Capture, timestamps, tilt logging</td><td>Raspberry Pi 3B</td><td><span class="pill have">on hand</span></td></tr>
+        <tr><td>Inclinometer</td><td>Measure which way is truly vertical</td><td>Murata SCL3300 / SCA103T on SPI (~10–30″ after reversal); or a 0.02 mm/m machinist level read by hand (~4″)</td><td><span class="pill buy">buy</span></td></tr>
+        <tr><td>Turntable</td><td>180° reversal</td><td>Rigid lazy-Susan bearing or rotary plate with 0°/180° stops</td><td><span class="pill buy">buy / build</span></td></tr>
+        <tr><td>Stable base</td><td>Keep the rig from settling during a session</td><td>Concrete paver or heavy tripod; rough level only</td><td><span class="pill have">easy</span></td></tr>
+        <tr><td>Time source</td><td>Timestamp frames (needed for the east leg)</td><td>NTP over phone hotspot (~10 ms ≈ 0.15″), or GPS module with PPS</td><td><span class="pill have">phone</span></td></tr>
+        <tr><td>Station marks &amp; heights</td><td>Revisit the same spot; chord-to-arc correction</td><td>Survey stake or painted mark, GPS height (metre-level is enough)</td><td><span class="pill have">easy</span></td></tr>
+        <tr><td>Dew control &amp; power</td><td>All-night sessions</td><td>Lens dew strap, battery pack</td><td><span class="pill buy">check</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">The Seestar S30 is not used for this test. Its encoders sit between the image and the base, and it isn't built to point straight up.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Field procedure</div>
+  <h2>Steps</h2>
+  <ol class="steps">
+    <li><div><h3>Pre-register</h3><p>Write down H₀, H₁, the threshold and the analysis code, and date them, before any field work (decision rule below).</p></div></li>
+    <li><div><h3>Mark the stations</h3><p>Pick A and B roughly north–south, as far apart as radio line of sight allows. Use masts, terrain, or chained hops for long legs.</p></div></li>
+    <li><div><h3>Range the leg</h3><p>Run Alpha↔Chimp between the marks with weather logging at both ends. Repeat on several days and average.</p></div></li>
+    <li><div><h3>Zenith session at A</h3><p>Rough-level the base. Take 20–30 frames, rotate 180°, take 20–30 more. Log tilt and time for every frame. Repeat on a second clear night.</p></div></li>
+    <li><div><h3>Zenith session at B (and C)</h3><p>Same rig, same procedure. Different nights are fine.</p></div></li>
+    <li><div><h3>Blind hand-off</h3><p>A helper relabels the station files with codes and holds the TOF distances until the zenith reduction is finished.</p></div></li>
+    <li><div><h3>Reduce</h3><p>Plate-solve each frame, apply the tilt correction, and average the reversal pairs to get each station's zenith direction. Compute γ, unblind d, then compute κ and the test statistic.</p></div></li>
+  </ol>
+</section>
+
+<section>
+  <div class="eyebrow">Analysis</div>
+  <h2>Math and decision rule</h2>
+  <div class="formula">
+    γ = angle between zenith directions (from plate-solved star fields)<br>
+    κ̂ = γ / d &nbsp;&nbsp;&nbsp;(signed: + if B's zenith tilts toward B's direction of travel)<br>
+    σ<sub>κ</sub> = √(σ<sub>A</sub>² + σ<sub>B</sub>²) / d &nbsp;&nbsp;(TOF error is negligible)<br>
+    z = κ̂ / σ<sub>κ</sub><br>
+    K = κ̂<sub>NS</sub> × κ̂<sub>EW</sub> &nbsp;&nbsp;(with the east leg)
+  </div>
+  <div class="rule">
+    <h3>Pre-registered decision rule</h3>
+    <ul>
+      <li><b>Reject H₀ (flat)</b> if z &gt; 3.3 on a leg (one-sided, α = 0.001).</li>
+      <li><b>Consistent with globe</b> if |κ̂ − 1/R| &lt; 2σ<sub>κ</sub>, with R = 6,373 km (N–S) or 6,391 km (E–W).</li>
+      <li><b>Fail to reject H₀</b> if z &lt; 3.3. Report the upper bound on κ.</li>
+      <li><b>Star-distance check:</b> γ must agree across different stars and hours. If it varies, the “stars at infinity” assumption fails and the result is void.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Expected numbers</div>
+  <h2>Predictions and error budget</h2>
+  <div class="tbl">
+    <table class="num">
+      <thead><tr><th>Baseline</th><th class="r">Flat γ</th><th class="r">Globe γ</th><th class="r">z, MEMS (20″/stn)</th><th class="r">R error, MEMS</th><th class="r">R error, good level (5″/stn)</th></tr></thead>
+      <tbody>
+        <tr><td>20 km</td><td class="r flat">0″</td><td class="r globe">648″</td><td class="r">23</td><td class="r">±4.4%</td><td class="r">±1.1%</td></tr>
+        <tr><td>55 km</td><td class="r flat">0″</td><td class="r globe">1,781″</td><td class="r">63</td><td class="r">±1.6%</td><td class="r">±0.4%</td></tr>
+        <tr><td>100 km</td><td class="r flat">0″</td><td class="r globe">3,238″</td><td class="r">114</td><td class="r">±0.9%</td><td class="r">±0.2%</td></tr>
+        <tr><td>150 km</td><td class="r flat">0″</td><td class="r globe">4,857″</td><td class="r">172</td><td class="r">±0.6%</td><td class="r">±0.15%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">Other error sources: deflection of the vertical (local gravity tilt from mountains, roughly 5–30″; smaller on the prairie), TOF air delay after correction (~1 m, negligible), and residual refraction at the zenith (~0″). Even a phone-grade 0.1° level rejects H₀ at about 3.5σ over 55 km.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Why this design</div>
+  <h2>What this test avoids</h2>
+  <p><b>No refraction model.</b> The horizon, mountain-peak and laser tests all depend on k, the bending of light in low air, which varies from below 0 to above 1. This test only looks straight up.</p>
+  <p><b>No map or GPS geometry.</b> GPS coordinates are computed on an ellipsoid, so using them to “find” curvature is circular. Here the distance comes from radio timing and the angle from the stars.</p>
+  <p><b>Both outcomes are possible.</b> The flat model makes a sharp prediction (γ = 0) that this data can confirm or reject. A bowl or saddle would show up as a sign or a mismatch between the legs.</p>
+</section>
+
+<footer>
+  Globe values use the WGS-84 radii of curvature at 50° N. One arcsecond (″) = 1/3600 of a degree. Curvature in the diagrams is exaggerated for visibility.
+</footer>
+</div>
+
+</body>
+</html>
