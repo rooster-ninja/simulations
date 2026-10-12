@@ -18,4 +18,8 @@ A shareable summary of a proposed field experiment that tests whether the ground
 - Deflection of the vertical (roughly 5–30″) and zenith refraction are noted but not modelled.
 - Curvature in the diagrams is exaggerated for visibility.
 
-This page is static: it has no interactive controls.
+## Calculator
+
+- Inputs: baseline, vertical error per station, deflection allowance, TOF error, latitude and leg bearing.
+- Outputs: the globe's R for that leg (Euler's theorem with WGS-84 M and N), predicted γ, σ of γ, expected z against flat, and the precision of R.
+- With a measured γ entered: κ̂, R̂, z, distance from the globe prediction in σ, and the verdict under the decision rule, plus a number line showing flat, globe and the measured value.

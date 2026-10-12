@@ -84,6 +84,25 @@ td.r{text-align:right}
 .formula{font-family:var(--f-mono);background:var(--tint);border-radius:6px;padding:14px 16px;overflow-x:auto;line-height:1.9}
 .rule{border-left:4px solid var(--sig);background:var(--paper);padding:14px 18px;border-radius:0 6px 6px 0;display:grid;gap:8px}
 .rule ul{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.calc{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:18px;display:grid;gap:18px}
+.calc .inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 20px}
+.calc .fld{display:grid;gap:4px;min-width:0}
+.calc label{font-size:.85rem;color:var(--muted)}
+.calc .ctl{display:flex;gap:10px;align-items:center}
+.calc input[type=range]{flex:1;min-width:0;accent-color:var(--ink)}
+.calc input[type=number],.calc select{font:inherit;font-family:var(--f-mono);font-size:.95rem;width:6.5rem;padding:5px 8px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--fg)}
+.calc select{width:auto}
+.calc input:focus-visible,.calc select:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.calc .hint{font-size:.78rem;color:var(--muted)}
+.calc .outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.calc .o{background:var(--tint);border-radius:4px;padding:10px 12px;display:grid;gap:2px}
+.calc .o .l{font-size:.78rem;color:var(--muted);font-family:var(--f-mono)}
+.calc .o .v{font-family:var(--f-mono);font-size:1.15rem;font-weight:600;font-variant-numeric:tabular-nums}
+.calc .verdict{border-left:4px solid var(--muted);padding:10px 14px;background:var(--bg);border-radius:0 4px 4px 0}
+.calc .verdict.rej{border-color:var(--ink)} .calc .verdict.keep{border-color:var(--null)} .calc .verdict.warn{border-color:var(--sig)}
+.calc .nl{overflow-x:auto}
+.calc .nl svg{display:block;width:100%;height:auto}
+.calc hr{border:0;border-top:1px solid var(--rule);margin:0}
 footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px}
 </style>
 </head>
@@ -340,6 +359,136 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
     </ul>
   </div>
 </section>
+
+<section id="calculator">
+  <div class="eyebrow">Interactive</div>
+  <h2>Calculator</h2>
+  <p>Set the baseline and your error budget to see what the globe predicts and how decisive the test will be. After a field run, enter the measured γ to get κ̂, R̂, z and the verdict under the decision rule.</p>
+  <form class="calc" id="calc" autocomplete="off">
+    <div class="inputs">
+      <div class="fld">
+        <label for="c-d">Baseline d (km)</label>
+        <div class="ctl"><input type="range" id="c-d-r" min="5" max="300" step="1" value="55" aria-label="Baseline slider"><input type="number" id="c-d" min="0.1" max="2000" step="0.1" value="55"></div>
+      </div>
+      <div class="fld">
+        <label for="c-s">Vertical error per station (″)</label>
+        <div class="ctl"><input type="range" id="c-s-r" min="1" max="400" step="1" value="20" aria-label="Station error slider"><input type="number" id="c-s" min="0" max="3600" step="0.5" value="20"></div>
+        <span class="hint">5 ≈ machinist level · 20 ≈ MEMS · 360 ≈ phone</span>
+      </div>
+      <div class="fld">
+        <label for="c-def">Extra per-station error, deflection (″)</label>
+        <input type="number" id="c-def" min="0" max="300" step="1" value="0">
+        <span class="hint">Local gravity tilt: ~5 prairie, ~30 near mountains</span>
+      </div>
+      <div class="fld">
+        <label for="c-tof">TOF distance error (m)</label>
+        <input type="number" id="c-tof" min="0" max="10000" step="0.1" value="1">
+      </div>
+      <div class="fld">
+        <label for="c-lat">Latitude (°)</label>
+        <input type="number" id="c-lat" min="-89" max="89" step="0.1" value="50">
+      </div>
+      <div class="fld">
+        <label for="c-az">Leg bearing (° from north)</label>
+        <div class="ctl"><input type="range" id="c-az-r" min="0" max="180" step="1" value="0" aria-label="Bearing slider"><input type="number" id="c-az" min="0" max="360" step="1" value="0"></div>
+        <span class="hint">0 = north–south leg · 90 = east–west leg</span>
+      </div>
+    </div>
+
+    <div class="outs" aria-live="polite">
+      <div class="o"><span class="l">Globe R on this leg</span><span class="v" id="o-R">–</span></div>
+      <div class="o"><span class="l">Globe γ</span><span class="v globe" id="o-g">–</span></div>
+      <div class="o"><span class="l">Flat γ</span><span class="v flat">0″</span></div>
+      <div class="o"><span class="l">σ of γ</span><span class="v" id="o-sg">–</span></div>
+      <div class="o"><span class="l">Expected z vs flat</span><span class="v" id="o-z">–</span></div>
+      <div class="o"><span class="l">R precision</span><span class="v" id="o-rp">–</span></div>
+    </div>
+
+    <hr>
+
+    <div class="inputs">
+      <div class="fld">
+        <label for="c-meas">Measured γ (″) <span class="hint">optional, signed</span></label>
+        <input type="number" id="c-meas" step="0.1" placeholder="e.g. 1764" style="width:9rem">
+        <span class="hint">Positive = B's zenith tilted toward B (convex). Negative = concave.</span>
+      </div>
+    </div>
+
+    <div class="outs" id="meas-outs" hidden>
+      <div class="o"><span class="l">κ̂</span><span class="v" id="o-k">–</span></div>
+      <div class="o"><span class="l">R̂ = d / γ</span><span class="v" id="o-Rh">–</span></div>
+      <div class="o"><span class="l">z vs flat</span><span class="v" id="o-zm">–</span></div>
+      <div class="o"><span class="l">Off globe by</span><span class="v" id="o-dg">–</span></div>
+    </div>
+
+    <div class="verdict" id="verdict"></div>
+
+    <div class="nl"><svg id="nl" viewBox="0 0 640 130" role="img" aria-label="Number line of gamma: flat prediction, globe prediction and measured value"></svg></div>
+  </form>
+  <p class="sub">Formulas: R<sub>leg</sub> from Euler's theorem, 1/R = cos²α/M + sin²α/N, with WGS-84 M and N at the given latitude. γ = d/R. σ<sub>γ</sub> = √(2(σ<sub>stn</sub>² + σ<sub>defl</sub>²)). R precision = √((σ<sub>γ</sub>/γ)² + (σ<sub>d</sub>/d)²). Reject H₀ when z &gt; 3.3.</p>
+</section>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var AS=206264.806, A=6378.137, E2=0.00669437999;
+  function pair(r,n){ $(r).addEventListener('input',function(){$(n).value=$(r).value;run()}); $(n).addEventListener('input',function(){var v=parseFloat($(n).value); if(isFinite(v)) $(r).value=Math.min($(r).max,Math.max($(r).min,v)); run()}); }
+  pair('c-d-r','c-d'); pair('c-s-r','c-s'); pair('c-az-r','c-az');
+  ['c-def','c-tof','c-lat','c-meas'].forEach(function(id){$(id).addEventListener('input',run)});
+  $('calc').addEventListener('submit',function(e){e.preventDefault()});
+  function f(x,dp){return x.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp})}
+  function num(id,def){var v=parseFloat($(id).value);return isFinite(v)?v:def}
+  function run(){
+    var d=Math.max(num('c-d',55),0.001), s=Math.max(num('c-s',20),0), df=Math.max(num('c-def',0),0), sd=Math.max(num('c-tof',1),0)/1000;
+    var lat=num('c-lat',50)*Math.PI/180, az=num('c-az',0)*Math.PI/180;
+    var w=1-E2*Math.pow(Math.sin(lat),2), M=A*(1-E2)/Math.pow(w,1.5), N=A/Math.sqrt(w);
+    var R=1/(Math.pow(Math.cos(az),2)/M+Math.pow(Math.sin(az),2)/N);
+    var g=d/R*AS, sg=Math.sqrt(2*(s*s+df*df));
+    var z=sg>0?g/sg:Infinity, rp=Math.sqrt(Math.pow(sg/g,2)+Math.pow(sd/d,2));
+    $('o-R').textContent=f(R,0)+' km';
+    $('o-g').textContent=f(g,0)+'″';
+    $('o-sg').textContent='±'+f(sg,1)+'″';
+    $('o-z').textContent=isFinite(z)?f(z,1):'∞';
+    $('o-rp').textContent='±'+f(rp*100,2)+'% (±'+f(rp*R,0)+' km)';
+    var mv=parseFloat($('c-meas').value), has=isFinite(mv), V=$('verdict');
+    $('meas-outs').hidden=!has;
+    if(has){
+      var zm=sg>0?mv/sg:Infinity, off=(mv-g)/(sg||1e-9);
+      $('o-k').textContent=(mv/AS/d).toExponential(3)+' /km';
+      $('o-Rh').textContent=mv>0?f(d/(mv/AS),0)+' km':'n/a (γ ≤ 0)';
+      $('o-zm').textContent=isFinite(zm)?f(zm,1):'∞';
+      $('o-dg').textContent=(off>=0?'+':'')+f(off,1)+'σ';
+      if(zm>3.3 && Math.abs(off)<2){V.className='verdict rej';V.innerHTML='<b>Reject H₀ (flat).</b> Curvature detected at z = '+f(zm,1)+', and the value is consistent with the globe (within 2σ).';}
+      else if(zm>3.3){V.className='verdict warn';V.innerHTML='<b>Reject H₀ (flat), but not consistent with the globe</b> ('+f(off,1)+'σ off). Look for a systematic: deflection of the vertical, level calibration, or a distance error.';}
+      else if(zm<-3.3){V.className='verdict warn';V.innerHTML='<b>Reject H₀, concave.</b> The zeniths tilt back toward each other (a bowl). Check the sign convention and station labels first.';}
+      else {V.className='verdict keep';V.innerHTML='<b>Fail to reject H₀.</b> |z| = '+f(Math.abs(zm),1)+' &lt; 3.3. Upper bound on curvature at 3.3σ: κ &lt; '+((Math.abs(mv)+3.3*sg)/AS/d).toExponential(2)+' /km.';}
+    } else {
+      V.className='verdict'+(z>3.3?' rej':' keep');
+      V.innerHTML=z>3.3?'<b>Planned test is decisive.</b> If the ground is a globe, this setup rejects H₀ at z ≈ '+f(z,1)+'. If it is flat, γ will come out within ±'+f(3.3*sg,0)+'″ of zero.':'<b>Planned test is too weak.</b> The globe signal is only '+f(z,1)+'σ. Lengthen the baseline or reduce the station error.';
+    }
+    draw(g,sg,has?mv:null);
+  }
+  function draw(g,sg,mv){
+    var svg=$('nl'), W=640, L=40, Rr=600, lo=Math.min(-3.5*sg,0,mv===null?0:mv), hi=Math.max(g+3*sg,mv===null?0:mv);
+    var pad=(hi-lo)*0.06; lo-=pad; hi+=pad;
+    var x=function(v){return L+(v-lo)/(hi-lo)*(Rr-L)};
+    var h='';
+    h+='<rect x="'+x(-3.3*sg)+'" y="44" width="'+Math.max(1,x(3.3*sg)-x(-3.3*sg))+'" height="26" style="fill:var(--null);opacity:.18"/>';
+    h+='<rect x="'+x(g-2*sg)+'" y="44" width="'+Math.max(1,x(g+2*sg)-x(g-2*sg))+'" height="26" style="fill:var(--ink);opacity:.18"/>';
+    h+='<line x1="'+L+'" y1="70" x2="'+Rr+'" y2="70" style="stroke:var(--fg);stroke-width:1.5"/>';
+    h+='<line x1="'+x(0)+'" y1="38" x2="'+x(0)+'" y2="76" style="stroke:var(--null);stroke-width:2.5"/>';
+    h+='<text x="'+x(0)+'" y="30" text-anchor="middle" style="fill:var(--null);font-weight:600" font-size="12">flat 0″</text>';
+    h+='<line x1="'+x(g)+'" y1="38" x2="'+x(g)+'" y2="76" style="stroke:var(--ink);stroke-width:2.5"/>';
+    h+='<text x="'+x(g)+'" y="30" text-anchor="middle" style="fill:var(--ink);font-weight:600" font-size="12">globe '+Math.round(g).toLocaleString('en-US')+'″</text>';
+    if(mv!==null){
+      h+='<polygon points="'+x(mv)+',76 '+(x(mv)-7)+',90 '+(x(mv)+7)+',90" style="fill:var(--sig)"/>';
+      h+='<text x="'+x(mv)+'" y="106" text-anchor="middle" style="fill:var(--sig);font-weight:600" font-size="12">measured '+Math.round(mv).toLocaleString('en-US')+'″</text>';
+    }
+    h+='<text x="'+L+'" y="124" style="fill:var(--muted)" font-size="11" font-family="IBM Plex Mono, monospace">shaded: flat ±3.3σ (H₀ not rejected) · globe ±2σ</text>';
+    svg.innerHTML=h;
+  }
+  run();
+})();
+</script>
 
 <section>
   <div class="eyebrow">Expected numbers</div>
