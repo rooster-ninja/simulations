@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plumb Line Test Review</title>
+<meta property="og:title" content="Plumb Line Test Review">
+<meta property="og:description" content="What the plumb-line zenith test measures and outputs, its tie to celestial navigation, and why a positive result does not rule out a flat-plus-dome model.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: single field-notebook column (~780px), matching the Plumb Line Curvature Test page; diagrams and tables scroll inside their own boxes */
+:root{
+  --bg:#f3f5f7; --paper:#ffffff; --fg:#1b2430; --muted:#5a6676; --rule:#d5dbe3;
+  --ink:#1d5a8c; --null:#8a5a9e; --sig:#b8571b; --tint:#e8eff6;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161d; --paper:#171e27; --fg:#e3e8ee; --muted:#9aa6b4; --rule:#2c3643;
+  --ink:#6fa8dc; --null:#c39bd6; --sig:#e8935a; --tint:#1c2733; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161d; --paper:#171e27; --fg:#e3e8ee; --muted:#9aa6b4; --rule:#2c3643;
+  --ink:#6fa8dc; --null:#c39bd6; --sig:#e8935a; --tint:#1c2733; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:780px;margin:0 auto;padding-inline:20px;padding-block:40px 64px;display:grid;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,6vw,2.9rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.55rem;font-weight:700}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0;max-width:66ch}
+ul{margin:0;padding-left:1.2em;display:grid;gap:6px;max-width:66ch}
+section{display:grid;gap:16px}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.15rem}
+.sub{color:var(--muted)}
+code{font-family:var(--f-mono);font-size:.9em}
+.num{font-variant-numeric:tabular-nums}
+.flat{color:var(--null);font-weight:600}
+.globe{color:var(--ink);font-weight:600}
+.sig{color:var(--sig);font-weight:600}
+
+.meas{display:grid;gap:14px}
+.mcard{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:18px;display:grid;gap:10px}
+.mcard .tag{font-family:var(--f-mono);font-size:.78rem;font-weight:600;color:var(--ink)}
+.kv{display:grid;grid-template-columns:7.5rem 1fr;gap:6px 14px;font-size:.95rem}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;min-width:0}
+pre{margin:0;font-family:var(--f-mono);font-size:.82rem;line-height:1.55;background:var(--tint);border-radius:6px;padding:12px 14px;overflow-x:auto}
+
+.formula{font-family:var(--f-mono);background:var(--tint);border-radius:6px;padding:14px 16px;overflow-x:auto;line-height:1.9}
+.callout{border-left:4px solid var(--sig);background:var(--paper);padding:14px 18px;border-radius:0 6px 6px 0;display:grid;gap:8px}
+.callout.ink{border-left-color:var(--ink)}
+
+.fig{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:16px;display:grid;gap:10px;margin:0}
+.fig .scroll{overflow-x:auto}
+.fig svg{display:block;width:100%;min-width:560px;height:auto}
+.fig figcaption{font-size:.9rem;color:var(--muted)}
+svg text{font-family:var(--f-body);fill:var(--fg)}
+svg .lbl{font-family:var(--f-mono);font-size:12px;fill:var(--muted)}
+svg .s-ground{stroke:var(--fg);fill:none;stroke-width:2}
+svg .s-flat{stroke:var(--null);fill:none;stroke-width:2}
+svg .s-globe{stroke:var(--ink);fill:none;stroke-width:2}
+svg .s-dome{stroke:var(--sig);fill:none;stroke-width:2;stroke-dasharray:6 5}
+svg .s-ray{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4;fill:none}
+svg .f-flat{fill:var(--null)} svg .f-globe{fill:var(--ink)} svg .f-sig{fill:var(--sig)}
+svg .t-flat{fill:var(--null);font-weight:600} svg .t-globe{fill:var(--ink);font-weight:600} svg .t-sig{fill:var(--sig);font-weight:600}
+
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:520px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--tint)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.72rem;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.pill.out{color:var(--sig)} .pill.ok{color:var(--ink)}
+footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px}
+@media (max-width:480px){.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:8px}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header style="display:grid;gap:14px">
+  <p style="margin:0"><a href="../" style="color:var(--muted)">← All simulations</a></p>
+  <div class="eyebrow">Design review · zenith camera + radio ranging · Alberta, ~50° N</div>
+  <h1>Plumb Line Test Review</h1>
+  <p class="lede">What the test measures, what it outputs, and why a positive result on its own does not rule out every flat model.</p>
+</header>
+
+<section>
+  <div class="eyebrow">The test in one paragraph</div>
+  <h2>Two stations, one distance, one angle</h2>
+  <p>Two stations are set up 55 km apart, roughly north–south. A radio time-of-flight link measures the distance between them. At each station, a camera pointed straight up photographs the stars while a tilt sensor records the local vertical. That gives each station's <b>zenith</b>, the point among the stars directly above its plumb line. The angle between the two zeniths, <b>γ</b>, divided by the distance, says how fast “straight up” turns as you travel.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Measurements and outputs</div>
+  <h2>What each part produces</h2>
+  <div class="meas">
+
+    <div class="mcard">
+      <span class="tag">1 · DISTANCE BETWEEN STATIONS (d)</span>
+      <dl class="kv">
+        <dt>Instrument</dt><dd>Two SX1280 radios (Alpha, Chimp) with 13 dBi Yagis</dd>
+        <dt>Method</dt><dd>Round-trip radio timing. d = (c / n) · t, where n is the air's refractive index from pressure, temperature and humidity logged at both ends (correction ≈ 250–300 ppm, about 15 m over 55 km). The straight antenna-to-antenna chord is then converted to a ground distance using the antenna heights.</dd>
+        <dt>Output</dt><dd><code>tof_distance_km</code>, e.g. 55.0213 km, ±~1 m</dd>
+        <dt>Assumptions</dt><dd>None about the Earth's shape. No maps, GPS positions or ellipsoid.</dd>
+      </dl>
+    </div>
+
+    <div class="mcard">
+      <span class="tag">2 · ZENITH AT EACH STATION</span>
+      <dl class="kv">
+        <dt>Instrument</dt><dd>Pi 4, Raspberry Pi HQ camera with 25 mm f/1.8 lens (~13″/pixel, 14° × 11° field), ADXL355 tilt sensor, worm-drive turntable</dd>
+        <dt>Method</dt><dd>About 80 frames over 7–8 minutes, turning 0°, 180°, 180°, 0° (twice). Each frame is plate-solved against a star catalog. The tilt sensor gives the plate's tilt from the plumb line. The reversals cancel sensor offset; the ABBA order cancels temperature drift. The result is the zenith position among the stars, written as astronomic latitude (zenith declination) and longitude (zenith right ascension − Greenwich sidereal time).</dd>
+        <dt>Output</dt><dd>Per-station summary, ±5–10″</dd>
+      </dl>
+<pre>{ "station": "A",
+  "astro_lat_deg":  50.337412,  "sigma_lat_arcsec": 4.8,
+  "astro_lon_deg": -113.712205, "sigma_lon_arcsec": 5.6,
+  "frames_used": 78, "median_stars_per_frame": 141,
+  "median_fit_rms_arcsec": 1.8, "status": "OK" }</pre>
+      <p class="sub">Example values to show the format, not a measurement.</p>
+    </div>
+
+    <div class="mcard">
+      <span class="tag">3 · ANGLE BETWEEN THE ZENITHS (γ)</span>
+      <div class="formula">
+        γ ≈ √( Δlat² + (Δlon · cos lat)² )<br>
+        κ = γ / d &nbsp;&nbsp;(how fast “up” turns, per km)<br>
+        R = d / γ &nbsp;&nbsp;(implied radius, γ in radians)<br>
+        z = γ / σ<sub>γ</sub> &nbsp;&nbsp;(distance from zero in error bars)
+      </div>
+      <dl class="kv">
+        <dt>Predictions</dt><dd><span class="flat">Flat ground, distant stars: γ = 0″</span><br><span class="globe">Globe: γ ≈ 1,780″ at 55 km</span> (R ≈ 6,373 km north–south)</dd>
+        <dt>Decision rule</dt><dd>Reject “flat” if z &gt; 3.3. Globe-consistent if γ is within 2σ of 1,780″.</dd>
+        <dt>Output</dt><dd>Combined result once both stations and the range are in</dd>
+      </dl>
+<pre>{ "leg": "A-B", "tof_distance_km": 55.0213,
+  "gamma_arcsec": 1772.4, "sigma_gamma_arcsec": 7.4,
+  "R_km": 6401, "R_sigma_km": 27, "z_vs_flat": 239.5,
+  "verdict": "Reject H0 (flat); consistent with globe" }</pre>
+      <p class="sub">Example values to show the format, not a measurement.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Celestial navigation</div>
+  <h2>This is the navigator's rule, re-measured</h2>
+  <p>Celestial navigation rests on one relation: <b>1 minute of arc of zenith shift = 1 nautical mile of travel</b>. Move 1 NM north and the celestial pole rises 1′.</p>
+  <div class="formula">55 km ÷ 1.852 km/NM = 29.7 NM → 29.7′ ≈ 1,782″</div>
+  <p>That is the globe prediction above. The plumb line test is cel nav done with a camera and a tilt sensor instead of a sextant and a horizon.</p>
+  <div class="callout ink">
+    <p>In the navigator's celestial sphere, the observer sits at the centre and stars are placed by altitude and azimuth. <b>The sphere's radius never enters.</b> Cel nav works on directions only, and so does this test.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">The critique</div>
+  <h2>Why a positive result does not settle it</h2>
+  <p>The test measures the angle between two plumb lines <b>relative to the star field</b>. That equals the ground's curvature only if the stars are effectively infinitely far away, so both stations see each star in the same direction.</p>
+  <p>The null hypothesis was written as “flat ground, stars at infinity.” Flat-Earth models usually place the stars on a nearby dome instead. With a dome:</p>
+  <ul>
+    <li>Plumb lines are parallel.</li>
+    <li>Each station's vertical meets the dome at a different point, so each sees a different star overhead.</li>
+    <li>The apparent zenith angle is γ ≈ d / H. With H ≈ 6,400 km this gives the same 1,780″ as the globe.</li>
+  </ul>
+
+  <figure class="fig">
+    <div class="scroll">
+    <svg viewBox="0 0 760 330" role="img" aria-label="Globe with distant stars compared to flat ground with a star dome; both give the same zenith angle">
+      <text x="190" y="24" text-anchor="middle" class="t-globe" font-size="15">Globe · stars at infinity</text>
+      <text x="570" y="24" text-anchor="middle" class="t-sig" font-size="15">Flat · star dome at height H</text>
+
+      <!-- Globe panel -->
+      <path d="M 40 258 A 330 330 0 0 1 340 258" class="s-ground"/>
+      <circle cx="98" cy="232" r="6" class="f-globe"/>
+      <circle cx="282" cy="232" r="6" class="f-globe"/>
+      <text x="96" y="262" text-anchor="middle" font-size="13">A</text>
+      <text x="284" y="262" text-anchor="middle" font-size="13">B</text>
+      <line x1="98" y1="232" x2="58" y2="80" class="s-globe"/>
+      <line x1="282" y1="232" x2="322" y2="80" class="s-globe"/>
+      <polygon points="56,72 53,86 63,83" class="f-globe"/>
+      <polygon points="324,72 317,83 327,86" class="f-globe"/>
+      <line x1="98" y1="232" x2="150" y2="320" class="s-ray"/>
+      <line x1="282" y1="232" x2="230" y2="320" class="s-ray"/>
+      <path d="M 72 132 Q 190 104 308 132" class="s-globe" stroke-width="1.5"/>
+      <text x="190" y="112" text-anchor="middle" class="t-globe" font-size="14">γ</text>
+      <text x="190" y="150" text-anchor="middle" class="lbl">plumb lines converge</text>
+      <text x="190" y="300" text-anchor="middle" font-size="13">γ = d / R</text>
+
+      <line x1="380" y1="40" x2="380" y2="320" stroke="var(--rule)" stroke-width="1"/>
+
+      <!-- Flat + dome panel -->
+      <path d="M 410 120 Q 570 40 730 120" class="s-dome"/>
+      <text x="720" y="100" text-anchor="end" class="lbl">dome (H)</text>
+      <line x1="420" y1="250" x2="720" y2="250" class="s-ground"/>
+      <circle cx="478" cy="244" r="6" class="f-flat"/>
+      <circle cx="662" cy="244" r="6" class="f-flat"/>
+      <text x="478" y="272" text-anchor="middle" font-size="13">A</text>
+      <text x="662" y="272" text-anchor="middle" font-size="13">B</text>
+      <line x1="478" y1="244" x2="478" y2="90" class="s-flat"/>
+      <line x1="662" y1="244" x2="662" y2="90" class="s-flat"/>
+      <polygon points="478,82 473,94 483,94" class="f-flat"/>
+      <polygon points="662,82 657,94 667,94" class="f-flat"/>
+      <!-- stars overhead on dome -->
+      <circle cx="478" cy="91" r="4" class="f-sig"/>
+      <circle cx="662" cy="91" r="4" class="f-sig"/>
+      <!-- A also sees B's star at an angle -->
+      <line x1="478" y1="244" x2="662" y2="91" class="s-ray"/>
+      <text x="566" y="196" text-anchor="middle" class="lbl">A sees B's overhead star</text>
+      <text x="566" y="212" text-anchor="middle" class="lbl">at angle ≈ d / H</text>
+      <text x="570" y="300" text-anchor="middle" font-size="13">plumb lines parallel, γ<tspan baseline-shift="sub" font-size="9">apparent</tspan> = d / H</text>
+    </svg>
+    </div>
+    <figcaption>Both pictures put a different star overhead at each station. With H ≈ R the measured γ is identical. Scales exaggerated.</figcaption>
+  </figure>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Model</th><th class="r">γ predicted at 55 km</th><th>Ruled out by γ?</th></tr></thead>
+      <tbody>
+        <tr><td><span class="flat">Flat ground, distant stars</span></td><td class="r num">0″</td><td><span class="pill out">yes</span></td></tr>
+        <tr><td><span class="globe">Globe, distant stars</span></td><td class="r num">1,780″ (d / R)</td><td><span class="pill ok">no, consistent</span></td></tr>
+        <tr><td><span class="sig">Flat ground, star dome at H ≈ d / γ</span></td><td class="r num">1,780″ (d / H)</td><td><span class="pill ok">no, consistent</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <h3>What a result of γ ≈ 1,780″ establishes</h3>
+    <p>That the overhead star field shifts by 1′ per nautical mile of travel. The globe and a flat-plus-dome model both predict this. The test, as designed, rejects only the strawman flat model with distant stars.</p>
+    <p>γ is also an <b>extrinsic</b> quantity: how the vertical turns as you move. It is not the intrinsic Gaussian curvature of the ground.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Where the models part ways</div>
+  <h2>Distance is what separates them</h2>
+  <p>On a globe the zenith shift grows in proportion to distance: 1′ per NM everywhere, in every direction. Under a flat star layer at height H, the angle to a star at ground distance x is atan(x / H), which falls behind as x grows. With H = R:</p>
+  <div class="tbl">
+    <table class="num">
+      <thead><tr><th>Ground distance</th><th class="r">Globe: x / R</th><th class="r">Flat + dome: atan(x / H)</th><th class="r">Difference</th></tr></thead>
+      <tbody>
+        <tr><td>55 km (this test)</td><td class="r">0.4946°</td><td class="r">0.4946°</td><td class="r">0.04″</td></tr>
+        <tr><td>1,000 km</td><td class="r">8.99°</td><td class="r">8.92°</td><td class="r">4.4′ (≈ 4 NM)</td></tr>
+        <tr><td>3,000 km</td><td class="r">26.98°</td><td class="r">25.21°</td><td class="r">106′ (≈ 106 NM)</td></tr>
+        <tr><td>5,000 km</td><td class="r">44.97°</td><td class="r">38.13°</td><td class="r">410′ (≈ 410 NM)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">The flat column uses the simplest version: a flat star layer at height H directly above the plane. Other dome shapes give other numbers, but every finite-height layer departs from the straight 1′ = 1 NM line over long distances.</p>
+  <p>At 55 km the difference is 0.04″, far below what any instrument here can see. At ocean-crossing distances it grows to hundreds of nautical miles. Navigators get position fixes that close using the uniform globe relation, worldwide and in both hemispheres. That long-range behaviour is evidence this local test cannot supply by itself.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Status</div>
+  <h2>Open items</h2>
+  <ul>
+    <li><b>Star distance.</b> The test needs an independent measurement that the globe and dome models predict differently. To be revisited.</li>
+    <li><b>Longer baselines.</b> Chained radio hops can reach 150–200 km, which sharpens R. Even at 200 km the globe–dome difference stays small, so on its own this doesn't settle the question.</li>
+    <li><b>A star-free test.</b> Radio ranging alone, using five stations on a level reference such as a large lake: the centre of a 55 km square sits about 119 m above the plane of its corners on a globe and 0 m on a flat surface.</li>
+  </ul>
+</section>
+
+<footer>
+  Companion to the <a href="../plumb-line-test/" style="color:var(--ink)">Plumb Line Curvature Test</a> page. Globe values use WGS-84 at 50° N. 1 NM = 1.852 km; 1′ = 60″. JSON blocks show the output format with example values.
+</footer>
+</div>
+
+</body>
+</html>
