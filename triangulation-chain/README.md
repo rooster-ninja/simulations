@@ -17,6 +17,16 @@ shrinking), and checked against a second bar-measured base at the far end.
 - **Closure.** For each triangle: angle sum − 180°, excess `E = A / R²`, and
   the closure (sum − 180° − E), with the excess expressed in units of the
   angle-sum error.
+- **Curvature from the angles alone.** No radius goes in: each triangle's
+  measured excess (angle sum − 180°) divided by its area (computed from the
+  baseline and the angles) gives `K`, then `R = 1/√K` with its σ. Each
+  triangle's R, and a least-squares fit of one K to all closed triangles,
+  is compared with an assumed 6,371 km.
+- **Malice.** Switch the data to one of two forgeries (excess stripped so
+  sums close on 180°, or noise smoothed) and see which checks fire: closure
+  χ², closure-versus-area slope, K from the angles, and the check base
+  (which is blind to the excess). A table rates other fudges by difficulty
+  and by what exposes them.
 - **Check base.** Computed length (Legendre's theorem, then the law of sines,
   triangle by triangle) compared with the measured check base, against the
   expected error.
@@ -33,8 +43,10 @@ shrinking), and checked against a second bar-measured base at the far end.
 
 ## Simplifications
 
-- Geometry is laid out on a plane; the spherical excess is added to each true
-  angle (Legendre's theorem), with R = 6,371 km.
+- The synthetic observations are generated on a sphere of R = 6,371 km
+  (geometry laid out on a plane, with the spherical excess added to each true
+  angle by Legendre's theorem). The reduction and the R estimate use only the
+  generated angles and baseline, never that radius.
 - No flattening, refraction, deflection of the vertical or station centring.
 - Each station's angle is shown as one averaged reading pair, not 16
   separate sets.
