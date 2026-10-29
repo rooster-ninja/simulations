@@ -10,6 +10,7 @@ https://rooster-ninja.github.io/simulations/
 | Plumb line curvature test | [plumb-line-test/](https://rooster-ninja.github.io/simulations/plumb-line-test/) |
 | Disc model quasar test (WIP) | [disc-model-quasars/](https://rooster-ninja.github.io/simulations/disc-model-quasars/) |
 | Celestial theodolite: planar prediction | [celestial-theodolite/](https://rooster-ninja.github.io/simulations/celestial-theodolite/) |
+| Triangulation chain: baseline to check base | [triangulation-chain/](https://rooster-ninja.github.io/simulations/triangulation-chain/) |
 
 ## Layout
 
