@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Celestial Theodolite: Planar Prediction</title>
+<meta property="og:title" content="Celestial Theodolite: Planar Prediction">
+<meta property="og:description" content="Star occultations behind mountain peaks on a flat plane: θ₁ from the peak–observer triangle, θ₂ at the peak, and the recorded ♈︎ shift, for every logged peak.">
+<meta name="theme-color" content="#f3efe4">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: research-note page. Mono eyebrow, heavy serif headline, lede, then framed figure cards (cream card, white plate inside) with serif-italic math under each. */
+:root{
+  --bg:#f3efe4; --card:#f8f5ec; --plate:#ffffff; --ink:#1a1813; --muted:#6b6658; --rule:#ddd5c2; --grid:#cfc6ae; --dot:#e6dfcd;
+  --accent:#4a8fb0; --orange:#e0913a; --red:#c8543a; --purple:#7a56b8; --purple-fill:rgba(122,86,184,.20); --star:#e0913a; --sky:#b9ae92;
+  --bar:#16140f; --bar-ink:#f3efe4;
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif; --f-body:"Archivo",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a; --grid:#6e6650; --dot:#2e2a20;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --purple-fill:rgba(168,136,230,.24); --star:#f0a656; --sky:#8c836c;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a; --grid:#6e6650; --dot:#2e2a20;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --purple-fill:rgba(168,136,230,.24); --star:#f0a656; --sky:#8c836c;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.progress{height:4px;background:var(--accent);width:31%;margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+.wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding-top:28px}
+.back{margin:0 0 14px;font-family:var(--f-mono);font-size:13px}.back a{color:var(--muted);text-decoration:none}.back a:hover{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,56px);line-height:1.04;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance;max-width:22ch}
+.sub{color:var(--ink);font-size:18px;max-width:62ch;margin:14px 0 0}
+.panel{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px}
+.ptitle{font-family:var(--f-mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.svgbox{background:var(--plate);border:1.5px solid var(--rule);border-radius:12px;overflow-x:auto}
+.svgbox svg{display:block;width:100%;height:auto;min-width:760px}
+.math{font-family:var(--f-display);font-style:italic;font-size:19px;text-align:center;line-height:1.7;overflow-x:auto;padding:2px 4px}
+.math .up{font-style:normal}
+svg text{font-family:var(--f-mono);fill:var(--ink)}
+svg .lbl{font-family:var(--f-display);font-weight:700;font-style:italic}
+svg .note{font-family:var(--f-body);fill:var(--muted)}
+.ctl{display:flex;flex-direction:column;gap:6px}
+.ctl label{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:var(--muted)}
+select{font:500 16px var(--f-body);color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:11px 12px;width:100%}
+select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#tri{width:58.2%!important;min-width:560px!important}
+.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px 20px}
+.kv{min-width:0}.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--muted)}
+.kv .v{font-family:var(--f-mono);font-size:14px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.kv.big .v{font-family:var(--f-display);font-weight:700;font-size:23px;line-height:1.2}
+.bar{background:var(--bar);color:var(--bar-ink);border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;font-family:var(--f-mono);font-size:14px}
+.bar b{font-weight:600}.bar span{opacity:.7}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<div class="wrap">
+  <header>
+    <p class="back"><a href="../">← All simulations</a></p>
+    <p class="eyebrow">Celestial theodolite · planar model</p>
+    <h1>One star, two observers, a flat plane</h1>
+    <p class="sub">At T = 0 the star sits on the peak's skyline from O₁. The observer then moves to the peak (O₂) at the same instant. On a plane the ground stays level and every vertical is parallel, so the only change to the star's elevation comes from where the observer stands.</p>
+  </header>
+  <div class="ctl"><label for="pick">Peak · star · date</label><select id="pick"></select></div>
+  <section class="panel">
+    <div class="ptitle">Celestial spheres at O₁ and O₂</div>
+    <div class="svgbox"><svg id="dia" viewBox="-56 0 1440 712" role="img" aria-label="Planar occultation diagram"></svg></div>
+    <div class="math">θ₂ − θ₁,&nbsp;&nbsp;&nbsp; <span class="up">♈︎</span>Δ = <span class="up">♈︎</span><sub>peak</sub> − <span class="up">♈︎</span><sub>obs</sub>,&nbsp;&nbsp;&nbsp; ground ∥ peak line</div>
+  </section>
+  <section class="panel">
+    <div class="ptitle">Peak–observer triangle</div>
+    <div class="svgbox"><svg id="tri" viewBox="0 0 760 300" role="img" aria-label="Peak observer right triangle"></svg></div>
+    <div class="math">θ₁ = atan(Δh / D),&nbsp;&nbsp;&nbsp; Δh = h<sub>peak</sub> − h<sub>obs</sub></div>
+  </section>
+  <section class="readout" id="readout" aria-live="polite"></section>
+  <div class="bar"><b>Celestial Theodolite</b><span>planar prediction · draft 1 of 2</span></div>
+</div>
+
+<script>
+const DATA = [{"peak": "Pikes Peak", "star": "39 Aquarii", "time": "18:43:07", "date": "1/27/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4300.0, "oh": 2073.0, "d": 50551.0, "spA": 2.5562, "spE": 2.7486, "soA": 2.1024, "soE": 2.32556, "azi": null}, {"peak": "Blodgett Peak", "star": "LP Aquarii", "time": "19:06:56", "date": "2/7/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.958889, "plon": -104.907222, "olat": 38.9997, "olon": -104.49723, "ph": 2870.0, "oh": 2073.0, "d": 35729.0, "spA": 1.1925, "spE": 1.4572, "soA": 0.8712, "soE": 1.16361, "azi": null}, {"peak": "Cheyenne Mtn", "star": "Mu Fornacis", "time": "19:01:14", "date": "3/9/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 38.743889, "plon": -104.862778, "olat": 38.9997, "olon": -104.49723, "ph": 2883.0, "oh": 2073.0, "d": 42551.0, "spA": 1.00108, "spE": 1.2796, "soA": 0.61842, "soE": 0.93556, "azi": null}, {"peak": "Blue Mtn", "star": "HD 32515", "time": "21:32:54", "date": "3/12/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 38.693889, "plon": -104.915833, "olat": 38.9997, "olon": -104.49723, "ph": 3001.0, "oh": 2073.0, "d": 49704.0, "spA": 1.00514, "spE": 1.2833, "soA": 0.55817, "soE": 0.885, "azi": null}, {"peak": "Mount Rosa", "star": "HD 17320", "time": "19:51:26", "date": "3/10/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 38.754167, "plon": -104.948056, "olat": 38.9997, "olon": -104.49723, "ph": 3506.0, "oh": 2073.0, "d": 47628.0, "spA": 1.71133, "spE": 1.9435, "soA": 1.283, "soE": 1.54694, "azi": null}, {"peak": "Green Mtn", "star": "HD 28388", "time": "22:02:58", "date": "3/14/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 38.696111, "plon": -104.963333, "olat": 38.9997, "olon": -104.49723, "ph": 3084.9, "oh": 2073.0, "d": 52620.0, "spA": 1.08078, "spE": 1.43033, "soA": 0.60758, "soE": 0.93528, "azi": null}, {"peak": "North Peak", "star": "HD55892 (I Puppis)", "time": "21:08:21", "date": "3/23/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 37.901389, "plon": -105.032222, "olat": 38.9997, "olon": -104.49723, "ph": 3765.0, "oh": 2073.0, "d": 130710.0, "spA": 0.968, "spE": 1.3293, "soA": -0.2, "soE": 0.20667, "azi": null}, {"peak": "North Peak", "star": "HD56455 (PR Puppis)", "time": "21:09:11", "date": "3/23/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 37.901389, "plon": -105.032222, "olat": 38.9997, "olon": -104.49723, "ph": 3765.0, "oh": 2073.0, "d": 130710.0, "spA": 0.9819, "spE": 1.3409, "soA": -0.1935, "soE": 0.215, "azi": null}, {"peak": "North Peak", "star": "HD56813", "time": "21:11:40", "date": "3/23/2025", "utc": "-6", "obs": "Dr. Heffron", "plat": 37.901389, "plon": -105.032222, "olat": 38.9997, "olon": -104.49723, "ph": 3765.0, "oh": 2073.0, "d": 130710.0, "spA": 0.9788, "spE": 1.3381, "soA": -0.1996, "soE": 0.21528, "azi": null}, {"peak": "Getaway Mtn", "star": "HD 102928", "time": "00:36:25", "date": "7/1/2025", "utc": "-6", "obs": "Katalan", "plat": 43.33889, "plon": -116.83461, "olat": 43.4007966, "olon": -116.234757, "ph": 1642.0, "oh": 890.0, "d": 48973.0, "spA": 0.75772, "spE": 1.0979, "soA": 0.3143, "soE": 0.69583, "azi": 261.4666667}, {"peak": "Hounds Tooth", "star": "HD199828", "time": "22:47:52", "date": "6/27/2025", "utc": "-6", "obs": "Katalan", "plat": 40.586967, "plon": -111.7310611, "olat": 40.623469, "olon": -111.8234, "ph": 3067.0, "oh": 1411.0, "d": 8789.0, "spA": 10.6174, "spE": 10.6883, "soA": 10.5383, "soE": 10.60694, "azi": null}, {"peak": "Old-Blyn Mtn", "star": "HD206088", "time": "01:54:46", "date": "5/28/2025", "utc": "-7", "obs": "Jesse", "plat": 48.01639, "plon": -122.92667, "olat": 48.10522, "olon": -123.19199, "ph": 650.0, "oh": 43.0, "d": 22053.0, "spA": 1.363, "spE": 1.6854, "soA": 1.16394, "soE": 1.51056, "azi": null}, {"peak": "Old-Blyn Mtn", "star": "HD207098", "time": "01:58:38", "date": "5/28/2025", "utc": "-7", "obs": "Jesse", "plat": 48.0164, "plon": -122.9267, "olat": 48.1052, "olon": -123.192, "ph": 636.0, "oh": 43.0, "d": 22050.0, "spA": 1.325, "spE": 1.648055556, "soA": 1.12322, "soE": 1.47361, "azi": null}, {"peak": "Ediz-Blyn Mtn", "star": "HD187663", "time": "23:42:17", "date": "5/27/2025", "utc": "-7", "obs": "Jesse", "plat": 48.0172306, "plon": -122.926025, "olat": 48.1409444, "olon": -123.4438889, "ph": 650.0, "oh": 6.0, "d": 40857.0, "spA": 0.7, "spE": 1.095, "soA": 0.34, "soE": 0.76389, "azi": null}, {"peak": "Ediz-Blyn Mtn", "star": "3 Cap", "time": "00:05:07", "date": "5/28/2025", "utc": "-7", "obs": "Jesse", "plat": 48.0172, "plon": -122.926, "olat": 48.1409, "olon": -123.4439, "ph": 631.0, "oh": 6.0, "d": 40859.0, "spA": 0.63969, "spE": 1.03436, "soA": 0.27228, "soE": 0.71417, "azi": null}, {"peak": "Varley SE2 Squamish", "star": "Regulus", "time": "00:30:21", "date": "6/11/2025", "utc": "-7", "obs": "Goose", "plat": 49.59238889, "plon": -123.4611111, "olat": 49.55916667, "olon": -123.2355556, "ph": 1424.0, "oh": 4.0, "d": 16678.0, "spA": 4.78581, "spE": 4.95, "soA": 4.6358, "soE": 4.80194, "azi": null}, {"peak": "Puhitempi Kuaikatete", "star": "EZ Cet", "time": "01:11:53", "date": "12/31/2025", "utc": "-7", "obs": "Katalan", "plat": 43.26754, "plon": -116.88338, "olat": 43.4007966, "olon": -116.234757, "ph": 2000.0, "oh": 890.0, "d": 54512.0, "spA": 0.9630555556, "spE": 1.30694, "soA": 0.5261111111, "soE": 0.91472, "azi": 254.4333333}, {"peak": "Puhitempi Kuaikatete", "star": "53 Cet", "time": "01:12:17", "date": "12/31/2025", "utc": "-7", "obs": "Katalan", "plat": 43.26754, "plon": -116.88338, "olat": 43.4007966, "olon": -116.234757, "ph": 2000.0, "oh": 890.0, "d": 54512.0, "spA": 0.937528, "spE": 1.28528, "soA": 0.500611, "soE": 0.89333, "azi": 254.489139}, {"peak": "Puhitempi Kuaikatete", "star": "Baten Kaitos", "time": "01:15:50", "date": "12/31/2025", "utc": "-7", "obs": "Katalan", "plat": 43.27933, "plon": -116.85465, "olat": 43.4007966, "olon": -116.234757, "ph": 1877.0, "oh": 890.0, "d": 51919.0, "spA": 0.88825, "spE": 1.24167, "soA": 0.451917, "soE": 0.85028, "azi": 255.028889}, {"peak": "Getaway Mtn", "star": "Al Naymat I", "time": "00:56:52", "date": "12/31/2025", "utc": "", "obs": "Katalan", "plat": 43.31034, "plon": -116.81177, "olat": 43.4007966, "olon": -116.234757, "ph": 1765.0, "oh": 890.0, "d": 47724.0, "spA": 0.908917, "spE": 1.238139, "soA": 0.469417, "soE": 0.842222, "azi": 258.0225}, {"peak": "Getaway Mtn", "star": "44 Cet", "time": "00:57:27", "date": "12/31/2025", "utc": "", "obs": "Katalan", "plat": 43.3037, "plon": -116.85414, "olat": 43.4007966, "olon": -116.234757, "ph": 1848.0, "oh": 890.0, "d": 51231.0, "spA": 0.932611, "spE": 1.259694, "soA": 0.49325, "soE": 0.863056, "azi": 258.1391667}, {"peak": "Unknown", "star": "HD 505", "time": "00:35:03", "date": "12/31/2025", "utc": "-7", "obs": "Katalan", "plat": 43.2877, "plon": -116.8580417, "olat": 43.4007966, "olon": -116.234757, "ph": 1680.0, "oh": 890.0, "d": 51947.0, "spA": 0.852722, "spE": 1.189722, "soA": 0.418, "soE": 0.7664167, "azi": null}, {"peak": "Unknown", "star": "HD 9061 UK", "time": "00:23:25", "date": "12/31/2025", "utc": "-7", "obs": "Katalan", "plat": 43.29817, "plon": -116.83985, "olat": 43.4007966, "olon": -116.234757, "ph": 1845.0, "oh": 890.0, "d": 50240.0, "spA": 0.861667, "spE": 0.800278, "soA": 0.422583, "soE": 0.7380555556, "azi": 257.614222}, {"peak": "ϵPikes Peak Test", "star": "ϵ39 Aquarii Test", "time": "18:43:07", "date": "1/27/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4300.0, "oh": 2073.0, "d": 50551.0, "spA": 2.52333, "spE": 2.72639, "soA": 2.06861, "soE": 2.29306, "azi": null}, {"peak": "ϵBlodgett Peak Test", "star": "ϵLP Aquarii Test", "time": "19:06:56", "date": "2/7/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.958889, "plon": -104.907222, "olat": 38.9997, "olon": -104.49723, "ph": 2870.0, "oh": 2073.0, "d": 35729.0, "spA": 1.12806, "spE": 1.41472, "soA": 0.80667, "soE": 1.11944, "azi": null}, {"peak": "♈︎Pikes Peak Test", "star": "♈︎39 Aquarii Test", "time": "18:42:04", "date": "1/27/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4300.0, "oh": 2073.0, "d": 50551.0, "spA": 2.74889, "spE": 2.9425, "soA": 2.29417, "soE": 2.50778, "azi": null}, {"peak": "♈︎Blodgett Peak Test", "star": "♈︎LP Aquarii Test", "time": "19:06:56", "date": "2/7/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.958889, "plon": -104.907222, "olat": 38.9997, "olon": -104.49723, "ph": 2870.0, "oh": 2073.0, "d": 35729.0, "spA": 1.44056, "spE": 1.70472, "soA": 1.11917, "soE": 1.40639, "azi": null}, {"peak": "Lucky Ridge", "star": "Moon", "time": "01:02:08", "date": "1/26/2026", "utc": "-7", "obs": "Katalan", "plat": 43.5293, "plon": -116.0818944, "olat": 43.52625278, "olon": -116.0692083, "ph": 965.0, "oh": 866.0, "d": 1077.0, "spA": 7.523917, "spE": 7.632917, "soA": 7.509833, "soE": 7.619, "azi": null}, {"peak": "Lucky Ridge", "star": "Unamed", "time": "00:58:47", "date": "1/26/2026", "utc": "-7", "obs": "Katalan", "plat": 43.5293, "plon": -116.0818944, "olat": 43.52625278, "olon": -116.0692083, "ph": 969.0, "oh": 865.0, "d": 1077.0, "spA": 7.523917, "spE": 7.632917, "soA": 7.509833, "soE": 7.619, "azi": null}, {"peak": "Pikes Peak", "star": "HD 217533", "time": "19:31:40", "date": "01/27/25", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4300.0, "oh": 2073.68, "d": 50551.0, "spA": 2.57662, "spE": 2.7675, "soA": 2.10861, "soE": 2.334166667, "azi": 249.509595}, {"peak": "Pikes Peak", "star": "HD 217533 (2)", "time": "19:15:57", "date": "1/31/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4299.8, "oh": 2073.68, "d": 50551.0, "spA": 2.574791, "spE": 2.76556, "soA": 2.10667, "soE": 2.33222, "azi": 249.509595}, {"peak": "Pikes Peak", "star": "39 Aquarii (Moon)", "time": "18:31:22", "date": "1/30/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4299.8, "oh": 2073.68, "d": 50551.0, "spA": 2.54861, "spE": 2.75333, "soA": 2.09389, "soE": 2.32028, "azi": 249.509595}, {"peak": "Lucky Peak", "star": "HD 76600", "time": "19:09:46", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.03889, "spE": 6.184778, "soA": 5.988833, "soE": 6.114972, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "HD 76525", "time": "19:09:59", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.083999, "spE": 6.208556, "soA": 6.013, "soE": 6.13875, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "SAO 117309", "time": "19:11:35", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.038583, "spE": 6.163889, "soA": 5.988306, "soE": 6.114472, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "HD 77039", "time": "19:12:16", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.030306, "spE": 6.155778, "soA": 5.980056, "soE": 6.106333, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "HD 78282", "time": "19:19:33", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.021583, "spE": 6.147167, "soA": 5.971306, "soE": 6.09775, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "SAO 117493", "time": "19:24:56", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.057333, "spE": 6.182333, "soA": 6.007056, "soE": 6.132917, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "HIP 45114", "time": "19:24:57", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.040222, "spE": 6.165528, "soA": 5.989944, "soE": 6.116083, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "HIP 45592", "time": "19:30:01", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.044056, "spE": 6.169278, "soA": 5.993778, "soE": 6.119833, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "SOA 117565", "time": "19:30:24", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.062389, "spE": 6.187306, "soA": 6.012139, "soE": 6.137889, "azi": 95.199806}, {"peak": "Lucky Peak", "star": "HD 80537", "time": "19:33:57", "date": "2/5/2026", "utc": "-7", "obs": "Katalan", "plat": 43.611799, "plon": -116.089012, "olat": 43.616306, "olon": -116.158167, "ph": 1506.0, "oh": 899.0, "d": 5590.0, "spA": 6.045722, "spE": 6.170917, "soA": 5.995444, "soE": 6.1215, "azi": 95.199806}, {"peak": "Pikes Peak", "star": "39 Aquarii (3)", "time": "18:27:25", "date": "1/31/2025", "utc": "-7", "obs": "Dr. Heffron", "plat": 38.840278, "plon": -105.044444, "olat": 38.9997, "olon": -104.49723, "ph": 4300.0, "oh": 2073.0, "d": 50551.0, "spA": 2.566379, "spE": 2.7486, "soA": 2.111771, "soE": 2.32556, "azi": null}, {"peak": "Spirit Airlines", "star": "HIP 44471", "time": "18:11:30", "date": "1/5/2026", "utc": "-5", "obs": "AstroLive", "plat": 27.2931, "plon": -81.9698, "olat": 27.06811111, "olon": -82.22230556, "ph": 10375.54409, "oh": -1.07, "d": 35351.0, "spA": 16.55, "spE": 16.5701, "soA": 16.23, "soE": 16.2501, "azi": null}, {"peak": "Allegiant 453", "star": "HIP 47693", "time": "18:59:08", "date": "1/15/2026", "utc": "-5", "obs": "AstroLive", "plat": 27.0581, "plon": -81.5134, "olat": 27.06894, "olon": -82.22377, "ph": 9466.84302, "oh": 4.42, "d": 70351.0, "spA": 7.9, "spE": 7.9439, "soA": 7.27, "soE": 7.3139, "azi": null}, {"peak": "Jet Speed 691", "star": "HIP 23078", "time": "19:44:35", "date": "1/28/2026", "utc": "-5", "obs": "AstroLive", "plat": 26.5664, "plon": -82.3093, "olat": 27.06765, "olon": -82.22612, "ph": 11898.24492, "oh": 6.2, "d": 56344.0, "spA": 12.1, "spE": 12.133, "soA": 11.59, "soE": 11.623, "azi": null}, {"peak": "American Airlines 1517", "star": "HIP 39850", "time": "19:56:07", "date": "1/28/2026", "utc": "-5", "obs": "AstroLive", "plat": 26.3003, "plon": -81.9388, "olat": 27.06765, "olon": -82.22612, "ph": 9392.168589, "oh": 6.2, "d": 89974.0, "spA": 6.27, "spE": 6.3263, "soA": 5.46, "soE": 5.5163, "azi": null}, {"peak": "Mount Bolton", "star": "Mintaka", "time": "01:22:42", "date": "3/2/2026", "utc": "-7", "obs": "Goose", "plat": 50.33, "plon": -114.801111, "olat": 50.348611, "olon": -113.7075, "ph": 2706.0, "oh": 1010.0, "d": 77639.0, "spA": 1.26361, "spE": 1.596667, "soA": 0.56528, "soE": 0.9467778, "azi": null}, {"peak": "Plateau Mountain", "star": "Rigel", "time": "00:24:58", "date": "3/2/2026", "utc": "-7", "obs": "Goose", "plat": 50.208056, "plon": -114.516667, "olat": 50.34861, "olon": -113.7075, "ph": 2496.0, "oh": 1010.0, "d": 59585.0, "spA": 1.361944, "spE": 1.667778, "soA": 0.826111, "soE": 1.178889, "azi": null}, {"peak": "Burke", "star": "48 Ori", "time": "01:16:41", "date": "3/2/2026", "utc": "-7", "obs": "Goose", "plat": 50.30023, "plon": -114.52731, "olat": 50.348611, "olon": -113.7075, "ph": 2349.0, "oh": 1010.0, "d": 58447.0, "spA": 1.299028, "spE": 1.611944, "soA": 0.773389, "soE": 1.13375, "azi": null}, {"peak": "Mount Aldridge North Peak", "star": "Alnilam", "time": "01:21:59", "date": "3/2/2026", "utc": "-7", "obs": "Goose", "plat": 50.30877, "plon": -114.80288, "olat": 50.348611, "olon": -113.7075, "ph": 2828.0, "oh": 1010.0, "d": 77881.0, "spA": 1.351389, "spE": 1.660111, "soA": 0.650972, "soE": 1.023944, "azi": null}, {"peak": "Baril Peak", "star": "Alnitak", "time": "01:22:00", "date": "3/2/2026", "utc": "-7", "obs": "Goose", "plat": 50.28611, "plon": -114.55222, "olat": 50.348611, "olon": -113.7075, "ph": 2374.0, "oh": 1010.0, "d": 60378.0, "spA": 1.468944, "spE": 1.768583, "soA": 0.798, "soE": 1.155889, "azi": null}, {"peak": "Lucky Dam", "star": "Unknown**", "time": "00:06:05", "date": "3/8/2026", "utc": "-7", "obs": "Katalan", "plat": 43.51219, "plon": -116.02939, "olat": 43.51789, "olon": -116.04768, "ph": 1219.0, "oh": 940.0, "d": 1605.0, "spA": null, "spE": null, "soA": null, "soE": null, "azi": null}];
+const R2D=180/Math.PI, $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const f=(x,n=4)=>x==null||isNaN(x)?"—":x.toFixed(n);
+const P=(x,y)=>`${x.toFixed(1)},${y.toFixed(1)}`;
+
+(function(){const sel=$("pick"),g={};DATA.forEach((r,i)=>(g[r.obs||"Unknown"]||=[]).push(i));
+  for(const k in g){const og=document.createElement("optgroup");og.label=k;
+    g[k].forEach(i=>{const r=DATA[i],o=document.createElement("option");o.value=i;o.textContent=`${r.peak} · ${r.star} · ${r.date}`;og.appendChild(o)});sel.appendChild(og)}
+  let s=0;try{const v=localStorage.getItem("planar-pick");if(v!=null&&DATA[+v])s=+v}catch(e){}
+  sel.value=s;sel.addEventListener("change",()=>{try{localStorage.setItem("planar-pick",sel.value)}catch(e){}render()});})();
+
+function dms(deg){if(deg==null||isNaN(deg))return "—";const sg=deg<0?"−":"";let a=Math.abs(deg);
+  let d=Math.floor(a),mf=(a-d)*60,m=Math.floor(mf),s=(mf-m)*60;
+  s=Math.round(s*10)/10;if(s>=60){s-=60;m++}if(m>=60){m-=60;d++}
+  return `${sg}${d}°${String(m).padStart(2,"0")}′${s.toFixed(1).padStart(4,"0")}″`}
+function star(cx,cy,r){let d="";for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,rr=i%2?r*.42:r;d+=(i?"L":"M")+P(cx+rr*Math.cos(a),cy+rr*Math.sin(a))}return d+"Z"}
+function arcPath(cx,cy,r,a0,a1){const s=[cx+r*Math.cos(a0),cy+r*Math.sin(a0)],e=[cx+r*Math.cos(a1),cy+r*Math.sin(a1)];return `M${P(...s)}A${r},${r} 0 0 ${a1>a0?1:0} ${P(...e)}`}
+// Fusion-style parallel constraint badge, glyph lines follow the constrained line's angle
+function parBadge(x,y){const s=13,ang=-60*Math.PI/180,c=Math.cos(ang),n=Math.sin(ang),q=5;
+  const ln=(o)=>{const ox=o,oy=0;return `<line x1="${(x+ox-c*8).toFixed(1)}" y1="${(y+oy-n*8).toFixed(1)}" x2="${(x+ox+c*8).toFixed(1)}" y2="${(y+oy+n*8).toFixed(1)}" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round"/>`};
+  return `<g><rect x="${x-s}" y="${y-s}" width="${2*s}" height="${2*s}" rx="4" fill="var(--plate)" stroke="var(--accent)" stroke-width="1.6"/>${ln(-q)}${ln(q)}</g>`}
+
+function draw(r){
+  const D=r.d, hp=r.ph??0, ho=r.oh??0, dh=hp-ho, th=Math.atan2(dh,D)*R2D;
+  const dA=(r.spA!=null&&r.soA!=null)?r.spA-r.soA:0; // ♈︎Δ = recorded Star→Peak ♈︎ − Star→Obs ♈︎
+  const th1=th, th2=r.spA??th1, dth=dA, d21=th2-th1; // θ1 = trig angle to the peak; θ2 = recorded angle to star at peak (Star→Peak ♈︎)
+  // schematic geometry (angles drawn larger than true so they read)
+  const G=470, e=20*Math.PI/180, RS=270, run=RS*Math.cos(e), rise=RS*Math.sin(e); // peak summit sits on the celestial sphere
+  const u=[Math.cos(e),-Math.sin(e)], a=-e;
+  const wq=Math.sign(d21)*Math.min(16,14*Math.sqrt(Math.abs(d21)*60/20)); // purple wedge: √ scale, 20′ (≈100 km range) → 14° drawn
+  const e2=e, u2=u, a2=a; // θ2 drawn equal to θ1: star sits on the parallel line
+  const O1=[300,G], F1=[O1[0]+run,G], P1=[F1[0],G-rise];       // P1 = peak summit
+  const B2=O1[0]+2*RS+110, O2=[B2,G], PK2=[B2,G-rise];                    // O2 = observer at the peak, drawn level with O1
+  const S1=[O1[0]+RS*u[0],O1[1]+RS*u[1]], S2=[O2[0]+RS*u2[0],O2[1]+RS*u2[1]], S2r=[O2[0]+RS*u[0],O2[1]+RS*u[1]];
+  const ink="var(--ink)",red="var(--red)",sky="var(--sky)",pur="var(--purple)",mut="var(--muted)";
+  const o=[];
+  // ground
+  o.push(`<line x1="-44" y1="${G}" x2="1235" y2="${G}" stroke="${ink}" stroke-width="2.5"/>`);
+  // celestial spheres centred on each observer, horizon through the centre
+  o.push(`<path d="M${P(O1[0]-RS,G)}A${RS},${RS} 0 0 1 ${P(O1[0]+RS,G)}" fill="none" stroke="${sky}" stroke-width="2.2"/>`);
+  o.push(`<path d="M${P(O2[0]-RS,O2[1])}A${RS},${RS} 0 0 1 ${P(O2[0]+RS,O2[1])}" fill="none" stroke="${sky}" stroke-width="2.2"/>`);
+  o.push(`<text class="note" x="${O2[0]-RS+6}" y="${O2[1]-8}" font-size="14">horizon at O₂</text>`);
+  o.push(`<text class="note" x="${O1[0]-RS+6}" y="${G-8}" font-size="14">horizon at O₁</text>`);
+  const lab=(C,id)=>{const rr=RS+8,a0=Math.PI*1.08,a1=Math.PI*1.5;const s=[C[0]+rr*Math.cos(a0),C[1]+rr*Math.sin(a0)],e=[C[0]+rr*Math.cos(a1),C[1]+rr*Math.sin(a1)];
+    return `<path id="${id}" d="M${P(...s)}A${rr},${rr} 0 0 1 ${P(...e)}" fill="none"/><text class="note" font-size="15"><textPath href="#${id}" startOffset="38%" text-anchor="middle">celestial sphere</textPath></text>`};
+  o.push(lab(O1,'cs1')); o.push(lab(O2,'cs2'));
+  // zenith ticks
+  for(const C of [O1,O2]){o.push(`<line x1="${C[0]}" y1="${C[1]-RS-8}" x2="${C[0]}" y2="${C[1]-RS+8}" stroke="${sky}" stroke-width="2"/><text class="note" x="${C[0]}" y="${C[1]-RS-14}" font-size="13" text-anchor="middle">zenith</text>`)}
+  // peaks
+  o.push(`<path d="M${P(P1[0]-60,G)}L${P(...P1)}L${P(P1[0]+46,G)}" fill="none" stroke="${ink}" stroke-width="2"/>`);
+  o.push(`<path d="M${P(B2-60,G)}L${P(...PK2)}L${P(B2+46,G)}" fill="none" stroke="${ink}" stroke-width="2"/>`);
+  // purple: ♈︎ wedge anchored at P2. Upper edge = Star→Peak ♈︎ (ray to P2); lower edge = Star→Obs ♈︎ (lower, at the starting location). √ scale: 54′ (≈100 km) → 14° drawn
+  const kq=Math.min(16,14*Math.sqrt(Math.abs(dA)*60/54))*Math.PI/180, eL=e-Math.sign(dA)*kq, uL=[Math.cos(eL),-Math.sin(eL)], SL=[O2[0]+RS*uL[0],O2[1]+RS*uL[1]];
+  o.push(`<path d="M${P(...O2)}L${P(...SL)}A${RS},${RS} 0 0 0 ${P(...S2)}Z" fill="var(--purple-fill)" stroke="${pur}" stroke-width="1.6"/>`);
+  o.push(`<line x1="${O2[0]}" y1="${O2[1]}" x2="${SL[0].toFixed(1)}" y2="${SL[1].toFixed(1)}" stroke="${pur}" stroke-width="1.8" stroke-dasharray="6 5"/>`);
+  o.push(`<text x="${(SL[0]+10).toFixed(1)}" y="${(SL[1]+4).toFixed(1)}" font-size="13" style="fill:var(--purple)">♈︎ obs ${dms(r.soA)}</text>`);
+  o.push(`<text x="${(S2[0]+12).toFixed(1)}" y="${(S2[1]+26).toFixed(1)}" font-size="13" style="fill:var(--purple)">♈︎ peak ${dms(r.spA)}</text>`);
+
+
+  // star rays (parallel)
+  const ray=(A,back,fwd)=>`<line x1="${(A[0]-back*u[0]).toFixed(1)}" y1="${(A[1]-back*u[1]).toFixed(1)}" x2="${(A[0]+fwd*u[0]).toFixed(1)}" y2="${(A[1]+fwd*u[1]).toFixed(1)}" stroke="${ink}" stroke-width="1.4" stroke-dasharray="9 7"/>`;
+  o.push(ray(O1,130,RS+70));
+  o.push(`<line x1="${(O2[0]-130*u2[0]).toFixed(1)}" y1="${(O2[1]-130*u2[1]).toFixed(1)}" x2="${(O2[0]+(RS+60)*u2[0]).toFixed(1)}" y2="${(O2[1]+(RS+60)*u2[1]).toFixed(1)}" stroke="${ink}" stroke-width="1.4" stroke-dasharray="9 7"/>`);
+  // red trig triangles
+  const L2=run/Math.cos(e), F2=[S2[0],O2[1]], T2=S2;
+  const tri=(O,F,T)=>`<path d="M${P(...O)}L${P(...F)}L${P(...T)}Z" fill="none" stroke="${red}" stroke-width="2.2"/><path d="M${P(F[0]-14,F[1])}L${P(F[0]-14,F[1]-14)}L${P(F[0],F[1]-14)}" fill="none" stroke="${red}" stroke-width="1.4"/>`;
+  o.push(tri(O1,F1,P1)); o.push(tri(O2,F2,T2));
+  // parallel constraint badges on both star rays
+  // peak-to-star line, constrained parallel to the ground (Fusion parallel badges)
+  o.push(`<line x1="-44" y1="${P1[1].toFixed(1)}" x2="1235" y2="${P1[1].toFixed(1)}" stroke="${ink}" stroke-width="1.3"/>`);
+  const mx=-22; o.push(parBadge(mx,P1[1])); o.push(parBadge(mx,G));
+  // angle arcs
+  o.push(`<path d="${arcPath(O1[0],O1[1],70,0,a)}" fill="none" stroke="${red}" stroke-width="1.6"/>`);
+  o.push(`<text class="lbl" x="${O1[0]+80}" y="${O1[1]-10}" font-size="22" style="fill:var(--red)">θ₁</text>`);
+  o.push(`<path d="${arcPath(O2[0],O2[1],70,0,a2)}" fill="none" stroke="${red}" stroke-width="1.6"/>`);
+  o.push(`<text class="lbl" x="${O2[0]+80}" y="${O2[1]-10}" font-size="22" style="fill:var(--red)">θ₂</text>`);
+  // stars on the celestial sphere
+  o.push(`<path d="${star(S1[0],S1[1],15)}" fill="var(--star)" stroke="${ink}" stroke-width="1"/>`);
+  o.push(`<path d="${star(S2[0],S2[1],15)}" fill="var(--star)" stroke="${ink}" stroke-width="1"/>`);
+  o.push(`<text class="lbl" x="${P1[0]-14}" y="${P1[1]-14}" font-size="24" text-anchor="end">P₁</text>`);
+  o.push(`<text class="lbl" x="${S2[0]-18}" y="${S2[1]-14}" font-size="24" text-anchor="end">P₂</text>`);
+  // observers
+  o.push(`<circle cx="${O1[0]}" cy="${O1[1]}" r="6" fill="${ink}"/><circle cx="${O2[0]}" cy="${O2[1]}" r="6" fill="${ink}"/>`);
+  o.push(`<text class="lbl" x="${O1[0]-36}" y="${O1[1]+32}" font-size="26">O₁</text>`);
+  o.push(`<text class="lbl" x="${O2[0]-36}" y="${O2[1]+32}" font-size="26">O₂</text>`);
+  // ticks + D bracket (purple: surface distance tied to the sky arc)
+  o.push(`<line x1="${O1[0]}" y1="${G+12}" x2="${O1[0]}" y2="${G+80}" stroke="${ink}" stroke-width="1.6"/>`);
+  o.push(`<line x1="${B2}" y1="${G+12}" x2="${B2}" y2="${G+80}" stroke="${ink}" stroke-width="1.6"/>`);
+  o.push(`<line x1="${O1[0]}" y1="${G+52}" x2="${B2}" y2="${G+52}" stroke="${pur}" stroke-width="3"/>`);
+  o.push(`<text x="${(O1[0]+B2)/2}" y="${G+42}" font-size="20" text-anchor="middle" style="fill:var(--purple)">D = ${(D/1000).toFixed(3)} km  →  ♈︎Δ = ${dms(dA)}</text>`);
+  o.push(`<text x="${O1[0]}" y="${G+100}" font-size="15" text-anchor="middle">T = 0</text>`);
+  o.push(`<text x="${B2}" y="${G+100}" font-size="15" text-anchor="middle">T = 0</text>`);
+  // top-left formula
+  o.push(`<text x="30" y="40" font-size="18">θ₁ = atan(Δh peak / D) = ${dms(th1)}  (see peak–observer triangle)</text>`);
+  o.push(`<text x="30" y="66" font-size="18" style="fill:var(--purple)">♈︎Δ = Star→Peak ♈︎ − Star→Obs ♈︎ = ${dms(r.spA)} − ${dms(r.soA)} = ${dms(dA)}</text>`);
+  o.push(`<text x="30" y="92" font-size="18">θ₂ = Star→Peak ♈︎ (angle to star at peak) = ${dms(th2)}</text>`);
+  o.push(`<text x="30" y="118" font-size="18">θ₂ − θ₁ = ${dms(th2)} − ${dms(th1)} = ${dms(d21)}</text>`);
+  // bottom notes
+  o.push(`<text class="note" x="30" y="${G+156}" font-size="15" font-weight="600">When T = 0 (same instant at both places):</text>`);
+  o.push(`<text class="note" x="30" y="${G+178}" font-size="15">θ₁ = elevation angle from O₁ to the peak summit (trig triangle) = ${dms(th1)}</text>`);
+  o.push(`<text class="note" x="30" y="${G+200}" font-size="15">θ₂ = elevation angle to the star with the observer at the peak, ${(D/1000).toFixed(1)} km away (Star→Peak ♈︎) = ${dms(th2)}; θ₂ − θ₁ = ${dms(d21)}</text>`);
+  o.push(`<text class="note" x="30" y="${G+222}" font-size="15">♈︎Δ (purple) = recorded Star→Peak ♈︎ − Star→Obs ♈︎ from the data table; ♈︎ marks recorded values, plain θ marks geometry.</text>`);
+  $("dia").innerHTML=o.join("");
+  return {th1,th2,dth};
+}
+
+function drawTri(r){
+  const D=r.d, hp=r.ph??0, ho=r.oh??0, dh=hp-ho, th=Math.atan2(dh,D)*R2D, hyp=Math.hypot(D,dh);
+  // same drawn size as the triangle in the main diagram
+  const e=20*Math.PI/180, run=270*Math.cos(e), rise=270*Math.sin(e);
+  const G=220, O=[150,G], F=[O[0]+run,G], T=[F[0],G-rise];
+  const o=[], red="var(--red)", ink="var(--ink)";
+  o.push(`<line x1="40" y1="${G}" x2="720" y2="${G}" stroke="${ink}" stroke-width="2"/>`);
+  o.push(`<path d="M${P(T[0]-60,G)}L${P(...T)}L${P(T[0]+46,G)}" fill="none" stroke="${ink}" stroke-width="2"/>`);
+  o.push(`<path d="M${P(...O)}L${P(...F)}L${P(...T)}Z" fill="none" stroke="${red}" stroke-width="2.4"/>`);
+  o.push(`<path d="M${P(F[0]-14,G)}L${P(F[0]-14,G-14)}L${P(F[0],G-14)}" fill="none" stroke="${red}" stroke-width="1.4"/>`);
+  o.push(`<path d="${arcPath(O[0],G,70,0,-e)}" fill="none" stroke="${red}" stroke-width="1.6"/>`);
+  o.push(`<text class="lbl" x="${O[0]+78}" y="${G-9}" font-size="22" style="fill:var(--red)">θ₁</text>`);
+  o.push(`<path d="${star(T[0],T[1],13)}" fill="var(--star)" stroke="${ink}" stroke-width="1"/>`);
+  o.push(`<circle cx="${O[0]}" cy="${G}" r="6" fill="${ink}"/>`);
+  o.push(`<text class="lbl" x="${O[0]-14}" y="${G+30}" font-size="24" text-anchor="end">O₁</text>`);
+  o.push(`<text class="lbl" x="${T[0]-12}" y="${T[1]-14}" font-size="24" text-anchor="end">P₁</text>`);
+  // leg labels
+  o.push(`<text x="${(O[0]+F[0])/2}" y="${G+30}" font-size="15" text-anchor="middle" style="fill:var(--red)">adjacent D = ${D.toLocaleString()} m</text>`);
+  o.push(`<text x="${F[0]+56}" y="${(G+T[1])/2-6}" font-size="15" style="fill:var(--red)">opposite Δh peak</text>`);
+  o.push(`<text x="${F[0]+56}" y="${(G+T[1])/2+14}" font-size="15" style="fill:var(--red)">= ${dh.toLocaleString()} m</text>`);
+  const mx=(O[0]+T[0])/2, my=(G+T[1])/2;
+  o.push(`<text x="${mx-18}" y="${my-16}" font-size="14" text-anchor="end" class="note">hypotenuse (line of sight)</text>`);
+  o.push(`<text x="${mx-18}" y="${my+2}" font-size="14" text-anchor="end" class="note">${Math.round(hyp).toLocaleString()} m</text>`);
+  o.push(`<text class="note" x="${T[0]+14}" y="${T[1]-4}" font-size="13">peak elev ${hp.toLocaleString()} m</text>`);
+  o.push(`<text class="note" x="${O[0]+12}" y="${G+50}" font-size="13">observer elev ${ho.toLocaleString()} m</text>`);
+  // formula
+  o.push(`<text x="40" y="36" font-size="17">θ₁ = atan(opposite / adjacent) = atan(Δh peak / D)</text>`);
+  o.push(`<text x="40" y="62" font-size="17">   = atan(${dh.toLocaleString()} / ${D.toLocaleString()}) = <tspan style="fill:var(--red)" font-weight="600">${dms(th)}</tspan></text>`);
+  o.push(`<text class="note" x="40" y="${G+74}" font-size="13">Angle drawn larger than true.</text>`);
+  $("tri").innerHTML=o.join("");
+}
+
+function render(){
+  const r=DATA[+$("pick").value], t=draw(r); drawTri(r);
+  const kv=(k,v,b)=>`<div class="kv${b?" big":""}"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+  $("readout").innerHTML=kv("Peak",esc(r.peak),1)+kv("Occulted star",`<span style="color:var(--star)">★</span> ${esc(r.star)}`,1)
+   +kv("Date · time",`${esc(r.date)} · ${esc(r.time)}`)+kv("UTC offset (recorded)",r.utc?esc(r.utc):"—")
+   +kv("Distance D (O₁→P₁)",`${r.d.toLocaleString()} m`)+kv("Peak / obs elev",`${(r.ph??0).toLocaleString()} / ${(r.oh??0).toLocaleString()} m`)
+   +kv("Δh peak",`${((r.ph??0)-(r.oh??0)).toLocaleString()} m`)
+   +kv("θ₁ = atan(Δh/D)",dms(t.th1))+kv("θ₂ = Star→Peak ♈︎",dms(t.th2))+kv("θ₂ − θ₁",dms(t.th2-t.th1))+kv("♈︎Δ (recorded)",`<span style="color:var(--purple)">${dms(t.dth)}</span>`);
+}
+render();
+</script>
+</body>
+</html>
