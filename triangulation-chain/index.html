@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Triangulation Chain: Baseline to Check Base</title>
+<meta property="og:title" content="Triangulation Chain: Baseline to Check Base">
+<meta property="og:description" content="A 10 km bar-measured baseline carried through seven first-order triangles to a check base. Each triangle's angle sum is compared with its spherical excess, with an animated theodolite reading every angle.">
+<meta name="theme-color" content="#f3efe4">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3efe4; --card:#f8f5ec; --plate:#ffffff; --ink:#1a1813; --muted:#6b6658; --rule:#ddd5c2;
+  --accent:#4a8fb0; --orange:#e0913a; --red:#c8543a; --purple:#7a56b8; --station:#3c3489;
+  --e1:#cfe9de; --e2:#8fcfb4; --e3:#3fa77f; --e4:#1d6e53; --estroke:#1d6e53;
+  --bar:#16140f; --bar-ink:#f3efe4;
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif; --f-body:"Archivo",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2;
+  --e1:#2c4a3f; --e2:#2f6e57; --e3:#3a9a76; --e4:#6fd0a6; --estroke:#6fd0a6;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2;
+  --e1:#2c4a3f; --e2:#2f6e57; --e3:#3a9a76; --e4:#6fd0a6; --estroke:#6fd0a6;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding-top:28px}
+.back{margin:0 0 14px;font-family:var(--f-mono);font-size:13px}.back a{color:var(--muted);text-decoration:none}.back a:hover{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,56px);line-height:1.04;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance;max-width:22ch}
+.sub{color:var(--ink);font-size:18px;max-width:64ch;margin:14px 0 0}
+.panel{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px}
+.ptitle{font-family:var(--f-mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.svgbox{background:var(--plate);border:1.5px solid var(--rule);border-radius:12px;overflow-x:auto}
+.svgbox svg{display:block;width:100%;height:auto;min-width:620px}
+.math{font-family:var(--f-display);font-style:italic;font-size:19px;text-align:center;line-height:1.7;overflow-x:auto;padding:2px 4px}
+svg text{font-family:var(--f-mono);fill:var(--ink)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:500 14px var(--f-mono);letter-spacing:.06em;color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:9px 14px;cursor:pointer}
+button:hover{border-color:var(--muted)}button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.step{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:16px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;border:1px solid var(--estroke)}
+.cap{font-size:16px;margin:0;max-width:72ch}
+.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px 20px;min-height:84px}
+.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--muted)}
+.kv .v{font-family:var(--f-display);font-weight:700;font-size:23px;line-height:1.2;font-variant-numeric:tabular-nums}
+.prose p{margin:0 0 10px;max-width:72ch}.prose p:last-child{margin:0}
+ol.steps{margin:0;padding-left:22px;max-width:72ch}ol.steps li{margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-family:var(--f-display);font-variant:small-caps;font-weight:700;letter-spacing:.03em;text-align:left;border-bottom:1.5px solid var(--rule);padding:8px 10px;font-size:16px}
+td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
+td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tablebox{overflow-x:auto}
+details.src{background:var(--bar);color:var(--bar-ink);border-radius:12px;padding:14px 18px;font-family:var(--f-mono);font-size:14px}
+details.src summary{cursor:pointer;font-weight:600}
+details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
+details.src a{color:var(--bar-ink)}
+details.src q{font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="back"><a href="../">← All simulations</a></p>
+    <p class="eyebrow">Theorema Egregium · triangulation</p>
+    <h1>A baseline, seven triangles and a check base</h1>
+    <p class="sub">One 10 km line is measured by hand. Every other length comes from angles read at each station. Each triangle's angles sum to more than 180° by its spherical excess, and a second base at the far end checks the length carried through the chain.</p>
+  </header>
+
+  <div class="controls">
+    <button id="prev" aria-label="Previous step">← Back</button>
+    <button id="next">Next →</button>
+    <button id="play">Play</button>
+    <button id="again">Replay swing</button>
+    <button id="reseed">New errors</button>
+    <span class="step" id="tag"></span>
+  </div>
+
+  <section class="panel">
+    <div class="ptitle">1 · The chain, overhead</div>
+    <div class="legend"><span><i style="background:var(--e1)"></i>Excess &lt; 1″</span><span><i style="background:var(--e2)"></i>1–3″</span><span><i style="background:var(--e3)"></i>3–8″</span><span><i style="background:var(--e4)"></i>≥ 8″</span><span><i style="background:var(--orange);border-color:var(--orange)"></i>Measured base, sight lines, angle</span></div>
+    <div class="svgbox"><svg id="map" viewBox="0 0 680 360" role="img" aria-label="Overhead view of the triangle chain"></svg></div>
+    <p class="cap" id="cap"></p>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">2 · The theodolite at the station</div>
+    <div class="svgbox"><svg id="pov" viewBox="0 0 680 230" role="img" aria-label="Theodolite eyepiece and horizontal circle"><defs><clipPath id="eye"><circle cx="110" cy="115" r="95"/></clipPath></defs><g id="povg"></g></svg></div>
+    <div class="math">angle = reading on second target − reading on first target</div>
+  </section>
+
+  <section class="readout" id="res" aria-live="polite"></section>
+
+  <section class="panel">
+    <div class="ptitle">3 · Curvature from the angles alone</div>
+    <p class="cap">No radius goes in. Each triangle's measured excess (angle sum − 180°) is divided by its area, computed from the measured baseline and the angles, giving K and then R. The last two columns compare that R with an assumed Earth radius of 6,371 km. Rows fill in as each triangle closes.</p>
+    <div class="math">K = (α + β + γ − 180°) / A,&nbsp;&nbsp;&nbsp; R = 1 / √K,&nbsp;&nbsp;&nbsp; σ<sub>R</sub> / R = ½ · σ<sub>sum</sub> / (α + β + γ − 180°)</div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Triangle</th><th class="n">Area (computed)</th><th class="n">Measured excess</th><th class="n">R from angles</th><th class="n">R − 6,371 km</th><th class="n">Difference <span style="font-variant:normal">(σ)</span></th></tr></thead>
+      <tbody id="rtable"></tbody>
+    </table></div>
+    <p class="cap">The combined row is a least-squares fit of one K to all closed triangles: K̂ = Σ(excessᵢ · Aᵢ) / Σ Aᵢ², with σ<sub>K</sub> = σ<sub>sum</sub> / √(Σ Aᵢ²). Small triangles carry almost no weight because their excess is buried in the 1.2″ angle-sum error.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">4 · Malice: how hard is it to fudge the numbers?</div>
+    <p>Pick a data set and watch which checks fire. The honest set is the simulation above. The two forgeries are the obvious ways to cook a triangulation: strip the excess so every triangle closes on 180° (a flat world), or smooth the noise so the closures look too good.</p>
+    <div class="ctl" style="max-width:420px"><label for="mode" style="font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:var(--muted)">Data set</label>
+      <select id="mode" style="font:500 16px var(--f-body);color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:11px 12px">
+        <option value="honest">Honest observations</option>
+        <option value="flat">Forger removes the excess (sums forced to 180°)</option>
+        <option value="perfect">Forger smooths the noise (too perfect)</option>
+      </select></div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Check</th><th class="n">Result</th><th>What it catches</th></tr></thead>
+      <tbody id="mtable"></tbody>
+    </table></div>
+    <p><b>What a convincing forgery needs.</b> Every angle in every triangle must be consistent with one set of station positions on one surface, because a network has more observations than unknowns: each closed triangle, each diagonal across a quadrilateral, and each side computed two ways is a condition the numbers must satisfy at once. Faking that means computing the true geometry first, so the forger needs the answer to fake the data. The scatter must also look like real error: closures near 1″ for first order, readings that vary between the 16 sets as the instruments really did, and no favoured final digits.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Fudge</th><th>Difficulty</th><th>What exposes it</th></tr></thead>
+      <tbody>
+        <tr><td>Nudge one small triangle</td><td>Easy</td><td>Usually nothing: its excess (under 1″) is below the noise. Neighbouring triangles sharing its sides may disagree.</td></tr>
+        <tr><td>Remove the excess everywhere (flat)</td><td>Easy to do, easy to catch</td><td>Closures against the sphere scale with area; K comes out zero. The check base does not catch it, because side lengths barely depend on the excess.</td></tr>
+        <tr><td>Add excess to a flat world (globe)</td><td>Equally easy to do</td><td>The mirror image: closures against flat scale with area. Angles alone can't say which party fudged; an independent re-measurement can.</td></tr>
+        <tr><td>Smooth the scatter</td><td>Easy</td><td>Closure scatter far below the instrument's known error (χ² per triangle near 0). Raw field books expose it: Méchain concealed a Barcelona latitude discrepancy, and Delambre found it in his notebooks after his death.</td></tr>
+        <tr><td>A consistent fake network</td><td>Hard</td><td>Requires solving the network first. Still exposed by independent checks: other teams' bases, adjoining national networks at their junctions, star latitudes, and modern GNSS re-occupation of surviving monuments.</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Independent checks.</b> The check base, measured by a different crew with bars, tests the scale. Junctions with neighbouring surveys (France–England in 1787, the Struve Arc across ten countries) test everything at once, because each side was measured by people with no access to the other's numbers. Surviving monuments can be re-measured today with GNSS: a recent RTK check of one recovered Yolo base stone put it 3 cm in distance from its 1881 record.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">5 · Methods</div>
+    <p><b>Were all three angles measured?</b> Yes. In primary (first-order) triangulation every angle of every triangle is observed at its own station. The third angle is never computed from the other two, because the closure (sum − 180° − excess) is the triangle's own error check.</p>
+    <p><b>How is distance determined?</b> Only the baselines are measured. Bars or tapes are laid end to end along a prepared line, corrected for temperature, slope and sag, then reduced to sea level. Every other side is computed: from one known side and the adjusted angles, by the law of sines, triangle after triangle.</p>
+    <ol class="steps">
+      <li><b>Baseline.</b> 10 km measured with 5 m bars, about 2,000 placements, to 1 part in 300,000 (±33 mm).</li>
+      <li><b>Angles.</b> At each station the theodolite is levelled, the circle read on one target, then swung to the next and read again. 16 positions are averaged.</li>
+      <li><b>Excess.</b> From the area of each triangle:</li>
+    </ol>
+    <div class="math">E = A / R²,&nbsp;&nbsp;&nbsp; closure = (α + β + γ − 180°) − E</div>
+    <ol class="steps" start="4">
+      <li><b>Legendre's theorem.</b> Subtract a third of the measured (α + β + γ − 180°) from each angle, then solve as a plane triangle. This needs no radius: the excess and the closure are removed together.</li>
+    </ol>
+    <div class="math">b = a · sin β′ / sin α′</div>
+    <ol class="steps" start="5">
+      <li><b>Check base.</b> A second base at the far end is measured by bars and compared with the length carried through all seven triangles.</li>
+    </ol>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">6 · Errors in this simulation</div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Quantity</th><th class="n">Error <span style="font-variant:normal">(1σ)</span></th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td>Each observed angle</td><td class="n">0.7″</td><td>Between the FGCC first-order direction standard (0.4″, 16 positions) and 19th-century practice</td></tr>
+        <tr><td>Angle sum of a triangle</td><td class="n">1.2″</td><td>√3 × 0.7″</td></tr>
+        <tr><td>Baseline and check base</td><td class="n">3.3 ppm</td><td>1 : 300,000, compensating-bar era; the Coast Survey's Bache–Würdemann bases averaged 1 : 310,000</td></tr>
+        <tr><td>Length carried through the chain</td><td class="n">computed</td><td>Base error plus each triangle's angle error, propagated through the law of sines</td></tr>
+        <tr><td>Earth radius used for excess</td><td class="n">6,371 km</td><td>Mean sphere; no flattening, refraction or deflection of the vertical</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Triangle</th><th class="n">Shared side</th><th class="n">Other sides</th><th class="n">Area</th><th class="n">Excess</th><th class="n">Excess ÷ 1.2″ <span style="font-variant:normal">(σ)</span></th></tr></thead>
+      <tbody id="tritable"></tbody>
+    </table></div>
+    <p class="cap">FGCC triangle-closure limits: first-order average ≤ 1.0″, maximum 3″; second-order class I 1.2″ / 3″; class II 2.0″ / 5″. Excess grows with area, so the largest triangle carries it at well over 10σ while the smallest stay below the noise.</p>
+  </section>
+
+  <details class="src">
+    <summary>Sources for this page (pages and quotes)</summary>
+    <ul>
+      <li>Federal Geodetic Control Committee (1984), <a href="https://www.ngs.noaa.gov/FGCS/tech_pub/1984-stds-specs-geodetic-control-networks.pdf">Standards and Specifications for Geodetic Control Networks</a>, pp. 3-2 and 3-3: first-order directions 16 positions, standard deviation of mean 0.4″; triangle closure average 1.0″, maximum 3″.</li>
+      <li>NOAA, <a href="https://geodesy.noaa.gov/library/pdfs/SP_NOS_NGS_5.pdf">Special Publication NOS NGS 5, Geodetic Surveys in the United States</a>: Bache–Würdemann compensating apparatus, <q>1:310,000</q> average standard error; Hassler's Fire Island base, <q>four 2 meter iron bars laid end to end</q>; invar tapes <q>1:675,000 or better</q>.</li>
+      <li>U.S. Coast and Geodetic Survey (1882), <a href="https://surveyorconnect.com/wp-content/uploads/wpforo/attachments/10/13549-Yolo-Base-Line-Excerpt-from-1882-USCGS-Report.pdf">Yolo Base Line excerpt</a>: 17,490 m measured in 3,498 bar lengths, twice, plus a partial third measurement.</li>
+      <li>RPLS.com, <a href="https://rpls.com/?p=1247262">Yolo Base Line 1881</a>: an RTK check of a recovered fence stone missed the record by 3 cm in distance and 14 cm in line.</li>
+      <li>The American Surveyor (2007), <a href="https://amerisurv.com/2007/03/31/woodwards-ice-bar/">Woodward's Ice Bar</a>: 5 m steel bar in melting ice, Holton base 1891, about 100 m per hour.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+const R=6371,SA=0.7,SB=1/300000,K=3.33;
+const ORI=[37.21,112.48,201.93,293.07,18.66,154.32,247.85,331.4,76.2];
+const F=[1.8,1.8,1.8,1.8,0.55,0.55,0.55];
+const $=id=>document.getElementById(id);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let seed=7,rnd;
+function mk(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function g(){let u=0,v=0;while(!u)u=rnd();while(!v)v=rnd();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+
+const P=[[0,0],[10,0]],TR=[];
+(function(){let sh=[0,1],prev=null;
+ F.forEach(f=>{const a=P[sh[0]],b=P[sh[1]],dx=b[0]-a[0],dy=b[1]-a[1],base=Math.hypot(dx,dy),L=f*base,h=Math.sqrt(L*L-base*base/4);
+  let s=1;if(prev!==null){const q=P[prev],cr=dx*(q[1]-a[1])-dy*(q[0]-a[0]);s=cr>0?-1:1;}
+  const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2;P.push([mx-s*dy/base*h,my+s*dx/base*h]);
+  const k=P.length-1;TR.push([sh[0],sh[1],k]);prev=sh[0];sh=[sh[1],k];});})();
+const D=(i,j)=>Math.hypot(P[j][0]-P[i][0],P[j][1]-P[i][1]);
+function angAt(i,j,k){const a=D(j,k),b=D(i,j),c=D(i,k);return Math.acos((b*b+c*c-a*a)/(2*b*c))*180/Math.PI;}
+function area(t){const[i,j,k]=t;return Math.abs((P[j][0]-P[i][0])*(P[k][1]-P[i][1])-(P[k][0]-P[i][0])*(P[j][1]-P[i][1]))/2;}
+const EX=TR.map(t=>area(t)/(R*R)*206265);
+
+$("tritable").innerHTML=TR.map((t,n)=>`<tr><td>${n+1}</td><td class="n">${D(t[0],t[1]).toFixed(1)} km</td><td class="n">${D(t[1],t[2]).toFixed(1)} / ${D(t[0],t[2]).toFixed(1)} km</td><td class="n">${Math.round(area(t)).toLocaleString()} km²</td><td class="n">${EX[n].toFixed(2)}″</td><td class="n">${(EX[n]/(SA*Math.sqrt(3))).toFixed(1)}σ</td></tr>`).join("");
+
+let M,C;
+function simulate(){rnd=mk(seed);
+ M={base:D(0,1)*(1+SB*g()),ang:[]};
+ const mode=$("mode").value;
+ TR.forEach((t,n)=>{const[i,j,k]=t;M.ang.push([angAt(i,j,k),angAt(j,k,i),angAt(k,i,j)].map(a=>{const nz=SA*g()/3600;
+  return mode==="flat"?a+nz:mode==="perfect"?a+EX[n]/3/3600+nz*0.08:a+EX[n]/3/3600+nz;}));});
+ const last=TR[TR.length-1];M.chk=D(last[1],last[2])*(1+SB*g());
+ C={clos:[],sig2:SB*SB,area:[],meas:[]};let known=M.base;
+ TR.forEach((t,n)=>{const a=M.ang[n],ms=((a[0]+a[1]+a[2])-180)*3600,cl=ms-EX[n];C.clos.push(cl);C.meas.push(ms);
+  const r=Math.PI/180,adj=a.map(x=>x-(ms/3)/3600);const s=known*Math.sin(adj[0]*r)/Math.sin(adj[2]*r);
+  C.area.push(0.5*known*s*Math.sin(adj[1]*r));
+  const sa=SA*Math.sqrt(2/3)/206265;C.sig2+=sa*sa*(1/Math.tan(adj[0]*r)**2+1/Math.tan(adj[2]*r)**2);known=s;});
+ C.chk=known;}
+
+const NS=1+TR.length*3+1;let st=0,timer=null,raf=null,anim=null;
+const xs=P.map(p=>p[0]),ys=P.map(p=>p[1]),x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+const SC=Math.min(600/(x1-x0),300/(y1-y0)),OX=340-(x0+x1)/2*SC,OY=180+(y0+y1)/2*SC;
+const X=p=>OX+p[0]*SC,Y=p=>OY-p[1]*SC;
+function col(e){return e<1?"var(--e1)":e<3?"var(--e2)":e<8?"var(--e3)":"var(--e4)";}
+function ln(i,j,c,w,d){return `<line x1="${X(P[i]).toFixed(1)}" y1="${Y(P[i]).toFixed(1)}" x2="${X(P[j]).toFixed(1)}" y2="${Y(P[j]).toFixed(1)}" stroke="${c}" stroke-width="${w}"${d?' stroke-dasharray="5 4"':''}/>`;}
+function dms(x){x=((x%360)+360)%360;let d=Math.floor(x),mf=(x-d)*60,m=Math.floor(mf),s=Math.round((mf-m)*600)/10;if(s>=60){s-=60;m++;}if(m>=60){m-=60;d++;}return `${d}°${String(m).padStart(2,"0")}′${s.toFixed(1).padStart(4,"0")}″`;}
+function dm(x){let d=Math.floor(x),m=Math.round((x-d)*60);if(m===60){m=0;d++;}return `${d}°${String(m).padStart(2,"0")}′`;}
+function bearing(i,j){return(90-Math.atan2(P[j][1]-P[i][1],P[j][0]-P[i][0])*180/Math.PI+360)%360;}
+function target(d){return d<35?{n:"flag on a 4 m pole",k:"pole",h:4}:d<70?{n:"signal lamp on a tower (night)",k:"lamp"}:{n:"heliotrope flash",k:"helio"};}
+function tgSvg(x,tg,d){
+ if(tg.k==="pole"){const px=Math.max(2,tg.h/(d*1000)*206265/K);return `<line x1="${x.toFixed(1)}" y1="${(115+px/2).toFixed(1)}" x2="${x.toFixed(1)}" y2="${(115-px/2).toFixed(1)}" stroke="#D3D1C7" stroke-width="1.5"/><rect x="${x.toFixed(1)}" y="${(115-px/2).toFixed(1)}" width="${(px/3+2).toFixed(1)}" height="${(px/4+1.5).toFixed(1)}" fill="#e0913a"/>`;}
+ if(tg.k==="lamp")return `<circle cx="${x.toFixed(1)}" cy="115" r="3" fill="#FAC775"/><circle cx="${x.toFixed(1)}" cy="115" r="7" fill="none" stroke="#FAC775" stroke-width="0.6"/>`;
+ let s=`<circle cx="${x.toFixed(1)}" cy="115" r="2.5" fill="#FAEEDA"/>`;[0,45,90,135].forEach(q=>{const c=Math.cos(q*Math.PI/180)*9,sn=Math.sin(q*Math.PI/180)*9;s+=`<line x1="${(x-c).toFixed(1)}" y1="${(115-sn).toFixed(1)}" x2="${(x+c).toFixed(1)}" y2="${(115+sn).toFixed(1)}" stroke="#FAEEDA" stroke-width="0.8"/>`;});return s;}
+function pt(cx,cy,r,deg){const a=(deg-90)*Math.PI/180;return[cx+r*Math.cos(a),cy+r*Math.sin(a)];}
+
+function mapArc(A,f,cur){
+ const ox=X(P[A.o]),oy=Y(P[A.o]),ta=Math.atan2(Y(P[A.a])-oy,X(P[A.a])-ox),tb=Math.atan2(Y(P[A.b])-oy,X(P[A.b])-ox);
+ let d=tb-ta;while(d<=-Math.PI)d+=2*Math.PI;while(d>Math.PI)d-=2*Math.PI;
+ const tc=ta+d*f,r=30,sx=ox+r*Math.cos(ta),sy=oy+r*Math.sin(ta),ex=ox+r*Math.cos(tc),ey=oy+r*Math.sin(tc);
+ let s="";
+ if(f>0)s+=`<path d="M${sx.toFixed(1)} ${sy.toFixed(1)} A${r} ${r} 0 0 ${d>0?1:0} ${ex.toFixed(1)} ${ey.toFixed(1)}" fill="none" stroke="var(--orange)" stroke-width="2.5"/>`;
+ s+=`<line x1="${ox.toFixed(1)}" y1="${oy.toFixed(1)}" x2="${(ox+46*Math.cos(tc)).toFixed(1)}" y2="${(oy+46*Math.sin(tc)).toFixed(1)}" stroke="var(--orange)" stroke-width="3" stroke-linecap="round"/>`;
+ const tm=ta+d*f/2,lx=ox+54*Math.cos(tm),ly=oy+54*Math.sin(tm);
+ if(f>0.05)s+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="600">${dm(cur-A.r1)}</text>`;
+ s+=`<path d="M${(ox-8).toFixed(1)} ${(oy+16).toFixed(1)} L${ox.toFixed(1)} ${oy.toFixed(1)} L${(ox+8).toFixed(1)} ${(oy+16).toFixed(1)} M${ox.toFixed(1)} ${oy.toFixed(1)} L${ox.toFixed(1)} ${(oy+16).toFixed(1)}" fill="none" stroke="var(--red)" stroke-width="1.6"/>`;
+ s+=`<circle cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" r="6" fill="var(--orange)" stroke="var(--red)" stroke-width="1"/>`;
+ s+=`<text x="${(ox+12).toFixed(1)}" y="${(oy+24).toFixed(1)}" font-size="12">theodolite at ${A.o}</text>`;
+ const gEl=$("maparc");if(gEl)gEl.innerHTML=s;}
+
+function povFrame(now){
+ const A=anim,e=now-A.t0,red=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+ let f=red?1:e<900?0:e>2700?1:(e-900)/1800;f=f<0.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
+ const cur=A.r1+(A.r2-A.r1)*f;
+ mapArc(A,f,cur);
+ let s=`<circle cx="110" cy="115" r="95" fill="#2C2C2A"/><g clip-path="url(#eye)"><line x1="0" y1="119" x2="240" y2="119" stroke="#444441" stroke-width="1"/>`;
+ [[A.r1,A.ta,A.da],[A.r2,A.tb,A.db]].forEach(([rr,tg,d])=>{const x=110+(rr-cur)*3600/K;if(x>0&&x<230)s+=tgSvg(x,tg,d);});
+ if(f>0&&f<1){for(let k=0;k<6;k++){const x=((now/3+k*40)%230);s+=`<line x1="${x.toFixed(1)}" y1="119" x2="${(x+14).toFixed(1)}" y2="119" stroke="#5F5E5A" stroke-width="1"/>`;}}
+ s+=`</g><line x1="15" y1="115" x2="205" y2="115" stroke="#B4B2A9" stroke-width="0.6"/><line x1="110" y1="20" x2="110" y2="210" stroke="#B4B2A9" stroke-width="0.6"/><circle cx="110" cy="115" r="95" fill="none" stroke="var(--muted)" stroke-width="1"/>`;
+ s+=`<text x="110" y="224" text-anchor="middle" dominant-baseline="central" font-size="11" fill="var(--muted)">EYEPIECE · 10′ FIELD</text>`;
+ const cx=320,cy=110,rr=80;s+=`<circle cx="${cx}" cy="${cy}" r="${rr}" fill="none" stroke="var(--muted)" stroke-width="1"/>`;
+ for(let d=0;d<360;d+=30){const p1=pt(cx,cy,rr,d),p2=pt(cx,cy,rr-7,d);s+=`<line x1="${p1[0].toFixed(1)}" y1="${p1[1].toFixed(1)}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" stroke="var(--muted)" stroke-width="1"/>`;}
+ const a1=pt(cx,cy,rr,A.r1),a2=pt(cx,cy,rr,A.r2),pc=pt(cx,cy,rr*0.92,cur);
+ if(f>0){const ae=pt(cx,cy,34,cur),as=pt(cx,cy,34,A.r1),large=(cur-A.r1)>180?1:0;s+=`<path d="M${as[0].toFixed(1)} ${as[1].toFixed(1)} A34 34 0 ${large} 1 ${ae[0].toFixed(1)} ${ae[1].toFixed(1)}" fill="none" stroke="var(--orange)" stroke-width="2"/>`;}
+ s+=`<circle cx="${a1[0].toFixed(1)}" cy="${a1[1].toFixed(1)}" r="4" fill="var(--station)"/><circle cx="${a2[0].toFixed(1)}" cy="${a2[1].toFixed(1)}" r="4" fill="var(--station)"/>`;
+ s+=`<line x1="${cx}" y1="${cy}" x2="${pc[0].toFixed(1)}" y2="${pc[1].toFixed(1)}" stroke="var(--orange)" stroke-width="2.5"/><circle cx="${cx}" cy="${cy}" r="3" fill="var(--orange)"/>`;
+ s+=`<text x="${cx}" y="${cy+rr+20}" text-anchor="middle" dominant-baseline="central" font-size="12">CIRCLE ${dms(cur)}</text>`;
+ const L=[`Theodolite at station ${A.o}`,`Target ${A.a}: ${A.da.toFixed(1)} km, ${A.ta.n}`,`  reading ${dms(A.r1)}`,`Target ${A.b}: ${A.db.toFixed(1)} km, ${A.tb.n}`,`  reading ${f>=1?dms(A.r2):"swinging…"}`,`Angle = ${f>=1?dms(A.r2-A.r1):dms(cur-A.r1)}`];
+ L.forEach((l,i)=>{s+=`<text x="420" y="${34+i*26}" dominant-baseline="central" font-size="${i===0?14:12}" font-weight="${i===0||i===5?600:400}">${l}</text>`;});
+ $("povg").innerHTML=s;
+ if(f<1)raf=requestAnimationFrame(povFrame);}
+
+function staticPov(lines){let s=`<circle cx="110" cy="115" r="95" fill="#2C2C2A"/><text x="110" y="115" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#D3D1C7">BARS, NOT SIGHTINGS</text>`;
+ lines.forEach((l,i)=>{s+=`<text x="260" y="${34+i*26}" dominant-baseline="central" font-size="${i===0?14:12}" font-weight="${i===0?600:400}">${l}</text>`;});$("povg").innerHTML=s;}
+
+const SS=SA*Math.sqrt(3);
+function rtable(n){
+ const fmt=x=>Math.round(x).toLocaleString();
+ let rows="",sEA=0,sAA=0;
+ for(let i=0;i<n;i++){const A=C.area[i],e=C.meas[i],Kr=e/206265/A,sK=SS/206265/A;sEA+=e/206265*A;sAA+=A*A;
+  let rc,dc,zc;if(Kr>0){const Ri=1/Math.sqrt(Kr),sRi=Ri*0.5*sK/Kr;rc=`${fmt(Ri)} ± ${fmt(sRi)} km`;dc=`${Ri-R>=0?"+":""}${fmt(Ri-R)} km`;zc=`${(Math.abs(Ri-R)/sRi).toFixed(1)}σ`;}
+  else{rc="excess ≤ 0 (no positive R)";dc="—";zc="—";}
+  rows+=`<tr><td>${i+1}</td><td class="n">${fmt(A)} km²</td><td class="n">${e.toFixed(2)}″ ± ${SS.toFixed(1)}″</td><td class="n">${rc}</td><td class="n">${dc}</td><td class="n">${zc}</td></tr>`;}
+ let out=null;
+ if(n>0){const Kh=sEA/sAA,sKh=SS/206265/Math.sqrt(sAA);
+  if(Kh>0){const Rh=1/Math.sqrt(Kh),sRh=Rh*0.5*sKh/Kh;out={R:Rh,sR:sRh};
+   rows+=`<tr><td><b>All ${n}, combined</b></td><td class="n">${fmt(C.area.slice(0,n).reduce((a,b)=>a+b,0))} km²</td><td class="n">K is ${(Kh/sKh).toFixed(1)}σ from flat</td><td class="n"><b>${fmt(Rh)} ± ${fmt(sRh)} km</b></td><td class="n"><b>${Rh-R>=0?"+":""}${fmt(Rh-R)} km</b></td><td class="n"><b>${(Math.abs(Rh-R)/sRh).toFixed(1)}σ</b></td></tr>`;}
+  else rows+=`<tr><td><b>All ${n}, combined</b></td><td class="n" colspan="5">combined K ≤ 0: no positive R yet</td></tr>`;}
+ else rows=`<tr><td colspan="6">No triangles closed yet.</td></tr>`;
+ $("rtable").innerHTML=rows;return out;}
+function malice(){
+ const n=TR.length,cl=C.clos,A=C.area;
+ const chi=cl.reduce((s,c)=>s+(c/SS)**2,0)/n,chiLo=1.690/7,chiHi=16.013/7;
+ let sxy=0,sxx=0;for(let i=0;i<n;i++){sxy+=cl[i]*A[i];sxx+=A[i]*A[i];}
+ const slope=sxy/sxx,sSlope=SS/Math.sqrt(sxx),zs=slope/sSlope;
+ const RF=(()=>{let a=0,b=0;for(let i=0;i<n;i++){a+=C.meas[i]/206265*A[i];b+=A[i]*A[i];}const K=a/b,sK=SS/206265/Math.sqrt(b);return{K,sK};})();
+ const ppm=(C.chk-M.chk)/M.chk*1e6,sg=Math.sqrt(C.sig2+SB*SB)*1e6,zc=ppm/sg;
+ const flag=(bad,txt)=>bad?`<b style="color:var(--red)">${txt}</b>`:txt;
+ const rows=[
+  ["Closure scatter, χ² per triangle (95% range "+chiLo.toFixed(2)+"–"+chiHi.toFixed(2)+")",flag(chi<chiLo||chi>chiHi,chi.toFixed(2)),"Too-perfect data (low) or blunders (high)"],
+  ["Closure versus area, against the sphere",flag(Math.abs(zs)>3,`${(slope*1000).toFixed(2)}″ per 1,000 km² (${zs.toFixed(1)}σ)`),"Excess removed or added: closures that grow with area"],
+  ["K from the angles alone",flag(RF.K/RF.sK<3,`${(RF.K/RF.sK).toFixed(1)}σ from flat`+(RF.K>0?`, R ≈ ${Math.round(1/Math.sqrt(RF.K)).toLocaleString()} km`:"")),"Whether the angles carry curvature at all"],
+  ["Check base, computed − measured",flag(Math.abs(zc)>3,`${ppm>=0?"+":""}${ppm.toFixed(1)} ppm (${Math.abs(zc).toFixed(1)}σ)`),"Scale errors; blind to the excess"]];
+ $("mtable").innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td class="n">${r[1]}</td><td>${r[2]}</td></tr>`).join("");}
+const kv=(k,v)=>`<div class="kv"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+function draw(){
+ if(raf){cancelAnimationFrame(raf);raf=null;}
+ const tri=st===0?-1:st===NS-1?TR.length:Math.floor((st-1)/3),sub=st===0||st===NS-1?-1:(st-1)%3;
+ let s="";
+ TR.forEach((t,n)=>{if(n<tri||(n===tri&&sub===2)||st===NS-1){const p=t.map(i=>X(P[i]).toFixed(1)+","+Y(P[i]).toFixed(1)).join(" ");s+=`<polygon points="${p}" fill="${col(EX[n])}" fill-opacity="0.75" stroke="var(--estroke)" stroke-width="1"/>`;const cx=t.reduce((a,i)=>a+X(P[i]),0)/3,cy=t.reduce((a,i)=>a+Y(P[i]),0)/3;if(SC*Math.sqrt(area(t))>28&&n!==tri)s+=`<text x="${cx.toFixed(1)}" y="${cy.toFixed(1)}" text-anchor="middle" dominant-baseline="central" font-size="12">${EX[n].toFixed(1)}″</text>`;}});
+ if(sub>=0){const t=TR[tri];s+=ln(t[0],t[1],"var(--muted)",1,1)+ln(t[1],t[2],"var(--muted)",1,1)+ln(t[2],t[0],"var(--muted)",1,1);const o=t[sub],a=t[(sub+1)%3],b=t[(sub+2)%3];s+=ln(o,a,"var(--orange)",2)+ln(o,b,"var(--orange)",2);}
+ s+=ln(0,1,"var(--orange)",4);const last=TR[TR.length-1];if(st===NS-1)s+=ln(last[1],last[2],"var(--orange)",4);
+ P.forEach(p=>{s+=`<circle cx="${X(p).toFixed(1)}" cy="${Y(p).toFixed(1)}" r="3.5" fill="var(--station)"/>`;});
+ P.forEach((p,i)=>{s+=`<text x="${(X(p)-10).toFixed(1)}" y="${(Y(p)-8).toFixed(1)}" text-anchor="end" font-size="12">${i}</text>`;});
+ s+=`<line x1="40" y1="340" x2="${(40+20*SC).toFixed(1)}" y2="340" stroke="var(--muted)" stroke-width="2"/><text x="${(46+20*SC).toFixed(1)}" y="340" dominant-baseline="central" font-size="12">20 km</text><g id="maparc"></g>`;
+ $("map").innerHTML=s;
+ let cap="",r="";
+ if(sub>=0){const t=TR[tri],o=t[sub],a=t[(sub+1)%3],b=t[(sub+2)%3],r1=bearing(o,a)+ORI[o%ORI.length];
+  anim={t0:performance.now(),o,a,b,r1,r2:r1+M.ang[tri][sub],da:D(o,a),db:D(o,b),ta:target(D(o,a)),tb:target(D(o,b))};raf=requestAnimationFrame(povFrame);
+  cap=`Triangle ${tri+1} of ${TR.length}: the theodolite stands on station ${o}. Sight station ${a} and read the circle, then swing to station ${b} and read again. The angle is the difference; 16 such sets are averaged.`;}
+ else if(st===0){staticPov(["Baseline: stations 0 to 1","Measured with 5 m bars laid end to end","About 2,000 bar placements",`Result: ${(M.base*1000).toLocaleString(undefined,{maximumFractionDigits:3})} m`,"Error about ±33 mm (1 in 300,000)"]);cap="Measure the 10 km baseline by hand. Every other length is computed from this line and the angles.";}
+ else{staticPov([`Check base: stations ${last[1]} to ${last[2]}`,`Measured by bars: ${(M.chk*1000).toLocaleString(undefined,{maximumFractionDigits:2})} m`,`Carried through ${TR.length} triangles: ${(C.chk*1000).toLocaleString(undefined,{maximumFractionDigits:2})} m`]);cap="At the far end, a second base is measured by hand and compared with the length carried through the chain.";}
+ if(sub===2){const cl=C.clos[tri],sum=M.ang[tri].reduce((x,y)=>x+y,0);r=kv("Angle sum − 180°",((sum-180)*3600).toFixed(2)+"″")+kv("Excess from area",EX[tri].toFixed(2)+"″")+kv("Closure",(cl>=0?"+":"")+cl.toFixed(2)+"″")+kv("Excess ÷ sum error",(EX[tri]/(SA*Math.sqrt(3))).toFixed(1)+"σ");}
+ else if(st===NS-1){const dmm=(C.chk-M.chk)*1e6,ppm=(C.chk-M.chk)/M.chk*1e6,sg=Math.sqrt(C.sig2+SB*SB)*1e6;r=kv("Computed − measured",(dmm>=0?"+":"")+dmm.toFixed(0)+" mm")+kv("Relative",(ppm>=0?"+":"")+ppm.toFixed(1)+" ppm")+kv("Expected error","±"+sg.toFixed(1)+" ppm")+kv("Agreement",(Math.abs(ppm)/sg).toFixed(1)+"σ");}
+ else r=kv("Step",`${st+1} of ${NS}`)+kv("Triangles closed",String(Math.max(0,tri)));
+ const closed=st===NS-1?TR.length:Math.max(0,tri+(sub===2?1:0));
+ const RF=rtable(closed);
+ if(st===NS-1&&RF)r+=kv("R from all angles",`${Math.round(RF.R).toLocaleString()} ± ${Math.round(RF.sR).toLocaleString()} km`)+kv("vs 6,371 km",`${(RF.R-R>=0?"+":"")+Math.round(RF.R-R).toLocaleString()} km (${(Math.abs(RF.R-R)/RF.sR).toFixed(1)}σ)`);
+ $("res").innerHTML=r;$("cap").textContent=cap;$("tag").textContent=`Step ${st+1} of ${NS}`;}
+function stop(){if(timer){clearInterval(timer);timer=null;$("play").textContent="Play";}}
+$("next").onclick=()=>{stop();st=(st+1)%NS;draw();};
+$("prev").onclick=()=>{stop();st=(st-1+NS)%NS;draw();};
+$("again").onclick=()=>draw();
+$("play").onclick=()=>{if(timer){stop();return;}$("play").textContent="Pause";timer=setInterval(()=>{if(st>=NS-1){stop();return;}st++;draw();},3400);};
+$("reseed").onclick=()=>{seed=Math.floor(Math.random()*1e9);simulate();draw();};
+$("mode").onchange=()=>{simulate();draw();};
+const _draw=draw;draw=function(){_draw();malice();};
+simulate();draw();
+</script>
+</body>
+</html>

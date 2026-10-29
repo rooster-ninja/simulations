@@ -10,6 +10,7 @@ https://rooster-ninja.github.io/simulations/
 | Plumb line curvature test | [plumb-line-test/](https://rooster-ninja.github.io/simulations/plumb-line-test/) |
 | Plumb line test review | [plumb-line-review/](https://rooster-ninja.github.io/simulations/plumb-line-review/) |
 | Disc model quasar test (WIP) | [disc-model-quasars/](https://rooster-ninja.github.io/simulations/disc-model-quasars/) |
+| Triangulation chain: baseline to check base | [triangulation-chain/](https://rooster-ninja.github.io/simulations/triangulation-chain/) |
 
 ## Layout
 
