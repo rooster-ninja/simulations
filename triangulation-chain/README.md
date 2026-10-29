@@ -12,7 +12,10 @@ shrinking), and checked against a second bar-measured base at the far end.
 - **Theodolite view.** At each station the eyepiece (10′ field) holds the
   first target on the crosshair, then swings to the second while the
   horizontal circle turns. The angle is the difference of the two readings.
-  Targets by distance: a flag on a 4 m pole under 35 km (drawn at its true
+  Each swing eases in with a random overshoot of 0.6–6′ (usually past the
+  signal, sometimes short), then settles on it with a damped correction and
+  a little hand jitter, as on the slow-motion screw. The motion is random
+  each time; the recorded readings are not affected. Targets by distance: a flag on a 4 m pole under 35 km (drawn at its true
   angular size), a signal lamp at 35–70 km, a heliotrope flash beyond.
 - **Closure.** For each triangle: angle sum − 180°, excess `E = A / R²`, and
   the closure (sum − 180° − E), with the excess expressed in units of the

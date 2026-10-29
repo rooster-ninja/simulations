@@ -232,7 +232,7 @@ function ln(i,j,c,w,d){return `<line x1="${X(P[i]).toFixed(1)}" y1="${Y(P[i]).to
 function dms(x){x=((x%360)+360)%360;let d=Math.floor(x),mf=(x-d)*60,m=Math.floor(mf),s=Math.round((mf-m)*600)/10;if(s>=60){s-=60;m++;}if(m>=60){m-=60;d++;}return `${d}°${String(m).padStart(2,"0")}′${s.toFixed(1).padStart(4,"0")}″`;}
 function dm(x){let d=Math.floor(x),m=Math.round((x-d)*60);if(m===60){m=0;d++;}return `${d}°${String(m).padStart(2,"0")}′`;}
 function bearing(i,j){return(90-Math.atan2(P[j][1]-P[i][1],P[j][0]-P[i][0])*180/Math.PI+360)%360;}
-function target(d){return d<35?{n:"flag on a 4 m pole",k:"pole",h:4}:d<70?{n:"signal lamp on a tower (night)",k:"lamp"}:{n:"heliotrope flash",k:"helio"};}
+function target(d){return d<35?{n:"flag on a 4 m pole",k:"pole",h:4}:d<70?{n:"night signal lamp",k:"lamp"}:{n:"heliotrope flash",k:"helio"};}
 function tgSvg(x,tg,d){
  if(tg.k==="pole"){const px=Math.max(2,tg.h/(d*1000)*206265/K);return `<line x1="${x.toFixed(1)}" y1="${(115+px/2).toFixed(1)}" x2="${x.toFixed(1)}" y2="${(115-px/2).toFixed(1)}" stroke="#D3D1C7" stroke-width="1.5"/><rect x="${x.toFixed(1)}" y="${(115-px/2).toFixed(1)}" width="${(px/3+2).toFixed(1)}" height="${(px/4+1.5).toFixed(1)}" fill="#e0913a"/>`;}
  if(tg.k==="lamp")return `<circle cx="${x.toFixed(1)}" cy="115" r="3" fill="#FAC775"/><circle cx="${x.toFixed(1)}" cy="115" r="7" fill="none" stroke="#FAC775" stroke-width="0.6"/>`;
@@ -255,12 +255,16 @@ function mapArc(A,f,cur){
 
 function povFrame(now){
  const A=anim,e=now-A.t0,red=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
- let f=red?1:e<900?0:e>2700?1:(e-900)/1800;f=f<0.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
- const cur=A.r1+(A.r2-A.r1)*f;
+ const t0=900,t1=t0+A.T1,t2=t1+A.T2;let cur,phase;
+ if(red||e>=t2){cur=A.r2;phase="done";}
+ else if(e<t0){cur=A.r1;phase="hold";}
+ else if(e<t1){let u=(e-t0)/A.T1;u=1-Math.pow(1-u,3);cur=A.r1+(A.r2+A.O-A.r1)*u;phase="swing";}
+ else{const t=e-t1,j=(Math.random()-0.5)*A.J*Math.exp(-t/500);cur=A.r2+A.O*Math.exp(-t/A.tau)*Math.cos(A.om*t)+j;phase="settle";}
+ const f=phase==="done"?1:Math.max(0,(cur-A.r1)/(A.r2-A.r1));
  mapArc(A,f,cur);
  let s=`<circle cx="110" cy="115" r="95" fill="#2C2C2A"/><g clip-path="url(#eye)"><line x1="0" y1="119" x2="240" y2="119" stroke="#444441" stroke-width="1"/>`;
  [[A.r1,A.ta,A.da],[A.r2,A.tb,A.db]].forEach(([rr,tg,d])=>{const x=110+(rr-cur)*3600/K;if(x>0&&x<230)s+=tgSvg(x,tg,d);});
- if(f>0&&f<1){for(let k=0;k<6;k++){const x=((now/3+k*40)%230);s+=`<line x1="${x.toFixed(1)}" y1="119" x2="${(x+14).toFixed(1)}" y2="119" stroke="#5F5E5A" stroke-width="1"/>`;}}
+ if(phase==="swing"){for(let k=0;k<6;k++){const x=((now/3+k*40)%230);s+=`<line x1="${x.toFixed(1)}" y1="119" x2="${(x+14).toFixed(1)}" y2="119" stroke="#5F5E5A" stroke-width="1"/>`;}}
  s+=`</g><line x1="15" y1="115" x2="205" y2="115" stroke="#B4B2A9" stroke-width="0.6"/><line x1="110" y1="20" x2="110" y2="210" stroke="#B4B2A9" stroke-width="0.6"/><circle cx="110" cy="115" r="95" fill="none" stroke="var(--muted)" stroke-width="1"/>`;
  s+=`<text x="110" y="224" text-anchor="middle" dominant-baseline="central" font-size="11" fill="var(--muted)">EYEPIECE · 10′ FIELD</text>`;
  const cx=320,cy=110,rr=80;s+=`<circle cx="${cx}" cy="${cy}" r="${rr}" fill="none" stroke="var(--muted)" stroke-width="1"/>`;
@@ -270,10 +274,10 @@ function povFrame(now){
  s+=`<circle cx="${a1[0].toFixed(1)}" cy="${a1[1].toFixed(1)}" r="4" fill="var(--station)"/><circle cx="${a2[0].toFixed(1)}" cy="${a2[1].toFixed(1)}" r="4" fill="var(--station)"/>`;
  s+=`<line x1="${cx}" y1="${cy}" x2="${pc[0].toFixed(1)}" y2="${pc[1].toFixed(1)}" stroke="var(--orange)" stroke-width="2.5"/><circle cx="${cx}" cy="${cy}" r="3" fill="var(--orange)"/>`;
  s+=`<text x="${cx}" y="${cy+rr+20}" text-anchor="middle" dominant-baseline="central" font-size="12">CIRCLE ${dms(cur)}</text>`;
- const L=[`Theodolite at station ${A.o}`,`Target ${A.a}: ${A.da.toFixed(1)} km, ${A.ta.n}`,`  reading ${dms(A.r1)}`,`Target ${A.b}: ${A.db.toFixed(1)} km, ${A.tb.n}`,`  reading ${f>=1?dms(A.r2):"swinging…"}`,`Angle = ${f>=1?dms(A.r2-A.r1):dms(cur-A.r1)}`];
+ const L=[`Theodolite at station ${A.o}`,`Target ${A.a}: ${A.da.toFixed(1)} km, ${A.ta.n}`,`  reading ${dms(A.r1)}`,`Target ${A.b}: ${A.db.toFixed(1)} km, ${A.tb.n}`,`  reading ${phase==="done"?dms(A.r2):phase==="settle"?"settling on the signal…":"swinging…"}`,`Angle = ${phase==="done"?dms(A.r2-A.r1):dms(cur-A.r1)}`];
  L.forEach((l,i)=>{s+=`<text x="420" y="${34+i*26}" dominant-baseline="central" font-size="${i===0?14:12}" font-weight="${i===0||i===5?600:400}">${l}</text>`;});
  $("povg").innerHTML=s;
- if(f<1)raf=requestAnimationFrame(povFrame);}
+ if(phase!=="done")raf=requestAnimationFrame(povFrame);}
 
 function staticPov(lines){let s=`<circle cx="110" cy="115" r="95" fill="#2C2C2A"/><text x="110" y="115" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#D3D1C7">BARS, NOT SIGHTINGS</text>`;
  lines.forEach((l,i)=>{s+=`<text x="260" y="${34+i*26}" dominant-baseline="central" font-size="${i===0?14:12}" font-weight="${i===0?600:400}">${l}</text>`;});$("povg").innerHTML=s;}
@@ -321,7 +325,7 @@ function draw(){
  $("map").innerHTML=s;
  let cap="",r="";
  if(sub>=0){const t=TR[tri],o=t[sub],a=t[(sub+1)%3],b=t[(sub+2)%3],r1=bearing(o,a)+ORI[o%ORI.length];
-  anim={t0:performance.now(),o,a,b,r1,r2:r1+M.ang[tri][sub],da:D(o,a),db:D(o,b),ta:target(D(o,a)),tb:target(D(o,b))};raf=requestAnimationFrame(povFrame);
+  anim={t0:performance.now(),o,a,b,r1,r2:r1+M.ang[tri][sub],da:D(o,a),db:D(o,b),ta:target(D(o,a)),tb:target(D(o,b)),O:(Math.random()<0.8?1:-1)*(0.6+Math.random()*5.4)/60,T1:1200+Math.random()*700,T2:1500,tau:220+Math.random()*200,om:2*Math.PI/(380+Math.random()*280),J:(0.8+Math.random()*1.6)/3600};raf=requestAnimationFrame(povFrame);
   cap=`Triangle ${tri+1} of ${TR.length}: the theodolite stands on station ${o}. Sight station ${a} and read the circle, then swing to station ${b} and read again. The angle is the difference; 16 such sets are averaged.`;}
  else if(st===0){staticPov(["Baseline: stations 0 to 1","Measured with 5 m bars laid end to end","About 2,000 bar placements",`Result: ${(M.base*1000).toLocaleString(undefined,{maximumFractionDigits:3})} m`,"Error about ±33 mm (1 in 300,000)"]);cap="Measure the 10 km baseline by hand. Every other length is computed from this line and the angles.";}
  else{staticPov([`Check base: stations ${last[1]} to ${last[2]}`,`Measured by bars: ${(M.chk*1000).toLocaleString(undefined,{maximumFractionDigits:2})} m`,`Carried through ${TR.length} triangles: ${(C.chk*1000).toLocaleString(undefined,{maximumFractionDigits:2})} m`]);cap="At the far end, a second base is measured by hand and compared with the length carried through the chain.";}
@@ -336,7 +340,7 @@ function stop(){if(timer){clearInterval(timer);timer=null;$("play").textContent=
 $("next").onclick=()=>{stop();st=(st+1)%NS;draw();};
 $("prev").onclick=()=>{stop();st=(st-1+NS)%NS;draw();};
 $("again").onclick=()=>draw();
-$("play").onclick=()=>{if(timer){stop();return;}$("play").textContent="Pause";timer=setInterval(()=>{if(st>=NS-1){stop();return;}st++;draw();},3400);};
+$("play").onclick=()=>{if(timer){stop();return;}$("play").textContent="Pause";timer=setInterval(()=>{if(st>=NS-1){stop();return;}st++;draw();},5200);};
 $("reseed").onclick=()=>{seed=Math.floor(Math.random()*1e9);simulate();draw();};
 $("mode").onchange=()=>{simulate();draw();};
 const _draw=draw;draw=function(){_draw();malice();};
