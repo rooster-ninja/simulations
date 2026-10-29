@@ -110,7 +110,34 @@ details.src q{font-style:italic}
   </section>
 
   <section class="panel prose">
-    <div class="ptitle">4 · Methods</div>
+    <div class="ptitle">4 · Malice: how hard is it to fudge the numbers?</div>
+    <p>Pick a data set and watch which checks fire. The honest set is the simulation above. The two forgeries are the obvious ways to cook a triangulation: strip the excess so every triangle closes on 180° (a flat world), or smooth the noise so the closures look too good.</p>
+    <div class="ctl" style="max-width:420px"><label for="mode" style="font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:var(--muted)">Data set</label>
+      <select id="mode" style="font:500 16px var(--f-body);color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:11px 12px">
+        <option value="honest">Honest observations</option>
+        <option value="flat">Forger removes the excess (sums forced to 180°)</option>
+        <option value="perfect">Forger smooths the noise (too perfect)</option>
+      </select></div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Check</th><th class="n">Result</th><th>What it catches</th></tr></thead>
+      <tbody id="mtable"></tbody>
+    </table></div>
+    <p><b>What a convincing forgery needs.</b> Every angle in every triangle must be consistent with one set of station positions on one surface, because a network has more observations than unknowns: each closed triangle, each diagonal across a quadrilateral, and each side computed two ways is a condition the numbers must satisfy at once. Faking that means computing the true geometry first, so the forger needs the answer to fake the data. The scatter must also look like real error: closures near 1″ for first order, readings that vary between the 16 sets as the instruments really did, and no favoured final digits.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Fudge</th><th>Difficulty</th><th>What exposes it</th></tr></thead>
+      <tbody>
+        <tr><td>Nudge one small triangle</td><td>Easy</td><td>Usually nothing: its excess (under 1″) is below the noise. Neighbouring triangles sharing its sides may disagree.</td></tr>
+        <tr><td>Remove the excess everywhere (flat)</td><td>Easy to do, easy to catch</td><td>Closures against the sphere scale with area; K comes out zero. The check base does not catch it, because side lengths barely depend on the excess.</td></tr>
+        <tr><td>Add excess to a flat world (globe)</td><td>Equally easy to do</td><td>The mirror image: closures against flat scale with area. Angles alone can't say which party fudged; an independent re-measurement can.</td></tr>
+        <tr><td>Smooth the scatter</td><td>Easy</td><td>Closure scatter far below the instrument's known error (χ² per triangle near 0). Raw field books expose it: Méchain concealed a Barcelona latitude discrepancy, and Delambre found it in his notebooks after his death.</td></tr>
+        <tr><td>A consistent fake network</td><td>Hard</td><td>Requires solving the network first. Still exposed by independent checks: other teams' bases, adjoining national networks at their junctions, star latitudes, and modern GNSS re-occupation of surviving monuments.</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Independent checks.</b> The check base, measured by a different crew with bars, tests the scale. Junctions with neighbouring surveys (France–England in 1787, the Struve Arc across ten countries) test everything at once, because each side was measured by people with no access to the other's numbers. Surviving monuments can be re-measured today with GNSS: a recent RTK check of one recovered Yolo base stone put it 3 cm in distance from its 1881 record.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">5 · Methods</div>
     <p><b>Were all three angles measured?</b> Yes. In primary (first-order) triangulation every angle of every triangle is observed at its own station. The third angle is never computed from the other two, because the closure (sum − 180° − excess) is the triangle's own error check.</p>
     <p><b>How is distance determined?</b> Only the baselines are measured. Bars or tapes are laid end to end along a prepared line, corrected for temperature, slope and sag, then reduced to sea level. Every other side is computed: from one known side and the adjusted angles, by the law of sines, triangle after triangle.</p>
     <ol class="steps">
@@ -129,7 +156,7 @@ details.src q{font-style:italic}
   </section>
 
   <section class="panel">
-    <div class="ptitle">5 · Errors in this simulation</div>
+    <div class="ptitle">6 · Errors in this simulation</div>
     <div class="tablebox"><table>
       <thead><tr><th>Quantity</th><th class="n">Error <span style="font-variant:normal">(1σ)</span></th><th>Basis</th></tr></thead>
       <tbody>
@@ -153,6 +180,7 @@ details.src q{font-style:italic}
       <li>Federal Geodetic Control Committee (1984), <a href="https://www.ngs.noaa.gov/FGCS/tech_pub/1984-stds-specs-geodetic-control-networks.pdf">Standards and Specifications for Geodetic Control Networks</a>, pp. 3-2 and 3-3: first-order directions 16 positions, standard deviation of mean 0.4″; triangle closure average 1.0″, maximum 3″.</li>
       <li>NOAA, <a href="https://geodesy.noaa.gov/library/pdfs/SP_NOS_NGS_5.pdf">Special Publication NOS NGS 5, Geodetic Surveys in the United States</a>: Bache–Würdemann compensating apparatus, <q>1:310,000</q> average standard error; Hassler's Fire Island base, <q>four 2 meter iron bars laid end to end</q>; invar tapes <q>1:675,000 or better</q>.</li>
       <li>U.S. Coast and Geodetic Survey (1882), <a href="https://surveyorconnect.com/wp-content/uploads/wpforo/attachments/10/13549-Yolo-Base-Line-Excerpt-from-1882-USCGS-Report.pdf">Yolo Base Line excerpt</a>: 17,490 m measured in 3,498 bar lengths, twice, plus a partial third measurement.</li>
+      <li>RPLS.com, <a href="https://rpls.com/?p=1247262">Yolo Base Line 1881</a>: an RTK check of a recovered fence stone missed the record by 3 cm in distance and 14 cm in line.</li>
       <li>The American Surveyor (2007), <a href="https://amerisurv.com/2007/03/31/woodwards-ice-bar/">Woodward's Ice Bar</a>: 5 m steel bar in melting ice, Holton base 1891, about 100 m per hour.</li>
     </ul>
   </details>
@@ -184,7 +212,9 @@ $("tritable").innerHTML=TR.map((t,n)=>`<tr><td>${n+1}</td><td class="n">${D(t[0]
 let M,C;
 function simulate(){rnd=mk(seed);
  M={base:D(0,1)*(1+SB*g()),ang:[]};
- TR.forEach((t,n)=>{const[i,j,k]=t;M.ang.push([angAt(i,j,k),angAt(j,k,i),angAt(k,i,j)].map(a=>a+EX[n]/3/3600+SA*g()/3600));});
+ const mode=$("mode").value;
+ TR.forEach((t,n)=>{const[i,j,k]=t;M.ang.push([angAt(i,j,k),angAt(j,k,i),angAt(k,i,j)].map(a=>{const nz=SA*g()/3600;
+  return mode==="flat"?a+nz:mode==="perfect"?a+EX[n]/3/3600+nz*0.08:a+EX[n]/3/3600+nz;}));});
  const last=TR[TR.length-1];M.chk=D(last[1],last[2])*(1+SB*g());
  C={clos:[],sig2:SB*SB,area:[],meas:[]};let known=M.base;
  TR.forEach((t,n)=>{const a=M.ang[n],ms=((a[0]+a[1]+a[2])-180)*3600,cl=ms-EX[n];C.clos.push(cl);C.meas.push(ms);
@@ -263,6 +293,20 @@ function rtable(n){
   else rows+=`<tr><td><b>All ${n}, combined</b></td><td class="n" colspan="5">combined K ≤ 0: no positive R yet</td></tr>`;}
  else rows=`<tr><td colspan="6">No triangles closed yet.</td></tr>`;
  $("rtable").innerHTML=rows;return out;}
+function malice(){
+ const n=TR.length,cl=C.clos,A=C.area;
+ const chi=cl.reduce((s,c)=>s+(c/SS)**2,0)/n,chiLo=1.690/7,chiHi=16.013/7;
+ let sxy=0,sxx=0;for(let i=0;i<n;i++){sxy+=cl[i]*A[i];sxx+=A[i]*A[i];}
+ const slope=sxy/sxx,sSlope=SS/Math.sqrt(sxx),zs=slope/sSlope;
+ const RF=(()=>{let a=0,b=0;for(let i=0;i<n;i++){a+=C.meas[i]/206265*A[i];b+=A[i]*A[i];}const K=a/b,sK=SS/206265/Math.sqrt(b);return{K,sK};})();
+ const ppm=(C.chk-M.chk)/M.chk*1e6,sg=Math.sqrt(C.sig2+SB*SB)*1e6,zc=ppm/sg;
+ const flag=(bad,txt)=>bad?`<b style="color:var(--red)">${txt}</b>`:txt;
+ const rows=[
+  ["Closure scatter, χ² per triangle (95% range "+chiLo.toFixed(2)+"–"+chiHi.toFixed(2)+")",flag(chi<chiLo||chi>chiHi,chi.toFixed(2)),"Too-perfect data (low) or blunders (high)"],
+  ["Closure versus area, against the sphere",flag(Math.abs(zs)>3,`${(slope*1000).toFixed(2)}″ per 1,000 km² (${zs.toFixed(1)}σ)`),"Excess removed or added: closures that grow with area"],
+  ["K from the angles alone",flag(RF.K/RF.sK<3,`${(RF.K/RF.sK).toFixed(1)}σ from flat`+(RF.K>0?`, R ≈ ${Math.round(1/Math.sqrt(RF.K)).toLocaleString()} km`:"")),"Whether the angles carry curvature at all"],
+  ["Check base, computed − measured",flag(Math.abs(zc)>3,`${ppm>=0?"+":""}${ppm.toFixed(1)} ppm (${Math.abs(zc).toFixed(1)}σ)`),"Scale errors; blind to the excess"]];
+ $("mtable").innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td class="n">${r[1]}</td><td>${r[2]}</td></tr>`).join("");}
 const kv=(k,v)=>`<div class="kv"><div class="k">${k}</div><div class="v">${v}</div></div>`;
 function draw(){
  if(raf){cancelAnimationFrame(raf);raf=null;}
@@ -294,6 +338,8 @@ $("prev").onclick=()=>{stop();st=(st-1+NS)%NS;draw();};
 $("again").onclick=()=>draw();
 $("play").onclick=()=>{if(timer){stop();return;}$("play").textContent="Pause";timer=setInterval(()=>{if(st>=NS-1){stop();return;}st++;draw();},3400);};
 $("reseed").onclick=()=>{seed=Math.floor(Math.random()*1e9);simulate();draw();};
+$("mode").onchange=()=>{simulate();draw();};
+const _draw=draw;draw=function(){_draw();malice();};
 simulate();draw();
 </script>
 </body>

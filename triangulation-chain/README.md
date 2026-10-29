@@ -22,6 +22,11 @@ shrinking), and checked against a second bar-measured base at the far end.
   baseline and the angles) gives `K`, then `R = 1/√K` with its σ. Each
   triangle's R, and a least-squares fit of one K to all closed triangles,
   is compared with an assumed 6,371 km.
+- **Malice.** Switch the data to one of two forgeries (excess stripped so
+  sums close on 180°, or noise smoothed) and see which checks fire: closure
+  χ², closure-versus-area slope, K from the angles, and the check base
+  (which is blind to the excess). A table rates other fudges by difficulty
+  and by what exposes them.
 - **Check base.** Computed length (Legendre's theorem, then the law of sines,
   triangle by triangle) compared with the measured check base, against the
   expected error.
