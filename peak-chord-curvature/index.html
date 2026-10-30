@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peak Chord Curvature</title>
+<meta property="og:title" content="Peak Chord Curvature: two peaks, an observer and a centre station">
+<meta property="og:description" content="Single straight Giga-Ranger chords between Nanton, Mount Head and Plateau Mountain, plus a centre station, give a radius of curvature with error bars. Three chords fit any surface; the fourth station decides. Tap the map to place it.">
+<meta name="theme-color" content="#f3efe4">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3efe4; --card:#f8f5ec; --plate:#ffffff; --ink:#1a1813; --muted:#6b6658; --rule:#ddd5c2;
+  --accent:#4a8fb0; --orange:#e0913a; --red:#c8543a; --purple:#7a56b8; --station:#3c3489; --green:#1d6e53;
+  --bar:#16140f; --bar-ink:#f3efe4;
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif; --f-body:"Archivo",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2; --green:#6fd0a6;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2; --green:#6fd0a6;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding-top:28px}
+.back{margin:0 0 14px;font-family:var(--f-mono);font-size:13px}.back a{color:var(--muted);text-decoration:none}.back a:hover{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,56px);line-height:1.04;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance;max-width:22ch}
+.sub{color:var(--ink);font-size:18px;max-width:64ch;margin:14px 0 0}
+.panel{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px}
+.ptitle{font-family:var(--f-mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.svgbox{background:var(--plate);border:1.5px solid var(--rule);border-radius:12px;overflow-x:auto}
+.svgbox svg{display:block;width:100%;height:auto;min-width:620px}
+.math{font-family:var(--f-display);font-style:italic;font-size:19px;text-align:center;line-height:1.7;overflow-x:auto;padding:2px 4px}
+svg text{font-family:var(--f-mono);fill:var(--ink)}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px;align-items:end}
+.ctl{display:flex;flex-direction:column;gap:6px}
+.ctl label{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--muted)}
+.ctl output{font-family:var(--f-mono);color:var(--ink);font-size:14px}
+select{font:500 16px var(--f-body);color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+button{font:500 14px var(--f-mono);letter-spacing:.06em;color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:10px 14px;cursor:pointer}
+button:hover{border-color:var(--muted)}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px}
+.cap{font-size:16px;margin:0;max-width:72ch}
+.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 20px;min-height:84px}
+.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--muted)}
+.kv .v{font-family:var(--f-display);font-weight:700;font-size:23px;line-height:1.2;font-variant-numeric:tabular-nums}
+.kv .d{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.verdict{grid-column:1/-1;margin:0;font-size:16px;max-width:80ch}
+.prose p{margin:0 0 10px;max-width:72ch}.prose p:last-child{margin:0}
+ol.steps{margin:0;padding-left:22px;max-width:72ch}ol.steps li{margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-family:var(--f-display);font-variant:small-caps;font-weight:700;letter-spacing:.03em;text-align:left;border-bottom:1.5px solid var(--rule);padding:8px 10px;font-size:16px}
+td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
+td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{font-weight:600;border-top:1.5px solid var(--rule)}
+.tablebox{overflow-x:auto}
+details.src{background:var(--bar);color:var(--bar-ink);border-radius:12px;padding:14px 18px;font-family:var(--f-mono);font-size:14px}
+details.src summary{cursor:pointer;font-weight:600}
+details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
+details.src a{color:var(--bar-ink)}
+details.src q{font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="back"><a href="../">← All simulations</a></p>
+    <p class="eyebrow">Theorema Egregium · line-of-sight curvature</p>
+    <h1>Two peaks, an observer and a centre station</h1>
+    <p class="sub">Every distance is one straight Giga-Ranger shot: Nanton to Mount Head, Nanton to Plateau Mountain, and peak to peak. Those three chords fit any surface. One more station inside the triangle, ranging to all three corners, turns them into a radius of curvature with error bars.</p>
+  </header>
+
+  <section class="panel">
+    <div class="ptitle">Controls</div>
+    <div class="controls">
+      <div class="ctl"><label for="mode">Stations</label>
+        <select id="mode"><option value="3">Triangle only: 3 chords</option><option value="4" selected>Triangle + centre station: 6 chords</option></select></div>
+      <div class="ctl"><label for="dh">Centre station height <output id="dhv"></output></label><input id="dh" type="range" min="1000" max="2200" step="10" value="1400"></div>
+      <div class="ctl"><label for="sig">Chord error (1σ) <output id="sigv"></output></label><input id="sig" type="range" min="0.02" max="0.5" step="0.005" value="0.05"></div>
+      <div class="ctl"><label for="ppm">Air correction residual per chord (1σ) <output id="ppmv"></output></label><input id="ppm" type="range" min="0" max="15" step="0.5" value="1"></div>
+      <div class="ctl"><label for="hs">Station height error (1σ) <output id="hsv"></output></label><input id="hs" type="range" min="0" max="30" step="0.5" value="2"></div>
+      <div class="ctl"><label for="bias">Common offset, all chords (1σ) <output id="biasv"></output></label><input id="bias" type="range" min="0" max="0.5" step="0.005" value="0.03"></div>
+      <div class="ctl"><button id="reseed">New errors</button></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">1 · The stations, overhead</div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Triangle chord</span><span><i style="background:var(--orange)"></i>Centre-station chord</span><span><i style="background:var(--green)"></i>Shading: how far flat sits from the result if the centre station stood there</span></div>
+    <div class="svgbox"><svg id="map" viewBox="0 0 680 500" role="img" aria-label="Map of Nanton, Mount Head, Plateau Mountain and the centre station, with the six chords and shading showing where a centre station gives a strong test"></svg></div>
+    <p class="cap">Tap the map to move the centre station. Darker shading means a stronger test at the current error settings. A station outside the triangle (High River, for example) gives almost nothing; one inside, ranging to all three corners, gives the most.</p>
+  </section>
+
+  <section class="readout" id="res" aria-live="polite"></section>
+
+  <section class="panel">
+    <div class="ptitle">2 · The six chords</div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Chord</th><th class="n">Length</th><th class="n">Height difference</th><th class="n">Chord shorter than ground by</th></tr></thead>
+      <tbody id="ctable"></tbody>
+    </table></div>
+    <p class="cap">A radio chord runs straight through the air, so it is shorter than the distance along the ground beneath it, by more on longer lines. How much shorter depends on the curvature under test; that line-to-line difference is part of what the fit reads.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">3 · Why three chords are not enough</div>
+    <p><b>Counting.</b> On a surface, three stations have three unknowns once the surface's own freedom (slide and turn) is removed. Three chords fill them exactly, for a flat surface or a globe of any size. Nothing is left over to test.</p>
+    <p><b>A fourth station adds three chords but only two unknowns.</b> Four stations have five unknowns, and six chords measure them. The one extra measurement is a condition that only the right curvature satisfies. For four points on a surface of curvature K, with V the matrix of their pairwise distances run through V<sub>K</sub>:</p>
+    <div class="math">1ᵀ V⁻¹ 1 = K,&nbsp;&nbsp;&nbsp; V<sub>ij</sub> = V<sub>K</sub>(s<sub>ij</sub>) = (1 − cos √K s<sub>ij</sub>) / K</div>
+    <p><b>Chords need heights.</b> A chord is a straight line through the air, not a distance along the ground. Converting it needs each station's height above the reference surface, measured independently, for example by simultaneous barometric levelling with the BME280s already in each enclosure. On a sphere of signed curvature u = 1/R (u &gt; 0 convex, 0 flat, u &lt; 0 concave):</p>
+    <div class="math">c² = (h₁ − h₂)² + 2 (1 + u h₁)(1 + u h₂) · V<sub>u²</sub>(s)</div>
+    <p><b>Where the station goes matters.</b> With the same errors, a fourth station outside the triangle (High River) puts flat only 0.1σ away; a centre station near 50.36° N, 114.25° W puts it about 20σ away. The centre station plays the part of a cut across the triangle.</p>
+    <p><b>What the test reads.</b> The fit uses how the chords sit against the station heights as well as the shape of the four-point figure. With all four stations at the same height the test still separates flat from the globe (about 3σ here), from the line-to-line difference between chord and ground. The 1.5–1.8 km height difference between peaks and prairie multiplies that about six-fold.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">4 · Methods</div>
+    <ol class="steps">
+      <li><b>Chords.</b> Range every pair of the four stations, 500 exchanges per pair, corrected for calibration and the GRIN air delay.</li>
+      <li><b>Heights.</b> Read pressure, temperature and humidity at all four stations at the same time and level them barometrically relative to one another. Only differences matter: a shift of all four heights together cancels.</li>
+      <li><b>Fit.</b> For a trial u, convert each chord to a ground distance with the heights, then test the four-point condition. Solve for the u that satisfies it. R = 1/u.</li>
+      <li><b>Error bars.</b> Repeat the campaign 1,500 times with fresh simulated errors; the scatter of û is its 1σ.</li>
+    </ol>
+    <p>No angles, bearings or GPS. Coordinates here only build the simulated world and the map.</p>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">5 · Error budget</div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Source</th><th class="n">Default (1σ)</th><th>Basis</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td>Chord, random</td><td class="n">0.05 m</td><td>Assumed: 0.021 m exchange floor (0.47 m ÷ √500) plus thermal drift corrected from logged temperature</td><td>At 0.2 m, flat is still about 8σ away</td></tr>
+        <tr><td>Air correction residual</td><td class="n">1 ppm</td><td>Assumed: after removing ≈ 15 m per 60 km with GRIN. The peak-to-peak chord crosses thinner air than the prairie chords, and only the endpoints are sampled</td><td>The main risk: 3 ppm gives about 12σ, 10 ppm about 4σ</td></tr>
+        <tr><td>Station heights</td><td class="n">2 m</td><td>Assumed: simultaneous barometric levelling</td><td>5 m gives about 11σ, 10 m about 6σ, 30 m about 2σ</td></tr>
+        <tr><td>Common offset</td><td class="n">0.03 m</td><td>Assumed: the size of the −27 mm calibration residual</td><td>Small at this size; 0.5 m gives about 5σ</td></tr>
+        <tr><td>Ray bending</td><td class="n">≈ 1.6 cm</td><td>Computed: a radio ray curving at a quarter of the earth's curvature is longer than the chord by L³κ²/24 on the 63 km line</td><td>Left uncorrected in the simulation; shifts û by under 1 %</td></tr>
+      </tbody>
+    </table></div>
+    <p class="cap"><b>Simplifications.</b> Sphere of the GRS 80 mean radius, no flattening. Nanton's coordinates are approximate (town centre); replace with your site. The centre station's height is a placeholder until a site is chosen. Line of sight on each chord, especially peak to peak and from the centre station, is assumed rather than checked against terrain.</p>
+  </section>
+
+  <details class="src">
+    <summary>Sources for this page (pages and quotes)</summary>
+    <ul>
+      <li>PeakVisor, <a href="https://peakvisor.com/peak/mount-head-canada.html">Mount Head</a>: <q>2 782m/9 127ft a.s.l.</q>, 50.440269 N, 114.649672 W.</li>
+      <li>PeakVisor, <a href="https://peakvisor.com/peak/plateau-mountain-canada.html">Plateau Mountain</a>: <q>2 515m/8 251ft a.s.l.</q>, 50.207957 N, 114.517108 W.</li>
+      <li>RoadsideThoughts, <a href="https://roadsidethoughts.com/ab/nanton-profile.htm">Nanton profile</a>: <q>3,350 feet [1,021 m] above sea level</q>. Nanton's coordinates here are approximate.</li>
+      <li>latlong.net, <a href="https://www.latlong.net/place/high-river-ab-canada-13027.html">High River</a>: 50.584435, −113.873505; RoadsideThoughts, <a href="https://roadsidethoughts.com/ab/high-river-profile.htm">High River profile</a>: 1,033 m. Used for the outside-station comparison.</li>
+      <li>rooster.ninja, <a href="https://www.rooster.ninja/skunk_werks/giga_ranger/project_overview/">Giga Ranger project overview</a>: SF9–SF10 at 1625 kHz, GRIN correction ≈ 15 m, BME280 in each enclosure; <q>GPS co-ordinates will not be used in any way for distance</q>.</li>
+      <li>rooster.ninja, <a href="https://www.rooster.ninja/moon_sensors/calibration/Giga_Ranger_Calibration/sx1280_ranging_calibration.html">SX1280 ranging calibration</a>: <q>0.1803 m per count</q>; 500 exchanges per pass; verification σ 0.476, 0.467, 0.473 m; residual −27 mm; warm-up slope −0.085 m/°C.</li>
+      <li>Semtech, <a href="https://www.mouser.com/datasheet/2/761/DS_SX1280-1_V2.2-1511144.pdf">SX1280/SX1281 datasheet</a>, p. 13: <q>round-trip time-of-flight measurement between a pair of LoRa® radios</q>.</li>
+      <li>H. Moritz, <a href="https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm">Geodetic Reference System 1980</a>, §4: mean radius <q>R1 = 6 371 008.7714 m</q>.</li>
+    </ul>
+  </details>
+</div>
+<script>
+// ---- Peak chord curvature engine. Units: km. u = signed curvature of the reference sphere (1/R; 0 = flat). ----
+const R0=6371.0087714;
+const BASE=[ // the triangle: one observer, two peaks
+  {n:"Nanton",lat:50.349,lon:-113.772,h:1021,kind:"obs",approx:true},
+  {n:"Mount Head",lat:50.440269,lon:-114.649672,h:2782,kind:"peak"},
+  {n:"Plateau Mountain",lat:50.207957,lon:-114.517108,h:2515,kind:"peak"}];
+const PAIRS3=[[0,1],[0,2],[1,2]], PAIRS=[[0,1],[0,2],[1,2],[0,3],[1,3],[2,3]];
+function mk(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function gauss(r){let a=0,b=0;while(!a)a=r();while(!b)b=r();return Math.sqrt(-2*Math.log(a))*Math.cos(2*Math.PI*b);}
+function xyz(s){const a=s.lat*Math.PI/180,o=s.lon*Math.PI/180,r=R0+s.h/1000;return[r*Math.cos(a)*Math.cos(o),r*Math.cos(a)*Math.sin(o),r*Math.sin(a)];}
+const dist3=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);
+// constant-curvature trig, stable through K = 0
+function S(x,K){const z=K*x*x;if(Math.abs(z)<1e-10)return x*(1-z/6);return K>0?Math.sin(Math.sqrt(K)*x)/Math.sqrt(K):Math.sinh(Math.sqrt(-K)*x)/Math.sqrt(-K);}
+function Si(y,K){const z=K*y*y;if(Math.abs(z)<1e-10)return y*(1+z/6);return K>0?Math.asin(Math.min(1,Math.sqrt(K)*y))/Math.sqrt(K):Math.asinh(Math.sqrt(-K)*y)/Math.sqrt(-K);}
+const Vk=(x,K)=>2*S(x/2,K)**2;
+// a chord between stations at heights h1, h2 above a sphere of signed curvature u -> distance along that surface
+function arcFromChord(c,h1,h2,u){const W=(c*c-(h1-h2)**2)/(2*(1+u*h1)*(1+u*h2));return 2*Si(Math.sqrt(Math.max(0,W)/2),u*u);}
+function solve4(M,b){const A=M.map((r,i)=>r.concat([b[i]]));for(let c=0;c<4;c++){let p=c;for(let r=c+1;r<4;r++)if(Math.abs(A[r][c])>Math.abs(A[p][c]))p=r;[A[c],A[p]]=[A[p],A[c]];
+  for(let r=0;r<4;r++){if(r===c)continue;const f=A[r][c]/A[c][c];for(let k=c;k<5;k++)A[r][k]-=f*A[c][k];}}return A.map((r,i)=>r[4]/r[i]);}
+// four points on a surface of curvature K satisfy  1ᵀ V⁻¹ 1 = K,  V_ij = V_K(s_ij).  F(u) = 1ᵀV⁻¹1 − u²; F = 0 at the right u.
+function F(c,h,u){const K=u*u,M=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
+  PAIRS.forEach(([i,j],k)=>{M[i][j]=M[j][i]=Vk(arcFromChord(c[k],h[i],h[j],u),K);});const x=solve4(M,[1,1,1,1]);return x[0]+x[1]+x[2]+x[3]-K;}
+function solveU(c,h){let u0=0,u1=1/R0,f0=F(c,h,u0),f1=F(c,h,u1);
+  for(let i=0;i<25&&Math.abs(u1-u0)>1e-14;i++){if(f1===f0)break;const u2=u1-f1*(u1-u0)/(f1-f0);u0=u1;f0=f1;u1=Math.max(-20/R0,Math.min(20/R0,u2));f1=F(c,h,u1);}
+  return Math.abs(f1)<1e-12?u1:NaN;}
+function stations(D){return BASE.concat([D]);}
+function trueChords(st){const P=st.map(xyz);return PAIRS.map(([i,j])=>dist3(P[i],P[j]));}
+function campaign(st,r,o){const b=gauss(r)*o.bias/1000;
+  const c=trueChords(st).map(L=>L+L**3*(0.25/R0)**2/24+L*gauss(r)*o.ppm*1e-6+gauss(r)*o.sig/1000+b);
+  const h=st.map(s=>s.h/1000+gauss(r)*o.hs/1000);return{c,h,u:solveU(c,h)};}
+function stats(a){const f=a.filter(Number.isFinite),m=f.reduce((s,x)=>s+x,0)/f.length;return{m,s:Math.sqrt(f.reduce((s,x)=>s+(x-m)**2,0)/Math.max(1,f.length-1)),n:f.length};}
+function monte(st,o,N,seed){const r=mk(seed),U=[];for(let i=0;i<N;i++)U.push(campaign(st,r,o).u);return stats(U);}
+// quick linear error estimate of u for planning the fourth station
+function planZ(st,o){const c=trueChords(st),h=st.map(s=>s.h/1000),f0=F(c,h,0),e=1e-7;let v=0;
+  c.forEach((L,k)=>{const c2=c.slice();c2[k]+=e;const g=(F(c2,h,0)-f0)/e;v+=(g*Math.hypot(o.sig*1e-3,L*o.ppm*1e-6))**2;});
+  h.forEach((x,k)=>{const h2=h.slice();h2[k]+=e;const g=(F(c,h2,0)-f0)/e;v+=(g*o.hs*1e-3)**2;});
+  const cb=c.map(x=>x+e);v+=(((F(cb,h,0)-f0)/e)*o.bias*1e-3)**2;
+  return{z:Math.abs(f0)/Math.sqrt(v),maxL:Math.max(...c)};}
+
+
+const $=id=>document.getElementById(id);
+const fmt=(x,d)=>x.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+const MCN=1500;let seed=1,D={n:"Centre station",lat:50.36,lon:-114.25,h:1400,kind:"ctr"},mcS=null,run=null;
+const HR={n:"High River",lat:50.584435,lon:-113.873505};
+const opts=()=>({sig:+$("sig").value,ppm:+$("ppm").value,hs:+$("hs").value,bias:+$("bias").value});
+// map projection
+const LO0=-114.98,LO1=-113.55,LA0=50.02,LA1=50.68,W=680,H=500,PAD=24;
+const kx=Math.cos(50.35*Math.PI/180);const sc=Math.min((W-2*PAD)/((LO1-LO0)*kx),(H-2*PAD)/(LA1-LA0));
+const px=(lo,la)=>[PAD+(lo-LO0)*kx*sc,H-PAD-(la-LA0)*sc];
+const unpx=(x,y)=>[LO0+(x-PAD)/(kx*sc),LA0+(H-PAD-y)/sc];
+const el=(t,a,x)=>{let s="<"+t;for(const k in a)s+=" "+k+'="'+a[k]+'"';return x===undefined?s+"/>":s+">"+x+"</"+t+">";};
+let shade="";
+function buildShade(){const o=opts(),g=[],nx=48,ny=26,dx=(LO1-LO0)/nx,dy=(LA1-LA0)/ny;
+  for(let i=0;i<nx;i++)for(let j=0;j<ny;j++){const lo=LO0+(i+.5)*dx,la=LA0+(j+.5)*dy;const q=planZ(stations({lat:la,lon:lo,h:+$("dh").value}),o);
+    if(!(q.z>=3)||q.maxL>66)continue;const a=q.z>=20?.55:q.z>=10?.4:q.z>=5?.25:.12;const[x0,y0]=px(lo-dx/2,la+dy/2),[x1,y1]=px(lo+dx/2,la-dy/2);
+    g.push(el("rect",{x:x0.toFixed(1),y:y0.toFixed(1),width:(x1-x0+.4).toFixed(1),height:(y1-y0+.4).toFixed(1),fill:"var(--green)","fill-opacity":a}));}
+  shade=g.join("");}
+function drawMap(){const four=$("mode").value==="4",st=stations(D),g=[shade];
+  g.push(el("text",{x:W-PAD,y:PAD+4,"font-size":11,"text-anchor":"end",fill:"var(--muted)"},"flat at ≥3σ · ≥5σ · ≥10σ · ≥20σ, darker"));
+  const P=st.map(s=>px(s.lon,s.lat));
+  const line=([i,j],col,w)=>el("line",{x1:P[i][0],y1:P[i][1],x2:P[j][0],y2:P[j][1],stroke:col,"stroke-width":w,"stroke-linecap":"round"});
+  PAIRS.slice(0,3).forEach(p=>g.push(line(p,"var(--accent)",2.4)));
+  if(four)PAIRS.slice(3).forEach(p=>g.push(line(p,"var(--orange)",2)));
+  const hr=px(HR.lon,HR.lat);g.push(el("circle",{cx:hr[0],cy:hr[1],r:3.5,fill:"none",stroke:"var(--muted)","stroke-width":1.4})+el("text",{x:hr[0]+7,y:hr[1]+4,"font-size":11,fill:"var(--muted)"},"High River"));
+  st.forEach((s,i)=>{if(i===3&&!four)return;const[x,y]=P[i];
+    g.push(s.kind==="peak"?el("path",{d:`M${x},${y-8}L${x+7},${y+5}L${x-7},${y+5}Z`,fill:"var(--ink)"}):el("circle",{cx:x,cy:y,r:i===3?6:5,fill:i===3?"var(--orange)":"var(--ink)",stroke:"var(--plate)","stroke-width":1.5}));
+    const lab=i===3?`Centre ${fmt(s.h,0)} m`:`${s.n} ${fmt(s.h,0)} m`;const right=i===0;
+    g.push(el("text",{x:x+(right?10:-10),y:y+(i===2?18:i===1?-12:-10),"font-size":12.5,"font-weight":600,"text-anchor":right?"start":"end"},lab));});
+  const sx=PAD+6,sy=H-PAD-6,bl=10/111.32*sc;g.push(el("line",{x1:sx,y1:sy,x2:sx+bl,y2:sy,stroke:"var(--ink)","stroke-width":2})+el("text",{x:sx,y:sy-6,"font-size":11},"10 km"));
+  $("map").innerHTML=g.join("");}
+function render(){const four=$("mode").value==="4",st=stations(D),o=opts();drawMap();
+  // chords table
+  const P=st.map(s=>s.h);let h="";const shown=four?PAIRS:PAIRS.slice(0,3);const L=trueChords(st);
+  shown.forEach(([i,j])=>{const k=PAIRS.findIndex(p=>p[0]===i&&p[1]===j),c=L[k];const sag=c**3/(24*R0**2)*1e6;const nm=(x)=>x===3?"Centre":st[x].n;
+    h+=`<tr><td>${nm(i)} – ${nm(j)}</td><td class="n">${fmt(c,3)} km</td><td class="n">${fmt(Math.abs(st[i].h-st[j].h),0)} m</td><td class="n">≈ ${fmt(sag,0)} mm</td></tr>`;});
+  $("ctable").innerHTML=h;
+  let r="";
+  if(!four){r=`<div class="kv"><div class="k">Radius R̂</div><div class="v">undetermined</div><div class="d">3 chords, 3 unknowns, 0 left over</div></div><p class="verdict">Three chords fit a flat surface and a globe of any size equally well. Add the centre station.</p>`;}
+  else{const u=run.u,s=mcS.s,z=u/s,R=1/u;const lo=1/(u+s),hi=u-s>0?fmt(1/(u-s),0):"∞";
+    r=`<div class="kv"><div class="k">Curvature û = 1/R</div><div class="v">${fmt(u*R0,3)} ± ${fmt(s*R0,3)}</div><div class="d">in units of 1/6,371 km, 1σ</div></div>
+      <div class="kv"><div class="k">Radius R̂</div><div class="v">${u>0?fmt(R,0)+" km":"—"}</div><div class="d">1σ range ${fmt(lo,0)}–${hi} km</div></div>
+      <div class="kv"><div class="k">Flat, u = 0</div><div class="v">${fmt(Math.abs(z),1)}σ away</div><div class="d">${Math.abs(z)>=5?"excluded at 5σ":Math.abs(z)>=3?"disfavoured, not excluded":"not excluded"}</div></div>
+      <p class="verdict">This simulated campaign gives R = ${u>0?fmt(R,0):"—"} km (1σ ${fmt(lo,0)}–${hi} km) from six chords and four heights, against 6,371 km built into the simulated world. ${z<0?"The fit leans concave.":""} Every figure assumes the error settings above; the air-correction residual and the station heights are the ones to pin down in the field.</p>`;}
+  $("res").innerHTML=r;}
+function labels(){$("dhv").textContent=fmt(+$("dh").value,0)+" m";$("sigv").textContent=fmt(+$("sig").value,3)+" m";$("ppmv").textContent=fmt(+$("ppm").value,1)+" ppm";$("hsv").textContent=fmt(+$("hs").value,1)+" m";$("biasv").textContent=fmt(+$("bias").value,3)+" m";}
+function recompute(shadeToo){labels();D.h=+$("dh").value;const st=stations(D),o=opts();if(shadeToo)buildShade();mcS=monte(st,o,MCN,777);run=campaign(st,mk(seed),o);render();}
+let t=null;["dh","sig","ppm","hs","bias"].forEach(id=>$(id).addEventListener("input",()=>{labels();clearTimeout(t);t=setTimeout(()=>recompute(true),120);}));
+$("mode").addEventListener("change",render);
+$("reseed").addEventListener("click",()=>{seed++;run=campaign(stations(D),mk(seed),opts());render();});
+$("map").addEventListener("click",e=>{const svg=$("map"),pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(svg.getScreenCTM().inverse());
+  const[lo,la]=unpx(q.x,q.y);D.lat=la;D.lon=lo;if($("mode").value!=="4")$("mode").value="4";recompute(false);});
+recompute(true);
+</script>
+</body>
+</html>

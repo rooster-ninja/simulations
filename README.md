@@ -12,6 +12,7 @@ https://rooster-ninja.github.io/simulations/
 | Disc model quasar test (WIP) | [disc-model-quasars/](https://rooster-ninja.github.io/simulations/disc-model-quasars/) |
 | Celestial theodolite: planar prediction | [celestial-theodolite/](https://rooster-ninja.github.io/simulations/celestial-theodolite/) |
 | Triangulation chain: baseline to check base | [triangulation-chain/](https://rooster-ninja.github.io/simulations/triangulation-chain/) |
+| Peak chord curvature | [peak-chord-curvature/](https://rooster-ninja.github.io/simulations/peak-chord-curvature/) |
 
 ## Layout
 
