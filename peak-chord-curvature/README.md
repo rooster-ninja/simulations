@@ -1,6 +1,6 @@
 # Peak chord curvature
 
-Single straight Giga-Ranger chords between Nanton, Mount Head and Plateau
+Single straight Giga-Ranger chords between Nanton, Mount Burke and Plateau
 Mountain, plus a centre station inside that triangle, give a radius of
 curvature with error bars. No angles, bearings or GPS.
 
@@ -11,8 +11,9 @@ curvature with error bars. No angles, bearings or GPS.
 - **A centre station decides.** Four stations have five unknowns and six
   chords, leaving one condition that only the right curvature satisfies.
   Placement matters: a fourth station outside the triangle (High River) puts
-  flat ~0.1σ away; a centre station near 50.36° N, 114.25° W puts it ~20σ
-  away at the default errors. Tap the map to move it; shading shows test
+  flat under 1σ away; a centre station in the foothills near 50.28° N,
+  114.28° W puts it ~17σ away at the default errors. It must stay east of
+  the front ranges, where it can see Nanton. Tap the map to move it; shading shows test
   strength.
 - **Chords need heights.** A chord runs through the air, so converting it to a
   ground distance uses each station's height above the reference surface,
@@ -37,14 +38,14 @@ curvature with error bars. No angles, bearings or GPS.
 | Source | 1σ | Basis | Flat excluded at |
 | --- | --- | --- | --- |
 | Chord, random | 0.05 m | 0.021 m exchange floor + corrected thermal drift (assumed) | 0.2 m → ~8σ |
-| Air correction residual | 1 ppm per chord | Assumed, after GRIN removes ≈ 15 m per 60 km | 3 ppm → ~12σ, 10 ppm → ~4σ |
-| Station heights | 2 m | Simultaneous barometric levelling (assumed) | 5 m → ~11σ, 10 m → ~6σ |
+| Air correction residual | 1 ppm per chord | Assumed, after GRIN removes ≈ 15 m per 60 km | 3 ppm → ~12σ, 10 ppm → ~4.5σ |
+| Station heights | 2 m | Simultaneous barometric levelling (assumed) | 5 m → ~9σ, 10 m → ~4.5σ |
 | Common offset | 0.03 m | Size of the −27 mm calibration residual | 0.5 m → ~5σ |
-| Ray bending | ≈ 1.6 cm on 63 km | L³κ²/24, κ = R/4 radio ray; left uncorrected | < 1 % in û |
+| Ray bending | ≈ 1.1 cm on 55 km | L³κ²/24, κ = R/4 radio ray; left uncorrected | < 1 % in û |
 
-Defaults: û = 1.00 ± 0.05 (units of 1/6,371 km), flat ~20σ away. With all
+Defaults: û = 1.00 ± 0.06 (units of 1/6,371 km), flat ~17σ away. With all
 four stations at equal height the test still gives ~3σ (chord-versus-ground
-difference alone); the peak–prairie height difference multiplies it ~6×.
+difference alone); the 1.5 km peak–prairie height difference multiplies it ~6×.
 
 ## Simplifications
 
@@ -53,7 +54,7 @@ difference alone); the peak–prairie height difference multiplies it ~6×.
 
 ## Sources
 
-- PeakVisor, Mount Head: https://peakvisor.com/peak/mount-head-canada.html
+- NRCan CGNDB, Mount Burke: https://geogratis.gc.ca/services/geoname/en/geonames/IAJLN.html ; height 2,535 m (author's reading): https://www.spectacularmountains.com/canada/kananaskis/lookout-range-to-mount-burke/
 - PeakVisor, Plateau Mountain: https://peakvisor.com/peak/plateau-mountain-canada.html
 - RoadsideThoughts, Nanton: https://roadsidethoughts.com/ab/nanton-profile.htm
 - latlong.net, High River: https://www.latlong.net/place/high-river-ab-canada-13027.html ; RoadsideThoughts, High River: https://roadsidethoughts.com/ab/high-river-profile.htm

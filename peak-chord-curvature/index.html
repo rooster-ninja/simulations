@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Peak Chord Curvature</title>
 <meta property="og:title" content="Peak Chord Curvature: two peaks, an observer and a centre station">
-<meta property="og:description" content="Single straight Giga-Ranger chords between Nanton, Mount Head and Plateau Mountain, plus a centre station, give a radius of curvature with error bars. Three chords fit any surface; the fourth station decides. Tap the map to place it.">
+<meta property="og:description" content="Single straight Giga-Ranger chords between Nanton, Mount Burke and Plateau Mountain, plus a centre station, give a radius of curvature with error bars. Three chords fit any surface; the fourth station decides. Tap the map to place it.">
 <meta name="theme-color" content="#f3efe4">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -75,7 +75,7 @@ details.src q{font-style:italic}
     <p class="back"><a href="../">← All simulations</a></p>
     <p class="eyebrow">Theorema Egregium · line-of-sight curvature</p>
     <h1>Two peaks, an observer and a centre station</h1>
-    <p class="sub">Every distance is one straight Giga-Ranger shot: Nanton to Mount Head, Nanton to Plateau Mountain, and peak to peak. Those three chords fit any surface. One more station inside the triangle, ranging to all three corners, turns them into a radius of curvature with error bars.</p>
+    <p class="sub">Every distance is one straight Giga-Ranger shot: Nanton to Mount Burke, Nanton to Plateau Mountain, and peak to peak. Those three chords fit any surface. One more station inside the triangle, ranging to all three corners, turns them into a radius of curvature with error bars.</p>
   </header>
 
   <section class="panel">
@@ -95,8 +95,8 @@ details.src q{font-style:italic}
   <section class="panel">
     <div class="ptitle">1 · The stations, overhead</div>
     <div class="legend"><span><i style="background:var(--accent)"></i>Triangle chord</span><span><i style="background:var(--orange)"></i>Centre-station chord</span><span><i style="background:var(--green)"></i>Shading: how far flat sits from the result if the centre station stood there</span></div>
-    <div class="svgbox"><svg id="map" viewBox="0 0 680 500" role="img" aria-label="Map of Nanton, Mount Head, Plateau Mountain and the centre station, with the six chords and shading showing where a centre station gives a strong test"></svg></div>
-    <p class="cap">Tap the map to move the centre station. Darker shading means a stronger test at the current error settings. A station outside the triangle (High River, for example) gives almost nothing; one inside, ranging to all three corners, gives the most.</p>
+    <div class="svgbox"><svg id="map" viewBox="0 0 680 500" role="img" aria-label="Map of Nanton, Mount Burke, Plateau Mountain and the centre station, with the six chords and shading showing where a centre station gives a strong test"></svg></div>
+    <p class="cap">Tap the map to move the centre station. Darker shading means a stronger test at the current error settings. A station outside the triangle (High River, for example) gives almost nothing; one inside, ranging to all three corners, gives the most. Shading west of the peaks ignores terrain: from there the peaks block the shot to Nanton.</p>
   </section>
 
   <section class="readout" id="res" aria-live="polite"></section>
@@ -117,8 +117,8 @@ details.src q{font-style:italic}
     <div class="math">1ᵀ V⁻¹ 1 = K,&nbsp;&nbsp;&nbsp; V<sub>ij</sub> = V<sub>K</sub>(s<sub>ij</sub>) = (1 − cos √K s<sub>ij</sub>) / K</div>
     <p><b>Chords need heights.</b> A chord is a straight line through the air, not a distance along the ground. Converting it needs each station's height above the reference surface, measured independently, for example by simultaneous barometric levelling with the BME280s already in each enclosure. On a sphere of signed curvature u = 1/R (u &gt; 0 convex, 0 flat, u &lt; 0 concave):</p>
     <div class="math">c² = (h₁ − h₂)² + 2 (1 + u h₁)(1 + u h₂) · V<sub>u²</sub>(s)</div>
-    <p><b>Where the station goes matters.</b> With the same errors, a fourth station outside the triangle (High River) puts flat only 0.1σ away; a centre station near 50.36° N, 114.25° W puts it about 20σ away. The centre station plays the part of a cut across the triangle.</p>
-    <p><b>What the test reads.</b> The fit uses how the chords sit against the station heights as well as the shape of the four-point figure. With all four stations at the same height the test still separates flat from the globe (about 3σ here), from the line-to-line difference between chord and ground. The 1.5–1.8 km height difference between peaks and prairie multiplies that about six-fold.</p>
+    <p><b>Where the station goes matters.</b> With the same errors, a fourth station outside the triangle (High River) puts flat under 1σ away; a centre station in the foothills near 50.28° N, 114.28° W puts it about 17σ away. It has to stay east of the front ranges: west of the peaks the peaks themselves block its shot to Nanton. The centre station plays the part of a cut across the triangle.</p>
+    <p><b>What the test reads.</b> The fit uses how the chords sit against the station heights as well as the shape of the four-point figure. With all four stations at the same height the test still separates flat from the globe (about 3σ here), from the line-to-line difference between chord and ground. The 1.5 km height difference between the peaks and the prairie multiplies that about six-fold.</p>
   </section>
 
   <section class="panel prose">
@@ -138,10 +138,10 @@ details.src q{font-style:italic}
       <thead><tr><th>Source</th><th class="n">Default (1σ)</th><th>Basis</th><th>Effect</th></tr></thead>
       <tbody>
         <tr><td>Chord, random</td><td class="n">0.05 m</td><td>Assumed: 0.021 m exchange floor (0.47 m ÷ √500) plus thermal drift corrected from logged temperature</td><td>At 0.2 m, flat is still about 8σ away</td></tr>
-        <tr><td>Air correction residual</td><td class="n">1 ppm</td><td>Assumed: after removing ≈ 15 m per 60 km with GRIN. The peak-to-peak chord crosses thinner air than the prairie chords, and only the endpoints are sampled</td><td>The main risk: 3 ppm gives about 12σ, 10 ppm about 4σ</td></tr>
-        <tr><td>Station heights</td><td class="n">2 m</td><td>Assumed: simultaneous barometric levelling</td><td>5 m gives about 11σ, 10 m about 6σ, 30 m about 2σ</td></tr>
+        <tr><td>Air correction residual</td><td class="n">1 ppm</td><td>Assumed: after removing ≈ 15 m per 60 km with GRIN. The peak-to-peak chord crosses thinner air than the prairie chords, and only the endpoints are sampled</td><td>The main risk: 3 ppm gives about 12σ, 10 ppm about 4.5σ</td></tr>
+        <tr><td>Station heights</td><td class="n">2 m</td><td>Assumed: simultaneous barometric levelling</td><td>5 m gives about 9σ, 10 m about 4.5σ, 30 m about 1.5σ</td></tr>
         <tr><td>Common offset</td><td class="n">0.03 m</td><td>Assumed: the size of the −27 mm calibration residual</td><td>Small at this size; 0.5 m gives about 5σ</td></tr>
-        <tr><td>Ray bending</td><td class="n">≈ 1.6 cm</td><td>Computed: a radio ray curving at a quarter of the earth's curvature is longer than the chord by L³κ²/24 on the 63 km line</td><td>Left uncorrected in the simulation; shifts û by under 1 %</td></tr>
+        <tr><td>Ray bending</td><td class="n">≈ 1.1 cm</td><td>Computed: a radio ray curving at a quarter of the earth's curvature is longer than the chord by L³κ²/24 on the 55 km line</td><td>Left uncorrected in the simulation; shifts û by under 1 %</td></tr>
       </tbody>
     </table></div>
     <p class="cap"><b>Simplifications.</b> Sphere of the GRS 80 mean radius, no flattening. Nanton's coordinates are approximate (town centre); replace with your site. The centre station's height is a placeholder until a site is chosen. Line of sight on each chord, especially peak to peak and from the centre station, is assumed rather than checked against terrain.</p>
@@ -150,7 +150,7 @@ details.src q{font-style:italic}
   <details class="src">
     <summary>Sources for this page (pages and quotes)</summary>
     <ul>
-      <li>PeakVisor, <a href="https://peakvisor.com/peak/mount-head-canada.html">Mount Head</a>: <q>2 782m/9 127ft a.s.l.</q>, 50.440269 N, 114.649672 W.</li>
+      <li>Natural Resources Canada, Canadian Geographical Names Database, <a href="https://geogratis.gc.ca/services/geoname/en/geonames/IAJLN.html">Mount Burke</a>: 50.29, −114.5244444. Summit height 2,535 m from Spectacular Mountains, <a href="https://www.spectacularmountains.com/canada/kananaskis/lookout-range-to-mount-burke/">Lookout Range to Mount Burke</a> (the author's own reading).</li>
       <li>PeakVisor, <a href="https://peakvisor.com/peak/plateau-mountain-canada.html">Plateau Mountain</a>: <q>2 515m/8 251ft a.s.l.</q>, 50.207957 N, 114.517108 W.</li>
       <li>RoadsideThoughts, <a href="https://roadsidethoughts.com/ab/nanton-profile.htm">Nanton profile</a>: <q>3,350 feet [1,021 m] above sea level</q>. Nanton's coordinates here are approximate.</li>
       <li>latlong.net, <a href="https://www.latlong.net/place/high-river-ab-canada-13027.html">High River</a>: 50.584435, −113.873505; RoadsideThoughts, <a href="https://roadsidethoughts.com/ab/high-river-profile.htm">High River profile</a>: 1,033 m. Used for the outside-station comparison.</li>
@@ -166,7 +166,7 @@ details.src q{font-style:italic}
 const R0=6371.0087714;
 const BASE=[ // the triangle: one observer, two peaks
   {n:"Nanton",lat:50.349,lon:-113.772,h:1021,kind:"obs",approx:true},
-  {n:"Mount Head",lat:50.440269,lon:-114.649672,h:2782,kind:"peak"},
+  {n:"Mount Burke",lat:50.29,lon:-114.5244444,h:2535,kind:"peak"},
   {n:"Plateau Mountain",lat:50.207957,lon:-114.517108,h:2515,kind:"peak"}];
 const PAIRS3=[[0,1],[0,2],[1,2]], PAIRS=[[0,1],[0,2],[1,2],[0,3],[1,3],[2,3]];
 function mk(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
@@ -204,7 +204,7 @@ function planZ(st,o){const c=trueChords(st),h=st.map(s=>s.h/1000),f0=F(c,h,0),e=
 
 const $=id=>document.getElementById(id);
 const fmt=(x,d)=>x.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
-const MCN=1500;let seed=1,D={n:"Centre station",lat:50.36,lon:-114.25,h:1400,kind:"ctr"},mcS=null,run=null;
+const MCN=1500;let seed=1,D={n:"Centre station",lat:50.28,lon:-114.28,h:1400,kind:"ctr"},mcS=null,run=null;
 const HR={n:"High River",lat:50.584435,lon:-113.873505};
 const opts=()=>({sig:+$("sig").value,ppm:+$("ppm").value,hs:+$("hs").value,bias:+$("bias").value});
 // map projection
@@ -229,7 +229,7 @@ function drawMap(){const four=$("mode").value==="4",st=stations(D),g=[shade];
   st.forEach((s,i)=>{if(i===3&&!four)return;const[x,y]=P[i];
     g.push(s.kind==="peak"?el("path",{d:`M${x},${y-8}L${x+7},${y+5}L${x-7},${y+5}Z`,fill:"var(--ink)"}):el("circle",{cx:x,cy:y,r:i===3?6:5,fill:i===3?"var(--orange)":"var(--ink)",stroke:"var(--plate)","stroke-width":1.5}));
     const lab=i===3?`Centre ${fmt(s.h,0)} m`:`${s.n} ${fmt(s.h,0)} m`;const right=i===0;
-    g.push(el("text",{x:x+(right?10:-10),y:y+(i===2?18:i===1?-12:-10),"font-size":12.5,"font-weight":600,"text-anchor":right?"start":"end"},lab));});
+    g.push(el("text",{x:i===3?x:x+(right?10:-10),y:y+(i===3?24:i===2?18:i===1?-12:-10),"font-size":12.5,"font-weight":600,"text-anchor":i===3?"middle":right?"start":"end"},lab));});
   const sx=PAD+6,sy=H-PAD-6,bl=10/111.32*sc;g.push(el("line",{x1:sx,y1:sy,x2:sx+bl,y2:sy,stroke:"var(--ink)","stroke-width":2})+el("text",{x:sx,y:sy-6,"font-size":11},"10 km"));
   $("map").innerHTML=g.join("");}
 function render(){const four=$("mode").value==="4",st=stations(D),o=opts();drawMap();
@@ -240,11 +240,11 @@ function render(){const four=$("mode").value==="4",st=stations(D),o=opts();drawM
   $("ctable").innerHTML=h;
   let r="";
   if(!four){r=`<div class="kv"><div class="k">Radius R̂</div><div class="v">undetermined</div><div class="d">3 chords, 3 unknowns, 0 left over</div></div><p class="verdict">Three chords fit a flat surface and a globe of any size equally well. Add the centre station.</p>`;}
-  else{const u=run.u,s=mcS.s,z=u/s,R=1/u;const lo=1/(u+s),hi=u-s>0?fmt(1/(u-s),0):"∞";
+  else{const u=run.u,s=mcS.s,z=u/s,R=1/u;const lo=u+s>0?fmt(1/(u+s),0):"—",hi=u-s>0?fmt(1/(u-s),0):"∞";
     r=`<div class="kv"><div class="k">Curvature û = 1/R</div><div class="v">${fmt(u*R0,3)} ± ${fmt(s*R0,3)}</div><div class="d">in units of 1/6,371 km, 1σ</div></div>
-      <div class="kv"><div class="k">Radius R̂</div><div class="v">${u>0?fmt(R,0)+" km":"—"}</div><div class="d">1σ range ${fmt(lo,0)}–${hi} km</div></div>
+      <div class="kv"><div class="k">Radius R̂</div><div class="v">${u>0?fmt(R,0)+" km":"—"}</div><div class="d">1σ range ${lo}–${hi} km</div></div>
       <div class="kv"><div class="k">Flat, u = 0</div><div class="v">${fmt(Math.abs(z),1)}σ away</div><div class="d">${Math.abs(z)>=5?"excluded at 5σ":Math.abs(z)>=3?"disfavoured, not excluded":"not excluded"}</div></div>
-      <p class="verdict">This simulated campaign gives R = ${u>0?fmt(R,0):"—"} km (1σ ${fmt(lo,0)}–${hi} km) from six chords and four heights, against 6,371 km built into the simulated world. ${z<0?"The fit leans concave.":""} Every figure assumes the error settings above; the air-correction residual and the station heights are the ones to pin down in the field.</p>`;}
+      <p class="verdict">This simulated campaign gives R = ${u>0?fmt(R,0):"—"} km (1σ ${lo}–${hi} km) from six chords and four heights, against 6,371 km built into the simulated world. ${z<0?"The fit leans concave.":""} Every figure assumes the error settings above; the air-correction residual and the station heights are the ones to pin down in the field.</p>`;}
   $("res").innerHTML=r;}
 function labels(){$("dhv").textContent=fmt(+$("dh").value,0)+" m";$("sigv").textContent=fmt(+$("sig").value,3)+" m";$("ppmv").textContent=fmt(+$("ppm").value,1)+" ppm";$("hsv").textContent=fmt(+$("hs").value,1)+" m";$("biasv").textContent=fmt(+$("bias").value,3)+" m";}
 function recompute(shadeToo){labels();D.h=+$("dh").value;const st=stations(D),o=opts();if(shadeToo)buildShade();mcS=monte(st,o,MCN,777);run=campaign(st,mk(seed),o);render();}

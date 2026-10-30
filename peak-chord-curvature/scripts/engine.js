@@ -2,7 +2,7 @@
 const R0=6371.0087714;
 const BASE=[ // the triangle: one observer, two peaks
   {n:"Nanton",lat:50.349,lon:-113.772,h:1021,kind:"obs",approx:true},
-  {n:"Mount Head",lat:50.440269,lon:-114.649672,h:2782,kind:"peak"},
+  {n:"Mount Burke",lat:50.29,lon:-114.5244444,h:2535,kind:"peak"},
   {n:"Plateau Mountain",lat:50.207957,lon:-114.517108,h:2515,kind:"peak"}];
 const PAIRS3=[[0,1],[0,2],[1,2]], PAIRS=[[0,1],[0,2],[1,2],[0,3],[1,3],[2,3]];
 function mk(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
