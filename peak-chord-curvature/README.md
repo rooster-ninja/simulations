@@ -8,7 +8,15 @@ curvature with error bars. No angles, bearings or GPS.
 
 - **Three chords fit any surface.** Three stations on a surface have three
   unknowns after removing slide and turn; three chords fill them exactly.
-- **A centre station decides.** Four stations have five unknowns and six
+- **Terrain decides where the fourth station can go.** Shaded relief, 100 m
+  contours and a live line-of-sight check (4/3-earth radio path, 60 % of the
+  first Fresnel zone at 2.45 GHz) come from SRTM 1″ tiles averaged to a
+  0.004° grid (`scripts/build_dem.py`). On paper the best site is inside the
+  triangle (~17σ), but foothill ridges block at least one chord from every site
+  there, even with 30 m masts. Usable sites are just east of Nanton: 15 m masts
+  near 50.365° N, 113.64° W give ~8σ with a clear Fresnel zone; 30 m masts near
+  50.37° N, 113.60° W give ~10σ.
+- **A fourth station decides.** Four stations have five unknowns and six
   chords, leaving one condition that only the right curvature satisfies.
   Placement matters: a fourth station outside the triangle (High River) puts
   flat under 1σ away; a centre station in the foothills near 50.28° N,
