@@ -1,0 +1,122 @@
+{
+ "labels": {
+  "US 39th parallel": [
+   375.55826771297575,
+   -683.6110380214437,
+   1930.8609491598256
+  ],
+  "US 39th parallel west": [
+   -2000.0157658446706,
+   -336.9034864305093,
+   1650.0343905940383
+  ],
+  "US 39th parallel south": [
+   -1874.389919126103,
+   -589.3383662929796,
+   1670.728078358939
+  ],
+  "US Eastern Oblique": [
+   1768.0780412799331,
+   -666.99874199224,
+   1694.3439593056303
+  ],
+  "US Eastern Oblique west": [
+   1131.2551227340184,
+   -1555.6677788801987,
+   1683.850198133192
+  ],
+  "US Eastern Oblique south": [
+   1152.6696755930182,
+   -1553.6791070040958,
+   1680.3666590420523
+  ]
+ },
+ "stats": {
+  "US 39th parallel": {
+   "triangles": 465,
+   "edges": 612,
+   "chosen": 241,
+   "z_mean": -0.1117872859652201,
+   "z_sd": 1.06836559008042,
+   "q": 0.9792638421518111,
+   "sq": 0.011893312026083604,
+   "R_km": 6440.612239026773,
+   "n": 241,
+   "A": 322644.4737439326
+  },
+  "US Eastern Oblique": {
+   "triangles": 281,
+   "edges": 339,
+   "chosen": 114,
+   "z_mean": -0.20235579965197403,
+   "z_sd": 0.8934135266799961,
+   "q": 0.9436350155366149,
+   "sq": 0.026055286368859756,
+   "R_km": 6560.575074585137,
+   "n": 114,
+   "A": 112582.33697492728
+  }
+ },
+ "bodies": {
+  "US 39th parallel triangles (outline)": [
+   "US_39th_parallel_triangles_outline.stl",
+   "#1c1c19"
+  ],
+  "US 39th parallel chain tiles z=-3": [
+   "US_39th_parallel_chain_tiles_zm3.stl",
+   "#053061"
+  ],
+  "US 39th parallel chain tiles z=-2": [
+   "US_39th_parallel_chain_tiles_zm2.stl",
+   "#3783ba"
+  ],
+  "US 39th parallel chain tiles z=-1": [
+   "US_39th_parallel_chain_tiles_zm1.stl",
+   "#a7cfe4"
+  ],
+  "US 39th parallel chain tiles z=+0": [
+   "US_39th_parallel_chain_tiles_zp0.stl",
+   "#f7f6f6"
+  ],
+  "US 39th parallel chain tiles z=+1": [
+   "US_39th_parallel_chain_tiles_zp1.stl",
+   "#f7b799"
+  ],
+  "US 39th parallel chain tiles z=+2": [
+   "US_39th_parallel_chain_tiles_zp2.stl",
+   "#c94641"
+  ],
+  "US 39th parallel chain tiles z=+3": [
+   "US_39th_parallel_chain_tiles_zp3.stl",
+   "#67001f"
+  ],
+  "US Eastern Oblique triangles (outline)": [
+   "US_Eastern_Oblique_triangles_outline.stl",
+   "#1c1c19"
+  ],
+  "US Eastern Oblique chain tiles z=-3": [
+   "US_Eastern_Oblique_chain_tiles_zm3.stl",
+   "#053061"
+  ],
+  "US Eastern Oblique chain tiles z=-2": [
+   "US_Eastern_Oblique_chain_tiles_zm2.stl",
+   "#3783ba"
+  ],
+  "US Eastern Oblique chain tiles z=-1": [
+   "US_Eastern_Oblique_chain_tiles_zm1.stl",
+   "#a7cfe4"
+  ],
+  "US Eastern Oblique chain tiles z=+0": [
+   "US_Eastern_Oblique_chain_tiles_zp0.stl",
+   "#f7f6f6"
+  ],
+  "US Eastern Oblique chain tiles z=+1": [
+   "US_Eastern_Oblique_chain_tiles_zp1.stl",
+   "#f7b799"
+  ],
+  "US Eastern Oblique chain tiles z=+2": [
+   "US_Eastern_Oblique_chain_tiles_zp2.stl",
+   "#c94641"
+  ]
+ }
+}
