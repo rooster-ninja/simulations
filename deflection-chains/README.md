@@ -51,6 +51,21 @@ For a direction at azimuth α to a station seen at elevation angle e, the reduct
 - `viewer_scene_dov.glb` is the land and ocean of `viewer_scene.glb` with the recoloured chains, used by this page's viewer.
 - `overlay_dov.json` lists the bins, colours and counts.
 
+## Balanced tilt and water plane
+
+The report's dome has its top at 45° N, 100° W. There the lowest northern coastline point (north-east Greenland) sits 235 mm lower than the lowest southern one. `model/na_dome_mesh_balanced.py` tilts the dome about an east–west axis until the two match. On a sphere, a tilt about a horizontal east–west axis through the centre is the same as sliding the top along its meridian, so the script solves for the top's latitude by bisection, rebuilds the land there and lifts it so the lowest coast sits at 50 mm.
+
+| | Report's dome | Balanced |
+| --- | ---: | ---: |
+| Top of the dome | 45° N, 100° W | 46.6848° N, 100° W (tilt 1.68°) |
+| Lowest north coast | 50 mm (NE Greenland) | 50.0 mm, 81.70° N 12.61° W |
+| Lowest south coast | 285 mm | 50.0 mm, 7.61° N 77.48° W |
+| Peak | 1 938 mm | 1810 mm |
+
+Both lowest points are 4,859 km of arc from the new top. Same sphere and K (R = 6 388.8 km); only the axis moved. Outputs are in `model/balanced/`: a 3MF, one STL per landmass, the recoloured chain bodies, `viewer_scene_balanced.glb` (no ocean slab) and `mesh_params_balanced.json`. Rebuild with `python3 na_dome_mesh_balanced.py --out balanced/NorthAmerica_EarthDome_K2.450_balanced.3mf --params_out balanced/mesh_params_balanced.json --stl_dir balanced/stl`, then `python3 chain_overlay_dov.py --balanced`. The coastline is Natural Earth 1:50m (`model/ne/`).
+
+On the page, the viewer switches between the balanced and the report's dome. A water-plane slider runs from 3 m below the base to 1 m above the peak, in model units (1 mm = 1 km).
+
 ## Files
 
 | Path | What |

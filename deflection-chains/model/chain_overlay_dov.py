@@ -10,7 +10,8 @@ triangle's angle excess compared with the raw printed angles:
 from ../data/dov_triangles.csv (made by ../scripts/dov_correct.py). Seven bins, PuOr:
 purple = excess reduced, orange = excess increased, grey = within +-0.03".
 
-usage: python3 chain_overlay_dov.py           (run from this folder)
+usage: python3 chain_overlay_dov.py                      (the report's dome, centre 45 N)
+       python3 chain_overlay_dov.py --balanced           (the tilted dome in balanced/)
 writes: dov_bodies/*.stl (one body per colour step, for SolidCraft),
         viewer_scene_dov.glb (land and ocean from viewer_scene.glb + the recoloured chains),
         overlay_dov.json (bins, colours, counts, label anchors)
@@ -20,10 +21,12 @@ import numpy as np, trimesh, matplotlib
 from pyproj import Transformer
 
 HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(HERE, "..", "data")
-PRM = json.load(open(os.path.join(HERE, "mesh_params.json")))
-OUT = os.path.join(HERE, "dov_bodies"); os.makedirs(OUT, exist_ok=True)
-R, LIFT = PRM["R_mm"], PRM["lift_mm"]
-aeqd = Transformer.from_crs("EPSG:4326", f"+proj=aeqd +lat_0=45 +lon_0=-100 +R={R*1000} +units=km", always_xy=True)
+import sys
+BAL = "--balanced" in sys.argv
+PRM = json.load(open(os.path.join(HERE, "balanced/mesh_params_balanced.json" if BAL else "mesh_params.json")))
+OUT = os.path.join(HERE, "balanced/dov_bodies" if BAL else "dov_bodies"); os.makedirs(OUT, exist_ok=True)
+R, LIFT = PRM["R_mm"], PRM["lift_mm"]; LAT0 = PRM.get("lat0", 45.0)
+aeqd = Transformer.from_crs("EPSG:4326", f"+proj=aeqd +lat_0={LAT0} +lon_0=-100 +R={R*1000} +units=km", always_xy=True)
 TILE_BOT, TILE_TOP, ROD_UP, ROD_R = -0.5, 3.0, 3.6, 2.2   # mm along the sphere normal, as in chain_overlay.py
 
 def sphere_pts(lon, lat, up=0.0):
@@ -89,18 +92,24 @@ for key in CH:
     labels[key] = sphere_pts([allp[:, 0].mean()], [allp[:, 1].mean()], 40)[0].tolist()
 
 def fname(n): return n.replace(" ", "_").replace("(", "").replace(")", "").replace("+", "p").replace("-", "m") + ".stl"
-base = trimesh.load(os.path.join(HERE, "viewer_scene.glb"))
 scene = trimesh.Scene()
-for node in base.graph.nodes_geometry:
-    if node.startswith("land"):
-        T, g = base.graph[node]; scene.add_geometry(base.geometry[g], node_name=node, transform=T)
+if BAL:   # land from the balanced build; no ocean slab (the page draws a movable water plane)
+    LAND = np.array([156, 164, 178, 255], np.uint8)
+    for fn in sorted(os.listdir(os.path.join(HERE, "balanced/stl"))):
+        m = trimesh.load(os.path.join(HERE, "balanced/stl", fn)); m.visual.vertex_colors = np.tile(LAND, (len(m.vertices), 1))
+        scene.add_geometry(m, node_name="land " + fn[:-4].replace("_", " "))
+else:
+    base = trimesh.load(os.path.join(HERE, "viewer_scene.glb"))
+    for node in base.graph.nodes_geometry:
+        if node.startswith("land"):
+            T, g = base.graph[node]; scene.add_geometry(base.geometry[g], node_name=node, transform=T)
 for name, (m, col) in bodies.items():
     m.export(os.path.join(OUT, fname(name)))
     mm = m.copy(); lin = col ** 2.2
     mm.visual.vertex_colors = (np.c_[np.tile(lin, (len(mm.vertices), 1)), np.ones(len(mm.vertices))] * 255).astype(np.uint8)
     scene.add_geometry(mm, node_name=name)
-scene.export(os.path.join(HERE, "viewer_scene_dov.glb"))
+scene.export(os.path.join(HERE, "balanced/viewer_scene_balanced.glb" if BAL else "viewer_scene_dov.glb"))
 json.dump(dict(bins={LABEL[b[2]]: "#%02x%02x%02x" % tuple(int(v * 255) for v in bcol(b[2])) for b in BINS},
                counts=counts, labels=labels, bodies={n: fname(n) for n in bodies}),
-          open(os.path.join(HERE, "overlay_dov.json"), "w"), indent=1, ensure_ascii=False)
+          open(os.path.join(HERE, "balanced/overlay_balanced.json" if BAL else "overlay_dov.json"), "w"), indent=1, ensure_ascii=False)
 print(json.dumps(counts, indent=1, ensure_ascii=False))

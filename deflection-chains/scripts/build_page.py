@@ -1,6 +1,8 @@
 """Write ../index.html from the result files, so every number on the page comes from the data."""
 import json, csv, os, html
 HERE = os.path.dirname(os.path.abspath(__file__)); B = os.path.join(HERE, "..")
+BP = json.load(open(f"{B}/model/balanced/mesh_params_balanced.json")); OP = json.load(open(f"{B}/model/mesh_params.json"))
+WMIN, WMAX = -3000, int(round(BP["peak_mm"] + 1000, -1))
 R = json.load(open(f"{B}/data/dov_results.json")); OV = json.load(open(f"{B}/model/overlay_dov.json"))
 T = list(csv.DictReader(open(f"{B}/data/dov_triangles.csv")))
 S = list(csv.DictReader(open(f"{B}/data/dov_stations.csv")))
@@ -31,6 +33,7 @@ def chainrow(label, key):
 
 legend = "".join(f'<span><i style="background:{c}"></i>{e(l)}</span>' for l, c in OV["bins"].items())
 cnt39 = OV["counts"]["US 39th parallel"]; cntEO = OV["counts"]["US Eastern Oblique"]
+OP_peak = 1938.2; OP_gap = 1888.35 - 1653.26   # report's dome: peak, and north-minus-south lowest-coast gap (na_dome_mesh_balanced.py --lat0 45)
 grey39 = cnt39["±0.03″"]; n39 = sum(cnt39.values()); greyEO = cntEO["±0.03″"]; nEO = sum(cntEO.values())
 
 page = f"""<!doctype html>
@@ -76,6 +79,9 @@ button[aria-pressed="true"]{{border-color:var(--accent);color:var(--accent)}}
 .cap{{font-size:16px;margin:0;max-width:72ch}}
 .viewer{{position:relative;height:min(64vh,560px);min-height:320px;border-radius:12px;overflow:hidden;background:#3a4150;border:1.5px solid var(--rule)}}
 .viewer canvas{{display:block;width:100%;height:100%;touch-action:none}}
+.water{{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:center;font-family:var(--f-mono);font-size:13px;color:var(--muted)}}
+.water input{{width:100%;accent-color:#2f6fae}}
+.water output{{grid-column:1/-1;color:var(--ink);font-variant-numeric:tabular-nums}}
 #vstatus{{position:absolute;inset:auto 12px 12px 12px;color:#e8e3d8;font:13px var(--f-mono)}}
 figure{{margin:0}}figure img{{display:block;width:100%;height:auto;border-radius:12px;border:1.5px solid var(--rule);background:var(--plate)}}
 figcaption{{font-size:14px;color:var(--muted);margin-top:8px;max-width:76ch}}
@@ -132,7 +138,17 @@ details.src a{{color:var(--bar-ink)}}
       <button class="vbtn" data-view="top" aria-pressed="false">Overhead</button>
       <button class="vbtn" data-view="iso" aria-pressed="false">Whole dome</button>
     </div>
+    <div class="controls" role="group" aria-label="Model">
+      <button class="mbtn" data-model="bal" aria-pressed="true">Balanced tilt (top {BP['lat0']:.2f}° N)</button>
+      <button class="mbtn" data-model="orig" aria-pressed="false">Report's dome (top 45° N)</button>
+    </div>
+    <div class="water">
+      <label for="wl">Water plane</label>
+      <input id="wl" type="range" min="{WMIN}" max="{WMAX}" step="5" value="0" aria-describedby="wlout">
+      <output id="wlout" for="wl"></output>
+    </div>
     <div class="viewer" id="viewer"><span id="vstatus">Loading the model…</span></div>
+    <p class="cap"><b>Balanced tilt.</b> The report's dome puts its top at 45° N, 100° W, where the lowest northern coast (north-east Greenland) sits {OP_gap:.0f} mm lower than the lowest southern coast. Tilting the dome about an east–west axis by {BP['lat0']-45:.2f}° moves the top to {BP['lat0']:.2f}° N, and the two lowest points, at {BP['lowest_points']['north']['lat']:.1f}° N {abs(BP['lowest_points']['north']['lon']):.1f}° W (north-east Greenland) and {BP['lowest_points']['south']['lat']:.1f}° N {abs(BP['lowest_points']['south']['lon']):.1f}° W (Panama–Colombia), then sit at the same height: {BP['lowest_points']['north']['arc_km']:,.0f} km of arc from the top, {BP['base_mm']:.0f} mm above the base. The peak drops from {OP_peak:,.0f} mm to {BP['peak_mm']:,.0f} mm. Same sphere, same K; only the axis moved. The water slider runs from 3 m below the base to 1 m above the peak, in model units (1 mm = 1 km).</p>
     <p class="cap">The report's North America dome (R = 1/√K = 6,388.8 km, 1 mm = 1 km). Every printed triangle is outlined; the non-overlapping triangles of the whole-chain sums are filled by how much the correction moves their excess. {grey39} of the {n39} 39th-parallel tiles and {greyEO} of the {nEO} Eastern Oblique tiles move by less than 0.03″ (grey). The colour sits on the high Rocky Mountain and Great Basin triangles, where the sight lines are steep and the deflections large. Drag to turn, pinch or scroll to zoom.</p>
   </section>
 
@@ -244,10 +260,25 @@ document.querySelectorAll('button.vbtn').forEach(b=>b.addEventListener('click',(
 new THREE.TextureLoader().load('model/starplane.png',t=>{{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;
   const m=new THREE.Mesh(new THREE.CircleGeometry(40000,128),new THREE.MeshBasicMaterial({{map:t,transparent:true,depthWrite:false}}));
   m.position.set(-50,400,-50.5);m.renderOrder=-1;s.add(m);}});
-new GLTFLoader().load('model/viewer_scene_dov.glb',g=>{{
+const models={{}};let mcur='bal',pending=2;
+const PEAK={{bal:{BP['peak_mm']:.1f},orig:{OP_peak:.1f}}};
+function showModel(k){{mcur=k;for(const[n,g]of Object.entries(models))g.visible=(n===k);
+  document.querySelectorAll('button.mbtn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.model===k)));setWater();}}
+function load(k,url){{new GLTFLoader().load(url,g=>{{
   g.scene.traverse(o=>{{if(o.isMesh)o.material=new THREE.MeshStandardMaterial({{vertexColors:true,roughness:.85,metalness:0,flatShading:true}});}});
-  s.add(g.scene);st.remove();window.__ready=true;
-}},undefined,()=>{{st.textContent='The model could not be loaded here. The figure in section 3 shows the same view.';}});
+  const slab=g.scene.getObjectByName('land_10');if(slab)slab.visible=false;   // the report's fixed ocean slab; the water plane replaces it
+  models[k]=g.scene;s.add(g.scene);g.scene.visible=(k===mcur);
+  if(--pending===0){{st.remove();window.__ready=true;}}
+}},undefined,()=>{{st.textContent='The model could not be loaded here. The figure in section 3 shows the same view.';}});}}
+load('bal','model/balanced/viewer_scene_balanced.glb');load('orig','model/viewer_scene_dov.glb');
+document.querySelectorAll('button.mbtn').forEach(b=>b.addEventListener('click',()=>showModel(b.dataset.model)));
+const water=new THREE.Mesh(new THREE.PlaneGeometry(7000,8800),new THREE.MeshStandardMaterial({{color:0x2f6fae,transparent:true,opacity:.62,roughness:.35,metalness:0,side:THREE.DoubleSide,depthWrite:false}}));
+water.position.set(-50,400,0);water.renderOrder=2;s.add(water);
+const wl=document.getElementById('wl'),wo=document.getElementById('wlout');
+function setWater(){{const z=+wl.value;water.position.z=z;const pk=PEAK[mcur];
+  const rel=z<0?`${{(-z/1000).toFixed(2)}} m below the base`:z<{BP['base_mm']:.0f}?`${{(z/1000).toFixed(3)}} m above the base, under the lowest coast`:z<=pk?`${{((pk-z)/1000).toFixed(2)}} m below the peak`:`${{((z-pk)/1000).toFixed(2)}} m above the peak`;
+  wo.textContent=`z = ${{(z/1000).toFixed(3)}} m (${{z.toLocaleString()}} mm, ${{z.toLocaleString()}} km at scale) · ${{rel}}`;}}
+wl.addEventListener('input',setWater);setWater();
 (function loop(){{ctl.update();r.render(s,cam);requestAnimationFrame(loop);}})();
 </script>
 </body>
