@@ -13,6 +13,7 @@ https://rooster-ninja.github.io/simulations/
 | Celestial theodolite: planar prediction | [celestial-theodolite/](https://rooster-ninja.github.io/simulations/celestial-theodolite/) |
 | Triangulation chain: baseline to check base | [triangulation-chain/](https://rooster-ninja.github.io/simulations/triangulation-chain/) |
 | Peak chord curvature | [peak-chord-curvature/](https://rooster-ninja.github.io/simulations/peak-chord-curvature/) |
+| Deflection of the vertical: US chains | [deflection-chains/](https://rooster-ninja.github.io/simulations/deflection-chains/) |
 
 ## Layout
 

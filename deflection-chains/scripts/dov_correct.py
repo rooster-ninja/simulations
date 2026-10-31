@@ -31,7 +31,7 @@ import numpy as np, xarray as xr
 from pyproj import Geod
 from scipy.interpolate import RegularGridInterpolator
 
-HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(HERE, "..", "data")
+HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(HERE, "..", "data"); SRC = os.path.join(HERE, "..", "sources")
 RAD = math.pi / 180 / 3600
 A_WGS, F_WGS = 6378137.0, 1 / 298.257223563; E2 = F_WGS * (2 - F_WGS)
 K_REFR = 0.13                       # refraction coefficient, enters only the elevation angle
@@ -83,34 +83,52 @@ for f in doc.findall("k:Folder", ns):
         pts = [tuple(map(float, c.split(",")))[:2] for c in cs.text.split()][:3]
         tris[(key, name)] = [(round(a, 6), round(b, 6)) for a, b in pts]
 
-# station values
+# DEFLEC18 values at the stations (NGS Interactive Computation, ../sources)
+d18 = {}
+key_rows = {r["id"]: r for r in csv.DictReader(open(os.path.join(SRC, "DEFLEC18_station_key.csv")))}
+for line in open(os.path.join(SRC, "DEFLEC18_us_stations_456_output.txt")):
+    p = line.split()
+    if len(p) < 10: continue
+    k = key_rows[p[9]]
+    d18[(round(float(k["lon_east"]), 6), round(float(k["lat"]), 6))] = (float(p[6]), float(p[7]))
+# Schott's own station heights where printed (../sources/schott1900_station_heights.csv)
+H_SCHOTT = {r["station"]: float(r["height_m"]) for r in csv.DictReader(open(os.path.join(SRC, "schott1900_station_heights.csv")))}
+
 st = {}
+def make(lo, la, key, name):
+    hg = max(0.0, float(fh((la, lo)))); hp = max(0.0, peak_height(la, lo)); hs = H_SCHOTT.get(name) if lo < -100 else None   # the transcribed heights are all west of 100 W
+    x18, e18 = d18.get((lo, la), (None, None))
+    return dict(chain=key, station=name, lon=lo, lat=la, N=float(fN((la, lo))),
+                xi_e6=float(fxi((la, lo))), eta_e6=float(feta((la, lo))),
+                xi18=x18 if x18 is not None else float(fxi((la, lo))), eta18=e18 if e18 is not None else float(feta((la, lo))),
+                has18=x18 is not None, h_grid=hg, h_peak=hp, h_schott=hs,
+                h_best=hs if hs is not None else hp, h_best_grid=hs if hs is not None else hg)
 for (lo, la), (key, name) in stations.items():
-    st[(lo, la)] = dict(chain=key, station=name, lon=lo, lat=la,
-                        xi=float(fxi((la, lo))), eta=float(feta((la, lo))), N=float(fN((la, lo))),
-                        h_grid=max(0.0, float(fh((la, lo)))), h_peak=max(0.0, peak_height(la, lo)))
+    st[(lo, la)] = make(lo, la, key, name)
 def sval(p):
-    if p not in st:  # triangle vertex without a station point: compute it directly
-        lo, la = p
-        st[p] = dict(chain="", station="", lon=lo, lat=la, xi=float(fxi((la, lo))), eta=float(feta((la, lo))),
-                     N=float(fN((la, lo))), h_grid=max(0.0, float(fh((la, lo)))), h_peak=max(0.0, peak_height(la, lo)))
+    if p not in st: st[p] = make(p[0], p[1], "", "")   # vertex without a station point
     return st[p]
 
-def direction(P, Q, hkey):
+# a case = which deflections and which heights
+CASES = {"main": ("xi18", "eta18", "h_best"),          # DEFLEC18, Schott's heights else 20 km grid peak
+         "low_h": ("xi18", "eta18", "h_best_grid"),    # DEFLEC18, Schott's heights else grid value at the station
+         "eigen": ("xi_e6", "eta_e6", "h_best")}       # EIGEN-6C4 geoid slope instead of DEFLEC18
+
+def direction(P, Q, case):
     """azimuth (deg) and DOV reduction (arcsec) of the direction observed at P to Q"""
-    a, P, Q = None, sval(P), sval(Q)
+    xk, ek, hk = CASES[case]; P, Q = sval(P), sval(Q)
     az, _, d = geod.inv(P["lon"], P["lat"], Q["lon"], Q["lat"])
-    hP = P[hkey] + P["N"]; hQ = Q[hkey] + Q["N"]
+    hP = P[hk] + P["N"]; hQ = Q[hk] + Q["N"]
     e = math.atan((hQ - hP) / d - (1 - K_REFR) * d / (2 * 6371000.0))
     al = math.radians(az)
-    delta = -(P["xi"] * math.sin(al) - P["eta"] * math.cos(al)) * math.tan(e)
+    delta = -(P[xk] * math.sin(al) - P[ek] * math.cos(al)) * math.tan(e)
     return az, delta, math.degrees(e), d
 
-def tri_correction(V, hkey):
+def tri_correction(V, case):
     tot = 0.0; corners = []
     for i in range(3):
         P, B, C = V[i], V[(i + 1) % 3], V[(i + 2) % 3]
-        azB, dB, eB, _ = direction(P, B, hkey); azC, dC, eC, _ = direction(P, C, hkey)
+        azB, dB, eB, _ = direction(P, B, case); azC, dC, eC, _ = direction(P, C, case)
         turn = (azC - azB + 540) % 360 - 180          # C clockwise from B -> positive
         c = (dC - dB) if turn > 0 else (dB - dC)       # correction to the interior angle
         tot += c; corners.append(c)
@@ -123,13 +141,13 @@ for (key, name), V in tris.items():
     r = rows.get((key, name))
     if r is None or len(set(V)) < 3 or not r["observed_excess_arcsec"]: continue
     area = float(r["area_sides_km2"]) if (r["area_sides_km2"] and r["tier"] != "C") else float(r["area_coords_km2"])
-    dg, cg = tri_correction(V, "h_grid"); dp, cp = tri_correction(V, "h_peak")
+    d = {c: tri_correction(V, c) for c in CASES}
     out.append(dict(survey=key, triangle=name, tier=r["tier"], in_result=r["in_result"] == "True",
                     area_km2=area, sigma=float(r["survey_sigma_arcsec"]),
                     K_ell=float(r["K_ellipsoid_per_m2"]), excess_raw=float(r["observed_excess_arcsec"]),
-                    d_excess_grid=dg, d_excess_peak=dp,
-                    max_corner_grid=max(abs(c) for c in cg), max_corner_peak=max(abs(c) for c in cp),
-                    xi_mean=float(np.mean([sval(p)["xi"] for p in V])), eta_mean=float(np.mean([sval(p)["eta"] for p in V])),
+                    **{f"d_{c}": d[c][0] for c in CASES}, max_corner=max(abs(x) for x in d["main"][1]),
+                    n_schott_h=sum(sval(p)["h_schott"] is not None for p in V),
+                    defl_max=max(math.hypot(sval(p)["xi18"], sval(p)["eta18"]) for p in V),
                     coords=V))
 
 # ---------- refits: report's declared rule for the US triangles (selection and sigma held fixed)
@@ -146,38 +164,46 @@ def fit(S, col):
     return dict(n=len(S), K=K, sK=math.sqrt(var) * inf, q=K / Kref, sq=math.sqrt(var) * inf / Kref, chi_dof=chi / (len(E) - 1))
 
 chain = json.load(open(os.path.join(D, "chain_results.json")))
+COLS = [""] + [f"d_{c}" for c in CASES]
 res = {}
 for key in list(CH) + ["both"]:
     S = [t for t in out if t["in_result"] and (key == "both" or t["survey"] == key)]
-    res[key] = {c: fit(S, c) for c in ("", "d_excess_grid", "d_excess_peak")}
+    res[key] = {(c or "raw"): fit(S, c) for c in COLS}
     if key in chain:
         names = set(chain[key]["names"]); C = [t for t in out if t["survey"] == key and t["triangle"] in names]
-        Esum = sum(t["excess_raw"] for t in C); Epred = sum(t["area_km2"] * 1e6 * t["K_ell"] / RAD for t in C)
-        res[key]["chain"] = dict(n=len(C), raw=Esum, grid=Esum + sum(t["d_excess_grid"] for t in C),
-                                 peak=Esum + sum(t["d_excess_peak"] for t in C), pred=Epred,
-                                 noise=float(np.sqrt(len(C)) * C[0]["sigma"]))
+        Esum = sum(t["excess_raw"] for t in C)
+        res[key]["chain"] = dict(n=len(C), raw=Esum, pred=sum(t["area_km2"] * 1e6 * t["K_ell"] / RAD for t in C),
+                                 noise=float(np.sqrt(len(C)) * C[0]["sigma"]),
+                                 **{c: Esum + sum(t[f"d_{c}"] for t in C) for c in CASES})
 sts = list(st.values())
+def rms(a): return float(np.sqrt(np.mean(np.square(a))))
 summary = dict(
-    stations=len(sts), triangles=len(out),
-    xi_rms=float(np.sqrt(np.mean([s["xi"] ** 2 for s in sts]))), eta_rms=float(np.sqrt(np.mean([s["eta"] ** 2 for s in sts]))),
-    defl_max=float(max(math.hypot(s["xi"], s["eta"]) for s in sts)),
-    d_grid_rms=float(np.sqrt(np.mean([t["d_excess_grid"] ** 2 for t in out]))),
-    d_peak_rms=float(np.sqrt(np.mean([t["d_excess_peak"] ** 2 for t in out]))),
-    d_grid_max=float(max(abs(t["d_excess_grid"]) for t in out)), d_peak_max=float(max(abs(t["d_excess_peak"]) for t in out)),
-    d_grid_mean=float(np.mean([t["d_excess_grid"] for t in out])), d_peak_mean=float(np.mean([t["d_excess_peak"] for t in out])),
+    stations=len(sts), with_deflec18=sum(s["has18"] for s in sts), with_schott_height=sum(s["h_schott"] is not None for s in sts),
+    triangles=len(out),
+    xi18_rms=rms([s["xi18"] for s in sts]), eta18_rms=rms([s["eta18"] for s in sts]),
+    defl18_max=float(max(math.hypot(s["xi18"], s["eta18"]) for s in sts)),
+    xi_e6_rms=rms([s["xi_e6"] for s in sts]), eta_e6_rms=rms([s["eta_e6"] for s in sts]),
+    by_case={c: dict(rms=rms([t[f"d_{c}"] for t in out]), mean=float(np.mean([t[f"d_{c}"] for t in out])),
+                     max=float(max(abs(t[f"d_{c}"]) for t in out)),
+                     rms_in_result=rms([t[f"d_{c}"] for t in out if t["in_result"]])) for c in CASES},
+    max_corner=float(max(t["max_corner"] for t in out)),
     fits=res)
 json.dump(summary, open(os.path.join(D, "dov_results.json"), "w"), indent=1, default=float)
 with open(os.path.join(D, "dov_stations.csv"), "w", newline="") as fh_:
-    wr = csv.writer(fh_); wr.writerow(["chain", "station", "lon", "lat", "xi_arcsec", "eta_arcsec", "geoid_N_m", "h_grid_m", "h_peak_m"])
+    wr = csv.writer(fh_)
+    wr.writerow(["chain", "station", "lon", "lat", "xi_deflec18", "eta_deflec18", "xi_eigen6c4", "eta_eigen6c4", "geoid_N_m", "h_schott_m", "h_grid_m", "h_peak20km_m"])
     for s in sorted(sts, key=lambda s: (s["chain"], s["lon"])):
-        wr.writerow([s["chain"], s["station"], f'{s["lon"]:.6f}', f'{s["lat"]:.6f}', f'{s["xi"]:.2f}', f'{s["eta"]:.2f}', f'{s["N"]:.2f}', f'{s["h_grid"]:.0f}', f'{s["h_peak"]:.0f}'])
+        wr.writerow([s["chain"], s["station"], f'{s["lon"]:.6f}', f'{s["lat"]:.6f}', f'{s["xi18"]:.2f}', f'{s["eta18"]:.2f}',
+                     f'{s["xi_e6"]:.2f}', f'{s["eta_e6"]:.2f}', f'{s["N"]:.2f}', "" if s["h_schott"] is None else f'{s["h_schott"]:.1f}',
+                     f'{s["h_grid"]:.0f}', f'{s["h_peak"]:.0f}'])
 with open(os.path.join(D, "dov_triangles.csv"), "w", newline="") as fh_:
-    cols = ["survey", "triangle", "tier", "in_result", "area_km2", "sigma", "excess_raw", "d_excess_grid", "d_excess_peak", "max_corner_grid", "max_corner_peak", "xi_mean", "eta_mean"]
-    wr = csv.writer(fh_); wr.writerow(cols + ["z_peak"])
+    cols = ["survey", "triangle", "tier", "in_result", "area_km2", "sigma", "excess_raw"] + [f"d_{c}" for c in CASES] + ["max_corner", "n_schott_h", "defl_max"]
+    wr = csv.writer(fh_); wr.writerow(cols + ["excess_corrected", "z_main"])
     for t in out:
-        wr.writerow([t[c] if not isinstance(t[c], float) else f"{t[c]:.4f}" for c in cols] + [f'{t["d_excess_peak"] / t["sigma"]:.3f}'])
+        wr.writerow([t[c] if not isinstance(t[c], float) else f"{t[c]:.4f}" for c in cols]
+                    + [f'{t["excess_raw"] + t["d_main"]:.4f}', f'{t["d_main"] / t["sigma"]:.4f}'])
 print(json.dumps({k: v for k, v in summary.items() if k != "fits"}, indent=1))
 for k, v in res.items():
-    for c in ("", "d_excess_grid", "d_excess_peak"):
-        f = v[c]; print(f"{k:20s} {c or 'raw':15s} n={f['n']} q={f['q']:.4f}±{f['sq']:.4f}")
-    if "chain" in v: print("   chain", {a: round(b, 1) for a, b in v["chain"].items()})
+    for c in ["raw"] + list(CASES):
+        f = v[c if c == "raw" else f"d_{c}"]; print(f"{k:20s} {c:6s} n={f['n']} q={f['q']:.4f}±{f['sq']:.4f}")
+    if "chain" in v: print("   chain", {a: round(b, 2) for a, b in v["chain"].items()})

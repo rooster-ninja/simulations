@@ -1,0 +1,59 @@
+{
+ "bins": {
+  "< −0.3″": "#3d1065",
+  "−0.3 to −0.1″": "#7e70aa",
+  "−0.1 to −0.03″": "#c4c2de",
+  "±0.03″": "#dbd6cc",
+  "0.03 to 0.1″": "#fdcb8b",
+  "0.1 to 0.3″": "#de8013",
+  "> 0.3″": "#954707"
+ },
+ "counts": {
+  "US 39th parallel": {
+   "< −0.3″": 2,
+   "−0.3 to −0.1″": 8,
+   "−0.1 to −0.03″": 12,
+   "±0.03″": 197,
+   "0.03 to 0.1″": 10,
+   "0.1 to 0.3″": 6,
+   "> 0.3″": 6
+  },
+  "US Eastern Oblique": {
+   "< −0.3″": 0,
+   "−0.3 to −0.1″": 1,
+   "−0.1 to −0.03″": 9,
+   "±0.03″": 98,
+   "0.03 to 0.1″": 3,
+   "0.1 to 0.3″": 3,
+   "> 0.3″": 0
+  }
+ },
+ "labels": {
+  "US 39th parallel": [
+   375.55826771297575,
+   -683.6110380214437,
+   1930.8609491598256
+  ],
+  "US Eastern Oblique": [
+   1768.0780412799331,
+   -666.99874199224,
+   1694.3439593056303
+  ]
+ },
+ "bodies": {
+  "US 39th parallel triangles (outline)": "US_39th_parallel_triangles_outline.stl",
+  "US 39th parallel DOV tiles -3": "US_39th_parallel_DOV_tiles_m3.stl",
+  "US 39th parallel DOV tiles -2": "US_39th_parallel_DOV_tiles_m2.stl",
+  "US 39th parallel DOV tiles -1": "US_39th_parallel_DOV_tiles_m1.stl",
+  "US 39th parallel DOV tiles +0": "US_39th_parallel_DOV_tiles_p0.stl",
+  "US 39th parallel DOV tiles +1": "US_39th_parallel_DOV_tiles_p1.stl",
+  "US 39th parallel DOV tiles +2": "US_39th_parallel_DOV_tiles_p2.stl",
+  "US 39th parallel DOV tiles +3": "US_39th_parallel_DOV_tiles_p3.stl",
+  "US Eastern Oblique triangles (outline)": "US_Eastern_Oblique_triangles_outline.stl",
+  "US Eastern Oblique DOV tiles -2": "US_Eastern_Oblique_DOV_tiles_m2.stl",
+  "US Eastern Oblique DOV tiles -1": "US_Eastern_Oblique_DOV_tiles_m1.stl",
+  "US Eastern Oblique DOV tiles +0": "US_Eastern_Oblique_DOV_tiles_p0.stl",
+  "US Eastern Oblique DOV tiles +1": "US_Eastern_Oblique_DOV_tiles_p1.stl",
+  "US Eastern Oblique DOV tiles +2": "US_Eastern_Oblique_DOV_tiles_p2.stl"
+ }
+}
