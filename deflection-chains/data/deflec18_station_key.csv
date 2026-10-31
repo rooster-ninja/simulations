@@ -1,0 +1,457 @@
+id,chain,station,lat,lon_east
+S001,US 39th parallel,Great Caspar,39.341289,-123.719772
+S002,US 39th parallel,Fisher,39.066349,-123.586464
+S003,US 39th parallel,Cold Spring,39.022362,-123.522218
+S004,US 39th parallel,Two Rock,39.361848,-123.445125
+S005,US 39th parallel,Paxton,39.135645,-123.311879
+S006,US 39th parallel,Ross Mountain,38.505473,-123.119104
+S007,US 39th parallel,Mount Sanhedrin,39.516058,-123.095282
+S008,US 39th parallel,Snow Mountain West,39.377099,-122.757814
+S009,US 39th parallel,Mount Helena,38.669494,-122.632601
+S010,US 39th parallel,Mount Tamalpais,37.924057,-122.595787
+S011,US 39th parallel,Monticello,38.663813,-122.189411
+S012,US 39th parallel,Vaca,38.375802,-122.083767
+S013,US 39th parallel,Mount Diablo,37.881821,-121.913322
+S014,US 39th parallel,Yolo Northwest Base,38.678855,-121.857809
+S015,US 39th parallel,Yolo Southeast Base,38.528126,-121.799468
+S016,US 39th parallel,Mocho,37.477432,-121.555114
+S017,US 39th parallel,Mount Lola,39.433077,-120.364202
+S018,US 39th parallel,Round Top,38.663699,-120.000197
+S019,US 39th parallel,Pah-Rah,39.794555,-119.473393
+S020,US 39th parallel,Mount Como,39.021401,-119.473108
+S021,US 39th parallel,Mount Conness,37.967102,-119.320517
+S022,US 39th parallel,Mount Grant,38.570388,-118.790611
+S023,US 39th parallel,Carson Sink,39.583103,-118.234624
+S024,US 39th parallel,Lone Mountain,38.024353,-117.493695
+S025,US 39th parallel,Toiyabe Dome,38.832699,-117.352289
+S026,US 39th parallel,Mount Callahan,39.709416,-116.950058
+S027,US 39th parallel,Diamond Peak,39.584935,-115.817932
+S028,US 39th parallel,White Pine,38.319325,-115.501239
+S029,US 39th parallel,Wheeler Peak,38.985742,-114.313204
+S030,US 39th parallel,Pilot Peak,41.021121,-114.076618
+S031,US 39th parallel,Pioche,37.986026,-114.051260
+S032,US 39th parallel,Ibepah,39.828125,-113.919040
+S033,US 39th parallel,Deseret,40.459457,-112.625598
+S034,US 39th parallel,Promontory,41.297897,-112.419118
+S035,US 39th parallel,Tushar,38.419181,-112.411856
+S036,US 39th parallel,Antelope,40.961974,-112.215313
+S037,US 39th parallel,Salt Lake Northwest Base,41.110322,-112.110845
+S038,US 39th parallel,Salt Lake Southeast Base,41.038135,-112.017804
+S039,US 39th parallel,Waddoup,40.906867,-111.886136
+S040,US 39th parallel,Ogden Peak,41.199856,-111.881290
+S041,US 39th parallel,Mount Nebo,39.810509,-111.765714
+S042,US 39th parallel,Wasatch,39.114742,-111.453226
+S043,US 39th parallel,Mount Ellen,38.121060,-110.814006
+S044,US 39th parallel,Patmos Head,39.502010,-110.316014
+S045,US 39th parallel,Mount Waas,38.538917,-109.227252
+S046,US 39th parallel,Tavaputs,39.539605,-109.005256
+S047,US 39th parallel,Uncompahgre,38.071389,-107.461557
+S048,US 39th parallel,Treasury Mountain,39.014036,-107.098491
+S049,US 39th parallel,Mount Elbert,39.117494,-106.444794
+S050,US 39th parallel,Mount Ouray,38.422429,-106.224212
+S051,US 39th parallel,Bison,39.238077,-105.497242
+S052,US 39th parallel,Pikes Peak,38.840228,-105.043659
+S053,US 39th parallel,Corral Bluffs,38.869496,-104.592834
+S054,US 39th parallel,El Paso West Base,38.978250,-104.588660
+S055,US 39th parallel,Plateau,38.391914,-104.554765
+S056,US 39th parallel,Divide,39.070506,-104.512362
+S057,US 39th parallel,El Paso East Base,38.955788,-104.461621
+S058,US 39th parallel,Holcolm Hills,39.001862,-104.316584
+S059,US 39th parallel,Big Springs,38.751378,-104.252666
+S060,US 39th parallel,Holt,39.038745,-103.971457
+S061,US 39th parallel,Cramers Gulch,38.592947,-103.931739
+S062,US 39th parallel,Square Bluffs,38.851896,-103.828757
+S063,US 39th parallel,Adobe,38.677587,-103.554514
+S064,US 39th parallel,Hugo,39.075439,-103.513573
+S065,US 39th parallel,Aroya,38.802349,-103.182082
+S066,US 39th parallel,Overland,39.038554,-103.170977
+S067,US 39th parallel,Eureka,38.977375,-102.862761
+S068,US 39th parallel,Kit Carson,38.701684,-102.859716
+S069,US 39th parallel,Landsman,38.947466,-102.587492
+S070,US 39th parallel,First View,38.794789,-102.548681
+S071,US 39th parallel,Cheyenne Wells,38.950551,-102.400436
+S072,US 39th parallel,Monotony,39.028659,-102.249587
+S073,US 39th parallel,Arapahoe,38.766649,-102.095496
+S074,US 39th parallel,McLane,39.031337,-101.963678
+S075,US 39th parallel,Curlew,38.840142,-101.782387
+S076,US 39th parallel,Turtle,39.021206,-101.757127
+S077,US 39th parallel,Wallace Bluffs,38.848554,-101.582593
+S078,US 39th parallel,Teeters Hill,39.072662,-101.476576
+S079,US 39th parallel,Sheridan,38.858881,-101.354663
+S080,US 39th parallel,Gopher,38.990514,-101.158286
+S081,US 39th parallel,Monument,38.898569,-100.884869
+S082,US 39th parallel,Beaver,38.723068,-100.863147
+S083,US 39th parallel,Indian Creek,38.866793,-100.475713
+S084,US 39th parallel,Canyon,38.656592,-100.437405
+S085,US 39th parallel,Schmidt,38.695794,-100.054756
+S086,US 39th parallel,Big Creek,38.927157,-99.906225
+S087,US 39th parallel,Skaggs,38.657358,-99.754136
+S088,US 39th parallel,Trego,38.898306,-99.637738
+S089,US 39th parallel,Smoky Hill,38.725954,-99.548233
+S090,US 39th parallel,Hays,38.913939,-99.271314
+S091,US 39th parallel,La Crosse,38.593411,-99.269451
+S092,US 39th parallel,Blue Hill,38.982124,-99.099415
+S093,US 39th parallel,Fairmount,38.674582,-99.004620
+S094,US 39th parallel,Allen,38.826116,-98.871855
+S095,US 39th parallel,Waldo,39.164992,-98.830579
+S096,US 39th parallel,Bunker Hill,38.870767,-98.705681
+S097,US 39th parallel,Meades Ranch,39.223613,-98.541797
+S098,US 39th parallel,Wilson,38.863675,-98.487636
+S099,US 39th parallel,Golden Belt,38.978107,-98.306796
+S100,US 39th parallel,Lincoln,39.090969,-98.098862
+S101,US 39th parallel,Heath,38.844097,-98.049511
+S102,US 39th parallel,Thompson,39.070304,-97.828904
+S103,US 39th parallel,North Pole Mound,38.952268,-97.608676
+S104,US 39th parallel,Salina West Base,38.851658,-97.603012
+S105,US 39th parallel,Salina East Base,38.873167,-97.532710
+S106,US 39th parallel,Iron Mound,38.807841,-97.511543
+S107,US 39th parallel,Vine Creek,39.101291,-97.389419
+S108,US 39th parallel,Frey,39.023737,-97.173155
+S109,US 39th parallel,Wilmer,39.120699,-97.039344
+S110,US 39th parallel,Taylor,38.882422,-97.007294
+S111,US 39th parallel,Robbins,38.980632,-96.798504
+S112,US 39th parallel,White City,38.802429,-96.729180
+S113,US 39th parallel,Erricssen,39.190094,-96.712053
+S114,US 39th parallel,Humboldt,39.022499,-96.634912
+S115,US 39th parallel,Reinhard,38.868143,-96.564655
+S116,US 39th parallel,Zean Dale,39.086270,-96.409540
+S117,US 39th parallel,Meyer,38.927189,-96.304448
+S118,US 39th parallel,Clark,38.865885,-96.120972
+S119,US 39th parallel,Adams,39.044228,-96.073444
+S120,US 39th parallel,Powell,38.924405,-95.928219
+S121,US 39th parallel,Mabon,38.796587,-95.785982
+S122,US 39th parallel,Elevation,38.982594,-95.761369
+S123,US 39th parallel,Simmons,38.784130,-95.434502
+S124,US 39th parallel,Kanwaka,38.992376,-95.396096
+S125,US 39th parallel,Bébé Mound,38.770979,-95.060824
+S126,US 39th parallel,Eckman,39.041855,-95.001778
+S127,US 39th parallel,Thomas,38.839641,-94.894269
+S128,US 39th parallel,Haskin,38.739396,-94.685206
+S129,US 39th parallel,Marty,38.989167,-94.670864
+S130,US 39th parallel,Berry,38.820058,-94.559379
+S131,US 39th parallel,Bowler,38.887301,-94.394345
+S132,US 39th parallel,Fulton,38.644943,-94.309566
+S133,US 39th parallel,Thornton,38.834324,-94.246445
+S134,US 39th parallel,Hutton Mound,38.547105,-94.180615
+S135,US 39th parallel,Baker,38.759786,-94.070329
+S136,US 39th parallel,Chapel Hill,38.912620,-94.057964
+S137,US 39th parallel,Caldwell,38.567647,-93.756264
+S138,US 39th parallel,Normal,38.758664,-93.737929
+S139,US 39th parallel,High Point Tebo,38.575685,-93.572307
+S140,US 39th parallel,Knob Noster,38.776012,-93.551999
+S141,US 39th parallel,Kendrick,38.660315,-93.433195
+S142,US 39th parallel,Heard,38.715161,-93.207344
+S143,US 39th parallel,Schnackenberg,38.497224,-93.191043
+S144,US 39th parallel,Hughes,38.431854,-92.931173
+S145,US 39th parallel,Hubbard,38.673977,-92.863037
+S146,US 39th parallel,Versailles North Base,38.492489,-92.806518
+S147,US 39th parallel,Hunter (Versailles South Base),38.428717,-92.773476
+S148,US 39th parallel,Cole,38.634705,-92.727687
+S149,US 39th parallel,High Point,38.490989,-92.583301
+S150,US 39th parallel,Christian,38.626824,-92.547389
+S151,US 39th parallel,Moreau,38.526407,-92.424307
+S152,US 39th parallel,Belshe,38.374590,-92.405124
+S153,US 39th parallel,Medlock,38.636504,-92.337113
+S154,US 39th parallel,Cedar,38.600570,-92.144380
+S155,US 39th parallel,Kennedy,38.349355,-92.095654
+S156,US 39th parallel,McDaniel,38.459394,-91.887703
+S157,US 39th parallel,Pilot Knob,38.335939,-91.798804
+S158,US 39th parallel,Bradford,38.565377,-91.778417
+S159,US 39th parallel,Geyer,38.448655,-91.596956
+S160,US 39th parallel,Turnpike Bluff,38.590893,-91.578395
+S161,US 39th parallel,Gasconade,38.592073,-91.467807
+S162,US 39th parallel,Winter,38.460971,-91.434196
+S163,US 39th parallel,Berger,38.598960,-91.291155
+S164,US 39th parallel,Jacobs,38.437861,-91.269514
+S165,US 39th parallel,Enoch Knob,38.578306,-91.136183
+S166,US 39th parallel,Peters,38.462412,-91.062881
+S167,US 39th parallel,Dieckhaus,38.587427,-90.944511
+S168,US 39th parallel,Halleck,38.468273,-90.923642
+S169,US 39th parallel,Tavern Rock,38.604789,-90.752679
+S170,US 39th parallel,Lynch,38.407177,-90.733558
+S171,US 39th parallel,Kessler,38.608921,-90.568361
+S172,US 39th parallel,Patterson,38.464103,-90.533538
+S173,US 39th parallel,Morgan,38.671904,-90.397601
+S174,US 39th parallel,Kleinschmidt,38.504981,-90.324963
+S175,US 39th parallel,Minoma,38.698814,-90.279115
+S176,US 39th parallel,Insane Asylum,38.603355,-90.278939
+S177,US 39th parallel,Dreyer,38.501225,-90.198479
+S178,US 39th parallel,Clarks Mound,38.578843,-90.070223
+S179,US 39th parallel,American Bottom Lower Base,38.603906,-90.050774
+S180,US 39th parallel,American Bottom Upper Base,38.663400,-90.015954
+S181,US 39th parallel,Sugar Loaf Mound,38.700944,-90.007706
+S182,US 39th parallel,Turkey Hill,38.475299,-89.904501
+S183,US 39th parallel,Berger,38.610627,-89.758439
+S184,US 39th parallel,Parkinson,38.723606,-89.712359
+S185,US 39th parallel,Geoffrey,38.548966,-89.448663
+S186,US 39th parallel,Hoile,38.894766,-89.410766
+S187,US 39th parallel,Bording,38.612055,-89.340508
+S188,US 39th parallel,Sturgess,38.948669,-89.100783
+S189,US 39th parallel,Hartlin,38.707291,-88.928459
+S190,US 39th parallel,Mound,39.067642,-88.774015
+S191,US 39th parallel,Holtzhauser,38.799991,-88.694014
+S192,US 39th parallel,Lucas,38.936882,-88.431866
+S193,US 39th parallel,Island Creek,39.102444,-88.335120
+S194,US 39th parallel,Denver,38.771120,-88.212217
+S195,US 39th parallel,Onion Hill,38.815443,-88.174323
+S196,US 39th parallel,Newton,38.924071,-88.164046
+S197,US 39th parallel,Onley West Base,38.860176,-88.102397
+S198,US 39th parallel,Olney Middle Base,38.860948,-88.064479
+S199,US 39th parallel,Buffalo Mound,38.901736,-88.056595
+S200,US 39th parallel,Olney Check Base,38.805166,-88.032746
+S201,US 39th parallel,Olney East Base,38.861710,-88.026489
+S202,US 39th parallel,Hunt City,39.065735,-88.015776
+S203,US 39th parallel,Claremont,38.757393,-87.994761
+S204,US 39th parallel,Oblong,38.997904,-87.875034
+S205,US 39th parallel,Belle Air,39.176172,-87.869139
+S206,US 39th parallel,Honey Creek,38.924120,-87.710288
+S207,US 39th parallel,Merom College,39.050213,-87.564797
+S208,US 39th parallel,Summit,38.761274,-87.370896
+S209,US 39th parallel,Sisson,38.969415,-87.286193
+S210,US 39th parallel,Wright,39.119913,-87.195187
+S211,US 39th parallel,Osborn,38.855972,-86.876688
+S212,US 39th parallel,Calvary,39.077825,-86.814774
+S213,US 39th parallel,Beard,38.967193,-86.612041
+S214,US 39th parallel,Leonard,39.107294,-86.604834
+S215,US 39th parallel,Rariden,38.757175,-86.513390
+S216,US 39th parallel,Fountain,38.943014,-86.254885
+S217,US 39th parallel,Weed Patch,39.166294,-86.216961
+S218,US 39th parallel,Miller,38.842915,-86.035876
+S219,US 39th parallel,Tripp,38.998936,-85.643853
+S220,US 39th parallel,Stout,38.852920,-85.578455
+S221,US 39th parallel,Green,39.102164,-85.502901
+S222,US 39th parallel,Mud Lick,38.847259,-85.379989
+S223,US 39th parallel,Holton North Base,39.079681,-85.372193
+S224,US 39th parallel,Holton South Base,39.030259,-85.367645
+S225,US 39th parallel,Glasgow,39.104604,-85.297197
+S226,US 39th parallel,Correct,39.015196,-85.283367
+S227,US 39th parallel,Culbertson,38.831694,-85.193276
+S228,US 39th parallel,Reizin,39.047739,-85.140114
+S229,US 39th parallel,Stow,38.851407,-84.997566
+S230,US 39th parallel,Tanner,39.000294,-84.651861
+S231,US 39th parallel,Dry Ridge,38.677529,-84.577887
+S232,US 39th parallel,Stevens,38.923142,-84.512867
+S233,US 39th parallel,Flaugher,38.730117,-84.234829
+S234,US 39th parallel,Tate,38.940193,-84.133858
+S235,US 39th parallel,Minerva,38.708094,-83.918617
+S236,US 39th parallel,Ash Ridge,38.919835,-83.756238
+S237,US 39th parallel,Cave Hill,38.848910,-83.598119
+S238,US 39th parallel,Cherry Ridge,38.660085,-83.483113
+S239,US 39th parallel,Peach Mount,38.894859,-83.362172
+S240,US 39th parallel,Twin Creek,38.701854,-83.281685
+S241,US 39th parallel,Round Top,38.609260,-83.210607
+S242,US 39th parallel,Cave,38.543804,-83.073359
+S243,US 39th parallel,Scioto,38.762689,-83.051114
+S244,US 39th parallel,Howland,38.629188,-82.989114
+S245,US 39th parallel,Gould,38.640428,-82.832535
+S246,US 39th parallel,Buena Vista,38.394996,-82.806131
+S247,US 39th parallel,Oakland,38.362339,-82.648137
+S248,US 39th parallel,Fradd,38.595800,-82.551789
+S249,US 39th parallel,Wray,38.594499,-82.460922
+S250,US 39th parallel,Davis,38.351161,-82.353537
+S251,US 39th parallel,Gebhardt,38.528779,-82.253186
+S252,US 39th parallel,Pigeon,38.228331,-82.066791
+S253,US 39th parallel,Piney,38.443759,-82.058173
+S254,US 39th parallel,Big Rocks,38.346971,-81.924945
+S255,US 39th parallel,Rogers,38.380683,-81.843645
+S256,US 39th parallel,Simms,38.452597,-81.840849
+S257,US 39th parallel,St. Albans West Base,38.388726,-81.837302
+S258,US 39th parallel,Coal,38.356811,-81.825283
+S259,US 39th parallel,St. Albans East Base,38.377921,-81.795186
+S260,US 39th parallel,Ryan,38.395304,-81.793892
+S261,US 39th parallel,Table Rock,38.187909,-81.614940
+S262,US 39th parallel,Holmes,38.427438,-81.593042
+S263,US 39th parallel,Ivy,37.787116,-81.491345
+S264,US 39th parallel,Summersville,38.281467,-80.868949
+S265,US 39th parallel,Keeney,37.772990,-80.705462
+S266,US 39th parallel,Beech,38.111801,-80.605398
+S267,US 39th parallel,Briery,38.143751,-80.344707
+S268,US 39th parallel,Bald Knob,37.925136,-79.851464
+S269,US 39th parallel,Paddys Knob,38.265177,-79.796342
+S270,US 39th parallel,Elliott Knob,38.165896,-79.314400
+S271,US 39th parallel,Slate Springs,38.509327,-79.184499
+S272,US 39th parallel,Clough,39.201208,-76.191087
+S273,US 39th parallel,Still Pond,39.314621,-76.044313
+S274,US 39th parallel,Hope,39.041995,-75.988524
+S275,US 39th parallel,Barclay,39.142199,-75.851017
+S276,US 39th parallel,Kent,38.993104,-75.678674
+S277,US 39th parallel,Hartley,39.179641,-75.671778
+S278,US 39th parallel,Mahon,39.179286,-75.400902
+S279,US 39th parallel,Stone,39.000429,-75.328188
+S280,US 39th parallel,Egg Island Light-House,39.178235,-75.137166
+S281,US 39th parallel,Brandywine Shoal Light-House,38.985465,-75.113454
+S282,US 39th parallel,Cape Henlopen Light-House,38.777616,-75.084311
+S283,US 39th parallel,Cape May Light-House,38.932396,-74.960873
+S284,US Eastern Oblique,Point aux Pins,30.367177,-88.314442
+S285,US Eastern Oblique,Dauphin Island West Base,30.238767,-88.247655
+S286,US Eastern Oblique,St. Elmo,30.509001,-88.217509
+S287,US Eastern Oblique,Cat Island,30.315076,-88.210792
+S288,US Eastern Oblique,Spring Hill,30.695696,-88.146228
+S289,US Eastern Oblique,Dauphin Island East Base,30.248458,-88.137448
+S290,US Eastern Oblique,Cedar Point,30.345136,-88.121545
+S291,US Eastern Oblique,Coon,31.246766,-88.095503
+S292,US Eastern Oblique,Cold Creek,30.956952,-88.089074
+S293,US Eastern Oblique,Fort Morgan,30.227863,-88.023266
+S294,US Eastern Oblique,Daphne,30.601601,-87.904707
+S295,US Eastern Oblique,Minette,30.868737,-87.845458
+S296,US Eastern Oblique,White,31.459960,-87.807690
+S297,US Eastern Oblique,Dean,31.011192,-87.787563
+S298,US Eastern Oblique,Creagh,31.603092,-87.684355
+S299,US Eastern Oblique,Red Hill,31.208448,-87.660969
+S300,US Eastern Oblique,Pollard,31.462948,-87.464074
+S301,US Eastern Oblique,Fatama,31.891970,-87.237091
+S302,US Eastern Oblique,Ethridge,32.078870,-87.058212
+S303,US Eastern Oblique,Midway,31.717629,-87.047060
+S304,US Eastern Oblique,Perry,32.758664,-86.955987
+S305,US Eastern Oblique,Parker,32.563006,-86.842531
+S306,US Eastern Oblique,Lovers Leap,32.168667,-86.821847
+S307,US Eastern Oblique,Wilson,34.418094,-86.817555
+S308,US Eastern Oblique,County Line,31.963951,-86.803532
+S309,US Eastern Oblique,Wornock,33.996187,-86.697858
+S310,US Eastern Oblique,Jamison,32.931808,-86.639295
+S311,US Eastern Oblique,Bargenier,31.987348,-86.614264
+S312,US Eastern Oblique,Lowndesboro,32.270995,-86.611428
+S313,US Eastern Oblique,Laurel,33.396948,-86.581191
+S314,US Eastern Oblique,Cahaba,33.745866,-86.525935
+S315,US Eastern Oblique,Rowe,34.538879,-86.524147
+S316,US Eastern Oblique,Wilder,32.633176,-86.494098
+S317,US Eastern Oblique,Summit,34.203883,-86.484867
+S318,US Eastern Oblique,Kahatchee,33.226750,-86.360278
+S319,US Eastern Oblique,Weogufka,32.977554,-86.354628
+S320,US Eastern Oblique,Mount Carmel,32.020576,-86.348496
+S321,US Eastern Oblique,Alpine,33.411192,-86.207637
+S322,US Eastern Oblique,Wetumpka,32.533738,-86.194076
+S323,US Eastern Oblique,Aurora,34.145973,-86.183642
+S324,US Eastern Oblique,Gunter,34.567914,-86.172396
+S325,US Eastern Oblique,Horn,33.297295,-86.074691
+S326,US Eastern Oblique,Cheehahaw,33.484914,-85.808728
+S327,US Eastern Oblique,Brandon,34.384724,-85.753621
+S328,US Eastern Oblique,Gulf Point,34.624952,-85.467451
+S329,US Eastern Oblique,Indian,34.029891,-85.425392
+S330,US Eastern Oblique,Lavender,34.321458,-85.288533
+S331,US Eastern Oblique,Johns,34.622476,-85.098367
+S332,US Eastern Oblique,Carnes,33.992623,-85.013988
+S333,US Eastern Oblique,Pine Log,34.321111,-84.637226
+S334,US Eastern Oblique,Kenesaw,33.975574,-84.579466
+S335,US Eastern Oblique,Sweat Mountain,34.066427,-84.456079
+S336,US Eastern Oblique,Grassy,34.485633,-84.331502
+S337,US Eastern Oblique,Atlanta Southwest Base,33.880425,-84.315766
+S338,US Eastern Oblique,Atlanta Middle Base,33.905402,-84.277260
+S339,US Eastern Oblique,Atlanta Northeast Base,33.932101,-84.236053
+S340,US Eastern Oblique,Sawnee,34.236062,-84.160887
+S341,US Eastern Oblique,Stone Mountain,33.805492,-84.146177
+S342,US Eastern Oblique,Academy,33.958435,-83.991350
+S343,US Eastern Oblique,Blood,34.739153,-83.937114
+S344,US Eastern Oblique,Skitt,34.505075,-83.722282
+S345,US Eastern Oblique,Currahee,34.528571,-83.376029
+S346,US Eastern Oblique,Rabun,34.964852,-83.299909
+S347,US Eastern Oblique,Pinnacle,35.032940,-82.741791
+S348,US Eastern Oblique,Mauldin,34.821166,-82.634863
+S349,US Eastern Oblique,Paris,34.940838,-82.411243
+S350,US Eastern Oblique,Hogback,35.169445,-82.290773
+S351,US Eastern Oblique,Mount Mitchell,35.764289,-82.265283
+S352,US Eastern Oblique,Roan High Bluff,36.092550,-82.145732
+S353,US Eastern Oblique,Wofford,34.958353,-81.935326
+S354,US Eastern Oblique,Benn,35.564674,-81.660564
+S355,US Eastern Oblique,Rogers,36.659436,-81.545105
+S356,US Eastern Oblique,King,35.207125,-81.312794
+S357,US Eastern Oblique,Poore,36.045957,-81.156874
+S358,US Eastern Oblique,Young,35.736743,-80.647685
+S359,US Eastern Oblique,Buffalo,36.795575,-80.477657
+S360,US Eastern Oblique,Moore,36.397612,-80.283266
+S361,US Eastern Oblique,Cahas,37.116603,-80.015879
+S362,US Eastern Oblique,Flat Top,37.451301,-79.583036
+S363,US Eastern Oblique,Smith Mountain,37.013709,-79.565959
+S364,US Eastern Oblique,Tobacco Row,37.564887,-79.190751
+S365,US Eastern Oblique,Long Mountain,37.290411,-79.086326
+S366,US Eastern Oblique,Humpback,37.948269,-78.899383
+S367,US Eastern Oblique,Spear,37.561320,-78.763109
+S368,US Eastern Oblique,Fork,38.478522,-78.416111
+S369,US Eastern Oblique,Mount Marshall,38.775469,-78.203004
+S370,US Eastern Oblique,Clark,38.310826,-78.003340
+S371,US Eastern Oblique,Maryland Heights,39.340434,-77.716790
+S372,US Eastern Oblique,Bull Run,38.880958,-77.703651
+S373,US Eastern Oblique,Sugar Loaf,39.261781,-77.393729
+S374,US Eastern Oblique,Peach Grove,38.919611,-77.229813
+S375,US Eastern Oblique,Stabler,39.120991,-76.985292
+S376,US Eastern Oblique,Soper,39.086029,-76.950357
+S377,US Eastern Oblique,Hill,38.897991,-76.880647
+S378,US Eastern Oblique,Webb,39.090115,-76.675204
+S379,US Eastern Oblique,Marriott,38.873727,-76.609923
+S380,US Eastern Oblique,Finlay,39.407181,-76.524744
+S381,US Eastern Oblique,Linstid,39.088775,-76.485938
+S382,US Eastern Oblique,Taylor,38.996179,-76.465690
+S383,US Eastern Oblique,Kent Island South Base,38.897719,-76.366330
+S384,US Eastern Oblique,Kent Island North Base,38.973453,-76.341090
+S385,US Eastern Oblique,Osbornes Ruin,39.464666,-76.281508
+S386,US Eastern Oblique,Swan Point,39.141188,-76.280294
+S387,US Eastern Oblique,Pooles Island,39.284911,-76.263876
+S388,US Eastern Oblique,Turkey Point,39.448932,-76.009835
+S389,US Eastern Oblique,Principio,39.592931,-76.004724
+S390,US Eastern Oblique,Buck,39.540181,-75.732162
+S391,US Eastern Oblique,Meetinghouse Hill,39.712263,-75.711315
+S392,US Eastern Oblique,Bethel,39.845585,-75.490546
+S393,US Eastern Oblique,Yard,39.972965,-75.387341
+S394,US Eastern Oblique,Burden,39.529669,-75.381519
+S395,US Eastern Oblique,Lippincott,39.721789,-75.314010
+S396,US Eastern Oblique,Willowgrove,40.141617,-75.106369
+S397,US Eastern Oblique,Pine Hill,39.797773,-74.993535
+S398,US Eastern Oblique,Newtown,40.250361,-74.920718
+S399,US Eastern Oblique,Mount Holly,40.001944,-74.788896
+S400,US Eastern Oblique,Mount Rose,40.367029,-74.724010
+S401,US Eastern Oblique,Stony Hill,40.119558,-74.581514
+S402,US Eastern Oblique,Disboro,40.246168,-74.457372
+S403,US Eastern Oblique,Springfield,40.688904,-74.357188
+S404,US Eastern Oblique,Beacon Hill,40.373460,-74.228499
+S405,US Eastern Oblique,Weasel,40.876312,-74.186921
+S406,US Eastern Oblique,Buttermilk,41.109544,-73.811007
+S407,US Eastern Oblique,Round Hill,41.103082,-73.674033
+S408,US Eastern Oblique,Harrow,40.798175,-73.639708
+S409,US Eastern Oblique,Wooster,41.350529,-73.488579
+S410,US Eastern Oblique,Bald Hill (Fairfield Co.),41.213274,-73.478451
+S411,US Eastern Oblique,West Hills,40.814477,-73.425869
+S412,US Eastern Oblique,Tashua,41.259938,-73.250579
+S413,US Eastern Oblique,Ivy,41.871232,-73.224641
+S414,US Eastern Oblique,Fire Island West Base,40.629919,-73.214655
+S415,US Eastern Oblique,Fire Island East Base,40.667047,-73.055747
+S416,US Eastern Oblique,Ruland,40.844360,-73.033075
+S417,US Eastern Oblique,Sandford,41.461317,-72.950021
+S418,US Eastern Oblique,Mount Tom,42.241319,-72.648854
+S419,US Eastern Oblique,Box Hill,41.799374,-72.456168
+S420,US Eastern Oblique,Bald Hill (Tolland Co.),41.973292,-72.198846
+S421,US Eastern Oblique,Monadnock,42.860872,-72.108789
+S422,US Eastern Oblique,Wachusett,42.488543,-71.887454
+S423,US Eastern Oblique,Unkonoonuc,42.982735,-71.588963
+S424,US Eastern Oblique,Beaconpole,41.994569,-71.450582
+S425,US Eastern Oblique,Gunstock,43.517307,-71.370083
+S426,US Eastern Oblique,Massachusetts South Base,41.913308,-71.304709
+S427,US Eastern Oblique,Mount Washington,44.270016,-71.304061
+S428,US Eastern Oblique,Great Meadow,41.878646,-71.217536
+S429,US Eastern Oblique,Massachusetts North Base,42.051273,-71.207144
+S430,US Eastern Oblique,Blue Hill,42.211648,-71.114860
+S431,US Eastern Oblique,Copecut,41.720899,-71.060410
+S432,US Eastern Oblique,Mount Pleasant,44.026305,-70.823029
+S433,US Eastern Oblique,Thompson,42.611092,-70.730570
+S434,US Eastern Oblique,Agamenticus,43.222955,-70.692731
+S435,US Eastern Oblique,Manomet,41.926863,-70.591385
+S436,US Eastern Oblique,Mount Blue,44.727625,-70.342826
+S437,US Eastern Oblique,Mount Independence,43.758826,-70.320918
+S438,US Eastern Oblique,Sabattus,44.143294,-70.079093
+S439,US Eastern Oblique,Ragged Mountain,44.212065,-69.151769
+S440,US Eastern Oblique,Mount Harris,44.664700,-69.148814
+S441,US Eastern Oblique,Mount Desert,44.350919,-68.227425
+S442,US Eastern Oblique,Humpback (Maine),44.863547,-68.110804
+S443,US Eastern Oblique,Tunk,44.639264,-68.094768
+S444,US Eastern Oblique,Burke,44.598343,-67.975366
+S445,US Eastern Oblique,Epping West Base,44.691649,-67.938124
+S446,US Eastern Oblique,Pigeon,44.454712,-67.890367
+S447,US Eastern Oblique,Epping East Base,44.668846,-67.832943
+S448,US Eastern Oblique,Cooper,44.986547,-67.467609
+S449,US Eastern Oblique,Rye,45.122967,-67.425803
+S450,US Eastern Oblique,Howard,44.629077,-67.396246
+S451,US Eastern Oblique,Calais Observatory,45.184383,-67.281644
+S452,US Eastern Oblique,St. David,45.250244,-67.234309
+S453,US Eastern Oblique,Trescott Rock,44.758427,-67.108916
+S454,US Eastern Oblique,Chamcook,45.124541,-67.084110
+S455,US Eastern Oblique,Prince Regents Redoubt,44.919312,-67.011392
+S456,US Eastern Oblique,Grand Manan,44.747674,-66.831770
