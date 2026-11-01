@@ -55,6 +55,7 @@ table{border-collapse:collapse;width:100%;font-size:16px;font-variant-numeric:ta
 th{font-variant:small-caps;letter-spacing:.04em;font-weight:600;text-align:left;color:var(--muted);border-bottom:1px solid var(--ink);padding:6px 10px;white-space:nowrap}
 td{border-bottom:1px solid var(--rule);padding:6px 10px;white-space:nowrap}
 td.n,th.n{text-align:right}
+h3.sub{font-size:19px;font-weight:600;margin:6px 0 0}
 .fig{margin:0;display:flex;flex-direction:column;gap:8px}
 .fig img{width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
 .fig figcaption{font-size:14px;color:var(--muted)}
@@ -86,6 +87,19 @@ td.n,th.n{text-align:right}
     </table></div>
     <p class="finding">On a plane the three angles would sum to 180°. On the ellipsoid they sum to 180° plus <b>142.7″</b> of spherical excess, which equals the triangle's area (28 107 km²) divided by the Gaussian curvature radius squared.</p>
     <div class="formula">ε = A / R² = 2.811×10¹⁰ m² / (6 374 237 m)² = 6.92×10⁻⁴ rad = 142.7″</div>
+    <h3 class="sub">Field record, July–August 1879</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Date</th><th>Station</th><th>Record</th></tr></thead>
+      <tbody>
+        <tr><td>25 Jul</td><td>Shasta</td><td>Colonna leaves for the summit; camps at the hot springs, 215 ft below the top</td></tr>
+        <tr><td>29 Jul, 5:45 a.m.</td><td>Shasta</td><td>Lola heliotrope seen "for a second or two dark red", gone before a pointing</td></tr>
+        <tr><td>29 Jul</td><td>Lola</td><td>Davidson sees the Shasta heliotrope; observes it in five positions of theodolite No. 115</td></tr>
+        <tr><td>1 Aug</td><td>Shasta</td><td>Helena first seen; four sets of six repetitions measured</td></tr>
+        <tr><td>2 Aug</td><td>Shasta</td><td>Same measures repeated</td></tr>
+        <tr><td>3 Aug</td><td>Shasta</td><td>Helena not visible; Colonna reaches San Francisco 9 Aug</td></tr>
+      </tbody>
+    </table></div>
+    <p class="finding">Caveat: the report says Davidson "succeeded in measuring two angles in the great triangle Lola-Shasta-Helena." The third angle was not measured that season, so in 1879 the triangle was not closed by observation. The 142.7″ excess above is computed from the station geometry, not an observed angle-sum misclosure. The report gives the sides as approximately 136, 169 and 192 miles, and calls Shasta–Helena "the longest yet included in geodetic work."</p>
   </section>
 
   <section class="card" aria-labelledby="h2c">
@@ -135,7 +149,7 @@ td.n,th.n{text-align:right}
         <tr><td>Ridge near Hough Springs, 40 mi, bearing 6°40′</td><td class="n">−0.50°</td></tr>
       </tbody>
     </table></div>
-    <p class="finding">Finding: at standard refraction the tip of Shasta sits on the horizon from Saint Helena, within about ±0.02° (display rounding, SRTM clipping of the summit by ~380 ft, and the saddle height at 40 miles). That is a few tens of metres of mountain at 190 miles. The 40-mile Coast Range saddle sets the horizon; everything farther out lies well below the ray. Whether Shasta shows depends on the day: a modest rise in refraction above standard lifts a sliver into view, consistent with the "on good days" accounts.</p>
+    <p class="finding">Finding: at standard refraction the tip of Shasta sits on the horizon from Saint Helena, within about ±0.02° (display rounding, SRTM clipping of the summit by ~380 ft, and the saddle height at 40 miles). That is a few tens of metres of mountain at 190 miles. The 40-mile Coast Range saddle sets the horizon; everything farther out lies well below the ray. Whether Shasta shows depends on the day: a modest rise in refraction above standard lifts a sliver into view, consistent with the "on good days" accounts. The 1879 party measured refraction directly: 14 days and 3 nights at Lola and 16 days at Round Top, 2 293 observations for the refraction coefficient. Their photographic views from Lola went south and east only; smoke blocked the other directions.</p>
   </section>
 
   <section class="card" aria-labelledby="h4c">
@@ -146,11 +160,11 @@ td.n,th.n{text-align:right}
       <thead><tr><th>Source of error</th><th class="n">Assumed 1σ</th><th class="n">Effect on 1 842 m sagitta</th></tr></thead>
       <tbody>
         <tr><td>Station positions (summit coordinates, not NGS marks)</td><td class="n">±100 m</td><td class="n">±1.2 m</td></tr>
-        <tr><td>Side length: 1879 reported vs computed (169/192 mi vs 167.0/190.5)</td><td class="n">±2.4 km</td><td class="n">±29 m</td></tr>
+        <tr><td>Side length: 1880 report (approx. 169/192/136 mi) vs computed (167.0/190.5/132.9)</td><td class="n">±2.4 km</td><td class="n">±29 m</td></tr>
         <tr><td>Ellipsoid choice (WGS84 vs Clarke 1866)</td><td class="n">ΔR ≈ 100 m</td><td class="n">±0.03 m</td></tr>
       </tbody>
     </table></div>
-    <p class="finding">Finding: taking the worst listed term as 1σ, the sagitta is 1 842 ± 29 m. A flat baseline (sagitta 0) sits about 63σ away. This is an inductive result that depends on the side length and on R from the ellipsoid model. The open item is replacing summit coordinates with the published station positions, which may explain the 1.5 mi gap against Colonna's reported distances.</p>
+    <p class="finding">Finding: taking the worst listed term as 1σ, the sagitta is 1 842 ± 29 m. A flat baseline (sagitta 0) sits about 63σ away. This is an inductive result that depends on the side length and on R from the ellipsoid model. The open item is replacing summit coordinates with the published station positions, The report calls its distances approximate, so the 1–2% gap is not treated as a measurement error of the 1879 survey.</p>
   </section>
 
   <button class="srcbtn" type="button" id="srcbtn" aria-expanded="false" aria-controls="src">Sources for this page (pages and quotes)</button>
@@ -161,7 +175,8 @@ td.n,th.n{text-align:right}
       <li><a href="https://www.parks.ca.gov/?page_id=472">Robert Louis Stevenson State Park, California State Parks</a>. Says the top of Shasta is visible from the park on good days, 192 miles away. No photo.</li>
       <li><a href="https://modernhiker.com/hike/mount-saint-helena/">Mount Saint Helena, Modern Hiker</a>. Says Lassen and Shasta may be visible to the northeast on a very clear day. Summit photos show Cobb Mountain, Diablo and Tamalpais only.</li>
       <li><a href="https://www.summitpost.org/mount-saint-helena/150521">Mount Saint Helena, SummitPost</a>. Lists Lassen, the High Sierra, Snow Mountain, Diablo and Tamalpais as visible; does not list Shasta.</li>
-      <li><b>Date of the observation.</b> Colonna's own account, "Nine Days on the Summit of Mount Shasta" (The Californian, March 1880, v. 1 no. 3, pp. 242–8; cited in the <a href="https://www.siskiyous.edu/library/shasta/documents/AB_Ch11.pdf">College of the Siskiyous Mount Shasta bibliography, ch. 11</a>), dates the heliotrope exchange to Friday, August 1. August 1 fell on a Friday in 1879, not 1878. The American Surveyor article also gives July–August 1879. NOAA's heliotrope page and JPR give 1878; this page uses 1879.</li>
+      <li><b>Primary source.</b> U.S. Coast and Geodetic Survey, <i>Report of the Superintendent… for the Fiscal Year Ending with June 1880</i> (Washington, 1881), pp. 37–39 (Mount Lola and Round Top: theodolite No. 115, two angles of the great triangle, refraction work) and pp. 43–44 (Mount Shasta geodetic station: Colonna's ascent 25 July 1879, the 29 July and 1–2 August observations). <a href="https://library.noaa.gov/coast-geodetic-survey/annual-reports">NOAA annual reports</a>, file CSC-0079. Page extract: <a href="sources/USCGS_1880_report_pp37-39_43-44.pdf">PDF</a> · <a href="sources/USCGS_1880_report_pp37-39_43-44.txt">OCR text</a>.</li>
+      <li><b>Date of the observation.</b> Colonna's own account, "Nine Days on the Summit of Mount Shasta" (The Californian, March 1880, v. 1 no. 3, pp. 242–8; cited in the <a href="https://www.siskiyous.edu/library/shasta/documents/AB_Ch11.pdf">College of the Siskiyous Mount Shasta bibliography, ch. 11</a>), dates the heliotrope exchange to Friday, August 1. August 1 fell on a Friday in 1879, not 1878. The American Surveyor article also gives July–August 1879. NOAA's heliotrope page and JPR give 1878; The 1880 Superintendent's report confirms 25 July – 2 August 1879.</li>
       <li><a href="https://celebrating200years.noaa.gov/theodolites/heliotrope.html">NOAA 200th: Heliotrope</a>. Davidson calculated that a reflecting surface of 77.5 square inches would be visible over the 192-mile Shasta–Helena line. The size of the mirror actually used at Helena is not stated.</li>
       <li><a href="https://www.heywhatsthat.com/?view=JUUTXI1Q">HeyWhatsThat panorama “Mount St. Helena to Shasta”</a> (SRTM terrain, WGS84, refraction ≈ 3.6″/mile per the <a href="https://contour.heywhatsthat.com/techfaq.html">technical FAQ</a>). Screenshot taken 31 Oct 2026.</li>
       <li>Computation: Karney, GeographicLib (WGS84 geodesics and polygon area). Summit coordinates used: Shasta 41.4092 N 122.1949 W 4 322 m; Lola 39.4330 N 120.3655 W 2 789 m; Saint Helena 38.6693 N 122.6330 W 1 323 m. To be replaced with NGS datasheet values for the historic stations.</li>
@@ -175,7 +190,7 @@ const ST={Shasta:{lat:41.4092,lon:-122.1949,h:4322,ang:"43° 01′ 27.9″"},
           Helena:{lat:38.6693,lon:-122.6330,h:1323,ang:"59° 03′ 38.5″"}};
 const SIDES=[["Shasta – Helena",306.514,190.5,192,29.53,1842.2,7.369],
              ["Shasta – Lola",268.795,167.0,169,19.91,1416.7,5.667],
-             ["Lola – Helena",213.803,132.9,"—",10.02,896.5,3.586]];
+             ["Lola – Helena",213.803,132.9,136,10.02,896.5,3.586]];
 const fmt=(x,d)=>typeof x==="number"?x.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}).replace(/,/g," "):x;
 document.getElementById("stations").innerHTML=Object.entries(ST).map(([k,s])=>
  `<tr><td>${k==="Helena"?"Mt Saint Helena":"Mt "+k}</td><td class="n">${s.lat.toFixed(4)}</td><td class="n">${(-s.lon).toFixed(4)}</td><td class="n">${fmt(s.h,0)}</td><td class="n">${s.ang}</td></tr>`).join("");
