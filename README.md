@@ -15,6 +15,7 @@ https://rooster-ninja.github.io/simulations/
 | Peak chord curvature | [peak-chord-curvature/](https://rooster-ninja.github.io/simulations/peak-chord-curvature/) |
 | Deflection of the vertical: US chains | [deflection-chains/](https://rooster-ninja.github.io/simulations/deflection-chains/) |
 | Shasta · Lola · Helena: largest triangle to scale | [shasta-lola-helena/](https://rooster-ninja.github.io/simulations/shasta-lola-helena/) |
+| Flat plane, lumpy triangles | [flat-plane-chains/](https://rooster-ninja.github.io/simulations/flat-plane-chains/) |
 
 ## Layout
 

@@ -1,0 +1,16 @@
+id,survey,between,kind,station_a,station_b,gap_km,lon,lat
+P1,US 39th parallel,1-2,shared station only (no shared side),Big Springs,Big Springs,0.0,-104.2527,38.7514
+P2,US 39th parallel,2-3,gap (no triangle joins them),Thompson,Vine Creek,38.1,-97.6092,39.0858
+P3,US 39th parallel,3-4,gap (no triangle joins them),Hubbard,Christian,27.9,-92.7052,38.6504
+P4,US 39th parallel,4-5,gap (no triangle joins them),Kleinschmidt,Dreyer,11.0,-90.2617,38.5031
+P5,US 39th parallel,5-6,shared station only (no shared side),Mound,Mound,0.0,-88.774,39.0676
+P6,US 39th parallel,6-7,shared station only (no shared side),Hunt City,Hunt City,0.0,-88.0158,39.0657
+P7,US 39th parallel,7-8,gap (no triangle joins them),Green,Reizin,31.9,-85.3215,39.075
+P8,US 39th parallel,8-9,gap (no triangle joins them),Pigeon,Ivy,70.3,-81.7791,38.0077
+P9,US 39th parallel,9-10,gap (no triangle joins them),Webb,Linstid,16.3,-76.5806,39.0894
+P10,US 39th parallel,10-11,shared station only (no shared side),Kent,Kent,0.0,-75.6787,38.9931
+E1,US Eastern Oblique,1-2,shared station only (no shared side),Grassy,Grassy,0.0,-84.3315,34.4856
+E2,US Eastern Oblique,2-3,shared station only (no shared side),Buffalo,Buffalo,0.0,-80.4777,36.7956
+E3,US Eastern Oblique,3-4,gap (no triangle joins them),Humpback,Osbornes Ruin,282.9,-77.5904,38.7065
+E4,US Eastern Oblique,4-5,gap (no triangle joins them),Bald Hill (Fairfield Co.),Wooster,15.3,-73.4835,41.2819
+E5,US Eastern Oblique,5-6,gap (no triangle joins them),Humpback (Maine),Cooper,52.5,-67.7892,44.925
