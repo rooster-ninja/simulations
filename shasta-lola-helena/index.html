@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shasta–Lola–Helena Triangle</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Shasta–Lola–Helena Triangle">
+<meta property="og:description" content="The largest triangle of the US Coast and Geodetic Survey, drawn to scale against a flat baseline.">
+<meta name="theme-color" content="#f3eee2">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Surface Lab layout: single reading column, numbered cards, typeset numbers, dark sources button */
+:root{
+  --bg:#f3eee2; --card:#fbf8f0; --ink:#1d1b17; --muted:#6b655a; --rule:#d9d1bf;
+  --blue:#1f4fa0; --earth:#8a5a2b; --earth-fill:#e4d3b5; --flat:#b0322a; --sight:#1f4fa0;
+  --btn:#1d1b17; --btn-ink:#f3eee2;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17160f; --card:#211f17; --ink:#ece5d4; --muted:#a39b88; --rule:#3a362a;
+  --blue:#8fb0ec; --earth:#d3a46c; --earth-fill:#4a3a25; --flat:#ef7a6e; --sight:#8fb0ec;
+  --btn:#ece5d4; --btn-ink:#17160f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17160f; --card:#211f17; --ink:#ece5d4; --muted:#a39b88; --rule:#3a362a;
+  --blue:#8fb0ec; --earth:#d3a46c; --earth-fill:#4a3a25; --flat:#ef7a6e; --sight:#8fb0ec;
+  --btn:#ece5d4; --btn-ink:#17160f; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+.wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+a{color:var(--blue)}
+.back{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-decoration:none}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+h1{font-size:clamp(38px,7vw,64px);line-height:1.02;font-weight:600;margin:6px 0 10px;text-wrap:balance;letter-spacing:-.01em}
+.lede{max-width:62ch;color:var(--muted);margin:0}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:22px clamp(16px,3vw,28px);display:flex;flex-direction:column;gap:14px;min-width:0}
+.card h2{font-size:26px;font-weight:600;margin:0;line-height:1.15;text-wrap:balance}
+.card p{margin:0;max-width:65ch}
+.formula{font-family:var(--serif);font-style:italic;font-size:21px;text-align:center;padding:6px 0}
+.formula b{font-style:normal;font-weight:400}
+.svgbox{overflow-x:auto;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding-block:8px}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--mono);fill:var(--muted)}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;font-family:var(--mono);font-size:13px}
+.ctrl input[type=range]{flex:1 1 180px;accent-color:var(--blue)}
+.ctrl button{font-family:var(--mono);font-size:12px;border:1px solid var(--rule);background:transparent;color:var(--ink);padding:5px 10px;border-radius:4px;cursor:pointer}
+.ctrl button[aria-pressed="true"]{border-color:var(--blue);color:var(--blue)}
+.ctrl output{min-width:5ch;color:var(--blue);font-weight:500}
+button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:16px;font-variant-numeric:tabular-nums}
+th{font-variant:small-caps;letter-spacing:.04em;font-weight:600;text-align:left;color:var(--muted);border-bottom:1px solid var(--ink);padding:6px 10px;white-space:nowrap}
+td{border-bottom:1px solid var(--rule);padding:6px 10px;white-space:nowrap}
+td.n,th.n{text-align:right}
+.finding{border-left:3px solid var(--blue);padding-left:14px}
+.srcbtn{align-self:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:var(--btn);color:var(--btn-ink);border:0;border-radius:4px;padding:11px 16px;cursor:pointer}
+#src ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.small{font-size:15px;color:var(--muted)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../">← All simulations</a>
+
+  <header>
+    <div class="eyebrow">US Coast &amp; Geodetic Survey · Colonna · 1878</div>
+    <h1>Shasta · Lola · Helena</h1>
+    <p class="lede">The largest triangle the Survey ever observed. Its longest side runs 306.5 km from Mount Shasta to Mount Saint Helena. Below it is drawn to true scale against a flat chord, then stretched vertically so you can watch the bulge appear.</p>
+  </header>
+
+  <section class="card" aria-labelledby="h1c">
+    <div class="eyebrow">1 · The triangle</div>
+    <h2 id="h1c">Three peaks, 789 km of perimeter</h2>
+    <div class="svgbox"><svg id="plan" viewBox="0 0 600 470" role="img" aria-label="Plan view of the Shasta, Lola and Helena triangle"></svg></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Station</th><th class="n">Lat °N</th><th class="n">Lon °W</th><th class="n">Height m</th><th class="n">Angle</th></tr></thead>
+      <tbody id="stations"></tbody>
+      <tfoot><tr><td><b>Sum</b></td><td></td><td></td><td></td><td class="n"><b id="angsum"></b></td></tr></tfoot>
+    </table></div>
+    <p class="finding">On a plane the three angles would sum to 180°. On the ellipsoid they sum to 180° plus <b>142.7″</b> of spherical excess, which equals the triangle's area (28 107 km²) divided by the Gaussian curvature radius squared.</p>
+    <div class="formula">ε = A / R² = 2.811×10¹⁰ m² / (6 374 237 m)² = 6.92×10⁻⁴ rad = 142.7″</div>
+  </section>
+
+  <section class="card" aria-labelledby="h2c">
+    <div class="eyebrow">2 · The longest side to scale</div>
+    <h2 id="h2c">Shasta → Helena against a flat baseline</h2>
+    <p>The red line is the straight chord between the sea-level points under each summit. The brown line is the ellipsoid surface. The blue line is the straight sightline from summit to summit. At 1× nothing is exaggerated.</p>
+    <div class="ctrl">
+      <label for="ve">Vertical stretch</label>
+      <input id="ve" type="range" min="0" max="100" step="1" value="0">
+      <output id="veout" for="ve">1×</output>
+      <button type="button" data-e="1">1×</button>
+      <button type="button" data-e="10">10×</button>
+      <button type="button" data-e="40">40×</button>
+    </div>
+    <div class="svgbox"><svg id="side" role="img" aria-label="Cross-section of the Shasta to Helena line"></svg></div>
+    <div class="legend"><span><i style="border-color:var(--flat)"></i>flat chord</span><span><i style="border-color:var(--earth)"></i>ellipsoid surface</span><span><i style="border-color:var(--sight);border-top-style:dashed"></i>summit sightline</span></div>
+    <p class="small">The stretch multiplies every height by the same factor. That is an affine map, so straight lines stay straight and the chord stays flat. Only the proportions change.</p>
+    <div class="formula">sagitta = R (1 − cos(s / 2R)) ≈ s² / 8R = (306 514 m)² / (8 × 6 374 412 m) = <b>1 842 m</b></div>
+    <p>At the midpoint the surface stands 1 842 m above the flat chord, taller than Mount Saint Helena itself (1 323 m). The summit-to-summit sightline clears the surface by about 674 m at its lowest point, 216 km from Shasta (868 m with standard refraction, k = 0.13).</p>
+  </section>
+
+  <section class="card" aria-labelledby="h3c">
+    <div class="eyebrow">3 · All three sides</div>
+    <h2 id="h3c">Arc versus chord</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Side</th><th class="n">Arc km</th><th class="n">Arc mi</th><th class="n">Reported mi</th><th class="n">Arc − chord m</th><th class="n">Sagitta m</th><th class="n">Tangent drop km</th></tr></thead>
+      <tbody id="sides"></tbody>
+    </table></div>
+    <p class="small">Tangent drop is how far the far station lies below a flat horizontal plane laid at the near station, s²/2R, which is exactly four times the sagitta.</p>
+  </section>
+
+  <section class="card" aria-labelledby="h4c">
+    <div class="eyebrow">4 · Method &amp; error budget</div>
+    <h2 id="h4c">How sure is the bulge?</h2>
+    <p>Geodesics, angles and area were computed on WGS84 with GeographicLib. Curvature radius is the Gaussian mean √(MN) at each side's mid-latitude.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source of error</th><th class="n">Assumed 1σ</th><th class="n">Effect on 1 842 m sagitta</th></tr></thead>
+      <tbody>
+        <tr><td>Station positions (summit coordinates, not NGS marks)</td><td class="n">±100 m</td><td class="n">±1.2 m</td></tr>
+        <tr><td>Side length: 1878 reported vs computed (169/192 mi vs 167.0/190.5)</td><td class="n">±2.4 km</td><td class="n">±29 m</td></tr>
+        <tr><td>Ellipsoid choice (WGS84 vs Clarke 1866)</td><td class="n">ΔR ≈ 100 m</td><td class="n">±0.03 m</td></tr>
+      </tbody>
+    </table></div>
+    <p class="finding">Finding: taking the worst listed term as 1σ, the sagitta is 1 842 ± 29 m. A flat baseline (sagitta 0) sits about 63σ away. This is an inductive result that depends on the side length and on R from the ellipsoid model. The open item is replacing summit coordinates with the published 1878 station positions, which may explain the 1.5 mi gap against Colonna's reported distances.</p>
+  </section>
+
+  <button class="srcbtn" type="button" id="srcbtn" aria-expanded="false" aria-controls="src">Sources for this page (pages and quotes)</button>
+  <section class="card" id="src" hidden>
+    <ol>
+      <li><a href="https://amerisurv.com/2012/10/27/the-longest-line/">“The Longest Line,” The American Surveyor (2012)</a>. Colonna on Shasta saw the Lola heliotrope at 169 miles and the Helena heliotrope at 192 miles, calling the latter “the longest line ever observed over in the world.” Shasta–Helena was a one-way observation; Davidson occupied Lola.</li>
+      <li><a href="https://www.hydro-international.com/content/article/the-longest-line">“The Longest Line,” Hydro International</a>. Same account; Colonna's record line stood until a 1950s Puerto Rico–Dominican Republic flare observation over 210 miles.</li>
+      <li>Computation: Karney, GeographicLib (WGS84 geodesics and polygon area). Summit coordinates used: Shasta 41.4092 N 122.1949 W 4 322 m; Lola 39.4330 N 120.3655 W 2 789 m; Saint Helena 38.6693 N 122.6330 W 1 323 m. To be replaced with NGS datasheet values for the historic stations.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+const ST={Shasta:{lat:41.4092,lon:-122.1949,h:4322,ang:"43° 01′ 27.9″"},
+          Lola:{lat:39.4330,lon:-120.3655,h:2789,ang:"77° 57′ 16.3″"},
+          Helena:{lat:38.6693,lon:-122.6330,h:1323,ang:"59° 03′ 38.5″"}};
+const SIDES=[["Shasta – Helena",306.514,190.5,192,29.53,1842.2,7.369],
+             ["Shasta – Lola",268.795,167.0,169,19.91,1416.7,5.667],
+             ["Lola – Helena",213.803,132.9,"—",10.02,896.5,3.586]];
+const fmt=(x,d)=>typeof x==="number"?x.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}).replace(/,/g," "):x;
+document.getElementById("stations").innerHTML=Object.entries(ST).map(([k,s])=>
+ `<tr><td>${k==="Helena"?"Mt Saint Helena":"Mt "+k}</td><td class="n">${s.lat.toFixed(4)}</td><td class="n">${(-s.lon).toFixed(4)}</td><td class="n">${fmt(s.h,0)}</td><td class="n">${s.ang}</td></tr>`).join("");
+document.getElementById("angsum").textContent="180° 02′ 22.7″";
+document.getElementById("sides").innerHTML=SIDES.map(r=>`<tr><td>${r[0]}</td><td class="n">${fmt(r[1],1)}</td><td class="n">${fmt(r[2],1)}</td><td class="n">${r[3]}</td><td class="n">${fmt(r[4],1)}</td><td class="n">${fmt(r[5],1)}</td><td class="n">${fmt(r[6],2)}</td></tr>`).join("");
+
+const NS="http://www.w3.org/2000/svg";
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e}
+
+/* Plan view: local equirectangular projection, km */
+(function(){
+  const svg=document.getElementById("plan"),lat0=40,kx=111.32*Math.cos(lat0*Math.PI/180),ky=110.95;
+  const P={};for(const k in ST)P[k]=[(ST[k].lon+121.5)*kx,(ST[k].lat-40)*ky];
+  const xs=Object.values(P).map(p=>p[0]),ys=Object.values(P).map(p=>p[1]);
+  const pad=60,minx=Math.min(...xs),maxy=Math.max(...ys),sc=Math.min((600-2*pad)/(Math.max(...xs)-minx),(470-2*pad)/(maxy-Math.min(...ys)));
+  const T=p=>[pad+(p[0]-minx)*sc,pad+(maxy-p[1])*sc];
+  const pts=["Shasta","Lola","Helena"].map(k=>T(P[k]).join(",")).join(" ");
+  el("polygon",{points:pts,fill:"var(--earth-fill)","fill-opacity":".55",stroke:"var(--ink)","stroke-width":"1.5"},svg);
+  const lab={Shasta:[12,-8,"start"],Lola:[-12,-12,"end"],Helena:[12,22,"start"]};
+  const len={"Shasta-Helena":"306.5 km","Shasta-Lola":"268.8 km","Lola-Helena":"213.8 km"};
+  for(const k in P){const [x,y]=T(P[k]);el("circle",{cx:x,cy:y,r:5,fill:"var(--blue)"},svg);
+    const t=el("text",{x:x+lab[k][0],y:y+lab[k][1],"text-anchor":lab[k][2],"font-size":"20",style:"fill:var(--ink)"},svg);t.textContent=k==="Helena"?"Mt St Helena":"Mt "+k;}
+  for(const key in len){const [a,b]=key.split("-"),[x1,y1]=T(P[a]),[x2,y2]=T(P[b]);
+    const mx=(x1+x2)/2,my=(y1+y2)/2,t=el("text",{x:mx,y:my,"font-size":"18","text-anchor":"middle",style:"fill:var(--blue)",transform:`translate(${a==="Lola"?14:-14},${a==="Lola"?14:0})`},svg);t.textContent=len[key];}
+  // scale bar 100 km
+  el("line",{x1:560-100*sc,y1:448,x2:560,y2:448,stroke:"var(--ink)","stroke-width":"2"},svg);
+  const t=el("text",{x:560,y:438,"font-size":"16","text-anchor":"end"},svg);t.textContent="100 km";
+  const n=el("text",{x:570,y:40,"font-size":"18","text-anchor":"middle",style:"fill:var(--ink)"},svg);n.textContent="N ↑";
+})();
+
+/* Cross-section: x along chord (km), y height above chord (km), true scale times vertical stretch E */
+const L=306.514,R=6374.412,H1=4.322,H2=1.323,SAG=1842.2/1000;
+const W=1000,ML=26,MR=26,pxkm=(W-ML-MR)/L;
+function surf(x){const c=L/2;return Math.sqrt(R*R-(x-c)*(x-c))-(R-SAG)} // ~0 at ends
+function draw(E){
+  const svg=document.getElementById("side");svg.innerHTML="";
+  const top=(SAG+H1)*E*pxkm, H=Math.max(140,top+70+40);
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const y0=H-72, X=x=>ML+x*pxkm, Y=h=>y0-h*E*pxkm;
+  // earth fill
+  let d=`M${X(0)},${Y(0)}`;for(let i=0;i<=200;i++){const x=L*i/200;d+=` L${X(x).toFixed(2)},${Y(surf(x)).toFixed(3)}`}
+  el("path",{d:d+` L${X(L)},${y0+40} L${X(0)},${y0+40} Z`,fill:"var(--earth-fill)"},svg);
+  el("path",{d,fill:"none",stroke:"var(--earth)","stroke-width":"2"},svg);
+  // mountains, base 24 km each, heights radial ≈ vertical here
+  const mtn=(x,h)=>{const s=v=>surf(Math.min(L,Math.max(0,v)));el("path",{d:`M${X(x-6)},${Y(s(x-6))} L${X(x)},${Y(s(x)+h)} L${X(x+6)},${Y(s(x+6))} Z`,fill:"var(--earth)","fill-opacity":".85"},svg)};
+  mtn(0,H1);mtn(L,H2);
+  // flat chord
+  el("line",{x1:X(0),y1:Y(0),x2:X(L),y2:Y(0),stroke:"var(--flat)","stroke-width":"2"},svg);
+  // sightline summit to summit
+  el("line",{x1:X(0),y1:Y(H1),x2:X(L),y2:Y(H2),stroke:"var(--sight)","stroke-width":"1.6","stroke-dasharray":"7 5"},svg);
+  // sagitta marker at midpoint
+  const xm=L/2;
+  el("line",{x1:X(xm),y1:Y(0),x2:X(xm),y2:Y(SAG),stroke:"var(--ink)","stroke-width":"1.2"},svg);
+  const lab=el("text",{x:X(xm)+8,y:Math.min(Y(SAG/2)+4,y0-6),"font-size":"24",style:"fill:var(--ink)"},svg);lab.textContent="1 842 m";
+  const t1=el("text",{x:X(0),y:y0+30,"font-size":"24",style:"fill:var(--ink)"},svg);t1.textContent="Shasta 4 322 m";
+  const t2=el("text",{x:X(L),y:y0+30,"font-size":"24","text-anchor":"end",style:"fill:var(--ink)"},svg);t2.textContent="Helena 1 323 m";
+  const t3=el("text",{x:X(L/2),y:y0+58,"font-size":"20","text-anchor":"middle"},svg);t3.textContent=`306.5 km · vertical ${E===1?"true scale":E.toFixed(E<10?1:0)+"× stretched"}`;
+}
+const ve=document.getElementById("ve"),out=document.getElementById("veout"),btns=[...document.querySelectorAll("[data-e]")];
+const toE=v=>Math.pow(40,v/100), toV=e=>Math.round(100*Math.log(e)/Math.log(40));
+function update(){const E=toE(+ve.value);out.textContent=(E<10?E.toFixed(1):Math.round(E))+"×";
+  btns.forEach(b=>b.setAttribute("aria-pressed",String(Math.abs(+b.dataset.e-E)<.05*E)));draw(E)}
+ve.addEventListener("input",update);
+btns.forEach(b=>b.addEventListener("click",()=>{ve.value=toV(+b.dataset.e);update()}));
+update();
+
+const sb=document.getElementById("srcbtn"),src=document.getElementById("src");
+sb.addEventListener("click",()=>{src.hidden=!src.hidden;sb.setAttribute("aria-expanded",String(!src.hidden))});
+</script>
+</body>
+</html>
