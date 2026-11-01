@@ -42,9 +42,11 @@ The flat layout is an azimuthal equidistant map of the printed station positions
 
 These are inductive findings from Schott's printed angles with the stated noise, good to the error bars shown.
 
-## What lumps on a flat plane would have to do
+## What a flat plane predicts
 
-The lumps picture each triangle's excess; they are not a surface that could produce it. By Gauss–Bonnet a bump that rises from flat ground and returns to it encloses zero net curvature: its positive cap is paid for by a negative skirt, which would show as negative excess in neighbouring triangles. Sums over neighbouring triangles would cancel. They do not: every segment sums positive.
+Each triangle's excess is its own total curvature and nothing more; its own radius is that curvature restated in kilometres. How the curvature is spread inside a triangle the angles cannot say, so each lump is drawn from its own triangle's numbers only.
+
+A theodolite is levelled square to the plumb line. If all plumb lines are parallel (a flat plane), every station's horizontal plane is parallel, and each measured angle equals the angle of the stations projected straight down onto one plane. Every triangle's angles then sum to exactly 180°, whatever the terrain: heights and lumps drop out. The flat prediction is excess 0 ± noise for every triangle. Triangle 32 (Nebo–Tushar–Wheeler Peak) is 75″ over against ±1.3″, which requires the stations' plumb lines to be turned relative to each other.
 
 ## Error budget
 
