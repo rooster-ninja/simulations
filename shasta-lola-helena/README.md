@@ -6,7 +6,7 @@ Live page: https://rooster-ninja.github.io/simulations/shasta-lola-helena/
 
 The largest triangle observed by the US Coast and Geodetic Survey: Mount Shasta,
 Mount Lola and Mount Saint Helena, observed by Benjamin Colonna from Shasta in
-1878 with George Davidson on Lola. Its longest side, Shasta → Helena (306.5 km),
+1879 with George Davidson on Lola. Its longest side, Shasta → Helena (306.5 km),
 is drawn to true scale against a flat chord, with a vertical-stretch slider
 (1× to 40×).
 
@@ -34,12 +34,12 @@ is drawn to true scale against a flat chord, with a vertical-stretch slider
 | Source | 1σ | Effect on sagitta |
 | --- | ---: | ---: |
 | Station positions (summit coords, not NGS marks) | ±100 m | ±1.2 m |
-| Side length, 1878 reported vs computed | ±2.4 km | ±29 m |
+| Side length, 1879 reported vs computed | ±2.4 km | ±29 m |
 | Ellipsoid choice (WGS84 vs Clarke 1866) | ΔR ≈ 100 m | ±0.03 m |
 
 ## Simplifications
 
-- Station positions are summit coordinates, not the published 1878 station
+- Station positions are summit coordinates, not the published 1879 station
   positions. Replacing them with NGS datasheet values is the open item, and may
   explain why computed lengths (167.0 / 190.5 mi) run ~1.5 mi short of the
   reported 169 / 192 mi.
@@ -52,6 +52,12 @@ seen from Mount Saint Helena on very clear days. These are anecdotal: no
 published photograph, historic or recent, was found of Shasta from Saint Helena
 or Lola, or of either from Shasta.
 
+## Date
+
+The observation is dated 1 August 1879. Colonna's own account (The Californian,
+March 1880) gives "Friday, August 1", and 1 August was a Friday in 1879, not
+1878. Some secondary sources (NOAA heliotrope page, JPR) say 1878.
+
 ## Sources
 
 - "The Longest Line", The American Surveyor (2012):
@@ -62,4 +68,8 @@ or Lola, or of either from Shasta.
   https://www.parks.ca.gov/?page_id=472
 - Mount Saint Helena, Modern Hiker: https://modernhiker.com/hike/mount-saint-helena/
 - Mount Saint Helena, SummitPost: https://www.summitpost.org/mount-saint-helena/150521
+- B. A. Colonna, "Nine Days on the Summit of Mount Shasta", The Californian,
+  March 1880, v. 1 no. 3, pp. 242–8 (cited in College of the Siskiyous Mount
+  Shasta bibliography, ch. 11: https://www.siskiyous.edu/library/shasta/documents/AB_Ch11.pdf)
+- NOAA 200th, Heliotrope: https://celebrating200years.noaa.gov/theodolites/heliotrope.html
 - C. F. F. Karney, GeographicLib.
