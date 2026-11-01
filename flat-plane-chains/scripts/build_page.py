@@ -160,10 +160,10 @@ details.src a{{color:var(--bar-ink)}}
       <button class="vbtn" data-view="east">east</button>
       <button class="vbtn" data-view="top">top</button></div>
     <div class="viewer" id="viewer"><div id="vstatus">Loading the chains…</div></div>
-    <div class="ex"><label for="exag">Lump height</label><input id="exag" type="range" min="0" max="100" value="62"><output id="exout" for="exag"></output></div>
+    <div class="ex"><label for="exag">Lump height</label><input id="exag" type="range" min="0" max="100" value="45"><output id="exout" for="exag"></output></div>
     <div class="legend" id="legend"></div>
     <div class="info" id="info" aria-live="polite">Hover or tap a triangle to read its numbers.</div>
-    <p class="cap">Azimuthal equidistant map of the printed station positions (centre 39° N 92° W), for display only: no number on this page is computed from the map. Each lump is the cap a sphere of that one triangle's own measured curvature would raise over its footprint, height √(area × excess) / 2π, scaled by the slider. The largest real lump is about 370 m. Pins are numbered west to east: P on the 39th parallel, E on the Eastern Oblique. Yellow pins mark gaps where no triangle joins two parts of a chain; orange pins mark joins through a single shared station with no shared side.</p>
+    <p class="cap">Azimuthal equidistant map of the printed station positions (centre 39° N 92° W), for display only: no number on this page is computed from the map. Each lump is the piece of a sphere of that one triangle's own radius, √(area / observed excess), passing through its three corners: height (r² − d²) / 2R above the plane, where r is the circumradius and d the distance from the circumcentre. Triangles with the same radius show the same curvature at any size; a flatter or steeper piece is a different radius. Triangles with excess under 3σ, whose radius is poorly fixed, are faded toward the ground. Heights are scaled by the slider. Pins are numbered west to east: P on the 39th parallel, E on the Eastern Oblique. Yellow pins mark gaps where no triangle joins two parts of a chain; orange pins mark joins through a single shared station with no shared side.</p>
   </section>
 
   <section class="panel">
@@ -183,7 +183,7 @@ details.src a{{color:var(--bar-ink)}}
   <section class="panel">
     <div class="ptitle">3 · Largest triangles, each on its own</div>
     <div class="tablebox"><table>
-      <thead><tr><th>Triangle</th><th class="n">Area km²</th><th class="n">Observed excess</th><th class="n">σ above flat</th><th class="n">Ellipsoid excess</th><th class="n">Own radius km</th><th class="n">Lump m</th></tr></thead>
+      <thead><tr><th>Triangle</th><th class="n">Area km²</th><th class="n">Observed excess</th><th class="n">σ above flat</th><th class="n">Ellipsoid excess</th><th class="n">Own radius km</th><th class="n">Lump top m</th></tr></thead>
       <tbody>{big_rows}</tbody></table></div>
     <p class="cap">Own radius is what that triangle alone implies, √(area / observed excess), with the error from ±σ on its angle sum. Each is independent of every other row.</p>
   </section>
@@ -270,7 +270,7 @@ s.add(new THREE.HemisphereLight(0xffffff,0x334455,1.25));const dl=new THREE.Dire
 const ZC=[[-1e9,-3,'#6b3d8f','below −3σ'],[-3,-1,'#a58cc0','−3 to −1σ'],[-1,1,'#e9e4d6','within ±1σ of flat'],[1,3,'#b7d7d0','1 to 3σ'],[3,10,'#5fb0b4','3 to 10σ'],[10,30,'#2b7bb0','10 to 30σ'],[30,1e9,'#173d7a','above 30σ']];
 const QC=[[-1e9,.8,'#8c5a2b','q below 0.80'],[.8,.95,'#d6a96b','0.80–0.95'],[.95,1.05,'#e9e4d6','0.95–1.05'],[1.05,1.2,'#7fb3d5','1.05–1.20'],[1.2,1e9,'#2b5f9e','above 1.20']];
 const LOWSNR='#8d8a82',UNRES='#c8342a';
-let D,mode={{c:'z',t:'tiles',s:'both'}},lumps,unresMesh,faceTri=[],ufaceTri=[],lineObj,pins=[],exag=1;
+const GROUND=new THREE.Color(0x4b5466);let maxH=0.37;let D,mode={{c:'z',t:'tiles',s:'both'}},lumps,unresMesh,faceTri=[],ufaceTri=[],lineObj,pins=[],exag=1;
 const N=10;
 function colourOf(t){{if(mode.c==='z'){{for(const b of ZC)if(t.z>=b[0]&&t.z<b[1])return b[2];}}
   else{{if(t.z<3)return LOWSNR;for(const b of QC)if(t.q>=b[0]&&t.q<b[1])return b[2];}}return '#ffffff';}}
@@ -280,21 +280,26 @@ function legend(){{const L=document.getElementById('legend');const rows=(mode.c=
   L.innerHTML=rows.join('');}}
 function build(){{
   if(lumps){{s.remove(lumps);lumps.geometry.dispose();}} if(unresMesh){{s.remove(unresMesh);unresMesh.geometry.dispose();}}
-  const pos=[],col=[],uPos=[];faceTri=[];ufaceTri=[];const c=new THREE.Color();
+  const pos=[],col=[],uPos=[];faceTri=[];ufaceTri=[];const c=new THREE.Color();maxH=0;
   D.triangles.forEach((t,ti)=>{{
     if(mode.s!=='both'&&String(t.s)!==mode.s)return;
     const [a,b,d]=t.xy;
     if(t.st==='u'){{uPos.push(a[0],a[1],0,b[0],b[1],0,d[0],d[1],0);ufaceTri.push(ti);return;}}
     if(t.st!=='r')return; if(mode.t==='tiles'&&!t.tile)return;
-    const hk=t.h/1000; c.set(colourOf(t));
-    const P=(i,j)=>{{const k=N-i-j,b1=i/N,b2=j/N,b3=k/N;const bub=27*b1*b2*b3;return [b1*a[0]+b2*b[0]+b3*d[0],b1*a[1]+b2*b[1]+b3*d[1],hk*bub];}};
+    c.set(colourOf(t)); c.lerp(GROUND,(1-Math.min(Math.abs(t.z),3)/3)*.65);
+    const D2=2*(a[0]*(b[1]-d[1])+b[0]*(d[1]-a[1])+d[0]*(a[1]-b[1]));
+    const ux=((a[0]**2+a[1]**2)*(b[1]-d[1])+(b[0]**2+b[1]**2)*(d[1]-a[1])+(d[0]**2+d[1]**2)*(a[1]-b[1]))/D2;
+    const uy=((a[0]**2+a[1]**2)*(d[0]-b[0])+(b[0]**2+b[1]**2)*(a[0]-d[0])+(d[0]**2+d[1]**2)*(b[0]-a[0]))/D2;
+    const rc2=(a[0]-ux)**2+(a[1]-uy)**2, ek=t.eo*4.84813681e-6/t.a, invR=Math.sign(ek)*Math.sqrt(Math.abs(ek));
+    const P=(i,j)=>{{const k=N-i-j,b1=i/N,b2=j/N,b3=k/N;const x=b1*a[0]+b2*b[0]+b3*d[0],y=b1*a[1]+b2*b[1]+b3*d[1];
+      const h=(rc2-(x-ux)**2-(y-uy)**2)/2*invR;if(Math.abs(h)>maxH)maxH=Math.abs(h);return [x,y,h];}};
     for(let i=0;i<N;i++)for(let j=0;j<N-i;j++){{
       const tri=[[P(i,j),P(i+1,j),P(i,j+1)]];if(i+j<N-1)tri.push([P(i+1,j),P(i+1,j+1),P(i,j+1)]);
       for(const f of tri){{for(const v of f){{pos.push(...v);col.push(c.r,c.g,c.b);}}faceTri.push(ti);}}
     }}
   }});
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));g.computeVertexNormals();
-  lumps=new THREE.Mesh(g,new THREE.MeshStandardMaterial({{vertexColors:true,roughness:.8,metalness:0,side:THREE.DoubleSide}}));lumps.scale.z=exag;s.add(lumps);
+  lumps=new THREE.Mesh(g,new THREE.MeshStandardMaterial({{vertexColors:true,roughness:.8,metalness:0,side:THREE.DoubleSide}}));lumps.scale.z=exag;s.add(lumps);setEx();
   const ug=new THREE.BufferGeometry();ug.setAttribute('position',new THREE.Float32BufferAttribute(uPos,3));
   unresMesh=new THREE.Mesh(ug,new THREE.MeshBasicMaterial({{color:UNRES,side:THREE.DoubleSide,transparent:true,opacity:.92,depthTest:false}}));unresMesh.renderOrder=5;unresMesh.position.z=2;s.add(unresMesh);
   if(lineObj){{s.remove(lineObj);lineObj.geometry.dispose();}}
@@ -305,7 +310,7 @@ function build(){{
   legend();
 }}
 const ex=document.getElementById('exag'),exo=document.getElementById('exout');
-function setEx(){{exag=Math.round(Math.pow(10,(+ex.value)/100*4));if(lumps)lumps.scale.z=exag;exo.textContent=`× ${{exag.toLocaleString()}} vertical (largest lump 370 m → ${{(0.37*exag).toLocaleString(undefined,{{maximumFractionDigits:0}})}} km)`;}}
+function setEx(){{exag=Math.round(Math.pow(10,(+ex.value)/100*4));if(lumps)lumps.scale.z=exag;exo.textContent=`× ${{exag.toLocaleString()}} vertical (highest lump shown ${{Math.round(maxH*1000).toLocaleString()}} m → ${{(maxH*exag).toLocaleString(undefined,{{maximumFractionDigits:0}})}} km)`;}}
 ex.addEventListener('input',setEx);setEx();
 let views={{}},cur='oblique';
 function setView(n){{const[az,el,d0,tg]=views[n];ctl.target.set(...tg);const d=d0*Math.max(1,1.5/cam.aspect),a=az*Math.PI/180,e=el*Math.PI/180;
@@ -322,7 +327,7 @@ function pick(ev){{if(!D)return;const rc=r.domElement.getBoundingClientRect();mp
   const hits=ray.intersectObjects([unresMesh,lumps]);if(!hits.length)return;const h=hits[0];
   const t=D.triangles[h.object===unresMesh?ufaceTri[h.faceIndex]:faceTri[h.faceIndex]];const ch=t.s?'Eastern Oblique':'39th parallel';
   if(t.st==='u'){{info.innerHTML=`<b>${{t.n}}</b> · ${{ch}} · segment ${{t.seg}}<br><span style="color:var(--unres)">Unresolved: one angle not observed, so its sum closes by construction.</span> Area ${{Math.round(t.a).toLocaleString()}} km², ellipsoid excess ${{t.ep.toFixed(2)}}″.`;return;}}
-  info.innerHTML=`<b>${{t.n}}</b> · ${{ch}} · segment ${{t.seg}}${{t.tile?' · chain tile':''}}<br>Observed excess ${{t.eo.toFixed(2)}}″ ± ${{t.sg}}″ = ${{t.z.toFixed(1)}}σ above a flat triangle · ellipsoid ${{t.ep.toFixed(2)}}″ (q ${{t.q.toFixed(3)}})${{t.R?` · own radius ${{t.R.toLocaleString()}} ± ${{t.sR}} km`:''}} · lump ${{Math.round(t.h)}} m · area ${{Math.round(t.a).toLocaleString()}} km²`;}}
+  info.innerHTML=`<b>${{t.n}}</b> · ${{ch}} · segment ${{t.seg}}${{t.tile?' · chain tile':''}}<br>Observed excess ${{t.eo.toFixed(2)}}″ ± ${{t.sg}}″ = ${{t.z.toFixed(1)}}σ above a flat triangle · ellipsoid ${{t.ep.toFixed(2)}}″ (q ${{t.q.toFixed(3)}})${{t.R?` · own radius ${{t.R.toLocaleString()}} ± ${{t.sR}} km`:''}} · lump top ${{Math.round(t.h)}} m · area ${{Math.round(t.a).toLocaleString()}} km²`;}}
 r.domElement.addEventListener('pointermove',pick);r.domElement.addEventListener('pointerdown',pick);
 fetch('data/flat_chains.json').then(x=>x.json()).then(d=>{{D=d;
   const op=[];for(const run of d.outline)for(let i=1;i<run.length;i++)op.push(run[i-1][0],run[i-1][1],0,run[i][0],run[i][1],0);

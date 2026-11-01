@@ -14,7 +14,7 @@ The 39th-parallel and Eastern Oblique triangulation chains (Schott 1900, 1902) l
 2. **Noise** = the survey's closure noise per triangle from the report's rule: ±1.261″ (39th parallel), ±1.397″ (Eastern Oblique).
 3. **Test** z = observed excess ÷ noise. On a flat plane z scatters around 0 with spread 1.
 4. **Own radius** √(area / observed excess): what that one triangle implies, with no other triangle involved.
-5. **Lump** height √(area × excess) / 2π: the cap a sphere of that triangle's own curvature would raise over its footprint. Display only; the largest is about 370 m.
+5. **Lump**: the piece of a sphere of that triangle's own radius passing through its three corners, height (r² − d²) / 2R above the plane (r circumradius, d distance from the circumcentre). Triangles with the same radius show the same curvature at any size. Triangles under 3σ are faded. Display only.
 6. **Unresolved:** no observed excess in the report's table (an angle printed "….") → not tested, drawn red, no lump.
 7. **Breaks:** segments are groups of triangles joined by shared printed sides. Neighbouring segments are linked by the closest station pair (minimum spanning tree): a link through one shared station is a "single shared station" join, otherwise a gap.
 

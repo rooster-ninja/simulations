@@ -4,8 +4,9 @@ Every triangle is tested on its own, against a flat triangle (angle sum exactly 
   observed excess  = (sum of the three observed angles) - 180 deg      (Schott's tables)
   z_flat           = observed excess / sigma_closure                    (per-survey closure noise)
   R_own            = sqrt(area / observed excess)   (the radius that one triangle alone implies)
-  cap height       = sqrt(area * excess) / (2 pi)   (height of a cap of that curvature over the
-                                                     triangle's footprint; drawn as the lump)
+  lump             = the piece of a sphere of the triangle's own radius that passes through its
+                     three corners: height (r_c^2 - d^2) / 2R above the plane, r_c the circumradius,
+                     d the distance from the circumcentre. Same radius -> same curvature at any size.
 Triangles whose printed table has a blank observed angle ("....") have no observed excess:
 they are marked unresolved and get no lump.
 
@@ -66,7 +67,22 @@ for (sv, name), r in rows.items():
         if e > 0:
             R = math.sqrt(area * 1e6 / e) / 1e3
             t["R_own_km"] = R; t["R_own_sig_km"] = R * 0.5 * sig / eo
-        t["cap_m"] = math.copysign(math.sqrt(area * 1e6 * abs(e)) / (2 * math.pi), e)
+        # lump: sphere of the triangle's own radius through its three corners (display plane, km)
+        (ax, ay), (bx, by), (cx_, cy_) = t["xy"]
+        dd = 2 * (ax * (by - cy_) + bx * (cy_ - ay) + cx_ * (ay - by))
+        ux = ((ax**2 + ay**2) * (by - cy_) + (bx**2 + by**2) * (cy_ - ay) + (cx_**2 + cy_**2) * (ay - by)) / dd
+        uy = ((ax**2 + ay**2) * (cx_ - bx) + (bx**2 + by**2) * (ax - cx_) + (cx_**2 + cy_**2) * (bx - ax)) / dd
+        rc2 = (ax - ux)**2 + (ay - uy)**2
+        invR = math.copysign(math.sqrt(abs(e) / (area * 1e6)), e) * 1e3        # 1/km
+        best = 0.0
+        M = 40
+        for i in range(M + 1):
+            for j in range(M + 1 - i):
+                b1, b2 = i / M, j / M; b3 = 1 - b1 - b2
+                px = b1 * ax + b2 * bx + b3 * cx_; py = b1 * ay + b2 * by + b3 * cy_
+                h = (rc2 - (px - ux)**2 - (py - uy)**2) / 2 * invR
+                if abs(h) > abs(best): best = h
+        t["cap_m"] = best * 1e3
     tris.append(t)
 
 # --- connectivity: triangles joined by a shared printed side ---
