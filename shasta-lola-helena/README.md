@@ -52,6 +52,22 @@ seen from Mount Saint Helena on very clear days. These are anecdotal: no
 published photograph, historic or recent, was found of Shasta from Saint Helena
 or Lola, or of either from Shasta.
 
+## Field record (primary source)
+
+U.S. Coast and Geodetic Survey, Report of the Superintendent for the fiscal year
+ending June 1880, pp. 37–39 and 43–44 (NOAA file CSC-0079):
+
+- 25 Jul 1879: Colonna ascends Shasta; nine days and nights on the summit.
+- 29 Jul: Lola heliotrope glimpsed from Shasta, no pointing. Davidson at Lola
+  observes the Shasta heliotrope in five positions of 20-inch theodolite No. 115.
+- 1 Aug: Helena seen from Shasta; four sets of six repetitions. Repeated 2 Aug.
+- Only two angles of the triangle were measured that season, so the triangle was
+  not closed by observation; the 142.7″ excess here is computed.
+- Sides reported as approximately 136, 169 and 192 miles.
+- Refraction coefficient observed at Lola (14 days, 3 nights) and Round Top.
+
+Page extract: `sources/USCGS_1880_report_pp37-39_43-44.pdf` (and `.txt`, raw OCR).
+
 ## Terrain check (HeyWhatsThat)
 
 Panorama from Saint Helena: https://www.heywhatsthat.com/?view=JUUTXI1Q
@@ -65,7 +81,8 @@ about −0.63°. At standard refraction (k ≈ 0.14) the summit grazes the horiz
 
 The observation is dated 1 August 1879. Colonna's own account (The Californian,
 March 1880) gives "Friday, August 1", and 1 August was a Friday in 1879, not
-1878. Some secondary sources (NOAA heliotrope page, JPR) say 1878.
+1878. Some secondary sources (NOAA heliotrope page, JPR) say 1878. The 1880
+Superintendent's report confirms 25 July – 2 August 1879.
 
 ## Sources
 
@@ -77,6 +94,8 @@ March 1880) gives "Friday, August 1", and 1 August was a Friday in 1879, not
   https://www.parks.ca.gov/?page_id=472
 - Mount Saint Helena, Modern Hiker: https://modernhiker.com/hike/mount-saint-helena/
 - Mount Saint Helena, SummitPost: https://www.summitpost.org/mount-saint-helena/150521
+- U.S. Coast and Geodetic Survey, Report of the Superintendent… fiscal year
+  ending June 1880, pp. 37–39, 43–44: https://library.noaa.gov/coast-geodetic-survey/annual-reports (CSC-0079)
 - B. A. Colonna, "Nine Days on the Summit of Mount Shasta", The Californian,
   March 1880, v. 1 no. 3, pp. 242–8 (cited in College of the Siskiyous Mount
   Shasta bibliography, ch. 11: https://www.siskiyous.edu/library/shasta/documents/AB_Ch11.pdf)
