@@ -52,6 +52,15 @@ seen from Mount Saint Helena on very clear days. These are anecdotal: no
 published photograph, historic or recent, was found of Shasta from Saint Helena
 or Lola, or of either from Shasta.
 
+## Terrain check (HeyWhatsThat)
+
+Panorama from Saint Helena: https://www.heywhatsthat.com/?view=JUUTXI1Q
+(screenshot in `images/heywhatsthat-st-helena-to-shasta.jpg`). Along bearing 7°
+the skyline is at −0.64°, set by a Coast Range saddle ~40 mi out. Shasta's top
+in the SRTM model reads −0.65° (no LOS); the true 14 179 ft summit works out to
+about −0.63°. At standard refraction (k ≈ 0.14) the summit grazes the horizon,
+±0.02°, so visibility depends on the day's refraction.
+
 ## Date
 
 The observation is dated 1 August 1879. Colonna's own account (The Californian,
