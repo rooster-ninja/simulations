@@ -1,0 +1,1006 @@
+survey,triangle,tier,n_printed_sides,area_sides_km2,area_coords_km2,side_over_coord,observed_excess_arcsec,printed_excess_arcsec,survey_sigma_arcsec,SNR,in_result,K_ellipsoid_per_m2,qc
+Anglo-French 1787,Hanger Hill Tower - Hampton Poor-house - King's Arbour,A,3,45.372,45.220,1.00336,-1.000,0.29,1.344,0.17,False,2.454500e-14,ok
+Anglo-French 1787,St. Ann's Hill - Hampton Poor-house - King's Arbour,B,2,42.214,42.020,1.00461,-0.400,0.21,1.344,0.16,False,2.454524e-14,ok
+Anglo-French 1787,"Windsor Castle, Wardrobe Tower - King's Arbour - St. Ann's Hill",,2,,49.276,,,0.25,1.344,,False,2.454513e-14,ok
+Anglo-French 1787,Hundred Acres - Hanger Hill Tower - St. Ann's Hill,B,2,214.068,213.279,1.00370,-0.750,1.08,1.344,0.81,False,2.454532e-14,ok
+Anglo-French 1787,Severndroog Castle - Hanger Hill Tower - Hundred Acres,B,2,233.452,232.528,1.00397,1.050,1.18,1.344,0.88,False,2.454519e-14,ok
+Anglo-French 1787,Norwood - Hanger Hill Tower - Severndroog Castle,B,2,110.208,109.738,1.00429,1.000,0.44,1.344,0.42,False,2.454506e-14,ok
+Anglo-French 1787,Norwood - Hanger Hill Tower - Hundred Acres,,1,,105.120,,,0.53,1.344,,False,2.454530e-14,ok
+Anglo-French 1787,"Greenwich Observatory, Transit Room - Severndroog Castle - Norwood",B,2,19.687,19.589,1.00502,2.000,0.01,1.344,0.07,False,2.454514e-14,ok
+Anglo-French 1787,Botley Hill - Hundred Acres - Severndroog Castle,B,2,153.192,152.475,1.00470,-0.050,0.78,1.344,0.58,False,2.454565e-14,ok
+Anglo-French 1787,Wrotham Hill - Botley Hill - Severndroog Castle,B,2,220.376,224.658,0.98094,1.000,1.12,1.344,0.83,False,2.454570e-14,ok
+Anglo-French 1787,Frant - Botley Hill - Wrotham Hill,B,2,257.557,261.456,0.98509,1.450,1.3,1.344,0.97,False,2.454639e-14,ok
+Anglo-French 1787,Hollingborn Hill - Wrotham Hill - Frant,,2,,293.048,,,1.52,1.344,,False,2.454641e-14,ok
+Anglo-French 1787,Fairlight Down - Frant - Hollingborn Hill,,2,,558.665,,,2.85,1.344,,False,2.454723e-14,ok
+Anglo-French 1787,Goudhurst - Botley Hill - Wrotham Hill,B,2,265.762,269.179,0.98730,-1.500,1.35,1.344,1.00,False,2.454636e-14,ok
+Anglo-French 1787,Goudhurst - Frant - Wrotham Hill,B,1,159.190,158.018,1.00741,1.300,0.81,1.344,0.60,False,2.454669e-14,ok
+Anglo-French 1787,Hollingborn Hill - Wrotham Hill - Goudhurst,C,1,241.236,235.822,1.02296,-1.000,1.22,1.344,0.89,False,2.454638e-14,ok
+Anglo-French 1787,Tenterden - Goudhurst - Hollingborn Hill,,2,,166.443,,,0.85,1.344,,False,2.454684e-14,ok
+Anglo-French 1787,Fairlight Down - Goudhurst - Tenterden,,2,,179.440,,,0.91,1.344,,False,2.454757e-14,ok
+Anglo-French 1787,Allington Knoll - Hollingborn Hill - Tenterden,,2,,205.143,,,1.05,1.344,,False,2.454691e-14,ok
+Anglo-French 1787,Lydd - Allington Knoll - Tenterden,,2,,130.704,,,0.67,1.344,,False,2.454749e-14,ok
+Anglo-French 1787,Fairlight Down - Lydd - Tenterden,,1,,194.498,,,0.99,1.344,,False,2.454787e-14,ok
+Anglo-French 1787,Allington Knoll - Lydd - Fairlight Down,,1,,128.800,,,0.33,1.344,,False,2.454785e-14,ok
+Anglo-French 1787,Lydd - Ruckinge - High Nook,A,3,41.534,41.337,1.00476,-0.250,0.21,1.344,0.16,False,2.454761e-14,ok
+Anglo-French 1787,Allington Knoll - Ruckinge - High Nook,B,2,17.283,17.202,1.00470,-2.000,0.09,1.344,0.07,False,2.454737e-14,ok
+Anglo-French 1787,Folkstone Turnpike - Allington Knoll - High Nook,B,2,57.965,57.692,1.00472,1.000,0.29,1.344,0.22,False,2.454732e-14,ok
+Anglo-French 1787,Folkstone Turnpike - Allington Knoll - Lydd,,1,,115.432,,,0.59,1.344,,False,2.454744e-14,ok
+Anglo-French 1787,Padlesworth - High Nook - Folkstone Turnpike,,2,,30.838,,,0.16,1.344,,False,2.454725e-14,ok
+Anglo-French 1787,Padlesworth - Lydd - Folkstone Turnpike,,2,,51.403,,,0.27,1.344,,False,2.454738e-14,ok
+Anglo-French 1787,Padlesworth - Lydd - Fairlight Down,,1,,114.745,,,0.59,1.344,,False,2.454779e-14,ok
+Anglo-French 1787,Swingfield - Padlesworth - Folkstone Turnpike,C,2,11.016,10.699,1.02959,0.000,0.06,1.344,0.04,False,2.454701e-14,ok
+Anglo-French 1787,Dover Castle - Swingfield - Folkstone Turnpike,B,2,25.472,25.370,1.00404,0.000,0.13,1.344,0.10,False,2.454698e-14,ok
+Anglo-French 1787,Dover Castle - Padlesworth - Fairlight Down,,1,,133.701,,,0.69,1.344,,False,2.454745e-14,ok
+Anglo-French 1787,Dover Castle - Fairlight Down - Montlambert,,2,,1451.332,,,7.4,1.344,,False,2.454820e-14,ok
+Anglo-French 1787,Fairlight Down - Dover Castle - Blancnez,,2,,937.816,,,4.78,1.344,,False,2.454781e-14,ok
+Anglo-French 1787,Dover Castle - Montlambert - Blancnez,,1,,361.742,,,1.84,1.344,,False,2.454811e-14,ok
+Anglo-French 1787,N.D. at Calais - Blancnez - Dover Castle,,2,,163.999,,,0.84,1.344,,False,2.454766e-14,ok
+Anglo-French 1787,N.D. at Calais - Dover Castle - Point M near Dunkirk,,3,,473.978,,,2.42,1.344,,False,2.454746e-14,ok
+Anglo-French 1787,Blancnez - N.D. at Calais - Dover Castle,A,3,164.744,163.999,1.00454,0.800,,1.344,0.62,False,2.454766e-14,ok
+Anglo-French 1787,Blancnez - Dover Castle - Montlambert,A,3,363.543,361.742,1.00498,1.800,,1.344,1.37,False,2.454811e-14,ok
+"Maclear, Cape 1837–48",Kapoc Berg - East End of Base - West End of Base,A,3,106.360,106.378,0.99983,0.660,0.541,1.802,0.30,False,2.464758e-14,ok
+"Maclear, Cape 1837–48",Riebeek's Kasteel - East End of Base - Kapoc Berg,A,3,379.894,379.962,0.99982,2.120,1.932,1.802,1.07,False,2.464744e-14,ok
+"Maclear, Cape 1837–48",K. F. Contre Berg - East End of Base - West End of Base,A,3,116.493,116.513,0.99983,0.930,0.592,1.802,0.33,False,2.464760e-14,ok
+"Maclear, Cape 1837–48",Drie Fontein - East End of Base - K. F. Contre Berg,A,3,211.758,211.797,0.99982,1.130,1.077,1.802,0.60,False,2.464744e-14,ok
+"Maclear, Cape 1837–48",Zwart Berg - East End of Base - Drie Fontein,A,3,299.516,299.568,0.99982,0.550,1.523,1.802,0.84,False,2.464807e-14,ok
+"Maclear, Cape 1837–48",Riebeek's Kasteel - Zwart Berg - East End of Base,A,3,401.852,401.924,0.99982,2.010,2.043,1.802,1.13,False,2.464809e-14,ok
+"Maclear, Cape 1837–48",Kapoc Berg - Zwart Berg - Riebeek's Kasteel,A,3,719.974,720.104,0.99982,4.270,3.661,1.802,2.03,True,2.464776e-14,ok
+"Maclear, Cape 1837–48",Piket Berg - Zwart Berg - Kapoc Berg,A,3,768.315,768.459,0.99981,0.830,3.907,1.802,2.17,True,2.464891e-14,ok
+"Maclear, Cape 1837–48",Piket Berg - Kapoc Berg - Riebeek's Kasteel,A,3,1576.193,1576.493,0.99981,8.970,8.014,1.802,4.44,True,2.464839e-14,ok
+"Maclear, Cape 1837–48",Patrys Berg - Zwart Berg - Kapoc Berg,A,3,1503.243,1503.521,0.99981,6.250,7.644,1.802,4.24,True,2.464865e-14,ok
+"Maclear, Cape 1837–48",Patrys Berg - Piket Berg - Zwart Berg,A,3,1031.664,1031.850,0.99982,3.950,5.246,1.802,2.91,True,2.464992e-14,ok
+"Maclear, Cape 1837–48",Patrys Berg - Kapoc Berg - Piket Berg,A,3,1766.583,1766.913,0.99981,9.370,8.983,1.802,4.98,True,2.464928e-14,ok
+"Maclear, Cape 1837–48",Eland's Berg - Piket Berg - Patrys Berg,A,3,1105.202,1105.401,0.99982,6.580,5.621,1.802,3.12,True,2.465119e-14,ok
+"Maclear, Cape 1837–48",Lambert's Hoek - Eland's Berg - Piket Berg,A,3,850.873,851.024,0.99982,0.050,4.327,1.802,2.40,True,2.465212e-14,ok
+"Maclear, Cape 1837–48",Heerenlogement's Berg - Eland's Berg - Lambert's Hoek,A,3,795.064,795.211,0.99982,3.220,4.044,1.802,2.24,True,2.465338e-14,ok
+"Maclear, Cape 1837–48",Heerenlogement's Berg - Eland's Berg - Piket Berg,A,3,818.050,818.200,0.99982,0.200,4.16,1.802,2.31,True,2.465271e-14,ok
+"Maclear, Cape 1837–48",Heerenlogement's Berg - Piket Berg - Lambert's Hoek,A,3,827.879,828.035,0.99981,3.070,4.21,1.802,2.33,True,2.465274e-14,ok
+"Maclear, Cape 1837–48",Ceder Berg - Piket Berg - Eland's Berg,A,3,1529.850,1530.135,0.99981,4.180,7.78,1.802,4.31,True,2.465204e-14,ok
+"Maclear, Cape 1837–48",Ceder Berg - Piket Berg - Heerenlogement's Berg,A,3,2274.193,2274.632,0.99981,10.680,11.566,1.802,6.41,True,2.465267e-14,ok
+"Maclear, Cape 1837–48",Ceder Berg - Eland's Berg - Heerenlogement's Berg,A,3,1562.399,1562.696,0.99981,6.700,7.946,1.802,4.41,True,2.465330e-14,ok
+"Maclear, Cape 1837–48",Kapitein's Kloof - Patrys Berg - Kapoc Berg,A,3,1801.332,1801.667,0.99981,11.080,9.16,1.802,5.08,True,2.464925e-14,ok
+"Maclear, Cape 1837–48",Winter Berg - Kapitein's Kloof - Kapoc Berg,A,3,2443.930,2444.403,0.99981,11.150,12.427,1.802,6.89,True,2.464878e-14,ok
+"Maclear, Cape 1837–48",Ceder Berg - Kapitein's Kloof - Winter Berg,A,3,2277.036,2277.475,0.99981,15.880,11.56,1.802,6.42,True,2.465065e-14,ok
+"Maclear, Cape 1837–48",Heerenlogement's Berg - Kapitein's Kloof - Ceder Berg,A,3,2287.437,2287.875,0.99981,13.950,11.633,1.802,6.45,True,2.465263e-14,ok
+"Maclear, Cape 1837–48",Klip Rug - Heerenlogement's Berg - Ceder Berg,A,3,2654.058,2654.572,0.99981,12.410,13.499,1.802,7.48,True,2.465452e-14,ok
+"Maclear, Cape 1837–48",Bokkeveld's Berg - Heerenlogement's Berg - Klip Rug,A,3,2782.487,2783.032,0.99980,13.320,14.153,1.802,7.85,True,2.465660e-14,ok
+"Maclear, Cape 1837–48",Louis Fontein - Heerenlogement's Berg - Bokkeveld's Berg,A,3,4443.078,4443.997,0.99979,23.510,22.601,1.802,12.53,True,2.465763e-14,ok
+"Maclear, Cape 1837–48",Kamies-Sector Berg - Louis Fontein - Bokkeveld's Berg,A,3,3517.078,3517.789,0.99980,17.360,17.893,1.802,9.92,True,2.466038e-14,ok
+"Maclear, Cape 1837–48",Eland's Hoogte - Heerenlogement's Berg - Bokkeveld's Berg,A,3,2766.488,2767.027,0.99981,13.480,14.072,1.802,7.80,True,2.465738e-14,ok
+"Maclear, Cape 1837–48",Kamies-Sector Berg - Eland's Hoogte - Bokkeveld's Berg,A,3,2835.241,2835.804,0.99980,16.740,14.421,1.802,8.00,True,2.466013e-14,ok
+"Maclear, Cape 1837–48",Keibiskow - Bokkeveld's Berg - Kamies-Sector Berg,A,3,3004.334,3004.960,0.99979,13.990,15.284,1.802,8.47,True,2.466071e-14,ok
+"Maclear, Cape 1837–48",Boschluis - Keibiskow - Kamies-Sector Berg,A,3,4531.352,4532.301,0.99979,23.310,23.055,1.802,12.78,True,2.466265e-14,ok
+"Maclear, Cape 1837–48",Koe Berg - Kamies-Sector Berg - Boschluis,A,3,2172.200,2172.618,0.99981,12.930,11.053,1.802,6.13,True,2.466449e-14,ok
+"Maclear, Cape 1837–48",Roode Wal - Louis Fontein - Kamies-Sector Berg,A,3,2278.670,2279.104,0.99981,10.110,11.593,1.802,6.43,True,2.466138e-14,ok
+"Maclear, Cape 1837–48",Vogel Klip - Roode Wal - Kamies-Sector Berg,A,3,2418.902,2419.369,0.99981,11.810,12.307,1.802,6.82,True,2.466349e-14,ok
+"Maclear, Cape 1837–48",Ezel's Kop - Roode Wal - Louis Fontein,A,3,2098.545,2098.943,0.99981,8.290,10.677,1.802,5.92,True,2.466137e-14,ok
+"Maclear, Cape 1837–48",Vogel Klip - Roode Wal - Ezel's Kop,A,3,2172.202,2172.621,0.99981,10.230,11.052,1.802,6.13,True,2.466348e-14,ok
+"Maclear, Cape 1837–48",Koe Berg - Vogel Klip - Kamies-Sector Berg,A,3,2012.564,2012.942,0.99981,11.320,10.24,1.802,5.68,True,2.466486e-14,ok
+"Maclear, Cape 1837–48",North-Sector Station - Vogel Klip - Kamies-Sector Berg,A,3,2252.324,2252.751,0.99981,12.900,11.46,1.802,6.35,True,2.466485e-14,ok
+"Maclear, Cape 1837–48",Koe Berg - Vogel Klip - North-Sector Station,A,3,37.432,37.441,0.99977,4.900,0.19,1.802,0.11,False,2.466589e-14,ok
+"Maclear, Cape 1837–48",Koe Berg - Kamies-Sector Berg - North-Sector Station,A,3,277.195,277.249,0.99981,6.480,1.41,1.802,0.78,False,2.466492e-14,ok
+"Maclear, Cape 1837–48",Rogge Bay - Kapoc Berg - Riebeek's Kasteel,A,3,1143.250,1143.463,0.99981,7.180,5.813,1.802,3.22,True,2.464622e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - Rogge Bay - Riebeek's Kasteel,A,3,1302.242,1302.485,0.99981,5.080,6.621,1.802,3.67,True,2.464543e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - Kapoc Berg - Riebeek's Kasteel,A,3,1188.373,1188.594,0.99981,3.970,6.042,1.802,3.35,True,2.464633e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - Kapoc Berg - Rogge Bay,A,3,1257.121,1257.355,0.99981,8.290,6.392,1.802,3.55,True,2.464531e-14,ok
+"Maclear, Cape 1837–48",Royal Observatory - Kapoc Berg - Riebeek's Kasteel,A,3,1191.855,1192.077,0.99981,7.580,6.06,1.802,3.36,True,2.464620e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - Royal Observatory - Kapoc Berg,A,3,1168.089,1168.306,0.99982,5.270,5.939,1.802,3.29,True,2.464529e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - Royal Observatory - Riebeek's Kasteel,A,3,1164.606,1164.822,0.99981,1.660,5.921,1.802,3.28,True,2.464541e-14,ok
+"Maclear, Cape 1837–48",King's Battery - Kapoc Berg - Riebeek's Kasteel,A,3,1218.672,1218.900,0.99981,6.390,6.196,1.802,3.44,True,2.464617e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - King's Battery - Kapoc Berg,A,3,1270.306,1270.543,0.99981,8.910,6.459,1.802,3.58,True,2.464526e-14,ok
+"Maclear, Cape 1837–48",Simon's Berg - King's Battery - Riebeek's Kasteel,A,3,1240.005,1240.237,0.99981,6.490,6.305,1.802,3.50,True,2.464538e-14,ok
+"Maclear, Cape 1837–48",Sneeuw Kop - Royal Observatory - Kapoc Berg,A,3,1298.027,1298.272,0.99981,4.700,6.6,1.802,3.66,True,2.464498e-14,ok
+"Maclear, Cape 1837–48",Sneeuw Kop - King's Battery - Kapoc Berg,A,3,1429.711,1429.982,0.99981,6.620,7.268,1.802,4.03,True,2.464495e-14,ok
+"Maclear, Cape 1837–48",Sneeuw Kop - Kapoc Berg - Winter Berg,A,3,3330.473,3331.142,0.99980,18.870,16.934,1.802,9.39,True,2.464645e-14,ok
+"Maclear, Cape 1837–48",Zwart Kop - Royal Observatory - Sneeuw Kop,A,3,769.658,769.798,0.99982,4.510,3.913,1.802,2.17,True,2.464354e-14,ok
+"Maclear, Cape 1837–48",Zwart Kop - King's Battery - Sneeuw Kop,A,3,751.681,751.818,0.99982,4.850,3.821,1.802,2.12,True,2.464351e-14,ok
+"Maclear, Cape 1837–48",Zwart Kop - Royal Observatory - Simon's Berg,A,3,636.805,636.921,0.99982,5.770,3.238,1.802,1.80,False,2.464385e-14,ok
+"Maclear, Cape 1837–48",Zwart Kop - King's Battery - Simon's Berg,A,3,648.295,648.414,0.99982,4.390,3.296,1.802,1.83,False,2.464382e-14,ok
+"Maclear, Cape 1837–48",Cape Point - King's Battery - Simon's Berg,A,3,957.821,957.999,0.99981,5.900,4.87,1.802,2.70,True,2.464360e-14,ok
+"Maclear, Cape 1837–48",Cape Point - King's Battery - Sneeuw Kop,A,3,1080.830,1081.029,0.99982,5.140,5.494,1.802,3.05,True,2.464329e-14,ok
+"Maclear, Cape 1837–48",Meridian Mark - Royal Observatory - Sneeuw Kop,A,3,488.473,488.562,0.99982,3.580,2.483,1.802,1.38,False,2.464440e-14,ok
+"Maclear, Cape 1837–48",Meridian Mark - King's Battery - Sneeuw Kop,A,3,569.344,569.449,0.99982,5.190,2.894,1.802,1.61,False,2.464437e-14,ok
+"Maclear, Cape 1837–48",Meridian Mark - Zwart Kop - Sneeuw Kop,A,3,1279.066,1279.304,0.99981,9.280,6.503,1.802,3.61,True,2.464388e-14,ok
+"Maclear, Cape 1837–48",Meridian Mark - Cape Point - Sneeuw Kop,A,3,1556.425,1556.718,0.99981,9.170,7.913,1.802,4.39,True,2.464365e-14,ok
+England OS 1787–96,Dover Castle - Padlesworth - Fairlight Down,,1,,135.113,,,0.69,1.490,,False,2.454745e-14,ok
+England OS 1787–96,Chanctonbury Ring - Leith Hill - Ditchling Beacon,B,1,300.780,299.723,1.00353,3.250,1.5,1.490,1.03,False,2.454773e-14,ok
+England OS 1787–96,Rook's Hill - Chanctonbury Ring - Hind Head,B,1,323.410,322.338,1.00333,0.750,1.6,1.490,1.10,False,2.454786e-14,ok
+England OS 1787–96,Dunnose - Butser Hill - Rook's Hill,B,1,392.300,390.944,1.00347,-1.500,1.96,1.490,1.34,False,2.454864e-14,ok
+England OS 1787–96,Dunnose - Butser Hill - Dean Hill,B,2,990.101,986.600,1.00355,1.250,5.0,1.490,3.38,True,2.454838e-14,ok
+England OS 1787–96,Dunnose - Dean Hill - Nine Barrow Down,B,1,1284.509,1280.129,1.00342,6.000,6.5,1.490,4.38,True,2.454903e-14,ok
+England OS 1787–96,Nine Barrow Down - Wingreen - Dean Hill,B,2,641.645,639.154,1.00390,2.000,3.24,1.490,2.19,True,2.454834e-14,ok
+England OS 1787–96,Beachy Head - Ditchling Beacon - Brightling,B,2,392.364,391.048,1.00337,-0.500,2.0,1.490,1.34,False,2.454843e-14,ok
+England OS 1787–96,Fairlight Down - Brightling - Beachy Head,B,2,251.582,250.768,1.00324,0.000,1.28,1.490,0.86,False,2.454847e-14,ok
+England OS 1787–96,Dunnose - Rook's Hill - Chanctonbury Ring,B,1,387.464,386.045,1.00368,1.500,1.96,1.490,1.32,False,2.454880e-14,ok
+England OS 1787–96,Beachy Head - Rook's Hill - Chanctonbury Ring,B,1,234.890,234.180,1.00303,1.000,1.19,1.490,0.80,False,2.454857e-14,ok
+England OS 1787–96,Beachy Head - Ditchling Beacon - Chanctonbury Ring,C,0,,179.927,,4.250,0.9,1.490,0.61,False,2.454855e-14,ok
+England OS 1787–96,Beachy Head - Rook's Hill - Dunnose,B,1,1337.791,1332.991,1.00360,5.500,6.77,1.490,4.56,True,2.454909e-14,ok
+England OS 1787–96,Dunnose - Chanctonbury Ring - Beachy Head,C,0,,1181.125,,5.750,6.01,1.490,4.03,True,2.454908e-14,ok
+England OS 1787–96,Wingreen - Bull Barrow - Nine Barrow Down,B,2,340.061,339.192,1.00256,2.250,1.72,1.490,1.16,False,2.454868e-14,ok
+England OS 1787–96,Black Down - Nine Barrow Down - Bull Barrow,B,2,393.408,392.039,1.00349,1.250,1.99,1.490,1.34,False,2.454924e-14,ok
+England OS 1787–96,Mintern - Bull Barrow - Black Down,B,2,115.902,115.539,1.00314,2.000,0.59,1.490,0.40,False,2.454884e-14,ok
+England OS 1787–96,Pilsden - Mintern - Black Down,B,2,201.831,201.219,1.00304,1.000,,1.490,0.69,False,2.454892e-14,ok
+England OS 1787–96,Charton Common - Black Down - Pilsden,B,2,174.234,173.775,1.00264,-1.500,0.88,1.490,0.59,False,2.454916e-14,ok
+England OS 1787–96,Dumpdon - Pilsden - Charton Common,C,2,215.860,307.487,0.70201,1.250,0.66,1.490,1.05,False,2.454889e-14,ok
+England OS 1787–96,Little Haldon - Charton Common - Dumpdon,C,2,341.197,637.085,0.53556,1.000,0.66,1.490,2.17,True,2.454935e-14,ok
+England OS 1787–96,Cawsand Beacon - Dumpdon - Little Haldon,C,2,614.584,333.148,1.84478,2.250,3.12,1.490,1.14,False,2.454936e-14,ok
+England OS 1787–96,Rippin Tor - Cawsand Beacon - Little Haldon,B,2,136.412,135.504,1.00671,3.250,0.69,1.490,0.47,False,2.454986e-14,ok
+England OS 1787–96,Furland - Little Haldon - Rippin Tor,B,2,188.547,187.866,1.00363,0.750,0.96,1.490,0.64,False,2.455050e-14,ok
+England OS 1787–96,Furland - Rippin Tor - Butterton Hill,B,2,226.821,225.889,1.00413,1.250,1.15,1.490,0.77,False,2.455079e-14,ok
+England OS 1787–96,Bolt Head - Furland - Butterton Hill,B,2,243.320,242.304,1.00419,2.250,1.23,1.490,0.83,False,2.455144e-14,ok
+England OS 1787–96,Maker Heights - Bolt Head - Butterton Hill,B,2,254.261,253.447,1.00321,-0.500,1.29,1.490,0.87,False,2.455149e-14,ok
+England OS 1787–96,Maker Heights - Butterton Hill - Carraton Hill,B,2,268.943,268.068,1.00326,0.500,1.36,1.490,0.92,False,2.455094e-14,ok
+England OS 1787–96,Lansallos - Maker Heights - Carraton Hill,B,2,243.822,242.931,1.00367,0.750,1.24,1.490,0.83,False,2.455108e-14,ok
+England OS 1787–96,Kit Hill - Butterton Hill - Maker Heights,B,2,238.656,237.848,1.00340,0.000,1.21,1.490,0.81,False,2.455093e-14,ok
+England OS 1787–96,Bindown - Maker Heights - Kit Hill,B,2,138.779,139.295,0.99629,0.750,0.7,1.490,0.47,False,2.455097e-14,ok
+England OS 1787–96,Carraton Hill - Kit Hill - Bindown,B,2,66.024,67.349,0.98033,-0.750,0.42,1.490,0.23,False,2.455065e-14,ok
+England OS 1787–96,Lansallos - Bindown - Carraton Hill,B,1,64.428,65.531,0.98318,2.750,0.33,1.490,0.22,False,2.455099e-14,ok
+England OS 1787–96,Lansallos - Carraton Hill - Bodmin Down,B,2,161.484,160.837,1.00402,0.000,0.82,1.490,0.55,False,2.455081e-14,ok
+England OS 1787–96,Hensbarrow Beacon - Bodmin Down - Lansallos,B,2,125.574,125.170,1.00323,2.750,0.63,1.490,0.43,False,2.455105e-14,ok
+England OS 1787–96,Hensbarrow Beacon - Carraton Hill - Lansallos,B,2,195.653,195.059,1.00305,2.250,0.99,1.490,0.67,False,2.455100e-14,ok
+England OS 1787–96,Deadman - Lansallos - Hensbarrow Beacon,B,2,161.772,161.263,1.00316,1.000,0.82,1.490,0.55,False,2.455155e-14,ok
+England OS 1787–96,St. Agnes Beacon - Hensbarrow Beacon - Deadman,B,2,260.859,259.951,1.00349,2.750,1.32,1.490,0.89,False,2.455161e-14,ok
+England OS 1787–96,St. Agnes Beacon - Deadman - Karnbonellis,B,2,209.015,208.344,1.00322,-0.500,1.06,1.490,0.71,False,2.455199e-14,ok
+England OS 1787–96,Karnminnis - St. Agnes Beacon - Karnbonellis,B,2,151.155,150.666,1.00325,0.500,0.77,1.490,0.52,False,2.455204e-14,ok
+England OS 1787–96,St. Buryan - Karnbonellis - Karnminnis,B,2,147.434,146.927,1.00345,0.750,0.75,1.490,0.50,False,2.455247e-14,ok
+England OS 1787–96,Pertinney - Karnminnis - St. Buryan,B,2,21.933,21.843,1.00412,1.000,0.16,1.490,0.07,False,2.455262e-14,ok
+England OS 1787–96,Sennen - St. Buryan - Pertinney,B,2,10.812,10.765,1.00433,1.250,0.08,1.490,0.04,False,2.455286e-14,ok
+England OS 1787–96,Nine Barrow Down - Black Down - Dean Hill,,2,,915.322,,,,1.490,,False,2.454890e-14,ok
+England OS 1787–96,Dean Hill - Black Down - Dunnose,,2,,2050.543,,,,1.490,,False,2.454893e-14,ok
+Europe 52°N (Helmert),W41 Cassel - W42 Dünkirchen - W38 Nieuport,A,3,392.644,392.737,0.99976,-0.520,1.99,1.079,1.85,False,2.454775e-14,ok
+Europe 52°N (Helmert),W41 Cassel - W38 Nieuport - W40 Mont Kemmel,A,3,442.591,442.696,0.99976,1.910,2.24,1.079,2.08,True,2.454823e-14,ok
+Europe 52°N (Helmert),W40 Mont Kemmel - W38 Nieuport - W36 Hooglede,A,3,412.935,413.034,0.99976,2.520,2.09,1.079,1.95,False,2.454789e-14,ok
+Europe 52°N (Helmert),W36 Hooglede - W38 Nieuport - W34 Bruges,A,3,375.751,375.840,0.99976,2.420,1.9,1.079,1.77,False,2.454709e-14,ok
+Europe 52°N (Helmert),W36 Hooglede - W34 Bruges - W33 Thielt,A,3,206.217,206.265,0.99976,0.730,1.04,1.079,0.97,False,2.454733e-14,ok
+Europe 52°N (Helmert),W33 Thielt - W34 Bruges - W30 Gand,A,3,346.195,346.279,0.99976,1.100,1.75,1.079,1.63,False,2.454719e-14,ok
+Europe 52°N (Helmert),W33 Thielt - W30 Gand - W32 Mont l'Enclus,A,3,414.171,414.271,0.99976,-1.030,2.1,1.079,1.95,False,2.454804e-14,ok
+Europe 52°N (Helmert),W32 Mont l'Enclus - W30 Gand - W31 Audenhoven,A,3,281.269,281.336,0.99976,1.810,1.42,1.079,1.32,False,2.454835e-14,ok
+Europe 52°N (Helmert),W31 Audenhoven - W30 Gand - W29 Assche,A,3,362.516,362.603,0.99976,3.040,1.84,1.079,1.71,False,2.454806e-14,ok
+Europe 52°N (Helmert),W29 Assche - W30 Gand - W28 Anvers,A,3,680.808,680.972,0.99976,5.690,3.45,1.079,3.21,True,2.454734e-14,ok
+Europe 52°N (Helmert),W29 Assche - W28 Anvers - W27 Malines,A,3,247.012,247.072,0.99976,2.080,1.25,1.079,1.16,False,2.454738e-14,ok
+Europe 52°N (Helmert),W27 Malines - W28 Anvers - W26 Herenthals,A,3,310.719,310.794,0.99976,2.310,1.57,1.079,1.46,False,2.454689e-14,ok
+Europe 52°N (Helmert),W27 Malines - W26 Herenthals - W25 Montaigu,A,3,351.711,351.796,0.99976,0.770,1.78,1.079,1.66,False,2.454734e-14,ok
+Europe 52°N (Helmert),W25 Montaigu - W26 Herenthals - W24 Lommel,A,3,391.677,391.773,0.99976,2.270,1.98,1.079,1.84,False,2.454696e-14,ok
+Europe 52°N (Helmert),W25 Montaigu - W24 Lommel - W22 Peer,A,3,256.946,257.008,0.99976,-0.450,1.3,1.079,1.21,False,2.454704e-14,ok
+Europe 52°N (Helmert),W25 Montaigu - W22 Peer - W21 Tongres,A,3,657.384,657.541,0.99976,3.410,3.33,1.079,3.10,True,2.454788e-14,ok
+Europe 52°N (Helmert),W21 Tongres - W22 Peer - W19 Ubagsberg,A,3,677.331,677.493,0.99976,4.370,3.43,1.079,3.19,True,2.454813e-14,ok
+Europe 52°N (Helmert),W19 Ubagsberg - W22 Peer - W18 Roermond,A,3,720.013,720.188,0.99976,5.030,3.65,1.079,3.39,True,2.454735e-14,ok
+Europe 52°N (Helmert),W19 Ubagsberg - W18 Roermond - W17 Erkelenz,A,3,466.147,466.260,0.99976,2.680,2.36,1.079,2.20,True,2.454745e-14,ok
+Europe 52°N (Helmert),W19 Ubagsberg - W17 Erkelenz - W15 Langschoss,A,3,562.814,562.950,0.99976,3.110,2.85,1.079,2.65,True,2.454845e-14,ok
+Europe 52°N (Helmert),W15 Langschoss - W17 Erkelenz - W16 Buchholz,A,3,484.364,484.481,0.99976,0.640,2.45,1.079,2.28,True,2.454813e-14,ok
+Europe 52°N (Helmert),W15 Langschoss - W16 Buchholz - W14 Köln,A,3,568.455,568.594,0.99976,4.580,2.87,1.079,2.68,True,2.454839e-14,ok
+Europe 52°N (Helmert),W15 Langschoss - W14 Köln - W12 Michelsberg,A,3,983.876,984.116,0.99976,3.510,4.98,1.079,4.63,True,2.454934e-14,ok
+Europe 52°N (Helmert),W12 Michelsberg - W14 Köln - W13 Siegburg,A,3,501.514,501.634,0.99976,3.150,2.54,1.079,2.36,True,2.454909e-14,ok
+Europe 52°N (Helmert),W12 Michelsberg - W13 Siegburg - W10 Löwenburg,A,3,244.684,244.743,0.99976,3.640,1.24,1.079,1.15,False,2.454961e-14,ok
+Europe 52°N (Helmert),W12 Michelsberg - W10 Löwenburg - W11 Nürburg,A,3,355.942,356.028,0.99976,1.860,1.8,1.079,1.68,False,2.455046e-14,ok
+Europe 52°N (Helmert),W11 Nürburg - W10 Löwenburg - W9 Fleckert,A,3,1006.960,1007.205,0.99976,3.120,5.1,1.079,4.74,True,2.455108e-14,ok
+Europe 52°N (Helmert),W9 Fleckert - W10 Löwenburg - W8 Kühfeld,A,3,1551.587,1551.969,0.99975,6.970,7.86,1.079,7.31,True,2.455043e-14,ok
+Europe 52°N (Helmert),W9 Fleckert - W8 Kühfeld - W7 Feldberg i. T.,A,3,1623.659,1624.059,0.99975,8.630,8.22,1.079,7.65,True,2.455124e-14,ok
+Europe 52°N (Helmert),W7 Feldberg i. T. - W8 Kühfeld - W6 Dünsberg,A,3,882.622,882.837,0.99976,5.050,4.47,1.079,4.16,True,2.455036e-14,ok
+Europe 52°N (Helmert),W7 Feldberg i. T. - W6 Dünsberg - W4 Taufstein,A,3,1148.077,1148.356,0.99976,3.950,5.82,1.079,5.41,True,2.455069e-14,ok
+Europe 52°N (Helmert),W4 Taufstein - W6 Dünsberg - W5 Hohelohr,A,3,1200.844,1201.137,0.99976,6.120,6.08,1.079,5.66,True,2.454920e-14,ok
+Europe 52°N (Helmert),W4 Taufstein - W5 Hohelohr - W3 Meissner,A,3,1822.301,1822.762,0.99975,8.040,9.23,1.079,8.58,True,2.454812e-14,ok
+Europe 52°N (Helmert),W4 Taufstein - W3 Meissner - W2 Inselsberg,A,3,2599.386,2600.057,0.99974,10.790,13.17,1.079,12.24,True,2.454844e-14,ok
+Europe 52°N (Helmert),W2 Inselsberg - W3 Meissner - W1 Brocken,A,3,2464.297,2464.933,0.99974,13.430,12.48,1.079,11.61,True,2.454604e-14,ok
+Europe 52°N (Helmert),E2 Inselsberg - E3 Meissner - E4 Ohmberg,A,3,1340.539,1340.869,0.99975,7.220,6.78,1.079,6.31,True,2.454666e-14,ok
+Europe 52°N (Helmert),E2 Inselsberg - E4 Ohmberg - E6 Kyffhäuser,A,3,1583.016,1583.410,0.99975,8.700,8.02,1.079,7.46,True,2.454632e-14,ok
+Europe 52°N (Helmert),E2 Inselsberg - E6 Kyffhäuser - E7 Ettersberg,A,3,1340.624,1340.956,0.99975,5.360,6.79,1.079,6.31,True,2.454716e-14,ok
+Europe 52°N (Helmert),E7 Ettersberg - E6 Kyffhäuser - E8 Wilsdorf,A,3,853.140,853.348,0.99976,4.490,4.32,1.079,4.02,True,2.454656e-14,ok
+Europe 52°N (Helmert),E8 Wilsdorf - E6 Kyffhäuser - E9 Petersberg,A,3,1288.904,1289.219,0.99976,6.280,6.53,1.079,6.07,True,2.454547e-14,ok
+Europe 52°N (Helmert),E8 Wilsdorf - E9 Petersberg - E10 Leipzig,A,3,909.595,909.815,0.99976,4.080,4.61,1.079,4.28,True,2.454561e-14,ok
+Europe 52°N (Helmert),E10 Leipzig - E9 Petersberg - E11 Wurzelberg,A,3,852.255,852.460,0.99976,4.980,4.32,1.079,4.01,True,2.454467e-14,ok
+Europe 52°N (Helmert),E10 Leipzig - E11 Wurzelberg - E15 Collm,A,3,866.695,866.903,0.99976,4.330,4.39,1.079,4.08,True,2.454522e-14,ok
+Europe 52°N (Helmert),E15 Collm - E11 Wurzelberg - E14 Grossberg,A,3,939.057,939.284,0.99976,3.720,4.76,1.079,4.42,True,2.454460e-14,ok
+Europe 52°N (Helmert),E15 Collm - E14 Grossberg - E16 Strauch,A,3,690.938,691.105,0.99976,3.280,3.5,1.079,3.25,True,2.454514e-14,ok
+Europe 52°N (Helmert),E16 Strauch - E14 Grossberg - E18 Brautberg,A,3,607.544,607.691,0.99976,2.160,3.08,1.079,2.86,True,2.454440e-14,ok
+Europe 52°N (Helmert),E16 Strauch - E18 Brautberg - E17 Keulenberg,A,3,647.749,647.906,0.99976,4.340,3.28,1.079,3.05,True,2.454522e-14,ok
+Europe 52°N (Helmert),E17 Keulenberg - E18 Brautberg - E21 Brandberg,A,3,1182.286,1182.575,0.99976,5.470,5.99,1.079,5.57,True,2.454483e-14,ok
+Europe 52°N (Helmert),E17 Keulenberg - E21 Brandberg - E22 Hochstein,A,3,1331.245,1331.573,0.99975,5.120,6.74,1.079,6.27,True,2.454577e-14,ok
+Europe 52°N (Helmert),E22 Hochstein - E21 Brandberg - E23 Rückenberg,A,3,906.920,907.142,0.99976,4.190,4.59,1.079,4.27,True,2.454506e-14,ok
+Europe 52°N (Helmert),E22 Hochstein - E23 Rückenberg - E26 Gröditzberg,A,3,1489.164,1489.533,0.99975,7.110,7.54,1.079,7.01,True,2.454584e-14,ok
+Europe 52°N (Helmert),E22 Hochstein - E26 Gröditzberg - E27 Schneekoppe,A,3,1585.654,1586.049,0.99975,8.550,8.03,1.079,7.47,True,2.454747e-14,ok
+Europe 52°N (Helmert),E27 Schneekoppe - E26 Gröditzberg - E28 Zobten,A,3,1661.250,1661.664,0.99975,7.450,8.41,1.079,7.83,True,2.454809e-14,ok
+Europe 52°N (Helmert),E27 Schneekoppe - E28 Zobten - E33 Schneeberg,A,3,2563.426,2564.084,0.99974,13.140,12.98,1.079,12.07,True,2.454992e-14,ok
+Europe 52°N (Helmert),E33 Schneeberg - E28 Zobten - E35 Lossen,A,3,2149.651,2150.196,0.99975,11.620,10.89,1.079,10.13,True,2.454981e-14,ok
+Europe 52°N (Helmert),E33 Schneeberg - E35 Lossen - E34 Bischofskoppe,A,3,1212.801,1213.101,0.99975,5.790,6.14,1.079,5.71,True,2.455095e-14,ok
+Europe 52°N (Helmert),E34 Bischofskoppe - E35 Lossen - E43 Annaberg,A,3,1466.647,1467.008,0.99975,6.480,7.43,1.079,6.91,True,2.455048e-14,ok
+Europe 52°N (Helmert),E34 Bischofskoppe - E43 Annaberg - E44 Pschow,A,3,1395.661,1396.004,0.99975,6.130,7.07,1.079,6.57,True,2.455190e-14,ok
+Europe 52°N (Helmert),E44 Pschow - E43 Annaberg - E45 Orzesche,,3,,744.202,,,3.77,1.079,,False,2.455210e-14,"dropped: blunder, |excess - A/R0^2| > 20"" (63.3 vs 3.8)"
+Europe 52°N (Helmert),E45 Orzesche - E43 Annaberg - E46 Trockenberg,A,3,748.815,748.995,0.99976,4.550,3.79,1.079,3.53,True,2.455141e-14,ok
+Europe 52°N (Helmert),E46 Trockenberg - E43 Annaberg - E42 Lubetzko,A,3,759.434,759.618,0.99976,2.460,3.85,1.079,3.58,True,2.455037e-14,ok
+Europe 52°N (Helmert),E46 Trockenberg - E42 Lubetzko - E47 Lubschau,A,3,308.512,308.586,0.99976,2.230,1.56,1.079,1.45,False,2.455007e-14,ok
+Europe 52°N (Helmert),Coldham - Fairlight - Saint Peters,,3,,413.766,,,,1.079,,False,2.454703e-14,ok
+Europe 52°N (Helmert),Fairlight - Greenwich - Saint Peters,,3,,3037.425,,,,1.079,,False,2.454633e-14,ok
+Europe 52°N (Helmert),Coldham - Saint Peters - Gravelines,,3,,1041.754,,,,1.079,,False,2.454683e-14,ok
+Europe 52°N (Helmert),Gravelines - Saint Peters - W42 Dünkirchen,,3,,506.176,,,,1.079,,False,2.454695e-14,ok
+Europe 52°N (Helmert),W41 Cassel - W42 Dünkirchen - Saint Inglevert,,3,,694.158,,,,1.079,,False,2.454824e-14,ok
+Europe 52°N (Helmert),Saint Inglevert - W42 Dünkirchen - Fairlight,,3,,741.365,,,,1.079,,False,2.454809e-14,ok
+Europe 52°N (Helmert),Saint Peters - W42 Dünkirchen - Fairlight,,3,,2833.209,,,,1.079,,False,2.454716e-14,ok
+Europe 52°N (Helmert),Coldham - Saint Peters - Gravelines,,3,,1041.754,,,,1.079,,False,2.454683e-14,ok
+Europe 52°N (Helmert),Gravelines - Saint Peters - W42 Dünkirchen,,3,,506.176,,,,1.079,,False,2.454695e-14,ok
+Europe 52°N (Helmert),W41 Cassel - W42 Dünkirchen - Harlettes,,3,,513.855,,,,1.079,,False,2.454853e-14,ok
+Europe 52°N (Helmert),Saint Inglevert - Fairlight - Harlettes,,3,,639.992,,,,1.079,,False,2.454869e-14,ok
+Europe 52°N (Helmert),Harlettes - W42 Dünkirchen - Fairlight,,3,,1961.707,,,,1.079,,False,2.454838e-14,ok
+Europe 52°N (Helmert),Saint Peters - W42 Dünkirchen - Fairlight,,3,,2833.209,,,,1.079,,False,2.454716e-14,ok
+Cassini–Lacaille 1739,"Tour de Salon (T. Septentr. du Ch. de Salon; east end of the Crau base) - Signal de la Crau (west end of the Crau base, by the Lieutenance) - Colombier de Lebre",C,0,,197.777,,-16.000,,15.228,0.07,False,2.459020e-14,ok
+Cassini–Lacaille 1739,"Signal de la Crau (west end of the Crau base, by the Lieutenance) - Colombier de Lebre - Signal des Houpies",C,0,,150.390,,-14.500,,15.228,0.05,False,2.459005e-14,ok
+Cassini–Lacaille 1739,Signal des Houpies - Colombier de Lebre - Signal de Sainte Victoire,B,1,657.552,656.339,1.00185,11.000,,15.228,0.22,False,2.459026e-14,ok
+Cassini–Lacaille 1739,Signal des Houpies - Colombier de Lebre - Les Saintes Maries (church terrace; site of the powder fire signal),C,1,,723.094,,7.500,,15.228,0.24,False,2.459041e-14,ok
+Cassini–Lacaille 1739,Signal des Houpies - Les Saintes Maries (church terrace; site of the powder fire signal) - Moulin de Calvisson,C,1,,1085.240,,-2.500,,15.228,0.36,False,2.458977e-14,ok
+Cassini–Lacaille 1739,"Les Saintes Maries (church terrace; site of the powder fire signal) - Moulin de Calvisson - Pilier de Sette (Mont de Sette, beside the Hermitage de S. Clair)",C,0,,1143.867,,14.500,,15.228,0.38,False,2.459037e-14,ok
+Brousseaud 45°43′,Mont-d'Or (signal) - Hermant (signal sur le clocher) - Bort (signal),,0,,486.249,,,,,,False,2.457877e-14,"excluded: spherical angles are computed (mean+ε/3), not observed"
+Brousseaud 45°43′,Chantillac (moulin) - Nonaville (signal) - Chadenac (signal),,0,,377.829,,,,,,False,2.457929e-14,"excluded: spherical angles are computed (mean+ε/3), not observed"
+India GTS meridional,Suddragherry - Nagamalli - Sekundermalli,A,3,396.467,404.039,0.98126,3.980,2.06,1.304,1.55,False,2.473765e-14,ok
+India GTS meridional,Coonatoor hill - Taulaootpotha - Vullanaud hill,A,3,148.394,148.817,0.99716,3.240,0.76,1.304,0.58,False,2.473974e-14,ok
+India GTS meridional,Vullanaud hill - Vullunkota hill - Kolanelloor hill,A,3,391.650,392.248,0.99848,3.480,2.01,1.304,1.53,False,2.473961e-14,ok
+India GTS meridional,Perrioormalli - Meenachiporam hill - Suddragherry,A,3,1566.693,1570.373,0.99766,9.940,8.01,1.304,6.11,True,2.473858e-14,ok
+India GTS meridional,Meenachiporam hill - Gopaulswamy hill - Kooteapara,A,3,378.236,378.931,0.99817,2.530,1.93,1.304,1.47,False,2.473846e-14,ok
+India GTS meridional,Koelacondah - Arrakerrabetta - Poolycondah,,2,,365.388,,,1.87,1.304,,False,2.472403e-14,dropped: angles disagree with printed sum (1.71 vs 17.10)
+India GTS meridional,Kerrae Bellagul - Malliabad - Darroor hill,A,3,768.111,768.489,0.99951,4.200,3.93,1.304,2.99,True,2.472204e-14,ok
+India GTS meridional,Malliabad - Darroor hill - Kotapilly hill,A,3,596.387,597.335,0.99841,5.700,3.04,1.304,2.33,True,2.472136e-14,ok
+India GTS meridional,Darroor hill - Kotapilly hill - Inpahgutt,A,3,779.823,780.607,0.99900,4.020,3.99,1.304,3.04,True,2.472076e-14,ok
+India GTS meridional,Doodallah - Daumergidda - Sheelapilly,A,3,347.475,347.889,0.99881,3.260,1.78,1.304,1.35,False,2.471602e-14,ok
+India GTS meridional,Kaunkoortee - Inpahgutt - Kandakoor hill,A,3,276.683,276.935,0.99909,2.260,1.41,1.304,1.08,False,2.471970e-14,ok
+Transvaal–Rhodesia,Pont - Dogola - M'Kwe Kwe,A,3,863.101,863.129,0.99997,2.410,4.41,1.157,3.79,True,2.470028e-14,ok
+Transvaal–Rhodesia,Pont - M'Kwe Kwe - Tafel Kop,A,3,487.151,487.165,0.99997,2.790,2.49,1.157,2.14,True,2.470076e-14,ok
+Transvaal–Rhodesia,M'Kwe Kwe - Mabezibgwa - Tafel Kop,A,3,195.755,195.761,0.99997,0.330,0.99,1.157,0.86,False,2.470139e-14,ok
+Transvaal–Rhodesia,Ugulumbi - M'Kwe Kwe - Mabezibgwa,A,3,259.021,259.028,0.99997,2.470,1.32,1.157,1.14,False,2.470135e-14,ok
+Transvaal–Rhodesia,Dogola - M'Kwe Kwe - Ugulumbi,A,3,448.760,448.774,0.99997,3.110,2.29,1.157,1.97,False,2.470073e-14,ok
+Transvaal–Rhodesia,Jemembi - Ugulumbi - Mabezibgwa,A,3,652.138,652.158,0.99997,2.320,3.34,1.157,2.86,True,2.470190e-14,ok
+Transvaal–Rhodesia,Kubungwe - Mabezibgwa - Jemembi,A,3,838.360,838.389,0.99997,4.060,4.27,1.157,3.68,True,2.470267e-14,ok
+Transvaal–Rhodesia,Silamgwe - Kubungwe - Jemembi,A,3,493.561,493.576,0.99997,2.770,2.5,1.157,2.17,True,2.470334e-14,ok
+Transvaal–Rhodesia,Ikondonko - Silamgwe - Kubungwe,A,3,440.904,440.918,0.99997,0.750,2.25,1.157,1.94,False,2.470398e-14,ok
+Transvaal–Rhodesia,Igar - Ikondonko - Silamgwe,A,3,320.347,320.357,0.99997,0.880,1.63,1.157,1.41,False,2.470441e-14,ok
+Transvaal–Rhodesia,Utowa - Igar - Ikondonko,A,3,260.699,260.707,0.99997,-0.560,1.33,1.157,1.14,False,2.470495e-14,ok
+Transvaal–Rhodesia,Belingwe - Utowa - Igar,A,3,558.703,558.722,0.99997,3.170,2.84,1.157,2.45,True,2.470550e-14,ok
+Transvaal–Rhodesia,Shamba - Belingwe - Utowa,A,3,704.932,704.956,0.99997,2.470,3.58,1.157,3.10,True,2.470614e-14,ok
+Transvaal–Rhodesia,Wedza - Shamba - Belingwe,A,3,833.208,833.240,0.99996,5.410,4.24,1.157,3.66,True,2.470691e-14,ok
+Transvaal–Rhodesia,Standaus - Shamba - Wedza,A,3,164.939,164.943,0.99998,0.750,0.83,1.157,0.72,False,2.470724e-14,ok
+Transvaal–Rhodesia,Belingwe - Standaus - Shamba,A,3,403.782,403.795,0.99997,3.140,2.05,1.157,1.77,False,2.470676e-14,ok
+Transvaal–Rhodesia,Wedza - Standaus - Belingwe,A,3,594.366,594.387,0.99996,-0.980,3.02,1.157,2.61,True,2.470710e-14,ok
+US 39th parallel,Osbornes Ruin - Pooles Island - Finlay,A,3,213.874,213.873,1.00000,2.500,1.09,1.261,0.86,False,2.461416e-14,ok
+US 39th parallel,Clough - Linstid - Finlay,A,3,471.105,471.103,1.00000,2.360,2.39,1.261,1.90,False,2.461503e-14,ok
+US 39th parallel,Clough - Finlay - Osbornes Ruin,A,3,331.154,331.153,1.00000,-1.000,1.68,1.261,1.33,False,2.461432e-14,ok
+US 39th parallel,Still Pond - Clough - Finlay,A,3,326.129,326.129,1.00000,-1.400,1.66,1.261,1.31,False,2.461460e-14,ok
+US 39th parallel,Still Pond - Clough - Osbornes Ruin,A,3,234.175,234.174,1.00000,3.180,1.19,1.261,0.94,False,2.461449e-14,ok
+US 39th parallel,Still Pond - Finlay - Osbornes Ruin,A,3,239.199,239.199,1.00000,3.580,1.21,1.261,0.96,False,2.461411e-14,ok
+US 39th parallel,Turkey Point - Still Pond - Osbornes Ruin,A,3,176.956,176.955,1.00001,1.290,0.9,1.261,0.71,False,2.461403e-14,ok
+US 39th parallel,Turkey Point - Pooles Island - Osbornes Ruin,A,3,232.039,232.038,1.00000,1.250,1.18,1.261,0.93,False,2.461408e-14,ok
+US 39th parallel,Hope - Linstid - Clough,A,3,334.288,334.287,1.00000,2.570,1.7,1.261,1.35,False,2.461572e-14,ok
+US 39th parallel,Hope - Clough - Still Pond,A,3,222.240,222.240,1.00000,-0.820,1.13,1.261,0.90,False,2.461529e-14,ok
+US 39th parallel,Barclay - Hope - Still Pond,A,3,206.696,206.695,1.00000,-0.870,1.05,1.261,0.83,False,2.461540e-14,ok
+US 39th parallel,Kent - Hope - Barclay,A,3,181.422,181.421,1.00000,3.270,0.92,1.261,0.73,False,2.461601e-14,ok
+US 39th parallel,Stone - Kent - Mahon,A,3,303.871,303.869,1.00000,2.300,1.54,1.261,1.22,False,2.461602e-14,ok
+US 39th parallel,Hill - Webb - Marriott,A,3,274.407,274.406,1.00000,1.020,1.39,1.261,1.11,False,2.461660e-14,ok
+US 39th parallel,Soper - Webb - Marriott,A,3,287.105,287.105,1.00000,1.930,1.46,1.261,1.16,False,2.461625e-14,ok
+US 39th parallel,Soper - Webb - Hill,A,3,249.923,249.922,1.00000,0.520,1.27,1.261,1.01,False,2.461620e-14,ok
+US 39th parallel,Soper - Marriott - Hill,A,3,237.224,237.223,1.00000,-0.390,1.2,1.261,0.96,False,2.461661e-14,ok
+US 39th parallel,Stabler - Webb - Soper,,3,,46.947,,,0.24,1.261,,False,2.461578e-14,ok
+US 39th parallel,Stabler - Webb - Hill,A,3,316.660,316.659,1.00000,1.970,1.61,1.261,1.28,False,2.461614e-14,ok
+US 39th parallel,Stabler - Soper - Hill,,3,,19.791,,,0.101,1.261,,False,2.461614e-14,ok
+US 39th parallel,Peach Grove - Stabler - Hill,A,3,363.786,363.785,1.00000,1.560,1.85,1.261,1.47,False,2.461646e-14,ok
+US 39th parallel,Sugar Loaf - Stabler - Hill,,3,,364.946,,,1.85,1.261,,False,2.461581e-14,ok
+US 39th parallel,Sugar Loaf - Stabler - Peach Grove,A,3,560.108,560.106,1.00000,1.490,2.84,1.261,2.26,True,2.461577e-14,ok
+US 39th parallel,Sugar Loaf - Hill - Peach Grove,,3,,558.946,,,2.84,1.261,,False,2.461619e-14,ok
+US 39th parallel,Maryland Heights - Sugar Loaf - Stabler,A,3,61.462,61.462,1.00001,-0.610,0.312,1.261,0.25,False,2.461498e-14,ok
+US 39th parallel,Maryland Heights - Sugar Loaf - Peach Grove,A,3,466.391,466.391,1.00000,0.430,2.37,1.261,1.88,False,2.461536e-14,ok
+US 39th parallel,Maryland Heights - Stabler - Peach Grove,A,3,965.032,965.036,1.00000,2.530,4.9,1.261,3.89,True,2.461562e-14,ok
+US 39th parallel,Bull Run - Maryland Heights - Sugar Loaf,A,3,706.186,706.186,1.00000,5.680,3.59,1.261,2.85,True,2.461543e-14,ok
+US 39th parallel,Bull Run - Maryland Heights - Stabler,A,3,1599.659,1599.669,0.99999,8.760,8.12,1.261,6.44,True,2.461570e-14,ok
+US 39th parallel,Bull Run - Maryland Heights - Peach Grove,A,3,1050.575,1050.578,1.00000,7.830,5.33,1.261,4.23,True,2.461608e-14,ok
+US 39th parallel,Bull Run - Sugar Loaf - Stabler,A,3,954.942,954.945,1.00000,2.470,4.85,1.261,3.85,True,2.461584e-14,ok
+US 39th parallel,Bull Run - Sugar Loaf - Peach Grove,A,3,810.783,810.783,1.00000,2.580,4.12,1.261,3.27,True,2.461622e-14,ok
+US 39th parallel,Bull Run - Stabler - Peach Grove,A,3,415.944,415.944,1.00000,1.600,2.11,1.261,1.68,False,2.461649e-14,ok
+US 39th parallel,Mount Marshall - Maryland Heights - Sugar Loaf,A,3,1056.246,1056.256,0.99999,4.270,5.36,1.261,4.26,True,2.461563e-14,ok
+US 39th parallel,Mount Marshall - Maryland Heights - Bull Run,A,3,1113.318,1113.323,1.00000,4.250,5.65,1.261,4.49,True,2.461635e-14,ok
+US 39th parallel,Mount Marshall - Maryland Heights - Peach Grove,A,3,2306.637,2306.664,0.99999,12.630,11.71,1.261,9.29,True,2.461627e-14,ok
+US 39th parallel,Mount Marshall - Sugar Loaf - Bull Run,A,3,763.249,763.254,0.99999,5.660,3.88,1.261,3.08,True,2.461649e-14,ok
+US 39th parallel,Mount Marshall - Sugar Loaf - Peach Grove,A,3,1716.780,1716.800,0.99999,8.790,8.72,1.261,6.92,True,2.461642e-14,ok
+US 39th parallel,Mount Marshall - Bull Run - Peach Grove,A,3,142.765,142.763,1.00001,0.550,0.725,1.261,0.58,False,2.461714e-14,ok
+US 39th parallel,Clark - Mount Marshall - Bull Run,A,3,1220.307,1220.312,1.00000,5.750,6.2,1.261,4.92,True,2.461828e-14,ok
+US 39th parallel,Fork - Mount Marshall - Bull Run,A,3,603.698,603.701,0.99999,5.180,3.07,1.261,2.43,True,2.461797e-14,ok
+US 39th parallel,Fork - Mount Marshall - Clark,A,3,767.017,767.017,1.00000,6.030,3.89,1.261,3.09,True,2.461903e-14,ok
+US 39th parallel,Fork - Bull Run - Clark,A,3,1383.619,1383.629,0.99999,6.600,7.03,1.261,5.57,True,2.461884e-14,ok
+US 39th parallel,Humpback - Fork - Clark,A,3,1454.068,1454.083,0.99999,3.360,7.39,1.261,5.86,True,2.462058e-14,ok
+US 39th parallel,Spear - Humpback - Fork,A,3,1260.390,1260.411,0.99998,5.900,6.4,1.261,5.08,True,2.462198e-14,ok
+US 39th parallel,Spear - Humpback - Clark,A,3,1927.088,1927.124,0.99998,11.340,9.79,1.261,7.76,True,2.462230e-14,ok
+US 39th parallel,Spear - Fork - Clark,A,3,2120.752,2120.796,0.99998,8.800,10.77,1.261,8.54,True,2.462131e-14,ok
+US 39th parallel,Slate Springs - Fork - Humpback,A,3,2047.156,2047.175,0.99999,6.790,10.4,1.261,8.25,True,2.462021e-14,ok
+US 39th parallel,Elliott Knob - Slate Springs - Fork,A,3,1295.606,1295.617,0.99999,6.580,6.58,1.261,5.22,True,2.461980e-14,ok
+US 39th parallel,Elliott Knob - Slate Springs - Humpback,A,3,831.833,831.837,1.00000,3.890,4.22,1.261,3.35,True,2.462080e-14,ok
+US 39th parallel,Elliott Knob - Fork - Humpback,A,3,1583.378,1583.394,0.99999,4.100,8.04,1.261,6.38,True,2.462085e-14,ok
+US 39th parallel,Tobacco Row - Humpback - Spear,A,3,808.605,808.608,1.00000,7.160,4.11,1.261,3.26,True,2.462369e-14,ok
+US 39th parallel,Bald Knob - Elliott Knob - Humpback,A,3,1053.320,1053.328,0.99999,7.170,5.35,1.261,4.24,True,2.462189e-14,ok
+US 39th parallel,Bald Knob - Humpback - Tobacco Row,A,3,1751.728,1751.750,0.99999,5.750,8.9,1.261,7.06,True,2.462301e-14,ok
+US 39th parallel,Briery - Elliott Knob - Bald Knob,A,3,1154.417,1154.428,0.99999,4.000,5.86,1.261,4.65,True,2.462152e-14,ok
+US 39th parallel,Keeney - Briery - Bald Knob,A,3,1274.798,1274.809,0.99999,6.330,6.47,1.261,5.14,True,2.462226e-14,ok
+US 39th parallel,Beech - Briery - Keeney,A,3,413.871,413.872,1.00000,4.090,2.1,1.261,1.67,False,2.462191e-14,ok
+US 39th parallel,Ivy - Beech - Keeney,A,3,1309.967,1309.981,0.99999,5.160,6.65,1.261,5.28,True,2.462257e-14,ok
+US 39th parallel,Summersville - Briery - Beech,A,3,256.825,256.825,1.00000,-1.120,1.3,1.261,1.03,False,2.462096e-14,ok
+US 39th parallel,Summersville - Beech - Ivy,A,3,1147.360,1147.374,0.99999,5.960,5.83,1.261,4.62,True,2.462162e-14,ok
+US 39th parallel,Davis - Piney - Pigeon,A,3,304.836,304.835,1.00000,2.130,1.55,1.261,1.23,False,2.462005e-14,ok
+US 39th parallel,Gebhardt - Piney - Pigeon,A,3,206.886,206.886,1.00000,2.340,1.05,1.261,0.83,False,2.461972e-14,ok
+US 39th parallel,Gebhardt - Piney - Davis,A,3,209.108,209.107,1.00000,1.520,1.06,1.261,0.84,False,2.461949e-14,ok
+US 39th parallel,Gebhardt - Pigeon - Davis,A,3,307.058,307.057,1.00000,1.310,1.56,1.261,1.24,False,2.461989e-14,ok
+US 39th parallel,Wray - Gebhardt - Davis,A,3,210.456,210.455,1.00000,1.350,1.07,1.261,0.85,False,2.461920e-14,ok
+US 39th parallel,Oakland - Wray - Gebhardt,A,3,292.779,292.778,1.00000,3.010,1.49,1.261,1.18,False,2.461918e-14,ok
+US 39th parallel,Oakland - Wray - Davis,A,3,341.820,341.819,1.00000,0.700,1.74,1.261,1.38,False,2.461952e-14,ok
+US 39th parallel,Oakland - Gebhardt - Davis,A,3,259.497,259.496,1.00000,-0.960,1.32,1.261,1.05,False,2.461964e-14,ok
+US 39th parallel,Fradd - Wray - Gebhardt,A,3,27.451,27.451,1.00000,-1.110,0.14,1.261,0.11,False,2.461875e-14,ok
+US 39th parallel,Fradd - Wray - Oakland,A,3,103.151,103.151,1.00000,-1.250,0.52,1.261,0.42,False,2.461906e-14,ok
+US 39th parallel,Fradd - Gebhardt - Oakland,A,3,368.479,368.478,1.00000,2.870,1.87,1.261,1.48,False,2.461918e-14,ok
+US 39th parallel,Gould - Fradd - Oakland,A,3,337.684,337.683,1.00000,1.950,1.72,1.261,1.36,False,2.461897e-14,ok
+US 39th parallel,Buena Vista - Gould - Fradd,A,3,327.497,327.496,1.00000,4.010,1.66,1.261,1.32,False,2.461891e-14,ok
+US 39th parallel,Buena Vista - Gould - Oakland,A,3,183.953,183.952,1.00000,1.910,0.93,1.261,0.74,False,2.461935e-14,ok
+US 39th parallel,Buena Vista - Fradd - Oakland,A,3,194.140,194.139,1.00000,-0.150,0.99,1.261,0.78,False,2.461943e-14,ok
+US 39th parallel,Howland - Gould - Buena Vista,A,3,187.155,187.155,1.00000,0.540,0.95,1.261,0.75,False,2.461885e-14,ok
+US 39th parallel,Scioto - Fradd - Gould,A,3,119.548,119.547,1.00001,0.440,0.61,1.261,0.48,False,2.461822e-14,ok
+US 39th parallel,Scioto - Gould - Howland,A,3,104.421,104.420,1.00001,-0.620,0.53,1.261,0.42,False,2.461816e-14,ok
+US 39th parallel,Cave - Howland - Buena Vista,A,3,171.138,171.138,1.00000,-0.150,0.87,1.261,0.69,False,2.461903e-14,ok
+US 39th parallel,Round Top - Scioto - Howland,A,3,148.871,148.870,1.00000,2.480,0.76,1.261,0.60,False,2.461822e-14,ok
+US 39th parallel,Round Top - Howland - Cave,A,3,83.357,83.357,1.00000,5.500,0.42,1.261,0.34,False,2.461863e-14,ok
+US 39th parallel,Twin Creek - Scioto - Round Top,A,3,123.953,123.953,1.00000,-0.030,0.63,1.261,0.50,False,2.461808e-14,ok
+US 39th parallel,Peach Mount - Scioto - Twin Creek,A,3,238.385,238.384,1.00000,2.400,1.21,1.261,0.96,False,2.461754e-14,ok
+US 39th parallel,Cherry Ridge - Peach Mount - Twin Creek,A,3,203.969,203.968,1.00000,1.550,1.04,1.261,0.82,False,2.461774e-14,ok
+US 39th parallel,Cherry Ridge - Twin Creek - Round Top,A,3,104.378,104.377,1.00001,-1.450,0.53,1.261,0.42,False,2.461827e-14,"corrected: printed degree misprint, fixed from printed sides"
+US 39th parallel,Cave Hill - Peach Mount - Cherry Ridge,A,3,240.136,240.136,1.00000,-0.160,1.22,1.261,0.97,False,2.461746e-14,ok
+US 39th parallel,Ash Ridge - Peach Mount - Cave Hill,A,3,115.863,115.862,1.00001,1.710,0.59,1.261,0.47,False,2.461697e-14,ok
+US 39th parallel,Ash Ridge - Peach Mount - Cherry Ridge,A,3,460.208,460.207,1.00000,2.160,2.34,1.261,1.85,False,2.461733e-14,ok
+US 39th parallel,Ash Ridge - Cave Hill - Cherry Ridge,A,3,104.210,104.210,1.00000,0.610,0.53,1.261,0.42,False,2.461741e-14,ok
+US 39th parallel,Minerva - Ash Ridge - Cave Hill,A,3,216.759,216.758,1.00000,0.560,1.1,1.261,0.87,False,2.461732e-14,ok
+US 39th parallel,Minerva - Ash Ridge - Cherry Ridge,A,3,482.633,482.632,1.00000,2.610,2.45,1.261,1.94,False,2.461768e-14,ok
+US 39th parallel,Minerva - Cave Hill - Cherry Ridge,A,3,370.085,370.084,1.00000,2.660,1.88,1.261,1.49,False,2.461781e-14,ok
+US 39th parallel,Tate - Ash Ridge - Minerva,A,3,401.016,401.015,1.00000,3.800,2.04,1.261,1.62,False,2.461715e-14,ok
+US 39th parallel,Flaugher - Tate - Ash Ridge,A,3,391.412,391.412,1.00000,3.130,1.99,1.261,1.58,False,2.461711e-14,ok
+US 39th parallel,Flaugher - Tate - Minerva,A,3,331.278,331.277,1.00000,0.520,1.68,1.261,1.33,False,2.461751e-14,ok
+US 39th parallel,Flaugher - Ash Ridge - Minerva,A,3,340.880,340.880,1.00000,1.190,1.73,1.261,1.37,False,2.461755e-14,ok
+US 39th parallel,Stevens - Tate - Flaugher,A,3,375.165,375.164,1.00000,2.240,1.9,1.261,1.51,False,2.461711e-14,ok
+US 39th parallel,Dry Ridge - Stevens - Flaugher,A,3,390.091,390.090,1.00000,2.630,1.98,1.261,1.57,False,2.461760e-14,ok
+US 39th parallel,Tanner - Tate - Stevens,A,3,152.681,152.681,1.00000,1.640,0.78,1.261,0.62,False,2.461660e-14,ok
+US 39th parallel,Tanner - Stevens - Dry Ridge,A,3,188.394,188.393,1.00000,-2.120,0.96,1.261,0.76,False,2.461709e-14,ok
+US 39th parallel,Stow - Tanner - Dry Ridge,A,3,590.615,590.615,1.00000,3.500,3.0,1.261,2.38,True,2.461723e-14,ok
+US 39th parallel,Reizin - Tanner - Stow,A,3,428.836,428.836,1.00000,-0.400,2.18,1.261,1.73,False,2.461653e-14,ok
+US 39th parallel,Culbertson - Reizin - Stow,A,3,198.668,198.668,1.00000,-0.940,1.01,1.261,0.80,False,2.461685e-14,ok
+US 39th parallel,Culbertson - Stow - Dry Ridge,A,3,202.927,202.928,1.00000,2.220,1.03,1.261,0.82,False,2.461754e-14,ok
+US 39th parallel,Honey Creek - Claremont - Hunt City,A,3,439.087,439.086,1.00000,2.250,2.23,1.261,1.77,False,2.461682e-14,ok
+US 39th parallel,Belle Air - Honey Creek - Hunt City,A,3,261.859,261.858,1.00000,2.020,1.33,1.261,1.06,False,2.461603e-14,ok
+US 39th parallel,Belle Air - Oblong - Hunt City,A,3,122.454,122.454,1.00001,0.450,0.62,1.261,0.49,False,2.461589e-14,ok
+US 39th parallel,Summit - Claremont - Honey Creek,A,3,495.255,495.255,1.00000,2.340,2.52,1.261,2.00,False,2.461739e-14,ok
+US 39th parallel,Merom College - Summit - Honey Creek,A,3,320.110,320.109,1.00000,0.750,1.63,1.261,1.29,False,2.461684e-14,ok
+US 39th parallel,Merom College - Honey Creek - Belle Air,A,3,272.427,272.426,1.00000,2.600,1.38,1.261,1.10,False,2.461606e-14,ok
+US 39th parallel,Sisson - Summit - Merom College,A,3,311.747,311.745,1.00000,0.720,1.58,1.261,1.26,False,2.461675e-14,ok
+US 39th parallel,Wright - Sisson - Merom College,A,3,236.965,236.964,1.00000,2.570,1.2,1.261,0.95,False,2.461608e-14,ok
+US 39th parallel,Osborn - Summit - Sisson,A,3,456.671,456.670,1.00000,2.970,2.32,1.261,1.84,False,2.461712e-14,ok
+US 39th parallel,Calvary - Osborn - Sisson,A,3,471.017,471.014,1.00001,2.860,2.39,1.261,1.90,False,2.461652e-14,ok
+US 39th parallel,Calvary - Sisson - Wright,A,3,293.080,293.079,1.00000,0.850,1.49,1.261,1.18,False,2.461603e-14,ok
+US 39th parallel,Beard - Osborn - Calvary,A,3,249.303,249.301,1.00001,0.160,1.27,1.261,1.00,False,2.461653e-14,ok
+US 39th parallel,Rariden - Osborn - Beard,A,3,320.534,320.533,1.00000,2.460,1.63,1.261,1.29,False,2.461713e-14,ok
+US 39th parallel,Leonard - Rariden - Beard,A,3,73.952,73.952,1.00000,0.640,0.38,1.261,0.30,False,2.461666e-14,ok
+US 39th parallel,Leonard - Beard - Calvary,A,3,140.260,140.260,1.00000,0.460,0.71,1.261,0.57,False,2.461605e-14,ok
+US 39th parallel,Fountain - Rariden - Beard,A,3,349.639,349.638,1.00000,0.730,1.78,1.261,1.41,False,2.461697e-14,ok
+US 39th parallel,Fountain - Rariden - Leonard,A,3,517.304,517.303,1.00000,0.480,2.63,1.261,2.08,True,2.461670e-14,ok
+US 39th parallel,Fountain - Beard - Leonard,A,3,241.617,241.617,1.00000,0.390,1.23,1.261,0.97,False,2.461631e-14,ok
+US 39th parallel,Weed Patch - Fountain - Beard,A,3,388.145,388.144,1.00000,1.770,1.97,1.261,1.56,False,2.461620e-14,ok
+US 39th parallel,Weed Patch - Fountain - Leonard,A,3,405.145,405.144,1.00000,1.630,2.06,1.261,1.63,False,2.461593e-14,ok
+US 39th parallel,Weed Patch - Beard - Leonard,A,3,258.617,258.617,1.00000,0.250,1.31,1.261,1.04,False,2.461589e-14,ok
+US 39th parallel,Miller - Rariden - Fountain,A,3,320.421,320.420,1.00000,1.050,1.63,1.261,1.29,False,2.461720e-14,ok
+US 39th parallel,Miller - Fountain - Weed Patch,A,3,253.837,253.836,1.00000,2.350,1.29,1.261,1.02,False,2.461643e-14,ok
+US 39th parallel,Tripp - Miller - Weed Patch,A,3,745.956,745.956,1.00000,4.630,3.79,1.261,3.01,True,2.461633e-14,ok
+US 39th parallel,Tripp - Green - Stout,A,3,131.363,131.362,1.00000,1.090,0.67,1.261,0.53,False,2.461643e-14,ok
+US 39th parallel,Tripp - Stout - Miller,A,3,324.768,324.767,1.00000,1.930,1.65,1.261,1.31,False,2.461691e-14,ok
+US 39th parallel,Tripp - Weed Patch - Green,A,3,398.260,398.261,1.00000,-1.180,2.02,1.261,1.60,False,2.461584e-14,ok
+US 39th parallel,Turkey Hill - Dreyer - Clarks Mound,A,3,126.469,126.468,1.00000,1.780,0.64,1.261,0.51,False,2.461905e-14,ok
+US 39th parallel,Berger - Turkey Hill - Clarks Mound,A,3,181.736,181.736,1.00000,1.760,0.92,1.261,0.73,False,2.461885e-14,ok
+US 39th parallel,Berger - Clarks Mound - Sugar Loaf Mound,A,3,174.346,174.346,1.00000,-0.330,0.89,1.261,0.70,False,2.461842e-14,ok
+US 39th parallel,Parkinson - Berger - Turkey Hill,A,3,49.854,49.854,1.00001,1.640,0.25,1.261,0.20,False,2.461858e-14,ok
+US 39th parallel,Parkinson - Berger - Sugar Loaf Mound,A,3,156.133,156.133,1.00000,2.280,0.79,1.261,0.63,False,2.461815e-14,ok
+US 39th parallel,Geoffrey - Turkey Hill - Berger,A,3,246.031,246.030,1.00000,2.970,1.25,1.261,0.99,False,2.461890e-14,ok
+US 39th parallel,Geoffrey - Turkey Hill - Parkinson,A,3,478.861,478.860,1.00000,3.970,2.43,1.261,1.93,False,2.461869e-14,ok
+US 39th parallel,Geoffrey - Berger - Parkinson,A,3,182.977,182.976,1.00000,-0.640,0.93,1.261,0.74,False,2.461844e-14,ok
+US 39th parallel,Hoile - Geoffrey - Parkinson,A,3,472.074,472.073,1.00000,1.550,2.4,1.261,1.90,False,2.461791e-14,ok
+US 39th parallel,Bording - Geoffrey - Parkinson,A,3,171.830,171.830,1.00000,0.770,0.87,1.261,0.69,False,2.461844e-14,ok
+US 39th parallel,Bording - Geoffrey - Hoile,A,3,169.288,169.288,1.00000,1.860,0.86,1.261,0.68,False,2.461811e-14,ok
+US 39th parallel,Bording - Parkinson - Hoile,A,3,469.532,469.531,1.00000,2.640,2.39,1.261,1.89,False,2.461779e-14,ok
+US 39th parallel,Hartlin - Bording - Hoile,A,3,594.924,594.923,1.00000,3.230,3.02,1.261,2.40,True,2.461782e-14,ok
+US 39th parallel,Sturgess - Hartlin - Bording,A,3,559.448,559.447,1.00000,4.420,2.84,1.261,2.25,True,2.461772e-14,ok
+US 39th parallel,Sturgess - Hartlin - Hoile,A,3,404.619,404.618,1.00000,2.200,2.06,1.261,1.63,False,2.461719e-14,ok
+US 39th parallel,Sturgess - Bording - Hoile,A,3,440.095,440.095,1.00000,1.010,2.24,1.261,1.77,False,2.461736e-14,ok
+US 39th parallel,Mound - Hartlin - Sturgess,A,3,478.061,478.060,1.00000,2.920,2.43,1.261,1.93,False,2.461686e-14,ok
+US 39th parallel,Lucas - Newton - Denver,A,3,200.175,200.174,1.00000,1.080,1.02,1.261,0.81,False,2.461703e-14,ok
+US 39th parallel,Island Creek - Hunt City - Newton,A,3,243.586,243.585,1.00001,0.250,1.24,1.261,0.98,False,2.461617e-14,ok
+US 39th parallel,Island Creek - Newton - Denver,A,3,167.103,167.103,1.00000,0.690,0.85,1.261,0.67,False,2.461672e-14,ok
+US 39th parallel,Island Creek - Newton - Lucas,A,3,219.300,219.299,1.00000,2.450,1.11,1.261,0.88,False,2.461641e-14,ok
+US 39th parallel,Island Creek - Denver - Lucas,A,3,252.371,252.370,1.00000,2.840,1.28,1.261,1.02,False,2.461670e-14,ok
+US 39th parallel,Island Creek - Lucas - Mound,A,3,333.166,333.165,1.00000,1.350,1.69,1.261,1.34,False,2.461614e-14,ok
+US 39th parallel,Morgan - Minoma - Insane Asylum,A,3,54.656,54.656,1.00001,3.760,0.28,1.261,0.22,False,2.461827e-14,ok
+US 39th parallel,Morgan - Insane Asylum - Kleinschmidt,A,3,71.667,71.667,1.00000,0.790,0.36,1.261,0.29,False,2.461863e-14,ok
+US 39th parallel,Patterson - Morgan - Insane Asylum,A,3,164.274,164.274,1.00000,-0.840,0.83,1.261,0.66,False,2.461871e-14,ok
+US 39th parallel,Patterson - Morgan - Kleinschmidt,A,3,182.955,182.955,1.00000,-0.410,0.93,1.261,0.74,False,2.461889e-14,ok
+US 39th parallel,Patterson - Insane Asylum - Kleinschmidt,A,3,90.349,90.348,1.00000,1.220,0.46,1.261,0.36,False,2.461902e-14,ok
+US 39th parallel,Kessler - Morgan - Insane Asylum,A,3,92.604,92.604,1.00000,-2.980,0.47,1.261,0.37,False,2.461844e-14,ok
+US 39th parallel,Kessler - Morgan - Patterson,A,3,130.088,130.088,1.00000,0.360,0.66,1.261,0.52,False,2.461870e-14,ok
+US 39th parallel,Kessler - Insane Asylum - Patterson,A,3,201.758,201.757,1.00000,2.500,1.02,1.261,0.81,False,2.461883e-14,ok
+US 39th parallel,Tavern Rock - Morgan - Kessler,A,3,52.950,52.950,1.00000,1.430,0.27,1.261,0.21,False,2.461843e-14,ok
+US 39th parallel,Tavern Rock - Morgan - Patterson,A,3,312.757,312.756,1.00000,1.450,1.59,1.261,1.26,False,2.461871e-14,ok
+US 39th parallel,Tavern Rock - Kessler - Patterson,A,3,129.718,129.718,1.00000,-0.340,0.66,1.261,0.52,False,2.461882e-14,ok
+US 39th parallel,Lynch - Tavern Rock - Patterson,A,3,196.751,196.750,1.00000,-2.270,1.0,1.261,0.79,False,2.461920e-14,ok
+US 39th parallel,Halleck - Tavern Rock - Lynch,A,3,176.288,176.287,1.00000,0.070,0.9,1.261,0.71,False,2.461919e-14,ok
+US 39th parallel,Dieckhaus - Tavern Rock - Lynch,A,3,184.912,184.912,1.00000,-0.770,0.94,1.261,0.75,False,2.461897e-14,ok
+US 39th parallel,Dieckhaus - Tavern Rock - Halleck,A,3,112.278,112.278,1.00000,-0.950,0.57,1.261,0.45,False,2.461886e-14,ok
+US 39th parallel,Dieckhaus - Lynch - Halleck,A,3,103.654,103.653,1.00000,-0.110,0.53,1.261,0.42,False,2.461923e-14,ok
+US 39th parallel,Peters - Dieckhaus - Tavern Rock,A,3,105.843,105.842,1.00000,-1.980,0.54,1.261,0.43,False,2.461887e-14,ok
+US 39th parallel,Peters - Dieckhaus - Halleck,A,3,80.954,80.954,1.00001,-0.370,0.41,1.261,0.33,False,2.461912e-14,ok
+US 39th parallel,Peters - Dieckhaus - Lynch,A,3,231.037,231.036,1.00000,-0.530,1.17,1.261,0.93,False,2.461924e-14,ok
+US 39th parallel,Peters - Tavern Rock - Halleck,A,3,87.389,87.389,1.00000,0.660,0.44,1.261,0.35,False,2.461909e-14,ok
+US 39th parallel,Peters - Tavern Rock - Lynch,A,3,310.106,310.106,1.00000,0.680,1.57,1.261,1.25,False,2.461920e-14,ok
+US 39th parallel,Peters - Halleck - Lynch,A,3,46.429,46.429,1.00000,-0.050,0.24,1.261,0.19,False,2.461946e-14,ok
+US 39th parallel,Berger - Dieckhaus - Peters,A,3,216.338,216.337,1.00000,-0.140,1.1,1.261,0.87,False,2.461888e-14,ok
+US 39th parallel,Berger - Peters - Jacobs,A,3,163.846,163.845,1.00000,-3.810,0.83,1.261,0.66,False,2.461916e-14,ok
+US 39th parallel,Winter - Berger - Jacobs,A,3,126.091,126.091,1.00000,-1.180,0.64,1.261,0.51,False,2.461916e-14,ok
+US 39th parallel,Gasconade - Berger - Jacobs,A,3,138.318,138.318,1.00000,-0.590,0.7,1.261,0.56,False,2.461891e-14,ok
+US 39th parallel,Gasconade - Berger - Winter,A,3,113.116,113.116,1.00000,-0.350,0.57,1.261,0.46,False,2.461887e-14,ok
+US 39th parallel,Gasconade - Jacobs - Winter,A,3,100.890,100.889,1.00000,-0.940,0.51,1.261,0.41,False,2.461917e-14,ok
+US 39th parallel,Turnpike Bluff - Gasconade - Winter,A,3,70.289,70.289,1.00001,0.440,0.36,1.261,0.28,False,2.461889e-14,ok
+US 39th parallel,Geyer - Turnpike Bluff - Gasconade,A,3,75.951,75.950,1.00001,0.960,0.39,1.261,0.31,False,2.461891e-14,ok
+US 39th parallel,Geyer - Turnpike Bluff - Winter,A,3,111.035,111.034,1.00000,1.370,0.56,1.261,0.45,False,2.461916e-14,ok
+US 39th parallel,Geyer - Gasconade - Winter,A,3,105.373,105.373,1.00000,0.850,0.54,1.261,0.42,False,2.461915e-14,ok
+US 39th parallel,Bradford - Turnpike Bluff - Gasconade,A,3,12.361,12.362,0.99993,0.150,0.063,1.261,0.05,False,2.461869e-14,ok
+US 39th parallel,Bradford - Turnpike Bluff - Winter,A,3,143.328,143.328,1.00000,0.960,0.73,1.261,0.58,False,2.461894e-14,ok
+US 39th parallel,Bradford - Turnpike Bluff - Geyer,A,3,135.345,135.344,1.00000,1.020,0.69,1.261,0.55,False,2.461896e-14,ok
+US 39th parallel,Bradford - Gasconade - Winter,A,3,201.255,201.255,1.00000,1.250,1.02,1.261,0.81,False,2.461893e-14,ok
+US 39th parallel,Bradford - Gasconade - Geyer,A,3,198.933,198.933,1.00000,1.830,1.01,1.261,0.80,False,2.461896e-14,ok
+US 39th parallel,Bradford - Winter - Geyer,A,3,103.051,103.050,1.00000,1.430,0.52,1.261,0.42,False,2.461920e-14,ok
+US 39th parallel,Pilot Knob - Bradford - Turnpike Bluff,A,3,219.373,219.373,1.00000,1.460,1.11,1.261,0.88,False,2.461917e-14,ok
+US 39th parallel,Pilot Knob - Bradford - Geyer,A,3,213.252,213.252,1.00000,0.380,1.08,1.261,0.86,False,2.461944e-14,ok
+US 39th parallel,Pilot Knob - Turnpike Bluff - Geyer,A,3,129.223,129.223,1.00000,-0.060,0.66,1.261,0.52,False,2.461939e-14,ok
+US 39th parallel,McDaniel - Bradford - Pilot Knob,A,3,110.988,110.988,1.00000,2.180,0.56,1.261,0.45,False,2.461942e-14,ok
+US 39th parallel,Kennedy - McDaniel - Pilot Knob,A,3,171.911,171.911,1.00000,-0.300,0.87,1.261,0.69,False,2.461982e-14,ok
+US 39th parallel,Cedar - Bradford - McDaniel,A,3,206.372,206.371,1.00000,1.870,1.05,1.261,0.83,False,2.461892e-14,ok
+US 39th parallel,Cedar - McDaniel - Kennedy,A,3,279.050,279.049,1.00000,1.060,1.42,1.261,1.12,False,2.461933e-14,ok
+US 39th parallel,Belshe - Cedar - Kennedy,A,3,371.034,371.033,1.00000,2.220,1.89,1.261,1.49,False,2.461949e-14,ok
+US 39th parallel,Moreau - Cedar - Kennedy,A,3,357.793,357.791,1.00000,2.820,1.82,1.261,1.44,False,2.461920e-14,ok
+US 39th parallel,Moreau - Cedar - Belshe,A,3,212.403,212.402,1.00001,0.580,1.08,1.261,0.86,False,2.461915e-14,ok
+US 39th parallel,Moreau - Kennedy - Belshe,A,3,225.645,225.644,1.00001,-0.020,1.15,1.261,0.91,False,2.461962e-14,ok
+US 39th parallel,Moreau - Belshe - High Point,A,3,120.166,120.166,1.00000,2.230,0.61,1.261,0.48,False,2.461936e-14,ok
+US 39th parallel,Moreau - Belshe - Christian,A,3,80.962,80.961,1.00000,1.160,0.41,1.261,0.33,False,2.461910e-14,ok
+US 39th parallel,Moreau - High Point - Christian,A,3,98.366,98.366,1.00000,-0.370,0.5,1.261,0.40,False,2.461889e-14,ok
+US 39th parallel,Medlock - Cedar - Belshe,A,3,255.850,255.849,1.00000,0.230,1.3,1.261,1.03,False,2.461895e-14,ok
+US 39th parallel,Medlock - Cedar - Moreau,A,3,117.664,117.664,1.00000,-0.980,0.6,1.261,0.47,False,2.461866e-14,ok
+US 39th parallel,Medlock - Belshe - Moreau,A,3,74.218,74.217,1.00000,-0.630,0.38,1.261,0.30,False,2.461909e-14,ok
+US 39th parallel,Medlock - Belshe - Christian,A,3,263.034,263.034,1.00000,1.370,1.34,1.261,1.06,False,2.461890e-14,ok
+US 39th parallel,Medlock - Moreau - Christian,A,3,107.855,107.855,1.00000,0.840,0.55,1.261,0.43,False,2.461861e-14,ok
+US 39th parallel,Schnackenberg - Hubbard - Hughes,A,3,326.288,326.288,1.00000,2.090,1.66,1.261,1.31,False,2.461896e-14,ok
+US 39th parallel,Heard - Hubbard - Hughes,A,3,416.160,416.159,1.00000,1.040,2.11,1.261,1.68,False,2.461855e-14,ok
+US 39th parallel,Heard - Hubbard - Schnackenberg,A,3,359.225,359.224,1.00000,1.230,1.82,1.261,1.45,False,2.461843e-14,ok
+US 39th parallel,Schnackenberg - Heard - Hughes,A,3,269.354,269.353,1.00000,2.280,1.37,1.261,1.09,False,2.461889e-14,ok
+US 39th parallel,Kendrick - Heard - Schnackenberg,A,3,242.100,242.098,1.00000,0.560,1.23,1.261,0.98,False,2.461846e-14,ok
+US 39th parallel,Knob Noster - Heard - Kendrick,A,3,157.762,157.761,1.00000,0.710,0.8,1.261,0.64,False,2.461793e-14,ok
+US 39th parallel,High Point Tebo - Kendrick - Schnackenberg,A,3,208.697,208.696,1.00000,1.350,1.06,1.261,0.84,False,2.461872e-14,ok
+US 39th parallel,High Point Tebo - Knob Noster - Kendrick,A,3,126.336,126.336,1.00000,0.620,0.64,1.261,0.51,False,2.461820e-14,ok
+US 39th parallel,Normal - Knob Noster - High Point Tebo,A,3,178.006,178.005,1.00001,2.140,0.9,1.261,0.72,False,2.461801e-14,ok
+US 39th parallel,Caldwell - Knob Noster - High Point Tebo,A,3,177.492,177.491,1.00000,1.340,0.9,1.261,0.72,False,2.461837e-14,ok
+US 39th parallel,Caldwell - Normal - High Point Tebo,A,3,169.236,169.235,1.00000,1.440,0.86,1.261,0.68,False,2.461840e-14,ok
+US 39th parallel,Normal - Knob Noster - Caldwell,A,3,169.750,169.749,1.00001,2.240,0.86,1.261,0.68,False,2.461803e-14,ok
+US 39th parallel,Baker - Normal - Caldwell,A,3,306.459,306.458,1.00000,-0.130,1.56,1.261,1.23,False,2.461806e-14,ok
+US 39th parallel,Hutton Mound - Baker - Caldwell,A,3,425.339,425.339,1.00000,2.740,2.16,1.261,1.71,False,2.461845e-14,ok
+US 39th parallel,Chapel Hill - Normal - Baker,A,3,245.139,245.139,1.00000,0.860,1.25,1.261,0.99,False,2.461741e-14,ok
+US 39th parallel,Thornton - Chapel Hill - Baker,A,3,134.170,134.169,1.00001,1.110,0.68,1.261,0.54,False,2.461727e-14,ok
+US 39th parallel,Fulton - Baker - Hutton Mound,A,3,184.649,184.648,1.00000,-0.440,0.94,1.261,0.74,False,2.461831e-14,ok
+US 39th parallel,Thornton - Baker - Hutton Mound,A,3,220.321,220.320,1.00000,1.740,1.12,1.261,0.89,False,2.461795e-14,ok
+US 39th parallel,Thornton - Baker - Fulton,A,3,183.590,183.589,1.00000,1.720,0.93,1.261,0.74,False,2.461777e-14,ok
+US 39th parallel,Fulton - Thornton - Hutton Mound,A,3,147.918,147.917,1.00000,-0.460,0.75,1.261,0.60,False,2.461817e-14,ok
+US 39th parallel,Bowler - Thornton - Fulton,A,3,151.066,151.065,1.00000,1.170,0.77,1.261,0.61,False,2.461753e-14,ok
+US 39th parallel,Bowler - Chapel Hill - Thornton,A,3,104.035,104.034,1.00001,-0.130,0.53,1.261,0.42,False,2.461703e-14,ok
+US 39th parallel,Berry - Bowler - Fulton,A,3,220.280,220.279,1.00000,-0.610,1.12,1.261,0.89,False,2.461756e-14,ok
+US 39th parallel,Marty - Bowler - Berry,A,3,170.565,170.564,1.00000,-1.370,0.87,1.261,0.69,False,2.461691e-14,ok
+US 39th parallel,Haskin - Berry - Fulton,A,3,203.460,203.459,1.00000,2.370,1.03,1.261,0.82,False,2.461784e-14,ok
+US 39th parallel,Haskin - Marty - Berry,A,3,145.930,145.929,1.00000,0.650,0.74,1.261,0.59,False,2.461719e-14,ok
+US 39th parallel,Thomas - Marty - Haskin,A,3,258.575,258.574,1.00000,2.470,1.31,1.261,1.04,False,2.461715e-14,ok
+US 39th parallel,Eckman - Marty - Thomas,A,3,294.672,294.671,1.00000,1.060,1.5,1.261,1.19,False,2.461658e-14,ok
+US 39th parallel,Bébé Mound - Thomas - Haskin,A,3,149.542,149.542,1.00000,0.210,0.76,1.261,0.60,False,2.461756e-14,ok
+US 39th parallel,Bébé Mound - Eckman - Thomas,A,3,197.918,197.918,1.00000,2.500,1.01,1.261,0.80,False,2.461699e-14,ok
+US 39th parallel,Kanwaka - Eckman - Bébé Mound,A,3,499.711,499.709,1.00000,0.170,2.54,1.261,2.01,True,2.461671e-14,ok
+US 39th parallel,Simmons - Eckman - Bébé Mound,A,3,492.109,492.108,1.00000,1.650,2.5,1.261,1.98,False,2.461710e-14,ok
+US 39th parallel,Simmons - Kanwaka - Bébé Mound,A,3,377.703,377.702,1.00000,3.420,1.92,1.261,1.52,False,2.461719e-14,ok
+US 39th parallel,Kanwaka - Eckman - Simmons,A,3,385.305,385.303,1.00000,1.940,1.96,1.261,1.55,False,2.461668e-14,ok
+US 39th parallel,Elevation - Kanwaka - Simmons,A,3,364.127,364.126,1.00000,2.270,1.85,1.261,1.47,False,2.461679e-14,ok
+US 39th parallel,Mabon - Kanwaka - Simmons,A,3,355.358,355.357,1.00000,2.070,1.81,1.261,1.43,False,2.461714e-14,ok
+US 39th parallel,Mabon - Elevation - Simmons,A,3,316.730,316.729,1.00000,0.880,1.61,1.261,1.28,False,2.461716e-14,ok
+US 39th parallel,Elevation - Kanwaka - Mabon,A,3,325.499,325.498,1.00000,1.080,1.65,1.261,1.31,False,2.461677e-14,ok
+US 39th parallel,Powell - Elevation - Mabon,A,3,142.494,142.493,1.00000,0.060,0.72,1.261,0.57,False,2.461690e-14,ok
+US 39th parallel,Clark - Elevation - Mabon,A,3,308.442,308.441,1.00000,0.230,1.57,1.261,1.24,False,2.461701e-14,ok
+US 39th parallel,Clark - Powell - Mabon,A,3,158.637,158.636,1.00000,-1.020,0.81,1.261,0.64,False,2.461712e-14,ok
+US 39th parallel,Powell - Clark - Elevation,A,3,7.312,7.312,1.00007,1.190,0.037,1.261,0.03,False,2.461677e-14,ok
+US 39th parallel,Adams - Elevation - Clark,A,3,281.687,281.686,1.00000,1.510,1.43,1.261,1.13,False,2.461654e-14,ok
+US 39th parallel,Adams - Elevation - Powell,A,3,136.920,136.920,1.00000,2.490,0.7,1.261,0.55,False,2.461643e-14,ok
+US 39th parallel,Adams - Powell - Clark,A,3,152.079,152.078,1.00000,0.210,0.77,1.261,0.61,False,2.461665e-14,ok
+US 39th parallel,Meyer - Adams - Clark,A,3,171.543,171.543,1.00000,2.550,0.87,1.261,0.69,False,2.461665e-14,ok
+US 39th parallel,Zean Dale - Adams - Clark,A,3,297.589,297.588,1.00000,2.770,1.51,1.261,1.20,False,2.461635e-14,ok
+US 39th parallel,Zean Dale - Adams - Meyer,A,3,235.831,235.831,1.00000,0.500,1.2,1.261,0.95,False,2.461623e-14,ok
+US 39th parallel,Meyer - Zean Dale - Clark,A,3,109.785,109.785,1.00000,0.280,0.56,1.261,0.44,False,2.461657e-14,ok
+US 39th parallel,Reinhard - Zean Dale - Meyer,A,3,229.123,229.122,1.00000,0.630,1.16,1.261,0.92,False,2.461656e-14,ok
+US 39th parallel,Reinhard - Zean Dale - Clark,A,3,467.505,467.504,1.00000,0.880,2.37,1.261,1.88,False,2.461668e-14,ok
+US 39th parallel,Meyer - Clark - Reinhard,A,3,128.597,128.596,1.00000,-0.030,0.65,1.261,0.52,False,2.461698e-14,ok
+US 39th parallel,Humboldt - Zean Dale - Reinhard,A,3,188.704,188.704,1.00000,1.930,0.96,1.261,0.76,False,2.461638e-14,ok
+US 39th parallel,Erricssen - Zean Dale - Reinhard,A,3,394.167,394.166,1.00000,1.620,2.0,1.261,1.59,False,2.461607e-14,ok
+US 39th parallel,Erricssen - Zean Dale - Humboldt,A,3,205.103,205.102,1.00000,-1.350,1.04,1.261,0.83,False,2.461578e-14,ok
+US 39th parallel,Humboldt - Reinhard - Erricssen,C,3,0.406,0.360,1.12751,1.040,0.0018,1.261,0.00,False,2.461619e-14,ok
+US 39th parallel,Robbins - Erricssen - Humboldt,A,3,147.338,147.337,1.00001,0.380,0.75,1.261,0.59,False,2.461598e-14,ok
+US 39th parallel,Robbins - Humboldt - Reinhard,A,3,135.567,135.566,1.00001,1.480,0.69,1.261,0.55,False,2.461658e-14,ok
+US 39th parallel,Robbins - Erricssen - Reinhard,A,3,282.545,282.544,1.00000,0.820,1.43,1.261,1.14,False,2.461627e-14,ok
+US 39th parallel,White City - Robbins - Reinhard,A,3,163.202,163.202,1.00000,-0.970,0.83,1.261,0.66,False,2.461700e-14,ok
+US 39th parallel,Wilmer - Erricssen - Robbins,A,3,300.373,300.371,1.00000,2.160,1.53,1.261,1.21,False,2.461579e-14,ok
+US 39th parallel,Taylor - Robbins - White City,A,3,211.944,211.944,1.00000,0.590,1.08,1.261,0.85,False,2.461697e-14,ok
+US 39th parallel,Taylor - Wilmer - Robbins,A,3,254.427,254.426,1.00000,0.520,1.29,1.261,1.03,False,2.461637e-14,ok
+US 39th parallel,Frey - Wilmer - Taylor,A,3,168.216,168.214,1.00001,0.190,0.85,1.261,0.68,False,2.461629e-14,ok
+US 39th parallel,Vine Creek - Wilmer - Taylor,A,3,403.431,403.430,1.00000,2.300,2.05,1.261,1.63,False,2.461614e-14,ok
+US 39th parallel,Frey - Vine Creek - Wilmer,A,3,150.713,150.712,1.00001,1.770,0.77,1.261,0.61,False,2.461588e-14,ok
+US 39th parallel,Frey - Taylor - Vine Creek,A,3,84.503,84.504,1.00000,0.340,0.43,1.261,0.34,False,2.461633e-14,ok
+US 39th parallel,Iron Mound - Vine Creek - Taylor,A,3,668.467,668.467,1.00000,1.730,3.39,1.261,2.69,True,2.461673e-14,ok
+US 39th parallel,Frey - Taylor - Iron Mound,A,3,402.437,402.437,1.00000,1.350,2.04,1.261,1.62,False,2.461688e-14,ok
+US 39th parallel,Vine Creek - Frey - Iron Mound,A,3,350.535,350.534,1.00000,0.720,1.78,1.261,1.41,False,2.461647e-14,ok
+US 39th parallel,Lincoln - Thompson - Heath,A,3,315.287,315.286,1.00000,0.620,1.6,1.261,1.27,False,2.461633e-14,ok
+US 39th parallel,Golden Belt - Thompson - Heath,A,3,422.506,422.505,1.00000,1.210,2.15,1.261,1.70,False,2.461654e-14,ok
+US 39th parallel,Golden Belt - Lincoln - Heath,A,3,273.696,273.695,1.00000,0.580,1.39,1.261,1.10,False,2.461650e-14,ok
+US 39th parallel,Lincoln - Thompson - Golden Belt,A,3,166.477,166.476,1.00001,-0.010,0.85,1.261,0.67,False,2.461608e-14,ok
+US 39th parallel,Wilson - Lincoln - Heath,A,3,516.267,516.266,1.00000,0.890,2.62,1.261,2.08,True,2.461672e-14,ok
+US 39th parallel,Wilson - Golden Belt - Heath,A,3,258.207,258.206,1.00000,0.790,1.31,1.261,1.04,False,2.461693e-14,ok
+US 39th parallel,Golden Belt - Lincoln - Wilson,A,3,15.637,15.635,1.00011,0.480,0.08,1.261,0.06,False,2.461647e-14,ok
+US 39th parallel,Meades Ranch - Lincoln - Wilson,A,3,731.209,731.208,1.00000,4.150,3.71,1.261,2.95,True,2.461601e-14,ok
+US 39th parallel,Meades Ranch - Lincoln - Heath,A,3,492.368,492.368,1.00000,1.620,2.5,1.261,1.98,False,2.461604e-14,ok
+US 39th parallel,Wilson - Meades Ranch - Heath,A,3,755.106,755.106,1.00000,3.420,3.83,1.261,3.04,True,2.461647e-14,ok
+US 39th parallel,Golden Belt - Meades Ranch - Lincoln,A,3,372.735,372.734,1.00000,2.450,1.89,1.261,1.50,False,2.461579e-14,ok
+US 39th parallel,Golden Belt - Meades Ranch - Heath,A,3,154.062,154.061,1.00001,1.410,0.78,1.261,0.62,False,2.461625e-14,ok
+US 39th parallel,Wilson - Meades Ranch - Golden Belt,A,3,342.840,342.839,1.00000,1.220,1.74,1.261,1.38,False,2.461622e-14,ok
+US 39th parallel,Bunker Hill - Meades Ranch - Wilson,A,3,376.188,376.187,1.00000,2.820,1.91,1.261,1.52,False,2.461642e-14,ok
+US 39th parallel,Waldo - Meades Ranch - Wilson,A,3,513.835,513.834,1.00000,2.020,2.61,1.261,2.07,True,2.461587e-14,ok
+US 39th parallel,Waldo - Meades Ranch - Bunker Hill,A,3,442.667,442.666,1.00000,2.150,2.25,1.261,1.78,False,2.461585e-14,ok
+US 39th parallel,Bunker Hill - Waldo - Wilson,A,3,305.020,305.019,1.00000,2.950,1.55,1.261,1.23,False,2.461653e-14,ok
+US 39th parallel,Blue Hill - Waldo - Bunker Hill,A,3,490.191,490.190,1.00000,2.660,2.49,1.261,1.97,False,2.461631e-14,ok
+US 39th parallel,Blue Hill - Meades Ranch - Bunker Hill,A,3,756.414,756.413,1.00000,3.860,3.84,1.261,3.05,True,2.461620e-14,ok
+US 39th parallel,Waldo - Meades Ranch - Blue Hill,A,3,176.443,176.442,1.00000,0.950,0.9,1.261,0.71,False,2.461564e-14,ok
+US 39th parallel,Allen - Waldo - Bunker Hill,A,3,262.410,262.409,1.00000,2.790,1.33,1.261,1.06,False,2.461660e-14,ok
+US 39th parallel,Allen - Blue Hill - Waldo,A,3,401.838,401.837,1.00000,0.420,2.04,1.261,1.62,False,2.461639e-14,ok
+US 39th parallel,Allen - Blue Hill - Bunker Hill,A,3,174.056,174.056,1.00000,0.550,0.88,1.261,0.70,False,2.461694e-14,ok
+US 39th parallel,Fairmount - Blue Hill - Bunker Hill,A,3,532.533,532.532,1.00000,2.820,2.7,1.261,2.15,True,2.461723e-14,ok
+US 39th parallel,Fairmount - Blue Hill - Allen,A,3,265.952,265.951,1.00000,0.080,1.35,1.261,1.07,False,2.461731e-14,ok
+US 39th parallel,Allen - Bunker Hill - Fairmount,A,3,92.526,92.525,1.00000,2.190,0.47,1.261,0.37,False,2.461752e-14,ok
+US 39th parallel,Hays - Blue Hill - Fairmount,A,3,285.636,285.635,1.00000,-0.460,1.45,1.261,1.15,False,2.461715e-14,ok
+US 39th parallel,Hays - Blue Hill - Allen,A,3,203.573,203.572,1.00000,-0.800,1.03,1.261,0.82,False,2.461686e-14,ok
+US 39th parallel,Fairmount - Hays - Allen,A,3,348.015,348.014,1.00000,0.420,1.77,1.261,1.40,False,2.461744e-14,ok
+US 39th parallel,La Crosse - Hays - Fairmount,A,3,410.745,410.744,1.00000,4.310,2.09,1.261,1.65,False,2.461788e-14,ok
+US 39th parallel,La Crosse - Blue Hill - Fairmount,A,3,430.770,430.769,1.00000,2.250,2.19,1.261,1.74,False,2.461775e-14,ok
+US 39th parallel,Hays - Blue Hill - La Crosse,A,3,265.610,265.610,1.00000,1.600,1.35,1.261,1.07,False,2.461730e-14,ok
+US 39th parallel,Smoky Hill - Hays - La Crosse,A,3,430.113,430.113,1.00000,0.590,2.18,1.261,1.73,False,2.461778e-14,ok
+US 39th parallel,Smoky Hill - Hays - Fairmount,A,3,561.262,561.261,1.00000,4.150,2.85,1.261,2.26,True,2.461763e-14,ok
+US 39th parallel,Smoky Hill - Fairmount - La Crosse,A,3,279.596,279.595,1.00000,0.750,1.42,1.261,1.13,False,2.461823e-14,ok
+US 39th parallel,Trego - Hays - Smoky Hill,A,3,310.971,310.970,1.00000,1.320,1.48,1.261,1.25,False,2.461721e-14,ok
+US 39th parallel,Skaggs - Trego - Smoky Hill,A,3,200.975,200.974,1.00000,1.050,1.02,1.261,0.81,False,2.461769e-14,ok
+US 39th parallel,Skaggs - Smoky Hill - La Crosse,A,3,223.749,223.749,1.00000,1.390,1.14,1.261,0.90,False,2.461826e-14,ok
+US 39th parallel,Big Creek - Trego - Skaggs,A,3,327.695,327.694,1.00000,1.800,1.66,1.261,1.32,False,2.461731e-14,ok
+US 39th parallel,Schmidt - Trego - Skaggs,A,3,371.610,371.609,1.00000,-0.290,1.89,1.261,1.50,False,2.461775e-14,ok
+US 39th parallel,Schmidt - Big Creek - Skaggs,A,3,363.374,363.373,1.00000,0.940,1.85,1.261,1.46,False,2.461769e-14,ok
+US 39th parallel,Big Creek - Trego - Schmidt,A,3,319.458,319.458,1.00000,3.030,1.62,1.261,1.29,False,2.461724e-14,ok
+US 39th parallel,Indian Creek - Big Creek - Schmidt,A,3,592.156,592.156,1.00000,3.500,3.0,1.261,2.39,True,2.461730e-14,ok
+US 39th parallel,Canyon - Big Creek - Schmidt,A,3,400.329,400.329,1.00000,2.160,2.03,1.261,1.61,False,2.461769e-14,ok
+US 39th parallel,Canyon - Indian Creek - Schmidt,A,3,395.755,395.754,1.00000,3.750,2.01,1.261,1.59,False,2.461781e-14,ok
+US 39th parallel,Indian Creek - Big Creek - Canyon,A,3,587.581,587.581,1.00000,5.090,2.98,1.261,2.37,True,2.461737e-14,ok
+US 39th parallel,Beaver - Indian Creek - Canyon,A,3,419.572,419.571,1.00000,2.090,2.13,1.261,1.69,False,2.461776e-14,ok
+US 39th parallel,Monument - Indian Creek - Canyon,A,3,408.098,408.097,1.00000,1.660,2.07,1.261,1.64,False,2.461743e-14,ok
+US 39th parallel,Monument - Indian Creek - Beaver,A,3,342.656,342.655,1.00000,2.190,1.74,1.261,1.38,False,2.461730e-14,ok
+US 39th parallel,Beaver - Monument - Canyon,A,3,354.129,354.129,1.00000,2.620,1.8,1.261,1.43,False,2.461770e-14,ok
+US 39th parallel,Gopher - Monument - Beaver,A,3,221.080,221.080,1.00000,1.760,1.12,1.261,0.89,False,2.461707e-14,ok
+US 39th parallel,Sheridan - Monument - Beaver,A,3,401.283,401.283,1.00000,4.240,2.04,1.261,1.62,False,2.461732e-14,ok
+US 39th parallel,Sheridan - Gopher - Beaver,A,3,439.978,439.978,1.00000,3.550,2.24,1.261,1.77,False,2.461714e-14,ok
+US 39th parallel,Gopher - Monument - Sheridan,A,3,259.776,259.775,1.00000,1.070,1.32,1.261,1.05,False,2.461681e-14,ok
+US 39th parallel,Teeters Hill - Gopher - Sheridan,A,3,279.136,279.135,1.00000,0.850,1.42,1.261,1.12,False,2.461649e-14,ok
+US 39th parallel,Wallace Bluffs - Gopher - Sheridan,A,3,135.213,135.213,1.00000,1.030,0.69,1.261,0.54,False,2.461691e-14,ok
+US 39th parallel,Wallace Bluffs - Teeters Hill - Sheridan,A,3,240.787,240.786,1.00000,1.020,1.22,1.261,0.97,False,2.461675e-14,ok
+US 39th parallel,Teeters Hill - Gopher - Wallace Bluffs,A,3,384.709,384.708,1.00000,0.840,1.95,1.261,1.55,False,2.461651e-14,ok
+US 39th parallel,Turtle - Teeters Hill - Wallace Bluffs,A,3,276.052,276.051,1.00000,3.410,1.4,1.261,1.11,False,2.461645e-14,ok
+US 39th parallel,Turtle - Teeters Hill - Sheridan,A,3,318.247,318.246,1.00000,2.560,1.61,1.261,1.28,False,2.461643e-14,ok
+US 39th parallel,Turtle - Sheridan - Wallace Bluffs,A,3,198.592,198.592,1.00000,1.870,1.01,1.261,0.80,False,2.461685e-14,ok
+US 39th parallel,Curlew - Turtle - Wallace Bluffs,A,3,173.277,173.276,1.00000,0.320,0.87,1.261,0.70,False,2.461689e-14,ok
+US 39th parallel,Curlew - Turtle - Teeters Hill,A,3,237.696,237.696,1.00000,3.140,1.21,1.261,0.96,False,2.461647e-14,ok
+US 39th parallel,Curlew - Teeters Hill - Wallace Bluffs,A,3,211.632,211.631,1.00000,0.590,1.07,1.261,0.85,False,2.461679e-14,ok
+US 39th parallel,McLane - Turtle - Curlew,A,3,181.002,181.001,1.00000,1.250,0.92,1.261,0.73,False,2.461654e-14,ok
+US 39th parallel,McLane - Turtle - Wallace Bluffs,A,3,162.594,162.594,1.00000,1.210,0.83,1.261,0.66,False,2.461653e-14,ok
+US 39th parallel,McLane - Wallace Bluffs - Curlew,A,3,191.684,191.683,1.00000,0.360,0.97,1.261,0.77,False,2.461687e-14,ok
+US 39th parallel,Arapahoe - McLane - Curlew,A,3,352.679,352.678,1.00000,1.250,1.79,1.261,1.42,False,2.461702e-14,ok
+US 39th parallel,Arapahoe - McLane - Turtle,,3,,269.054,,,1.37,1.261,,False,2.461668e-14,ok
+US 39th parallel,Arapahoe - Turtle - Curlew,,3,,264.625,,,1.34,1.261,,False,2.461704e-14,ok
+US 39th parallel,Monotony - McLane - Arapahoe,A,3,362.152,362.151,1.00000,0.480,1.84,1.261,1.46,False,2.461667e-14,ok
+US 39th parallel,Monotony - McLane - Curlew,A,3,264.583,264.582,1.00000,1.420,1.34,1.261,1.07,False,2.461653e-14,ok
+US 39th parallel,Monotony - Curlew - Arapahoe,A,3,450.248,450.247,1.00000,0.310,2.29,1.261,1.81,False,2.461703e-14,ok
+US 39th parallel,Cheyenne Wells - Monotony - Arapahoe,A,3,248.095,248.095,1.00000,1.060,1.26,1.261,1.00,False,2.461682e-14,ok
+US 39th parallel,First View - Monotony - Arapahoe,A,3,551.315,551.314,1.00000,1.850,2.8,1.261,2.22,True,2.461711e-14,ok
+US 39th parallel,First View - Cheyenne Wells - Arapahoe,A,3,360.179,360.178,1.00000,1.960,1.83,1.261,1.45,False,2.461726e-14,ok
+US 39th parallel,Cheyenne Wells - Monotony - First View,A,3,56.959,56.958,1.00001,1.170,0.29,1.261,0.23,False,2.461677e-14,ok
+US 39th parallel,Landsman - Monotony - First View,A,3,263.240,263.239,1.00000,2.910,1.34,1.261,1.06,False,2.461677e-14,ok
+US 39th parallel,Landsman - Monotony - Cheyenne Wells,A,3,68.265,68.265,1.00000,-2.500,0.35,1.261,0.28,False,2.461648e-14,ok
+US 39th parallel,Landsman - Cheyenne Wells - First View,A,3,138.017,138.016,1.00000,4.240,0.7,1.261,0.56,False,2.461692e-14,ok
+US 39th parallel,Kit Carson - Landsman - First View,A,3,246.613,246.612,1.00000,-0.020,1.25,1.261,0.99,False,2.461739e-14,ok
+US 39th parallel,Eureka - Landsman - First View,A,3,196.479,196.478,1.00000,0.580,1.0,1.261,0.79,False,2.461687e-14,ok
+US 39th parallel,Eureka - Landsman - Kit Carson,A,3,364.735,364.734,1.00000,1.520,1.85,1.261,1.47,False,2.461704e-14,ok
+US 39th parallel,Kit Carson - Eureka - First View,A,3,414.869,414.868,1.00000,0.920,2.11,1.261,1.67,False,2.461733e-14,ok
+US 39th parallel,Aroya - Eureka - Kit Carson,A,3,427.038,427.037,1.00000,1.140,2.17,1.261,1.72,False,2.461732e-14,ok
+US 39th parallel,Overland - Eureka - Kit Carson,A,3,407.449,407.448,1.00000,3.660,2.07,1.261,1.64,False,2.461687e-14,ok
+US 39th parallel,Overland - Eureka - Aroya,A,3,353.427,353.426,1.00000,2.790,1.79,1.261,1.42,False,2.461668e-14,ok
+US 39th parallel,Aroya - Overland - Kit Carson,A,3,373.015,373.014,1.00000,0.270,1.89,1.261,1.50,False,2.461720e-14,ok
+US 39th parallel,Hugo - Overland - Aroya,A,3,390.697,390.696,1.00000,-0.230,1.98,1.261,1.57,False,2.461650e-14,ok
+US 39th parallel,Adobe - Overland - Aroya,A,3,418.285,418.285,1.00000,2.400,2.12,1.261,1.69,False,2.461725e-14,ok
+US 39th parallel,Adobe - Hugo - Aroya,A,3,689.805,689.806,1.00000,5.790,3.5,1.261,2.78,True,2.461718e-14,ok
+US 39th parallel,Hugo - Overland - Adobe,A,3,662.217,662.217,1.00000,3.160,3.36,1.261,2.67,True,2.461673e-14,ok
+US 39th parallel,Square Bluffs - Hugo - Adobe,A,3,560.072,560.071,1.00000,6.760,2.84,1.261,2.26,True,2.461708e-14,ok
+US 39th parallel,Holt - Hugo - Square Bluffs,A,3,436.601,436.600,1.00000,-0.630,2.22,1.261,1.76,False,2.461640e-14,ok
+US 39th parallel,Holcolm Hills - Holt - Square Bluffs,A,3,334.934,334.933,1.00000,0.110,1.7,1.261,1.35,False,2.461654e-14,ok
+US 39th parallel,Cramers Gulch - Square Bluffs - Adobe,A,3,429.584,429.583,1.00000,-0.990,2.18,1.261,1.73,False,2.461799e-14,ok
+US 39th parallel,Big Springs - Square Bluffs - Cramers Gulch,A,3,479.876,479.875,1.00000,2.540,2.44,1.261,1.93,False,2.461785e-14,ok
+US 39th parallel,Holcolm Hills - Square Bluffs - Big Springs,A,3,542.788,542.787,1.00000,3.190,2.76,1.261,2.19,True,2.461708e-14,ok
+US 39th parallel,Wasatch - Tushar - Mount Nebo,A,3,4262.711,4262.888,0.99996,22.325,21.643,1.261,17.17,True,2.461569e-14,ok
+US 39th parallel,Mount Ellen - Tushar - Wasatch,A,3,6760.840,6761.151,0.99995,34.111,34.332,1.261,27.24,True,2.461887e-14,ok
+US 39th parallel,Patmos Head - Wasatch - Mount Nebo,A,3,4363.539,4363.665,0.99997,22.417,22.153,1.261,17.58,True,2.461365e-14,ok
+US 39th parallel,Patmos Head - Mount Ellen - Wasatch,A,3,6607.276,6607.596,0.99995,32.472,33.549,1.261,26.62,True,2.461683e-14,ok
+US 39th parallel,Mount Waas - Mount Ellen - Patmos Head,A,3,9592.349,9592.961,0.99994,48.581,48.709,1.261,38.65,True,2.461792e-14,ok
+US 39th parallel,Tavaputs - Mount Waas - Patmos Head,A,3,6228.232,6228.485,0.99996,30.352,31.622,1.261,25.09,True,2.461525e-14,ok
+US 39th parallel,Treasury Mountain - Mount Waas - Tavaputs,A,3,9718.370,9719.113,0.99992,49.531,49.345,1.261,39.16,True,2.461617e-14,ok
+US 39th parallel,Uncompahgre - Mount Waas - Tavaputs,A,3,9088.653,9089.385,0.99992,45.494,46.152,1.261,36.62,True,2.461794e-14,ok
+US 39th parallel,Uncompahgre - Mount Waas - Treasury Mountain,A,3,8897.779,8898.424,0.99993,44.951,45.184,1.261,35.85,True,2.461892e-14,ok
+US 39th parallel,Treasury Mountain - Uncompahgre - Tavaputs,A,3,9527.353,9528.152,0.99992,48.988,48.378,1.261,38.39,True,2.461705e-14,ok
+US 39th parallel,Uncompahgre - Mount Ellen - Mount Waas,A,3,7008.037,7008.985,0.99986,36.064,35.592,1.261,28.24,True,2.462059e-14,ok
+US 39th parallel,Mount Ouray - Uncompahgre - Treasury Mountain,A,3,5032.400,5032.560,0.99997,26.159,25.554,1.261,20.28,True,2.461914e-14,ok
+US 39th parallel,Mount Elbert - Uncompahgre - Treasury Mountain,A,3,2769.893,2769.983,0.99997,15.420,14.064,1.261,11.16,True,2.461784e-14,ok
+US 39th parallel,Mount Elbert - Mount Ouray - Treasury Mountain,A,3,2292.257,2292.291,0.99999,13.527,11.639,1.261,9.24,True,2.461718e-14,ok
+US 39th parallel,Mount Ouray - Uncompahgre - Mount Elbert,A,3,4554.700,4554.867,0.99996,24.266,23.128,1.261,18.35,True,2.461895e-14,ok
+US 39th parallel,Bison - Mount Ouray - Mount Elbert,A,3,3288.178,3288.245,0.99998,15.692,16.695,1.261,13.25,True,2.461676e-14,ok
+US 39th parallel,Pikes Peak - Mount Ouray - Mount Elbert,A,3,4404.086,4404.217,0.99997,20.933,22.362,1.261,17.74,True,2.461751e-14,ok
+US 39th parallel,Pikes Peak - Mount Ouray - Bison,A,3,3176.783,3176.858,0.99998,16.471,16.13,1.261,12.80,True,2.461728e-14,ok
+US 39th parallel,Bison - Pikes Peak - Mount Elbert,A,3,2060.842,2060.886,0.99998,11.230,10.463,1.261,8.30,True,2.461597e-14,ok
+US 39th parallel,Plateau - Mount Ouray - Pikes Peak,A,3,3535.703,3535.825,0.99997,18.705,17.954,1.261,14.25,True,2.461887e-14,ok
+US 39th parallel,Divide - Pikes Peak - Bison,A,3,1520.812,1520.824,0.99999,6.770,7.721,1.261,6.13,True,2.461606e-14,ok
+US 39th parallel,Big Springs - Plateau - Pikes Peak,A,3,1502.735,1502.745,0.99999,9.941,7.63,1.261,6.05,True,2.461825e-14,ok
+US 39th parallel,Big Springs - Pikes Peak - Divide,A,3,1103.399,1103.403,1.00000,5.415,5.602,1.261,4.45,True,2.461698e-14,ok
+US 39th parallel,Plateau - Corral Bluffs - Big Springs,,3,,762.123,,,3.87,1.261,,False,2.461820e-14,ok
+US 39th parallel,Mount Lola - Mount Diablo - Mount Helena,A,3,11271.873,11273.037,0.99990,57.778,57.243,1.261,45.41,True,2.461825e-14,ok
+US 39th parallel,Round Top - Mount Diablo - Mount Helena,A,3,10069.465,10070.452,0.99990,50.845,51.14,1.261,40.57,True,2.461969e-14,ok
+US 39th parallel,Round Top - Mount Diablo - Mount Lola,A,3,8525.442,8526.203,0.99991,43.549,43.295,1.261,34.35,True,2.461826e-14,ok
+US 39th parallel,Mount Lola - Round Top - Mount Helena,A,3,9727.776,9728.788,0.99990,50.482,49.398,1.261,39.19,True,2.461678e-14,ok
+US 39th parallel,Mocho - Mount Tamalpais - Mount Diablo,A,3,1267.034,1267.053,0.99999,6.160,6.435,1.261,5.10,True,2.462330e-14,ok
+US 39th parallel,Mocho - Mount Diablo - Round Top,A,3,5133.657,5134.034,0.99993,26.175,26.074,1.261,20.68,True,2.462192e-14,ok
+US 39th parallel,Mount Conness - Mount Diablo - Round Top,A,3,9027.985,9028.855,0.99990,45.793,45.852,1.261,36.37,True,2.462100e-14,ok
+US 39th parallel,Mount Conness - Mocho - Round Top,A,3,9199.950,9200.748,0.99991,46.432,46.726,1.261,37.07,True,2.462176e-14,ok
+US 39th parallel,Mocho - Mount Diablo - Mount Conness,A,3,5305.414,5305.926,0.99990,26.814,26.948,1.261,21.38,True,2.462322e-14,ok
+US 39th parallel,Mount Como - Round Top - Mount Lola,A,3,2575.126,2575.165,0.99998,12.143,13.075,1.261,10.38,True,2.461612e-14,ok
+US 39th parallel,Pah-Rah - Mount Como - Mount Lola,A,3,3292.105,3292.161,0.99998,16.825,16.714,1.261,13.26,True,2.461399e-14,ok
+US 39th parallel,Mount Grant - Round Top - Mount Como,A,3,2320.329,2320.369,0.99998,11.993,11.782,1.261,9.35,True,2.461774e-14,ok
+US 39th parallel,Mount Grant - Mount Como - Pah-Rah,,3,,2552.277,,,12.959,1.261,,False,2.461561e-14,ok
+US 39th parallel,Carson Sink - Mount Grant - Mount Como,A,3,4527.856,4527.998,0.99997,22.714,22.99,1.261,18.24,True,2.461601e-14,ok
+US 39th parallel,Carson Sink - Mount Como - Pah-Rah,A,3,4567.182,4567.312,0.99997,22.566,23.188,1.261,18.40,True,2.461371e-14,ok
+US 39th parallel,Pah-Rah - Carson Sink - Mount Grant,,3,,6543.033,,,33.219,1.261,,False,2.461456e-14,ok
+US 39th parallel,Mount Conness - Round Top - Mount Grant,A,3,3775.072,3775.162,0.99998,19.844,19.171,1.261,15.21,True,2.461972e-14,ok
+US 39th parallel,Toiyabe Dome - Mount Grant - Carson Sink,A,3,6310.331,6310.582,0.99996,32.455,32.041,1.261,25.42,True,2.461637e-14,ok
+US 39th parallel,Lone Mountain - Mount Grant - Toiyabe Dome,A,3,5448.140,5448.348,0.99996,26.624,27.667,1.261,21.95,True,2.461929e-14,ok
+US 39th parallel,Mount Conness - Mount Grant - Toiyabe Dome,,3,,3472.732,,,17.635,1.261,,False,2.461940e-14,ok
+US 39th parallel,Mount Conness - Mount Grant - Lone Mountain,A,3,5197.703,5197.946,0.99995,25.875,26.397,1.261,20.94,True,2.462091e-14,ok
+US 39th parallel,Mount Conness - Toiyabe Dome - Lone Mountain,,3,,7173.562,,,36.429,1.261,,False,2.462042e-14,ok
+US 39th parallel,Mount Callahan - Toiyabe Dome - Carson Sink,A,3,5135.115,5135.269,0.99997,26.722,26.071,1.261,20.69,True,2.461422e-14,ok
+US 39th parallel,Diamond Peak - Toiyabe Dome - Mount Callahan,A,3,4960.126,4960.320,0.99996,24.849,25.183,1.261,19.98,True,2.461422e-14,ok
+US 39th parallel,White Pine - Lone Mountain - Toiyabe Dome,A,3,7604.943,7605.451,0.99993,37.297,38.621,1.261,30.64,True,2.461976e-14,ok
+US 39th parallel,Diamond Peak - White Pine - Toiyabe Dome,A,3,10496.547,10497.291,0.99993,53.494,53.299,1.261,42.29,True,2.461684e-14,ok
+US 39th parallel,Wheeler Peak - White Pine - Diamond Peak,A,3,8248.941,8249.386,0.99995,41.375,41.885,1.261,33.23,True,2.461655e-14,ok
+US 39th parallel,Pioche - White Pine - Wheeler Peak,A,3,6606.359,6606.649,0.99996,34.396,33.548,1.261,26.62,True,2.461955e-14,ok
+US 39th parallel,Tushar - Pioche - Wheeler Peak,A,3,8505.963,8506.513,0.99994,41.638,43.195,1.261,34.27,True,2.461936e-14,ok
+US 39th parallel,Ibepah - Wheeler Peak - Diamond Peak,A,3,7189.947,7190.329,0.99995,36.726,36.504,1.261,28.97,True,2.461371e-14,ok
+US 39th parallel,Ibepah - Tushar - Wheeler Peak,A,3,8802.364,8803.061,0.99992,45.933,44.695,1.261,35.46,True,2.461590e-14,ok
+US 39th parallel,Mount Nebo - Tushar - Wheeler Peak,A,3,14525.756,14527.383,0.99989,75.332,73.759,1.261,58.52,True,2.461594e-14,ok
+US 39th parallel,Mount Nebo - Wheeler Peak - Ibepah,A,3,8610.426,8611.252,0.99990,42.957,43.716,1.261,34.69,True,2.461328e-14,"corrected: printed degree misprint, fixed from printed sides"
+US 39th parallel,Mount Nebo - Tushar - Ibepah,A,3,14334.163,14335.575,0.99990,72.356,72.78,1.261,57.75,True,2.461435e-14,ok
+US 39th parallel,Pilot Peak - Mount Nebo - Wheeler Peak,,3,,23709.736,,,120.355,1.261,,False,2.461103e-14,ok
+US 39th parallel,Ibepah - Wheeler Peak - Pilot Peak,,3,,2882.081,,,14.63,1.261,,False,2.461099e-14,ok
+US 39th parallel,Ross Mountain - Mount Helena - Mount Diablo,A,3,2422.445,2422.510,0.99997,13.641,12.301,1.261,9.76,True,2.461999e-14,ok
+US 39th parallel,Ross Mountain - Mount Helena - Mount Tamalpais,A,3,1784.939,1784.960,0.99999,9.656,9.064,1.261,7.19,True,2.461991e-14,ok
+US 39th parallel,Ross Mountain - Mount Diablo - Mount Tamalpais,A,3,1839.264,1839.306,0.99998,8.591,9.34,1.261,7.41,True,2.462138e-14,ok
+US 39th parallel,Snow Mountain West - Mount Helena - Ross Mountain,A,3,1764.561,1764.587,0.99999,8.510,8.96,1.261,7.11,True,2.461718e-14,ok
+US 39th parallel,Mount Sanhedrin - Snow Mountain West - Mount Helena,A,3,1055.399,1055.401,1.00000,8.790,5.36,1.261,4.25,True,2.461528e-14,ok
+US 39th parallel,Mount Sanhedrin - Snow Mountain West - Ross Mountain,A,3,1647.111,1647.130,0.99999,10.020,8.36,1.261,6.64,True,2.461559e-14,ok
+US 39th parallel,Mount Sanhedrin - Mount Helena - Ross Mountain,A,3,2356.268,2356.315,0.99998,9.740,11.96,1.261,9.49,True,2.461692e-14,ok
+US 39th parallel,Cold Spring - Mount Sanhedrin - Snow Mountain West,A,3,1079.824,1079.824,1.00000,6.490,5.48,1.261,4.35,True,2.461462e-14,ok
+US 39th parallel,Cold Spring - Mount Sanhedrin - Mount Helena,A,3,2837.253,2837.301,0.99998,14.000,14.4,1.261,11.43,True,2.461595e-14,ok
+US 39th parallel,Cold Spring - Snow Mountain West - Mount Helena,A,3,2812.842,2812.878,0.99999,16.300,14.28,1.261,11.33,True,2.461621e-14,ok
+US 39th parallel,Great Caspar - Mount Sanhedrin - Cold Spring,A,3,1117.779,1117.783,1.00000,4.150,5.67,1.261,4.50,True,2.461468e-14,ok
+US 39th parallel,Two Rock - Mount Sanhedrin - Cold Spring,A,3,509.545,509.546,1.00000,0.810,2.59,1.261,2.05,True,2.461465e-14,ok
+US 39th parallel,Two Rock - Cold Spring - Great Caspar,A,3,438.654,438.653,1.00000,0.520,2.23,1.261,1.77,False,2.461498e-14,ok
+US 39th parallel,Two Rock - Great Caspar - Mount Sanhedrin,A,3,169.584,169.584,1.00000,2.820,0.86,1.261,0.68,False,2.461404e-14,ok
+US 39th parallel,Paxton - Cold Spring - Great Caspar,A,3,429.399,429.399,1.00000,1.250,2.18,1.261,1.73,False,2.461540e-14,ok
+US 39th parallel,Paxton - Cold Spring - Two Rock,A,3,300.889,300.888,1.00000,0.340,1.53,1.261,1.21,False,2.461536e-14,ok
+US 39th parallel,Paxton - Cold Spring - Mount Sanhedrin,A,3,267.929,267.929,1.00000,0.810,1.36,1.261,1.08,False,2.461507e-14,ok
+US 39th parallel,Paxton - Great Caspar - Two Rock,A,3,310.143,310.142,1.00000,-0.390,1.57,1.261,1.25,False,2.461476e-14,ok
+US 39th parallel,Paxton - Great Caspar - Mount Sanhedrin,A,3,956.312,956.313,1.00000,3.710,4.86,1.261,3.85,True,2.461447e-14,ok
+US 39th parallel,Paxton - Two Rock - Mount Sanhedrin,A,3,476.587,476.587,1.00000,1.280,2.42,1.261,1.92,False,2.461443e-14,ok
+US 39th parallel,Fisher - Great Caspar - Two Rock,,3,,374.521,,,1.9,1.261,,False,2.461489e-14,ok
+US 39th parallel,Fisher - Great Caspar - Paxton,,3,,406.841,,,2.07,1.261,,False,2.461532e-14,ok
+US 39th parallel,Fisher - Great Caspar - Cold Spring,,3,,56.886,,,0.29,1.261,,False,2.461553e-14,ok
+US 39th parallel,Fisher - Two Rock - Paxton,A,3,342.463,342.462,1.00000,7.930,1.74,1.261,1.38,False,2.461528e-14,ok
+US 39th parallel,Fisher - Two Rock - Cold Spring,A,3,121.018,121.018,1.00000,7.100,0.61,1.261,0.49,False,2.461549e-14,ok
+US 39th parallel,Fisher - Paxton - Cold Spring,A,3,79.444,79.444,1.00000,-0.490,0.4,1.261,0.32,False,2.461592e-14,ok
+US Eastern Oblique,Trescott Rock - Howard - Cooper,A,3,492.472,492.463,1.00002,3.123,2.4979999999999998,1.397,1.79,False,2.458320e-14,ok
+US Eastern Oblique,Grand Manan - Howard - Cooper,,3,,925.471,,,4.694,1.397,,False,2.458322e-14,ok
+US Eastern Oblique,Grand Manan - Howard - Trescott Rock,,3,,170.497,,,0.865,1.397,,False,2.458366e-14,ok
+US Eastern Oblique,Grand Manan - Trescott Rock - Cooper,,3,,262.511,,,1.331,1.397,,False,2.458297e-14,ok
+US Eastern Oblique,Prince Regents Redoubt - Grand Manan - Trescott Rock,,3,,200.709,,,1.018,1.397,,False,2.458310e-14,ok
+US Eastern Oblique,Prince Regents Redoubt - Trescott Rock - Cooper,A,3,350.800,350.794,1.00002,-0.311,1.779,1.397,1.28,False,2.458264e-14,ok
+US Eastern Oblique,Prince Regents Redoubt - Grand Manan - Cooper,,3,,288.992,,,1.466,1.397,,False,2.458267e-14,ok
+US Eastern Oblique,Chamcook - Grand Manan - Cooper,,3,,785.393,,,3.983,1.397,,False,2.458227e-14,ok
+US Eastern Oblique,Chamcook - Grand Manan - Trescott Rock,,3,,447.624,,,2.27,1.397,,False,2.458271e-14,ok
+US Eastern Oblique,Chamcook - Trescott Rock - Cooper,A,3,600.291,600.280,1.00002,3.735,3.0439999999999996,1.397,2.18,True,2.458225e-14,ok
+US Eastern Oblique,Chamcook - Grand Manan - Prince Regents Redoubt,,3,,107.716,,,0.546,1.397,,False,2.458240e-14,ok
+US Eastern Oblique,Chamcook - Prince Regents Redoubt - Trescott Rock,A,3,139.201,139.199,1.00002,-0.094,0.706,1.397,0.51,False,2.458238e-14,ok
+US Eastern Oblique,Chamcook - Prince Regents Redoubt - Cooper,A,3,388.693,388.686,1.00002,3.952,1.971,1.397,1.41,False,2.458194e-14,ok
+US Eastern Oblique,Rye - Chamcook - Cooper,A,3,203.392,203.388,1.00002,-0.499,1.032,1.397,0.74,False,2.458155e-14,ok
+US Eastern Oblique,St. David - Chamcook - Cooper,A,3,301.421,301.416,1.00002,0.978,1.529,1.397,1.10,False,2.458131e-14,ok
+US Eastern Oblique,St. David - Chamcook - Rye,A,3,188.630,188.627,1.00002,0.451,0.9570000000000001,1.397,0.69,False,2.458104e-14,ok
+US Eastern Oblique,St. David - Cooper - Rye,A,3,90.601,90.600,1.00002,-1.026,0.45899999999999996,1.397,0.33,False,2.458131e-14,ok
+US Eastern Oblique,Calais Observatory - St. David - Chamcook,A,3,69.208,69.207,1.00002,1.592,0.35100000000000003,1.397,0.25,False,2.458093e-14,ok
+US Eastern Oblique,Ragged Mountain - Humpback (Maine) - Mount Desert,A,3,2035.184,2035.187,1.00000,9.870,10.32,1.397,7.40,True,2.458502e-14,ok
+US Eastern Oblique,Mount Harris - Humpback (Maine) - Mount Desert,A,3,2244.087,2244.081,1.00000,11.840,11.379999999999999,1.397,8.16,True,2.458415e-14,ok
+US Eastern Oblique,Mount Harris - Mount Desert - Ragged Mountain,A,3,1851.582,1851.573,1.00000,9.010,9.39,1.397,6.73,True,2.458540e-14,ok
+US Eastern Oblique,Mount Harris - Humpback (Maine) - Ragged Mountain,A,3,2060.463,2060.467,1.00000,10.980,10.45,1.397,7.49,True,2.458442e-14,ok
+US Eastern Oblique,Mount Blue - Mount Harris - Ragged Mountain,A,3,2379.656,2379.666,1.00000,12.160,12.07,1.397,8.65,True,2.458468e-14,ok
+US Eastern Oblique,Sabattus - Mount Harris - Ragged Mountain,A,3,1865.126,1865.121,1.00000,9.380,9.46,1.397,6.78,True,2.458580e-14,ok
+US Eastern Oblique,Sabattus - Mount Blue - Mount Harris,A,3,3006.076,3006.085,1.00000,14.590,15.25,1.397,10.93,True,2.458481e-14,ok
+US Eastern Oblique,Sabattus - Mount Blue - Ragged Mountain,A,3,2491.531,2491.540,1.00000,11.810,12.64,1.397,9.06,True,2.458568e-14,ok
+US Eastern Oblique,Mount Pleasant - Mount Blue - Ragged Mountain,A,3,4793.118,4793.212,0.99998,24.800,24.31,1.397,17.43,True,2.458591e-14,ok
+US Eastern Oblique,Mount Pleasant - Mount Blue - Sabattus,A,3,2070.307,2070.301,1.00000,10.570,10.5,1.397,7.53,True,2.458604e-14,ok
+US Eastern Oblique,Mount Pleasant - Sabattus - Ragged Mountain,A,3,231.376,231.371,1.00002,2.420,1.174,1.397,0.84,False,2.458703e-14,ok
+US Eastern Oblique,Mount Independence - Mount Pleasant - Sabattus,A,3,1149.106,1149.095,1.00001,6.680,5.83,1.397,4.18,True,2.458790e-14,ok
+US Eastern Oblique,Mount Independence - Mount Blue - Sabattus,A,3,1078.573,1078.574,1.00000,6.300,5.470000000000001,1.397,3.92,True,2.458655e-14,ok
+US Eastern Oblique,Mount Independence - Mount Pleasant - Mount Blue,A,3,2140.815,2140.823,1.00000,10.950,10.86,1.397,7.79,True,2.458678e-14,ok
+US Eastern Oblique,Mount Washington - Mount Blue - Mount Pleasant,,3,,2015.901,,,10.23,1.397,,False,2.458580e-14,ok
+US Eastern Oblique,Gunstock - Mount Pleasant - Mount Independence,A,3,1795.002,1794.999,1.00000,7.110,9.11,1.397,6.53,True,2.458910e-14,"corrected: printed degree misprint, fixed from printed sides"
+US Eastern Oblique,Mount Washington - Mount Pleasant - Gunstock,A,3,1680.843,1684.597,0.99777,7.120,8.54,1.397,6.11,True,2.458812e-14,ok
+US Eastern Oblique,Agamenticus - Gunstock - Mount Independence,A,3,2125.074,2125.072,1.00000,11.980,10.78,1.397,7.73,True,2.459064e-14,ok
+US Eastern Oblique,Agamenticus - Mount Pleasant - Mount Independence,A,3,1647.715,1647.711,1.00000,6.340,8.36,1.397,5.99,True,2.458967e-14,ok
+US Eastern Oblique,Agamenticus - Gunstock - Mount Pleasant,A,3,2272.359,2272.360,1.00000,12.750,11.53,1.397,8.26,True,2.459013e-14,ok
+US Eastern Oblique,Unkonoonuc - Gunstock - Agamenticus,A,3,1923.454,1923.450,1.00000,9.120,9.76,1.397,7.00,True,2.459213e-14,ok
+US Eastern Oblique,Thompson - Gunstock - Agamenticus,A,3,1912.436,1912.446,0.99999,10.090,9.7,1.397,6.96,True,2.459285e-14,ok
+US Eastern Oblique,Thompson - Unkonoonuc - Agamenticus,A,3,2443.531,2443.534,1.00000,13.450,12.399999999999999,1.397,8.89,True,2.459387e-14,ok
+US Eastern Oblique,Unkonoonuc - Gunstock - Thompson,A,3,2454.520,2454.538,0.99999,12.480,12.450000000000001,1.397,8.93,True,2.459331e-14,ok
+US Eastern Oblique,Monadnock - Gunstock - Unkonoonuc,A,3,1143.396,1143.395,1.00000,5.570,5.8,1.397,4.16,True,2.459283e-14,ok
+US Eastern Oblique,Wachusett - Gunstock - Thompson,A,3,5132.078,5132.190,0.99998,26.650,26.04,1.397,18.67,True,2.459425e-14,ok
+US Eastern Oblique,Wachusett - Unkonoonuc - Thompson,A,3,2434.021,2434.032,1.00000,12.080,12.350000000000001,1.397,8.85,True,2.459528e-14,ok
+US Eastern Oblique,Wachusett - Gunstock - Unkonoonuc,A,3,243.621,243.620,1.00000,2.090,1.236,1.397,0.89,False,2.459354e-14,ok
+US Eastern Oblique,Monadnock - Gunstock - Wachusett,A,3,1900.442,1900.463,0.99999,9.170,9.64,1.397,6.91,True,2.459377e-14,ok
+US Eastern Oblique,Wachusett - Monadnock - Unkonoonuc,A,3,1000.696,1000.688,1.00001,5.690,5.08,1.397,3.64,True,2.459480e-14,ok
+US Eastern Oblique,Blue Hill - Unkonoonuc - Thompson,A,3,2211.481,2211.490,1.00000,11.910,11.22,1.397,8.04,True,2.459581e-14,ok
+US Eastern Oblique,Blue Hill - Wachusett - Thompson,A,3,1900.924,1900.931,1.00000,10.020,9.65,1.397,6.91,True,2.459675e-14,ok
+US Eastern Oblique,Wachusett - Unkonoonuc - Blue Hill,A,3,2123.469,2123.474,1.00000,10.190,10.78,1.397,7.72,True,2.459604e-14,ok
+US Eastern Oblique,Beaconpole - Wachusett - Blue Hill,A,3,1195.847,1195.843,1.00000,4.520,6.07,1.397,4.35,True,2.459793e-14,ok
+US Eastern Oblique,Manomet - Blue Hill - Thompson,A,3,1461.477,1461.474,1.00000,7.170,7.42,1.397,5.32,True,2.459783e-14,ok
+US Eastern Oblique,Manomet - Beaconpole - Blue Hill,A,3,960.411,960.407,1.00000,6.400,4.87,1.397,3.49,True,2.459901e-14,ok
+US Eastern Oblique,Copecut - Beaconpole - Manomet,A,3,964.208,964.204,1.00000,4.270,4.89,1.397,3.51,True,2.459995e-14,ok
+US Eastern Oblique,Copecut - Beaconpole - Blue Hill,A,3,812.627,812.622,1.00001,4.960,4.12,1.397,2.96,True,2.459940e-14,ok
+US Eastern Oblique,Copecut - Blue Hill - Manomet,A,3,1111.995,1111.989,1.00001,5.710,5.64,1.397,4.04,True,2.459953e-14,ok
+US Eastern Oblique,Great Meadow - Beaconpole - Blue Hill,A,3,411.862,411.857,1.00001,3.240,2.09,1.397,1.50,False,2.459910e-14,ok
+US Eastern Oblique,Great Meadow - Blue Hill - Copecut,A,3,316.066,316.064,1.00001,2.700,1.6,1.397,1.15,False,2.459962e-14,ok
+US Eastern Oblique,Great Meadow - Copecut - Beaconpole,A,3,84.702,84.701,1.00002,-0.980,0.42999999999999994,1.397,0.31,False,2.460004e-14,ok
+US Eastern Oblique,Massachusetts North Base - Great Meadow - Beaconpole,A,3,190.675,190.672,1.00001,2.250,0.97,1.397,0.69,False,2.459941e-14,ok
+US Eastern Oblique,Massachusetts South Base - Beaconpole - Massachusetts North Base,A,3,129.131,129.129,1.00001,0.550,0.66,1.397,0.47,False,2.459934e-14,ok
+US Eastern Oblique,Mount Tom - Monadnock - Wachusett,A,3,1546.208,1546.206,1.00000,6.230,7.85,1.397,5.62,True,2.459622e-14,ok
+US Eastern Oblique,Bald Hill (Tolland Co.) - Monadnock - Wachusett,A,3,1051.297,1051.299,1.00000,3.990,5.33,1.397,3.82,True,2.459673e-14,ok
+US Eastern Oblique,Mount Tom - Monadnock - Bald Hill (Tolland Co.),A,3,1940.997,1941.006,1.00000,10.950,9.85,1.397,7.06,True,2.459721e-14,ok
+US Eastern Oblique,Bald Hill (Tolland Co.) - Mount Tom - Wachusett,A,3,1446.102,1446.098,1.00000,8.710,7.34,1.397,5.26,True,2.459792e-14,ok
+US Eastern Oblique,Box Hill - Mount Tom - Bald Hill (Tolland Co.),A,3,677.547,677.542,1.00001,4.400,3.4399999999999995,1.397,2.46,True,2.459924e-14,ok
+US Eastern Oblique,Ivy - Bald Hill (Tolland Co.) - Box Hill,A,3,705.366,705.366,1.00000,3.800,3.58,1.397,2.57,True,2.459994e-14,ok
+US Eastern Oblique,Sandford - Mount Tom - Box Hill,A,3,1310.698,1310.700,1.00000,6.760,6.65,1.397,4.77,True,2.460021e-14,ok
+US Eastern Oblique,Sandford - Ivy - Box Hill,A,3,1364.430,1364.425,1.00000,7.340,6.93,1.397,4.96,True,2.460092e-14,ok
+US Eastern Oblique,Wooster - Ivy - Sandford,A,3,1165.474,1165.470,1.00000,4.920,5.91,1.397,4.24,True,2.460178e-14,ok
+US Eastern Oblique,Round Hill - Bald Hill (Fairfield Co.) - West Hills,A,3,390.662,390.913,0.99936,4.460,1.98,1.397,1.42,False,2.460474e-14,ok
+US Eastern Oblique,Harrow - Bald Hill (Fairfield Co.) - West Hills,A,3,403.362,403.571,0.99948,3.140,2.04,1.397,1.47,False,2.460532e-14,ok
+US Eastern Oblique,Harrow - Round Hill - West Hills,A,3,308.147,308.102,1.00015,-1.210,1.56,1.397,1.12,False,2.460553e-14,ok
+US Eastern Oblique,Harrow - Round Hill - Bald Hill (Fairfield Co.),A,3,295.446,295.444,1.00001,0.100,1.5,1.397,1.07,False,2.460477e-14,ok
+US Eastern Oblique,Buttermilk - Round Hill - Harrow,A,3,193.735,193.733,1.00001,1.980,0.98,1.397,0.70,False,2.460496e-14,ok
+US Eastern Oblique,Weasel - Buttermilk - Harrow,A,3,734.343,734.339,1.00000,4.420,3.73,1.397,2.67,True,2.460540e-14,ok
+US Eastern Oblique,Beacon Hill - Weasel - Harrow,A,3,1304.397,1304.397,1.00000,7.360,6.62,1.397,4.74,True,2.460680e-14,ok
+US Eastern Oblique,Springfield - Harrow - Beacon Hill,A,3,1127.890,1127.889,1.00000,4.350,5.72,1.397,4.10,True,2.460715e-14,ok
+US Eastern Oblique,Mount Rose - Springfield - Beacon Hill,A,3,740.520,740.517,1.00000,4.330,3.75,1.397,2.69,True,2.460797e-14,ok
+US Eastern Oblique,Disboro - Springfield - Beacon Hill,,3,,417.894,,,2.12,1.397,,False,2.460820e-14,ok
+US Eastern Oblique,Disboro - Mount Rose - Beacon Hill,A,3,291.100,291.099,1.00001,1.650,1.48,1.397,1.06,False,2.460881e-14,ok
+US Eastern Oblique,Disboro - Mount Rose - Springfield,,3,,613.722,,,3.12,1.397,,False,2.460821e-14,ok
+US Eastern Oblique,Stony Hill - Mount Rose - Disboro,A,3,230.301,230.300,1.00001,0.640,1.17,1.397,0.84,False,2.460929e-14,ok
+US Eastern Oblique,Mount Holly - Mount Rose - Stony Hill,A,3,322.293,322.298,0.99998,0.330,1.6400000000000001,1.397,1.17,False,2.460975e-14,ok
+US Eastern Oblique,Newtown - Stony Hill - Mount Holly,A,3,317.236,317.238,0.99999,-1.740,1.61,1.397,1.15,False,2.460998e-14,ok
+US Eastern Oblique,Newtown - Mount Rose - Mount Holly,A,3,303.379,303.373,1.00002,0.480,1.53,1.397,1.10,False,2.460951e-14,ok
+US Eastern Oblique,Newtown - Mount Rose - Stony Hill,A,3,308.436,308.434,1.00001,2.550,1.56,1.397,1.12,False,2.460928e-14,ok
+US Eastern Oblique,Willowgrove - Newtown - Mount Holly,A,3,286.002,285.997,1.00002,3.950,1.45,1.397,1.04,False,2.460993e-14,ok
+US Eastern Oblique,Pine Hill - Willowgrove - Mount Holly,A,3,442.724,442.712,1.00003,0.950,2.25,1.397,1.61,False,2.461079e-14,ok
+US Eastern Oblique,Yard - Mount Holly - Pine Hill,A,3,552.274,552.267,1.00001,1.620,2.8,1.397,2.01,True,2.461111e-14,ok
+US Eastern Oblique,Lippincott - Yard - Pine Hill,A,3,409.347,409.345,1.00000,-0.490,2.08,1.397,1.49,False,2.461164e-14,ok
+US Eastern Oblique,Bethel - Pine Hill - Lippincott,A,3,252.944,252.943,1.00000,1.460,1.29,1.397,0.92,False,2.461188e-14,ok
+US Eastern Oblique,Bethel - Yard - Lippincott,A,3,167.604,167.603,1.00001,1.630,0.8500000000000001,1.397,0.61,False,2.461155e-14,ok
+US Eastern Oblique,Bethel - Yard - Pine Hill,A,3,324.006,324.005,1.00000,-0.310,1.6500000000000001,1.397,1.18,False,2.461141e-14,ok
+US Eastern Oblique,Burden - Bethel - Lippincott,A,3,201.060,201.059,1.00000,1.810,1.02,1.397,0.73,False,2.461239e-14,ok
+US Eastern Oblique,Meetinghouse Hill - Lippincott - Burden,A,3,360.474,360.473,1.00000,3.890,1.83,1.397,1.31,False,2.461264e-14,ok
+US Eastern Oblique,Buck - Meetinghouse Hill - Burden,A,3,288.990,288.988,1.00000,0.050,1.47,1.397,1.05,False,2.461298e-14,ok
+US Eastern Oblique,Principio - Meetinghouse Hill - Buck,A,3,228.930,228.929,1.00000,0.660,1.1600000000000001,1.397,0.83,False,2.461286e-14,ok
+US Eastern Oblique,Turkey Point - Principio - Buck,A,3,188.579,188.578,1.00000,1.460,0.96,1.397,0.69,False,2.461336e-14,ok
+US Eastern Oblique,Osbornes Ruin - Principio - Turkey Point,A,3,187.282,187.281,1.00000,1.850,0.95,1.397,0.68,False,2.461350e-14,ok
+US Eastern Oblique,Long Mountain - Humpback - Spear,A,3,795.357,795.363,0.99999,5.160,4.04,1.397,2.89,True,2.462420e-14,ok
+US Eastern Oblique,Tobacco Row - Humpback - Long Mountain,A,3,587.207,587.210,1.00000,2.440,2.98,1.397,2.14,True,2.462419e-14,ok
+US Eastern Oblique,Long Mountain - Tobacco Row - Spear,A,3,573.965,573.965,1.00000,3.490,2.92,1.397,2.09,True,2.462491e-14,ok
+US Eastern Oblique,Flat Top - Tobacco Row - Spear,A,3,242.175,242.176,0.99999,-0.170,1.23,1.397,0.88,False,2.462461e-14,ok
+US Eastern Oblique,Flat Top - Spear - Long Mountain,A,3,918.418,918.423,0.99999,5.610,4.67,1.397,3.34,True,2.462512e-14,ok
+US Eastern Oblique,Flat Top - Tobacco Row - Long Mountain,A,3,586.633,586.634,1.00000,1.950,2.98,1.397,2.13,True,2.462511e-14,ok
+US Eastern Oblique,Smith Mountain - Tobacco Row - Spear,A,3,1159.562,1159.577,0.99999,5.980,5.89,1.397,4.22,True,2.462542e-14,ok
+US Eastern Oblique,Smith Mountain - Spear - Long Mountain,A,3,205.825,205.825,1.00000,2.650,1.0499999999999998,1.397,0.75,False,2.462593e-14,ok
+US Eastern Oblique,Smith Mountain - Flat Top - Tobacco Row,A,3,851.209,851.216,0.99999,3.370,4.32,1.397,3.10,True,2.462563e-14,ok
+US Eastern Oblique,Smith Mountain - Tobacco Row - Long Mountain,A,3,791.432,791.436,0.99999,5.140,4.0200000000000005,1.397,2.88,True,2.462592e-14,ok
+US Eastern Oblique,Smith Mountain - Flat Top - Spear,A,3,1768.589,1768.616,0.99999,9.520,8.99,1.397,6.43,True,2.462563e-14,ok
+US Eastern Oblique,Smith Mountain - Flat Top - Long Mountain,A,3,1056.012,1056.017,1.00000,6.560,5.37,1.397,3.84,True,2.462613e-14,ok
+US Eastern Oblique,Cahas - Flat Top - Tobacco Row,A,3,398.298,398.303,0.99999,0.280,2.02,1.397,1.45,False,2.462543e-14,ok
+US Eastern Oblique,Cahas - Tobacco Row - Long Mountain,A,3,1345.647,1345.666,0.99999,5.960,6.84,1.397,4.89,True,2.462573e-14,ok
+US Eastern Oblique,Cahas - Flat Top - Long Mountain,A,3,1157.323,1157.334,0.99999,4.290,5.88,1.397,4.21,True,2.462594e-14,ok
+US Eastern Oblique,Cahas - Flat Top - Smith Mountain,A,3,962.277,962.282,0.99999,4.470,4.89,1.397,3.50,True,2.462646e-14,ok
+US Eastern Oblique,Cahas - Long Mountain - Smith Mountain,A,3,860.956,860.965,0.99999,6.740,4.37,1.397,3.13,True,2.462675e-14,ok
+US Eastern Oblique,Cahas - Tobacco Row - Smith Mountain,A,3,1415.177,1415.195,0.99999,7.560,7.1899999999999995,1.397,5.15,True,2.462625e-14,ok
+US Eastern Oblique,Buffalo - Flat Top - Smith Mountain,A,3,1993.807,1993.847,0.99998,9.060,10.129999999999999,1.397,7.25,True,2.462705e-14,ok
+US Eastern Oblique,Buffalo - Flat Top - Cahas,A,3,86.939,86.934,1.00006,-0.190,0.44,1.397,0.32,False,2.462686e-14,ok
+US Eastern Oblique,Buffalo - Cahas - Smith Mountain,A,3,944.619,944.630,0.99999,4.780,4.800000000000001,1.397,3.44,True,2.462767e-14,ok
+US Eastern Oblique,Moore - Flat Top - Smith Mountain,A,3,1614.056,1614.100,0.99997,8.430,8.2,1.397,5.87,True,2.462779e-14,ok
+US Eastern Oblique,Moore - Cahas - Flat Top,A,3,1080.740,1080.762,0.99998,8.440,5.49,1.397,3.93,True,2.462760e-14,ok
+US Eastern Oblique,Moore - Cahas - Smith Mountain,A,3,1732.548,1732.579,0.99998,12.400,8.8,1.397,6.30,True,2.462840e-14,ok
+US Eastern Oblique,Poore - Buffalo - Moore,A,3,2074.352,2074.397,0.99998,10.440,10.54,1.397,7.54,True,2.463078e-14,ok
+US Eastern Oblique,Young - Buffalo - Moore,A,3,1363.827,1363.858,0.99998,7.500,6.93,1.397,4.96,True,2.463135e-14,ok
+US Eastern Oblique,Poore - Buffalo - Young,A,3,2956.993,2957.081,0.99997,13.260,15.03,1.397,10.75,True,2.463199e-14,ok
+US Eastern Oblique,Poore - Moore - Young,A,3,2246.500,2246.542,0.99998,10.320,11.42,1.397,8.17,True,2.463272e-14,ok
+US Eastern Oblique,Rogers - Buffalo - Poore,A,3,3512.814,3512.909,0.99997,16.920,17.84,1.397,12.78,True,2.463030e-14,ok
+US Eastern Oblique,Roan High Bluff - Rogers - Poore,A,3,2936.620,2936.686,0.99998,13.560,14.92,1.397,10.68,True,2.463159e-14,ok
+US Eastern Oblique,Benn - Roan High Bluff - Poore,A,3,2500.846,2500.898,0.99998,9.070,12.71,1.397,9.10,True,2.463359e-14,ok
+US Eastern Oblique,King - Poore - Young,A,3,2385.946,2386.000,0.99998,8.820,12.129999999999999,1.397,8.68,True,2.463489e-14,ok
+US Eastern Oblique,Benn - Poore - Young,A,3,2007.775,2007.815,0.99998,12.050,10.2,1.397,7.30,True,2.463424e-14,ok
+US Eastern Oblique,Benn - Poore - King,A,3,1746.376,1746.410,0.99998,9.390,8.870000000000001,1.397,6.35,True,2.463521e-14,ok
+US Eastern Oblique,Benn - Young - King,A,3,2124.549,2124.595,0.99998,6.160,10.8,1.397,7.73,True,2.463577e-14,ok
+US Eastern Oblique,Wofford - Benn - King,A,3,1561.600,1561.624,0.99998,6.070,7.9399999999999995,1.397,5.68,True,2.463718e-14,ok
+US Eastern Oblique,Hogback - Benn - King,A,3,1828.537,1828.573,0.99998,10.540,9.29,1.397,6.65,True,2.463680e-14,ok
+US Eastern Oblique,Paris - Benn - King,A,3,2450.053,2450.119,0.99997,11.580,12.450000000000001,1.397,8.91,True,2.463721e-14,ok
+US Eastern Oblique,Wofford - Hogback - King,A,3,1115.108,1115.127,0.99998,6.060,5.67,1.397,4.06,True,2.463790e-14,ok
+US Eastern Oblique,Hogback - Benn - Wofford,A,3,1382.054,1382.075,0.99998,10.530,7.02,1.397,5.03,True,2.463725e-14,ok
+US Eastern Oblique,Paris - King - Wofford,A,3,551.661,551.676,0.99997,4.560,2.8,1.397,2.01,True,2.463831e-14,ok
+US Eastern Oblique,Paris - Hogback - Benn,A,3,482.022,482.032,0.99998,2.450,2.45,1.397,1.75,False,2.463728e-14,ok
+US Eastern Oblique,Paris - Hogback - King,A,3,1103.549,1103.578,0.99997,3.490,5.61,1.397,4.01,True,2.463793e-14,ok
+US Eastern Oblique,Paris - Benn - Wofford,A,3,1440.143,1440.170,0.99998,10.080,7.32,1.397,5.24,True,2.463767e-14,ok
+US Eastern Oblique,Paris - Hogback - Wofford,A,3,540.123,540.127,0.99999,2.000,2.75,1.397,1.96,False,2.463838e-14,ok
+US Eastern Oblique,Pinnacle - Hogback - Paris,A,3,438.940,438.944,0.99999,-0.480,2.23,1.397,1.60,False,2.463825e-14,ok
+US Eastern Oblique,Pinnacle - Hogback - Wofford,A,3,725.034,725.044,0.99999,0.220,3.69,1.397,2.64,True,2.463821e-14,ok
+US Eastern Oblique,Pinnacle - Wofford - Paris,A,3,254.025,254.026,0.99999,1.300,1.29,1.397,0.92,False,2.463863e-14,ok
+US Eastern Oblique,Mauldin - Hogback - Paris,A,3,186.772,186.774,0.99999,-1.780,0.95,1.397,0.68,False,2.463863e-14,ok
+US Eastern Oblique,Mauldin - Pinnacle - Hogback,A,3,557.075,557.081,0.99999,1.220,2.83,1.397,2.03,True,2.463846e-14,ok
+US Eastern Oblique,Mauldin - Pinnacle - Paris,A,3,304.909,304.911,0.99999,-0.090,1.55,1.397,1.11,False,2.463888e-14,ok
+US Eastern Oblique,Rabun - Pinnacle - Paris,A,3,371.034,371.041,0.99998,0.930,1.8900000000000001,1.397,1.35,False,2.463862e-14,ok
+US Eastern Oblique,Rabun - Paris - Mauldin,A,3,568.746,568.754,0.99999,-1.130,2.8899999999999997,1.397,2.07,True,2.463900e-14,ok
+US Eastern Oblique,Rabun - Pinnacle - Mauldin,A,3,634.877,634.884,0.99999,-0.110,3.2300000000000004,1.397,2.31,True,2.463883e-14,ok
+US Eastern Oblique,Currahee - Pinnacle - Paris,A,3,1138.053,1138.079,0.99998,4.780,5.79,1.397,4.14,True,2.463940e-14,ok
+US Eastern Oblique,Currahee - Pinnacle - Mauldin,A,3,956.638,956.655,0.99998,4.300,4.86,1.397,3.48,True,2.463962e-14,ok
+US Eastern Oblique,Currahee - Paris - Mauldin,A,3,123.487,123.486,1.00001,-0.570,0.63,1.397,0.45,False,2.463978e-14,ok
+US Eastern Oblique,Currahee - Rabun - Pinnacle,A,3,1205.500,1205.521,0.99998,4.860,6.13,1.397,4.38,True,2.463936e-14,ok
+US Eastern Oblique,Currahee - Rabun - Paris,A,3,1972.510,1972.559,0.99998,8.720,10.03,1.397,7.17,True,2.463953e-14,ok
+US Eastern Oblique,Currahee - Rabun - Mauldin,A,3,1527.265,1527.291,0.99998,9.280,7.76,1.397,5.55,True,2.463974e-14,ok
+US Eastern Oblique,Blood - Rabun - Currahee,A,3,1325.185,1325.205,0.99999,7.470,6.74,1.397,4.82,True,2.463989e-14,ok
+US Eastern Oblique,Skitt - Rabun - Currahee,A,3,760.664,760.674,0.99999,1.530,3.87,1.397,2.77,True,2.464031e-14,ok
+US Eastern Oblique,Blood - Rabun - Skitt,A,3,1003.760,1003.775,0.99999,6.670,5.1,1.397,3.65,True,2.463993e-14,ok
+US Eastern Oblique,Skitt - Blood - Currahee,A,3,439.239,439.244,0.99999,0.740,2.23,1.397,1.60,False,2.464072e-14,ok
+US Eastern Oblique,Sawnee - Blood - Currahee,A,3,1676.134,1676.165,0.99998,7.990,8.52,1.397,6.10,True,2.464120e-14,ok
+US Eastern Oblique,Sawnee - Skitt - Currahee,A,3,419.160,419.168,0.99998,2.870,2.13,1.397,1.52,False,2.464162e-14,ok
+US Eastern Oblique,Sawnee - Blood - Skitt,A,3,817.743,817.753,0.99999,4.380,4.16,1.397,2.97,True,2.464124e-14,ok
+US Eastern Oblique,Grassy - Blood - Skitt,A,3,746.696,746.705,0.99999,-0.160,3.8,1.397,2.72,True,2.464079e-14,ok
+US Eastern Oblique,Grassy - Skitt - Sawnee,A,3,792.336,792.345,0.99999,5.970,4.03,1.397,2.88,True,2.464170e-14,ok
+US Eastern Oblique,Grassy - Blood - Sawnee,A,3,721.289,721.297,0.99999,1.420,3.67,1.397,2.62,True,2.464128e-14,ok
+US Eastern Oblique,Carnes - Pine Log - Kenesaw,A,3,764.155,764.165,0.99999,2.988,3.885,1.397,2.78,True,2.464338e-14,ok
+US Eastern Oblique,Carnes - Pine Log - Sweat Mountain,A,3,795.569,795.579,0.99999,3.573,4.045,1.397,2.89,True,2.464321e-14,ok
+US Eastern Oblique,Carnes - Sweat Mountain - Kenesaw,A,3,213.683,213.686,0.99998,0.660,1.0859999999999999,1.397,0.78,False,2.464383e-14,ok
+US Eastern Oblique,Lavender - Pine Log - Kenesaw,A,3,1148.102,1148.121,0.99998,9.004,5.837,1.397,4.18,True,2.464279e-14,ok
+US Eastern Oblique,Lavender - Kenesaw - Carnes,A,3,710.206,710.217,0.99998,0.168,3.6109999999999998,1.397,2.58,True,2.464337e-14,ok
+US Eastern Oblique,Lavender - Pine Log - Carnes,A,3,1094.158,1094.173,0.99999,6.184,5.563000000000001,1.397,3.98,True,2.464276e-14,ok
+US Eastern Oblique,Johns - Grassy - Pine Log,A,3,857.547,857.560,0.99998,5.112,4.36,1.397,3.12,True,2.464133e-14,ok
+US Eastern Oblique,Lavender - Johns - Pine Log,A,3,999.956,999.970,0.99999,5.179,5.084,1.397,3.64,True,2.464163e-14,ok
+US Eastern Oblique,Indian - Lavender - Pine Log,A,3,968.119,968.136,0.99998,3.583,4.922,1.397,3.52,True,2.464269e-14,ok
+US Eastern Oblique,Indian - Johns - Pine Log,A,3,1897.258,1897.297,0.99998,8.463,9.646,1.397,6.90,True,2.464215e-14,ok
+US Eastern Oblique,Lavender - Johns - Indian,A,3,70.807,70.810,0.99996,0.299,0.36,1.397,0.26,False,2.464215e-14,ok
+US Eastern Oblique,Indian - Pine Log - Carnes,A,3,766.416,766.428,0.99998,3.352,3.896,1.397,2.79,True,2.464328e-14,ok
+US Eastern Oblique,Indian - Lavender - Carnes,A,3,640.384,640.391,0.99999,0.751,3.2560000000000002,1.397,2.33,True,2.464328e-14,ok
+US Eastern Oblique,Gulf Point - Johns - Pine Log,A,3,556.963,556.973,0.99998,0.539,2.832,1.397,2.03,True,2.464108e-14,ok
+US Eastern Oblique,Gulf Point - Pine Log - Lavender,C,3,604.196,1010.759,0.59776,6.558,5.139,1.397,3.68,True,2.464162e-14,ok
+US Eastern Oblique,Gulf Point - Johns - Lavender,A,3,567.758,567.763,0.99999,1.918,2.887,1.397,2.06,True,2.464108e-14,ok
+US Eastern Oblique,Gulf Point - Pine Log - Indian,A,3,2456.954,2457.011,0.99998,10.457,12.491,1.397,8.94,True,2.464215e-14,ok
+US Eastern Oblique,Gulf Point - Lavender - Indian,A,3,478.109,478.115,0.99999,0.316,2.431,1.397,1.74,False,2.464215e-14,ok
+US Eastern Oblique,Gulf Point - Johns - Indian,A,3,1116.670,1116.687,0.99998,2.533,5.677,1.397,4.06,True,2.464161e-14,ok
+US Eastern Oblique,Brandon - Lavender - Indian,A,3,736.457,736.466,0.99999,3.624,3.7439999999999998,1.397,2.68,True,2.464258e-14,ok
+US Eastern Oblique,Brandon - Gulf Point - Lavender,A,3,661.930,661.937,0.99999,2.198,3.365,1.397,2.41,True,2.464151e-14,ok
+US Eastern Oblique,Brandon - Gulf Point - Indian,A,3,920.274,920.287,0.99999,5.506,4.679,1.397,3.35,True,2.464203e-14,ok
+US Eastern Oblique,Indian - Pine Log - Kenesaw,,3,,1480.372,,,7.526,1.397,,False,2.464331e-14,ok
+US Eastern Oblique,Indian - Lavender - Kenesaw,,3,,1300.387,,,6.611000000000001,1.397,,False,2.464331e-14,ok
+US Eastern Oblique,Carnes - Indian - Kenesaw,,3,,50.222,,,0.255,1.397,,False,2.464389e-14,ok
+US Eastern Oblique,Aurora - Brandon - Indian,A,3,1179.655,1179.673,0.99998,5.230,6.0,1.397,4.29,True,2.464289e-14,ok
+US Eastern Oblique,Gunter - Gulf Point - Brandon,A,3,780.443,780.453,0.99999,3.130,3.97,1.397,2.84,True,2.464107e-14,ok
+US Eastern Oblique,Gunter - Brandon - Aurora,A,3,911.800,911.811,0.99999,2.820,4.63,1.397,3.32,True,2.464193e-14,ok
+US Eastern Oblique,Summit - Gunter - Aurora,A,3,653.036,653.044,0.99999,3.570,3.3200000000000003,1.397,2.38,True,2.464225e-14,ok
+US Eastern Oblique,Rowe - Gunter - Aurora,A,3,754.020,754.029,0.99999,4.650,3.83,1.397,2.74,True,2.464165e-14,ok
+US Eastern Oblique,Rowe - Gunter - Summit,A,3,605.664,605.671,0.99999,3.100,3.08,1.397,2.20,True,2.464155e-14,ok
+US Eastern Oblique,Summit - Rowe - Aurora,A,3,504.679,504.685,0.99999,2.020,2.57,1.397,1.84,False,2.464230e-14,ok
+US Eastern Oblique,Wilson - Rowe - Summit,A,3,525.335,525.340,0.99999,2.440,2.67,1.397,1.91,False,2.464182e-14,ok
+US Eastern Oblique,Wornock - Rowe - Summit,A,3,407.128,407.135,0.99998,4.950,2.07,1.397,1.48,False,2.464257e-14,ok
+US Eastern Oblique,Wornock - Wilson - Summit,A,3,586.274,586.280,0.99999,3.270,2.98,1.397,2.13,True,2.464279e-14,ok
+US Eastern Oblique,Wilson - Rowe - Wornock,A,3,704.477,704.486,0.99999,0.760,3.58,1.397,2.56,True,2.464219e-14,ok
+US Eastern Oblique,Wornock - Rowe - Aurora,A,3,1294.333,1294.353,0.99998,6.860,6.58,1.397,4.71,True,2.464267e-14,ok
+US Eastern Oblique,Wornock - Summit - Aurora,A,3,382.529,382.533,0.99999,-0.110,1.94,1.397,1.39,False,2.464327e-14,ok
+US Eastern Oblique,Cheehahaw - Aurora - Indian,A,3,2345.195,2345.251,0.99998,11.280,11.92,1.397,8.53,True,2.464450e-14,ok
+US Eastern Oblique,Cahaba - Aurora - Cheehahaw,A,3,1934.045,1934.089,0.99998,8.330,9.83,1.397,7.03,True,2.464500e-14,ok
+US Eastern Oblique,Cahaba - Wornock - Aurora,A,3,791.345,791.356,0.99999,3.240,4.0200000000000005,1.397,2.88,True,2.464409e-14,ok
+US Eastern Oblique,Alpine - Cahaba - Cheehahaw,A,3,810.560,810.574,0.99998,2.900,4.12,1.397,2.95,True,2.464631e-14,ok
+US Eastern Oblique,Horn - Alpine - Cheehahaw,A,3,285.082,285.085,0.99999,0.370,1.45,1.397,1.04,False,2.464710e-14,ok
+US Eastern Oblique,Laurel - Cahaba - Alpine,A,3,668.168,668.177,0.99999,5.510,3.3999999999999995,1.397,2.43,True,2.464646e-14,ok
+US Eastern Oblique,Horn - Laurel - Alpine,A,3,228.761,228.763,0.99999,3.850,1.1600000000000001,1.397,0.83,False,2.464726e-14,ok
+US Eastern Oblique,Kahatchee - Laurel - Alpine,A,3,344.479,344.483,0.99999,3.740,1.75,1.397,1.25,False,2.464738e-14,ok
+US Eastern Oblique,Kahatchee - Alpine - Horn,A,3,216.397,216.399,0.99999,1.210,1.1,1.397,0.79,False,2.464756e-14,ok
+US Eastern Oblique,Kahatchee - Laurel - Horn,A,3,332.115,332.118,0.99999,1.100,1.69,1.397,1.21,False,2.464758e-14,ok
+US Eastern Oblique,Weogufka - Laurel - Horn,A,3,980.759,980.774,0.99998,3.440,4.99,1.397,3.57,True,2.464802e-14,ok
+US Eastern Oblique,Weogufka - Kahatchee - Horn,A,3,369.639,369.643,0.99999,1.030,1.88,1.397,1.34,False,2.464832e-14,ok
+US Eastern Oblique,Weogufka - Laurel - Kahatchee,A,3,279.009,279.012,0.99999,1.310,1.42,1.397,1.01,False,2.464815e-14,ok
+US Eastern Oblique,Jamison - Laurel - Kahatchee,A,3,582.353,582.361,0.99999,1.930,2.96,1.397,2.12,True,2.464823e-14,ok
+US Eastern Oblique,Jamison - Kahatchee - Weogufka,A,3,369.225,369.229,0.99999,2.130,1.88,1.397,1.34,False,2.464896e-14,ok
+US Eastern Oblique,Jamison - Laurel - Weogufka,A,3,672.569,672.579,0.99999,2.750,3.42,1.397,2.45,True,2.464866e-14,ok
+US Eastern Oblique,Wilder - Jamison - Weogufka,A,3,475.315,475.322,0.99999,4.260,2.42,1.397,1.73,False,2.465001e-14,ok
+US Eastern Oblique,Wetumpka - Wilder - Weogufka,A,3,609.952,609.961,0.99999,5.020,3.1,1.397,2.22,True,2.465070e-14,ok
+US Eastern Oblique,Perry - Jamison - Wilder,A,3,621.780,621.789,0.99999,1.560,3.16,1.397,2.26,True,2.465039e-14,ok
+US Eastern Oblique,Parker - Perry - Wilder,A,3,396.463,396.469,0.99999,1.830,2.02,1.397,1.44,False,2.465104e-14,ok
+US Eastern Oblique,Lowndesboro - Wilder - Wetumpka,A,3,626.640,626.650,0.99998,4.430,3.1900000000000004,1.397,2.28,True,2.465194e-14,ok
+US Eastern Oblique,Lowndesboro - Parker - Wilder,A,3,614.295,614.304,0.99999,0.930,3.12,1.397,2.23,True,2.465189e-14,ok
+US Eastern Oblique,Lovers Leap - Parker - Wilder,A,3,722.527,722.539,0.99998,2.800,3.67,1.397,2.63,True,2.465207e-14,ok
+US Eastern Oblique,Lovers Leap - Parker - Lowndesboro,A,3,444.492,444.499,0.99998,1.540,2.26,1.397,1.62,False,2.465270e-14,ok
+US Eastern Oblique,Lowndesboro - Lovers Leap - Wilder,A,3,336.258,336.264,0.99998,-0.330,1.71,1.397,1.22,False,2.465257e-14,ok
+US Eastern Oblique,Mount Carmel - Lowndesboro - Wetumpka,A,3,906.581,906.598,0.99998,5.240,4.61,1.397,3.30,True,2.465300e-14,ok
+US Eastern Oblique,Bargenier - Lowndesboro - Mount Carmel,A,3,394.359,394.364,0.99999,3.210,2.0,1.397,1.43,False,2.465395e-14,ok
+US Eastern Oblique,Lovers Leap - Lowndesboro - Mount Carmel,A,3,415.943,415.950,0.99998,1.650,2.11,1.397,1.51,False,2.465364e-14,ok
+US Eastern Oblique,Lovers Leap - Lowndesboro - Bargenier,A,3,310.599,310.604,0.99999,1.560,1.58,1.397,1.13,False,2.465369e-14,ok
+US Eastern Oblique,Bargenier - Lovers Leap - Mount Carmel,A,3,289.014,289.019,0.99999,3.120,1.47,1.397,1.05,False,2.465413e-14,ok
+US Eastern Oblique,County Line - Lovers Leap - Bargenier,A,3,205.275,205.277,0.99999,1.120,1.04,1.397,0.75,False,2.465423e-14,ok
+US Eastern Oblique,County Line - Lovers Leap - Lowndesboro,A,3,234.848,234.851,0.99999,0.450,1.19,1.397,0.85,False,2.465374e-14,ok
+US Eastern Oblique,County Line - Lowndesboro - Bargenier,A,3,281.026,281.030,0.99999,2.230,1.43,1.397,1.02,False,2.465405e-14,ok
+US Eastern Oblique,Ethridge - Lovers Leap - County Line,A,3,261.884,261.887,0.99999,3.020,1.33,1.397,0.95,False,2.465407e-14,ok
+US Eastern Oblique,Fatama - Lovers Leap - County Line,A,3,472.366,472.373,0.99998,3.320,2.4000000000000004,1.397,1.72,False,2.465439e-14,ok
+US Eastern Oblique,Fatama - Ethridge - County Line,A,3,356.884,356.889,0.99999,0.840,1.81,1.397,1.30,False,2.465455e-14,ok
+US Eastern Oblique,Ethridge - Lovers Leap - Fatama,A,3,146.401,146.402,0.99999,0.540,0.74,1.397,0.53,False,2.465419e-14,ok
+US Eastern Oblique,Midway - Fatama - County Line,A,3,468.435,468.442,0.99998,1.770,2.38,1.397,1.70,False,2.465517e-14,ok
+US Eastern Oblique,Midway - Fatama - Lovers Leap,A,3,655.244,655.255,0.99998,3.550,3.33,1.397,2.38,True,2.465482e-14,ok
+US Eastern Oblique,County Line - Midway - Lovers Leap,A,3,285.556,285.560,0.99998,1.540,1.45,1.397,1.04,False,2.465469e-14,ok
+US Eastern Oblique,Pollard - Fatama - Midway,A,3,636.540,636.551,0.99998,2.910,3.24,1.397,2.32,True,2.465603e-14,ok
+US Eastern Oblique,Creagh - Fatama - Midway,A,3,697.597,697.610,0.99998,3.250,3.55,1.397,2.54,True,2.465579e-14,ok
+US Eastern Oblique,Creagh - Fatama - Pollard,A,3,664.500,664.511,0.99998,3.520,3.38,1.397,2.42,True,2.465623e-14,ok
+US Eastern Oblique,Pollard - Creagh - Midway,A,3,603.441,603.452,0.99998,3.180,3.0700000000000003,1.397,2.19,True,2.465653e-14,ok
+US Eastern Oblique,White - Creagh - Pollard,A,3,257.004,257.008,0.99999,0.750,1.31,1.397,0.93,False,2.465697e-14,ok
+US Eastern Oblique,Red Hill - Creagh - Pollard,A,3,440.734,440.740,0.99999,1.670,2.24,1.397,1.60,False,2.465740e-14,ok
+US Eastern Oblique,Red Hill - White - Pollard,A,3,457.862,457.869,0.99999,1.530,2.33,1.397,1.67,False,2.465765e-14,ok
+US Eastern Oblique,White - Creagh - Red Hill,A,3,274.133,274.136,0.99999,0.610,1.3900000000000001,1.397,1.00,False,2.465741e-14,ok
+US Eastern Oblique,Coon - White - Red Hill,A,3,547.140,547.149,0.99998,2.990,2.7800000000000002,1.397,1.99,False,2.465802e-14,ok
+US Eastern Oblique,Dean - White - Red Hill,A,3,321.048,321.053,0.99998,1.170,1.6300000000000001,1.397,1.17,False,2.465842e-14,ok
+US Eastern Oblique,Dean - Coon - Red Hill,A,3,478.648,478.656,0.99998,3.700,2.43,1.397,1.74,False,2.465878e-14,ok
+US Eastern Oblique,Coon - White - Dean,A,3,704.739,704.752,0.99998,5.520,3.58,1.397,2.56,True,2.465835e-14,ok
+US Eastern Oblique,Cold Creek - Coon - Dean,A,3,464.424,464.431,0.99998,0.290,2.3600000000000003,1.397,1.69,False,2.465921e-14,ok
+US Eastern Oblique,Cold Creek - Coon - Red Hill,A,3,663.992,664.004,0.99998,2.810,3.38,1.397,2.41,True,2.465888e-14,ok
+US Eastern Oblique,Dean - Cold Creek - Red Hill,A,3,279.079,279.084,0.99998,1.180,1.42,1.397,1.01,False,2.465928e-14,ok
+US Eastern Oblique,Minette - Cold Creek - Dean,A,3,210.934,210.937,0.99999,2.060,1.0699999999999998,1.397,0.77,False,2.465985e-14,ok
+US Eastern Oblique,Minette - Coon - Dean,A,3,304.040,304.045,0.99998,0.860,1.55,1.397,1.11,False,2.465936e-14,ok
+US Eastern Oblique,Cold Creek - Coon - Minette,A,3,371.318,371.324,0.99998,1.490,1.8900000000000001,1.397,1.35,False,2.465945e-14,ok
+US Eastern Oblique,Spring Hill - Cold Creek - Minette,A,3,364.096,364.102,0.99998,2.740,1.85,1.397,1.32,False,2.466039e-14,ok
+US Eastern Oblique,Daphne - Cold Creek - Minette,A,3,372.519,372.525,0.99998,1.180,1.8900000000000001,1.397,1.35,False,2.466055e-14,ok
+US Eastern Oblique,Daphne - Spring Hill - Minette,A,3,372.283,372.288,0.99998,0.720,1.8900000000000001,1.397,1.35,False,2.466099e-14,ok
+US Eastern Oblique,Spring Hill - Cold Creek - Daphne,A,3,363.859,363.865,0.99998,2.280,1.85,1.397,1.32,False,2.466084e-14,ok
+US Eastern Oblique,St. Elmo - Spring Hill - Daphne,A,3,275.268,275.272,0.99998,0.090,1.4,1.397,1.00,False,2.466160e-14,ok
+US Eastern Oblique,Fort Morgan - Spring Hill - Daphne,A,3,538.950,538.960,0.99998,1.600,2.74,1.397,1.96,False,2.466207e-14,ok
+US Eastern Oblique,Fort Morgan - St. Elmo - Daphne,A,3,563.575,563.586,0.99998,2.740,2.87,1.397,2.05,True,2.466239e-14,ok
+US Eastern Oblique,Fort Morgan - St. Elmo - Spring Hill,A,3,299.892,299.898,0.99998,1.230,1.53,1.397,1.09,False,2.466223e-14,ok
+US Eastern Oblique,Dauphin Island East Base - St. Elmo - Fort Morgan,A,3,150.002,150.004,0.99998,2.070,0.76,1.397,0.55,False,2.466298e-14,ok
+US Eastern Oblique,Dauphin Island West Base - St. Elmo - Fort Morgan,A,3,325.273,325.280,0.99998,2.110,1.6500000000000001,1.397,1.18,False,2.466299e-14,ok
+US Eastern Oblique,Dauphin Island West Base - St. Elmo - Dauphin Island East Base,A,3,157.316,157.320,0.99998,1.970,0.8,1.397,0.57,False,2.466296e-14,ok
+US Eastern Oblique,Dauphin Island East Base - Fort Morgan - Dauphin Island West Base,A,3,17.955,17.956,0.99995,-1.930,0.09,1.397,0.07,False,2.466343e-14,ok
+US Eastern Oblique,Dauphin Island East Base - St. Elmo - Daphne,A,3,472.878,472.887,0.99998,0.710,2.4000000000000004,1.397,1.72,False,2.466235e-14,ok
+US Eastern Oblique,Dauphin Island East Base - Daphne - Fort Morgan,A,3,240.699,240.704,0.99998,4.100,1.23,1.397,0.88,False,2.466282e-14,ok

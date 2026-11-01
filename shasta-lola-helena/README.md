@@ -71,6 +71,14 @@ ending June 1880, pp. 37–39 and 43–44 (NOAA file CSC-0079):
 
 Page extract: `sources/USCGS_1880_report_pp37-39_43-44.pdf` (and `.txt`, raw OCR).
 
+## A fully observed neighbour
+
+Triangle 1 of SP 4 p. 588, Lola–Diablo–Helena, shares the Lola–Helena side and
+has all three angles observed: observed excess 57.778″, ellipsoid 57.243″,
+Δ −0.53″. With Round Top it forms Davidson's quadrilateral; its four triangles
+give radii 6 344, 6 392, 6 355 and 6 305 km (±55–73 km), within about 1σ of
+each other and of the spheroid (6 373 km).
+
 ## Terrain check (HeyWhatsThat)
 
 Panorama from Saint Helena: https://www.heywhatsthat.com/?view=JUUTXI1Q
