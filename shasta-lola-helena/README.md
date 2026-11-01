@@ -45,10 +45,21 @@ is drawn to true scale against a flat chord, with a vertical-stretch slider
   reported 169 / 192 mi.
 - Mountains in the cross-section are schematic profiles (12 km base).
 
+## Visibility today
+
+Modern accounts (California State Parks, Modern Hiker) say Shasta's top can be
+seen from Mount Saint Helena on very clear days. These are anecdotal: no
+published photograph, historic or recent, was found of Shasta from Saint Helena
+or Lola, or of either from Shasta.
+
 ## Sources
 
 - "The Longest Line", The American Surveyor (2012):
   https://amerisurv.com/2012/10/27/the-longest-line/
 - "The Longest Line", Hydro International:
   https://www.hydro-international.com/content/article/the-longest-line
+- Robert Louis Stevenson State Park, California State Parks:
+  https://www.parks.ca.gov/?page_id=472
+- Mount Saint Helena, Modern Hiker: https://modernhiker.com/hike/mount-saint-helena/
+- Mount Saint Helena, SummitPost: https://www.summitpost.org/mount-saint-helena/150521
 - C. F. F. Karney, GeographicLib.
