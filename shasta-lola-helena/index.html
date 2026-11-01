@@ -100,10 +100,10 @@ h3.sub{font-size:19px;font-weight:600;margin:6px 0 0}
       </tbody>
     </table></div>
     <h3 class="sub">Which angles were measured</h3>
-    <div class="svgbox"><svg id="angles" viewBox="0 0 640 560" role="img" aria-label="Triangle Shasta, Lola, Helena: angles at Shasta and Lola measured in 1879, angle at Helena computed"></svg></div>
-    <div class="legend"><span><i style="border-color:var(--blue);border-top-width:4px"></i>angle measured with a theodolite, 1879</span><span><i style="border-color:var(--flat);border-top-style:dashed;border-top-width:3px"></i>angle computed, not observed</span><span><i style="border-color:var(--muted);border-top-style:dotted"></i>direction observed (arrow points at the signal)</span></div>
-    <div class="formula">∠Helena = 180° + ε − ∠Shasta − ∠Lola</div>
-    <p class="finding">Not a Theorema Egregium measurement. Only the angles at Shasta and Lola were observed in 1879; Helena had a heliotroper, not a theodolite. The Helena angle is whatever makes the sum come out to 180° + ε, so the triangle has no observed misclosure and cannot test curvature. The report gives the sides as approximately 136, 169 and 192 miles and calls Shasta–Helena "the longest yet included in geodetic work." The 142.7″ excess on this page is computed from station geometry. For an intrinsic-curvature test, use triangles in which all three angles were observed.</p>
+    <div class="svgbox"><svg id="angles" viewBox="0 0 640 560" role="img" aria-label="Triangle Shasta, Lola, Helena: Lola angle observed 1879; Helena reported observed; Shasta angle unclear"></svg></div>
+    <div class="legend"><span><i style="border-color:var(--blue);border-top-width:4px"></i>observed, 1879</span><span><i style="border-color:var(--blue);border-top-style:dotted;border-top-width:3px"></i>reported observed, date and observer not stated</span><span><i style="border-color:var(--flat);border-top-style:dashed;border-top-width:3px"></i>unclear which angle</span><span><i style="border-color:var(--muted);border-top-style:dotted"></i>direction observed (arrow points at the signal)</span></div>
+    <div class="formula">third angle = 180° + ε − (first) − (second)</div>
+    <p class="finding">Status: unresolved, so this triangle is not used as a Theorema Egregium test. The 1880 report is ambiguous about which angles were observed. It says Davidson "succeeded in measuring two angles in the great triangle", that he "observed on the Shasta heliotrope both from Mount Lola and Helena", and, in the Appendix No. 1 summary table (p. 66), that Shasta's position was "determined by angle measurements at Mount Helena and Mount Lola". That is a standard intersection: two observed angles at known stations fix the new point, and the third angle follows from the sum. Colonna's sets at Shasta may supply the third angle, but the report does not say which signals he measured between, and Lola was never pointed on from Shasta. Helena was occupied in 1876; the 1876 Helena directions printed as a worked example in Schott, SP 4 (1900), p. 43, do not include Shasta, though that example may be partial. Until a full set of observed directions at all three stations is found, any misclosure here is unproven.</p>
   </section>
 
   <section class="card" aria-labelledby="h2c">
@@ -183,6 +183,7 @@ h3.sub{font-size:19px;font-weight:600;margin:6px 0 0}
       <li><b>Date of the observation.</b> Colonna's own account, "Nine Days on the Summit of Mount Shasta" (The Californian, March 1880, v. 1 no. 3, pp. 242–8; cited in the <a href="https://www.siskiyous.edu/library/shasta/documents/AB_Ch11.pdf">College of the Siskiyous Mount Shasta bibliography, ch. 11</a>), dates the heliotrope exchange to Friday, August 1. August 1 fell on a Friday in 1879, not 1878. The American Surveyor article also gives July–August 1879. NOAA's heliotrope page and JPR give 1878; The 1880 Superintendent's report confirms 25 July – 2 August 1879.</li>
       <li><a href="https://celebrating200years.noaa.gov/theodolites/heliotrope.html">NOAA 200th: Heliotrope</a>. Davidson calculated that a reflecting surface of 77.5 square inches would be visible over the 192-mile Shasta–Helena line. The size of the mirror actually used at Helena is not stated.</li>
       <li><a href="https://www.heywhatsthat.com/?view=JUUTXI1Q">HeyWhatsThat panorama “Mount St. Helena to Shasta”</a> (SRTM terrain, WGS84, refraction ≈ 3.6″/mile per the <a href="https://contour.heywhatsthat.com/techfaq.html">technical FAQ</a>). Screenshot taken 31 Oct 2026.</li>
+      <li>Schott, C. A., <i>The Transcontinental Triangulation and the American Arc of the Parallel</i>, USC&amp;GS Special Publication No. 4 (1900), p. 43: local adjustment at Mount Helena, 1876 directions (Diablo, Table Mt, Snow Mt, Marysville Butte, Pine Hill, Round Top, Monticello, Vaca, Lola and others; Shasta not listed).</li>
       <li>Computation: Karney, GeographicLib (WGS84 geodesics and polygon area). Summit coordinates used: Shasta 41.4092 N 122.1949 W 4 322 m; Lola 39.4330 N 120.3655 W 2 789 m; Saint Helena 38.6693 N 122.6330 W 1 323 m. To be replaced with NGS datasheet values for the historic stations.</li>
     </ol>
   </section>
@@ -265,14 +266,14 @@ update();
 (function(){
   const svg=document.getElementById("angles");
   const V={Shasta:[254,92],Lola:[428,335],Helena:[212,430]};
-  const meas={Shasta:true,Lola:true,Helena:false};
+  const meas={Shasta:"unclear",Lola:"yes",Helena:"reported"};
   const tri=["Shasta","Lola","Helena"];
   el("polygon",{points:tri.map(k=>V[k].join(",")).join(" "),fill:"var(--earth-fill)","fill-opacity":".45",stroke:"var(--ink)","stroke-width":"1.6"},svg);
   const defs=el("defs",{},svg),mk=el("marker",{id:"arr",viewBox:"0 0 10 10",refX:"9",refY:"5",markerWidth:"7",markerHeight:"7",orient:"auto-start-reverse"},defs);
   el("path",{d:"M0,0 L10,5 L0,10 Z",fill:"var(--muted)"},mk);
   const unit=(a,b)=>{const dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy);return [dx/L,dy/L]};
   // observed directions: from observer toward signal, drawn offset beside the side
-  const dirs=[["Lola","Shasta"],["Lola","Helena"],["Shasta","Lola"],["Shasta","Helena"]];
+  const dirs=[["Lola","Shasta"],["Lola","Helena"],["Shasta","Helena"]];
   dirs.forEach(([a,b])=>{const u=unit(V[a],V[b]),n=[-u[1],u[0]];
     const side=(a==="Shasta"&&b==="Lola")||(a==="Lola"&&b==="Shasta")?(a==="Shasta"?1:-1):(a==="Shasta"?-1:1);
     const o=9*side,st=[V[a][0]+u[0]*58+n[0]*o,V[a][1]+u[1]*58+n[1]*o],en=[V[a][0]+u[0]*150+n[0]*o,V[a][1]+u[1]*150+n[1]*o];
@@ -280,12 +281,12 @@ update();
   tri.forEach((k,i)=>{const p=V[k],a=V[tri[(i+1)%3]],b=V[tri[(i+2)%3]],ua=unit(p,a),ub=unit(p,b),r=36;
     const s0=[p[0]+ua[0]*r,p[1]+ua[1]*r],s1=[p[0]+ub[0]*r,p[1]+ub[1]*r];
     const cross=ua[0]*ub[1]-ua[1]*ub[0];
-    el("path",{d:`M${s0[0]},${s0[1]} A${r},${r} 0 0 ${cross>0?1:0} ${s1[0]},${s1[1]}`,fill:"none",stroke:meas[k]?"var(--blue)":"var(--flat)","stroke-width":meas[k]?"5":"3","stroke-dasharray":meas[k]?"none":"6 5"},svg);
+    el("path",{d:`M${s0[0]},${s0[1]} A${r},${r} 0 0 ${cross>0?1:0} ${s1[0]},${s1[1]}`,fill:"none",stroke:meas[k]==="yes"?"var(--blue)":(meas[k]==="reported"?"var(--blue)":"var(--flat)"),"stroke-width":meas[k]==="yes"?"5":"3","stroke-dasharray":meas[k]==="yes"?"none":(meas[k]==="reported"?"2 5":"6 5")},svg);
     el("circle",{cx:p[0],cy:p[1],r:5,fill:"var(--ink)"},svg)});
-  const lab=(x,y,anchor,lines)=>{lines.forEach((t,i)=>{const e=el("text",{x,y:y+i*20,"text-anchor":anchor,"font-size":i===0?"18":"15",style:i===0?"fill:var(--ink);font-weight:600":(i===1?(t.startsWith("COMPUTED")?"fill:var(--flat)":"fill:var(--blue)"):"fill:var(--muted)")},svg);e.textContent=t})};
-  lab(286,48,"start",["Mt Shasta","MEASURED, 1–2 Aug 1879","Colonna: 4 sets × 6 repetitions","Lola glimpsed 29 Jul, no pointing"]);
+  const lab=(x,y,anchor,lines)=>{lines.forEach((t,i)=>{const e=el("text",{x,y:y+i*20,"text-anchor":anchor,"font-size":i===0?"18":"15",style:i===0?"fill:var(--ink);font-weight:600":(i===1?(t.startsWith("UNCLEAR")?"fill:var(--flat)":"fill:var(--blue)"):"fill:var(--muted)")},svg);e.textContent=t})};
+  lab(286,48,"start",["Mt Shasta","UNCLEAR: Colonna, 1–2 Aug 1879","4 sets × 6 reps on Helena;","Lola glimpsed 29 Jul, no pointing"]);
   lab(630,382,"end",["Mt Lola","MEASURED, 29 Jul 1879","Davidson: theodolite No. 115,","5 positions on Shasta"]);
-  lab(12,470,"start",["Mt Saint Helena","COMPUTED, not observed","heliotroper only, no theodolite"]);
+  lab(12,470,"start",["Mt Saint Helena","REPORTED observed, date not stated","1879: heliotroper only; 1876: Davidson"]);
 })();
 
 const sb=document.getElementById("srcbtn"),src=document.getElementById("src");

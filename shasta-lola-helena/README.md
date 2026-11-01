@@ -61,10 +61,11 @@ ending June 1880, pp. 37–39 and 43–44 (NOAA file CSC-0079):
 - 29 Jul: Lola heliotrope glimpsed from Shasta, no pointing. Davidson at Lola
   observes the Shasta heliotrope in five positions of 20-inch theodolite No. 115.
 - 1 Aug: Helena seen from Shasta; four sets of six repetitions. Repeated 2 Aug.
-- Only two angles were measured that season (Shasta, Lola); Helena had a
-  heliotroper only. The Helena angle is computed, so the triangle has no observed
-  misclosure and is not usable as a Theorema Egregium (intrinsic curvature) test.
-  The page diagrams which angles were measured and which computed.
+- Which angles were observed is ambiguous in the report: "two angles in the great
+  triangle", Shasta's position "determined by angle measurements at Mount Helena
+  and Mount Lola" (Appendix No. 1 summary table, p. 66), and Colonna's 4 sets × 6 repetitions at
+  Shasta without the signals named. Treated as unresolved: the triangle is not
+  used as a Theorema Egregium test until all three observed angles are found.
 - Sides reported as approximately 136, 169 and 192 miles.
 - Refraction coefficient observed at Lola (14 days, 3 nights) and Round Top.
 
