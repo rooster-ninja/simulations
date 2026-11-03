@@ -134,7 +134,7 @@ page = f'''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gauss vs Tarski</title>
 <meta property="og:title" content="Survey triangles across America: Gauss vs Tarski">
-<meta property="og:description" content="Every triangle of Schott's 39th-parallel and Eastern Oblique chains read two ways. By angles (Gauss): {len(above3)} triangles are curved beyond 3σ, but every one gets there through angular excess, which exits TE (the Theorema Egregium). By lengths only (Tarski): all {n_tri} close as flat triangles, and the closed fans carry only the curvature Legendre's theorem put into the computed sides.">
+<meta property="og:description" content="Every triangle of Schott's 39th-parallel and Eastern Oblique chains read two ways. By angles (Gauss): {len(above3)} triangles are curved beyond 3σ, but every one gets there through angular excess, which exits the Theorema Egregium. By lengths only (Tarski): all {n_tri} close as flat triangles, and the closed fans carry only the curvature Legendre's theorem put into the computed sides.">
 <meta name="theme-color" content="#f3efe4">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -227,7 +227,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <p class="back"><a href="../">← All simulations</a></p>
     <p class="eyebrow">Theorema Egregium · Gauss vs Tarski</p>
     <h1>Survey triangles across America: Gauss vs Tarski</h1>
-    <p class="sub">Every triangle of Schott's 39th-parallel and Eastern Oblique chains, read two ways. Read by its angles, a triangle can show curvature, but only through angular excess, and that step exits TE (the Theorema Egregium). Read by its lengths only, as Tarski's plane geometry decides, every triangle closes flat. The curved triangles all live on the angle side.</p>
+    <p class="sub">Every triangle of Schott's 39th-parallel and Eastern Oblique chains, read two ways. Read by its angles, a triangle can show curvature, but only through angular excess, and that step exits the Theorema Egregium. Read by its lengths only, as Tarski's plane geometry decides, every triangle closes flat. The curved triangles all live on the angle side.</p>
   </header>
 
   <section class="readout" aria-label="Key numbers">
@@ -296,7 +296,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
         <h3>Gauss, 1827</h3>
         <blockquote>"If a curved surface is developed upon any other surface whatever, the measure of curvature in each point remains unchanged."<cite>Disquisitiones generales, Art. 12 (Theorema Egregium)</cite></blockquote>
         <p>The proof (Art. 11) gives the measure of curvature by a formula "which involves only the quantities E, F, G and their differential quotients": lengths measured on the surface. That is the whole theorem. It names no triangle, no angle sum and no excess.</p>
-        <p>The angle-sum theorem is a different one, Art. 20, and Gauss states it through the normals: the excess "is measured by the area of the part of the sphere which corresponds, through the directions of the normals, to that triangle". Getting from excess to curvature exits TE: it leaves Art. 12 for Art. 20.</p>
+        <p>The angle-sum theorem is a different one, Art. 20, and Gauss states it through the normals: the excess "is measured by the area of the part of the sphere which corresponds, through the directions of the normals, to that triangle". Getting from excess to curvature exits the Theorema Egregium: it leaves Art. 12 for Art. 20.</p>
       </div>
       <div class="col t prose">
         <h3>Tarski, 1948 / 1951</h3>
@@ -310,23 +310,23 @@ code{{font-family:var(--f-mono);font-size:.92em}}
   </section>
 
   <section class="panel">
-    <div class="ptitle">4 · Gauss reading: every curved triangle exits TE</div>
+    <div class="ptitle">4 · Gauss reading: every curved triangle exits the Theorema Egregium</div>
     <div class="tablebox"><table>
       <thead><tr><th>Chain</th><th class="n">Triangles</th><th class="n">Tested by angles</th><th class="n">Excess + / −</th><th class="n">&gt;3σ curved</th><th class="n">Closure noise</th><th class="n">Via angular excess</th></tr></thead>
       <tbody>{gauss_rows}</tbody></table></div>
     <div class="math">ε = A + B + C − 180°  ·  z = ε / σ  ·  K ≈ ε / area</div>
-    <p class="cap">Each step that turns a curved triangle's numbers into curvature, and where it exits TE. Every one of the {len(tested)} tested triangles takes all of rows 1–4; none takes a length-only route.</p>
+    <p class="cap">Each step that turns a curved triangle's numbers into curvature, and where it exits the Theorema Egregium. Every one of the {len(tested)} tested triangles takes all of rows 1–4; none takes a length-only route.</p>
     <div class="tablebox"><table>
-      <thead><tr><th class="n">#</th><th>Step</th><th>What it rests on</th><th>Exits TE?</th><th>Source</th></tr></thead>
+      <thead><tr><th class="n">#</th><th>Step</th><th>What it rests on</th><th>Exits the Theorema Egregium?</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td class="n">1</td><td>The data are angles, not lengths</td><td>Theodolite readings between signals</td><td class="x">exits TE: Art. 12 uses E, F, G</td><td>Schott SP4 §H p. 612</td></tr>
-        <tr><td class="n">2</td><td>Each angle lies in the station's horizontal plane</td><td>Instrument "necessarily adjusted to the plumb-line": gravity sets the plane</td><td class="x">exits TE: extrinsic, the plumb line is not a surface length</td><td>SP4 p. 206; SP7 p. 26</td></tr>
-        <tr><td class="n">3</td><td>Sight lines stand in for shortest lines on the surface</td><td>Light through air, with "persistent lateral refraction"</td><td class="x">exits TE: assumed, not measured</td><td>SP4 p. 206; SP7 p. 26</td></tr>
-        <tr><td class="n">4</td><td>Excess over 180° = integral curvature</td><td>Gauss Art. 20, stated "through the directions of the normals"</td><td class="x">exits TE: Art. 20, a different theorem</td><td>Gauss Art. 20</td></tr>
-        <tr><td class="n">5</td><td>K = excess ÷ area</td><td>Curvature taken as even over the triangle</td><td class="x">exits TE: an average, not a point value</td><td>—</td></tr>
-        <tr><td class="n">6</td><td>The printed excess column</td><td>Computed from ab sin C over the ellipsoid's radii ρ<sub>m</sub>ρ<sub>n</sub></td><td class="x">exits TE: model output, not observed</td><td>SP4 p. 51; SP7 p. 26</td></tr>
+        <tr><td class="n">1</td><td>The data are angles, not lengths</td><td>Theodolite readings between signals</td><td class="x">exits the Theorema Egregium: Art. 12 uses E, F, G</td><td>Schott SP4 §H p. 612</td></tr>
+        <tr><td class="n">2</td><td>Each angle lies in the station's horizontal plane</td><td>Instrument "necessarily adjusted to the plumb-line": gravity sets the plane</td><td class="x">exits the Theorema Egregium: extrinsic, the plumb line is not a surface length</td><td>SP4 p. 206; SP7 p. 26</td></tr>
+        <tr><td class="n">3</td><td>Sight lines stand in for shortest lines on the surface</td><td>Light through air, with "persistent lateral refraction"</td><td class="x">exits the Theorema Egregium: assumed, not measured</td><td>SP4 p. 206; SP7 p. 26</td></tr>
+        <tr><td class="n">4</td><td>Excess over 180° = integral curvature</td><td>Gauss Art. 20, stated "through the directions of the normals"</td><td class="x">exits the Theorema Egregium: Art. 20, a different theorem</td><td>Gauss Art. 20</td></tr>
+        <tr><td class="n">5</td><td>K = excess ÷ area</td><td>Curvature taken as even over the triangle</td><td class="x">exits the Theorema Egregium: an average, not a point value</td><td>—</td></tr>
+        <tr><td class="n">6</td><td>The printed excess column</td><td>Computed from ab sin C over the ellipsoid's radii ρ<sub>m</sub>ρ<sub>n</sub></td><td class="x">exits the Theorema Egregium: model output, not observed</td><td>SP4 p. 51; SP7 p. 26</td></tr>
       </tbody></table></div>
-    <p class="finding red">Finding: {len(above3)} triangles are curved beyond 3σ by their angles, the largest {esc(big["triangle"])} at {big["z"]:.0f}σ. All {len(above3)}, and all {len(tested)} tested, reach curvature through steps 1–4. Every one exits TE; none is a Theorema Egregium result. They are results of Art. 20 applied to plumb-levelled angles. This is a statement about the route, not the size: the excess is measured and real at the stated noise.</p>
+    <p class="finding red">Finding: {len(above3)} triangles are curved beyond 3σ by their angles, the largest {esc(big["triangle"])} at {big["z"]:.0f}σ. All {len(above3)}, and all {len(tested)} tested, reach curvature through steps 1–4. Every one exits the Theorema Egregium; none is a result of it. They are results of Art. 20 applied to plumb-levelled angles. This is a statement about the route, not the size: the excess is measured and real at the stated noise.</p>
   </section>
 
   <section class="panel">
@@ -356,7 +356,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
       <thead><tr><th>Chain</th><th class="n">Fans</th><th class="n">Deficit from sides</th><th class="n">Deficit − ⅓Σ printed ε</th><th class="n">Deficit − ⅓Σ observed ε</th></tr></thead>
       <tbody>{fan_rows}</tbody></table></div>
     <p class="finding red">Finding: from lengths alone, every fan fails to lie flat: deficits of {min(defs):.1f}″ to {max(defs):.1f}″, so as a lengths-only sentence, "flat" is refuted. But the deficit equals one third of the fan's printed excess to {fan_all_p[1]:+.2f}″ ± {fan_all_p[2]:.2f}″, closer than it matches the observed excess ({fan_all_o[1]:+.2f}″ ± {fan_all_o[2]:.2f}″). The curvature in the lengths is the ellipsoid excess Schott subtracted from each angle to compute the sides. It entered through steps 1–6 of panel 4; it was not measured as a length.</p>
-    <p class="finding">So the fans are an echo, not a test. At face value they read curved, but they only repeat what the angles said, and the angles exit TE. With these lengths the fans add no information of their own: as a lengths-only test they cannot tell flat from curved.</p>
+    <p class="finding">So the fans are an echo, not a test. At face value they read curved, but they only repeat what the angles said, and the angles exit the Theorema Egregium. With these lengths the fans add no information of their own: as a lengths-only test they cannot tell flat from curved.</p>
     <div class="tablebox"><table>
       <thead><tr><th>Centre (10 largest)</th><th>Chain</th><th class="n">Triangles</th><th class="n">Deficit from sides</th><th class="n">⅓Σ printed ε</th><th class="n">⅓Σ observed ε</th></tr></thead>
       <tbody>{fan_top_rows}</tbody></table></div>
@@ -368,13 +368,13 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <div class="tablebox"><table>
       <thead><tr><th>Base lines (SP4 p. 614)</th><th class="n">Discrepancy, 7th place of log</th><th class="n">One part in</th></tr></thead>
       <tbody>{base_rows}</tbody></table></div>
-    <p class="cap">Raw values as printed; a plus sign means the eastern base gives the greater length. These are length against length, but the bridge between them is angles reduced with spherical excess, so they exit TE the same way as panel 4. No pair of measured lengths in either chain closes a figure by lengths alone.</p>
+    <p class="cap">Raw values as printed; a plus sign means the eastern base gives the greater length. These are length against length, but the bridge between them is angles reduced with spherical excess, so they exit the Theorema Egregium the same way as panel 4. No pair of measured lengths in either chain closes a figure by lengths alone.</p>
   </section>
 
   <section class="panel">
     <div class="ptitle">8 · Verdict</div>
     <div class="prose">
-      <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one exits TE. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
+      <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one exits the Theorema Egregium. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
       <p><b>Tarski reading.</b> By lengths, all {n_tri} triangles are flat triangles. The {len(F)} closed fans do refute flatness by lengths, yet only by the excess that Legendre's theorem put into the sides. In this data no length was measured independently of the angles, apart from {len(measured_tri)} base sides, and those close nothing by themselves. So the fans add no information of their own: by lengths alone, this data cannot tell flat from curved.</p>
       <p><b>What would stay inside the theorem.</b> A closed fan, or a quadrilateral with both diagonals, whose every side is a measured length. Then the deficit is computed from lengths alone:</p>
       <ol class="steps"><li>Deficit 0 within its error bars: flat.</li><li>Deficit above its error bars: curved.</li><li>Either way the answer comes from lengths alone. Only turning a nonzero deficit into a value of K needs a further theorem.</li></ol>
@@ -481,7 +481,7 @@ function draw(){{
   }}
   if (sel && vis(sel[0]) && mode!=='fans') {{ path(sel[3]); ctx.strokeStyle = css('--accent'); ctx.lineWidth = 3; ctx.stroke(); }}
   const nf = D.f.filter(f=>vis(f[0])).length;
-  st.textContent = mode==='gauss' ? `Gauss · angles: ${{curved}} of ${{shown}} triangles curved beyond 3σ, all via angular excess, all exit TE`
+  st.textContent = mode==='gauss' ? `Gauss · angles: ${{curved}} of ${{shown}} triangles curved beyond 3σ, all via angular excess, all exit the Theorema Egregium`
     : mode==='tarski' ? `Tarski · lengths: ${{flat}} of ${{shown}} triangles close as flat triangles`
     : `Closed fans · lengths: ${{nf}} fans; deficit = ⅓ of the printed excess`;
 }}
@@ -502,7 +502,7 @@ function audit(t){{
     + row('observed excess ε', t[4]===null ? 'not tested' : t[4].toFixed(2)+'″')
     + row('z = ε / σ', t[6]===null ? '—' : t[6].toFixed(1)+'σ')
     + row('printed (ellipsoid) excess', t[5].toFixed(2)+'″')
-    + row('route to curvature', 'exits TE: angles → plumb → Art. 20', 'exit') + '</div>';
+    + row('route to curvature', 'exits the Theorema Egregium: angles → plumb → Art. 20', 'exit') + '</div>';
   const sides = t[8].map((L,i)=> row(`${{t[13][(i+1)%3]}} – ${{t[13][(i+2)%3]}}`, L.toFixed(2)+' m' + (t[11][i]?' · measured base':' · computed'))).join('');
   const fs = t[9].reduce((a,b)=>a+b,0);
   const tt = `<div class="t"><h4>Tarski · lengths</h4>` + sides
@@ -638,7 +638,7 @@ function pick(ev){{const rc=r.domElement.getBoundingClientRect();mp.set((ev.clie
   const R=t[4]>0?Math.sqrt(t[7]/(t[4]*ARC)):null;
   const D2=t[3];
   info.innerHTML = reading==='gauss'
-    ? `<b>${{t[1]}}</b> · ${{ch}} · area ${{Math.round(t[7]).toLocaleString()}} km²<br>Observed excess ${{t[4].toFixed(2)}}″ = ${{t[6].toFixed(1)}}σ above flat${{R?` · own radius ${{Math.round(R).toLocaleString()}} km`:''}} · <span style="color:var(--unres)">exits TE: curvature from angles (Art. 20), not from lengths</span>`
+    ? `<b>${{t[1]}}</b> · ${{ch}} · area ${{Math.round(t[7]).toLocaleString()}} km²<br>Observed excess ${{t[4].toFixed(2)}}″ = ${{t[6].toFixed(1)}}σ above flat${{R?` · own radius ${{Math.round(R).toLocaleString()}} km`:''}} · <span style="color:var(--unres)">exits the Theorema Egregium: curvature from angles (Art. 20), not from lengths</span>`
     : `<b>${{t[1]}}</b> · ${{ch}}<br>Printed sides ${{t[8].map(x=>(x/1000).toFixed(3)).join(', ')}} km → a plane triangle, angles sum to 180° exactly · <span style="color:var(--accent)">no curvature in three lengths</span>`;}}
 r.domElement.addEventListener('pointermove',pick);r.domElement.addEventListener('pointerdown',pick);
 const op=[];for(const run of O)for(let i=1;i<run.length;i++)op.push(run[i-1][0],run[i-1][1],0,run[i][0],run[i][1],0);
