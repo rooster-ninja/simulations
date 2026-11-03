@@ -113,7 +113,7 @@ code{font-family:var(--f-mono);font-size:.92em}
 
   <section class="panel" style="border-color:var(--unres)">
     <div class="ptitle" style="color:var(--unres)">Highlight · The printed excess presumes an Earth radius</div>
-    <div class="math">ε<sub>printed</sub> = a b sin C / (2 ρ<sub>m</sub> ρ<sub>n</sub> sin 1″)</div>
+    <div class="math">ε<sub>printed</sub> = a b sin C / (2 ρ<sub>m</sub> ρ<sub>n</sub> sin 1″)  ·  A* = A − ε<sub>printed</sub>/3  ·  a / sin A* = b / sin B* = c / sin C*</div>
     <div class="prose">
       <p><b>The excess Schott printed was not measured. It was computed</b> from the plane triangle's area and the radii of curvature ρ<sub>m</sub>, ρ<sub>n</sub> of an assumed reference spheroid (SP4 p. 51; SP7 p. 26). The Survey's spheroid was Clarke's of 1866 (SP4 p. 47), whose mean radius √(ρ<sub>m</sub>ρ<sub>n</sub>) is 6,367 km at 30° N, 6,374 km at 39° N and 6,378 km at 45° N. Turning a printed excess back into a radius, √(area / ε<sub>printed</sub>), returns that presumed radius:</p>
     </div>
@@ -121,6 +121,7 @@ code{font-family:var(--f-mono);font-size:.92em}
       <thead><tr><th>Chain</th><th class="n">Triangles (ε &gt; 0.2″)</th><th class="n">Radius implied by printed ε, median</th><th class="n">Middle half</th></tr></thead>
       <tbody><tr><td>39th parallel</td><td class="n">459</td><td class="n">6 373 km</td><td class="n">6 369 – 6 377 km</td></tr><tr><td>Eastern Oblique</td><td class="n">280</td><td class="n">6 372 km</td><td class="n">6 369 – 6 376 km</td></tr></tbody></table></div>
     <ol class="steps">
+      <li><b>The ε/3 step.</b> Schott took one third of the printed excess off each observed angle, A* = A − ε<sub>printed</sub>/3, so the three reduced angles sum to 180° and can be solved as a plane triangle (Legendre's theorem; SP4 p. 51: angles "diminished by ⅓ E"). Every side was then computed from these reduced angles by the law of sines, starting from a base. The amount taken off each angle comes from the presumed radius, not from that triangle's own angle sum. Panel 5 shows this fingerprint in every triangle: plane angle from the printed sides = observed angle − ε<sub>printed</sub>/3, to a median 0.51″.</li>
       <li><b>Where the presumed radius goes.</b> Into the printed excess column; into every computed side, because each angle was reduced by ε<sub>printed</sub>/3 before the sides were worked out (Legendre); into Schott's closing errors, defined as "π plus spherical excess minus the sum of the angles" (SP4 p. 612); and so into every closed-fan deficit in panel 6.</li>
       <li><b>What is free of it.</b> Only the observed angle sum minus 180°. That is the number tested on this page (z, the 3D curves, the own radius √(area / observed ε)). Even there, directions west of the Salina base carry a small sea-level reduction computed on Clarke's spheroid, 0.000066″ × sin 2α × height in metres (SP4 p. 47): about 0.26″ at most for a 4 000 m station.</li>
       <li><b>How much the choice matters.</b> Schott checked: swapping Clarke's spheroid for Bessel's changes the largest triangle's excess, 73.7584″ for Tushar–Wheeler–Nebo, "but 0″.0171" (SP4 p. 840). The printed excess depends on the spheroid chosen, not on anything measured in that triangle.</li>
