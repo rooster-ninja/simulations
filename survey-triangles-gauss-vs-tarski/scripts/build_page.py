@@ -356,6 +356,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
       <thead><tr><th>Chain</th><th class="n">Fans</th><th class="n">Deficit from sides</th><th class="n">Deficit − ⅓Σ printed ε</th><th class="n">Deficit − ⅓Σ observed ε</th></tr></thead>
       <tbody>{fan_rows}</tbody></table></div>
     <p class="finding red">Finding: from lengths alone, every fan fails to lie flat: deficits of {min(defs):.1f}″ to {max(defs):.1f}″, so as a lengths-only sentence, "flat" is refuted. But the deficit equals one third of the fan's printed excess to {fan_all_p[1]:+.2f}″ ± {fan_all_p[2]:.2f}″, closer than it matches the observed excess ({fan_all_o[1]:+.2f}″ ± {fan_all_o[2]:.2f}″). The curvature in the lengths is the ellipsoid excess Schott subtracted from each angle to compute the sides. It entered through steps 1–6 of panel 4; it was not measured as a length.</p>
+    <p class="finding">So the fans are an echo, not a test. At face value they read curved, but they only repeat what the angles said, and the angles exit TE. With these lengths the fans add no information of their own: as a lengths-only test they cannot tell flat from curved.</p>
     <div class="tablebox"><table>
       <thead><tr><th>Centre (10 largest)</th><th>Chain</th><th class="n">Triangles</th><th class="n">Deficit from sides</th><th class="n">⅓Σ printed ε</th><th class="n">⅓Σ observed ε</th></tr></thead>
       <tbody>{fan_top_rows}</tbody></table></div>
@@ -374,8 +375,9 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <div class="ptitle">8 · Verdict</div>
     <div class="prose">
       <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one exits TE. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
-      <p><b>Tarski reading.</b> By lengths, all {n_tri} triangles are flat triangles. The {len(F)} closed fans do refute flatness by lengths, yet only by the excess that Legendre's theorem put into the sides. In this data no length was measured independently of the angles, apart from {len(measured_tri)} base sides, and those close nothing by themselves.</p>
-      <p><b>What would stay inside the theorem.</b> A closed fan, or a quadrilateral with both diagonals, whose every side is a measured length. Then the deficit is computed from lengths alone, and only turning it into a value of K needs a further theorem.</p>
+      <p><b>Tarski reading.</b> By lengths, all {n_tri} triangles are flat triangles. The {len(F)} closed fans do refute flatness by lengths, yet only by the excess that Legendre's theorem put into the sides. In this data no length was measured independently of the angles, apart from {len(measured_tri)} base sides, and those close nothing by themselves. So the fans add no information of their own: by lengths alone, this data cannot tell flat from curved.</p>
+      <p><b>What would stay inside the theorem.</b> A closed fan, or a quadrilateral with both diagonals, whose every side is a measured length. Then the deficit is computed from lengths alone:</p>
+      <ol class="steps"><li>Deficit 0 within its error bars: flat.</li><li>Deficit above its error bars: curved.</li><li>Either way the answer comes from lengths alone. Only turning a nonzero deficit into a value of K needs a further theorem.</li></ol>
     </div>
   </section>
 
