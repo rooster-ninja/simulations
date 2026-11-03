@@ -16,6 +16,10 @@ Every triangle of Schott's 39th-parallel arc (465) and Eastern Oblique arc (281)
 - **Tarski reading (lengths).** Only the three printed sides of each triangle are used, decided as plane geometry (Tarski: elementary plane geometry is complete and decidable). All 746 triangles exist as flat triangles, and their plane angles sum to 180° exactly.
 - **Closed fans (lengths).** A station ringed by triangles is the one place lengths alone can show curvature. 62 fans were found. Each fails to close flat by its sides alone, with deficits of 0.3″ to 90.8″. But each deficit equals one third of the fan's printed ellipsoid excess, to +0.05″ ± 0.31″. That is the ε/3 that Legendre's theorem took off each angle to compute the sides. The curvature in the lengths was put there from the angles and the ellipsoid model; it was not measured. So the fans add no information of their own: at face value they read curved, but as a lengths-only test they cannot tell flat from curved. A fan with every side measured would decide it: deficit 0 within error bars means flat, above them means curved.
 
+## The presumed Earth radius
+
+Schott's printed excess was computed, not measured: ε = ab sin C / (2ρ<sub>m</sub>ρ<sub>n</sub> sin 1″), with ρ<sub>m</sub>, ρ<sub>n</sub> the radii of curvature of Clarke's 1866 spheroid (SP4 pp. 47, 51; SP7 p. 26), a mean radius of about 6 374 km at 39° N. Turning the printed excess back into a radius, √(area / ε), gives a median of 6 373 km (39th parallel) and 6 372 km (Eastern Oblique). That presumed radius enters the printed excess, every computed side (each angle reduced by ε/3), Schott's closing errors (π + spherical excess − sum of angles, SP4 p. 612), and therefore every closed-fan deficit. Only the observed angle sum − 180° is free of it, apart from a sea-level reduction of directions west of Salina computed on Clarke's spheroid (≤ 0.26″ at 4 000 m, SP4 p. 47). Swapping Clarke for Bessel changes the largest triangle's printed excess by 0.0171″ of 73.7584″ (SP4 p. 840).
+
 ## Result
 
 | | 39th parallel | Eastern Oblique |
@@ -74,13 +78,13 @@ Rebuild: `python3 scripts/build.py && python3 scripts/build_page.py`.
 | `data/gauss_tarski.json` | Everything the page draws |
 | `sources/kml_*_triangles.json` | Schott's printed angles, excess, sides and pages (from the report's master KML) |
 | `sources/triangles_rule.csv`, `us_triangle_vertices.csv`, `na_outline_lonlat.json`, `flat_plane_chains_triangles.csv` | Copies from the report / flat-plane-chains (chain-tile flags for the 3D view) |
-| `sources/Schott_SP4_1900_pp25_51_206_612-614.pdf`, `sources/Schott_SP7_1902_p26.pdf` | Page extracts quoted on the page |
+| `sources/Schott_SP4_1900_pp25_51_206_612-614.pdf`, `sources/Schott_SP4_1900_pp47_840.pdf`, `sources/Schott_SP7_1902_p26.pdf` | Page extracts quoted on the page |
 
 ## Sources
 
 - C. F. Gauss, *Disquisitiones generales circa superficies curvas* (1827), tr. Morehead & Hiltebeitel (1902), Project Gutenberg 36856: Art. 11 (p. 19), Art. 12 (p. 20), Art. 20 (p. 29), Arts. 27–28 (pp. 42–43).
 - A. Tarski, *A Decision Method for Elementary Algebra and Geometry*, RAND R-109 (1948; 2nd ed. 1951).
-- C. A. Schott, USC&GS Special Publication No. 4 (1900): pp. 25, 51, 206, 612–614.
+- C. A. Schott, USC&GS Special Publication No. 4 (1900): pp. 25, 47, 51, 206, 612–614, 840.
 - C. A. Schott, USC&GS Special Publication No. 7 (1902): p. 26.
 - The Theorema Egregium report's master KML and `triangles_rule.csv`.
 - Natural Earth 1:50m admin-0 countries (public domain).
