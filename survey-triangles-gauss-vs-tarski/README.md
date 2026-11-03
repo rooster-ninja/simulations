@@ -12,7 +12,7 @@
 
 Every triangle of Schott's 39th-parallel arc (465) and Eastern Oblique arc (281) is read two ways.
 
-- **Gauss reading (angles).** Excess ε = sum of observed angles − 180°, tested against closure noise. 220 triangles are curved beyond 3σ. Every one gets its curvature through angular excess. That route exits TE, the Theorema Egregium (Art. 12, curvature from lengths E, F, G) for Art. 20 (angle excess = integral curvature, stated through the normals), and it rests on plumb-levelled angles and on sight lines treated as shortest lines.
+- **Gauss reading (angles).** Excess ε = sum of observed angles − 180°, tested against closure noise. 220 triangles are curved beyond 3σ. Every one gets its curvature through angular excess. That route exits the Theorema Egregium (Art. 12, curvature from lengths E, F, G) for Art. 20 (angle excess = integral curvature, stated through the normals), and it rests on plumb-levelled angles and on sight lines treated as shortest lines.
 - **Tarski reading (lengths).** Only the three printed sides of each triangle are used, decided as plane geometry (Tarski: elementary plane geometry is complete and decidable). All 746 triangles exist as flat triangles, and their plane angles sum to 180° exactly.
 - **Closed fans (lengths).** A station ringed by triangles is the one place lengths alone can show curvature. 62 fans were found. Each fails to close flat by its sides alone, with deficits of 0.3″ to 90.8″. But each deficit equals one third of the fan's printed ellipsoid excess, to +0.05″ ± 0.31″. That is the ε/3 that Legendre's theorem took off each angle to compute the sides. The curvature in the lengths was put there from the angles and the ellipsoid model; it was not measured. So the fans add no information of their own: at face value they read curved, but as a lengths-only test they cannot tell flat from curved. A fan with every side measured would decide it: deficit 0 within error bars means flat, above them means curved.
 
@@ -31,7 +31,7 @@ Every triangle of Schott's 39th-parallel arc (465) and Eastern Oblique arc (281)
 | Fan deficit − ⅓Σ printed ε | +0.01″ ± 0.19″ | +0.15″ ± 0.48″ |
 | Fan deficit − ⅓Σ observed ε | +0.33″ ± 0.47″ (39) | +0.73″ ± 1.18″ (16) |
 
-These are inductive findings from Schott's printed values at the stated noise. The excess is real at that noise; the finding is about the route: every curved triangle exits TE.
+These are inductive findings from Schott's printed values at the stated noise. The excess is real at that noise; the finding is about the route: every curved triangle exits the Theorema Egregium.
 
 ## How it works
 
