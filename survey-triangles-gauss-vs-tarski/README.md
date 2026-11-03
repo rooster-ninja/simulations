@@ -4,11 +4,15 @@
 
 ![The two US chains in the Gauss reading, coloured by excess over a flat triangle](figures/gauss_reading.png)
 
+![Gauss curves in 3D: each western triangle drawn as its own piece of sphere from its own excess](figures/gauss_curves_3d.png)
+
 ## What it shows
+
+- **Gauss curves in 3D.** Each tested triangle drawn as the piece of a sphere of its own radius √(area / observed excess) through its three corners, coloured by σ above flat, with a height slider. Nothing joins one triangle's curve to the next. Switching to the Tarski reading settles every curve flat.
 
 Every triangle of Schott's 39th-parallel arc (465) and Eastern Oblique arc (281) is read two ways.
 
-- **Gauss reading (angles).** Excess ε = sum of observed angles − 180°, tested against closure noise. 220 triangles are curved beyond 3σ. Every one gets its curvature through angular excess. That route leaves the Theorema Egregium (Art. 12, curvature from lengths E, F, G) for Art. 20 (angle excess = integral curvature, stated through the normals), and it rests on plumb-levelled angles and on sight lines treated as shortest lines.
+- **Gauss reading (angles).** Excess ε = sum of observed angles − 180°, tested against closure noise. 220 triangles are curved beyond 3σ. Every one gets its curvature through angular excess. That route exits TE, the Theorema Egregium (Art. 12, curvature from lengths E, F, G) for Art. 20 (angle excess = integral curvature, stated through the normals), and it rests on plumb-levelled angles and on sight lines treated as shortest lines.
 - **Tarski reading (lengths).** Only the three printed sides of each triangle are used, decided as plane geometry (Tarski: elementary plane geometry is complete and decidable). All 746 triangles exist as flat triangles, and their plane angles sum to 180° exactly.
 - **Closed fans (lengths).** A station ringed by triangles is the one place lengths alone can show curvature. 62 fans were found. Each fails to close flat by its sides alone, with deficits of 0.3″ to 90.8″. But each deficit equals one third of the fan's printed ellipsoid excess, to +0.05″ ± 0.31″. That is the ε/3 that Legendre's theorem took off each angle to compute the sides. The curvature in the lengths was put there from the angles and the ellipsoid model; it was not measured.
 
@@ -27,7 +31,7 @@ Every triangle of Schott's 39th-parallel arc (465) and Eastern Oblique arc (281)
 | Fan deficit − ⅓Σ printed ε | +0.01″ ± 0.19″ | +0.15″ ± 0.48″ |
 | Fan deficit − ⅓Σ observed ε | +0.33″ ± 0.47″ (39) | +0.73″ ± 1.18″ (16) |
 
-These are inductive findings from Schott's printed values at the stated noise. The excess is real at that noise; the finding is about the route: none of the curved triangles is a Theorema Egregium result.
+These are inductive findings from Schott's printed values at the stated noise. The excess is real at that noise; the finding is about the route: every curved triangle exits TE.
 
 ## How it works
 
@@ -51,6 +55,7 @@ Rebuild: `python3 scripts/build.py && python3 scripts/build_page.py`.
 | Near-degenerate triangle | Humboldt–Reinhard–Erricssen, 179.87° corner | margin 2.4 cm against ~0.5 cm log rounding; still exists flat |
 | Fan finder | map bearings | chooses the ring only; values use sides |
 | Display map | azimuthal equidistant | none |
+| 3D curve shape | even curvature inside each triangle | display only: the excess gives the total, not its spread |
 
 ## Simplifications
 
@@ -68,7 +73,7 @@ Rebuild: `python3 scripts/build.py && python3 scripts/build_page.py`.
 | `data/fans.csv` | Per closed fan: centre, ring, deficit from sides, ⅓Σ printed and observed excess |
 | `data/gauss_tarski.json` | Everything the page draws |
 | `sources/kml_*_triangles.json` | Schott's printed angles, excess, sides and pages (from the report's master KML) |
-| `sources/triangles_rule.csv`, `us_triangle_vertices.csv`, `na_outline_lonlat.json` | Copies from the report / flat-plane-chains |
+| `sources/triangles_rule.csv`, `us_triangle_vertices.csv`, `na_outline_lonlat.json`, `flat_plane_chains_triangles.csv` | Copies from the report / flat-plane-chains (chain-tile flags for the 3D view) |
 | `sources/Schott_SP4_1900_pp25_51_206_612-614.pdf`, `sources/Schott_SP7_1902_p26.pdf` | Page extracts quoted on the page |
 
 ## Sources

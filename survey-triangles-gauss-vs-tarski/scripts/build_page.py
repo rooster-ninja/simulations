@@ -111,12 +111,15 @@ def proj(lon, lat, lon0=-92.0, lat0=39.0, R=6371.0):
     return (k * math.cos(p) * math.sin(dl), k * (math.cos(p0) * math.sin(p) - math.sin(p0) * math.cos(p) * math.cos(dl)))
 outline = [[[round(v, 1) for v in proj(*pt)] for pt in poly['pts']] for poly in na]
 r3 = lambda v: None if v is None else round(v, 3)
+import csv
+TILE = {(r['survey'], r['triangle']): int(r['chain_tile'] == '1')
+        for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'flat_plane_chains_triangles.csv')))}
 MAPT = [[CH.index(t['survey']), t['triangle'], t['page'], [[round(v, 2) for v in xy] for xy in t['xy']],
          r3(t['observed_excess_arcsec']), r3(t['printed_excess_arcsec']), r3(t['z']), round(t['area_km2'], 1),
          [round(t['side_a_m'], 2), round(t['side_b_m'], 2), round(t['side_c_m'], 2)],
          [round(a, 6) for a in t['flat_angles']], [None if a is None else round(a, 6) for a in t['printed_angles']],
          [int(m) for m in t['measured_side']], round(t['legendre_residual_rms_arcsec'], 2), t['stations'],
-         round(t['triangle_ineq_margin_m'], 4), int(t['flat_exists'])] for t in T]
+         round(t['triangle_ineq_margin_m'], 4), int(t['flat_exists']), TILE.get((t['survey'], t['triangle']), 0)] for t in T]
 MAPF = [[CH.index(f['survey']), f['centre'], [round(v, 2) for v in f['xy']], f['n_triangles'],
          round(-f['flat_angles_from_sides_minus_360_arcsec'], 3), round(f['third_of_printed_excess_arcsec'], 3),
          r3(f['third_of_observed_excess_arcsec']), f['ring'], f['triangles']] for f in F]
@@ -131,7 +134,7 @@ page = f'''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gauss vs Tarski</title>
 <meta property="og:title" content="Survey triangles across America: Gauss vs Tarski">
-<meta property="og:description" content="Every triangle of Schott's 39th-parallel and Eastern Oblique chains read two ways. By angles (Gauss): {len(above3)} triangles are curved beyond 3σ, but every one gets there through angular excess, which steps outside the Theorema Egregium. By lengths only (Tarski): all {n_tri} close as flat triangles, and the closed fans carry only the curvature Legendre's theorem put into the computed sides.">
+<meta property="og:description" content="Every triangle of Schott's 39th-parallel and Eastern Oblique chains read two ways. By angles (Gauss): {len(above3)} triangles are curved beyond 3σ, but every one gets there through angular excess, which exits TE (the Theorema Egregium). By lengths only (Tarski): all {n_tri} close as flat triangles, and the closed fans carry only the curvature Legendre's theorem put into the computed sides.">
 <meta name="theme-color" content="#f3efe4">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -174,6 +177,13 @@ button[aria-pressed="true"]{{border-color:var(--accent);color:var(--accent)}}
 .viewer{{position:relative;height:min(64vh,560px);min-height:340px;border-radius:12px;overflow:hidden;background:var(--map);border:1.5px solid var(--rule)}}
 .viewer canvas{{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair}}
 #vstatus{{position:absolute;left:12px;top:10px;right:12px;font:600 13px var(--f-mono);color:var(--ink);pointer-events:none;text-shadow:0 0 4px var(--map)}}
+.viewer3{{position:relative;height:min(66vh,580px);min-height:340px;border-radius:12px;overflow:hidden;background:#3a4150;border:1.5px solid var(--rule)}}
+.viewer3 canvas{{display:block;width:100%;height:100%;touch-action:none}}
+#v3status{{position:absolute;inset:auto 12px 12px 12px;color:#e8e3d8;font:13px var(--f-mono)}}
+.info{{font-family:var(--f-mono);font-size:13px;color:var(--ink);min-height:3.2em;background:var(--plate);border:1px solid var(--rule);border-radius:10px;padding:8px 12px}}
+.ex{{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:center;font-family:var(--f-mono);font-size:13px;color:var(--muted)}}
+.ex input{{width:100%;accent-color:var(--accent)}}
+.ex output{{grid-column:1/-1}}
 .audit{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
 @media (max-width:720px){{.audit{{grid-template-columns:1fr}}}}
 .audit>div{{font-family:var(--f-mono);font-size:13px;background:var(--plate);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;min-height:7em;overflow-x:auto}}
@@ -217,7 +227,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <p class="back"><a href="../">← All simulations</a></p>
     <p class="eyebrow">Theorema Egregium · Gauss vs Tarski</p>
     <h1>Survey triangles across America: Gauss vs Tarski</h1>
-    <p class="sub">Every triangle of Schott's 39th-parallel and Eastern Oblique chains, read two ways. Read by its angles, a triangle can show curvature, but only through angular excess, and that step leaves the Theorema Egregium. Read by its lengths only, as Tarski's plane geometry decides, every triangle closes flat. The curved triangles all live on the angle side.</p>
+    <p class="sub">Every triangle of Schott's 39th-parallel and Eastern Oblique chains, read two ways. Read by its angles, a triangle can show curvature, but only through angular excess, and that step exits TE (the Theorema Egregium). Read by its lengths only, as Tarski's plane geometry decides, every triangle closes flat. The curved triangles all live on the angle side.</p>
   </header>
 
   <section class="readout" aria-label="Key numbers">
@@ -255,13 +265,38 @@ code{{font-family:var(--f-mono);font-size:.92em}}
   </section>
 
   <section class="panel">
-    <div class="ptitle">2 · What the theorem allows</div>
+    <div class="ptitle">2 · Gauss curves in 3D: each triangle's own excess</div>
+    <div class="controls"><span class="lab">Reading</span>
+      <button class="rbtn" data-r="gauss" aria-pressed="true">Gauss: curved by angles</button>
+      <button class="rbtn" data-r="tarski">Tarski: lengths only</button></div>
+    <div class="controls"><span class="lab">Triangles</span>
+      <button class="tbtn" data-t="tiles" aria-pressed="true">chain tiles</button>
+      <button class="tbtn" data-t="all">all, overlapping</button></div>
+    <div class="controls"><span class="lab">Chain</span>
+      <button class="s3btn" data-s="both" aria-pressed="true">both</button>
+      <button class="s3btn" data-s="0">39th parallel</button>
+      <button class="s3btn" data-s="1">Eastern Oblique</button></div>
+    <div class="controls"><span class="lab">View</span>
+      <button class="v3btn" data-v="oblique" aria-pressed="true">whole</button>
+      <button class="v3btn" data-v="west">west</button>
+      <button class="v3btn" data-v="nebo">Nebo–Tushar–Wheeler</button>
+      <button class="v3btn" data-v="east">east</button>
+      <button class="v3btn" data-v="top">top</button></div>
+    <div class="viewer3" id="viewer3"><div id="v3status">Loading 3D…</div></div>
+    <div class="ex"><label for="exag">Curve height</label><input id="exag" type="range" min="0" max="100" value="50"><output id="exout" for="exag"></output></div>
+    <div class="legend" id="legend3"></div>
+    <div class="info" id="info3" aria-live="polite">Hover or tap a curved triangle to read its numbers.</div>
+    <p class="cap">Each tested triangle is drawn as the piece of a sphere of its own radius, √(area / observed excess), through its three corners: height (r² − d²) / 2R above the flat plane, r its circumradius and d the distance from the circumcentre. Negative excess dips below. Nothing joins one triangle's curve to the next: each curve is that triangle's own excess and exists only inside it. The excess gives only the triangle's total curvature, so the even spread drawn inside it is a display choice. Under 3σ is faded; red is an angle never observed. Switch to the Tarski reading and every curve settles flat: from its three printed sides each triangle is a plane triangle. Map: azimuthal equidistant, display only.</p>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">3 · What the theorem allows</div>
     <div class="two">
       <div class="col g prose">
         <h3>Gauss, 1827</h3>
         <blockquote>"If a curved surface is developed upon any other surface whatever, the measure of curvature in each point remains unchanged."<cite>Disquisitiones generales, Art. 12 (Theorema Egregium)</cite></blockquote>
         <p>The proof (Art. 11) gives the measure of curvature by a formula "which involves only the quantities E, F, G and their differential quotients": lengths measured on the surface. That is the whole theorem. It names no triangle, no angle sum and no excess.</p>
-        <p>The angle-sum theorem is a different one, Art. 20, and Gauss states it through the normals: the excess "is measured by the area of the part of the sphere which corresponds, through the directions of the normals, to that triangle". Getting from excess to curvature leaves Art. 12 for Art. 20.</p>
+        <p>The angle-sum theorem is a different one, Art. 20, and Gauss states it through the normals: the excess "is measured by the area of the part of the sphere which corresponds, through the directions of the normals, to that triangle". Getting from excess to curvature exits TE: it leaves Art. 12 for Art. 20.</p>
       </div>
       <div class="col t prose">
         <h3>Tarski, 1948 / 1951</h3>
@@ -275,27 +310,27 @@ code{{font-family:var(--f-mono);font-size:.92em}}
   </section>
 
   <section class="panel">
-    <div class="ptitle">3 · Gauss reading: every curved triangle leaves the theorem</div>
+    <div class="ptitle">4 · Gauss reading: every curved triangle exits TE</div>
     <div class="tablebox"><table>
       <thead><tr><th>Chain</th><th class="n">Triangles</th><th class="n">Tested by angles</th><th class="n">Excess + / −</th><th class="n">&gt;3σ curved</th><th class="n">Closure noise</th><th class="n">Via angular excess</th></tr></thead>
       <tbody>{gauss_rows}</tbody></table></div>
     <div class="math">ε = A + B + C − 180°  ·  z = ε / σ  ·  K ≈ ε / area</div>
-    <p class="cap">Each step that turns a curved triangle's numbers into curvature, and where it sits relative to Art. 12. Every one of the {len(tested)} tested triangles takes all of rows 1–4; none takes a length-only route.</p>
+    <p class="cap">Each step that turns a curved triangle's numbers into curvature, and where it exits TE. Every one of the {len(tested)} tested triangles takes all of rows 1–4; none takes a length-only route.</p>
     <div class="tablebox"><table>
-      <thead><tr><th class="n">#</th><th>Step</th><th>What it rests on</th><th>Inside Art. 12?</th><th>Source</th></tr></thead>
+      <thead><tr><th class="n">#</th><th>Step</th><th>What it rests on</th><th>Exits TE?</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td class="n">1</td><td>The data are angles, not lengths</td><td>Theodolite readings between signals</td><td class="x">no: Art. 12 uses E, F, G</td><td>Schott SP4 §H p. 612</td></tr>
-        <tr><td class="n">2</td><td>Each angle lies in the station's horizontal plane</td><td>Instrument "necessarily adjusted to the plumb-line": gravity sets the plane</td><td class="x">no: extrinsic, the plumb line is not a surface length</td><td>SP4 p. 206; SP7 p. 26</td></tr>
-        <tr><td class="n">3</td><td>Sight lines stand in for shortest lines on the surface</td><td>Light through air, with "persistent lateral refraction"</td><td class="x">no: assumed, not measured</td><td>SP4 p. 206; SP7 p. 26</td></tr>
-        <tr><td class="n">4</td><td>Excess over 180° = integral curvature</td><td>Gauss Art. 20, stated "through the directions of the normals"</td><td class="x">no: Art. 20, a different theorem</td><td>Gauss Art. 20</td></tr>
-        <tr><td class="n">5</td><td>K = excess ÷ area</td><td>Curvature taken as even over the triangle</td><td class="x">no: an average, not a point value</td><td>—</td></tr>
-        <tr><td class="n">6</td><td>The printed excess column</td><td>Computed from ab sin C over the ellipsoid's radii ρ<sub>m</sub>ρ<sub>n</sub></td><td class="x">no: model output, not observed</td><td>SP4 p. 51; SP7 p. 26</td></tr>
+        <tr><td class="n">1</td><td>The data are angles, not lengths</td><td>Theodolite readings between signals</td><td class="x">exits TE: Art. 12 uses E, F, G</td><td>Schott SP4 §H p. 612</td></tr>
+        <tr><td class="n">2</td><td>Each angle lies in the station's horizontal plane</td><td>Instrument "necessarily adjusted to the plumb-line": gravity sets the plane</td><td class="x">exits TE: extrinsic, the plumb line is not a surface length</td><td>SP4 p. 206; SP7 p. 26</td></tr>
+        <tr><td class="n">3</td><td>Sight lines stand in for shortest lines on the surface</td><td>Light through air, with "persistent lateral refraction"</td><td class="x">exits TE: assumed, not measured</td><td>SP4 p. 206; SP7 p. 26</td></tr>
+        <tr><td class="n">4</td><td>Excess over 180° = integral curvature</td><td>Gauss Art. 20, stated "through the directions of the normals"</td><td class="x">exits TE: Art. 20, a different theorem</td><td>Gauss Art. 20</td></tr>
+        <tr><td class="n">5</td><td>K = excess ÷ area</td><td>Curvature taken as even over the triangle</td><td class="x">exits TE: an average, not a point value</td><td>—</td></tr>
+        <tr><td class="n">6</td><td>The printed excess column</td><td>Computed from ab sin C over the ellipsoid's radii ρ<sub>m</sub>ρ<sub>n</sub></td><td class="x">exits TE: model output, not observed</td><td>SP4 p. 51; SP7 p. 26</td></tr>
       </tbody></table></div>
-    <p class="finding red">Finding: {len(above3)} triangles are curved beyond 3σ by their angles, the largest {esc(big["triangle"])} at {big["z"]:.0f}σ. All {len(above3)}, and all {len(tested)} tested, reach curvature through steps 1–4. None is a Theorema Egregium result. They are results of Art. 20 applied to plumb-levelled angles. This is a statement about the route, not the size: the excess is measured and real at the stated noise.</p>
+    <p class="finding red">Finding: {len(above3)} triangles are curved beyond 3σ by their angles, the largest {esc(big["triangle"])} at {big["z"]:.0f}σ. All {len(above3)}, and all {len(tested)} tested, reach curvature through steps 1–4. Every one exits TE; none is a Theorema Egregium result. They are results of Art. 20 applied to plumb-levelled angles. This is a statement about the route, not the size: the excess is measured and real at the stated noise.</p>
   </section>
 
   <section class="panel">
-    <div class="ptitle">4 · Tarski reading: every triangle closes flat</div>
+    <div class="ptitle">5 · Tarski reading: every triangle closes flat</div>
     <div class="tablebox"><table>
       <thead><tr><th>Chain</th><th class="n">Triangles</th><th class="n">Exist flat</th><th class="n">|Σ − 180°| max</th><th class="n">With a measured side</th><th class="n">Legendre residual, median</th><th class="n">95%</th></tr></thead>
       <tbody>{tarski_rows}</tbody></table></div>
@@ -312,7 +347,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
   </section>
 
   <section class="panel">
-    <div class="ptitle">5 · Closed fans: the one lengths-only test, and what it finds</div>
+    <div class="ptitle">6 · Closed fans: the one lengths-only test, and what it finds</div>
     <p class="cap">A strip of triangles always lays flat. Curvature can show in lengths only where triangles close around a station: then their plane angles at the centre, computed from sides alone, must total 360° on a flat surface. Schott built both chains of "quadrilaterals or central figures" (SP4 p. 25), so such fans exist: {len(F)} found.</p>
     <div class="math">deficit = 360° − Σ A*<sub>i</sub>  (A* from printed sides only)</div>
     <div class="histbox">{scatter}</div>
@@ -320,32 +355,32 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <div class="tablebox"><table>
       <thead><tr><th>Chain</th><th class="n">Fans</th><th class="n">Deficit from sides</th><th class="n">Deficit − ⅓Σ printed ε</th><th class="n">Deficit − ⅓Σ observed ε</th></tr></thead>
       <tbody>{fan_rows}</tbody></table></div>
-    <p class="finding red">Finding: from lengths alone, every fan fails to lie flat: deficits of {min(defs):.1f}″ to {max(defs):.1f}″, so as a lengths-only sentence, "flat" is refuted. But the deficit equals one third of the fan's printed excess to {fan_all_p[1]:+.2f}″ ± {fan_all_p[2]:.2f}″, closer than it matches the observed excess ({fan_all_o[1]:+.2f}″ ± {fan_all_o[2]:.2f}″). The curvature in the lengths is the ellipsoid excess Schott subtracted from each angle to compute the sides. It entered through steps 1–6 of panel 3; it was not measured as a length.</p>
+    <p class="finding red">Finding: from lengths alone, every fan fails to lie flat: deficits of {min(defs):.1f}″ to {max(defs):.1f}″, so as a lengths-only sentence, "flat" is refuted. But the deficit equals one third of the fan's printed excess to {fan_all_p[1]:+.2f}″ ± {fan_all_p[2]:.2f}″, closer than it matches the observed excess ({fan_all_o[1]:+.2f}″ ± {fan_all_o[2]:.2f}″). The curvature in the lengths is the ellipsoid excess Schott subtracted from each angle to compute the sides. It entered through steps 1–6 of panel 4; it was not measured as a length.</p>
     <div class="tablebox"><table>
       <thead><tr><th>Centre (10 largest)</th><th>Chain</th><th class="n">Triangles</th><th class="n">Deficit from sides</th><th class="n">⅓Σ printed ε</th><th class="n">⅓Σ observed ε</th></tr></thead>
       <tbody>{fan_top_rows}</tbody></table></div>
   </section>
 
   <section class="panel">
-    <div class="ptitle">6 · The measured lengths, and how they were compared</div>
+    <div class="ptitle">7 · The measured lengths, and how they were compared</div>
     <p class="cap">The 39th-parallel chain "is supported by 10 base lines suitably distributed" (SP4 p. 25), measured with bars on the ground. Adjacent bases were compared through the triangulation between them, and Schott says how: the length equation "has been derived from the angles", with "Spherical angles … the logarithms of the terminal lines having been corrected for difference in arc and sine" (SP4 p. 613).</p>
     <div class="tablebox"><table>
       <thead><tr><th>Base lines (SP4 p. 614)</th><th class="n">Discrepancy, 7th place of log</th><th class="n">One part in</th></tr></thead>
       <tbody>{base_rows}</tbody></table></div>
-    <p class="cap">Raw values as printed; a plus sign means the eastern base gives the greater length. These are length against length, but the bridge between them is angles reduced with spherical excess, so they carry the same exits as panel 3. No pair of measured lengths in either chain closes a figure by lengths alone.</p>
+    <p class="cap">Raw values as printed; a plus sign means the eastern base gives the greater length. These are length against length, but the bridge between them is angles reduced with spherical excess, so they exit TE the same way as panel 4. No pair of measured lengths in either chain closes a figure by lengths alone.</p>
   </section>
 
   <section class="panel">
-    <div class="ptitle">7 · Verdict</div>
+    <div class="ptitle">8 · Verdict</div>
     <div class="prose">
-      <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one falls outside the Theorema Egregium. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
+      <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one exits TE. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
       <p><b>Tarski reading.</b> By lengths, all {n_tri} triangles are flat triangles. The {len(F)} closed fans do refute flatness by lengths, yet only by the excess that Legendre's theorem put into the sides. In this data no length was measured independently of the angles, apart from {len(measured_tri)} base sides, and those close nothing by themselves.</p>
       <p><b>What would stay inside the theorem.</b> A closed fan, or a quadrilateral with both diagonals, whose every side is a measured length. Then the deficit is computed from lengths alone, and only turning it into a value of K needs a further theorem.</p>
     </div>
   </section>
 
   <section class="panel">
-    <div class="ptitle">8 · Methods</div>
+    <div class="ptitle">9 · Methods</div>
     <ol class="steps">
       <li><b>Data.</b> Schott's printed angles, spherical excess and sides for every triangle of the 39th-parallel arc (SP4, 465 triangles) and the Eastern Oblique arc (SP7, 281), as transcribed in the Theorema Egregium report's master KML. Sides are printed as log metres. Observed excess and qc (3 degree misprints corrected from the printed sides) come from the report's <code>triangles_rule.csv</code>.</li>
       <li><b>Gauss reading.</b> ε = sum of the three station-adjusted angles − 180°; z = ε / σ with the report's per-survey closure noise. Triangles with an angle printed "…." are not tested.</li>
@@ -356,7 +391,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
   </section>
 
   <section class="panel">
-    <div class="ptitle">9 · Error budget and limits</div>
+    <div class="ptitle">10 · Error budget and limits</div>
     <div class="tablebox"><table>
       <thead><tr><th>Source</th><th>Size</th><th>Effect here</th></tr></thead>
       <tbody>
@@ -385,7 +420,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <ul>
       <li>Gauss, C. F., <i>Disquisitiones generales circa superficies curvas</i> (1827), tr. Morehead &amp; Hiltebeitel, <i>General Investigations of Curved Surfaces</i> (Princeton, 1902); <a href="https://www.gutenberg.org/ebooks/36856">Project Gutenberg 36856</a>. Art. 11, p. 19: "which involves only the quantities E, F, G and their differential quotients". Art. 12, p. 20: "If a curved surface is developed upon any other surface whatever, the measure of curvature in each point remains unchanged." Art. 20, p. 29: "The excess over 180° of the sum of the angles of a triangle formed by shortest lines on a concavo-concave curved surface … is measured by the area of the part of the sphere which corresponds, through the directions of the normals, to that triangle". Art. 27 (p. 42 of the 1902 printing): "the well-known theorem first established by the illustrious Legendre"; Art. 28 (p. 43): the Hohehagen–Brocken–Inselsberg triangle, "where the excess of the sum of the angles was 14″.85348".</li>
       <li>Tarski, A., <i>A Decision Method for Elementary Algebra and Geometry</i>, RAND R-109 (1948; 2nd ed. University of California Press, 1951); <a href="https://www.rand.org/pubs/reports/R109.html">RAND report page</a>, summary: "A decision method by which the truth of sentences of the elementary algebra and geometry of real numbers is determined." The RAND scan is image-only; no further page is quoted.</li>
-      <li>Schott, C. A., <i>The Transcontinental Triangulation and the American Arc of the Parallel</i>, USC&amp;GS Special Publication No. 4, 1900. p. 25: "Either quadrilaterals or central figures such as polygons formed by combination of triangles compose the scheme, while its length is supported by 10 base lines suitably distributed." p. 51: "the comparative shortness of the sides of the triangles admits of the application of Legendre's theorem in its simple form"; sides of "a plane triangle, whose angles are those of the corresponding small spherical triangle after each has been diminished by ⅓ E". p. 206: "the vertical axis of the theodolite being necessarily adjusted to the plumb-line … Persistent lateral refraction also has a share". p. 612: closure of the triangles "(π plus spherical excess minus the sum of the angles)". p. 613: "the length equation has been derived from the angles"; "Spherical angles have been used, the logarithms of the terminal lines having been corrected for difference in arc and sine." p. 614: discord between adjacent base lines (table in panel 6). Page extracts: <code>sources/Schott_SP4_1900_pp25_51_206_612-614.pdf</code>.</li>
+      <li>Schott, C. A., <i>The Transcontinental Triangulation and the American Arc of the Parallel</i>, USC&amp;GS Special Publication No. 4, 1900. p. 25: "Either quadrilaterals or central figures such as polygons formed by combination of triangles compose the scheme, while its length is supported by 10 base lines suitably distributed." p. 51: "the comparative shortness of the sides of the triangles admits of the application of Legendre's theorem in its simple form"; sides of "a plane triangle, whose angles are those of the corresponding small spherical triangle after each has been diminished by ⅓ E". p. 206: "the vertical axis of the theodolite being necessarily adjusted to the plumb-line … Persistent lateral refraction also has a share". p. 612: closure of the triangles "(π plus spherical excess minus the sum of the angles)". p. 613: "the length equation has been derived from the angles"; "Spherical angles have been used, the logarithms of the terminal lines having been corrected for difference in arc and sine." p. 614: discord between adjacent base lines (table in panel 7). Page extracts: <code>sources/Schott_SP4_1900_pp25_51_206_612-614.pdf</code>.</li>
       <li>Schott, C. A., <i>The Eastern Oblique Arc of the United States and Osculating Spheroid</i>, USC&amp;GS Special Publication No. 7, 1902. p. 26: "effects of large local deflections of the vertical at a station, persistent lateral refraction along a line"; "For the computation of the sides of the triangles Legendre's theorem was used"; excess "computed by the simple formula ab sin C / 2ρ<sub>m</sub>ρ<sub>n</sub> sin 1″". Page extract: <code>sources/Schott_SP7_1902_p26.pdf</code>.</li>
       <li>Triangle angles, sides, excess and station positions: the Theorema Egregium report's master KML and <code>triangles_rule.csv</code> (copies in <code>sources/</code>).</li>
       <li>Coastline: Natural Earth 1:50m admin-0 countries (public domain).</li>
@@ -395,6 +430,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
 
 <script>
 const D = {DATA};
+window.__GT = D;
 const CH = ["39th parallel","Eastern Oblique"];
 const cv = document.getElementById('map'), ctx = cv.getContext('2d'), st = document.getElementById('vstatus');
 let mode = 'gauss', chain = 'both', sel = null, selFan = null;
@@ -443,7 +479,7 @@ function draw(){{
   }}
   if (sel && vis(sel[0]) && mode!=='fans') {{ path(sel[3]); ctx.strokeStyle = css('--accent'); ctx.lineWidth = 3; ctx.stroke(); }}
   const nf = D.f.filter(f=>vis(f[0])).length;
-  st.textContent = mode==='gauss' ? `Gauss · angles: ${{curved}} of ${{shown}} triangles curved beyond 3σ, all via angular excess`
+  st.textContent = mode==='gauss' ? `Gauss · angles: ${{curved}} of ${{shown}} triangles curved beyond 3σ, all via angular excess, all exit TE`
     : mode==='tarski' ? `Tarski · lengths: ${{flat}} of ${{shown}} triangles close as flat triangles`
     : `Closed fans · lengths: ${{nf}} fans; deficit = ⅓ of the printed excess`;
 }}
@@ -464,7 +500,7 @@ function audit(t){{
     + row('observed excess ε', t[4]===null ? 'not tested' : t[4].toFixed(2)+'″')
     + row('z = ε / σ', t[6]===null ? '—' : t[6].toFixed(1)+'σ')
     + row('printed (ellipsoid) excess', t[5].toFixed(2)+'″')
-    + row('route to curvature', 'angles → plumb → Art. 20', 'exit') + '</div>';
+    + row('route to curvature', 'exits TE: angles → plumb → Art. 20', 'exit') + '</div>';
   const sides = t[8].map((L,i)=> row(`${{t[13][(i+1)%3]}} – ${{t[13][(i+2)%3]}}`, L.toFixed(2)+' m' + (t[11][i]?' · measured base':' · computed'))).join('');
   const fs = t[9].reduce((a,b)=>a+b,0);
   const tt = `<div class="t"><h4>Tarski · lengths</h4>` + sides
@@ -525,6 +561,94 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {{ l
 legend(); fit('all');
 // open with the most curved triangle selected
 sel = D.t.reduce((a,t)=> (t[6]!==null && (a===null || t[6]>a[6])) ? t : a, null); audit(sel); draw();
+</script>
+<script type="importmap">{{"imports":{{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {{OrbitControls}} from 'three/addons/controls/OrbitControls.js';
+const box=document.getElementById('viewer3'),st3=document.getElementById('v3status'),info=document.getElementById('info3');
+const T=window.__GT.t, O=window.__GT.o;
+const r=new THREE.WebGLRenderer({{antialias:true}});r.setPixelRatio(Math.min(devicePixelRatio,2));r.outputColorSpace=THREE.SRGBColorSpace;box.appendChild(r.domElement);
+const s=new THREE.Scene();s.background=new THREE.Color(0x3a4150);
+const cam=new THREE.PerspectiveCamera(30,1,5,200000);cam.up.set(0,0,1);
+const ctl=new OrbitControls(cam,r.domElement);ctl.enableDamping=true;ctl.maxDistance=40000;
+s.add(new THREE.HemisphereLight(0xffffff,0x334455,1.25));const dl=new THREE.DirectionalLight(0xffffff,1.6);dl.position.set(-3000,-4000,6000);s.add(dl);
+const ZC=[[-1e9,-3,'#6b3d8f','below −3σ'],[-3,-1,'#a58cc0','−3 to −1σ'],[-1,1,'#e9e4d6','within ±1σ of flat'],[1,3,'#b7d7d0','1 to 3σ'],[3,10,'#5fb0b4','3 to 10σ'],[10,30,'#2b7bb0','10 to 30σ'],[30,1e9,'#173d7a','above 30σ']];
+const UNRES='#c8342a',FLAT='#9fb59a',GROUND=new THREE.Color(0x4b5466);
+const N=10, ARC=4.84813681e-6;
+let mode={{t:'tiles',s:'both'}}, reading='gauss', k=1, kTarget=1, exag=1, maxH=0, mesh=null, umesh=null, lines=null, faceTri=[], ufaceTri=[];
+function zcol(z){{for(const b of ZC)if(z>=b[0]&&z<b[1])return b[2];return '#ffffff';}}
+function legend(){{document.getElementById('legend3').innerHTML = reading==='gauss'
+  ? ZC.map(b=>`<span><i style="background:${{b[2]}}"></i>${{b[3]}}</span>`).join('')+`<span><i style="background:${{UNRES}}"></i>angle never observed</span>`
+  : `<span><i style="background:${{FLAT}}"></i>closes flat from its three printed sides</span><span><i style="background:${{UNRES}}"></i>angle never observed (still flat by sides)</span>`;}}
+function build(){{
+  for(const o of [mesh,umesh,lines])if(o){{s.remove(o);o.geometry.dispose();}}
+  const pos=[],col=[],up=[];faceTri=[];ufaceTri=[];const c=new THREE.Color();maxH=0;
+  T.forEach((t,ti)=>{{
+    if(mode.s!=='both'&&String(t[0])!==mode.s)return;
+    if(mode.t==='tiles'&&!t[16])return;
+    const [a,b,d]=t[3];
+    if(t[6]===null){{up.push(a[0],a[1],0,b[0],b[1],0,d[0],d[1],0);ufaceTri.push(ti);return;}}
+    if(reading==='gauss'){{c.set(zcol(t[6]));c.lerp(GROUND,(1-Math.min(Math.abs(t[6]),3)/3)*.6);}} else c.set(FLAT);
+    const D2=2*(a[0]*(b[1]-d[1])+b[0]*(d[1]-a[1])+d[0]*(a[1]-b[1]));
+    const ux=((a[0]**2+a[1]**2)*(b[1]-d[1])+(b[0]**2+b[1]**2)*(d[1]-a[1])+(d[0]**2+d[1]**2)*(a[1]-b[1]))/D2;
+    const uy=((a[0]**2+a[1]**2)*(d[0]-b[0])+(b[0]**2+b[1]**2)*(a[0]-d[0])+(d[0]**2+d[1]**2)*(b[0]-a[0]))/D2;
+    const rc2=(a[0]-ux)**2+(a[1]-uy)**2, ek=t[4]*ARC/t[7], invR=Math.sign(ek)*Math.sqrt(Math.abs(ek));
+    const P=(i,j)=>{{const kk=N-i-j,b1=i/N,b2=j/N,b3=kk/N;const x=b1*a[0]+b2*b[0]+b3*d[0],y=b1*a[1]+b2*b[1]+b3*d[1];
+      const h=(rc2-(x-ux)**2-(y-uy)**2)/2*invR;if(Math.abs(h)>maxH)maxH=Math.abs(h);return [x,y,h];}};
+    for(let i=0;i<N;i++)for(let j=0;j<N-i;j++){{
+      const tri=[[P(i,j),P(i+1,j),P(i,j+1)]];if(i+j<N-1)tri.push([P(i+1,j),P(i+1,j+1),P(i,j+1)]);
+      for(const f of tri){{for(const v of f){{pos.push(...v);col.push(c.r,c.g,c.b);}}faceTri.push(ti);}}
+    }}
+  }});
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));g.computeVertexNormals();
+  mesh=new THREE.Mesh(g,new THREE.MeshStandardMaterial({{vertexColors:true,roughness:.8,metalness:0,side:THREE.DoubleSide}}));s.add(mesh);
+  const ug=new THREE.BufferGeometry();ug.setAttribute('position',new THREE.Float32BufferAttribute(up,3));
+  umesh=new THREE.Mesh(ug,new THREE.MeshBasicMaterial({{color:UNRES,side:THREE.DoubleSide,transparent:true,opacity:.85,polygonOffset:true,polygonOffsetFactor:-2}}));umesh.position.z=2;s.add(umesh);
+  const lp=[];T.forEach(t=>{{if(mode.s!=='both'&&String(t[0])!==mode.s)return;if(mode.t==='tiles'&&!t[16]&&t[6]!==null)return;const[a,b,d]=t[3];lp.push(a[0],a[1],.5,b[0],b[1],.5,b[0],b[1],.5,d[0],d[1],.5,d[0],d[1],.5,a[0],a[1],.5);}});
+  const lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.Float32BufferAttribute(lp,3));
+  lines=new THREE.LineSegments(lg,new THREE.LineBasicMaterial({{color:0x1a1813,transparent:true,opacity:.35}}));s.add(lines);
+  legend();setEx();
+}}
+const ex=document.getElementById('exag'),exo=document.getElementById('exout');
+function setEx(){{exag=Math.round(Math.pow(10,(+ex.value)/100*4));if(mesh)mesh.scale.z=exag*k;
+  exo.textContent = reading==='gauss'
+    ? `× ${{exag.toLocaleString()}} vertical · highest curve ${{Math.round(maxH*1000).toLocaleString()}} m above its own flat triangle → drawn ${{(maxH*exag).toLocaleString(undefined,{{maximumFractionDigits:0}})}} km`
+    : `Tarski reading: every triangle flat (height 0 at any exaggeration)`;}}
+ex.addEventListener('input',setEx);
+let views={{}},cur='oblique';
+function setView(n){{const[az,el,d0,tg]=views[n];ctl.target.set(...tg);const d=d0*Math.max(1,1.5/cam.aspect),a=az*Math.PI/180,e=el*Math.PI/180;
+  cam.position.set(tg[0]+d*Math.cos(e)*Math.sin(a),tg[1]-d*Math.cos(e)*Math.cos(a),tg[2]+d*Math.sin(e));ctl.update();
+  document.querySelectorAll('button.v3btn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===n)));}}
+function size(){{const w=box.clientWidth,h=box.clientHeight;r.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix();if(views[cur])setView(cur);}}
+new ResizeObserver(size).observe(box);
+const bind=(cls,fn)=>document.querySelectorAll('button.'+cls).forEach(b=>b.addEventListener('click',()=>{{
+  document.querySelectorAll('button.'+cls).forEach(x=>x.setAttribute('aria-pressed',String(x===b)));fn(b);}}));
+bind('tbtn',b=>{{mode.t=b.dataset.t;build();}});
+bind('s3btn',b=>{{mode.s=b.dataset.s;build();}});
+bind('v3btn',b=>{{cur=b.dataset.v;setView(cur);}});
+bind('rbtn',b=>{{reading=b.dataset.r;kTarget=reading==='gauss'?1:0;build();}});
+const ray=new THREE.Raycaster(),mp=new THREE.Vector2();
+function pick(ev){{const rc=r.domElement.getBoundingClientRect();mp.set((ev.clientX-rc.left)/rc.width*2-1,-(ev.clientY-rc.top)/rc.height*2+1);ray.setFromCamera(mp,cam);
+  const hits=ray.intersectObjects([umesh,mesh]);if(!hits.length)return;const h=hits[0];
+  const t=T[h.object===umesh?ufaceTri[h.faceIndex]:faceTri[h.faceIndex]];const ch=t[0]?'Eastern Oblique':'39th parallel';
+  if(t[6]===null){{info.innerHTML=`<b>${{t[1]}}</b> · ${{ch}}<br><span style="color:var(--unres)">One angle never observed: no excess, no curve.</span> By its printed sides it is a flat triangle.`;return;}}
+  const R=t[4]>0?Math.sqrt(t[7]/(t[4]*ARC)):null;
+  const D2=t[3];
+  info.innerHTML = reading==='gauss'
+    ? `<b>${{t[1]}}</b> · ${{ch}} · area ${{Math.round(t[7]).toLocaleString()}} km²<br>Observed excess ${{t[4].toFixed(2)}}″ = ${{t[6].toFixed(1)}}σ above flat${{R?` · own radius ${{Math.round(R).toLocaleString()}} km`:''}} · <span style="color:var(--unres)">exits TE: curvature from angles (Art. 20), not from lengths</span>`
+    : `<b>${{t[1]}}</b> · ${{ch}}<br>Printed sides ${{t[8].map(x=>(x/1000).toFixed(3)).join(', ')}} km → a plane triangle, angles sum to 180° exactly · <span style="color:var(--accent)">no curvature in three lengths</span>`;}}
+r.domElement.addEventListener('pointermove',pick);r.domElement.addEventListener('pointerdown',pick);
+const op=[];for(const run of O)for(let i=1;i<run.length;i++)op.push(run[i-1][0],run[i-1][1],0,run[i][0],run[i][1],0);
+const og=new THREE.BufferGeometry();og.setAttribute('position',new THREE.Float32BufferAttribute(op,3));
+s.add(new THREE.LineSegments(og,new THREE.LineBasicMaterial({{color:0xd9d2c0,transparent:true,opacity:.55}})));
+let xs=[],ys=[];T.forEach(t=>t[3].forEach(p=>{{xs.push(p[0]);ys.push(p[1]);}}));
+const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys),cx=(x0+x1)/2,cy=(y0+y1)/2;
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(30000,20000),new THREE.MeshStandardMaterial({{color:0x4b5466,roughness:1}}));ground.position.set(cx,cy+150,-1);s.add(ground);
+const neb=T.find(t=>t[1]==='Mount Nebo - Tushar - Wheeler Peak')||T[0];const nx=(neb[3][0][0]+neb[3][1][0]+neb[3][2][0])/3,ny=(neb[3][0][1]+neb[3][1][1]+neb[3][2][1])/3;
+views={{oblique:[0,38,4700,[cx,cy-150,0]],west:[-25,30,2300,[-2350,-60,0]],nebo:[-20,28,900,[nx,ny,0]],east:[20,32,2600,[1250,-180,0]],top:[0,89.5,5200,[cx,cy,0]]}};
+build();size();setView(cur);st3.remove();window.__ready3=true;
+(function loop(){{if(Math.abs(k-kTarget)>1e-3){{k+= (kTarget-k)*0.12;if(Math.abs(k-kTarget)<1e-3)k=kTarget;if(mesh)mesh.scale.z=exag*k;}}ctl.update();r.render(s,cam);requestAnimationFrame(loop);}})();
 </script>
 </body>
 </html>
