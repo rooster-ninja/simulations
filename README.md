@@ -16,6 +16,7 @@ https://rooster-ninja.github.io/simulations/
 | Deflection of the vertical: US chains | [deflection-chains/](https://rooster-ninja.github.io/simulations/deflection-chains/) |
 | Shasta · Lola · Helena: largest triangle to scale | [shasta-lola-helena/](https://rooster-ninja.github.io/simulations/shasta-lola-helena/) |
 | Flat plane, lumpy triangles | [flat-plane-chains/](https://rooster-ninja.github.io/simulations/flat-plane-chains/) |
+| Survey triangles across America: Gauss vs Tarski | [survey-triangles-gauss-vs-tarski/](https://rooster-ninja.github.io/simulations/survey-triangles-gauss-vs-tarski/) |
 
 ## Layout
 
