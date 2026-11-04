@@ -20,6 +20,12 @@ Every triangle of Schott's 39th-parallel arc (465) and Eastern Oblique arc (281)
 
 Schott's printed excess was computed, not measured: ε = ab sin C / (2ρ<sub>m</sub>ρ<sub>n</sub> sin 1″), with ρ<sub>m</sub>, ρ<sub>n</sub> the radii of curvature of Clarke's 1866 spheroid (SP4 pp. 47, 51; SP7 p. 26), a mean radius of about 6 374 km at 39° N. Turning the printed excess back into a radius, √(area / ε), gives a median of 6 373 km (39th parallel) and 6 372 km (Eastern Oblique). That presumed radius enters the printed excess, every computed side (each observed angle reduced by ε_printed/3, A* = A − ε/3, before the sides were solved by the law of sines: Legendre's theorem), Schott's closing errors (π + spherical excess − sum of angles, SP4 p. 612), and therefore every closed-fan deficit. Only the observed angle sum − 180° is free of it, apart from a sea-level reduction of directions west of Salina computed on Clarke's spheroid (≤ 0.26″ at 4 000 m, SP4 p. 47). Swapping Clarke for Bessel changes the largest triangle's printed excess by 0.0171″ of 73.7584″ (SP4 p. 840).
 
+## Ghost, signal, and neither intrinsic
+
+- **Ghost (lengths and fans).** The curvature in the computed sides and closed fans was injected by the ε/3 step from the presumed radius. The fans match the printed excess (±0.31″) more tightly than the observed excess (±0.76″) because the printed excess carries no measurement noise; the observed sums carry about ±1.4″ each.
+- **Signal (measured excess).** Tested against the printed excess with the noise included: measured ÷ printed = 0.9985 ± 0.0052 on the 39th parallel (χ²/dof 1.20, 0.3σ), 0.967 ± 0.014 on the Eastern Oblique (2.3σ short), 0.995 ± 0.005 for both. Overlapping triangles share angles, so these errors are lower bounds.
+- **Neither intrinsic.** The measured excess comes from angles, so it exits the Theorema Egregium. A test that exits the Theorema Egregium fails as an intrinsic test, and an external reference must be used: here the plumb line (gravity) and the presumed Earth radius. No curvature in this data comes from lengths measured on the surface.
+
 ## Result
 
 | | 39th parallel | Eastern Oblique |
