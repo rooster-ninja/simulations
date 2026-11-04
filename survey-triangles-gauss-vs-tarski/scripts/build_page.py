@@ -142,6 +142,24 @@ IMP = {c: implied(c) for c in CH}
 R30, R39, R45 = clarke_R(30), clarke_R(39), clarke_R(45)
 imp_rows = ''.join(f'<tr><td>{SHORT[c]}</td><td class="n">{IMP[c][0]}</td><td class="n">{f0(IMP[c][1])} km</td><td class="n">{f0(IMP[c][2])} – {f0(IMP[c][3])} km</td></tr>' for c in CH)
 
+# ---------- measured excess vs injected (printed) excess ----------
+def vs_model(c):
+    t = [x for x in T if x['observed_excess_arcsec'] is not None and (c is None or x['survey'] == c)]
+    r = [x['observed_excess_arcsec'] - x['printed_excess_arcsec'] for x in t]
+    z = [(x['observed_excess_arcsec'] - x['printed_excess_arcsec']) / x['sigma_arcsec'] for x in t]
+    num = sum(x['observed_excess_arcsec'] * x['printed_excess_arcsec'] / x['sigma_arcsec'] ** 2 for x in t)
+    den = sum(x['printed_excess_arcsec'] ** 2 / x['sigma_arcsec'] ** 2 for x in t)
+    q = num / den
+    rq = [(x['observed_excess_arcsec'] - q * x['printed_excess_arcsec']) / x['sigma_arcsec'] for x in t]
+    sq = math.sqrt(max(1.0, sum(v * v for v in rq) / (len(t) - 1)) / den)
+    return dict(n=len(t), mean=sum(r) / len(r), chi=sum(v * v for v in z) / len(z), q=q, sq=sq,
+                z3=sum(abs(v) > 3 for v in z), sig=(1 - q) / sq)
+VM = {c: vs_model(c) for c in CH}; VM_all = vs_model(None)
+Q39, SQ39 = VM[CH[0]]['q'], VM[CH[0]]['sq']
+vm_rows = ''.join(f'<tr><td>{lab}</td><td class="n">{v["n"]}</td><td class="n">{v["mean"]:+.2f}″</td><td class="n">{v["chi"]:.2f}</td>'
+                  f'<td class="n">{v["z3"]}</td><td class="n">{v["q"]:.4f} ± {v["sq"]:.4f}</td><td class="n">{v["sig"]:.1f}σ</td></tr>'
+                  for lab, v in [(SHORT[CH[0]], VM[CH[0]]), (SHORT[CH[1]], VM[CH[1]]), ('Both', VM_all)])
+
 page = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -251,6 +269,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
     <div class="kv"><div class="k">Of those, curvature via angular excess</div><div class="v red">{len(above3)} of {len(above3)}</div></div>
     <div class="kv"><div class="k">Close flat from their own sides</div><div class="v blue">{flat_ok} of {n_tri}</div></div>
     <div class="kv"><div class="k">Triangles with a measured side</div><div class="v">{len(measured_tri)}</div></div>
+    <div class="kv"><div class="k">Measured ÷ printed excess (39th)</div><div class="v">{Q39:.3f} ± {SQ39:.3f}</div></div>
     <div class="kv"><div class="k">Radius presumed in printed ε</div><div class="v red">≈ {f0(stt.median([IMP[c][1] for c in CH]))} km</div></div>
     <div class="kv"><div class="k">Closed fans: deficit − ⅓Σ printed ε</div><div class="v">{fan_all_p[1]:+.2f}″ ± {fan_all_p[2]:.2f}″</div></div>
   </section>
@@ -271,6 +290,24 @@ code{{font-family:var(--f-mono);font-size:.92em}}
       <li><b>How much the choice matters.</b> Schott checked: swapping Clarke's spheroid for Bessel's changes the largest triangle's excess, 73.7584″ for Tushar–Wheeler–Nebo, "but 0″.0171" (SP4 p. 840). The printed excess depends on the spheroid chosen, not on anything measured in that triangle.</li>
     </ol>
     <p class="finding red">So any curvature read from the printed excess, the computed sides or the fans is the presumed radius coming back out. It exits the Theorema Egregium twice: through angles, and through an Earth radius assumed before the triangle was measured.</p>
+  </section>
+
+  <section class="panel" style="border-color:var(--unres)">
+    <div class="ptitle" style="color:var(--unres)">Highlight · A ghost in the lengths, a signal in the angles, and neither intrinsic</div>
+    <div class="two">
+      <div class="col g prose">
+        <h3>Ghost: the lengths and fans</h3>
+        <p>The curvature in Schott's sides, and so in every closed fan, is a mathematical ghost of the model. It was put there by the ε/3 step, with ε from the presumed radius. The fans match the printed excess to ±{fan_all_p[2]:.2f}″, more tightly than they match the observed excess (±{fan_all_o[2]:.2f}″), simply because the printed excess carries no measurement noise. The observed sums carry about ±1.4″ each. A noiseless calculation always reproduces itself more tightly than a measurement can. Nothing in those lengths was measured as curvature.</p>
+      </div>
+      <div class="col t prose">
+        <h3>Signal: the measured excess</h3>
+        <p>The observed angle sums are measurements, with noise. Tested against the injected (printed) excess with that noise included, they agree on the 39th parallel and fall a little short on the Eastern Oblique. Overlapping triangles share angles, so the errors below are lower bounds and the significance an upper bound.</p>
+      </div>
+    </div>
+    <div class="tablebox"><table>
+      <thead><tr><th>Measured vs injected</th><th class="n">Triangles</th><th class="n">Measured − printed, mean</th><th class="n">χ²/dof vs noise</th><th class="n">|z| &gt; 3</th><th class="n">Measured ÷ printed</th><th class="n">Short of printed</th></tr></thead>
+      <tbody>{vm_rows}</tbody></table></div>
+    <p class="finding red"><b>Neither is intrinsic.</b> The measured excess is real, but it comes from angles, so it exits the Theorema Egregium. A test that exits the Theorema Egregium fails as an intrinsic test, and an external reference must be used. Here there are two: the plumb line (gravity), which levels every angle, and the presumed Earth radius of about {f0(R39)} km, which sets the printed excess, every computed side and every fan. No curvature in this data comes from lengths measured on the surface.</p>
   </section>
 
   <section class="panel">
@@ -360,7 +397,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
         <tr><td class="n">5</td><td>K = excess ÷ area</td><td>Curvature taken as even over the triangle</td><td class="x">exits the Theorema Egregium: an average, not a point value</td><td>—</td></tr>
         <tr><td class="n">6</td><td>The printed excess column</td><td>Computed from ab sin C over the radii ρ<sub>m</sub>ρ<sub>n</sub> of a presumed Earth (Clarke 1866, ≈ {R39:,.0f} km at 39° N); see the highlight above</td><td class="x">exits the Theorema Egregium: presumed radius, not observed</td><td>SP4 p. 51; SP7 p. 26</td></tr>
       </tbody></table></div>
-    <p class="finding red">Finding: {len(above3)} triangles are curved beyond 3σ by their angles, the largest {esc(big["triangle"])} at {big["z"]:.0f}σ. All {len(above3)}, and all {len(tested)} tested, reach curvature through steps 1–4. Every one exits the Theorema Egregium; none is a result of it. They are results of Art. 20 applied to plumb-levelled angles. This is a statement about the route, not the size: the excess is measured and real at the stated noise.</p>
+    <p class="finding red">Finding: {len(above3)} triangles are curved beyond 3σ by their angles, the largest {esc(big["triangle"])} at {big["z"]:.0f}σ. All {len(above3)}, and all {len(tested)} tested, reach curvature through steps 1–4. Every one exits the Theorema Egregium; none is a result of it. They are results of Art. 20 applied to plumb-levelled angles. This is a statement about the route, not the size: the excess is measured and real at the stated noise. Because the route exits the Theorema Egregium, it fails as an intrinsic test: an external reference, the plumb line, must be used.</p>
   </section>
 
   <section class="panel">
@@ -408,7 +445,7 @@ code{{font-family:var(--f-mono);font-size:.92em}}
   <section class="panel">
     <div class="ptitle">8 · Verdict</div>
     <div class="prose">
-      <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one exits the Theorema Egregium. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
+      <p><b>Gauss reading.</b> All {len(above3)} curved triangles (&gt;3σ), and all {len(tested)} tested, owe their curvature to angular excess: plumb-levelled angles, sight lines taken as shortest lines, and Art. 20 rather than Art. 12. Each one exits the Theorema Egregium, so each fails as an intrinsic test: it needs external references, the plumb line and, for the printed excess and sides, a presumed Earth radius. The measured excess agrees with that presumed radius ({Q39:.4f} ± {SQ39:.4f} on the 39th parallel), so it is a real signal, but an external one. They are inductive findings from the printed angles at the stated noise, but not findings of that theorem.</p>
       <p><b>Tarski reading.</b> By lengths, all {n_tri} triangles are flat triangles. The {len(F)} closed fans do refute flatness by lengths, yet only by the excess that Legendre's theorem put into the sides. In this data no length was measured independently of the angles, apart from {len(measured_tri)} base sides, and those close nothing by themselves. So the fans add no information of their own: by lengths alone, this data cannot tell flat from curved.</p>
       <p><b>What would stay inside the theorem.</b> A closed fan, or a quadrilateral with both diagonals, whose every side is a measured length. Then the deficit is computed from lengths alone:</p>
       <ol class="steps"><li>Deficit 0 within its error bars: flat.</li><li>Deficit above its error bars: curved.</li><li>Either way the answer comes from lengths alone. Only turning a nonzero deficit into a value of K needs a further theorem.</li></ol>
