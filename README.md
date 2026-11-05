@@ -17,6 +17,7 @@ https://rooster-ninja.github.io/simulations/
 | Shasta · Lola · Helena: largest triangle to scale | [shasta-lola-helena/](https://rooster-ninja.github.io/simulations/shasta-lola-helena/) |
 | Flat plane, lumpy triangles | [flat-plane-chains/](https://rooster-ninja.github.io/simulations/flat-plane-chains/) |
 | Survey triangles across America: Gauss vs Tarski | [survey-triangles-gauss-vs-tarski/](https://rooster-ninja.github.io/simulations/survey-triangles-gauss-vs-tarski/) |
+| Fiber ping and Earth shape (WIP) | [fiber-ping-earth-shape/](https://rooster-ninja.github.io/simulations/fiber-ping-earth-shape/) |
 
 ## Layout
 
