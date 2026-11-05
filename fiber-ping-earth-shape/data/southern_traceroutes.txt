@@ -1,0 +1,116 @@
+===== Auckland -> Sydney (syd-au-ping.vultr.com) | globe 2156 km, flat 5698 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (103.208.85.1)  0.282 ms  0.250 ms
+ 2  10.128.0.4 (10.128.0.4)  0.419 ms *
+ 3  ip-116-251-187-224.as55850.net (116.251.187.224)  0.813 ms  0.809 ms
+ 4  et-0-2-1-0.atc-p-3.as55850.net (116.251.184.174)  24.260 ms  24.458 ms
+ 5  et-0-0-3.esy3-br-3.as55850.net (116.251.185.235)  24.204 ms  24.201 ms
+ 6  as55850.sydney.megaport.com (103.26.68.218)  24.198 ms  24.193 ms
+ 7  as20473.sydney.megaport.com (103.26.68.93)  43.591 ms  43.588 ms
+ 8  * *
+ 9  * *
+10  103.43.73.108.vultrusercontent.com (103.43.73.108)  24.166 ms  24.163 ms
+11  syd-au-ping.vultr.com (108.61.212.117)  23.901 ms *
+
+===== Perth -> Sydney (syd-au-ping.vultr.com) | globe 3291 km, flat 8302 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.68.1)  1.087 ms  0.924 ms
+ 2  n1-42-192-1.per1.wa.optusnet.com.au (1.42.192.1)  4.055 ms  4.116 ms
+ 3  * *
+ 4  * *
+ 5  59.154.57.0 (59.154.57.0)  6.494 ms  6.470 ms
+ 6  61.88.33.53 (61.88.33.53)  6.383 ms  8.701 ms
+ 7  Bundle-Ether34.pie-edge903.perth.telstra.net (210.23.159.221)  6.200 ms  6.189 ms
+ 8  bundle-ether12.pie-core30.perth.telstra.net (203.50.6.176)  7.404 ms  7.389 ms
+ 9  bundle-ether2.way-core30.adelaide.telstra.net (203.50.6.236)  33.117 ms  33.102 ms
+10  bundle-ether4.exi-core30.melbourne.telstra.net (203.50.6.122)  46.953 ms  46.932 ms
+11  bundle-ether2.cla-core30.melbourne.telstra.net (203.50.13.124)  46.055 ms  45.791 ms
+12  bundle-ether3.hay-core30.sydney.telstra.net (203.50.13.132)  54.938 ms  54.863 ms
+13  ae0.alx-edge411.sydney.telstra.net (203.50.12.131)  54.558 ms  54.821 ms
+14  ae1.alx-edge421.sydney.telstra.net (203.50.12.135)  52.327 ms  52.340 ms
+15  twi4278618.lnk.telstra.net (138.217.181.66)  53.558 ms  53.986 ms
+16  * *
+17  * *
+18  103.43.73.108.vultrusercontent.com (103.43.73.108)  53.647 ms  53.500 ms
+19  syd-au-ping.vultr.com (108.61.212.117)  53.627 ms *
+
+===== Cape Town -> Sao Paulo (sao-br-ping.vultr.com) | globe 6344 km, flat 14231 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (172.17.0.1)  0.108 ms  0.053 ms
+ 2  100.80.25.1 (100.80.25.1)  3.356 ms  3.662 ms
+ 3  41.71.35.185 (41.71.35.185)  3.432 ms  3.473 ms
+ 4  41.71.68.67 (41.71.68.67)  2.981 ms  2.941 ms
+ 5  41.71.100.205 (41.71.100.205)  3.340 ms  3.377 ms
+ 6  165.165.168.21 (165.165.168.21)  4.104 ms  4.050 ms
+ 7  102.130.69.44 (102.130.69.44)  2.929 ms  2.894 ms
+ 8  102.130.69.5 (102.130.69.5)  3.561 ms  3.555 ms
+ 9  102.130.68.139 (102.130.68.139)  37.758 ms  37.769 ms
+10  * *
+11  * *
+12  as20473.saopaulo.sp.ix.br (187.16.214.111)  143.404 ms  143.352 ms
+13  * *
+14  * *
+15  * *
+16  sao-br-ping.vultr.com (216.238.98.118)  143.300 ms  143.656 ms
+
+===== Sao Paulo -> Johannesburg (jnb-za-ping.vultr.com) | globe 7430 km, flat 15499 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.208.80)  0.175 ms  0.149 ms
+ 2  200.25.58.23 (200.25.58.23)  0.636 ms  0.657 ms
+ 3  ae200.2519.edge7.gru1.as7195.net (200.25.58.22)  1.501 ms  1.488 ms
+ 4  ae0.0.edge8.gru1.as7195.net (200.25.51.247)  0.861 ms  0.936 ms
+ 5  * *
+ 6  ae1144.0.edge1.lon1.as7195.net (200.25.51.85)  178.094 ms  178.200 ms
+ 7  ae449.0.edge1.fra1.as7195.net (200.25.51.166)  189.179 ms  189.215 ms
+ 8  * *
+ 9  * *
+10  * *
+11  * *
+12  41.78.188.210 (41.78.188.210)  349.019 ms  348.979 ms
+13  197.157.67.18 (197.157.67.18)  342.759 ms  342.744 ms
+14  * *
+15  * *
+16  * *
+17  jnb-za-ping.vultr.com (139.84.226.78)  342.087 ms *
+
+===== Johannesburg -> Sao Paulo (sao-br-ping.vultr.com) | globe 7447 km, flat 15520 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.552 ms  0.517 ms
+ 2  100.100.100.1 (100.100.100.1)  0.513 ms  0.510 ms
+ 3  10.94.0.101 (10.94.0.101)  5.017 ms  5.031 ms
+ 4  10.94.0.9 (10.94.0.9)  0.498 ms  0.495 ms
+ 5  10.94.0.2 (10.94.0.2)  0.607 ms  0.632 ms
+ 6  206.249.1.25 (206.249.1.25)  156.766 ms  156.948 ms
+ 7  be9736.ccr81.lon01.atlas.cogentco.com (154.54.93.42)  159.530 ms  159.576 ms
+ 8  be2180.ccr82.lon05.atlas.cogentco.com (154.54.76.30)  160.852 ms *
+ 9  be9347.ccr42.jfk02.atlas.cogentco.com (154.54.166.122)  226.000 ms  225.997 ms
+10  be3496.ccr31.jfk10.atlas.cogentco.com (154.54.0.142)  225.088 ms  225.138 ms
+11  be2531.ccr31.sao01.atlas.cogentco.com (154.54.88.2)  333.068 ms  333.068 ms
+12  be2427.rcr61.sao02.atlas.cogentco.com (154.54.44.194)  331.475 ms  331.443 ms
+13  be3485.agr01.sao02.atlas.cogentco.com (154.54.45.14)  333.530 ms  333.548 ms
+14  199.100.14.74 (199.100.14.74)  340.648 ms  340.640 ms
+15  * *
+16  * *
+17  * *
+18  sao-br-ping.vultr.com (216.238.98.118)  335.755 ms  335.842 ms
+
+===== Sydney -> Santiago (scl-cl-ping.vultr.com) | globe 11372 km, flat 25701 km =====
+traceroute to scl-cl-ping.vultr.com (64.176.2.7), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.212.5)  0.232 ms  0.181 ms
+ 2  43-241-189-30.sta.ip.vocus.au (43.241.189.30)  1.141 ms  1.139 ms
+ 3  43-241-189-29.sta.ip.vocus.au (43.241.189.29)  1.366 ms  1.699 ms
+ 4  be151.cor01.syd14.nsw.vocus.network (114.31.192.78)  156.398 ms  156.413 ms
+ 5  be202.bdr03.sjc01.ca.us.vocus.network (114.31.199.43)  156.546 ms  156.636 ms
+ 6  be101.bdr03.lax01.ca.us.vocus.network (114.31.199.35)  153.897 ms  153.963 ms
+ 7  206.72.211.186.any2ix.coresite.com (206.72.211.186)  154.371 ms  154.369 ms
+ 8  ae300.0.edge1.dal1.as7195.net (200.25.75.21)  185.666 ms  185.778 ms
+ 9  ae0.0.edge2.dal1.as7195.net (200.25.51.213)  183.489 ms  183.524 ms
+10  ae400.0.edge1.mia1.as7195.net (200.25.75.52)  223.743 ms  223.826 ms
+11  ae610.0.edge1.lim1.as7195.net (200.25.75.25)  283.490 ms  283.538 ms
+12  ae6.0.edge2.scl1.as7195.net (200.25.51.149)  315.542 ms  315.524 ms
+13  200.25.22.203 (200.25.22.203)  313.362 ms  313.312 ms
+14  * *
+15  * *
+16  * *
+17  scl-cl-ping.vultr.com (64.176.2.7)  313.427 ms  313.359 ms
+

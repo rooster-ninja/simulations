@@ -1,0 +1,338 @@
+===== Seattle (wa-us-ping.vultr.com) — 190 km =====
+traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.470 ms  0.497 ms
+ 2  100.122.26.161 (100.122.26.161)  2.085 ms  2.151 ms
+ 3  75.153.138.72 (75.153.138.72)  2.213 ms  2.208 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  154.11.15.194 (154.11.15.194)  6.164 ms  6.158 ms
+ 8  six-a.sea2.constant.com (206.81.81.66)  5.495 ms  5.546 ms
+ 9  * *
+10  * *
+11  * *
+12  45.63.33.239.vultrusercontent.com (45.63.33.239)  5.067 ms  4.975 ms
+13  wa-us-ping.vultr.com (108.61.194.105)  4.767 ms *
+
+===== Silicon Valley (sjo-ca-us-ping.vultr.com) — 1325 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.543 ms  0.501 ms
+ 2  * *
+ 3  38.88.6.44 (38.88.6.44)  1.879 ms  1.932 ms
+ 4  * *
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.472 ms  5.468 ms
+ 6  be2454.ccr82.sea08.atlas.cogentco.com (154.54.164.25)  6.330 ms  6.326 ms
+ 7  be9854.ccr22.sfo01.atlas.cogentco.com (154.54.28.205)  22.342 ms  22.395 ms
+ 8  be5991.ccr82.sjc13.atlas.cogentco.com (154.54.168.253)  24.835 ms  24.830 ms
+ 9  be8168.rcr51.b034314-0.sjc13.atlas.cogentco.com (154.54.170.198)  23.644 ms  23.706 ms
+10  38.120.133.35 (38.120.133.35)  31.392 ms  31.387 ms
+11  * *
+12  * *
+13  * *
+14  45.32.142.126.vultrusercontent.com (45.32.142.126)  22.285 ms  22.307 ms
+15  sjo-ca-us-ping.vultr.com (104.156.230.107)  22.952 ms  22.922 ms
+
+===== Los Angeles (lax-ca-us-ping.vultr.com) — 1736 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.307 ms  0.332 ms
+ 2  * *
+ 3  * *
+ 4  * *
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  5.038 ms  5.032 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  5.025 ms  5.055 ms
+ 7  sjo-bb3-link.ip.twelve99.net (62.115.132.152)  30.096 ms  29.143 ms
+ 8  * lax-bb1-link.ip.twelve99.net (62.115.139.150)  30.212 ms
+ 9  * *
+10  constantcompany-ic-375793.ip.twelve99-cust.net (62.115.149.37)  32.027 ms  32.021 ms
+11  * *
+12  * *
+13  173.199.80.241.vultrusercontent.com (173.199.80.241)  31.162 ms  31.154 ms
+14  lax-ca-us-ping.vultr.com (108.61.219.200)  31.219 ms  31.030 ms
+
+===== Honolulu (hon-hi-us-ping.vultr.com) — 4357 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.381 ms  0.460 ms
+ 2  * *
+ 3  * *
+ 4  * *
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.719 ms  5.716 ms
+ 6  be2454.ccr82.sea08.atlas.cogentco.com (154.54.164.25)  5.111 ms  7.080 ms
+ 7  be9854.ccr22.sfo01.atlas.cogentco.com (154.54.28.205)  22.649 ms  22.643 ms
+ 8  be5991.ccr82.sjc13.atlas.cogentco.com (154.54.168.253)  24.600 ms  24.595 ms
+ 9  be5992.ccr42.lax01.atlas.cogentco.com (154.54.169.2)  34.779 ms  34.775 ms
+10  be2728.rcr61.hnl01.atlas.cogentco.com (154.54.87.70)  81.898 ms  81.970 ms
+11  38.122.50.10 (38.122.50.10)  81.559 ms  81.541 ms
+12  * *
+13  * *
+14  * *
+15  hon-hi-us-ping.vultr.com (208.72.154.76)  80.714 ms  80.699 ms
+
+===== Miami (fl-us-ping.vultr.com) — 4510 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.342 ms  0.361 ms
+ 2  38-41-208-2.dyn.novuscom.net (38.41.208.2)  1.215 ms  1.262 ms
+ 3  * *
+ 4  * *
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  5.174 ms  5.169 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  5.327 ms  5.379 ms
+ 7  sea-b4-link.ip.twelve99.net (62.115.132.156)  76.171 ms  76.166 ms
+ 8  chi-bb2-link.ip.twelve99.net (62.115.136.118)  46.720 ms  46.714 ms
+ 9  chi-b24-link.ip.twelve99.net (62.115.137.29)  72.875 ms  72.870 ms
+10  * *
+11  nash-bb1-link.ip.twelve99.net (62.115.113.74)  62.645 ms  63.898 ms
+12  atl-bb1-link.ip.twelve99.net (62.115.137.54)  59.725 ms  59.742 ms
+13  atl-b24-link.ip.twelve99.net (62.115.134.247)  80.652 ms  80.634 ms
+14  atl-bb2-link.ip.twelve99.net (62.115.143.236)  59.722 ms  60.719 ms
+15  mia-b2-link.ip.twelve99.net (62.115.140.176)  72.068 ms  72.045 ms
+16  constantcompany-ic-383167.ip.twelve99-cust.net (213.248.96.109)  74.387 ms  74.352 ms
+17  * *
+18  * *
+19  144.202.32.37.vultrusercontent.com (144.202.32.37)  73.829 ms  73.806 ms
+20  fl-us-ping.vultr.com (104.156.244.232)  105.560 ms  105.537 ms
+
+===== New Jersey (nj-us-ping.vultr.com) — 3881 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.303 ms  0.323 ms
+ 2  * *
+ 3  * *
+ 4  * *
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  29.467 ms  29.461 ms
+ 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  52.121 ms  52.116 ms
+ 7  port-channel2994.ccr92.cle04.atlas.cogentco.com (154.54.31.233)  56.922 ms  56.970 ms
+ 8  be4986.ccr42.jfk02.atlas.cogentco.com (154.54.162.170)  66.215 ms  66.210 ms
+ 9  be3202.rcr51.ewr01.atlas.cogentco.com (154.54.90.66)  66.883 ms  66.877 ms
+10  be9177.nr51.b033057-0.ewr01.atlas.cogentco.com (154.24.68.158)  68.111 ms  68.107 ms
+11  gi0-0-1-5.64.nr12.b002894-0.ewr01.atlas.cogentco.com (38.142.212.201)  67.196 ms  67.233 ms
+12  * *
+13  * *
+14  66.55.138.149.vultrusercontent.com (66.55.138.149)  66.541 ms  66.520 ms
+15  nj-us-ping.vultr.com (108.61.149.182)  66.911 ms  66.872 ms
+
+===== London (lon-gb-ping.vultr.com) — 7582 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.571 ms  0.508 ms
+ 2  100.122.26.161 (100.122.26.161)  1.462 ms  1.458 ms
+ 3  75.153.138.72 (75.153.138.72)  1.935 ms  1.987 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  154.11.15.109 (154.11.15.109)  6.002 ms  5.996 ms
+ 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  12.317 ms  12.254 ms
+ 9  ae21.cr10-lon1.ip4.gtt.net (89.149.139.5)  131.226 ms  131.220 ms
+10  213.39.47.243 (213.39.47.243)  131.214 ms  131.209 ms
+11  * *
+12  * *
+13  * *
+14  * *
+15  lon-gb-ping.vultr.com (108.61.196.101)  130.399 ms *
+
+===== Amsterdam (ams-nl-ping.vultr.com) — 7700 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.493 ms  0.500 ms
+ 2  * *
+ 3  * *
+ 4  * *
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  30.008 ms  30.054 ms
+ 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  52.819 ms  52.870 ms
+ 7  be3260.ccr22.ymq01.atlas.cogentco.com (154.54.42.90)  60.175 ms  60.218 ms
+ 8  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  129.857 ms  129.904 ms
+ 9  be2183.ccr42.ams03.atlas.cogentco.com (154.54.58.70)  139.625 ms  139.671 ms
+10  be2154.rcr22.ams06.atlas.cogentco.com (130.117.50.206)  140.101 ms  140.154 ms
+11  149.6.0.227 (149.6.0.227)  153.649 ms  153.674 ms
+12  * *
+13  * *
+14  173.199.112.244.vultrusercontent.com (173.199.112.244)  138.058 ms  138.318 ms
+15  ams-nl-ping.vultr.com (108.61.198.102)  138.454 ms  138.468 ms
+
+===== Stockholm (sto-se-ping.vultr.com) — 7441 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.454 ms  0.497 ms
+ 2  38-41-208-2.dyn.novuscom.net (38.41.208.2)  1.354 ms  1.403 ms
+ 3  * *
+ 4  100ge0-26.core1.yvr2.he.net (184.105.247.169)  2.657 ms  3.032 ms
+ 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  2.248 ms  2.299 ms
+ 6  be47.core2.yvr1.he.net (184.105.222.123)  5.406 ms  5.402 ms
+ 7  be6.core1.sea1.he.net (184.104.196.221)  147.184 ms  147.179 ms
+ 8  * *
+ 9  be1.core4.chi1.he.net (72.52.92.162)  146.799 ms  146.794 ms
+10  be5.core1.nyc4.he.net (184.104.193.141)  146.922 ms  146.917 ms
+11  be1.core3.ewr5.he.net (184.104.192.213)  145.946 ms  147.772 ms
+12  be5.core1.cph1.he.net (184.105.80.28)  146.858 ms  146.834 ms
+13  be2.core1.sto1.he.net (184.104.198.147)  146.015 ms  145.919 ms
+14  * *
+15  * *
+16  * *
+17  70.34.192.142 (70.34.192.142)  148.683 ms  148.658 ms
+18  sto-se-ping.vultr.com (70.34.194.86)  148.646 ms  148.334 ms
+
+===== Tokyo (hnd-jp-ping.vultr.com) — 7556 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.394 ms  0.428 ms
+ 2  * *
+ 3  * *
+ 4  * *
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.293 ms  5.287 ms
+ 6  63-220-198-54.static.as3491.net (63.220.198.54)  5.322 ms  5.453 ms
+ 7  Bundle-Eth53.clbr01.tok02.as3491.net (63.218.250.78)  108.808 ms  108.803 ms
+ 8  63-216-242-46.static.as3491.net (63.216.242.46)  108.835 ms  109.615 ms
+ 9  * *
+10  * *
+11  209.222.31.145.vultrusercontent.com (209.222.31.145)  137.064 ms  136.993 ms
+12  hnd-jp-ping.vultr.com (108.61.201.151)  107.592 ms  107.577 ms
+
+===== Osaka (osk-jp-ping.vultr.com) — 7898 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.493 ms  0.504 ms
+ 2  * *
+ 3  * *
+ 4  100ge0-26.core1.yvr2.he.net (184.105.247.169)  2.494 ms *
+ 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  2.218 ms  2.189 ms
+ 6  be47.core2.yvr1.he.net (184.105.222.123)  5.396 ms  5.391 ms
+ 7  be6.core1.sea1.he.net (184.104.196.221)  96.812 ms  96.750 ms
+ 8  * *
+ 9  be47.core1.tyo1.he.net (184.104.193.227)  96.215 ms  96.168 ms
+10  be5.core3.osa1.he.net (184.104.198.88)  94.322 ms  94.112 ms
+11  port-channel9.core1.osa1.he.net (184.104.196.172)  93.686 ms  93.666 ms
+12  103.246.232.160 (103.246.232.160)  92.693 ms  92.679 ms
+13  * *
+14  * *
+15  * *
+16  osk-jp-ping.vultr.com (64.176.34.94)  92.835 ms  92.530 ms
+
+===== Seoul (sel-kor-ping.vultr.com) — 8162 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.556 ms  0.602 ms
+ 2  38-41-208-2.dyn.novuscom.net (38.41.208.2)  69.465 ms  70.425 ms
+ 3  38.88.6.44 (38.88.6.44)  2.100 ms  2.093 ms
+ 4  * *
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.188 ms  5.183 ms
+ 6  63-220-198-54.static.as3491.net (63.220.198.54)  5.239 ms  5.234 ms
+ 7  Hu0-0-0-21.br03.seo03.as3491.net (63.220.71.19)  129.009 ms  129.004 ms
+ 8  Vultr-Holdings.TE-0-0-0-24.br03.seo03.as3491.net (63.218.237.134)  130.232 ms  130.683 ms
+ 9  * *
+10  * *
+11  * *
+12  sel-kor-ping.vultr.com (141.164.34.61)  127.835 ms  127.821 ms
+
+===== Singapore (sgp-ping.vultr.com) — 12824 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.451 ms  0.468 ms
+ 2  100.122.26.161 (100.122.26.161)  1.109 ms  2.208 ms
+ 3  75.153.138.72 (75.153.138.72)  2.331 ms  2.380 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  154.11.15.190 (154.11.15.190)  5.954 ms  5.947 ms
+ 8  205.177.32.1 (205.177.32.1)  5.939 ms  5.933 ms
+ 9  BE47.br07.sin02.as3491.net (63.218.164.150)  189.187 ms  189.304 ms
+10  63-220-199-177.static.as3491.net (63.220.199.177)  182.829 ms  182.823 ms
+11  * *
+12  * *
+13  45.32.98.222.vultrusercontent.com (45.32.98.222)  180.557 ms  181.387 ms
+14  sgp-ping.vultr.com (45.32.100.168)  182.959 ms *
+
+===== Sydney (syd-au-ping.vultr.com) — 12499 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.441 ms  0.460 ms
+ 2  * *
+ 3  38.88.6.45 (38.88.6.45)  1.755 ms  1.808 ms
+ 4  * *
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.073 ms  5.125 ms
+ 6  gtt.sea02.atlas.cogentco.com (154.54.11.185)  5.807 ms  5.803 ms
+ 7  ae11.cr4-syd1.ip4.gtt.net (141.136.110.218)  153.227 ms  153.223 ms
+ 8  ip4.gtt.net (67.199.141.30)  153.216 ms  153.210 ms
+ 9  * *
+10  * *
+11  103.43.73.108.vultrusercontent.com (103.43.73.108)  170.807 ms  170.771 ms
+12  syd-au-ping.vultr.com (108.61.212.117)  169.574 ms  169.559 ms
+
+===== Melbourne (mel-au-ping.vultr.com) — 13209 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.475 ms  0.537 ms
+ 2  * *
+ 3  * *
+ 4  * *
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.512 ms  5.508 ms
+ 6  gtt.sea02.atlas.cogentco.com (154.54.11.185)  13.523 ms  13.520 ms
+ 7  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  165.479 ms  165.475 ms
+ 8  ip4.gtt.net (67.199.141.34)  165.469 ms  165.466 ms
+ 9  * *
+10  * *
+11  * *
+12  mel-au-ping.vultr.com (67.219.110.24)  164.394 ms  164.377 ms
+
+===== Mumbai (bom-in-ping.vultr.com) — 12255 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.391 ms  0.394 ms
+ 2  100.122.26.161 (100.122.26.161)  1.988 ms  2.052 ms
+ 3  75.153.138.72 (75.153.138.72)  2.165 ms  2.237 ms
+ 4  * *
+ 5  * *
+ 6  154.11.15.99 (154.11.15.99)  2.606 ms  2.659 ms
+ 7  zayo.ae10.mpr1.yvr2.ca.zip.zayo.com (208.184.12.166)  5.969 ms  5.965 ms
+ 8  ae15.mpr3.yvr3.ca.zip.zayo.com (64.125.18.129)  2.998 ms  3.050 ms
+ 9  ae5.cr1.sea1.us.zip.zayo.com (64.125.18.58)  25.028 ms *
+10  ae13.cr2.sjc4.us.zip.zayo.com (64.125.21.249)  24.958 ms  25.011 ms
+11  ae7.mcr1.sjc7.us.zip.zayo.com (64.125.25.45)  25.601 ms  25.630 ms
+12  * *
+13  64.124.57.71.IPYX-284545-900-ZYO.zip.zayo.com (64.124.57.71)  23.766 ms  24.935 ms
+14  i-1039.paix-core02.telstraglobal.net (202.84.251.58)  249.225 ms  249.194 ms
+15  * *
+16  unknown.telstraglobal.net (202.47.212.145)  245.822 ms  245.807 ms
+17  * *
+18  * *
+19  * *
+20  bom-in-ping.vultr.com (65.20.66.100)  245.657 ms  245.053 ms
+
+===== Sao Paulo (sao-br-ping.vultr.com) — 11050 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.438 ms  0.461 ms
+ 2  100.122.26.161 (100.122.26.161)  1.854 ms  1.849 ms
+ 3  75.153.138.72 (75.153.138.72)  1.844 ms  2.341 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  154.11.15.109 (154.11.15.109)  5.726 ms  5.735 ms
+ 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  5.672 ms  5.688 ms
+ 9  ae4.cr1-sao6.ip4.gtt.net (89.149.187.82)  172.496 ms  172.493 ms
+10  ip4.gtt.net (72.29.193.218)  174.479 ms  174.475 ms
+11  * *
+12  * *
+13  * *
+14  sao-br-ping.vultr.com (216.238.98.118)  175.393 ms *
+
+===== Santiago (scl-cl-ping.vultr.com) — 10553 km =====
+traceroute to scl-cl-ping.vultr.com (64.176.2.7), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.460 ms  0.517 ms
+ 2  100.122.26.161 (100.122.26.161)  1.822 ms  1.892 ms
+ 3  75.153.138.72 (75.153.138.72)  1.986 ms  2.042 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  154.11.15.109 (154.11.15.109)  5.386 ms  5.441 ms
+ 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  5.881 ms  7.118 ms
+ 9  * *
+10  ae2.3601.edge1.sgo1.ciriontechnologies.net (200.189.207.6)  192.515 ms  192.533 ms
+11  8.243.179.78 (8.243.179.78)  192.047 ms  192.041 ms
+12  * *
+13  * *
+14  * *
+15  scl-cl-ping.vultr.com (64.176.2.7)  188.277 ms  189.110 ms
+
+===== Johannesburg (jnb-za-ping.vultr.com) — 16452 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.3.1)  0.370 ms  0.400 ms
+ 2  100.122.26.161 (100.122.26.161)  1.251 ms  1.299 ms
+ 3  75.153.138.72 (75.153.138.72)  1.935 ms  1.931 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  154.11.15.190 (154.11.15.190)  5.911 ms  5.906 ms
+ 8  205.177.32.1 (205.177.32.1)  5.885 ms  5.927 ms
+ 9  Hu0-0-0-20.br03.jnb01.as3491.net (63.223.48.142)  334.776 ms  334.770 ms
+10  63.218.151.30 (63.218.151.30)  321.435 ms  321.431 ms
+11  * *
+12  * *
+13  * *
+14  jnb-za-ping.vultr.com (139.84.226.78)  320.163 ms *
+
