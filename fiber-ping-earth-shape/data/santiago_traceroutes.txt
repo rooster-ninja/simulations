@@ -1,0 +1,1052 @@
+===== Santiago -> Seattle | probe AS31898 Oracle | globe 10380 km, flat 11421 km =====
+traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.30)  0.281 ms  0.226 ms
+ 2  8.243.189.22 (8.243.189.22)  25.570 ms  25.567 ms
+ 3  8.243.189.21 (8.243.189.21)  0.661 ms  0.616 ms
+ 4  * *
+ 5  195.12.254.54 (195.12.254.54)  106.388 ms  106.419 ms
+ 6  * *
+ 7  * *
+ 8  * dls-bb4-link.ip.twelve99.net (62.115.143.53)  140.569 ms
+ 9  dls-b7-link.ip.twelve99.net (62.115.138.64)  217.398 ms  217.461 ms
+10  dls-bb1-link.ip.twelve99.net (62.115.141.160)  140.588 ms  140.658 ms
+11  lax-bb1-link.ip.twelve99.net (62.115.140.236)  170.847 ms  170.860 ms
+12  sjo-bb3-link.ip.twelve99.net (62.115.139.151)  184.007 ms  184.414 ms
+13  sea-b1-link.ip.twelve99.net (62.115.132.153)  189.369 ms  189.321 ms
+14  constantcompany-ic-375794.ip.twelve99-cust.net (213.248.100.133)  189.314 ms  189.280 ms
+15  * *
+16  * *
+17  * *
+18  45.63.33.239.vultrusercontent.com (45.63.33.239)  189.997 ms  192.427 ms
+19  wa-us-ping.vultr.com (108.61.194.105)  190.058 ms  190.027 ms
+
+===== Santiago -> Seattle | probe AS15311 TELEFONICA EMPRESAS CHILE | globe 10380 km, flat 11421 km =====
+traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.1.1)  0.093 ms  0.012 ms
+ 2  192.168.88.1 (192.168.88.1)  0.519 ms  0.524 ms
+ 3  186.179.80.209 (186.179.80.209)  1.055 ms  1.076 ms
+ 4  172.30.200.93 (172.30.200.93)  1.546 ms  1.540 ms
+ 5  186-148-63-206.unknown.nap.mundo.movistar.cl (186.148.63.206)  30.002 ms  29.989 ms
+ 6  186-148-63-205.unknown.nap.mundo.movistar.cl (186.148.63.205)  2.341 ms  2.331 ms
+ 7  213.140.39.91 (213.140.39.91)  7.714 ms  7.717 ms
+ 8  * 213.140.39.90 (213.140.39.90)  4.179 ms
+ 9  5.53.3.67 (5.53.3.67)  122.895 ms  122.884 ms
+10  213.140.35.117 (213.140.35.117)  137.785 ms  137.785 ms
+11  94.142.107.31 (94.142.107.31)  137.350 ms  137.589 ms
+12  Bundle-Ether45.br04.sea01.as3491.net (63.223.47.126)  216.634 ms  216.597 ms
+13  63-220-192-226.static.as3491.net (63.220.192.226)  211.921 ms  211.873 ms
+14  * *
+15  * *
+16  * *
+17  45.63.33.239.vultrusercontent.com (45.63.33.239)  217.298 ms  217.794 ms
+18  wa-us-ping.vultr.com (108.61.194.105)  212.537 ms  212.058 ms
+
+===== Santiago -> Seattle | probe AS20473 The Constant Company  <- shortest | globe 10380 km, flat 11421 km =====
+traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.617 ms  0.572 ms
+ 2  100.100.200.1 (100.100.200.1)  0.568 ms  0.563 ms
+ 3  10.107.0.113 (10.107.0.113)  43.055 ms  43.052 ms
+ 4  10.107.0.5 (10.107.0.5)  0.555 ms  0.552 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.599 ms  0.629 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.262 ms  30.328 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  91.944 ms  91.940 ms
+ 8  ae0-20g.sr1.dfw1.us.nlayer.net (69.31.63.189)  99.205 ms  99.202 ms
+ 9  ae20.cr4-sea2.ip4.gtt.net (89.149.130.54)  170.094 ms  170.141 ms
+10  ip4.gtt.net (65.175.54.181)  169.804 ms  169.803 ms
+11  * *
+12  * *
+13  * *
+14  45.63.33.239.vultrusercontent.com (45.63.33.239)  170.338 ms  170.364 ms
+15  wa-us-ping.vultr.com (108.61.194.105)  170.126 ms  170.173 ms
+
+===== Santiago -> Silicon Valley | probe AS31898 Oracle  <- shortest | globe 9496 km, flat 11056 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.10)  0.169 ms  0.113 ms
+ 2  199.100.16.202 (199.100.16.202)  0.425 ms  0.451 ms
+ 3  * *
+ 4  be9256.ccr81.mia03.atlas.cogentco.com (154.54.29.157)  108.206 ms  108.199 ms
+ 5  port-channel8472.ccr91.jan02.atlas.cogentco.com (154.54.3.145)  126.576 ms  126.567 ms
+ 6  be8121.ccr31.dfw01.atlas.cogentco.com (154.54.40.249)  134.178 ms  134.208 ms
+ 7  be3821.ccr21.elp02.atlas.cogentco.com (154.54.165.26)  146.422 ms  146.415 ms
+ 8  be5471.ccr31.phx01.atlas.cogentco.com (154.54.166.58)  154.379 ms  154.375 ms
+ 9  be2931.ccr41.lax01.atlas.cogentco.com (154.54.44.86)  164.307 ms  164.349 ms
+10  be3097.ccr81.sjc13.atlas.cogentco.com (154.54.40.157)  175.827 ms  175.820 ms
+11  be8167.rcr51.b034314-0.sjc13.atlas.cogentco.com (154.54.166.246)  166.279 ms  166.342 ms
+12  * 38.120.133.35 (38.120.133.35)  176.219 ms
+13  * *
+14  * *
+15  * *
+16  45.32.142.126.vultrusercontent.com (45.32.142.126)  166.145 ms  166.125 ms
+17  sjo-ca-us-ping.vultr.com (104.156.230.107)  175.784 ms *
+
+===== Santiago -> Silicon Valley | probe AS61138 Zappie Host | globe 9496 km, flat 11056 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (216.73.159.1)  1.089 ms  1.039 ms
+ 2  * *
+ 3  192.168.212.129 (192.168.212.129)  1.948 ms  1.947 ms
+ 4  192.168.202.193 (192.168.202.193)  5.445 ms  5.443 ms
+ 5  8.243.191.133 (8.243.191.133)  3.197 ms  3.195 ms
+ 6  * *
+ 7  te-0-0-0-13.br04.mia02.as3491.net (63.217.112.57)  108.787 ms  108.785 ms
+ 8  * *
+ 9  63-217-21-138.static.as3491.net (63.217.21.138)  181.246 ms  181.244 ms
+10  * *
+11  * *
+12  * *
+13  45.32.142.126.vultrusercontent.com (45.32.142.126)  182.608 ms  183.239 ms
+14  sjo-ca-us-ping.vultr.com (104.156.230.107)  181.003 ms  180.906 ms
+
+===== Santiago -> Silicon Valley | probe AS15311 TELEFONICA EMPRESAS CHILE | globe 9496 km, flat 11056 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.1.1)  0.101 ms  0.026 ms
+ 2  192.168.88.1 (192.168.88.1)  0.451 ms  0.495 ms
+ 3  186.179.80.209 (186.179.80.209)  1.049 ms  1.115 ms
+ 4  172.30.200.93 (172.30.200.93)  1.603 ms  1.591 ms
+ 5  186-148-63-206.unknown.nap.mundo.movistar.cl (186.148.63.206)  2.290 ms  2.297 ms
+ 6  186-148-63-205.unknown.nap.mundo.movistar.cl (186.148.63.205)  2.306 ms  2.325 ms
+ 7  213.140.39.91 (213.140.39.91)  2.515 ms  2.509 ms
+ 8  213.140.39.90 (213.140.39.90)  4.401 ms  4.537 ms
+ 9  5.53.5.41 (5.53.5.41)  97.210 ms  97.227 ms
+10  * *
+11  * *
+12  port-channel3026.ccr92.dca04.atlas.cogentco.com (154.54.45.177)  130.591 ms  130.502 ms
+13  port-channel9259.ccr92.cle04.atlas.cogentco.com (154.54.173.97)  142.864 ms  142.798 ms
+14  be2718.ccr42.ord01.atlas.cogentco.com (154.54.7.129)  140.180 ms  140.165 ms
+15  be5068.ccr32.oma02.atlas.cogentco.com (154.54.166.73)  154.497 ms  154.485 ms
+16  * *
+17  * *
+18  be3906.ccr22.sfo01.atlas.cogentco.com (154.54.5.154)  186.245 ms  186.142 ms
+19  be5991.ccr82.sjc13.atlas.cogentco.com (154.54.168.253)  187.671 ms  187.586 ms
+20  be8168.rcr51.b034314-0.sjc13.atlas.cogentco.com (154.54.170.198)  187.105 ms  187.123 ms
+
+===== Santiago -> Los Angeles | probe AS61138 Zappie Host | globe 9000 km, flat 10581 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  _gateway (216.73.159.1)  2.378 ms  1.951 ms
+ 2  * *
+ 3  192.168.212.129 (192.168.212.129)  2.953 ms  2.932 ms
+ 4  192.168.202.193 (192.168.202.193)  3.622 ms  3.606 ms
+ 5  148.222.224.4 (148.222.224.4)  4.437 ms  4.422 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  34.055 ms  34.177 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  95.913 ms  95.941 ms
+ 8  ae400.0.edge2.dal1.as7195.net (200.25.75.53)  122.256 ms  122.350 ms
+ 9  ae0.0.edge1.dal1.as7195.net (200.25.51.212)  122.077 ms  122.120 ms
+10  ae200.0.edge1.lax1.as7195.net (200.25.75.20)  155.426 ms  155.413 ms
+11  clan-servers-hosting.as20473.any2ix.coresite.com (206.72.211.53)  156.277 ms  156.241 ms
+12  * *
+13  * *
+14  173.199.80.241.vultrusercontent.com (173.199.80.241)  155.370 ms  155.342 ms
+15  lax-ca-us-ping.vultr.com (108.61.219.200)  153.526 ms  153.490 ms
+
+===== Santiago -> Los Angeles | probe AS270013 J AND J SPA (INFOFRACTAL)  <- shortest | globe 9000 km, flat 10581 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.501 ms  0.495 ms
+ 3  192.168.202.193 (192.168.202.193)  18.682 ms  18.700 ms
+ 4  148.222.224.4 (148.222.224.4)  1.587 ms  1.586 ms
+ 5  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  31.298 ms  31.411 ms
+ 6  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  93.723 ms  93.722 ms
+ 7  ae400.0.edge2.dal1.as7195.net (200.25.75.53)  120.189 ms  120.266 ms
+ 8  ae0.0.edge1.dal1.as7195.net (200.25.51.212)  120.331 ms  120.490 ms
+ 9  ae200.0.edge1.lax1.as7195.net (200.25.75.20)  153.703 ms  153.758 ms
+10  clan-servers-hosting.as20473.any2ix.coresite.com (206.72.211.53)  152.592 ms  152.590 ms
+11  * *
+12  * *
+13  173.199.80.241.vultrusercontent.com (173.199.80.241)  152.465 ms  152.579 ms
+14  lax-ca-us-ping.vultr.com (108.61.219.200)  152.578 ms  152.553 ms
+
+===== Santiago -> Los Angeles | probe AS20473 The Constant Company | globe 9000 km, flat 10581 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.585 ms  0.540 ms
+ 2  100.100.200.1 (100.100.200.1)  0.534 ms  0.531 ms
+ 3  10.107.0.197 (10.107.0.197)  1.723 ms  1.719 ms
+ 4  10.107.0.9 (10.107.0.9)  0.514 ms  0.511 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.580 ms  0.647 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.164 ms  30.265 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  91.910 ms  91.997 ms
+ 8  ae400.0.edge2.dal1.as7195.net (200.25.75.53)  119.392 ms  119.444 ms
+ 9  ae0.0.edge1.dal1.as7195.net (200.25.51.212)  119.332 ms  119.411 ms
+10  ae200.0.edge1.lax1.as7195.net (200.25.75.20)  152.829 ms  152.826 ms
+11  * *
+12  * *
+13  * *
+14  173.199.80.241.vultrusercontent.com (173.199.80.241)  157.138 ms  157.172 ms
+15  lax-ca-us-ping.vultr.com (108.61.219.200)  157.130 ms  157.109 ms
+
+===== Santiago -> Honolulu | probe AS15311 TELEFONICA EMPRESAS CHILE | globe 11048 km, flat 15382 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.1.1)  0.076 ms  0.011 ms
+ 2  192.168.88.1 (192.168.88.1)  0.426 ms  0.501 ms
+ 3  186.179.80.209 (186.179.80.209)  0.945 ms  0.989 ms
+ 4  172.30.200.93 (172.30.200.93)  1.531 ms  1.516 ms
+ 5  186-148-63-206.unknown.nap.mundo.movistar.cl (186.148.63.206)  2.243 ms  2.314 ms
+ 6  186-148-63-205.unknown.nap.mundo.movistar.cl (186.148.63.205)  2.059 ms  2.061 ms
+ 7  213.140.39.91 (213.140.39.91)  2.214 ms  2.209 ms
+ 8  * 213.140.39.90 (213.140.39.90)  4.395 ms
+ 9  5.53.3.67 (5.53.3.67)  122.778 ms  122.768 ms
+10  213.140.35.117 (213.140.35.117)  137.738 ms  137.729 ms
+11  * *
+12  port-channel3026.ccr92.dca04.atlas.cogentco.com (154.54.45.177)  137.901 ms  137.881 ms
+13  be3483.ccr42.atl01.atlas.cogentco.com (154.54.172.170)  133.340 ms  133.309 ms
+14  port-channel3704.ccr92.jan02.atlas.cogentco.com (154.54.40.110)  156.857 ms  156.807 ms
+15  be8122.ccr32.dfw01.atlas.cogentco.com (154.54.41.53)  157.352 ms  157.300 ms
+16  be3846.ccr22.elp02.atlas.cogentco.com (154.54.165.30)  168.485 ms  168.450 ms
+17  be5473.ccr32.phx01.atlas.cogentco.com (154.54.166.70)  177.298 ms  177.267 ms
+18  be2932.ccr42.lax01.atlas.cogentco.com (154.54.45.162)  187.467 ms  187.555 ms
+19  be2728.rcr61.hnl01.atlas.cogentco.com (154.54.87.70)  235.028 ms  235.112 ms
+20  38.122.50.10 (38.122.50.10)  234.589 ms  234.414 ms
+
+===== Santiago -> Honolulu | probe AS31898 Oracle  <- shortest | globe 11048 km, flat 15382 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.30)  0.234 ms  0.184 ms
+ 2  199.100.16.202 (199.100.16.202)  0.655 ms  0.653 ms
+ 3  * *
+ 4  * *
+ 5  port-channel8473.ccr92.jan02.atlas.cogentco.com (154.54.5.161)  117.197 ms  117.195 ms
+ 6  be8122.ccr32.dfw01.atlas.cogentco.com (154.54.41.53)  124.748 ms  124.844 ms
+ 7  be3846.ccr22.elp02.atlas.cogentco.com (154.54.165.30)  135.917 ms  135.915 ms
+ 8  be5473.ccr32.phx01.atlas.cogentco.com (154.54.166.70)  135.179 ms  135.173 ms
+ 9  be2932.ccr42.lax01.atlas.cogentco.com (154.54.45.162)  154.989 ms  155.018 ms
+10  be2728.rcr61.hnl01.atlas.cogentco.com (154.54.87.70)  192.922 ms  192.920 ms
+11  38.122.50.10 (38.122.50.10)  202.077 ms  202.063 ms
+12  * *
+13  * *
+14  * *
+15  hon-hi-us-ping.vultr.com (208.72.154.76)  201.995 ms  201.938 ms
+
+===== Santiago -> Honolulu | probe AS136907 HUAWEI CLOUDS | globe 11048 km, flat 15382 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (100.72.0.1)  5.186 ms  5.152 ms
+ 2  11.30.16.4 (11.30.16.4)  3.151 ms  2.973 ms
+ 3  11.30.80.5 (11.30.80.5)  4.485 ms  4.478 ms
+ 4  11.30.80.85 (11.30.80.85)  7.956 ms  8.076 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  11.53.104.152 (11.53.104.152)  7.642 ms  7.748 ms
+ 9  172.16.11.149 (172.16.11.149)  3.010 ms  3.006 ms
+10  * *
+11  172.16.139.50 (172.16.139.50)  2.016 ms  2.007 ms
+12  8.243.179.113 (8.243.179.113)  4.279 ms  4.284 ms
+13  * *
+14  * *
+15  * *
+16  port-channel8473.ccr92.jan02.atlas.cogentco.com (154.54.5.161)  136.012 ms  136.000 ms
+17  be8122.ccr32.dfw01.atlas.cogentco.com (154.54.41.53)  136.516 ms  136.544 ms
+18  be3846.ccr22.elp02.atlas.cogentco.com (154.54.165.30)  157.998 ms  157.737 ms
+19  be5473.ccr32.phx01.atlas.cogentco.com (154.54.166.70)  157.703 ms  157.670 ms
+20  be2932.ccr42.lax01.atlas.cogentco.com (154.54.45.162)  166.393 ms  166.382 ms
+
+===== Santiago -> Miami | probe AS270013 J AND J SPA (INFOFRACTAL)  <- shortest | globe 6662 km, flat 6788 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.521 ms  0.518 ms
+ 3  192.168.202.193 (192.168.202.193)  1.128 ms  1.140 ms
+ 4  148.222.224.4 (148.222.224.4)  1.586 ms  1.592 ms
+ 5  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  31.475 ms  31.629 ms
+ 6  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  93.099 ms  93.419 ms
+ 7  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  92.826 ms  92.824 ms
+ 8  the-constant-company-73.peering.mia.ix.fl-ix.net (206.41.108.73)  115.601 ms  115.599 ms
+ 9  * *
+10  * *
+11  144.202.32.37.vultrusercontent.com (144.202.32.37)  92.727 ms  92.715 ms
+12  fl-us-ping.vultr.com (104.156.244.232)  92.814 ms  92.846 ms
+
+===== Santiago -> Miami | probe AS20473 The Constant Company | globe 6662 km, flat 6788 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.489 ms  0.454 ms
+ 2  100.100.200.1 (100.100.200.1)  0.446 ms  0.442 ms
+ 3  10.107.0.113 (10.107.0.113)  1.474 ms  1.484 ms
+ 4  10.107.0.13 (10.107.0.13)  0.679 ms  0.675 ms
+ 5  10.107.0.1 (10.107.0.1)  0.786 ms  0.793 ms
+ 6  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.806 ms  0.869 ms
+ 7  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.473 ms  30.514 ms
+ 8  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.075 ms  92.158 ms
+ 9  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  91.861 ms  91.856 ms
+10  * *
+11  * *
+12  * *
+13  144.202.32.37.vultrusercontent.com (144.202.32.37)  98.926 ms  98.993 ms
+14  fl-us-ping.vultr.com (104.156.244.232)  99.114 ms  99.137 ms
+
+===== Santiago -> Miami | probe AS31898 Oracle | globe 6662 km, flat 6788 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.10)  0.205 ms  0.161 ms
+ 2  8.243.189.22 (8.243.189.22)  0.467 ms  0.431 ms
+ 3  8.243.189.21 (8.243.189.21)  1.491 ms  1.507 ms
+ 4  * *
+ 5  195.12.254.54 (195.12.254.54)  106.242 ms  106.209 ms
+ 6  constantcompany-ic-383167.ip.twelve99-cust.net (213.248.96.109)  137.589 ms  137.551 ms
+ 7  * *
+ 8  * *
+ 9  144.202.32.37.vultrusercontent.com (144.202.32.37)  106.034 ms  106.097 ms
+10  fl-us-ping.vultr.com (104.156.244.232)  106.062 ms  106.160 ms
+
+===== Santiago -> New Jersey | probe AS136907 HUAWEI CLOUDS | globe 8239 km, flat 8250 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (100.72.0.1)  4.341 ms  4.293 ms
+ 2  11.30.16.0 (11.30.16.0)  3.237 ms  3.101 ms
+ 3  11.30.80.1 (11.30.80.1)  271.386 ms  271.373 ms
+ 4  11.30.80.16 (11.30.80.16)  3.534 ms  3.638 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  11.90.160.26 (11.90.160.26)  2.554 ms  2.652 ms
+ 9  11.90.160.53 (11.90.160.53)  1.821 ms  1.938 ms
+10  * *
+11  172.16.136.30 (172.16.136.30)  1.851 ms  1.836 ms
+12  8.243.179.81 (8.243.179.81)  2.327 ms  2.234 ms
+13  * *
+14  195.12.254.54 (195.12.254.54)  107.664 ms  107.657 ms
+15  rest-bb1-link.ip.twelve99.net (62.115.119.230)  127.465 ms  127.534 ms
+16  * *
+17  ewr-b6-link.ip.twelve99.net (62.115.140.171)  130.279 ms  130.320 ms
+18  ewr-b15-link.ip.twelve99.net (62.115.136.13)  127.866 ms  127.929 ms
+19  constantcompany-ic-357479.ip.twelve99-cust.net (62.115.59.7)  128.533 ms  128.499 ms
+20  * *
+
+===== Santiago -> New Jersey | probe AS20473 The Constant Company  <- shortest | globe 8239 km, flat 8250 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.596 ms  0.564 ms
+ 2  100.100.100.1 (100.100.100.1)  0.560 ms  0.555 ms
+ 3  10.107.0.109 (10.107.0.109)  5.122 ms  5.117 ms
+ 4  10.107.0.9 (10.107.0.9)  0.612 ms  0.607 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.603 ms  0.626 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.341 ms  30.425 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.322 ms  92.407 ms
+ 8  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  92.015 ms  92.108 ms
+ 9  ae7.0.edge2.iad1.as7195.net (200.25.51.163)  119.478 ms  119.574 ms
+10  ae201.0.edge1.jfk1.as7195.net (200.25.51.225)  133.059 ms  133.121 ms
+11  ae0.0.edge2.jfk1.as7195.net (200.25.51.237)  132.273 ms  132.111 ms
+12  * *
+13  * *
+14  * *
+15  66.55.138.149.vultrusercontent.com (66.55.138.149)  120.372 ms  120.308 ms
+16  nj-us-ping.vultr.com (108.61.149.182)  120.438 ms  120.437 ms
+
+===== Santiago -> New Jersey | probe AS31898 Oracle | globe 8239 km, flat 8250 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.27)  0.269 ms  0.109 ms
+ 2  199.100.16.202 (199.100.16.202)  3.149 ms  3.125 ms
+ 3  * *
+ 4  * *
+ 5  be5576.ccr41.atl01.atlas.cogentco.com (154.54.47.49)  118.127 ms  118.138 ms
+ 6  port-channel3482.ccr91.dca04.atlas.cogentco.com (154.54.169.177)  134.170 ms  134.149 ms
+ 7  be8073.ccr41.jfk02.atlas.cogentco.com (154.54.170.70)  138.702 ms  138.691 ms
+ 8  be2997.rcr51.ewr01.atlas.cogentco.com (154.54.89.178)  129.874 ms  129.835 ms
+ 9  be9177.nr51.b033057-0.ewr01.atlas.cogentco.com (154.24.68.158)  130.907 ms  130.877 ms
+10  gi0-0-1-5.64.nr12.b002894-0.ewr01.atlas.cogentco.com (38.142.212.201)  130.493 ms  130.504 ms
+11  * *
+12  * *
+13  66.55.138.149.vultrusercontent.com (66.55.138.149)  140.012 ms  139.897 ms
+14  nj-us-ping.vultr.com (108.61.149.182)  139.636 ms  139.609 ms
+
+===== Santiago -> London | probe AS31898 Oracle | globe 11673 km, flat 12946 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.26)  0.231 ms  0.122 ms
+ 2  199.100.16.202 (199.100.16.202)  1.385 ms  1.366 ms
+ 3  * *
+ 4  * *
+ 5  be5576.ccr41.atl01.atlas.cogentco.com (154.54.47.49)  117.902 ms  117.902 ms
+ 6  port-channel3482.ccr91.dca04.atlas.cogentco.com (154.54.169.177)  134.184 ms  134.148 ms
+ 7  be8073.ccr41.jfk02.atlas.cogentco.com (154.54.170.70)  138.837 ms  138.824 ms
+ 8  * *
+ 9  be9662.agr61.lon05.atlas.cogentco.com (154.54.75.14)  196.086 ms  196.063 ms
+10  be6967.rcr61.b015532-1.lon05.atlas.cogentco.com (130.117.48.158)  205.483 ms  205.445 ms
+11  149.11.44.155 (149.11.44.155)  205.171 ms  205.144 ms
+12  * *
+13  * *
+14  * *
+15  * *
+16  lon-gb-ping.vultr.com (108.61.196.101)  196.024 ms  195.967 ms
+
+===== Santiago -> London | probe AS270013 J AND J SPA (INFOFRACTAL) | globe 11673 km, flat 12946 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.377 ms  0.399 ms
+ 3  192.168.202.193 (192.168.202.193)  1.190 ms  1.198 ms
+ 4  148.222.224.4 (148.222.224.4)  1.558 ms  1.573 ms
+ 5  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  31.254 ms  32.050 ms
+ 6  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.973 ms  93.074 ms
+ 7  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  92.882 ms  92.999 ms
+ 8  ae7.0.edge2.iad1.as7195.net (200.25.51.163)  120.528 ms  120.649 ms
+ 9  ae201.0.edge1.jfk1.as7195.net (200.25.51.225)  133.622 ms  133.652 ms
+10  ae1044.0.edge1.lon1.as7195.net (200.25.51.31)  210.636 ms  210.633 ms
+11  vl32-br1-cer.lon3.choopa.net (195.66.226.176)  210.972 ms  210.956 ms
+12  * *
+13  * *
+14  * *
+15  * *
+16  lon-gb-ping.vultr.com (108.61.196.101)  211.662 ms  211.688 ms
+
+===== Santiago -> London | probe AS20473 The Constant Company  <- shortest | globe 11673 km, flat 12946 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.537 ms  0.510 ms
+ 2  100.100.200.1 (100.100.200.1)  0.504 ms  0.501 ms
+ 3  10.107.0.113 (10.107.0.113)  3.193 ms  3.191 ms
+ 4  10.107.0.5 (10.107.0.5)  0.493 ms  0.490 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.723 ms  0.720 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.396 ms  30.461 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.203 ms  92.247 ms
+ 8  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  93.064 ms  93.135 ms
+ 9  ae7.0.edge2.iad1.as7195.net (200.25.51.163)  119.930 ms  119.972 ms
+10  ae201.0.edge1.jfk1.as7195.net (200.25.51.225)  133.083 ms  133.155 ms
+11  ae1044.0.edge1.lon1.as7195.net (200.25.51.31)  209.565 ms  209.537 ms
+12  * *
+13  * *
+14  * *
+15  * *
+16  * *
+17  lon-gb-ping.vultr.com (108.61.196.101)  187.806 ms  187.848 ms
+
+===== Santiago -> Amsterdam | probe AS31898 Oracle | globe 12013 km, flat 13315 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.30)  0.206 ms  0.092 ms
+ 2  199.100.16.202 (199.100.16.202)  0.403 ms  0.378 ms
+ 3  * *
+ 4  be2716.ccr82.mia03.atlas.cogentco.com (154.54.3.29)  98.165 ms  98.200 ms
+ 5  be5577.ccr42.atl01.atlas.cogentco.com (154.54.82.245)  108.381 ms  108.372 ms
+ 6  port-channel3483.ccr92.dca04.atlas.cogentco.com (154.54.172.169)  115.106 ms  115.070 ms
+ 7  be4188.ccr42.jfk02.atlas.cogentco.com (154.54.30.122)  120.521 ms  120.446 ms
+ 8  be3472.ccr32.bos01.atlas.cogentco.com (154.54.46.33)  208.927 ms  208.896 ms
+ 9  port-channel3467.ccr92.lhr01.atlas.cogentco.com (154.54.94.46)  188.031 ms  188.019 ms
+10  * *
+11  be9036.ccr42.ams03.atlas.cogentco.com (154.54.72.186)  195.873 ms  195.827 ms
+12  be2154.rcr22.ams06.atlas.cogentco.com (130.117.50.206)  204.333 ms  204.299 ms
+13  149.6.0.227 (149.6.0.227)  195.300 ms  195.221 ms
+14  * *
+15  * *
+16  173.199.112.244.vultrusercontent.com (173.199.112.244)  213.871 ms  213.818 ms
+17  ams-nl-ping.vultr.com (108.61.198.102)  204.106 ms *
+
+===== Santiago -> Amsterdam | probe AS20473 The Constant Company  <- shortest | globe 12013 km, flat 13315 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.648 ms  0.600 ms
+ 2  100.100.200.1 (100.100.200.1)  0.596 ms  0.593 ms
+ 3  10.107.0.197 (10.107.0.197)  14.856 ms  14.855 ms
+ 4  10.107.0.17 (10.107.0.17)  0.631 ms  0.639 ms
+ 5  10.107.0.1 (10.107.0.1)  0.577 ms  0.572 ms
+ 6  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.679 ms  0.688 ms
+ 7  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.485 ms  30.544 ms
+ 8  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.142 ms  92.223 ms
+ 9  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  92.309 ms  92.611 ms
+10  ae7.0.edge2.iad1.as7195.net (200.25.51.163)  119.722 ms  119.801 ms
+11  ae1049.0.edge1.fra1.as7195.net (200.25.51.168)  212.561 ms  212.525 ms
+12  * *
+13  * *
+14  * *
+15  173.199.112.244.vultrusercontent.com (173.199.112.244)  200.384 ms  200.466 ms
+16  ams-nl-ping.vultr.com (108.61.198.102)  200.314 ms  200.390 ms
+
+===== Santiago -> Amsterdam | probe AS136907 HUAWEI CLOUDS | globe 12013 km, flat 13315 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (100.72.0.1)  4.746 ms  4.691 ms
+ 2  11.30.16.2 (11.30.16.2)  3.165 ms  3.135 ms
+ 3  11.30.80.3 (11.30.80.3)  3.927 ms  3.905 ms
+ 4  11.30.80.18 (11.30.80.18)  4.222 ms  4.328 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  11.90.160.24 (11.90.160.24)  2.526 ms  2.639 ms
+ 9  11.90.160.55 (11.90.160.55)  2.015 ms  2.019 ms
+10  * *
+11  172.16.139.50 (172.16.139.50)  1.905 ms  1.891 ms
+12  8.243.179.113 (8.243.179.113)  5.667 ms  5.671 ms
+13  * *
+14  195.12.254.54 (195.12.254.54)  108.362 ms  108.375 ms
+15  ash-bb2-link.ip.twelve99.net (62.115.120.176)  128.040 ms  128.037 ms
+16  prs-bb2-link.ip.twelve99.net (62.115.140.106)  229.246 ms  229.244 ms
+17  adm-bb2-link.ip.twelve99.net (62.115.137.4)  232.321 ms  232.341 ms
+18  adm-b6-link.ip.twelve99.net (62.115.117.115)  212.736 ms  212.774 ms
+19  62.115.58.194 (62.115.58.194)  232.735 ms  232.794 ms
+20  * *
+
+===== Santiago -> Stockholm | probe AS31898 Oracle | globe 13087 km, flat 14071 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.10)  0.253 ms  0.101 ms
+ 2  8.243.189.22 (8.243.189.22)  0.488 ms  0.387 ms
+ 3  8.243.189.21 (8.243.189.21)  1.352 ms  1.324 ms
+ 4  * *
+ 5  195.12.254.54 (195.12.254.54)  106.412 ms *
+ 6  ash-bb2-link.ip.twelve99.net (62.115.120.176)  125.857 ms  125.989 ms
+ 7  ewr-bb2-link.ip.twelve99.net (62.115.136.200)  129.399 ms  129.453 ms
+ 8  ldn-bb2-link.ip.twelve99.net (62.115.139.247)  249.938 ms  249.924 ms
+ 9  ldn-b4-link.ip.twelve99.net (62.115.126.37)  207.325 ms  207.413 ms
+10  ldn-bb1-link.ip.twelve99.net (62.115.126.38)  244.034 ms  244.143 ms
+11  * *
+12  sto-bb1-link.ip.twelve99.net (62.115.134.95)  234.962 ms  234.921 ms
+13  kbn-bb5-link.ip.twelve99.net (62.115.134.78)  245.533 ms  245.559 ms
+14  kbn-b4-link.ip.twelve99.net (62.115.134.81)  235.067 ms  234.641 ms
+15  kbn-bb6-link.ip.twelve99.net (62.115.136.230)  247.918 ms  247.762 ms
+16  sto-bb2-link.ip.twelve99.net (62.115.139.172)  255.166 ms  255.327 ms
+17  sto-b9-link.ip.twelve99.net (62.115.139.187)  253.952 ms  254.017 ms
+18  constantcompany-ic-370147.ip.twelve99-cust.net (213.248.95.177)  233.306 ms  233.305 ms
+19  * *
+20  * *
+
+===== Santiago -> Stockholm | probe AS270013 J AND J SPA (INFOFRACTAL) | globe 13087 km, flat 14071 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.423 ms  0.418 ms
+ 3  192.168.202.193 (192.168.202.193)  1.172 ms  1.170 ms
+ 4  195.22.221.8 (195.22.221.8)  2.343 ms  2.341 ms
+ 5  89.221.41.155 (89.221.41.155)  104.845 ms  104.859 ms
+ 6  195.22.199.33 (195.22.199.33)  105.399 ms  105.397 ms
+ 7  ae-1.r25.miamfl02.us.bb.gin.ntt.net (129.250.3.120)  135.148 ms  135.182 ms
+ 8  ae-3.r27.atlnga05.us.bb.gin.ntt.net (129.250.6.2)  121.113 ms  121.282 ms
+ 9  ae-4.r26.atlnga05.us.bb.gin.ntt.net (129.250.6.74)  128.052 ms  128.100 ms
+10  ae-11.r27.asbnva02.us.bb.gin.ntt.net (129.250.4.188)  127.085 ms  127.190 ms
+11  ae-6.r23.londen12.uk.bb.gin.ntt.net (129.250.2.110)  196.578 ms  196.776 ms
+12  ae-7.r26.frnkge13.de.bb.gin.ntt.net (129.250.3.76)  224.501 ms  224.581 ms
+13  ae-0.r27.frnkge13.de.bb.gin.ntt.net (129.250.3.3)  218.064 ms  218.559 ms
+14  ae-133.a04.stocse03.se.bb.gin.ntt.net (129.250.4.134)  249.321 ms  250.706 ms
+15  ce-1-1-c41-1.a04.stocse03.se.ce.gin.ntt.net (81.19.110.82)  244.952 ms  244.939 ms
+16  * *
+17  * *
+18  70.34.192.142 (70.34.192.142)  229.687 ms  229.650 ms
+19  sto-se-ping.vultr.com (70.34.194.86)  235.565 ms *
+
+===== Santiago -> Stockholm | probe AS20473 The Constant Company  <- shortest | globe 13087 km, flat 14071 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.820 ms  0.755 ms
+ 2  100.100.200.1 (100.100.200.1)  5.081 ms  5.076 ms
+ 3  10.107.0.113 (10.107.0.113)  8.021 ms  8.018 ms
+ 4  10.107.0.13 (10.107.0.13)  5.282 ms  5.278 ms
+ 5  10.107.0.1 (10.107.0.1)  5.274 ms  5.270 ms
+ 6  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  5.229 ms  5.257 ms
+ 7  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  34.897 ms  34.982 ms
+ 8  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  96.354 ms  96.352 ms
+ 9  ae0-20g.sr1.dfw1.us.nlayer.net (69.31.63.189)  103.499 ms  103.496 ms
+10  ae19.cr9-stk3.ip4.gtt.net (141.136.108.170)  225.180 ms  225.168 ms
+11  ip4.gtt.net (212.115.174.162)  221.592 ms  221.565 ms
+12  * *
+13  * *
+14  70.34.192.142 (70.34.192.142)  211.374 ms  211.367 ms
+15  sto-se-ping.vultr.com (70.34.194.86)  217.258 ms  217.282 ms
+
+===== Santiago -> Tokyo | probe AS20473 The Constant Company | globe 17237 km, flat 19185 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.466 ms  0.410 ms
+ 2  100.100.100.1 (100.100.100.1)  0.404 ms  0.397 ms
+ 3  10.107.0.109 (10.107.0.109)  43.613 ms  43.610 ms
+ 4  10.107.0.17 (10.107.0.17)  0.381 ms  0.514 ms
+ 5  10.107.0.1 (10.107.0.1)  0.510 ms  0.507 ms
+ 6  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.668 ms  0.664 ms
+ 7  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.310 ms  30.357 ms
+ 8  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  91.913 ms  92.046 ms
+ 9  ae0.0.edge2.mia1.as7195.net (200.25.51.35)  91.836 ms  91.834 ms
+10  mia-b2-link.ip.twelve99.net (62.115.215.94)  92.111 ms  92.137 ms
+11  * *
+12  hou-bb4-link.ip.twelve99.net (62.115.143.118)  126.356 ms  126.345 ms
+13  dls-bb4-link.ip.twelve99.net (62.115.143.53)  132.134 ms  132.132 ms
+14  dls-b7-link.ip.twelve99.net (62.115.138.64)  260.922 ms  261.070 ms
+15  dls-bb1-link.ip.twelve99.net (62.115.141.160)  132.286 ms  132.314 ms
+16  lax-bb1-link.ip.twelve99.net (62.115.140.236)  162.547 ms  162.610 ms
+17  tky-b2-link.ip.twelve99.net (62.115.116.199)  272.173 ms  272.214 ms
+18  constantcompany-ic-358213.ip.twelve99-cust.net (62.115.41.151)  265.130 ms  265.092 ms
+19  * *
+20  * *
+
+===== Santiago -> Tokyo | probe AS270013 J AND J SPA (INFOFRACTAL)  <- shortest | globe 17237 km, flat 19185 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.244 ms  0.242 ms
+ 3  192.168.202.193 (192.168.202.193)  2.556 ms  2.554 ms
+ 4  195.22.221.8 (195.22.221.8)  2.550 ms  2.548 ms
+ 5  89.221.41.155 (89.221.41.155)  104.936 ms  104.934 ms
+ 6  195.22.199.33 (195.22.199.33)  105.081 ms  105.079 ms
+ 7  ae-1.r24.miamfl02.us.bb.gin.ntt.net (129.250.3.78)  128.825 ms  128.876 ms
+ 8  ae-1.r22.dllstx14.us.bb.gin.ntt.net (129.250.2.55)  157.401 ms  157.481 ms
+ 9  ae-5.r26.lsanca07.us.bb.gin.ntt.net (129.250.2.83)  334.326 ms  334.412 ms
+10  ae-0.r27.lsanca07.us.bb.gin.ntt.net (129.250.3.31)  136.470 ms  136.635 ms
+11  ae-14.r35.tokyjp05.jp.bb.gin.ntt.net (129.250.3.192)  266.668 ms  266.728 ms
+12  ae-10.a01.tokyjp09.jp.bb.gin.ntt.net (129.250.5.91)  266.819 ms  266.789 ms
+13  ce-3-5-3.a01.tokyjp09.jp.ce.gin.ntt.net (120.88.54.98)  279.556 ms  279.552 ms
+14  * *
+15  * *
+16  209.222.31.145.vultrusercontent.com (209.222.31.145)  262.304 ms  262.284 ms
+17  hnd-jp-ping.vultr.com (108.61.201.151)  262.416 ms  262.364 ms
+
+===== Santiago -> Tokyo | probe AS136907 HUAWEI CLOUDS | globe 17237 km, flat 19185 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  _gateway (100.72.0.1)  4.470 ms  4.408 ms
+ 2  11.30.16.0 (11.30.16.0)  3.355 ms  3.150 ms
+ 3  11.30.80.1 (11.30.80.1)  3.902 ms  3.762 ms
+ 4  11.30.80.16 (11.30.80.16)  3.968 ms  4.028 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  11.90.160.26 (11.90.160.26)  6.318 ms  6.404 ms
+ 9  11.90.160.53 (11.90.160.53)  1.671 ms  1.727 ms
+10  * *
+11  172.16.139.66 (172.16.139.66)  1.718 ms  1.812 ms
+12  8.243.179.81 (8.243.179.81)  4.880 ms  4.994 ms
+13  * *
+14  te-0-0-0-13.br04.mia02.as3491.net (63.217.112.57)  107.725 ms *
+15  Bundle-Eth54.clbr01.tok02.as3491.net (63.218.250.118)  297.156 ms  297.218 ms
+16  63-216-242-46.static.as3491.net (63.216.242.46)  300.982 ms  300.980 ms
+17  * *
+18  * *
+19  209.222.31.145.vultrusercontent.com (209.222.31.145)  306.395 ms  306.419 ms
+20  hnd-jp-ping.vultr.com (108.61.201.151)  297.734 ms  297.687 ms
+
+===== Santiago -> Osaka | probe AS270013 J AND J SPA (INFOFRACTAL)  <- shortest | globe 17609 km, flat 19439 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.260 ms  0.257 ms
+ 3  192.168.202.193 (192.168.202.193)  1.196 ms  1.201 ms
+ 4  195.22.221.8 (195.22.221.8)  3.394 ms  3.424 ms
+ 5  195.22.199.179 (195.22.199.179)  109.871 ms  109.869 ms
+ 6  89.221.41.199 (89.221.41.199)  103.749 ms  103.809 ms
+ 7  * *
+ 8  hou-bb4-link.ip.twelve99.net (62.115.143.118)  138.758 ms  138.483 ms
+ 9  * *
+10  dls-b24-link.ip.twelve99.net (62.115.139.131)  283.050 ms  283.048 ms
+11  dls-bb1-link.ip.twelve99.net (62.115.136.82)  144.240 ms  144.256 ms
+12  lax-bb1-link.ip.twelve99.net (62.115.140.236)  177.125 ms  177.163 ms
+13  osa-b2-link.ip.twelve99.net (62.115.112.35)  281.379 ms  281.421 ms
+14  constantcompany-ic-377584.ip.twelve99-cust.net (62.115.9.35)  278.008 ms  277.985 ms
+15  * *
+16  * *
+17  * *
+18  osk-jp-ping.vultr.com (64.176.34.94)  276.816 ms *
+
+===== Santiago -> Osaka | probe AS31898 Oracle | globe 17609 km, flat 19439 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.27)  0.179 ms  0.131 ms
+ 2  8.243.189.22 (8.243.189.22)  0.359 ms  0.369 ms
+ 3  8.243.189.21 (8.243.189.21)  1.455 ms  1.452 ms
+ 4  * *
+ 5  195.12.254.54 (195.12.254.54)  106.522 ms  106.519 ms
+ 6  * *
+ 7  hou-bb4-link.ip.twelve99.net (62.115.143.118)  139.132 ms  139.127 ms
+ 8  dls-bb4-link.ip.twelve99.net (62.115.143.53)  140.510 ms  140.504 ms
+ 9  dls-b7-link.ip.twelve99.net (62.115.138.64)  281.332 ms  281.327 ms
+10  dls-bb1-link.ip.twelve99.net (62.115.141.160)  140.680 ms  140.713 ms
+11  lax-bb1-link.ip.twelve99.net (62.115.140.236)  172.034 ms  172.070 ms
+12  tky-b2-link.ip.twelve99.net (62.115.116.199)  272.515 ms  272.585 ms
+13  osa-b2-link.ip.twelve99.net (62.115.140.125)  277.796 ms  277.832 ms
+14  constantcompany-ic-377584.ip.twelve99-cust.net (62.115.9.35)  285.676 ms  285.640 ms
+15  * *
+16  * *
+17  * *
+18  osk-jp-ping.vultr.com (64.176.34.94)  280.690 ms  280.678 ms
+
+===== Santiago -> Osaka | probe AS61138 Zappie Host | globe 17609 km, flat 19439 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  _gateway (216.73.159.1)  5.837 ms  5.785 ms
+ 2  * *
+ 3  192.168.212.129 (192.168.212.129)  5.774 ms  5.772 ms
+ 4  192.168.202.193 (192.168.202.193)  5.769 ms  5.766 ms
+ 5  195.22.221.8 (195.22.221.8)  7.451 ms  7.448 ms
+ 6  89.221.41.175 (89.221.41.175)  116.711 ms  116.711 ms
+ 7  89.221.41.199 (89.221.41.199)  103.857 ms  103.854 ms
+ 8  * *
+ 9  hou-bb4-link.ip.twelve99.net (62.115.143.118)  138.798 ms  139.093 ms
+10  dls-bb4-link.ip.twelve99.net (62.115.143.53)  143.490 ms  143.488 ms
+11  dls-b7-link.ip.twelve99.net (62.115.138.64)  278.381 ms  278.267 ms
+12  dls-bb1-link.ip.twelve99.net (62.115.141.160)  141.003 ms  140.947 ms
+13  lax-bb1-link.ip.twelve99.net (62.115.140.236)  172.311 ms  172.274 ms
+14  tky-b2-link.ip.twelve99.net (62.115.142.129)  291.763 ms  291.759 ms
+15  osa-b2-link.ip.twelve99.net (62.115.140.125)  285.626 ms  285.591 ms
+16  constantcompany-ic-377584.ip.twelve99-cust.net (62.115.9.35)  290.769 ms  290.738 ms
+17  * *
+18  * *
+19  * *
+20  osk-jp-ping.vultr.com (64.176.34.94)  285.202 ms *
+
+===== Santiago -> Seoul | probe AS31898 Oracle | globe 18358 km, flat 19365 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.11)  0.218 ms  0.120 ms
+ 2  8.243.189.22 (8.243.189.22)  0.503 ms  0.443 ms
+ 3  8.243.189.21 (8.243.189.21)  3.484 ms  3.507 ms
+ 4  * *
+ 5  te-0-0-0-13.br04.mia02.as3491.net (63.217.112.57)  106.267 ms *
+ 6  Hu0-0-0-20.br03.seo03.as3491.net (63.220.71.17)  310.913 ms  310.939 ms
+ 7  Vultr-Holdings.TE-0-0-0-24.br03.seo03.as3491.net (63.218.237.134)  332.553 ms  333.136 ms
+ 8  * *
+ 9  * *
+10  * *
+11  sel-kor-ping.vultr.com (141.164.34.61)  328.524 ms *
+
+===== Santiago -> Seoul | probe AS15311 TELEFONICA EMPRESAS CHILE | globe 18358 km, flat 19365 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.1.1)  0.067 ms  0.012 ms
+ 2  192.168.89.1 (192.168.89.1)  0.319 ms  0.407 ms
+ 3  186.179.80.209 (186.179.80.209)  0.888 ms  0.905 ms
+ 4  172.30.200.93 (172.30.200.93)  1.362 ms  1.367 ms
+ 5  186-148-63-206.unknown.nap.mundo.movistar.cl (186.148.63.206)  2.238 ms  2.235 ms
+ 6  186-148-63-205.unknown.nap.mundo.movistar.cl (186.148.63.205)  2.087 ms  2.092 ms
+ 7  213.140.39.91 (213.140.39.91)  2.102 ms  2.113 ms
+ 8  213.140.39.90 (213.140.39.90)  3.972 ms  3.961 ms
+ 9  5.53.5.41 (5.53.5.41)  96.986 ms  96.977 ms
+10  213.140.35.124 (213.140.35.124)  129.646 ms *
+11  94.142.107.31 (94.142.107.31)  120.419 ms  120.386 ms
+12  Hu0-0-0-20.br03.seo03.as3491.net (63.220.71.17)  302.419 ms  302.292 ms
+13  Vultr-Holdings.TE-0-0-0-24.br03.seo03.as3491.net (63.218.237.134)  309.247 ms  309.213 ms
+14  * *
+15  * *
+16  * *
+17  sel-kor-ping.vultr.com (141.164.34.61)  301.932 ms *
+
+===== Santiago -> Seoul | probe AS20473 The Constant Company  <- shortest | globe 18358 km, flat 19365 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.632 ms  0.582 ms
+ 2  100.100.200.1 (100.100.200.1)  0.578 ms  0.574 ms
+ 3  10.107.0.113 (10.107.0.113)  21.395 ms  21.394 ms
+ 4  10.107.0.5 (10.107.0.5)  0.564 ms  0.562 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.605 ms  0.629 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.478 ms  30.586 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.083 ms  92.357 ms
+ 8  ae400.0.edge2.dal1.as7195.net (200.25.75.53)  119.593 ms  119.645 ms
+ 9  ae0.0.edge1.dal1.as7195.net (200.25.51.212)  119.583 ms  119.708 ms
+10  ae200.0.edge1.lax1.as7195.net (200.25.75.20)  151.937 ms  151.936 ms
+11  * *
+12  i-93.1wlt-core02.telstraglobal.net (202.84.253.85)  152.997 ms  153.075 ms
+13  i-15706.siko-core02.telstraglobal.net (202.84.140.225)  269.442 ms  269.438 ms
+14  i-1117.kssd-core02.telstraglobal.net (202.84.144.53)  298.639 ms  298.682 ms
+15  i-92.kssd01.telstraglobal.net (202.84.149.98)  294.524 ms  294.534 ms
+16  unknown.telstraglobal.net (210.176.150.117)  295.642 ms  295.600 ms
+17  * *
+18  * *
+19  * *
+20  sel-kor-ping.vultr.com (141.164.34.61)  295.173 ms *
+
+===== Santiago -> Singapore | probe AS61138 Zappie Host | globe 16398 km, flat 23559 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  _gateway (216.73.159.1)  0.923 ms  1.490 ms
+ 2  * *
+ 3  192.168.212.129 (192.168.212.129)  1.478 ms  1.476 ms
+ 4  192.168.202.193 (192.168.202.193)  2.504 ms  2.502 ms
+ 5  148.222.224.4 (148.222.224.4)  3.279 ms  3.276 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  33.177 ms  33.176 ms
+ 7  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  94.049 ms  94.047 ms
+ 8  ae0-20g.sr1.dfw1.us.nlayer.net (69.31.63.189)  93.973 ms  93.970 ms
+ 9  ae12.cr5-sin1.ip4.gtt.net (89.149.131.6)  317.512 ms  317.510 ms
+10  208.81.84.159 (208.81.84.159)  317.506 ms  317.505 ms
+11  * *
+12  * *
+13  45.32.98.222.vultrusercontent.com (45.32.98.222)  348.433 ms  348.411 ms
+14  sgp-ping.vultr.com (45.32.100.168)  349.050 ms *
+
+===== Santiago -> Singapore | probe AS270013 J AND J SPA (INFOFRACTAL) | globe 16398 km, flat 23559 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.235 ms  0.232 ms
+ 3  192.168.202.193 (192.168.202.193)  1.161 ms  1.159 ms
+ 4  148.222.224.4 (148.222.224.4)  1.593 ms  1.629 ms
+ 5  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  31.243 ms  31.337 ms
+ 6  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.817 ms  92.812 ms
+ 7  ae0-20g.sr1.dfw1.us.nlayer.net (69.31.63.189)  92.790 ms  92.785 ms
+ 8  ae12.cr5-sin1.ip4.gtt.net (89.149.131.6)  315.410 ms  315.407 ms
+ 9  208.81.84.159 (208.81.84.159)  314.521 ms  314.518 ms
+10  * *
+11  * *
+12  45.32.98.222.vultrusercontent.com (45.32.98.222)  347.866 ms  347.882 ms
+13  sgp-ping.vultr.com (45.32.100.168)  347.987 ms *
+
+===== Santiago -> Singapore | probe AS31898 Oracle  <- shortest | globe 16398 km, flat 23559 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.26)  0.205 ms  0.151 ms
+ 2  8.243.189.22 (8.243.189.22)  0.597 ms  0.692 ms
+ 3  8.243.189.21 (8.243.189.21)  1.996 ms  1.992 ms
+ 4  * *
+ 5  * *
+ 6  mia-b2-link.ip.twelve99.net (213.248.95.208)  106.222 ms  106.278 ms
+ 7  * *
+ 8  hou-bb4-link.ip.twelve99.net (62.115.143.118)  138.999 ms  139.115 ms
+ 9  dls-bb4-link.ip.twelve99.net (62.115.143.53)  140.459 ms  140.525 ms
+10  lax-bb2-link.ip.twelve99.net (62.115.140.246)  170.582 ms  170.570 ms
+11  tky-b4-link.ip.twelve99.net (62.115.134.195)  272.651 ms  272.637 ms
+12  sng-b7-link.ip.twelve99.net (62.115.136.142)  337.430 ms  337.335 ms
+13  * *
+14  constantcompany-ic-379815.ip.twelve99-cust.net (213.248.74.73)  333.814 ms  333.782 ms
+15  * *
+16  * *
+17  45.32.98.222.vultrusercontent.com (45.32.98.222)  338.849 ms  338.817 ms
+18  sgp-ping.vultr.com (45.32.100.168)  338.353 ms  338.277 ms
+
+===== Santiago -> Sydney | probe AS31898 Oracle | globe 11347 km, flat 25687 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.9)  0.228 ms  0.090 ms
+ 2  8.243.189.22 (8.243.189.22)  15.530 ms  15.432 ms
+ 3  8.243.189.21 (8.243.189.21)  1.732 ms  1.887 ms
+ 4  * *
+ 5  4.68.38.70 (4.68.38.70)  106.060 ms  106.029 ms
+ 6  ae-1.r24.miamfl02.us.bb.gin.ntt.net (129.250.3.78)  131.941 ms  131.965 ms
+ 7  ae-1.r22.dllstx14.us.bb.gin.ntt.net (129.250.2.55)  165.338 ms  165.475 ms
+ 8  ae-5.r26.lsanca07.us.bb.gin.ntt.net (129.250.2.83)  334.065 ms  334.122 ms
+ 9  ae-4.r22.sydnau05.au.bb.gin.ntt.net (129.250.2.53)  340.666 ms  340.752 ms
+10  ae-0.a00.sydnau05.au.bb.gin.ntt.net (129.250.2.132)  345.166 ms  345.183 ms
+11  103.13.80.143 (103.13.80.143)  312.057 ms  312.024 ms
+12  * *
+13  * *
+14  103.43.73.108.vultrusercontent.com (103.43.73.108)  340.561 ms  340.434 ms
+15  syd-au-ping.vultr.com (108.61.212.117)  311.695 ms *
+
+===== Santiago -> Sydney | probe AS136907 HUAWEI CLOUDS | globe 11347 km, flat 25687 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  * *
+ 2  10.30.36.145 (10.30.36.145)  4.335 ms  4.534 ms
+ 3  11.30.80.123 (11.30.80.123)  3.818 ms  3.833 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  * *
+ 9  11.53.104.168 (11.53.104.168)  2.929 ms  3.563 ms
+10  * *
+11  172.16.136.30 (172.16.136.30)  11.272 ms  10.650 ms
+12  8.243.179.81 (8.243.179.81)  3.199 ms  3.212 ms
+13  * *
+14  4.68.38.70 (4.68.38.70)  108.356 ms  108.344 ms
+15  ae-1.r24.miamfl02.us.bb.gin.ntt.net (129.250.3.78)  130.938 ms  131.038 ms
+16  ae-1.r22.dllstx14.us.bb.gin.ntt.net (129.250.2.55)  160.840 ms  160.862 ms
+17  ae-5.r26.lsanca07.us.bb.gin.ntt.net (129.250.2.83)  338.774 ms  338.764 ms
+18  ae-4.r22.sydnau05.au.bb.gin.ntt.net (129.250.2.53)  343.440 ms  343.578 ms
+19  ae-0.a00.sydnau05.au.bb.gin.ntt.net (129.250.2.132)  347.982 ms  347.961 ms
+20  103.13.80.143 (103.13.80.143)  361.412 ms  361.311 ms
+
+===== Santiago -> Sydney | probe AS270013 J AND J SPA (INFOFRACTAL)  <- shortest | globe 11347 km, flat 25687 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.458 ms  0.452 ms
+ 3  192.168.202.193 (192.168.202.193)  1.153 ms  1.134 ms
+ 4  190.98.141.32 (190.98.141.32)  2.117 ms  2.129 ms
+ 5  213.140.36.15 (213.140.36.15)  3.907 ms  3.889 ms
+ 6  213.140.33.55 (213.140.33.55)  96.917 ms  96.900 ms
+ 7  94.142.98.194 (94.142.98.194)  125.941 ms  125.987 ms
+ 8  ae-10.a08.asbnva02.us.bb.gin.ntt.net (129.250.8.46)  122.748 ms  122.730 ms
+ 9  ae-2.r27.asbnva02.us.bb.gin.ntt.net (129.250.5.44)  118.176 ms  118.237 ms
+10  ae-5.r27.lsanca07.us.bb.gin.ntt.net (129.250.5.2)  138.224 ms  138.335 ms
+11  ae-0.r26.lsanca07.us.bb.gin.ntt.net (129.250.3.30)  335.809 ms  335.931 ms
+12  ae-4.r22.sydnau05.au.bb.gin.ntt.net (129.250.2.53)  340.658 ms  340.688 ms
+13  ae-0.a00.sydnau05.au.bb.gin.ntt.net (129.250.2.132)  340.753 ms  340.797 ms
+14  103.13.80.143 (103.13.80.143)  297.670 ms  297.623 ms
+15  * *
+16  * *
+17  103.43.73.108.vultrusercontent.com (103.43.73.108)  297.010 ms  296.953 ms
+18  syd-au-ping.vultr.com (108.61.212.117)  296.819 ms  296.776 ms
+
+===== Santiago -> Melbourne | probe AS270013 J AND J SPA (INFOFRACTAL) | globe 11276 km, flat 26602 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.382 ms  0.379 ms
+ 3  192.168.202.193 (192.168.202.193)  1.267 ms  1.265 ms
+ 4  190.98.141.32 (190.98.141.32)  2.227 ms  2.259 ms
+ 5  213.140.36.15 (213.140.36.15)  3.753 ms  3.779 ms
+ 6  213.140.33.55 (213.140.33.55)  96.942 ms  96.963 ms
+ 7  * 94.142.98.194 (94.142.98.194)  120.032 ms
+ 8  94.142.107.63 (94.142.107.63)  116.498 ms  116.494 ms
+ 9  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  303.672 ms  303.669 ms
+10  ip4.gtt.net (67.199.141.34)  321.505 ms  321.503 ms
+11  * *
+12  * *
+13  * *
+14  mel-au-ping.vultr.com (67.219.110.24)  303.741 ms *
+
+===== Santiago -> Melbourne | probe AS136907 HUAWEI CLOUDS | globe 11276 km, flat 26602 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  _gateway (100.72.0.1)  9.341 ms  9.308 ms
+ 2  11.30.16.6 (11.30.16.6)  3.237 ms  3.113 ms
+ 3  11.30.80.7 (11.30.80.7)  4.618 ms  4.447 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  * *
+ 9  172.16.11.153 (172.16.11.153)  1.730 ms  1.729 ms
+10  * *
+11  172.16.11.21 (172.16.11.21)  1.844 ms  1.839 ms
+12  8.243.179.113 (8.243.179.113)  4.312 ms  4.290 ms
+13  * *
+14  ae6.cr11-mia1.ip4.gtt.net (173.205.47.57)  107.674 ms  107.794 ms
+15  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  310.661 ms  310.646 ms
+16  ip4.gtt.net (67.199.141.34)  310.537 ms  310.577 ms
+17  * *
+18  * *
+19  * *
+20  mel-au-ping.vultr.com (67.219.110.24)  310.351 ms  310.474 ms
+
+===== Santiago -> Melbourne | probe AS20473 The Constant Company  <- shortest | globe 11276 km, flat 26602 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.414 ms  0.374 ms
+ 2  100.100.100.1 (100.100.100.1)  0.366 ms  0.362 ms
+ 3  10.107.0.105 (10.107.0.105)  17.290 ms  17.286 ms
+ 4  10.107.0.5 (10.107.0.5)  0.729 ms  0.723 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.719 ms  0.716 ms
+ 6  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.318 ms  30.400 ms
+ 7  * *
+ 8  ae400.0.edge2.dal1.as7195.net (200.25.75.53)  119.456 ms  119.503 ms
+ 9  ae0.0.edge1.dal1.as7195.net (200.25.51.212)  119.450 ms  119.678 ms
+10  ae200.0.edge1.lax1.as7195.net (200.25.75.20)  152.108 ms  152.106 ms
+11  * *
+12  i-93.1wlt-core02.telstraglobal.net (202.84.253.85)  311.972 ms  311.964 ms
+13  i-10406.sydo-core04.telstraglobal.net (202.84.141.226)  313.468 ms  313.456 ms
+14  i-10304.sydo-core03.telstraglobal.net (202.84.222.129)  312.365 ms  312.374 ms
+15  bundle-ether4.oxf-gw31.sydney.telstra.net (203.50.13.97)  312.911 ms  312.793 ms
+16  bundle-ether6.stl-core30.sydney.telstra.net (203.50.6.109)  345.195 ms  346.709 ms
+17  bundle-ether3.win-core30.melbourne.telstra.net (203.50.13.131)  357.940 ms  357.962 ms
+18  bundle-ether1.win-edge902.melbourne.telstra.net (203.50.11.110)  356.846 ms  356.743 ms
+19  twi4004477.lnk.telstra.net (61.8.19.226)  303.299 ms  303.273 ms
+20  * *
+
+===== Santiago -> Mumbai | probe AS61138 Zappie Host  <- shortest | globe 16069 km, flat 20610 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (216.73.159.1)  2.298 ms  2.246 ms
+ 2  * *
+ 3  192.168.212.129 (192.168.212.129)  7.292 ms  7.291 ms
+ 4  192.168.202.193 (192.168.202.193)  7.369 ms  7.367 ms
+ 5  8.243.191.133 (8.243.191.133)  7.901 ms  7.828 ms
+ 6  ae2.3612.edge6.Washington12.net.lumen.tech (4.69.226.70)  130.384 ms  130.382 ms
+ 7  4637-3356-wdc.sp.lumen.tech (4.68.37.70)  192.160 ms  192.407 ms
+ 8  unknown.telstraglobal.net (202.47.212.130)  309.764 ms  309.762 ms
+ 9  unknown.telstraglobal.net (202.47.212.130)  309.425 ms  309.423 ms
+10  unknown.telstraglobal.net (210.176.159.57)  306.195 ms  306.194 ms
+11  * *
+12  * *
+13  * *
+14  bom-in-ping.vultr.com (65.20.66.100)  302.327 ms *
+
+===== Santiago -> Mumbai | probe AS20473 The Constant Company | globe 16069 km, flat 20610 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.724 ms  0.677 ms
+ 2  100.100.200.1 (100.100.200.1)  0.673 ms  0.670 ms
+ 3  10.107.0.197 (10.107.0.197)  17.837 ms  17.835 ms
+ 4  10.107.0.17 (10.107.0.17)  0.701 ms  0.731 ms
+ 5  10.107.0.1 (10.107.0.1)  0.655 ms  0.653 ms
+ 6  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.725 ms  0.787 ms
+ 7  ae6.0.edge1.lim1.as7195.net (200.25.51.148)  30.546 ms  30.679 ms
+ 8  ae610.0.edge1.mia1.as7195.net (200.25.75.24)  92.031 ms  92.160 ms
+ 9  ae400.0.edge2.dal1.as7195.net (200.25.75.53)  119.397 ms  119.449 ms
+10  ae0.0.edge1.dal1.as7195.net (200.25.51.212)  119.458 ms  119.559 ms
+11  ae200.0.edge1.lax1.as7195.net (200.25.75.20)  151.458 ms  151.478 ms
+12  * *
+13  * *
+14  * *
+15  unknown.telstraglobal.net (202.47.212.145)  352.395 ms  352.447 ms
+16  * *
+17  * *
+18  * *
+19  bom-in-ping.vultr.com (65.20.66.100)  353.113 ms *
+
+===== Santiago -> Mumbai | probe AS15311 TELEFONICA EMPRESAS CHILE | globe 16069 km, flat 20610 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.1.1)  0.115 ms  0.022 ms
+ 2  192.168.89.1 (192.168.89.1)  0.393 ms  0.438 ms
+ 3  186.179.80.209 (186.179.80.209)  1.009 ms  1.015 ms
+ 4  172.30.200.93 (172.30.200.93)  1.328 ms  1.337 ms
+ 5  186-148-63-206.unknown.nap.mundo.movistar.cl (186.148.63.206)  12.171 ms  12.159 ms
+ 6  186-148-63-205.unknown.nap.mundo.movistar.cl (186.148.63.205)  2.179 ms  2.175 ms
+ 7  213.140.39.91 (213.140.39.91)  2.141 ms  2.133 ms
+ 8  213.140.39.90 (213.140.39.90)  4.099 ms *
+ 9  5.53.5.41 (5.53.5.41)  96.883 ms  96.877 ms
+10  94.142.118.173 (94.142.118.173)  131.525 ms  131.561 ms
+11  213.140.37.15 (213.140.37.15)  131.169 ms  131.121 ms
+12  63.243.136.64 (63.243.136.64)  131.153 ms  131.135 ms
+13  * *
+14  if-bundle-12-2.qcore2.njy-newark.as6453.net (66.198.155.33)  137.064 ms  137.027 ms
+15  if-bundle-2-2.qcore1.njy-newark.as6453.net (216.6.117.30)  136.461 ms  136.446 ms
+16  if-ae-9-2.tcore3.njy-newark.as6453.net (216.6.117.28)  136.176 ms  136.160 ms
+17  * *
+18  * *
+19  * *
+20  121.241.56.170 (121.241.56.170)  345.555 ms  345.438 ms
+
+===== Santiago -> Sao Paulo | probe AS20473 The Constant Company | globe 2584 km, flat 5589 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (169.254.169.254)  0.389 ms  0.348 ms
+ 2  100.100.100.1 (100.100.100.1)  0.339 ms  0.334 ms
+ 3  10.107.0.105 (10.107.0.105)  5.434 ms  5.430 ms
+ 4  10.107.0.5 (10.107.0.5)  0.689 ms  0.686 ms
+ 5  ae200.2009.edge2.scl1.as7195.net (200.25.22.202)  0.681 ms  0.678 ms
+ 6  ae15.0.edge7.gru1.as7195.net (200.25.51.244)  47.792 ms  47.838 ms
+ 7  200.25.59.33 (200.25.59.33)  48.244 ms  48.239 ms
+ 8  * *
+ 9  * *
+10  * *
+11  sao-br-ping.vultr.com (216.238.98.118)  47.977 ms  47.958 ms
+
+===== Santiago -> Sao Paulo | probe AS136907 HUAWEI CLOUDS | globe 2584 km, flat 5589 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  * *
+ 2  10.30.33.241 (10.30.33.241)  4.471 ms  4.834 ms
+ 3  11.30.80.117 (11.30.80.117)  4.067 ms  4.093 ms
+ 4  11.30.80.16 (11.30.80.16)  4.084 ms  4.113 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  11.90.160.24 (11.90.160.24)  3.922 ms  3.943 ms
+ 9  11.90.160.51 (11.90.160.51)  1.830 ms  1.829 ms
+10  * *
+11  172.16.136.30 (172.16.136.30)  2.021 ms  2.011 ms
+12  EdgeUno2-7195.SCL.PITChile.cl (45.68.16.189)  1.982 ms  1.980 ms
+13  ae0.0.edge2.scl1.as7195.net (200.25.51.9)  2.228 ms  2.455 ms
+14  ae15.0.edge7.gru1.as7195.net (200.25.51.244)  49.044 ms  49.040 ms
+15  200.25.59.33 (200.25.59.33)  48.146 ms  48.116 ms
+16  * *
+17  * *
+18  * *
+19  sao-br-ping.vultr.com (216.238.98.118)  49.352 ms *
+
+===== Santiago -> Sao Paulo | probe AS31898 Oracle  <- shortest | globe 2584 km, flat 5589 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.32)  0.216 ms  0.166 ms
+ 2  OCI-31898.SCL.PITChile.cl (45.68.16.194)  0.425 ms  0.423 ms
+ 3  EdgeUno2-7195.SCL.PITChile.cl (45.68.16.189)  1.227 ms  1.295 ms
+ 4  ae0.0.edge2.scl1.as7195.net (200.25.51.9)  1.222 ms  1.290 ms
+ 5  ae15.0.edge7.gru1.as7195.net (200.25.51.244)  47.156 ms  47.154 ms
+ 6  200.25.59.33 (200.25.59.33)  48.169 ms  48.163 ms
+ 7  * *
+ 8  * *
+ 9  * *
+10  sao-br-ping.vultr.com (216.238.98.118)  47.871 ms  47.869 ms
+
+===== Santiago -> Johannesburg | probe AS61138 Zappie Host | globe 9176 km, flat 20226 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  _gateway (216.73.159.1)  0.353 ms  0.304 ms
+ 2  * *
+ 3  192.168.212.129 (192.168.212.129)  1.063 ms  1.061 ms
+ 4  192.168.202.193 (192.168.202.193)  1.625 ms  1.769 ms
+ 5  195.22.221.8 (195.22.221.8)  4.706 ms  4.706 ms
+ 6  195.22.221.69 (195.22.221.69)  111.294 ms  111.292 ms
+ 7  89.221.35.199 (89.221.35.199)  111.289 ms  111.287 ms
+ 8  Hu0-0-0-20.br03.jnb01.as3491.net (63.223.48.142)  394.390 ms  394.389 ms
+ 9  63.218.151.30 (63.218.151.30)  402.333 ms  402.331 ms
+10  * *
+11  * *
+12  * *
+13  jnb-za-ping.vultr.com (139.84.226.78)  402.055 ms  401.869 ms
+
+===== Santiago -> Johannesburg | probe AS270013 J AND J SPA (INFOFRACTAL) | globe 9176 km, flat 20226 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  * *
+ 2  192.168.212.129 (192.168.212.129)  0.214 ms  0.212 ms
+ 3  192.168.202.193 (192.168.202.193)  1.147 ms  1.194 ms
+ 4  195.22.221.8 (195.22.221.8)  29.410 ms  29.408 ms
+ 5  195.22.221.51 (195.22.221.51)  134.866 ms  134.988 ms
+ 6  89.221.35.199 (89.221.35.199)  136.737 ms  136.736 ms
+ 7  Hu0-0-0-20.br03.jnb01.as3491.net (63.223.48.142)  393.776 ms  393.773 ms
+ 8  63.218.151.30 (63.218.151.30)  401.908 ms  401.905 ms
+ 9  * *
+10  * *
+11  * *
+12  jnb-za-ping.vultr.com (139.84.226.78)  401.944 ms *
+
+===== Santiago -> Johannesburg | probe AS31898 Oracle  <- shortest | globe 9176 km, flat 20226 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  _gateway (140.91.244.14)  0.166 ms  0.097 ms
+ 2  8.243.189.22 (8.243.189.22)  0.543 ms  0.539 ms
+ 3  8.243.189.21 (8.243.189.21)  0.898 ms  0.829 ms
+ 4  * *
+ 5  level3.ae0-2116.cr1.lon1.uk.ipv4.kaiaglobal.com (212.187.173.62)  183.361 ms  183.356 ms
+ 6  * *
+ 7  * *
+ 8  41.78.188.6 (41.78.188.6)  334.170 ms  334.231 ms
+ 9  * *
+10  41.78.188.233 (41.78.188.233)  338.090 ms  338.106 ms
+11  197.157.67.18 (197.157.67.18)  346.787 ms  346.775 ms
+12  * *
+13  * *
+14  * *
+15  jnb-za-ping.vultr.com (139.84.226.78)  346.875 ms *
+
