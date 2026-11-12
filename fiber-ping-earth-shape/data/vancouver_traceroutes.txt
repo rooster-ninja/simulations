@@ -1,338 +1,909 @@
-===== Seattle (wa-us-ping.vultr.com) — 190 km =====
+===== Vancouver -> Seattle | probe AS394256 Tech Futures Interactive | globe 191 km, flat 193 km =====
 traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.470 ms  0.497 ms
- 2  100.122.26.161 (100.122.26.161)  2.085 ms  2.151 ms
- 3  75.153.138.72 (75.153.138.72)  2.213 ms  2.208 ms
- 4  * *
- 5  * *
- 6  * *
- 7  154.11.15.194 (154.11.15.194)  6.164 ms  6.158 ms
- 8  six-a.sea2.constant.com (206.81.81.66)  5.495 ms  5.546 ms
- 9  * *
-10  * *
-11  * *
-12  45.63.33.239.vultrusercontent.com (45.63.33.239)  5.067 ms  4.975 ms
-13  wa-us-ping.vultr.com (108.61.194.105)  4.767 ms *
-
-===== Silicon Valley (sjo-ca-us-ping.vultr.com) — 1325 km =====
-traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.543 ms  0.501 ms
- 2  * *
- 3  38.88.6.44 (38.88.6.44)  1.879 ms  1.932 ms
- 4  * *
- 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.472 ms  5.468 ms
- 6  be2454.ccr82.sea08.atlas.cogentco.com (154.54.164.25)  6.330 ms  6.326 ms
- 7  be9854.ccr22.sfo01.atlas.cogentco.com (154.54.28.205)  22.342 ms  22.395 ms
- 8  be5991.ccr82.sjc13.atlas.cogentco.com (154.54.168.253)  24.835 ms  24.830 ms
- 9  be8168.rcr51.b034314-0.sjc13.atlas.cogentco.com (154.54.170.198)  23.644 ms  23.706 ms
-10  38.120.133.35 (38.120.133.35)  31.392 ms  31.387 ms
-11  * *
-12  * *
-13  * *
-14  45.32.142.126.vultrusercontent.com (45.32.142.126)  22.285 ms  22.307 ms
-15  sjo-ca-us-ping.vultr.com (104.156.230.107)  22.952 ms  22.922 ms
-
-===== Los Angeles (lax-ca-us-ping.vultr.com) — 1736 km =====
-traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.307 ms  0.332 ms
- 2  * *
- 3  * *
- 4  * *
- 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  5.038 ms  5.032 ms
- 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  5.025 ms  5.055 ms
- 7  sjo-bb3-link.ip.twelve99.net (62.115.132.152)  30.096 ms  29.143 ms
- 8  * lax-bb1-link.ip.twelve99.net (62.115.139.150)  30.212 ms
- 9  * *
-10  constantcompany-ic-375793.ip.twelve99-cust.net (62.115.149.37)  32.027 ms  32.021 ms
-11  * *
-12  * *
-13  173.199.80.241.vultrusercontent.com (173.199.80.241)  31.162 ms  31.154 ms
-14  lax-ca-us-ping.vultr.com (108.61.219.200)  31.219 ms  31.030 ms
-
-===== Honolulu (hon-hi-us-ping.vultr.com) — 4357 km =====
-traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.381 ms  0.460 ms
- 2  * *
- 3  * *
- 4  * *
- 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.719 ms  5.716 ms
- 6  be2454.ccr82.sea08.atlas.cogentco.com (154.54.164.25)  5.111 ms  7.080 ms
- 7  be9854.ccr22.sfo01.atlas.cogentco.com (154.54.28.205)  22.649 ms  22.643 ms
- 8  be5991.ccr82.sjc13.atlas.cogentco.com (154.54.168.253)  24.600 ms  24.595 ms
- 9  be5992.ccr42.lax01.atlas.cogentco.com (154.54.169.2)  34.779 ms  34.775 ms
-10  be2728.rcr61.hnl01.atlas.cogentco.com (154.54.87.70)  81.898 ms  81.970 ms
-11  38.122.50.10 (38.122.50.10)  81.559 ms  81.541 ms
-12  * *
-13  * *
-14  * *
-15  hon-hi-us-ping.vultr.com (208.72.154.76)  80.714 ms  80.699 ms
-
-===== Miami (fl-us-ping.vultr.com) — 4510 km =====
-traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.342 ms  0.361 ms
- 2  38-41-208-2.dyn.novuscom.net (38.41.208.2)  1.215 ms  1.262 ms
- 3  * *
- 4  * *
- 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  5.174 ms  5.169 ms
- 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  5.327 ms  5.379 ms
- 7  sea-b4-link.ip.twelve99.net (62.115.132.156)  76.171 ms  76.166 ms
- 8  chi-bb2-link.ip.twelve99.net (62.115.136.118)  46.720 ms  46.714 ms
- 9  chi-b24-link.ip.twelve99.net (62.115.137.29)  72.875 ms  72.870 ms
-10  * *
-11  nash-bb1-link.ip.twelve99.net (62.115.113.74)  62.645 ms  63.898 ms
-12  atl-bb1-link.ip.twelve99.net (62.115.137.54)  59.725 ms  59.742 ms
-13  atl-b24-link.ip.twelve99.net (62.115.134.247)  80.652 ms  80.634 ms
-14  atl-bb2-link.ip.twelve99.net (62.115.143.236)  59.722 ms  60.719 ms
-15  mia-b2-link.ip.twelve99.net (62.115.140.176)  72.068 ms  72.045 ms
-16  constantcompany-ic-383167.ip.twelve99-cust.net (213.248.96.109)  74.387 ms  74.352 ms
-17  * *
-18  * *
-19  144.202.32.37.vultrusercontent.com (144.202.32.37)  73.829 ms  73.806 ms
-20  fl-us-ping.vultr.com (104.156.244.232)  105.560 ms  105.537 ms
-
-===== New Jersey (nj-us-ping.vultr.com) — 3881 km =====
-traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.303 ms  0.323 ms
- 2  * *
- 3  * *
- 4  * *
- 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  29.467 ms  29.461 ms
- 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  52.121 ms  52.116 ms
- 7  port-channel2994.ccr92.cle04.atlas.cogentco.com (154.54.31.233)  56.922 ms  56.970 ms
- 8  be4986.ccr42.jfk02.atlas.cogentco.com (154.54.162.170)  66.215 ms  66.210 ms
- 9  be3202.rcr51.ewr01.atlas.cogentco.com (154.54.90.66)  66.883 ms  66.877 ms
-10  be9177.nr51.b033057-0.ewr01.atlas.cogentco.com (154.24.68.158)  68.111 ms  68.107 ms
-11  gi0-0-1-5.64.nr12.b002894-0.ewr01.atlas.cogentco.com (38.142.212.201)  67.196 ms  67.233 ms
-12  * *
-13  * *
-14  66.55.138.149.vultrusercontent.com (66.55.138.149)  66.541 ms  66.520 ms
-15  nj-us-ping.vultr.com (108.61.149.182)  66.911 ms  66.872 ms
-
-===== London (lon-gb-ping.vultr.com) — 7582 km =====
-traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.571 ms  0.508 ms
- 2  100.122.26.161 (100.122.26.161)  1.462 ms  1.458 ms
- 3  75.153.138.72 (75.153.138.72)  1.935 ms  1.987 ms
- 4  * *
- 5  * *
- 6  * *
- 7  154.11.15.109 (154.11.15.109)  6.002 ms  5.996 ms
- 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  12.317 ms  12.254 ms
- 9  ae21.cr10-lon1.ip4.gtt.net (89.149.139.5)  131.226 ms  131.220 ms
-10  213.39.47.243 (213.39.47.243)  131.214 ms  131.209 ms
-11  * *
-12  * *
-13  * *
-14  * *
-15  lon-gb-ping.vultr.com (108.61.196.101)  130.399 ms *
-
-===== Amsterdam (ams-nl-ping.vultr.com) — 7700 km =====
-traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.493 ms  0.500 ms
- 2  * *
- 3  * *
- 4  * *
- 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  30.008 ms  30.054 ms
- 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  52.819 ms  52.870 ms
- 7  be3260.ccr22.ymq01.atlas.cogentco.com (154.54.42.90)  60.175 ms  60.218 ms
- 8  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  129.857 ms  129.904 ms
- 9  be2183.ccr42.ams03.atlas.cogentco.com (154.54.58.70)  139.625 ms  139.671 ms
-10  be2154.rcr22.ams06.atlas.cogentco.com (130.117.50.206)  140.101 ms  140.154 ms
-11  149.6.0.227 (149.6.0.227)  153.649 ms  153.674 ms
-12  * *
-13  * *
-14  173.199.112.244.vultrusercontent.com (173.199.112.244)  138.058 ms  138.318 ms
-15  ams-nl-ping.vultr.com (108.61.198.102)  138.454 ms  138.468 ms
-
-===== Stockholm (sto-se-ping.vultr.com) — 7441 km =====
-traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.454 ms  0.497 ms
- 2  38-41-208-2.dyn.novuscom.net (38.41.208.2)  1.354 ms  1.403 ms
- 3  * *
- 4  100ge0-26.core1.yvr2.he.net (184.105.247.169)  2.657 ms  3.032 ms
- 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  2.248 ms  2.299 ms
- 6  be47.core2.yvr1.he.net (184.105.222.123)  5.406 ms  5.402 ms
- 7  be6.core1.sea1.he.net (184.104.196.221)  147.184 ms  147.179 ms
+ 1  _gateway (172.23.6.1)  0.079 ms  0.031 ms
+ 2  _gateway (38.240.227.1)  0.320 ms  0.276 ms
+ 3  38.88.124.49 (38.88.124.49)  7.933 ms  7.918 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.297 ms  1.349 ms
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  4.021 ms  4.006 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  4.081 ms  4.121 ms
+ 7  constantcompany-ic-375794.ip.twelve99-cust.net (213.248.100.133)  4.053 ms  4.038 ms
  8  * *
- 9  be1.core4.chi1.he.net (72.52.92.162)  146.799 ms  146.794 ms
-10  be5.core1.nyc4.he.net (184.104.193.141)  146.922 ms  146.917 ms
-11  be1.core3.ewr5.he.net (184.104.192.213)  145.946 ms  147.772 ms
-12  be5.core1.cph1.he.net (184.105.80.28)  146.858 ms  146.834 ms
-13  be2.core1.sto1.he.net (184.104.198.147)  146.015 ms  145.919 ms
+ 9  * *
+10  * *
+11  45.63.33.239.vultrusercontent.com (45.63.33.239)  4.140 ms  4.106 ms
+12  wa-us-ping.vultr.com (108.61.194.105)  4.038 ms  4.043 ms
+
+===== Vancouver -> Seattle | probe AS136258 BrainStorm Network  <- shortest | globe 191 km, flat 193 km =====
+traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.590 ms  0.679 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.535 ms  0.530 ms
+ 3  ae20.cr4-sea2.ip4.gtt.net (89.149.130.54)  3.665 ms  3.755 ms
+ 4  ip4.gtt.net (65.175.54.181)  3.749 ms  3.744 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  45.63.33.239.vultrusercontent.com (45.63.33.239)  4.315 ms  4.337 ms
+ 9  wa-us-ping.vultr.com (108.61.194.105)  4.381 ms  4.415 ms
+
+===== Vancouver -> Seattle | probe AS20326 TeraSwitch Networks | globe 191 km, flat 193 km =====
+traceroute to wa-us-ping.vultr.com (108.61.194.105), 20 hops max, 60 byte packets
+ 1  _gateway (208.91.104.113)  0.123 ms  0.130 ms
+ 2  100.114.63.2 (100.114.63.2)  0.193 ms  0.221 ms
+ 3  van-b1-link.ip.twelve99.net (62.115.154.168)  3.697 ms  3.842 ms
+ 4  van-b3-link.ip.twelve99.net (62.115.138.172)  7.324 ms  7.352 ms
+ 5  sea-b4-link.ip.twelve99.net (62.115.138.40)  6.669 ms  6.700 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.132.157)  4.778 ms  4.844 ms
+ 7  constantcompany-ic-375794.ip.twelve99-cust.net (213.248.100.133)  31.224 ms  31.220 ms
+ 8  * *
+ 9  * *
+10  * *
+11  45.63.33.239.vultrusercontent.com (45.63.33.239)  5.219 ms  5.213 ms
+12  wa-us-ping.vultr.com (108.61.194.105)  5.274 ms  5.268 ms
+
+===== Vancouver -> Silicon Valley | probe AS136258 BrainStorm Network  <- shortest | globe 1327 km, flat 1327 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.604 ms  0.554 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.546 ms  0.538 ms
+ 3  ae0.cr3-sjc1.ip4.gtt.net (141.136.105.130)  70.949 ms  70.990 ms
+ 4  ip4.gtt.net (72.29.200.41)  24.493 ms  24.488 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  45.32.142.126.vultrusercontent.com (45.32.142.126)  23.138 ms  23.131 ms
+ 9  sjo-ca-us-ping.vultr.com (104.156.230.107)  32.058 ms *
+
+===== Vancouver -> Silicon Valley | probe AS394256 Tech Futures Interactive | globe 1327 km, flat 1327 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.093 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.296 ms  0.273 ms
+ 3  38.88.124.49 (38.88.124.49)  0.601 ms  0.591 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.445 ms  1.437 ms
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.077 ms  4.053 ms
+ 6  be9341.ccr81.sea08.atlas.cogentco.com (154.54.160.161)  5.342 ms  5.327 ms
+ 7  * *
+ 8  be3905.ccr21.sfo01.atlas.cogentco.com (154.54.1.210)  39.231 ms  39.215 ms
+ 9  be3096.ccr81.sjc13.atlas.cogentco.com (154.54.40.41)  41.477 ms  41.460 ms
+10  be8167.rcr51.b034314-0.sjc13.atlas.cogentco.com (154.54.166.246)  40.593 ms  40.577 ms
+11  38.120.133.35 (38.120.133.35)  41.021 ms  40.981 ms
+12  * *
+13  * *
+14  * *
+15  45.32.142.126.vultrusercontent.com (45.32.142.126)  40.281 ms  40.185 ms
+16  sjo-ca-us-ping.vultr.com (104.156.230.107)  40.339 ms  40.246 ms
+
+===== Vancouver -> Silicon Valley | probe AS62563 GlobalTeleHost | globe 1327 km, flat 1327 km =====
+traceroute to sjo-ca-us-ping.vultr.com (104.156.230.107), 20 hops max, 60 byte packets
+ 1  _gateway (10.16.160.1)  5.601 ms  5.522 ms
+ 2  38.96.254.1 (38.96.254.1)  5.505 ms  5.493 ms
+ 3  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  5.484 ms  5.477 ms
+ 4  ae0.cr3-sjc1.ip4.gtt.net (141.136.105.130)  63.952 ms  63.946 ms
+ 5  ip4.gtt.net (72.29.200.41)  25.770 ms  26.905 ms
+ 6  * *
+ 7  * *
+ 8  * *
+ 9  45.32.142.126.vultrusercontent.com (45.32.142.126)  37.252 ms  37.774 ms
+10  sjo-ca-us-ping.vultr.com (104.156.230.107)  38.226 ms  38.332 ms
+
+===== Vancouver -> Los Angeles | probe AS136258 BrainStorm Network | globe 1737 km, flat 1750 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.594 ms  0.542 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.528 ms  0.521 ms
+ 3  ae3.cr10-lax2.ip4.gtt.net (89.149.130.25)  31.420 ms  31.415 ms
+ 4  ip4.gtt.net (76.74.41.90)  31.576 ms  31.587 ms
+ 5  * *
+ 6  * *
+ 7  173.199.80.241.vultrusercontent.com (173.199.80.241)  31.545 ms  31.567 ms
+ 8  lax-ca-us-ping.vultr.com (108.61.219.200)  31.735 ms  31.729 ms
+
+===== Vancouver -> Los Angeles | probe AS394256 Tech Futures Interactive  <- shortest | globe 1737 km, flat 1750 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.056 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.292 ms  0.252 ms
+ 3  38.88.124.49 (38.88.124.49)  0.591 ms  0.574 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.393 ms  1.433 ms
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  4.245 ms  4.223 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  4.332 ms  4.407 ms
+ 7  sjo-bb3-link.ip.twelve99.net (62.115.132.152)  30.295 ms  31.496 ms
+ 8  lax-bb1-link.ip.twelve99.net (62.115.139.150)  28.462 ms  28.439 ms
+ 9  * *
+10  constantcompany-ic-375793.ip.twelve99-cust.net (62.115.149.37)  31.007 ms  30.987 ms
+11  * *
+12  * *
+13  173.199.80.241.vultrusercontent.com (173.199.80.241)  29.129 ms  29.089 ms
+14  lax-ca-us-ping.vultr.com (108.61.219.200)  30.786 ms  30.772 ms
+
+===== Vancouver -> Los Angeles | probe AS53356 Free Range Cloud Hosting | globe 1737 km, flat 1750 km =====
+traceroute to lax-ca-us-ping.vultr.com (108.61.219.200), 20 hops max, 60 byte packets
+ 1  _gateway (23.154.81.193)  0.581 ms  0.510 ms
+ 2  104.193.132.124 (104.193.132.124)  0.480 ms *
+ 3  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.536 ms  1.628 ms
+ 4  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  4.322 ms  4.346 ms
+ 5  sea-b1-link.ip.twelve99.net (62.115.187.136)  4.964 ms  5.028 ms
+ 6  sjo-bb3-link.ip.twelve99.net (62.115.132.152)  27.995 ms  28.045 ms
+ 7  lax-bb1-link.ip.twelve99.net (62.115.139.150)  36.529 ms  36.671 ms
+ 8  lax-b3-link.ip.twelve99.net (62.115.126.251)  32.514 ms  32.501 ms
+ 9  constantcompany-ic-375793.ip.twelve99-cust.net (62.115.149.37)  35.161 ms  35.136 ms
+10  * *
+11  * *
+12  173.199.80.241.vultrusercontent.com (173.199.80.241)  34.637 ms  34.608 ms
+13  lax-ca-us-ping.vultr.com (108.61.219.200)  34.706 ms  36.243 ms
+
+===== Vancouver -> Honolulu | probe AS136258 BrainStorm Network | globe 4358 km, flat 4689 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.621 ms  0.573 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.566 ms  0.558 ms
+ 3  xe-0-0-5-1.cr2-hon1.ip4.gtt.net (89.149.136.189)  69.014 ms  69.011 ms
+ 4  ip4.gtt.net (208.97.216.2)  69.004 ms  68.999 ms
+ 5  * *
+ 6  169.254.1.1 (169.254.1.1)  83.686 ms  83.726 ms
+ 7  10.92.100.8 (10.92.100.8)  83.715 ms  83.707 ms
+ 8  hon-hi-us-ping.vultr.com (208.72.154.76)  83.808 ms *
+
+===== Vancouver -> Honolulu | probe AS394256 Tech Futures Interactive | globe 4358 km, flat 4689 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.060 ms  0.009 ms
+ 2  _gateway (38.240.227.1)  0.268 ms  0.227 ms
+ 3  38.88.124.49 (38.88.124.49)  0.448 ms  0.476 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.548 ms  1.523 ms
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  3.935 ms  3.926 ms
+ 6  be9343.ccr82.sea08.atlas.cogentco.com (154.54.160.241)  5.045 ms  5.123 ms
+ 7  * *
+ 8  be3906.ccr22.sfo01.atlas.cogentco.com (154.54.5.154)  39.236 ms  39.219 ms
+ 9  be5991.ccr82.sjc13.atlas.cogentco.com (154.54.168.253)  42.064 ms  42.048 ms
+10  be5992.ccr42.lax01.atlas.cogentco.com (154.54.169.2)  51.195 ms  51.177 ms
+11  be2728.rcr61.hnl01.atlas.cogentco.com (154.54.87.70)  98.971 ms  98.914 ms
+12  38.122.50.10 (38.122.50.10)  98.834 ms  98.801 ms
+13  10.92.0.6 (10.92.0.6)  99.701 ms  99.701 ms
+14  169.254.1.1 (169.254.1.1)  98.288 ms  98.275 ms
+15  10.92.100.8 (10.92.100.8)  98.268 ms  98.213 ms
+16  hon-hi-us-ping.vultr.com (208.72.154.76)  98.338 ms  98.250 ms
+
+===== Vancouver -> Honolulu | probe AS62563 GlobalTeleHost  <- shortest | globe 4358 km, flat 4689 km =====
+traceroute to hon-hi-us-ping.vultr.com (208.72.154.76), 20 hops max, 60 byte packets
+ 1  _gateway (10.16.160.1)  6.119 ms  6.071 ms
+ 2  38.96.254.1 (38.96.254.1)  6.060 ms  6.050 ms
+ 3  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  6.042 ms  6.037 ms
+ 4  xe-0-0-5-1.cr2-hon1.ip4.gtt.net (89.149.136.189)  70.544 ms  70.588 ms
+ 5  ip4.gtt.net (208.97.216.2)  71.423 ms  71.510 ms
+ 6  * *
+ 7  169.254.1.1 (169.254.1.1)  87.014 ms  87.384 ms
+ 8  10.92.100.8 (10.92.100.8)  87.787 ms  88.314 ms
+ 9  hon-hi-us-ping.vultr.com (208.72.154.76)  73.935 ms  74.214 ms
+
+===== Vancouver -> Miami | probe AS136258 BrainStorm Network  <- shortest | globe 4510 km, flat 4915 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.582 ms  0.541 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.528 ms  0.521 ms
+ 3  ae16.cr8-mia1.ip4.gtt.net (213.200.113.150)  83.021 ms  83.015 ms
+ 4  ip4.gtt.net (72.29.200.45)  89.950 ms  89.942 ms
+ 5  * *
+ 6  * *
+ 7  144.202.32.37.vultrusercontent.com (144.202.32.37)  74.557 ms  74.553 ms
+ 8  fl-us-ping.vultr.com (104.156.244.232)  74.545 ms  74.604 ms
+
+===== Vancouver -> Miami | probe AS394256 Tech Futures Interactive | globe 4510 km, flat 4915 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.069 ms  0.018 ms
+ 2  _gateway (38.240.227.1)  0.316 ms  0.242 ms
+ 3  38.88.124.49 (38.88.124.49)  0.515 ms  0.493 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.496 ms  1.635 ms
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  4.280 ms  4.262 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  4.242 ms  4.226 ms
+ 7  sjo-bb3-link.ip.twelve99.net (62.115.132.152)  30.926 ms  30.763 ms
+ 8  palo-b24-link.ip.twelve99.net (62.115.139.107)  102.162 ms  102.147 ms
+ 9  palo-bb4-link.ip.twelve99.net (62.115.139.110)  28.522 ms  28.505 ms
+10  lax-bb2-link.ip.twelve99.net (62.115.137.207)  31.455 ms  31.572 ms
+11  dls-bb4-link.ip.twelve99.net (62.115.140.247)  68.701 ms *
+12  * *
+13  * *
+14  mia-b2-link.ip.twelve99.net (62.115.140.176)  108.969 ms  108.823 ms
+15  constantcompany-ic-383167.ip.twelve99-cust.net (213.248.96.109)  90.535 ms  90.494 ms
+16  * *
+17  * *
+18  144.202.32.37.vultrusercontent.com (144.202.32.37)  89.806 ms  89.680 ms
+19  fl-us-ping.vultr.com (104.156.244.232)  89.865 ms  89.793 ms
+
+===== Vancouver -> Miami | probe AS53356 Free Range Cloud Hosting | globe 4510 km, flat 4915 km =====
+traceroute to fl-us-ping.vultr.com (104.156.244.232), 20 hops max, 60 byte packets
+ 1  _gateway (23.154.81.193)  0.412 ms  0.339 ms
+ 2  104.193.132.124 (104.193.132.124)  0.374 ms *
+ 3  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.494 ms  1.479 ms
+ 4  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  4.022 ms  4.015 ms
+ 5  sea-b1-link.ip.twelve99.net (62.115.187.136)  4.050 ms  4.068 ms
+ 6  sjo-bb3-link.ip.twelve99.net (62.115.132.152)  28.919 ms  27.798 ms
+ 7  palo-b24-link.ip.twelve99.net (62.115.139.107)  106.107 ms  106.096 ms
+ 8  palo-bb4-link.ip.twelve99.net (62.115.139.110)  35.613 ms  36.116 ms
+ 9  lax-bb2-link.ip.twelve99.net (62.115.137.207)  42.376 ms  42.473 ms
+10  * *
+11  * *
+12  * *
+13  mia-b2-link.ip.twelve99.net (62.115.140.176)  112.788 ms  112.928 ms
+14  constantcompany-ic-383167.ip.twelve99-cust.net (213.248.96.109)  94.594 ms  94.572 ms
+15  * *
+16  * *
+17  144.202.32.37.vultrusercontent.com (144.202.32.37)  93.619 ms  93.639 ms
+18  fl-us-ping.vultr.com (104.156.244.232)  93.717 ms  93.781 ms
+
+===== Vancouver -> New Jersey | probe AS136258 BrainStorm Network  <- shortest | globe 3881 km, flat 4225 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  11.418 ms  11.374 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.540 ms  0.532 ms
+ 3  ae1.cr3-nyc12.ip4.gtt.net (89.149.142.230)  59.167 ms  59.162 ms
+ 4  * *
+ 5  * *
+ 6  * *
+ 7  66.55.138.149.vultrusercontent.com (66.55.138.149)  59.826 ms  59.902 ms
+ 8  nj-us-ping.vultr.com (108.61.149.182)  60.020 ms *
+
+===== Vancouver -> New Jersey | probe AS394256 Tech Futures Interactive | globe 3881 km, flat 4225 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.081 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.327 ms  0.275 ms
+ 3  38.88.124.49 (38.88.124.49)  0.507 ms  0.501 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.547 ms  1.536 ms
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.554 ms  28.572 ms
+ 6  be3546.ccr31.yyz02.atlas.cogentco.com (154.54.165.101)  51.428 ms  51.435 ms
+ 7  port-channel2993.ccr91.cle04.atlas.cogentco.com (154.54.31.225)  56.075 ms  56.078 ms
+ 8  be4985.ccr41.jfk02.atlas.cogentco.com (154.54.162.166)  65.154 ms  65.139 ms
+ 9  be2997.rcr51.ewr01.atlas.cogentco.com (154.54.89.178)  65.435 ms  65.476 ms
+10  be9177.nr51.b033057-0.ewr01.atlas.cogentco.com (154.24.68.158)  66.055 ms  66.031 ms
+11  gi0-0-1-5.64.nr12.b002894-0.ewr01.atlas.cogentco.com (38.142.212.201)  65.778 ms  65.736 ms
+12  10.64.4.26 (10.64.4.26)  67.170 ms  67.139 ms
+13  10.64.1.34 (10.64.1.34)  144.511 ms  144.454 ms
+14  66.55.138.149.vultrusercontent.com (66.55.138.149)  66.047 ms  65.971 ms
+15  nj-us-ping.vultr.com (108.61.149.182)  66.550 ms *
+
+===== Vancouver -> New Jersey | probe AS20326 TeraSwitch Networks | globe 3881 km, flat 4225 km =====
+traceroute to nj-us-ping.vultr.com (108.61.149.182), 20 hops max, 60 byte packets
+ 1  _gateway (208.91.104.113)  0.124 ms  0.130 ms
+ 2  100.114.63.1 (100.114.63.1)  0.265 ms  0.279 ms
+ 3  100.114.63.2 (100.114.63.2)  0.156 ms  0.194 ms
+ 4  van-b1-link.ip.twelve99.net (62.115.154.168)  3.665 ms  3.743 ms
+ 5  van-b3-link.ip.twelve99.net (62.115.138.172)  4.598 ms  4.613 ms
+ 6  sea-b4-link.ip.twelve99.net (62.115.138.40)  7.752 ms  7.767 ms
+ 7  chi-bb2-link.ip.twelve99.net (62.115.136.118)  48.436 ms  48.493 ms
+ 8  ewr-bb2-link.ip.twelve99.net (62.115.132.134)  64.304 ms  64.382 ms
+ 9  ewr-b6-link.ip.twelve99.net (62.115.140.169)  65.244 ms  65.265 ms
+10  ewr-b15-link.ip.twelve99.net (62.115.136.13)  63.778 ms  63.865 ms
+11  constantcompany-ic-357479.ip.twelve99-cust.net (62.115.59.7)  63.975 ms  63.955 ms
+12  10.64.4.198 (10.64.4.198)  65.581 ms  65.524 ms
+13  10.64.1.38 (10.64.1.38)  165.979 ms  165.948 ms
+14  66.55.138.149.vultrusercontent.com (66.55.138.149)  63.848 ms  63.816 ms
+15  nj-us-ping.vultr.com (108.61.149.182)  63.952 ms *
+
+===== Vancouver -> London | probe AS394256 Tech Futures Interactive | globe 7581 km, flat 7744 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.082 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.392 ms  0.370 ms
+ 3  38.88.124.49 (38.88.124.49)  1.378 ms  1.370 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.361 ms  1.461 ms
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.660 ms  28.647 ms
+ 6  be3546.ccr31.yyz02.atlas.cogentco.com (154.54.165.101)  51.367 ms  51.412 ms
+ 7  be3259.ccr21.ymq01.atlas.cogentco.com (154.54.41.206)  58.522 ms  58.526 ms
+ 8  be3042.ccr21.lpl01.atlas.cogentco.com (154.54.44.161)  128.169 ms  128.199 ms
+ 9  port-channel8665.ccr91.lhr01.atlas.cogentco.com (154.54.74.218)  133.269 ms  133.290 ms
+10  * *
+11  be3658.agr62.lon05.atlas.cogentco.com (154.54.57.222)  134.453 ms  134.457 ms
+12  be7071.rcr61.b015532-1.lon05.atlas.cogentco.com (130.117.48.230)  134.858 ms  134.826 ms
+13  149.11.44.155 (149.11.44.155)  134.243 ms  134.208 ms
+14  * *
+15  10.69.4.33 (10.69.4.33)  135.820 ms  135.757 ms
+16  10.69.3.62 (10.69.3.62)  135.271 ms  135.176 ms
+17  10.69.100.82 (10.69.100.82)  134.862 ms  134.836 ms
+18  lon-gb-ping.vultr.com (108.61.196.101)  134.531 ms *
+
+===== Vancouver -> London | probe AS136258 BrainStorm Network  <- shortest | globe 7581 km, flat 7744 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.603 ms  0.553 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.545 ms  0.537 ms
+ 3  ae21.cr10-lon1.ip4.gtt.net (89.149.139.5)  128.464 ms  128.461 ms
+ 4  213.39.47.243 (213.39.47.243)  131.637 ms  131.632 ms
+ 5  * *
+ 6  10.69.4.29 (10.69.4.29)  133.429 ms  133.440 ms
+ 7  * *
+ 8  * *
+ 9  lon-gb-ping.vultr.com (108.61.196.101)  129.712 ms  129.706 ms
+
+===== Vancouver -> London | probe AS62563 GlobalTeleHost | globe 7581 km, flat 7744 km =====
+traceroute to lon-gb-ping.vultr.com (108.61.196.101), 20 hops max, 60 byte packets
+ 1  _gateway (10.16.160.1)  6.103 ms  6.043 ms
+ 2  38.96.254.1 (38.96.254.1)  6.032 ms  6.027 ms
+ 3  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  6.019 ms  6.014 ms
+ 4  ae21.cr10-lon1.ip4.gtt.net (89.149.139.5)  130.825 ms  130.821 ms
+ 5  213.39.47.243 (213.39.47.243)  134.024 ms  134.107 ms
+ 6  * *
+ 7  10.69.4.21 (10.69.4.21)  136.214 ms  136.667 ms
+ 8  10.69.3.22 (10.69.3.22)  136.233 ms  136.534 ms
+ 9  * *
+10  lon-gb-ping.vultr.com (108.61.196.101)  134.772 ms  134.920 ms
+
+===== Vancouver -> Amsterdam | probe AS394256 Tech Futures Interactive | globe 7699 km, flat 7836 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.062 ms  0.009 ms
+ 2  _gateway (38.240.227.1)  0.355 ms  0.307 ms
+ 3  38.88.124.49 (38.88.124.49)  0.538 ms  0.531 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.390 ms  1.469 ms
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.761 ms  28.744 ms
+ 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  51.473 ms  51.464 ms
+ 7  be3260.ccr22.ymq01.atlas.cogentco.com (154.54.42.90)  58.771 ms  58.764 ms
+ 8  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  129.071 ms  129.065 ms
+ 9  be2183.ccr42.ams03.atlas.cogentco.com (154.54.58.70)  138.389 ms  138.382 ms
+10  be2154.rcr22.ams06.atlas.cogentco.com (130.117.50.206)  138.289 ms  138.315 ms
+11  149.6.0.227 (149.6.0.227)  138.201 ms  138.170 ms
+12  * *
+13  * *
+14  173.199.112.244.vultrusercontent.com (173.199.112.244)  137.878 ms  137.816 ms
+15  ams-nl-ping.vultr.com (108.61.198.102)  138.337 ms *
+
+===== Vancouver -> Amsterdam | probe AS136258 BrainStorm Network  <- shortest | globe 7699 km, flat 7836 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.642 ms  0.587 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.578 ms  0.570 ms
+ 3  ae2.cr2-ams13.ip4.gtt.net (141.136.106.174)  134.671 ms  134.667 ms
+ 4  ip4.gtt.net (154.14.36.78)  134.731 ms  134.726 ms
+ 5  * *
+ 6  * *
+ 7  173.199.112.244.vultrusercontent.com (173.199.112.244)  134.624 ms  134.620 ms
+ 8  ams-nl-ping.vultr.com (108.61.198.102)  135.418 ms  135.437 ms
+
+===== Vancouver -> Amsterdam | probe AS62563 GlobalTeleHost | globe 7699 km, flat 7836 km =====
+traceroute to ams-nl-ping.vultr.com (108.61.198.102), 20 hops max, 60 byte packets
+ 1  _gateway (10.16.160.1)  6.186 ms  6.120 ms
+ 2  38.96.254.1 (38.96.254.1)  6.109 ms  6.104 ms
+ 3  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  6.097 ms  6.092 ms
+ 4  ae2.cr2-ams13.ip4.gtt.net (141.136.106.174)  136.249 ms  136.402 ms
+ 5  ip4.gtt.net (154.14.36.78)  138.073 ms  138.068 ms
+ 6  * *
+ 7  * *
+ 8  173.199.112.244.vultrusercontent.com (173.199.112.244)  139.801 ms  140.288 ms
+ 9  ams-nl-ping.vultr.com (108.61.198.102)  140.346 ms  140.621 ms
+
+===== Vancouver -> Stockholm | probe AS136258 BrainStorm Network | globe 7440 km, flat 7500 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.354 ms  0.613 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.581 ms  0.572 ms
+ 3  ae19.cr9-stk3.ip4.gtt.net (141.136.108.170)  159.717 ms  159.708 ms
+ 4  ip4.gtt.net (212.115.174.162)  172.714 ms  172.707 ms
+ 5  * *
+ 6  * *
+ 7  70.34.192.142 (70.34.192.142)  159.645 ms  159.640 ms
+ 8  sto-se-ping.vultr.com (70.34.194.86)  159.633 ms *
+
+===== Vancouver -> Stockholm | probe AS394256 Tech Futures Interactive  <- shortest | globe 7440 km, flat 7500 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.051 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.286 ms  0.242 ms
+ 3  38.88.124.49 (38.88.124.49)  1.481 ms  1.454 ms
+ 4  ve603.core1.yvr2.he.net (66.220.22.129)  1.431 ms  1.785 ms
+ 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  0.899 ms  0.894 ms
+ 6  be47.core2.yvr1.he.net (184.105.222.123)  3.098 ms  3.077 ms
+ 7  be6.core1.sea1.he.net (184.104.196.221)  144.856 ms  144.807 ms
+ 8  * *
+ 9  * *
+10  be5.core1.nyc4.he.net (184.104.193.141)  146.057 ms  146.084 ms
+11  * *
+12  * *
+13  be47.core1.nyc5.he.net (184.105.223.203)  145.540 ms  145.515 ms
+14  100ge0-0-0-19.core3.ewr5.he.net (184.104.195.166)  147.034 ms  146.998 ms
+15  be5.core1.cph1.he.net (184.105.80.28)  146.266 ms  145.973 ms
+16  be2.core1.sto1.he.net (184.104.198.147)  145.604 ms  145.528 ms
+17  192.121.80.31 (192.121.80.31)  149.717 ms  150.151 ms
+18  * *
+19  * *
+20  70.34.192.142 (70.34.192.142)  149.017 ms  149.003 ms
+
+===== Vancouver -> Stockholm | probe AS20326 TeraSwitch Networks | globe 7440 km, flat 7500 km =====
+traceroute to sto-se-ping.vultr.com (70.34.194.86), 20 hops max, 60 byte packets
+ 1  _gateway (208.91.104.113)  0.158 ms  0.173 ms
+ 2  100.114.63.1 (100.114.63.1)  0.222 ms  0.238 ms
+ 3  100.114.63.2 (100.114.63.2)  0.218 ms  0.236 ms
+ 4  van-b1-link.ip.twelve99.net (62.115.154.168)  4.462 ms  4.571 ms
+ 5  van-b3-link.ip.twelve99.net (62.115.138.172)  4.488 ms  4.486 ms
+ 6  sea-b4-link.ip.twelve99.net (62.115.138.40)  5.812 ms  5.811 ms
+ 7  chi-bb2-link.ip.twelve99.net (62.115.136.118)  48.572 ms  48.571 ms
+ 8  ewr-bb2-link.ip.twelve99.net (62.115.132.134)  64.242 ms  64.314 ms
+ 9  * *
+10  sto-bb2-link.ip.twelve99.net (62.115.139.172)  164.576 ms  164.668 ms
+11  sto-b9-link.ip.twelve99.net (62.115.139.187)  154.083 ms  154.066 ms
+12  constantcompany-ic-370147.ip.twelve99-cust.net (213.248.95.177)  154.847 ms  155.790 ms
+13  * *
+14  * *
+15  70.34.192.142 (70.34.192.142)  153.799 ms  153.733 ms
+16  sto-se-ping.vultr.com (70.34.194.86)  153.655 ms  153.671 ms
+
+===== Vancouver -> Tokyo | probe AS394256 Tech Futures Interactive  <- shortest | globe 7555 km, flat 7992 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.061 ms  0.018 ms
+ 2  _gateway (38.240.227.1)  0.330 ms  0.306 ms
+ 3  38.88.124.49 (38.88.124.49)  1.144 ms  1.135 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.563 ms  1.660 ms
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.202 ms  4.222 ms
+ 6  63-220-198-54.static.as3491.net (63.220.198.54)  4.199 ms  4.213 ms
+ 7  Bundle-Eth53.clbr01.tok02.as3491.net (63.218.250.78)  107.037 ms  107.051 ms
+ 8  63-216-242-46.static.as3491.net (63.216.242.46)  135.334 ms  136.053 ms
+ 9  * *
+10  * *
+11  209.222.31.145.vultrusercontent.com (209.222.31.145)  106.847 ms  106.835 ms
+12  hnd-jp-ping.vultr.com (108.61.201.151)  106.745 ms  106.722 ms
+
+===== Vancouver -> Tokyo | probe AS136258 BrainStorm Network | globe 7555 km, flat 7992 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.545 ms  0.496 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.480 ms  0.473 ms
+ 3  ae18.cr5-sea2.ip4.gtt.net (89.149.130.34)  4.591 ms  4.608 ms
+ 4  63-220-199-152.static.as3491.net (63.220.199.152)  3.887 ms  3.916 ms
+ 5  Bundle-Eth53.clbr01.tok02.as3491.net (63.218.250.78)  133.764 ms  133.795 ms
+ 6  63-216-242-46.static.as3491.net (63.216.242.46)  167.349 ms  167.345 ms
+ 7  * *
+ 8  * *
+ 9  209.222.31.145.vultrusercontent.com (209.222.31.145)  138.861 ms  138.897 ms
+10  hnd-jp-ping.vultr.com (108.61.201.151)  133.603 ms *
+
+===== Vancouver -> Tokyo | probe AS62563 GlobalTeleHost | globe 7555 km, flat 7992 km =====
+traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
+ 1  _gateway (10.16.160.1)  6.103 ms  6.041 ms
+ 2  38.96.254.1 (38.96.254.1)  6.029 ms  6.023 ms
+ 3  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  6.016 ms  6.012 ms
+ 4  ae18.cr5-sea2.ip4.gtt.net (89.149.130.34)  6.005 ms  5.999 ms
+ 5  63-220-199-152.static.as3491.net (63.220.199.152)  6.152 ms  6.306 ms
+ 6  Bundle-Eth53.clbr01.tok02.as3491.net (63.218.250.78)  137.714 ms  137.709 ms
+ 7  63-216-242-46.static.as3491.net (63.216.242.46)  136.669 ms  136.663 ms
+ 8  * *
+ 9  * *
+10  209.222.31.145.vultrusercontent.com (209.222.31.145)  143.438 ms  143.791 ms
+11  hnd-jp-ping.vultr.com (108.61.201.151)  135.864 ms  135.695 ms
+
+===== Vancouver -> Osaka | probe AS136258 BrainStorm Network | globe 7897 km, flat 8328 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.603 ms  0.536 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.521 ms  0.516 ms
+ 3  ae11.cr8-sea2.ip4.gtt.net (141.136.108.45)  3.685 ms  3.681 ms
+ 4  sea-b1-link.ip.twelve99.net (213.248.88.190)  3.917 ms  4.080 ms
+ 5  port-b7-link.ip.twelve99.net (62.115.143.96)  128.478 ms  128.474 ms
+ 6  tky-b4-link.ip.twelve99.net (62.115.127.11)  132.938 ms  132.972 ms
+ 7  tky-b7-link.ip.twelve99.net (62.115.140.30)  97.819 ms  97.813 ms
+ 8  osa-b2-link.ip.twelve99.net (62.115.137.163)  131.896 ms  131.923 ms
+ 9  constantcompany-ic-377584.ip.twelve99-cust.net (62.115.9.35)  137.042 ms  137.054 ms
+10  * *
+11  * *
+12  * *
+13  osk-jp-ping.vultr.com (64.176.34.94)  129.371 ms *
+
+===== Vancouver -> Osaka | probe AS394256 Tech Futures Interactive  <- shortest | globe 7897 km, flat 8328 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.050 ms  0.010 ms
+ 2  _gateway (38.240.227.1)  0.602 ms  0.565 ms
+ 3  38.88.124.49 (38.88.124.49)  0.466 ms  0.459 ms
+ 4  ve603.core1.yvr2.he.net (66.220.22.129)  1.642 ms  1.948 ms
+ 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  0.823 ms  0.837 ms
+ 6  be47.core2.yvr1.he.net (184.105.222.123)  3.183 ms  3.162 ms
+ 7  be6.core1.sea1.he.net (184.104.196.221)  94.588 ms  94.603 ms
+ 8  * *
+ 9  be47.core1.tyo1.he.net (184.104.193.227)  94.388 ms  94.409 ms
+10  be5.core3.osa1.he.net (184.104.198.88)  93.805 ms  93.919 ms
+11  103.246.232.160 (103.246.232.160)  92.604 ms  92.567 ms
+12  * *
+13  * *
+14  * *
+15  osk-jp-ping.vultr.com (64.176.34.94)  92.827 ms  92.673 ms
+
+===== Vancouver -> Osaka | probe AS20326 TeraSwitch Networks | globe 7897 km, flat 8328 km =====
+traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
+ 1  _gateway (208.91.104.113)  0.146 ms  0.153 ms
+ 2  100.114.63.2 (100.114.63.2)  0.157 ms  0.199 ms
+ 3  van-b1-link.ip.twelve99.net (62.115.154.168)  3.927 ms  3.994 ms
+ 4  van-b3-link.ip.twelve99.net (62.115.138.172)  5.637 ms  5.680 ms
+ 5  van-b4-link.ip.twelve99.net (62.115.137.172)  6.320 ms  6.337 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.138.38)  3.777 ms  3.823 ms
+ 7  port-b7-link.ip.twelve99.net (62.115.143.96)  129.212 ms  129.297 ms
+ 8  tky-b4-link.ip.twelve99.net (62.115.127.11)  127.868 ms  127.903 ms
+ 9  tky-b7-link.ip.twelve99.net (62.115.140.30)  94.905 ms  94.968 ms
+10  osa-b2-link.ip.twelve99.net (62.115.137.163)  129.012 ms  129.053 ms
+11  constantcompany-ic-377584.ip.twelve99-cust.net (62.115.9.35)  126.623 ms  126.609 ms
+12  * *
+13  * *
+14  * *
+15  osk-jp-ping.vultr.com (64.176.34.94)  125.586 ms  125.581 ms
+
+===== Vancouver -> Seoul | probe AS136258 BrainStorm Network | globe 8161 km, flat 8515 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  10.106 ms  10.152 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.467 ms  0.461 ms
+ 3  ae18.cr5-sea2.ip4.gtt.net (89.149.130.34)  37.631 ms  37.614 ms
+ 4  63-220-199-152.static.as3491.net (63.220.199.152)  3.916 ms  3.938 ms
+ 5  Hu0-0-0-20.br03.seo03.as3491.net (63.220.71.17)  176.572 ms  176.619 ms
+ 6  * *
+ 7  * *
+ 8  * *
+ 9  * *
+10  sel-kor-ping.vultr.com (141.164.34.61)  181.558 ms *
+
+===== Vancouver -> Seoul | probe AS394256 Tech Futures Interactive  <- shortest | globe 8161 km, flat 8515 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.095 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.314 ms  0.263 ms
+ 3  38.88.124.49 (38.88.124.49)  1.057 ms  1.050 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.385 ms  1.373 ms
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.282 ms  4.270 ms
+ 6  63-220-198-54.static.as3491.net (63.220.198.54)  4.251 ms  4.226 ms
+ 7  Hu0-0-0-20.br03.seo03.as3491.net (63.220.71.17)  139.194 ms  139.181 ms
+ 8  * *
+ 9  * *
+10  * *
+11  * *
+12  sel-kor-ping.vultr.com (141.164.34.61)  139.325 ms *
+
+===== Vancouver -> Seoul | probe AS53356 Free Range Cloud Hosting | globe 8161 km, flat 8515 km =====
+traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
+ 1  _gateway (23.154.81.193)  0.480 ms  0.404 ms
+ 2  104.193.132.124 (104.193.132.124)  0.531 ms *
+ 3  * *
+ 4  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.277 ms  4.265 ms
+ 5  63-220-198-54.static.as3491.net (63.220.198.54)  4.049 ms  4.079 ms
+ 6  Hu0-0-0-21.br03.seo03.as3491.net (63.220.71.19)  144.461 ms  144.453 ms
+ 7  Vultr-Holdings.TE-0-0-0-24.br03.seo03.as3491.net (63.218.237.134)  145.677 ms *
+ 8  * *
+ 9  * *
+10  * *
+11  sel-kor-ping.vultr.com (141.164.34.61)  145.256 ms  145.155 ms
+
+===== Vancouver -> Singapore | probe AS136258 BrainStorm Network  <- shortest | globe 12823 km, flat 13368 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.581 ms  0.536 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.528 ms  0.520 ms
+ 3  ae7.cr5-sin1.ip4.gtt.net (141.136.110.158)  167.197 ms  167.193 ms
+ 4  208.81.84.159 (208.81.84.159)  165.061 ms  165.057 ms
+ 5  10.79.1.161 (10.79.1.161)  201.149 ms  201.145 ms
+ 6  10.79.0.186 (10.79.0.186)  215.862 ms  215.858 ms
+ 7  45.32.98.222.vultrusercontent.com (45.32.98.222)  165.072 ms  165.067 ms
+ 8  sgp-ping.vultr.com (45.32.100.168)  167.345 ms *
+
+===== Vancouver -> Singapore | probe AS394256 Tech Futures Interactive | globe 12823 km, flat 13368 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.088 ms  0.012 ms
+ 2  _gateway (38.240.227.1)  0.855 ms  0.771 ms
+ 3  38.88.124.49 (38.88.124.49)  1.224 ms  1.236 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  2.028 ms  2.156 ms
+ 5  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  4.683 ms  4.692 ms
+ 6  sea-b1-link.ip.twelve99.net (62.115.187.136)  6.872 ms  6.863 ms
+ 7  port-b7-link.ip.twelve99.net (62.115.143.96)  176.381 ms  183.192 ms
+ 8  tky-b7-link.ip.twelve99.net (62.115.134.41)  212.580 ms  212.601 ms
+ 9  tky-b2-link.ip.twelve99.net (62.115.140.25)  101.571 ms  101.654 ms
+10  osa-b2-link.ip.twelve99.net (62.115.140.125)  172.674 ms  172.701 ms
+11  sng-b7-link.ip.twelve99.net (62.115.139.36)  175.689 ms  175.690 ms
+12  * *
+13  constantcompany-ic-379815.ip.twelve99-cust.net (213.248.74.73)  205.820 ms  205.769 ms
+14  10.79.3.46 (10.79.3.46)  208.116 ms  208.178 ms
+15  10.79.0.186 (10.79.0.186)  221.674 ms  221.614 ms
+16  45.32.98.222.vultrusercontent.com (45.32.98.222)  205.822 ms  205.801 ms
+17  sgp-ping.vultr.com (45.32.100.168)  206.219 ms *
+
+===== Vancouver -> Singapore | probe AS60068 Datacamp | globe 12823 km, flat 13368 km =====
+traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
+ 1  _gateway (185.229.189.232)  0.233 ms  0.168 ms
+ 2  van-b1-link.ip.twelve99.net (62.115.236.249)  0.699 ms  0.765 ms
+ 3  van-b3-link.ip.twelve99.net (62.115.138.172)  3.187 ms  3.211 ms
+ 4  van-b4-link.ip.twelve99.net (62.115.137.172)  2.700 ms  2.727 ms
+ 5  sea-b1-link.ip.twelve99.net (62.115.138.38)  3.469 ms  3.524 ms
+ 6  port-b7-link.ip.twelve99.net (62.115.143.96)  174.209 ms  174.329 ms
+ 7  tky-b7-link.ip.twelve99.net (62.115.136.51)  215.150 ms  215.168 ms
+ 8  tky-b2-link.ip.twelve99.net (62.115.140.25)  100.667 ms  100.770 ms
+ 9  osa-b2-link.ip.twelve99.net (62.115.140.125)  167.695 ms  167.690 ms
+10  sng-b7-link.ip.twelve99.net (62.115.139.36)  170.598 ms  170.648 ms
+11  * *
+12  constantcompany-ic-379815.ip.twelve99-cust.net (213.248.74.73)  165.159 ms  165.109 ms
+13  * *
+14  * *
+15  45.32.98.222.vultrusercontent.com (45.32.98.222)  172.815 ms  172.810 ms
+16  sgp-ping.vultr.com (45.32.100.168)  167.317 ms  168.923 ms
+
+===== Vancouver -> Sydney | probe AS136258 BrainStorm Network | globe 12500 km, flat 14171 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.550 ms  0.512 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.505 ms  0.497 ms
+ 3  ae11.cr4-syd1.ip4.gtt.net (141.136.110.218)  163.001 ms  162.998 ms
+ 4  ip4.gtt.net (67.199.141.30)  163.767 ms  163.785 ms
+ 5  * *
+ 6  * *
+ 7  103.43.73.108.vultrusercontent.com (103.43.73.108)  162.958 ms  162.953 ms
+ 8  syd-au-ping.vultr.com (108.61.212.117)  162.990 ms  162.996 ms
+
+===== Vancouver -> Sydney | probe AS394256 Tech Futures Interactive | globe 12500 km, flat 14171 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.072 ms  0.014 ms
+ 2  _gateway (38.240.227.1)  0.578 ms  0.520 ms
+ 3  38.88.124.49 (38.88.124.49)  5.822 ms  5.806 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.423 ms  1.481 ms
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.303 ms  4.287 ms
+ 6  gtt.sea02.atlas.cogentco.com (154.54.11.185)  4.363 ms  4.338 ms
+ 7  ae11.cr4-syd1.ip4.gtt.net (141.136.110.218)  163.003 ms  162.984 ms
+ 8  ip4.gtt.net (67.199.141.30)  163.805 ms  163.783 ms
+ 9  * *
+10  * *
+11  103.43.73.108.vultrusercontent.com (103.43.73.108)  162.945 ms  162.908 ms
+12  syd-au-ping.vultr.com (108.61.212.117)  162.940 ms  162.926 ms
+
+===== Vancouver -> Sydney | probe AS20326 TeraSwitch Networks  <- shortest | globe 12500 km, flat 14171 km =====
+traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
+ 1  _gateway (208.91.104.113)  0.217 ms  0.244 ms
+ 2  100.114.63.2 (100.114.63.2)  0.192 ms  0.221 ms
+ 3  100.114.63.1 (100.114.63.1)  0.217 ms  0.227 ms
+ 4  * *
+ 5  be2424.rcr21.yvr01.atlas.cogentco.com (154.24.96.25)  1.263 ms  1.261 ms
+ 6  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  3.873 ms  3.930 ms
+ 7  gtt.sea02.atlas.cogentco.com (154.54.11.185)  5.619 ms  5.618 ms
+ 8  ae11.cr4-syd1.ip4.gtt.net (141.136.110.218)  151.694 ms  151.693 ms
+ 9  ip4.gtt.net (67.199.141.30)  179.255 ms  179.270 ms
+10  * *
+11  * *
+12  103.43.73.108.vultrusercontent.com (103.43.73.108)  178.296 ms  178.293 ms
+13  syd-au-ping.vultr.com (108.61.212.117)  151.576 ms *
+
+===== Vancouver -> Melbourne | probe AS136258 BrainStorm Network  <- shortest | globe 13210 km, flat 15061 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.667 ms  0.607 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.592 ms  0.586 ms
+ 3  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  174.678 ms  174.671 ms
+ 4  ip4.gtt.net (67.199.141.34)  174.879 ms  174.888 ms
+ 5  * *
+ 6  * *
+ 7  * *
+ 8  mel-au-ping.vultr.com (67.219.110.24)  175.086 ms *
+
+===== Vancouver -> Melbourne | probe AS394256 Tech Futures Interactive | globe 13210 km, flat 15061 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.065 ms  0.010 ms
+ 2  _gateway (38.240.227.1)  0.363 ms  0.316 ms
+ 3  38.88.124.49 (38.88.124.49)  2.507 ms  2.499 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.413 ms  1.428 ms
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.157 ms  4.145 ms
+ 6  gtt.sea02.atlas.cogentco.com (154.54.11.185)  4.280 ms  4.261 ms
+ 7  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  175.375 ms  175.331 ms
+ 8  ip4.gtt.net (67.199.141.34)  175.309 ms  175.290 ms
+ 9  * *
+10  * *
+11  * *
+12  mel-au-ping.vultr.com (67.219.110.24)  175.029 ms  175.009 ms
+
+===== Vancouver -> Melbourne | probe AS53356 Free Range Cloud Hosting | globe 13210 km, flat 15061 km =====
+traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
+ 1  _gateway (23.154.81.193)  0.595 ms  0.527 ms
+ 2  104.193.132.124 (104.193.132.124)  0.507 ms  0.498 ms
+ 3  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.433 ms  1.554 ms
+ 4  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  4.059 ms  4.051 ms
+ 5  gtt.sea02.atlas.cogentco.com (154.54.11.185)  14.973 ms  14.965 ms
+ 6  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  175.109 ms  175.182 ms
+ 7  ip4.gtt.net (67.199.141.34)  175.090 ms  175.342 ms
+ 8  * *
+ 9  * *
+10  * *
+11  mel-au-ping.vultr.com (67.219.110.24)  175.003 ms  174.911 ms
+
+===== Vancouver -> Mumbai | probe AS136258 BrainStorm Network  <- shortest | globe 12254 km, flat 12305 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.588 ms  0.524 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.508 ms  0.500 ms
+ 3  ae3.cr4-sjc1.ip4.gtt.net (89.149.130.14)  23.121 ms  23.114 ms
+ 4  ip4.gtt.net (198.47.107.250)  23.182 ms  23.170 ms
+ 5  i-1039.paix-core02.telstraglobal.net (202.84.251.58)  245.384 ms  245.377 ms
+ 6  i-12407.ulhc-core03.telstraglobal.net (202.84.143.66)  245.367 ms  245.412 ms
+ 7  unknown.telstraglobal.net (202.47.212.145)  243.089 ms  243.117 ms
+ 8  * *
+ 9  * *
+10  * *
+11  bom-in-ping.vultr.com (65.20.66.100)  242.302 ms *
+
+===== Vancouver -> Mumbai | probe AS394256 Tech Futures Interactive | globe 12254 km, flat 12305 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.057 ms  0.011 ms
+ 2  _gateway (38.240.227.1)  0.269 ms  0.237 ms
+ 3  38.88.124.49 (38.88.124.49)  7.339 ms  7.331 ms
+ 4  ve603.core1.yvr2.he.net (66.220.22.129)  1.356 ms  1.672 ms
+ 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  0.894 ms  0.907 ms
+ 6  be47.core2.yvr1.he.net (184.105.222.123)  1.964 ms  1.994 ms
+ 7  be6.core1.sea1.he.net (184.104.196.221)  25.501 ms  25.484 ms
+ 8  be9.core3.pdx1.he.net (184.104.196.36)  26.732 ms  26.712 ms
+ 9  be7.core1.pao1.he.net (184.104.189.142)  25.396 ms  25.383 ms
+10  be7.core1.sjc2.he.net (184.104.196.248)  29.062 ms  29.048 ms
+11  * *
+12  * *
+13  * *
 14  * *
 15  * *
 16  * *
-17  70.34.192.142 (70.34.192.142)  148.683 ms  148.658 ms
-18  sto-se-ping.vultr.com (70.34.194.86)  148.646 ms  148.334 ms
-
-===== Tokyo (hnd-jp-ping.vultr.com) — 7556 km =====
-traceroute to hnd-jp-ping.vultr.com (108.61.201.151), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.394 ms  0.428 ms
- 2  * *
- 3  * *
- 4  * *
- 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.293 ms  5.287 ms
- 6  63-220-198-54.static.as3491.net (63.220.198.54)  5.322 ms  5.453 ms
- 7  Bundle-Eth53.clbr01.tok02.as3491.net (63.218.250.78)  108.808 ms  108.803 ms
- 8  63-216-242-46.static.as3491.net (63.216.242.46)  108.835 ms  109.615 ms
- 9  * *
-10  * *
-11  209.222.31.145.vultrusercontent.com (209.222.31.145)  137.064 ms  136.993 ms
-12  hnd-jp-ping.vultr.com (108.61.201.151)  107.592 ms  107.577 ms
-
-===== Osaka (osk-jp-ping.vultr.com) — 7898 km =====
-traceroute to osk-jp-ping.vultr.com (64.176.34.94), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.493 ms  0.504 ms
- 2  * *
- 3  * *
- 4  100ge0-26.core1.yvr2.he.net (184.105.247.169)  2.494 ms *
- 5  port-channel5.core1.yvr1.he.net (184.104.195.13)  2.218 ms  2.189 ms
- 6  be47.core2.yvr1.he.net (184.105.222.123)  5.396 ms  5.391 ms
- 7  be6.core1.sea1.he.net (184.104.196.221)  96.812 ms  96.750 ms
- 8  * *
- 9  be47.core1.tyo1.he.net (184.104.193.227)  96.215 ms  96.168 ms
-10  be5.core3.osa1.he.net (184.104.198.88)  94.322 ms  94.112 ms
-11  port-channel9.core1.osa1.he.net (184.104.196.172)  93.686 ms  93.666 ms
-12  103.246.232.160 (103.246.232.160)  92.693 ms  92.679 ms
-13  * *
-14  * *
-15  * *
-16  osk-jp-ping.vultr.com (64.176.34.94)  92.835 ms  92.530 ms
-
-===== Seoul (sel-kor-ping.vultr.com) — 8162 km =====
-traceroute to sel-kor-ping.vultr.com (141.164.34.61), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.556 ms  0.602 ms
- 2  38-41-208-2.dyn.novuscom.net (38.41.208.2)  69.465 ms  70.425 ms
- 3  38.88.6.44 (38.88.6.44)  2.100 ms  2.093 ms
- 4  * *
- 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.188 ms  5.183 ms
- 6  63-220-198-54.static.as3491.net (63.220.198.54)  5.239 ms  5.234 ms
- 7  Hu0-0-0-21.br03.seo03.as3491.net (63.220.71.19)  129.009 ms  129.004 ms
- 8  Vultr-Holdings.TE-0-0-0-24.br03.seo03.as3491.net (63.218.237.134)  130.232 ms  130.683 ms
- 9  * *
-10  * *
-11  * *
-12  sel-kor-ping.vultr.com (141.164.34.61)  127.835 ms  127.821 ms
-
-===== Singapore (sgp-ping.vultr.com) — 12824 km =====
-traceroute to sgp-ping.vultr.com (45.32.100.168), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.451 ms  0.468 ms
- 2  100.122.26.161 (100.122.26.161)  1.109 ms  2.208 ms
- 3  75.153.138.72 (75.153.138.72)  2.331 ms  2.380 ms
- 4  * *
- 5  * *
- 6  * *
- 7  154.11.15.190 (154.11.15.190)  5.954 ms  5.947 ms
- 8  205.177.32.1 (205.177.32.1)  5.939 ms  5.933 ms
- 9  BE47.br07.sin02.as3491.net (63.218.164.150)  189.187 ms  189.304 ms
-10  63-220-199-177.static.as3491.net (63.220.199.177)  182.829 ms  182.823 ms
-11  * *
-12  * *
-13  45.32.98.222.vultrusercontent.com (45.32.98.222)  180.557 ms  181.387 ms
-14  sgp-ping.vultr.com (45.32.100.168)  182.959 ms *
-
-===== Sydney (syd-au-ping.vultr.com) — 12499 km =====
-traceroute to syd-au-ping.vultr.com (108.61.212.117), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.441 ms  0.460 ms
- 2  * *
- 3  38.88.6.45 (38.88.6.45)  1.755 ms  1.808 ms
- 4  * *
- 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.073 ms  5.125 ms
- 6  gtt.sea02.atlas.cogentco.com (154.54.11.185)  5.807 ms  5.803 ms
- 7  ae11.cr4-syd1.ip4.gtt.net (141.136.110.218)  153.227 ms  153.223 ms
- 8  ip4.gtt.net (67.199.141.30)  153.216 ms  153.210 ms
- 9  * *
-10  * *
-11  103.43.73.108.vultrusercontent.com (103.43.73.108)  170.807 ms  170.771 ms
-12  syd-au-ping.vultr.com (108.61.212.117)  169.574 ms  169.559 ms
-
-===== Melbourne (mel-au-ping.vultr.com) — 13209 km =====
-traceroute to mel-au-ping.vultr.com (67.219.110.24), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.475 ms  0.537 ms
- 2  * *
- 3  * *
- 4  * *
- 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  5.512 ms  5.508 ms
- 6  gtt.sea02.atlas.cogentco.com (154.54.11.185)  13.523 ms  13.520 ms
- 7  xe-0-1-7-3.cr4-mel1.ip4.gtt.net (213.254.214.226)  165.479 ms  165.475 ms
- 8  ip4.gtt.net (67.199.141.34)  165.469 ms  165.466 ms
- 9  * *
-10  * *
-11  * *
-12  mel-au-ping.vultr.com (67.219.110.24)  164.394 ms  164.377 ms
-
-===== Mumbai (bom-in-ping.vultr.com) — 12255 km =====
-traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.391 ms  0.394 ms
- 2  100.122.26.161 (100.122.26.161)  1.988 ms  2.052 ms
- 3  75.153.138.72 (75.153.138.72)  2.165 ms  2.237 ms
- 4  * *
- 5  * *
- 6  154.11.15.99 (154.11.15.99)  2.606 ms  2.659 ms
- 7  zayo.ae10.mpr1.yvr2.ca.zip.zayo.com (208.184.12.166)  5.969 ms  5.965 ms
- 8  ae15.mpr3.yvr3.ca.zip.zayo.com (64.125.18.129)  2.998 ms  3.050 ms
- 9  ae5.cr1.sea1.us.zip.zayo.com (64.125.18.58)  25.028 ms *
-10  ae13.cr2.sjc4.us.zip.zayo.com (64.125.21.249)  24.958 ms  25.011 ms
-11  ae7.mcr1.sjc7.us.zip.zayo.com (64.125.25.45)  25.601 ms  25.630 ms
-12  * *
-13  64.124.57.71.IPYX-284545-900-ZYO.zip.zayo.com (64.124.57.71)  23.766 ms  24.935 ms
-14  i-1039.paix-core02.telstraglobal.net (202.84.251.58)  249.225 ms  249.194 ms
-15  * *
-16  unknown.telstraglobal.net (202.47.212.145)  245.822 ms  245.807 ms
 17  * *
 18  * *
-19  * *
-20  bom-in-ping.vultr.com (65.20.66.100)  245.657 ms  245.053 ms
+19  121.241.56.170 (121.241.56.170)  247.669 ms  247.605 ms
+20  * *
 
-===== Sao Paulo (sao-br-ping.vultr.com) — 11050 km =====
-traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.438 ms  0.461 ms
- 2  100.122.26.161 (100.122.26.161)  1.854 ms  1.849 ms
- 3  75.153.138.72 (75.153.138.72)  1.844 ms  2.341 ms
- 4  * *
- 5  * *
- 6  * *
- 7  154.11.15.109 (154.11.15.109)  5.726 ms  5.735 ms
- 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  5.672 ms  5.688 ms
- 9  ae4.cr1-sao6.ip4.gtt.net (89.149.187.82)  172.496 ms  172.493 ms
-10  ip4.gtt.net (72.29.193.218)  174.479 ms  174.475 ms
+===== Vancouver -> Mumbai | probe AS60068 Datacamp | globe 12254 km, flat 12305 km =====
+traceroute to bom-in-ping.vultr.com (65.20.66.100), 20 hops max, 60 byte packets
+ 1  _gateway (185.229.189.232)  0.176 ms  0.165 ms
+ 2  * *
+ 3  be2424.rcr21.yvr01.atlas.cogentco.com (154.24.96.25)  0.837 ms  0.895 ms
+ 4  be3247.ccr22.sea02.atlas.cogentco.com (154.54.27.161)  3.954 ms  3.999 ms
+ 5  be9343.ccr82.sea08.atlas.cogentco.com (154.54.160.241)  5.332 ms  5.371 ms
+ 6  be9528.ccr82.slc03.atlas.cogentco.com (154.54.92.222)  23.352 ms  23.414 ms
+ 7  be3906.ccr22.sfo01.atlas.cogentco.com (154.54.5.154)  39.374 ms  39.407 ms
+ 8  be3670.ccr41.sjc03.atlas.cogentco.com (154.54.43.14)  40.330 ms  40.375 ms
+ 9  * *
+10  * *
 11  * *
 12  * *
 13  * *
-14  sao-br-ping.vultr.com (216.238.98.118)  175.393 ms *
+14  66.110.59.114 (66.110.59.114)  410.221 ms  410.194 ms
+15  * *
+16  * *
+17  121.241.56.170 (121.241.56.170)  444.086 ms  444.046 ms
+18  * *
+19  * *
+20  * *
 
-===== Santiago (scl-cl-ping.vultr.com) — 10553 km =====
+===== Vancouver -> Sao Paulo | probe AS136258 BrainStorm Network  <- shortest | globe 11050 km, flat 12378 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (168.222.245.1)  0.695 ms  0.649 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.642 ms  0.634 ms
+ 3  ae4.cr1-sao6.ip4.gtt.net (89.149.187.82)  170.661 ms  170.657 ms
+ 4  ip4.gtt.net (72.29.193.218)  171.717 ms  171.713 ms
+ 5  * *
+ 6  10.108.0.94 (10.108.0.94)  171.697 ms  171.692 ms
+ 7  * *
+ 8  sao-br-ping.vultr.com (216.238.98.118)  171.915 ms *
+
+===== Vancouver -> Sao Paulo | probe AS394256 Tech Futures Interactive | globe 11050 km, flat 12378 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.081 ms  0.009 ms
+ 2  _gateway (38.240.227.1)  0.488 ms  0.441 ms
+ 3  38.88.124.49 (38.88.124.49)  0.497 ms  0.482 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.438 ms  1.453 ms
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.890 ms  28.880 ms
+ 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  51.732 ms  51.720 ms
+ 7  port-channel2994.ccr92.cle04.atlas.cogentco.com (154.54.31.233)  56.169 ms  56.159 ms
+ 8  be4986.ccr42.jfk02.atlas.cogentco.com (154.54.162.170)  65.272 ms  65.414 ms
+ 9  be3496.ccr31.jfk10.atlas.cogentco.com (154.54.0.142)  65.153 ms  65.185 ms
+10  be2531.ccr31.sao01.atlas.cogentco.com (154.54.88.2)  173.446 ms  173.434 ms
+11  be2427.rcr61.sao02.atlas.cogentco.com (154.54.44.194)  173.521 ms  173.496 ms
+12  be3485.agr01.sao02.atlas.cogentco.com (154.54.45.14)  173.929 ms  173.895 ms
+13  199.100.14.74 (199.100.14.74)  173.179 ms  173.203 ms
+14  * *
+15  10.108.0.98 (10.108.0.98)  173.466 ms  173.389 ms
+16  10.108.100.28 (10.108.100.28)  173.388 ms  173.230 ms
+17  sao-br-ping.vultr.com (216.238.98.118)  173.346 ms *
+
+===== Vancouver -> Sao Paulo | probe AS20326 TeraSwitch Networks | globe 11050 km, flat 12378 km =====
+traceroute to sao-br-ping.vultr.com (216.238.98.118), 20 hops max, 60 byte packets
+ 1  _gateway (208.91.104.113)  0.165 ms  0.182 ms
+ 2  100.114.63.1 (100.114.63.1)  0.179 ms  0.208 ms
+ 3  * *
+ 4  be2424.rcr21.yvr01.atlas.cogentco.com (154.24.96.25)  0.755 ms  0.799 ms
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.371 ms  28.369 ms
+ 6  be3546.ccr31.yyz02.atlas.cogentco.com (154.54.165.101)  51.463 ms  51.463 ms
+ 7  port-channel2993.ccr91.cle04.atlas.cogentco.com (154.54.31.225)  55.903 ms  55.901 ms
+ 8  be4985.ccr41.jfk02.atlas.cogentco.com (154.54.162.166)  64.903 ms  64.902 ms
+ 9  be3495.ccr31.jfk10.atlas.cogentco.com (66.28.4.182)  65.076 ms  65.076 ms
+10  be2531.ccr31.sao01.atlas.cogentco.com (154.54.88.2)  173.596 ms  173.595 ms
+11  be2427.rcr61.sao02.atlas.cogentco.com (154.54.44.194)  173.908 ms  173.886 ms
+12  be3485.agr01.sao02.atlas.cogentco.com (154.54.45.14)  173.884 ms  173.874 ms
+13  199.100.14.74 (199.100.14.74)  173.341 ms  173.299 ms
+14  * *
+15  10.108.0.94 (10.108.0.94)  173.302 ms  173.309 ms
+16  10.108.100.28 (10.108.100.28)  173.380 ms  173.352 ms
+17  sao-br-ping.vultr.com (216.238.98.118)  174.540 ms *
+
+===== Vancouver -> Santiago | probe AS136258 BrainStorm Network | globe 10554 km, flat 11539 km =====
 traceroute to scl-cl-ping.vultr.com (64.176.2.7), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.460 ms  0.517 ms
- 2  100.122.26.161 (100.122.26.161)  1.822 ms  1.892 ms
- 3  75.153.138.72 (75.153.138.72)  1.986 ms  2.042 ms
+ 1  _gateway (168.222.245.1)  0.625 ms  0.583 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.573 ms  0.568 ms
+ 3  ae20.cr4-sea2.ip4.gtt.net (89.149.130.54)  18.595 ms  18.591 ms
+ 4  as3356.cr4-sea2.ip4.gtt.net (173.205.57.38)  3.812 ms  3.807 ms
+ 5  ae2.3601.edge1.sgo1.ciriontechnologies.net (200.189.207.6)  184.172 ms  184.243 ms
+ 6  8.243.179.78 (8.243.179.78)  181.041 ms  181.033 ms
+ 7  10.107.0.14 (10.107.0.14)  185.760 ms  185.783 ms
+ 8  * *
+ 9  10.107.100.4 (10.107.100.4)  181.063 ms  181.058 ms
+10  scl-cl-ping.vultr.com (64.176.2.7)  180.993 ms  180.988 ms
+
+===== Vancouver -> Santiago | probe AS394256 Tech Futures Interactive  <- shortest | globe 10554 km, flat 11539 km =====
+traceroute to scl-cl-ping.vultr.com (64.176.2.7), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.6.1)  0.086 ms  0.012 ms
+ 2  _gateway (38.240.227.1)  0.289 ms  0.226 ms
+ 3  38.88.124.49 (38.88.124.49)  0.492 ms  0.473 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.632 ms  1.610 ms
+ 5  be3238.ccr21.sea02.atlas.cogentco.com (154.54.1.5)  3.920 ms  3.895 ms
+ 6  be2454.ccr82.sea08.atlas.cogentco.com (154.54.164.25)  4.273 ms  4.266 ms
+ 7  * *
+ 8  * *
+ 9  be2322.ccr32.dfw01.atlas.cogentco.com (154.54.162.10)  48.405 ms  48.389 ms
+10  port-channel8122.ccr92.jan02.atlas.cogentco.com (154.54.41.54)  55.003 ms  54.989 ms
+11  be8473.ccr82.mia03.atlas.cogentco.com (154.54.5.162)  76.876 ms  76.845 ms
+12  be2716.ccr51.scl01.atlas.cogentco.com (154.54.3.30)  163.200 ms  163.155 ms
+13  be4156.rcr71.b072113-0.scl01.atlas.cogentco.com (154.54.92.42)  172.406 ms  172.348 ms
+14  199.100.17.93 (199.100.17.93)  186.707 ms  186.667 ms
+15  ip-37-99-110-190.static.silicanetworks.com (190.110.99.37)  186.454 ms  186.398 ms
+16  ip-38-99-110-190.static.silicanetworks.com (190.110.99.38)  186.782 ms  186.732 ms
+17  10.107.0.10 (10.107.0.10)  189.935 ms  189.838 ms
+18  * *
+19  * *
+20  * scl-cl-ping.vultr.com (64.176.2.7)  172.440 ms
+
+===== Vancouver -> Santiago | probe AS852 TELUS Communications | globe 10554 km, flat 11539 km =====
+traceroute to scl-cl-ping.vultr.com (64.176.2.7), 20 hops max, 60 byte packets
+ 1  _gateway (10.152.127.1)  0.482 ms  0.455 ms
+ 2  207.102.138.1 (207.102.138.1)  2.437 ms  2.434 ms
+ 3  207.102.225.123 (207.102.225.123)  0.839 ms  0.837 ms
  4  * *
  5  * *
  6  * *
- 7  154.11.15.109 (154.11.15.109)  5.386 ms  5.441 ms
- 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  5.881 ms  7.118 ms
- 9  * *
-10  ae2.3601.edge1.sgo1.ciriontechnologies.net (200.189.207.6)  192.515 ms  192.533 ms
-11  8.243.179.78 (8.243.179.78)  192.047 ms  192.041 ms
+ 7  154.11.15.111 (154.11.15.111)  4.584 ms  4.582 ms
+ 8  ae26.cr4-sea2.ip4.gtt.net (76.74.114.46)  114.213 ms  114.211 ms
+ 9  as3356.cr4-sea2.ip4.gtt.net (173.205.57.38)  4.612 ms  4.621 ms
+10  ae2.3601.edge1.sgo1.ciriontechnologies.net (200.189.207.6)  188.723 ms  188.720 ms
+11  8.243.179.78 (8.243.179.78)  192.413 ms  192.377 ms
 12  * *
 13  * *
 14  * *
-15  scl-cl-ping.vultr.com (64.176.2.7)  188.277 ms  189.110 ms
+15  scl-cl-ping.vultr.com (64.176.2.7)  190.450 ms  190.420 ms
 
-===== Johannesburg (jnb-za-ping.vultr.com) — 16452 km =====
+===== Vancouver -> Johannesburg | probe AS136258 BrainStorm Network | globe 16451 km, flat 17031 km =====
 traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
- 1  _gateway (192.168.3.1)  0.370 ms  0.400 ms
- 2  100.122.26.161 (100.122.26.161)  1.251 ms  1.299 ms
- 3  75.153.138.72 (75.153.138.72)  1.935 ms  1.931 ms
- 4  * *
+ 1  _gateway (168.222.245.1)  0.298 ms  0.248 ms
+ 2  ae2-111.cr1-van1.ip4.gtt.net (209.120.145.105)  0.429 ms  0.421 ms
+ 3  ae25.cr5-mrs1.ip4.gtt.net (141.136.111.174)  139.724 ms  139.719 ms
+ 4  212.222.148.199 (212.222.148.199)  144.434 ms  144.425 ms
  5  * *
  6  * *
- 7  154.11.15.190 (154.11.15.190)  5.911 ms  5.906 ms
- 8  205.177.32.1 (205.177.32.1)  5.885 ms  5.927 ms
- 9  Hu0-0-0-20.br03.jnb01.as3491.net (63.223.48.142)  334.776 ms  334.770 ms
-10  63.218.151.30 (63.218.151.30)  321.435 ms  321.431 ms
-11  * *
+ 7  * *
+ 8  * *
+ 9  41.78.188.233 (41.78.188.233)  308.119 ms  308.111 ms
+10  197.157.67.18 (197.157.67.18)  308.734 ms  308.439 ms
+11  10.94.0.14 (10.94.0.14)  309.044 ms  309.243 ms
+12  10.94.0.90 (10.94.0.90)  308.372 ms  308.485 ms
+13  10.94.100.25 (10.94.100.25)  308.485 ms  308.448 ms
+14  jnb-za-ping.vultr.com (139.84.226.78)  308.512 ms *
+
+===== Vancouver -> Johannesburg | probe AS394256 Tech Futures Interactive | globe 16451 km, flat 17031 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  _gateway (172.23.2.1)  0.113 ms  0.013 ms
+ 2  _gateway (38.240.227.1)  0.268 ms  0.268 ms
+ 3  38.88.124.49 (38.88.124.49)  0.605 ms  0.582 ms
+ 4  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.392 ms  1.499 ms
+ 5  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.483 ms  28.463 ms
+ 6  be3732.ccr32.yyz02.atlas.cogentco.com (154.54.165.105)  51.181 ms  51.204 ms
+ 7  be3260.ccr22.ymq01.atlas.cogentco.com (154.54.42.90)  58.474 ms  58.470 ms
+ 8  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  128.558 ms  128.539 ms
+ 9  port-channel2133.ccr92.lhr01.atlas.cogentco.com (154.54.63.238)  133.272 ms  133.243 ms
+10  * *
+11  be9661.rcr71.b015533-1.lon05.atlas.cogentco.com (154.54.75.10)  134.952 ms  134.914 ms
+12  149.14.227.58 (149.14.227.58)  129.558 ms  129.586 ms
+13  * *
+14  * *
+15  41.78.188.210 (41.78.188.210)  295.088 ms  294.958 ms
+16  197.157.67.18 (197.157.67.18)  294.760 ms  294.642 ms
+17  10.94.0.14 (10.94.0.14)  295.118 ms  295.424 ms
+18  10.94.0.90 (10.94.0.90)  294.573 ms  294.430 ms
+19  10.94.100.25 (10.94.100.25)  294.050 ms  294.013 ms
+20  jnb-za-ping.vultr.com (139.84.226.78)  294.659 ms *
+
+===== Vancouver -> Johannesburg | probe AS53356 Free Range Cloud Hosting  <- shortest | globe 16451 km, flat 17031 km =====
+traceroute to jnb-za-ping.vultr.com (139.84.226.78), 20 hops max, 60 byte packets
+ 1  _gateway (23.154.81.193)  0.780 ms  0.710 ms
+ 2  104.193.132.124 (104.193.132.124)  0.690 ms  0.624 ms
+ 3  be4757.rcr21.yvr01.atlas.cogentco.com (38.32.234.153)  1.318 ms  1.470 ms
+ 4  be8262.rcr71.ywg01.atlas.cogentco.com (154.54.5.194)  28.839 ms  28.831 ms
+ 5  be3546.ccr31.yyz02.atlas.cogentco.com (154.54.165.101)  51.376 ms  51.435 ms
+ 6  be3259.ccr21.ymq01.atlas.cogentco.com (154.54.41.206)  58.721 ms  58.709 ms
+ 7  be3042.ccr21.lpl01.atlas.cogentco.com (154.54.44.161)  129.064 ms  129.169 ms
+ 8  port-channel8665.ccr91.lhr01.atlas.cogentco.com (154.54.74.218)  133.834 ms  133.819 ms
+ 9  be3464.ccr81.lon05.atlas.cogentco.com (154.54.75.149)  136.580 ms  136.572 ms
+10  be9660.rcr71.b015533-1.lon05.atlas.cogentco.com (154.54.75.6)  134.889 ms  134.939 ms
+11  149.14.227.58 (149.14.227.58)  129.673 ms  129.302 ms
 12  * *
 13  * *
-14  jnb-za-ping.vultr.com (139.84.226.78)  320.163 ms *
+14  * *
+15  41.78.188.233 (41.78.188.233)  278.848 ms  278.751 ms
+16  197.157.67.18 (197.157.67.18)  288.173 ms  288.107 ms
+17  10.94.0.18 (10.94.0.18)  289.209 ms  289.433 ms
+18  10.94.0.86 (10.94.0.86)  288.403 ms  288.360 ms
+19  10.94.100.25 (10.94.100.25)  288.169 ms  288.096 ms
+20  jnb-za-ping.vultr.com (139.84.226.78)  288.514 ms *
 

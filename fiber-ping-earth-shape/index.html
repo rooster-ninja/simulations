@@ -1,305 +1,374 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fiber Ping and Earth Shape (WIP)</title>
-<meta property="og:title" content="Fiber ping and Earth shape (WIP)">
-<meta property="og:description" content="Work in progress: 25 measured round trips, from Vancouver and across the southern hemisphere, checked against the speed of light over globe distances and over the north-pole flat-map distances.">
-<meta name="theme-color" content="#f3efe4">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fibre Ping and the Figure of the Earth</title>
+<meta property="og:title" content="On the Time of Light-Signals in Telegraph Fibres, and the Figure of the Earth">
+<meta name="theme-color" content="#efe3c6">
+<meta property="og:description" content="Measured round trips through the world's fibre-optic cables, checked against the speed of light over globe distances and over the north-pole flat-map distances.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
+/* Plan: one printed quarto page on aged paper. A single centred text column with
+   plates (figures) and tables set in ruled frames, as in a Royal Society
+   Transactions paper. Single theme by choice: the paper is the visual world. */
 :root{
-  --bg:#f3efe4; --card:#f8f5ec; --plate:#ffffff; --ink:#1a1813; --muted:#6b6658; --rule:#ddd5c2;
-  --accent:#4a8fb0; --orange:#e0913a; --red:#c8543a; --purple:#7a56b8; --green:#3fa77f; --wedge:#f3d9d2;
-  --bar:#16140f; --bar-ink:#f3efe4;
-  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif; --f-body:"Archivo",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --paper:#efe3c6;      /* aged rag paper */
+  --paper-deep:#e5d5b0; /* plate and table fill */
+  --ink:#2a1b0f;        /* iron-gall brown-black */
+  --sepia:#77553a;      /* secondary text, rules */
+  --rule:#b6966c;
+  --globe:#1d4f86;      /* Prussian blue: globe model */
+  --flat:#b3261e;       /* carmine: flat model */
+  --ochre:#c98a1b;      /* highlight wash */
+  --verd:#2e7a62;       /* verdigris: confirmed */
+  --f-display:"IM Fell English","Iowan Old Style",Georgia,serif;
+  --f-sc:"IM Fell English SC","IM Fell English",Georgia,serif;
+  --f-body:"EB Garamond","Garamond","Iowan Old Style",Georgia,serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
-  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --green:#6fd0a6; --wedge:#3d2620;
-  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
-  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --green:#6fd0a6; --wedge:#3d2620;
-  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
-.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding-top:28px}
-.back{margin:0 0 14px;font-family:var(--f-mono);font-size:13px}.back a{color:var(--muted);text-decoration:none}.back a:hover{color:var(--accent)}
-.eyebrow{font-family:var(--f-mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0}
-h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,56px);line-height:1.04;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance;max-width:22ch}
-.sub{color:var(--ink);font-size:18px;max-width:64ch;margin:14px 0 0}
-.wip{border:1.5px dashed var(--orange);border-radius:12px;padding:12px 16px;font-family:var(--f-mono);font-size:13.5px;color:var(--ink);background:var(--card)}
-.wip b{color:var(--orange);letter-spacing:.14em}
-.panel{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px}
-.ptitle{font-family:var(--f-mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
-.svgbox{background:var(--plate);border:1.5px solid var(--rule);border-radius:12px;overflow-x:auto}
-.svgbox svg{display:block;width:100%;height:auto;min-width:620px}
-.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
-.pair .svgbox svg{min-width:300px}
-.math{font-family:var(--f-display);font-style:italic;font-size:19px;text-align:center;line-height:1.7;overflow-x:auto;padding:2px 4px}
-svg text{font-family:var(--f-mono);fill:var(--ink)}
-.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-button{font:500 14px var(--f-mono);letter-spacing:.06em;color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:9px 14px;cursor:pointer}
-button:hover{border-color:var(--muted)}button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
-.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
-.legend i{display:inline-block;width:16px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
-.cap{font-size:16px;margin:0;max-width:72ch}
-.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px}
-.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--muted)}
-.kv .v{font-family:var(--f-display);font-weight:700;font-size:23px;line-height:1.2;font-variant-numeric:tabular-nums}
-.kv .d{font-size:13.5px;color:var(--muted)}
-.prose p{margin:0 0 10px;max-width:72ch}.prose p:last-child{margin:0}
-ol.steps,ul.steps{margin:0;padding-left:22px;max-width:72ch}.steps li{margin:0 0 8px}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th{font-family:var(--f-display);font-variant:small-caps;font-weight:700;letter-spacing:.03em;text-align:left;border-bottom:1.5px solid var(--rule);padding:8px 10px;font-size:16px}
-td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
-td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
-td.yes{color:var(--red);font-weight:600}td.no{color:var(--muted)}
-.tablebox{overflow-x:auto}
-details.src{background:var(--bar);color:var(--bar-ink);border-radius:12px;padding:14px 18px;font-family:var(--f-mono);font-size:14px}
-details.src summary{cursor:pointer;font-weight:600}
-details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
-details.src a{color:var(--bar-ink)}
-details.src q{font-style:italic}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:19px;line-height:1.55;
+  padding:0 16px 56px;
+  background-image:radial-gradient(ellipse at 50% 0%,rgba(255,250,235,.55),transparent 60%),
+                   radial-gradient(ellipse at 50% 120%,rgba(120,80,40,.18),transparent 55%)}
+.page{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:26px;padding-top:28px}
+.col{max-width:66ch;margin:0 auto;width:100%}
+a{color:var(--globe)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+
+/* masthead */
+.mast{border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:6px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-family:var(--f-sc);font-size:15px;letter-spacing:.06em;color:var(--sepia)}
+.back{font-family:var(--f-sc);font-size:15px;color:var(--sepia);text-decoration:none}
+.titleblock{text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.titleblock .kicker{font-family:var(--f-sc);font-size:17px;letter-spacing:.14em;color:var(--sepia)}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,5.2vw,46px);line-height:1.12;margin:0;text-wrap:balance;max-width:24ch}
+.byline{font-style:italic;color:var(--sepia)}
+.fleuron{font-size:22px;color:var(--rule);letter-spacing:.6em}
+.wip{border:1px solid var(--ochre);background:rgba(201,138,27,.12);padding:10px 14px;font-size:16.5px}
+.wip b{font-family:var(--f-sc);letter-spacing:.08em;color:#8a5a08}
+
+.abstract{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px;font-size:18px}
+.abstract h2{font-family:var(--f-sc);font-size:18px;letter-spacing:.16em;text-align:center;margin:0 0 6px;font-weight:400}
+.abstract p{margin:0;text-align:justify;hyphens:auto}
+
+h2.sec{font-family:var(--f-sc);font-weight:400;font-size:21px;letter-spacing:.08em;text-align:center;margin:8px 0 0;text-wrap:balance}
+h2.sec span{display:block;font-family:var(--f-display);font-size:15px;letter-spacing:.2em;color:var(--sepia)}
+.prose p{margin:0 0 .8em;text-align:justify;hyphens:auto}
+.prose p:last-child{margin-bottom:0}
+.dropcap::first-letter{font-family:var(--f-display);float:left;font-size:3.4em;line-height:.85;padding:.06em .08em 0 0;color:var(--flat)}
+.formula{font-family:var(--f-body);font-style:italic;text-align:center;margin:.4em 0 .9em;font-size:20px}
+.formula .n{float:right;font-style:normal;color:var(--sepia)}
+.hl{background:linear-gradient(transparent 58%,rgba(201,138,27,.35) 58%);padding:0 .1em}
+.g{color:var(--globe);font-weight:600}.f{color:var(--flat);font-weight:600}.ok{color:var(--verd);font-weight:600}
+sup a{text-decoration:none;font-size:.8em}
+
+/* design-reasons list */
+.reasons{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:r}
+.reasons li{display:grid;grid-template-columns:2.2em 1fr;gap:6px;counter-increment:r}
+.reasons li::before{content:counter(r,upper-roman) ".";font-family:var(--f-display);color:var(--flat);text-align:right}
+.reasons b{font-family:var(--f-sc);font-weight:400;letter-spacing:.04em}
+
+/* plates and tables */
+figure{margin:0;border:1px solid var(--ink);outline:1px solid var(--rule);outline-offset:3px;background:var(--paper-deep);padding:14px 14px 10px}
+figure > svg{display:block;width:100%;height:auto}
+.legend svg{flex:none}
+figcaption{font-size:16.5px;margin-top:8px;text-align:justify;hyphens:auto}
+figcaption .lab{font-family:var(--f-sc);letter-spacing:.08em}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;font-size:15.5px;margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.tbl{overflow-x:auto;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:15.5px;font-variant-numeric:tabular-nums lining-nums;min-width:640px}
+caption{caption-side:top;font-family:var(--f-sc);letter-spacing:.08em;padding:0 0 6px;text-align:center;font-size:17px}
+th{font-weight:500;font-style:italic;border-bottom:1px solid var(--ink);padding:6px 6px;text-align:right;vertical-align:bottom;line-height:1.25}
+th:first-child,td:first-child{text-align:left}
+td{padding:4px 6px;text-align:right;border-bottom:1px dotted var(--rule);white-space:nowrap}
+tr.tight td{background:rgba(201,138,27,.16)}
+tr.ruled td{background:rgba(179,38,30,.10)}
+.tnote{font-size:15px;color:var(--sepia);margin-top:6px}
+.pill{font-family:var(--f-sc);font-size:13.5px;letter-spacing:.06em;padding:0 6px;border:1px solid currentColor;border-radius:2px}
+.pill.out{color:var(--flat)}.pill.nd{color:var(--sepia)}.pill.okp{color:var(--verd)}
+.pending{border:1px dashed var(--sepia);padding:22px;text-align:center;font-style:italic;color:var(--sepia);background:rgba(255,255,255,.18)}
+.notes{font-size:15.5px;border-top:1px solid var(--ink);padding-top:10px}
+.notes ol{padding-left:1.4em;margin:6px 0 0}
+.notes li{margin-bottom:4px}
+.colophon{text-align:center;font-family:var(--f-sc);color:var(--sepia);font-size:15px;letter-spacing:.08em}
+svg text{font-family:var(--f-body);fill:var(--ink)}
+@media (max-width:520px){body{font-size:17.5px}.prose p,.abstract p,figcaption{text-align:left}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style>
+
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <p class="back"><a href="../">← All simulations</a></p>
-    <p class="eyebrow">Work in progress · fiber latency</p>
-    <h1>Can a ping outrun light on a flat map?</h1>
-    <p class="sub">A round trip over fiber can't be faster than light covering the distance twice. Network detours, queues and routers only add time. So the fastest ping between two cities caps how far apart they can be, and any map that puts them farther apart is wrong.</p>
+<div class="page">
+  <a class="back" href="../">&larr; All simulations</a>
+  <div class="mast"><span>Skunk Werks Transactions</span><span>No. III &middot; Experimental Physics</span><span>12 November 2026</span></div>
+
+  <header class="titleblock">
+    <div class="kicker">An Experimental Inquiry</div>
+    <h1>On the Time of Light-Signals in the Telegraph Fibres, and What It Reveals of the Figure of the Earth</h1>
+    <div class="byline">Communicated from rooster.ninja &middot; Observations of 12 November 2026</div>
+    <div class="fleuron" aria-hidden="true">&#10086; &#10086; &#10086;</div>
   </header>
 
-  <div class="wip"><b>WIP</b> · Two measurement runs on 4 Nov 2026, one probe per pair, one run each. Numbers and conclusions may change as the test is repeated and extended (see panel 7).</div>
+  
 
-  <section class="readout" aria-label="Headline results">
-    <div class="kv"><div class="k">Auckland → Sydney</div><div class="v" id="hA"></div><div class="d" id="dA"></div></div>
-    <div class="kv"><div class="k">Perth → Sydney</div><div class="v" id="hP"></div><div class="d" id="dP"></div></div>
-    <div class="kv"><div class="k">Globe distances</div><div class="v">25 of 25 allowed</div><div class="d">every minimum ping is above the fiber floor</div></div>
+  <section class="col abstract">
+    <h2>Abstract</h2>
+    <p id="abstract"></p>
   </section>
 
-  <section class="panel">
-    <div class="ptitle">1 · Every round trip against the light-speed floor</div>
-    <div class="controls">
-      <button data-show="both" aria-pressed="true">Both distances</button>
-      <button data-show="globe" aria-pressed="false">Globe only</button>
-      <button data-show="flat" aria-pressed="false">Flat map only</button>
-      <button id="zoom" aria-pressed="false">Zoom to 0–9,000 km</button>
-    </div>
-    <div class="legend"><span><i style="background:var(--wedge)"></i>Impossible: faster than light in vacuum</span><span><i style="background:var(--accent)"></i>Ping at globe distance</span><span><i style="border:2px solid var(--red)"></i>Same ping at flat-map distance</span><span><i style="background:var(--orange);height:3px"></i>Fiber floor</span></div>
-    <div class="svgbox"><svg id="chart" viewBox="0 0 720 400" role="img" aria-label="Minimum ping against distance with light-speed floors"></svg></div>
-    <div class="math">t<sub>min</sub> ≥ 2d / c &nbsp;(vacuum),&nbsp;&nbsp;&nbsp; t<sub>min</sub> ≥ 2d · n<sub>g</sub> / c &nbsp;(fiber, n<sub>g</sub> = 1.468)</div>
-    <p class="cap">Each pair is plotted twice at the same height: a filled dot at its globe distance and a hollow ring at its flat-map distance. A point inside the shaded wedge would need a signal faster than light. On the globe nothing lands there. On the flat map, Auckland → Sydney and Perth → Sydney do.</p>
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; I.</span>Of the Principle</h2>
+    <p class="dropcap">No message can outrun light. A signal sent through a glass fibre travels slower still, at the speed of light divided by the group index of the glass, which for ordinary telegraph fibre is near 1.468, or about two-thirds of the speed of light. Routers, queues and the winding of cables can only add time to the journey; nothing on the path can take time away. Hence the shortest round trip ever measured between two places sets a ceiling on how far apart they can be, and any proposed map of the Earth that puts them farther apart than that ceiling must be wrong.</p>
+    <p>For a pair of stations separated by a distance <i>d</i>, the round-trip floor through fibre, and the absolute floor in a vacuum, are</p>
+    <div class="formula">t<sub>fib</sub> = 2<i>d n</i><sub>g</sub> / <i>c</i>, &nbsp;&nbsp; t<sub>vac</sub> = 2<i>d</i> / <i>c</i><span class="n">(1)</span></div>
+    <p>We compute <i>d</i> twice for every pair, each time as the shortest path the model allows. On the <span class="g">globe</span> it is the great-circle arc along the surface of a sphere of 6,371&nbsp;km. On the <span class="f">flat map</span>, the north-pole azimuthal equidistant projection, a place at latitude &phi; lies at radius r = (90&deg; &minus; &phi;) &times; 111.195&nbsp;km from the pole, and <i>d</i> is the straight line between the two points:</p>
+    <div class="formula"><i>d</i><sub>flat</sub><sup>2</sup> = r<sub>1</sub><sup>2</sup> + r<sub>2</sub><sup>2</sup> &minus; 2r<sub>1</sub>r<sub>2</sub> cos &Delta;&lambda;<span class="n">(2)</span></div>
+    <p>No cable on a plane can be shorter than that straight line, so the flat-map floor is the most favourable that map can claim. A measured minimum falling <span class="hl">below a model&rsquo;s fibre floor</span> rules that model out for that pair. A minimum above both floors decides nothing, for slow routes are allowed under either figure.</p>
   </section>
 
-  <section class="panel">
-    <div class="ptitle">2 · The same three cities on two maps</div>
-    <div class="pair">
-      <div class="svgbox"><svg id="flatmap" viewBox="0 0 360 360" role="img" aria-label="North-pole azimuthal equidistant map with Perth, Sydney and Auckland"></svg></div>
-      <div class="svgbox"><svg id="globemap" viewBox="0 0 360 360" role="img" aria-label="Globe view centred on Australia with Perth, Sydney and Auckland"></svg></div>
-    </div>
-    <div class="math">flat: d² = r₁² + r₂² − 2r₁r₂ cos Δλ,&nbsp; r = (90° − φ) × 111.195 km&nbsp;&nbsp;&nbsp; globe: d = 2R asin √(sin²(Δφ/2) + cos φ₁ cos φ₂ sin²(Δλ/2))</div>
-    <p class="cap">The flat map keeps latitude rings evenly spaced from the North Pole, so southern rings are stretched sideways. Auckland–Sydney becomes 5,698 km instead of 2,156 km; Perth–Sydney becomes 8,302 km instead of 3,291 km. From a northern source like Vancouver the stretch is only 0–14%, which is why the first run couldn't separate the models.</p>
-  </section>
-
-  <section class="panel">
-    <div class="ptitle">3 · The two decisive routes, hop by hop</div>
-    <div class="pair">
-      <div class="svgbox"><svg id="trA" viewBox="0 0 360 260" role="img" aria-label="Auckland to Sydney traceroute"></svg></div>
-      <div class="svgbox"><svg id="trP" viewBox="0 0 360 260" role="img" aria-label="Perth to Sydney traceroute"></svg></div>
-    </div>
-    <div class="legend"><span><i style="background:var(--accent)"></i>Hop round-trip time</span><span><i style="background:var(--red);height:3px"></i>Flat-map vacuum floor</span><span><i style="background:var(--green);height:3px"></i>Globe fiber floor</span></div>
-    <p class="cap">Auckland: three local hops under 1 ms, then one jump to 24 ms onto the Sydney Megaport exchange. That jump is the Tasman crossing, so the probe really is in New Zealand. Perth: Telstra's core hops are named Perth → Adelaide → Melbourne → Sydney with times rising in order. That overland path is longer than the great circle and still arrives under the flat floor. Hops that read higher than later hops (Auckland hop 7) are routers answering ICMP slowly, not real delay. Both routes end at the labelled Sydney server, not an anycast copy.</p>
-  </section>
-
-  <section class="panel">
-    <div class="ptitle">4 · Southern-hemisphere pairs</div>
-    <div class="tablebox"><table>
-      <thead><tr><th>Pair</th><th class="n">Globe km</th><th class="n">Flat km</th><th class="n">Min ping</th><th class="n">Globe fiber floor</th><th class="n">Flat vacuum floor</th><th class="n">Below flat floor <span style="font-variant:normal">(σ)</span></th><th>Route</th></tr></thead>
-      <tbody id="stable"></tbody>
-    </table></div>
-    <p class="cap">All times in ms. σ combines endpoint-position error on the floor and timestamp error on the ping (panel 6). A positive value means the ping beat the flat-map vacuum floor. The four non-discriminating pairs were routed through London, New York or Miami instead of the direct South Atlantic and South Pacific paths.</p>
-  </section>
-
-  <section class="panel">
-    <div class="ptitle">5 · Vancouver to 19 coastal cities</div>
-    <div class="tablebox"><table>
-      <thead><tr><th>Target</th><th class="n">Globe km</th><th class="n">Flat km</th><th class="n">Min ping</th><th class="n">Globe fiber floor</th><th class="n">Min ÷ globe floor</th><th class="n">Min ÷ flat floor</th></tr></thead>
-      <tbody id="vtable"></tbody>
-    </table></div>
-    <p class="cap">All 19 are above both floors, so this run can't discriminate. It does show the spread of route inflation: Osaka (1.20×) and Melbourne (1.27×) run nearly direct; Miami (2.40×) goes via Chicago and Atlanta; Mumbai (2.04×) crosses the Pacific westward; Stockholm (2.04×) crosses the Atlantic via New York and Copenhagen.</p>
-  </section>
-
-  <section class="panel prose">
-    <div class="ptitle">6 · Methods and errors</div>
-    <ol class="steps">
-      <li><b>Probes.</b> Globalping, a network of community-hosted probes. One probe per source city; ping and traceroute use the same probe. Run 2 records each probe's reported coordinates; run 1 used the Vancouver city centre.</li>
-      <li><b>Targets.</b> Vultr per-datacentre test hosts (one physical site each). Every traceroute was checked to end at the labelled host.</li>
-      <li><b>Ping.</b> 16 ICMP echoes per pair; the minimum is used, because every source of delay is one-sided.</li>
-      <li><b>Distances.</b> Globe: haversine on a 6,371 km sphere. Flat: north-pole azimuthal equidistant, latitude rings 111.195 km per degree.</li>
-      <li><b>Floors.</b> Vacuum 2d/c with c = 299,792.458 km/s (exact). Fiber 2d·n<sub>g</sub>/c with n<sub>g</sub> = 1.468.</li>
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; II.</span>Of the Design of the Experiment, and the Reasons for Each Choice</h2>
+    <ol class="reasons">
+      <li><div><b>Minimum, not mean.</b> Every delay on the path is positive, so the fastest of sixteen echoes is the one closest to the physical floor. The mean measures congestion; the minimum measures geometry.</div></li>
+      <li><div><b>Single-site target servers.</b> Each target is a Vultr test host in one named datacentre. Large services answer from many places at once under one address (&ldquo;anycast&rdquo;), which would let a nearby machine reply for a distant city and fake a short time. A single-site host removes that trap.</div></li>
+      <li><div><b>Three probes on different networks.</b> Each source city pings each target from up to three Globalping probes run by different internet providers. Each provider takes its own route, and only the shortest route tests the floor, so the lowest of the three is kept.</div></li>
+      <li><div><b>A traceroute from the same probes.</b> The hop list shows where the path really went, through a direct cable or round by Los Angeles and London, and confirms that the last hop is the labelled datacentre.</div></li>
+      <li><div><b>A &ldquo;home check&rdquo; on every server&rsquo;s position.</b> Each target is also pinged from probes in its own city. A minimum under 6&nbsp;ms places it within a few hundred kilometres of that city. At such short range the globe and the flat map agree to well under one part in a hundred, so this check fixes the server&rsquo;s position without assuming either figure of the Earth. Locating servers from long-distance pings would be circular, since turning a time into a distance already presumes a map.</div></li>
+      <li><div><b>The same fibre floor for both figures.</b> The signals travel in glass: the routes are submarine and terrestrial fibre, and the traceroutes show no satellite hops. So both models are held to the same standard, the speed of light in fibre over that model&rsquo;s shortest path, taking the slower index of 1.468 that gives the lower floor. The vacuum floor, light at full speed with no glass at all, is shown as well as an absolute limit. A model broken below its vacuum floor could not be saved by any medium; one broken below only its fibre floor could be saved only if part of the route ran outside glass, by radio or laser link.</div></li>
+      <li><div><b>A northern source first, a southern source second.</b> From Vancouver the flat map stretches distances by only 0&ndash;14&nbsp;%, less than ordinary route slack, so this series is expected to decide nothing and serves as the calibration. From Santiago the flat map stretches distances by up to two and a third times, and the two figures part company.</div></li>
+      <li><div><b>Clocks only at the sender.</b> The round trip is timed by one clock at the probe, so its absolute setting cancels. Only clock error can make a reading too fast, and that is fixed at 0.05&nbsp;ms (&sect; III). A companion pinger that never puts the time inside the packet, and authenticates every reply with a secret-keyed hash, has been written for stations under our own control.</div></li>
     </ol>
-    <div class="tablebox"><table>
-      <thead><tr><th>Quantity</th><th class="n">Error <span style="font-variant:normal">(1σ)</span></th><th>Basis</th></tr></thead>
-      <tbody>
-        <tr><td>Each endpoint position</td><td class="n">25 km</td><td>Probe and datacentre coordinates are city-level; assumed metro-scale uncertainty</td></tr>
-        <tr><td>Flat vacuum floor</td><td class="n">0.24–0.63 ms</td><td>Monte Carlo, 4,000 trials, both endpoints jittered; the flat map magnifies east–west errors in the south</td></tr>
-        <tr><td>Ping timestamp (fast side)</td><td class="n">0.05 ms</td><td>Only clock error can make a ping read faster than the path allows; queues and routing only add</td></tr>
-        <tr><td>Fiber group index</td><td class="n">1.462–1.468</td><td>Corning datasheets; the vacuum test does not depend on it</td></tr>
-        <tr><td>Earth radius</td><td class="n">mean sphere</td><td>No flattening; changes distances by under 0.5%</td></tr>
-      </tbody>
-    </table></div>
-    <p><b>Findings, to stated σ.</b> Auckland → Sydney: the minimum ping is <span id="fA"></span> faster than light in vacuum could cover the flat-map distance. Perth → Sydney: <span id="fP"></span>. On the globe, the tightest pair (Auckland → Sydney) is <span id="fG"></span> above the fiber floor, as a direct cable should be.</p>
   </section>
 
-  <section class="panel prose">
-    <div class="ptitle">7 · Limits and next steps (WIP)</div>
-    <ul class="steps">
-      <li><b>One map, not all flat maps.</b> This rejects the north-pole azimuthal equidistant layout. The general test collects many pairs' maximum distances (min ping × c ÷ 2) and asks whether any planar arrangement of the cities satisfies them all at once.</li>
-      <li><b>One run, one probe each.</b> Repeat Perth → Sydney from other networks and times of day; its margin is 3.6σ.</li>
-      <li><b>Direct South Atlantic route.</b> Cape Town → São Paulo came within 1.03× of the flat fiber floor but did not use the direct cables. Probes on networks that use SACS or SAIL could decide it.</li>
-      <li><b>Probe coordinates.</b> Run 1 did not log them; the Vancouver script should be updated to match run 2.</li>
-    </ul>
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; III.</span>Of the Errors</h2>
+    <p>Three errors enter. <b>Position:</b> probes and datacentres are known to city level, taken as 25&nbsp;km (1&sigma;) at each end. This was carried through equations (1) and (2) by 4,000 Monte Carlo trials per pair, giving a floor uncertainty of 0.34&ndash;0.80&nbsp;ms. <b>Timing:</b> 0.05&nbsp;ms on the fast side, the only side that matters, since path delays can only lengthen a ping. <b>Glass:</b> the group index of commercial fibre lies between 1.462 and 1.468; using 1.468 gives the higher floor, but the verdicts are the same at 1.462.</p>
+    <p>The headroom of a pair is its minimum ping less the floor, and its significance is that headroom divided by the combined uncertainty, &sigma; = &radic;(&sigma;<sub>floor</sub><sup>2</sup> + 0.05<sup>2</sup>). A negative headroom of several &sigma; rules the model out for that pair. The error bars are drawn at &plusmn;1&sigma; (heavy) and &plusmn;3&sigma; (light). The combined &sigma; is only about 0.35&ndash;0.8&nbsp;ms, under one part in two hundred of a 200&nbsp;ms round trip, so on the full-scale Plates I&ndash;III the bars, drawn true to scale, are barely wider than the marks. Plate IV shows the closest cases on an axis narrow enough to read them. Their smallness is itself a finding: a city-level position error cannot move any floor by more than about a millisecond.</p>
   </section>
 
-  <details class="src">
-    <summary>Sources for this page (pages and quotes)</summary>
-    <ul>
-      <li>NIST, <a href="https://physics.nist.gov/cuu/Constants/Value/c.html">Speed of light in vacuum</a>: 299 792 458 m s⁻¹, standard uncertainty <q>(exact)</q>.</li>
-      <li>Corning, <a href="https://img-en.fs.com/file/datasheet/corning-smf-28eplus-33175.pdf">SMF-28e+ Optical Fiber Product Information</a> (hosted by FS.com): effective group index 1.4682 at 1550 nm, 1.4676 at 1310 nm.</li>
-      <li>Corning, <a href="https://www.corning.com/media/worldwide/coc/documents/Fiber/SMF-28%20ULL.pdf">SMF-28 ULL Optical Fiber Product Information</a>: effective group index 1.4620 at 1550 nm (ultra-low-loss fiber used on long links).</li>
-      <li>Globalping, <a href="https://blog.globalping.io/run-ping-with-http-using-globalping-api/">Run ping with HTTP using the Globalping API</a>: POST /measurements then GET by id; stats give min, max, average and loss; <q>a large network of community-hosted probes located around the globe</q>.</li>
-      <li>Globalping, <a href="https://blog.globalping.io/run-traceroute-with-http-using-globalping-api/">Run traceroute with HTTP using the Globalping API</a>: ICMP, TCP or UDP; hops report address and round-trip timing.</li>
-      <li>Esri, <a href="https://pro.arcgis.com/en/pro-app/3.6/help/mapping/properties/azimuthal-equidistant.htm">Azimuthal equidistant projection</a>: <q>preserves both distance and direction from the central point</q>; polar aspect has evenly spaced concentric parallels.</li>
-      <li>Raw data: <a href="data/southern_results.csv">southern_results.csv</a>, <a href="data/southern_traceroutes.txt">southern_traceroutes.txt</a>, <a href="data/vancouver_results.csv">vancouver_results.csv</a>, <a href="data/vancouver_traceroutes.txt">vancouver_traceroutes.txt</a>, <a href="data/summary.json">summary.json</a>.</li>
-    </ul>
-  </details>
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; IV.</span>Results of the Vancouver Series</h2>
+    <p id="vanText"></p>
+  </section>
+
+  <figure>
+    <svg id="fig1" viewBox="0 0 760 470" role="img" aria-label="Minimum round-trip time against globe distance from Vancouver, with globe and flat-map fibre floors"></svg>
+    <div class="legend">
+      <span><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2 L14 8 L8 14 L2 8Z" fill="var(--ink)"/></svg>Measured minimum</span>
+      <span><svg width="26" height="10"><line x1="0" y1="5" x2="26" y2="5" stroke="var(--globe)" stroke-width="2.4"/></svg>Globe fibre floor</span>
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="5" fill="none" stroke="var(--flat)" stroke-width="2"/></svg>Flat-map fibre floor</span>
+      <span class="magnote"><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ink)" stroke-width="1.4"/><line x1="2" y1="1" x2="2" y2="11" stroke="var(--ink)"/><line x1="32" y1="1" x2="32" y2="11" stroke="var(--ink)"/></svg>&plusmn;3&sigma; &middot; true scale</span>
+    </div>
+    <figcaption><span class="lab">Plate I.</span> Minimum round trip from Vancouver to nineteen coastal stations, plotted against globe distance. Every measured point lies above both fibre floors. The flat-map floors (circles) sit only a little above the globe line from a northern source, which is why this series cannot decide between the figures. Each mark carries &plusmn;3&sigma; bars: on the measured minimum the timing error, which can only shorten a reading; on each floor the position error. They are drawn true to scale, and are mostly hidden beneath the marks; Plate IV enlarges the nearest cases.</figcaption>
+  </figure>
+
+  <figure>
+    <svg id="fig2" viewBox="0 0 760 620" role="img" aria-label="Headroom above each model's fibre floor for each Vancouver pair"></svg>
+    <div class="legend">
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="5" fill="var(--globe)"/></svg>Globe fibre floor</span>
+      <span><svg width="16" height="16"><rect x="3" y="3" width="10" height="10" fill="var(--flat)"/></svg>Flat-map fibre floor</span>
+      <span class="magnote"><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ink)" stroke-width="1.4"/><line x1="2" y1="1" x2="2" y2="11" stroke="var(--ink)"/><line x1="32" y1="1" x2="32" y2="11" stroke="var(--ink)"/><line x1="11" y1="6" x2="23" y2="6" stroke="var(--ink)" stroke-width="3.4"/></svg>&plusmn;1&sigma; heavy, &plusmn;3&sigma; light &middot; true scale</span>
+    </div>
+    <figcaption><span class="lab">Plate II.</span> How far each Vancouver minimum stands above each model&rsquo;s fibre floor, in milliseconds. Anything left of the zero rule would be faster than light in glass allows on that model. Seattle comes nearest, at about 2&nbsp;ms on both; every pair remains to the right.</figcaption>
+  </figure>
+
+  <div class="tbl">
+    <table id="tab1"><caption>Table I. &mdash; Vancouver Series, 12 November 2026 (best of three probes)</caption></table>
+  </div>
+  <p class="col tnote">Floors and headroom in milliseconds; &sigma; as defined in &sect; III. Every server passed its home check (minimum under 6&nbsp;ms from its own city). <span style="background:rgba(201,138,27,.3);padding:0 4px">Shaded</span> rows have the tightest routes, under 1.3 times the globe floor.</p>
+
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; V.</span>Results of the Santiago Series</h2>
+    <p id="sclText"></p>
+  </section>
+
+  <figure>
+    <svg id="fig3" viewBox="0 0 760 600" role="img" aria-label="Headroom above each fibre floor for each Santiago pair"></svg>
+    <div class="legend">
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="5" fill="var(--globe)"/></svg>Globe fibre floor</span>
+      <span><svg width="16" height="16"><rect x="3" y="3" width="10" height="10" fill="var(--flat)"/></svg>Flat-map fibre floor</span>
+      <span class="magnote"><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ink)" stroke-width="1.4"/><line x1="2" y1="1" x2="2" y2="11" stroke="var(--ink)"/><line x1="32" y1="1" x2="32" y2="11" stroke="var(--ink)"/><line x1="11" y1="6" x2="23" y2="6" stroke="var(--ink)" stroke-width="3.4"/></svg>&plusmn;1&sigma; heavy, &plusmn;3&sigma; light &middot; true scale</span>
+    </div>
+    <figcaption><span class="lab">Plate III.</span> Headroom of each Santiago pair above the globe and flat-map fibre floors. S&atilde;o Paulo alone falls left of zero, on the flat map., its whole &plusmn;3&sigma; bar to the left (Plate IV enlarges it). The trans-Pacific pairs stand far to the right because their routes run north through the United States, as the traceroutes show.</figcaption>
+  </figure>
+
+  <div class="tbl">
+    <table id="tab2"><caption>Table II. &mdash; Santiago Series, 12 November 2026 (best of three probes)</caption></table>
+  </div>
+  <p class="col tnote">Every server passed its home check. <span style="background:rgba(179,38,30,.16);padding:0 4px">Shaded</span>: the flat map&rsquo;s fibre floor is broken.</p>
+
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; VI.</span>Of the Nearest Approaches</h2>
+    <p>The pairs that come closest to either floor deserve the closest look, for here alone the error bars could matter. Plate IV draws them at true scale on a narrow axis.</p>
+  </section>
+
+  <figure>
+    <svg id="fig4" viewBox="0 0 760 360" role="img" aria-label="True-scale headroom for the closest cases, with one and three sigma error bars"></svg>
+    <div class="legend">
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="5" fill="var(--globe)"/></svg>Globe fibre floor</span>
+      <span><svg width="16" height="16"><rect x="3" y="3" width="10" height="10" fill="var(--flat)"/></svg>Flat-map fibre floor</span>
+      <span><svg width="16" height="16"><rect x="3" y="3" width="10" height="10" fill="none" stroke="var(--flat)" stroke-width="2"/></svg>Flat-map vacuum floor</span>
+      <span><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ink)" stroke-width="1.4"/><line x1="2" y1="1" x2="2" y2="11" stroke="var(--ink)"/><line x1="32" y1="1" x2="32" y2="11" stroke="var(--ink)"/><line x1="11" y1="6" x2="23" y2="6" stroke="var(--ink)" stroke-width="3.4"/></svg>&plusmn;1&sigma; heavy, &plusmn;3&sigma; light &middot; true scale</span>
+    </div>
+    <figcaption><span class="lab">Plate IV.</span> The nearest approaches at true scale. Santiago&ndash;S&atilde;o Paulo falls below the flat-map fibre floor with its whole &plusmn;3&sigma; bar, while standing well above the globe fibre floor. It lies above the flat-map vacuum floor (open square), which only a route partly outside glass could exploit.</figcaption>
+  </figure>
+
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; VII.</span>Conclusions</h2>
+    <p id="concl"></p>
+    <p>Three limits remain. Only one flat layout, the north-pole azimuthal equidistant projection, is tested; other flat arrangements would need their own distance formula. The S&atilde;o Paulo result rests on one pair and should be repeated from several networks and on other days. And the strongest southern pairs, to Sydney, Melbourne and Johannesburg, will decide nothing until a route runs direct.</p>
+  </section>
+
+  <section class="col prose">
+    <h2 class="sec"><span>&sect; VIII.</span>Of Repeating the Experiment</h2>
+    <p>The apparatus is two Python scripts using only the standard library, kept in this page&rsquo;s <a href="scripts/">scripts</a> folder with instructions in its <a href="README.md">README</a>. <b>coastal_campaign.py</b> runs a whole series from any computer through the Globalping network, choosing the source city on the command line. <b>verified_ping.py</b> is the companion pinger for a station of one&rsquo;s own (Linux, run as root); it times each echo from kernel timestamps at the sender, and accepts a reply only if its random, hash-sealed payload returns intact.</p>
+    <div class="formula" style="font-style:normal;font-size:16px;font-family:ui-monospace,Menlo,monospace">python3 coastal_campaign.py Santiago CL</div>
+  </section>
+
+  <section class="col notes">
+    <b style="font-family:var(--f-sc);letter-spacing:.08em;font-weight:400">Notes and Authorities</b>
+    <ol>
+      <li>Speed of light in vacuum, <i>c</i> = 299,792.458&nbsp;km/s (exact). NIST: <a href="https://physics.nist.gov/cuu/Constants/Value/c.html">physics.nist.gov</a>.</li>
+      <li>Fibre group index 1.4682 at 1550&nbsp;nm, Corning SMF-28e+; 1.4620 for SMF-28 ULL.</li>
+      <li>ICMP echo: J. Postel, RFC 792 (1981); host requirements, RFC 1122 &sect;3.2.2.6.</li>
+      <li>Globalping, open probe network for ping and traceroute: <a href="https://globalping.io">globalping.io</a>.</li>
+      <li>On faked locations: Gill et al., &ldquo;Dude, where&rsquo;s that IP?&rdquo;, USENIX Security 2010; Abdou et al., on manipulating ping and traceroute delays.</li>
+      <li>Azimuthal equidistant projection: Esri ArcGIS Pro reference.</li>
+    </ol>
+  </section>
+  <div class="colophon">&#10086; Finis &#10086;</div>
 </div>
+
 <script>
-const D=[{"run":"Vancouver","source":"Vancouver","target":"Seattle","globe_km":194.6,"flat_km":196.3,"min_ms":5.017,"avg_ms":5.388,"globe_fiber_ms":1.91,"globe_vac_ms":1.3,"flat_fiber_ms":1.92,"flat_vac_ms":1.31,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-3.71,"flat_margin_sigma":-15.3,"globe_margin_ms":3.11,"globe_margin_sigma":8.8},{"run":"Vancouver","source":"Vancouver","target":"Silicon Valley","globe_km":1329.9,"flat_km":1330.7,"min_ms":22.382,"avg_ms":22.642,"globe_fiber_ms":13.02,"globe_vac_ms":8.87,"flat_fiber_ms":13.03,"flat_vac_ms":8.88,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-13.5,"flat_margin_sigma":-57.1,"globe_margin_ms":9.36,"globe_margin_sigma":26.4},{"run":"Vancouver","source":"Vancouver","target":"Los Angeles","globe_km":1740.4,"flat_km":1752.8,"min_ms":30.94,"avg_ms":31.166,"globe_fiber_ms":17.04,"globe_vac_ms":11.61,"flat_fiber_ms":17.17,"flat_vac_ms":11.69,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-19.25,"flat_margin_sigma":-79.2,"globe_margin_ms":13.9,"globe_margin_sigma":40.3},{"run":"Vancouver","source":"Vancouver","target":"Honolulu","globe_km":4359.7,"flat_km":4690.7,"min_ms":80.417,"avg_ms":80.63,"globe_fiber_ms":42.7,"globe_vac_ms":29.08,"flat_fiber_ms":45.94,"flat_vac_ms":31.29,"sigma_flat_vac_ms":0.27,"flat_margin_ms":-49.12,"flat_margin_sigma":-185.2,"globe_margin_ms":37.72,"globe_margin_sigma":108.8},{"run":"Vancouver","source":"Vancouver","target":"Miami","globe_km":4511.6,"flat_km":4915.7,"min_ms":105.813,"avg_ms":120.238,"globe_fiber_ms":44.18,"globe_vac_ms":30.1,"flat_fiber_ms":48.14,"flat_vac_ms":32.79,"sigma_flat_vac_ms":0.26,"flat_margin_ms":-73.02,"flat_margin_sigma":-276.8,"globe_margin_ms":61.63,"globe_margin_sigma":175.1},{"run":"Vancouver","source":"Vancouver","target":"New Jersey","globe_km":3880.8,"flat_km":4224.5,"min_ms":66.967,"avg_ms":67.182,"globe_fiber_ms":38.01,"globe_vac_ms":25.89,"flat_fiber_ms":41.37,"flat_vac_ms":28.18,"sigma_flat_vac_ms":0.26,"flat_margin_ms":-38.78,"flat_margin_sigma":-148.9,"globe_margin_ms":28.96,"globe_margin_sigma":82.3},{"run":"Vancouver","source":"Vancouver","target":"London","globe_km":7578.1,"flat_km":7741.0,"min_ms":130.322,"avg_ms":130.601,"globe_fiber_ms":74.22,"globe_vac_ms":50.56,"flat_fiber_ms":75.81,"flat_vac_ms":51.64,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-78.68,"flat_margin_sigma":-321.8,"globe_margin_ms":56.11,"globe_margin_sigma":160.7},{"run":"Vancouver","source":"Vancouver","target":"Amsterdam","globe_km":7696.1,"flat_km":7832.5,"min_ms":138.363,"avg_ms":139.567,"globe_fiber_ms":75.37,"globe_vac_ms":51.34,"flat_fiber_ms":76.71,"flat_vac_ms":52.25,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-86.11,"flat_margin_sigma":-352.6,"globe_margin_ms":62.99,"globe_margin_sigma":180.6},{"run":"Vancouver","source":"Vancouver","target":"Stockholm","globe_km":7437.2,"flat_km":7496.5,"min_ms":148.579,"avg_ms":148.72,"globe_fiber_ms":72.84,"globe_vac_ms":49.62,"flat_fiber_ms":73.42,"flat_vac_ms":50.01,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-98.57,"flat_margin_sigma":-413.4,"globe_margin_ms":75.74,"globe_margin_sigma":214.2},{"run":"Vancouver","source":"Vancouver","target":"Tokyo","globe_km":7553.5,"flat_km":7989.4,"min_ms":107.531,"avg_ms":107.728,"globe_fiber_ms":73.98,"globe_vac_ms":50.39,"flat_fiber_ms":78.24,"flat_vac_ms":53.3,"sigma_flat_vac_ms":0.25,"flat_margin_ms":-54.23,"flat_margin_sigma":-213.1,"globe_margin_ms":33.56,"globe_margin_sigma":93.8},{"run":"Vancouver","source":"Vancouver","target":"Osaka","globe_km":7895.2,"flat_km":8325.6,"min_ms":92.709,"avg_ms":92.959,"globe_fiber_ms":77.32,"globe_vac_ms":52.67,"flat_fiber_ms":81.54,"flat_vac_ms":55.54,"sigma_flat_vac_ms":0.25,"flat_margin_ms":-37.17,"flat_margin_sigma":-147.2,"globe_margin_ms":15.39,"globe_margin_sigma":44.0},{"run":"Vancouver","source":"Vancouver","target":"Seoul","globe_km":8158.9,"flat_km":8512.4,"min_ms":127.899,"avg_ms":128.169,"globe_fiber_ms":79.9,"globe_vac_ms":54.43,"flat_fiber_ms":83.37,"flat_vac_ms":56.79,"sigma_flat_vac_ms":0.25,"flat_margin_ms":-71.11,"flat_margin_sigma":-285.3,"globe_margin_ms":48.0,"globe_margin_sigma":134.4},{"run":"Vancouver","source":"Vancouver","target":"Singapore","globe_km":12821.3,"flat_km":13364.8,"min_ms":179.266,"avg_ms":190.425,"globe_fiber_ms":125.56,"globe_vac_ms":85.53,"flat_fiber_ms":130.89,"flat_vac_ms":89.16,"sigma_flat_vac_ms":0.25,"flat_margin_ms":-90.11,"flat_margin_sigma":-363.5,"globe_margin_ms":53.7,"globe_margin_sigma":155.0},{"run":"Vancouver","source":"Vancouver","target":"Sydney","globe_km":12501.2,"flat_km":14170.4,"min_ms":169.824,"avg_ms":169.985,"globe_fiber_ms":122.43,"globe_vac_ms":83.4,"flat_fiber_ms":138.78,"flat_vac_ms":94.53,"sigma_flat_vac_ms":0.28,"flat_margin_ms":-75.29,"flat_margin_sigma":-266.8,"globe_margin_ms":47.39,"globe_margin_sigma":136.7},{"run":"Vancouver","source":"Vancouver","target":"Melbourne","globe_km":13211.0,"flat_km":15059.5,"min_ms":164.358,"avg_ms":164.529,"globe_fiber_ms":129.38,"globe_vac_ms":88.13,"flat_fiber_ms":147.48,"flat_vac_ms":100.47,"sigma_flat_vac_ms":0.28,"flat_margin_ms":-63.89,"flat_margin_sigma":-225.0,"globe_margin_ms":34.98,"globe_margin_sigma":100.0},{"run":"Vancouver","source":"Vancouver","target":"Mumbai","globe_km":12250.9,"flat_km":12301.9,"min_ms":245.063,"avg_ms":245.54,"globe_fiber_ms":119.98,"globe_vac_ms":81.73,"flat_fiber_ms":120.48,"flat_vac_ms":82.07,"sigma_flat_vac_ms":0.24,"flat_margin_ms":-162.99,"flat_margin_sigma":-665.6,"globe_margin_ms":125.08,"globe_margin_sigma":360.9},{"run":"Vancouver","source":"Vancouver","target":"Sao Paulo","globe_km":11051.4,"flat_km":12377.8,"min_ms":174.407,"avg_ms":174.88,"globe_fiber_ms":108.23,"globe_vac_ms":73.73,"flat_fiber_ms":121.22,"flat_vac_ms":82.58,"sigma_flat_vac_ms":0.27,"flat_margin_ms":-91.83,"flat_margin_sigma":-336.3,"globe_margin_ms":66.18,"globe_margin_sigma":192.5},{"run":"Vancouver","source":"Vancouver","target":"Santiago","globe_km":10556.4,"flat_km":11540.1,"min_ms":188.193,"avg_ms":188.962,"globe_fiber_ms":103.38,"globe_vac_ms":70.42,"flat_fiber_ms":113.02,"flat_vac_ms":76.99,"sigma_flat_vac_ms":0.28,"flat_margin_ms":-111.21,"flat_margin_sigma":-400.2,"globe_margin_ms":84.81,"globe_margin_sigma":243.7},{"run":"Vancouver","source":"Vancouver","target":"Johannesburg","globe_km":16449.2,"flat_km":17028.1,"min_ms":320.338,"avg_ms":320.613,"globe_fiber_ms":161.09,"globe_vac_ms":109.74,"flat_fiber_ms":166.76,"flat_vac_ms":113.6,"sigma_flat_vac_ms":0.25,"flat_margin_ms":-206.74,"flat_margin_sigma":-817.4,"globe_margin_ms":159.24,"globe_margin_sigma":455.5},{"run":"Southern","source":"Auckland","target":"Sydney","globe_km":2155.5,"flat_km":5698.4,"min_ms":23.635,"avg_ms":23.752,"globe_fiber_ms":21.11,"globe_vac_ms":14.38,"flat_fiber_ms":55.81,"flat_vac_ms":38.02,"sigma_flat_vac_ms":0.63,"flat_margin_ms":14.38,"flat_margin_sigma":22.9,"globe_margin_ms":2.53,"globe_margin_sigma":7.2},{"run":"Southern","source":"Perth","target":"Sydney","globe_km":3290.7,"flat_km":8301.6,"min_ms":53.231,"avg_ms":53.991,"globe_fiber_ms":32.23,"globe_vac_ms":21.95,"flat_fiber_ms":81.3,"flat_vac_ms":55.38,"sigma_flat_vac_ms":0.59,"flat_margin_ms":2.15,"flat_margin_sigma":3.6,"globe_margin_ms":21.0,"globe_margin_sigma":58.9},{"run":"Southern","source":"Cape Town","target":"Sao Paulo","globe_km":6344.0,"flat_km":14231.3,"min_ms":143.463,"avg_ms":143.737,"globe_fiber_ms":62.13,"globe_vac_ms":42.32,"flat_fiber_ms":139.37,"flat_vac_ms":94.94,"sigma_flat_vac_ms":0.49,"flat_margin_ms":-48.52,"flat_margin_sigma":-99.7,"globe_margin_ms":81.33,"globe_margin_sigma":236.7},{"run":"Southern","source":"Sao Paulo","target":"Johannesburg","globe_km":7430.3,"flat_km":15499.0,"min_ms":341.98,"avg_ms":342.048,"globe_fiber_ms":72.77,"globe_vac_ms":49.57,"flat_fiber_ms":151.79,"flat_vac_ms":103.4,"sigma_flat_vac_ms":0.44,"flat_margin_ms":-238.58,"flat_margin_sigma":-539.7,"globe_margin_ms":269.21,"globe_margin_sigma":772.7},{"run":"Southern","source":"Johannesburg","target":"Sao Paulo","globe_km":7447.1,"flat_km":15520.0,"min_ms":335.808,"avg_ms":335.874,"globe_fiber_ms":72.93,"globe_vac_ms":49.68,"flat_fiber_ms":151.99,"flat_vac_ms":103.54,"sigma_flat_vac_ms":0.45,"flat_margin_ms":-232.27,"flat_margin_sigma":-518.4,"globe_margin_ms":262.87,"globe_margin_sigma":755.9},{"run":"Southern","source":"Sydney","target":"Santiago","globe_km":11371.9,"flat_km":25700.6,"min_ms":313.51,"avg_ms":313.651,"globe_fiber_ms":111.37,"globe_vac_ms":75.86,"flat_fiber_ms":251.7,"flat_vac_ms":171.46,"sigma_flat_vac_ms":0.31,"flat_margin_ms":-142.05,"flat_margin_sigma":-461.9,"globe_margin_ms":202.14,"globe_margin_sigma":577.8}];
-const C=299792.458,NG=1.468,R=6371.0088,KD=Math.PI*R/180;
-const $=id=>document.getElementById(id);
-const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const fmt=(x,d=0)=>x.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
-const NS='http://www.w3.org/2000/svg';
-function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
-function tx(p,x,y,s,a={}){const e=el('text',Object.assign({x,y,'font-size':11},a),p);e.textContent=s;return e;}
-const find=(s,t)=>D.find(r=>r.source===s&&r.target===t);
-const A=find('Auckland','Sydney'),P=find('Perth','Sydney');
+const DATA = {"vancouver":[{"target":"Seattle","globe_km":191.0,"flat_km":193.0,"min_ms":4.1,"g_fib":1.87,"g_vac":1.27,"f_fib":1.89,"f_vac":1.29,"s_g":0.346,"s_fv":0.239,"s_ff":0.35,"g_margin":2.23,"g_sig":6.4,"f_margin":2.81,"f_sig":11.5,"infl_g":2.19,"infl_f":2.17,"ff_margin":2.21,"ff_sig":6.3},{"target":"Silicon Valley","globe_km":1327.0,"flat_km":1327.0,"min_ms":31.6,"g_fib":13.0,"g_vac":8.85,"f_fib":13.0,"f_vac":8.85,"s_g":0.347,"s_fv":0.237,"s_ff":0.347,"g_margin":18.6,"g_sig":53.1,"f_margin":22.75,"f_sig":93.9,"infl_g":2.43,"infl_f":2.43,"ff_margin":18.6,"ff_sig":53.1},{"target":"Los Angeles","globe_km":1737.0,"flat_km":1750.0,"min_ms":30.9,"g_fib":17.01,"g_vac":11.59,"f_fib":17.14,"f_vac":11.67,"s_g":0.351,"s_fv":0.241,"s_ff":0.354,"g_margin":13.89,"g_sig":39.2,"f_margin":19.23,"f_sig":78.1,"infl_g":1.82,"infl_f":1.8,"ff_margin":13.76,"ff_sig":38.5},{"target":"New Jersey","globe_km":3881.0,"flat_km":4225.0,"min_ms":59.7,"g_fib":38.01,"g_vac":25.89,"f_fib":41.38,"f_vac":28.19,"s_g":0.347,"s_fv":0.257,"s_ff":0.377,"g_margin":21.69,"g_sig":61.9,"f_margin":31.51,"f_sig":120.4,"infl_g":1.57,"infl_f":1.44,"ff_margin":18.32,"ff_sig":48.2},{"target":"Honolulu","globe_km":4358.0,"flat_km":4689.0,"min_ms":68.9,"g_fib":42.68,"g_vac":29.07,"f_fib":45.92,"f_vac":31.28,"s_g":0.347,"s_fv":0.255,"s_ff":0.375,"g_margin":26.22,"g_sig":74.8,"f_margin":37.62,"f_sig":144.8,"infl_g":1.61,"infl_f":1.5,"ff_margin":22.98,"ff_sig":60.7},{"target":"Miami","globe_km":4510.0,"flat_km":4915.0,"min_ms":74.4,"g_fib":44.17,"g_vac":30.09,"f_fib":48.13,"f_vac":32.79,"s_g":0.343,"s_fv":0.256,"s_ff":0.375,"g_margin":30.23,"g_sig":87.2,"f_margin":41.61,"f_sig":159.5,"infl_g":1.68,"infl_f":1.55,"ff_margin":26.27,"ff_sig":69.4},{"target":"Stockholm","globe_km":7440.0,"flat_km":7500.0,"min_ms":149.2,"g_fib":72.86,"g_vac":49.63,"f_fib":73.45,"f_vac":50.03,"s_g":0.35,"s_fv":0.24,"s_ff":0.353,"g_margin":76.34,"g_sig":215.9,"f_margin":99.17,"f_sig":404.5,"infl_g":2.05,"infl_f":2.03,"ff_margin":75.75,"ff_sig":212.5},{"target":"Tokyo","globe_km":7555.0,"flat_km":7992.0,"min_ms":106.7,"g_fib":73.99,"g_vac":50.4,"f_fib":78.27,"f_vac":53.32,"s_g":0.346,"s_fv":0.249,"s_ff":0.366,"g_margin":32.71,"g_sig":93.6,"f_margin":53.38,"f_sig":210.2,"infl_g":1.44,"infl_f":1.36,"ff_margin":28.43,"ff_sig":77.0},{"target":"London","globe_km":7581.0,"flat_km":7744.0,"min_ms":129.4,"g_fib":74.24,"g_vac":50.57,"f_fib":75.84,"f_vac":51.66,"s_g":0.352,"s_fv":0.244,"s_ff":0.358,"g_margin":55.16,"g_sig":155.1,"f_margin":77.74,"f_sig":312.1,"infl_g":1.74,"infl_f":1.71,"ff_margin":53.56,"ff_sig":148.2},{"target":"Amsterdam","globe_km":7699.0,"flat_km":7836.0,"min_ms":135.1,"g_fib":75.4,"g_vac":51.36,"f_fib":76.74,"f_vac":52.28,"s_g":0.343,"s_fv":0.237,"s_ff":0.348,"g_margin":59.7,"g_sig":172.2,"f_margin":82.82,"f_sig":341.9,"infl_g":1.79,"infl_f":1.76,"ff_margin":58.36,"ff_sig":166.0},{"target":"Osaka","globe_km":7897.0,"flat_km":8328.0,"min_ms":92.9,"g_fib":77.34,"g_vac":52.68,"f_fib":81.56,"f_vac":55.56,"s_g":0.343,"s_fv":0.246,"s_ff":0.361,"g_margin":15.56,"g_sig":44.9,"f_margin":37.34,"f_sig":148.7,"infl_g":1.2,"infl_f":1.14,"ff_margin":11.34,"ff_sig":31.1},{"target":"Seoul","globe_km":8161.0,"flat_km":8515.0,"min_ms":139.2,"g_fib":79.92,"g_vac":54.44,"f_fib":83.39,"f_vac":56.81,"s_g":0.34,"s_fv":0.241,"s_ff":0.354,"g_margin":59.28,"g_sig":172.5,"f_margin":82.39,"f_sig":334.7,"infl_g":1.74,"infl_f":1.67,"ff_margin":55.81,"ff_sig":156.1},{"target":"Santiago","globe_km":10554.0,"flat_km":11539.0,"min_ms":172.4,"g_fib":103.36,"g_vac":70.41,"f_fib":113.01,"f_vac":76.98,"s_g":0.351,"s_fv":0.278,"s_ff":0.408,"g_margin":69.04,"g_sig":194.7,"f_margin":95.42,"f_sig":337.8,"infl_g":1.67,"infl_f":1.53,"ff_margin":59.39,"ff_sig":144.5},{"target":"Sao Paulo","globe_km":11050.0,"flat_km":12378.0,"min_ms":171.5,"g_fib":108.22,"g_vac":73.72,"f_fib":121.22,"f_vac":82.58,"s_g":0.338,"s_fv":0.264,"s_ff":0.387,"g_margin":63.28,"g_sig":185.2,"f_margin":88.92,"f_sig":330.9,"infl_g":1.58,"infl_f":1.41,"ff_margin":50.28,"ff_sig":128.9},{"target":"Mumbai","globe_km":12254.0,"flat_km":12305.0,"min_ms":242.3,"g_fib":120.01,"g_vac":81.75,"f_fib":120.51,"f_vac":82.09,"s_g":0.347,"s_fv":0.237,"s_ff":0.348,"g_margin":122.29,"g_sig":348.8,"f_margin":160.21,"f_sig":661.4,"infl_g":2.02,"infl_f":2.01,"ff_margin":121.79,"ff_sig":346.4},{"target":"Sydney","globe_km":12500.0,"flat_km":14171.0,"min_ms":151.5,"g_fib":122.42,"g_vac":83.39,"f_fib":138.78,"f_vac":94.54,"s_g":0.348,"s_fv":0.278,"s_ff":0.409,"g_margin":29.08,"g_sig":82.7,"f_margin":56.96,"f_sig":201.7,"infl_g":1.24,"infl_f":1.09,"ff_margin":12.72,"ff_sig":30.9},{"target":"Singapore","globe_km":12823.0,"flat_km":13368.0,"min_ms":166.2,"g_fib":125.58,"g_vac":85.55,"f_fib":130.92,"f_vac":89.18,"s_g":0.349,"s_fv":0.244,"s_ff":0.359,"g_margin":40.62,"g_sig":115.2,"f_margin":77.02,"f_sig":309.2,"infl_g":1.32,"infl_f":1.27,"ff_margin":35.28,"ff_sig":97.3},{"target":"Melbourne","globe_km":13210.0,"flat_km":15061.0,"min_ms":174.7,"g_fib":129.37,"g_vac":88.13,"f_fib":147.5,"f_vac":100.48,"s_g":0.347,"s_fv":0.282,"s_ff":0.414,"g_margin":45.33,"g_sig":129.3,"f_margin":74.22,"f_sig":259.1,"infl_g":1.35,"infl_f":1.18,"ff_margin":27.2,"ff_sig":65.2},{"target":"Johannesburg","globe_km":16451.0,"flat_km":17031.0,"min_ms":288.5,"g_fib":161.11,"g_vac":109.75,"f_fib":166.79,"f_vac":113.62,"s_g":0.342,"s_fv":0.237,"s_ff":0.348,"g_margin":127.39,"g_sig":368.6,"f_margin":174.88,"f_sig":722.0,"infl_g":1.79,"infl_f":1.73,"ff_margin":121.71,"ff_sig":346.2}],"santiago":[{"target":"Sao Paulo","globe_km":2584.0,"flat_km":5589.0,"min_ms":47.8,"g_fib":25.31,"f_fib":54.74,"f_vac":37.29,"s_g":0.352,"s_fv":0.543,"s_ff":0.798,"g_margin":22.49,"g_sig":63.3,"f_margin":10.51,"f_sig":19.3,"ff_margin":-6.94,"ff_sig":-8.7,"infl_g":1.89,"infl_f":0.87,"ff_1462":-6.71},{"target":"Miami","globe_km":6662.0,"flat_km":6788.0,"min_ms":92.8,"g_fib":65.24,"f_fib":66.48,"f_vac":45.28,"s_g":0.346,"s_fv":0.249,"s_ff":0.366,"g_margin":27.56,"g_sig":78.8,"f_margin":47.52,"f_sig":187.1,"ff_margin":26.32,"ff_sig":71.3,"infl_g":1.42,"infl_f":1.4,"ff_1462":26.59},{"target":"New Jersey","globe_km":8239.0,"flat_km":8250.0,"min_ms":120.4,"g_fib":80.69,"f_fib":80.8,"f_vac":55.04,"s_g":0.34,"s_fv":0.232,"s_ff":0.341,"g_margin":39.71,"g_sig":115.6,"f_margin":65.36,"f_sig":275.4,"ff_margin":39.6,"ff_sig":114.9,"infl_g":1.49,"infl_f":1.49,"ff_1462":39.93},{"target":"Los Angeles","globe_km":9000.0,"flat_km":10581.0,"min_ms":152.5,"g_fib":88.14,"f_fib":103.62,"f_vac":70.59,"s_g":0.341,"s_fv":0.304,"s_ff":0.446,"g_margin":64.36,"g_sig":186.7,"f_margin":81.91,"f_sig":265.9,"ff_margin":48.88,"ff_sig":108.9,"infl_g":1.73,"infl_f":1.47,"ff_1462":49.3},{"target":"Johannesburg","globe_km":9176.0,"flat_km":20226.0,"min_ms":346.8,"g_fib":89.86,"f_fib":198.08,"f_vac":134.93,"s_g":0.348,"s_fv":0.416,"s_ff":0.61,"g_margin":256.94,"g_sig":730.8,"f_margin":211.87,"f_sig":505.7,"ff_margin":148.72,"ff_sig":243.0,"infl_g":3.86,"infl_f":1.75,"ff_1462":149.53},{"target":"Silicon Valley","globe_km":9496.0,"flat_km":11056.0,"min_ms":175.7,"g_fib":93.0,"f_fib":108.28,"f_vac":73.76,"s_g":0.352,"s_fv":0.303,"s_ff":0.444,"g_margin":82.7,"g_sig":232.6,"f_margin":101.94,"f_sig":331.9,"ff_margin":67.42,"ff_sig":150.9,"infl_g":1.89,"infl_f":1.62,"ff_1462":67.87},{"target":"Seattle","globe_km":10380.0,"flat_km":11421.0,"min_ms":170.1,"g_fib":101.66,"f_fib":111.85,"f_vac":76.19,"s_g":0.35,"s_fv":0.276,"s_ff":0.406,"g_margin":68.44,"g_sig":193.6,"f_margin":93.91,"f_sig":334.8,"ff_margin":58.25,"ff_sig":142.4,"infl_g":1.67,"infl_f":1.52,"ff_1462":58.71},{"target":"Honolulu","globe_km":11048.0,"flat_km":15382.0,"min_ms":202.1,"g_fib":108.2,"f_fib":150.64,"f_vac":102.62,"s_g":0.349,"s_fv":0.33,"s_ff":0.484,"g_margin":93.9,"g_sig":266.3,"f_margin":99.48,"f_sig":298.1,"ff_margin":51.46,"ff_sig":105.8,"infl_g":1.87,"infl_f":1.34,"ff_1462":52.07},{"target":"Melbourne","globe_km":11276.0,"flat_km":26602.0,"min_ms":303.3,"g_fib":110.43,"f_fib":260.53,"f_vac":177.47,"s_g":0.338,"s_fv":0.292,"s_ff":0.429,"g_margin":192.87,"g_sig":564.5,"f_margin":125.83,"f_sig":424.7,"ff_margin":42.77,"ff_sig":99.0,"infl_g":2.75,"infl_f":1.16,"ff_1462":43.84},{"target":"Sydney","globe_km":11347.0,"flat_km":25687.0,"min_ms":296.8,"g_fib":111.13,"f_fib":251.56,"f_vac":171.37,"s_g":0.345,"s_fv":0.309,"s_ff":0.454,"g_margin":185.67,"g_sig":532.6,"f_margin":125.43,"f_sig":400.7,"ff_margin":45.24,"ff_sig":99.0,"infl_g":2.67,"infl_f":1.18,"ff_1462":46.26},{"target":"London","globe_km":11673.0,"flat_km":12946.0,"min_ms":187.7,"g_fib":114.32,"f_fib":126.79,"f_vac":86.37,"s_g":0.344,"s_fv":0.273,"s_ff":0.4,"g_margin":73.38,"g_sig":211.1,"f_margin":101.33,"f_sig":365.1,"ff_margin":60.91,"ff_sig":151.1,"infl_g":1.64,"infl_f":1.48,"ff_1462":61.43},{"target":"Amsterdam","globe_km":12013.0,"flat_km":13316.0,"min_ms":200.3,"g_fib":117.65,"f_fib":130.41,"f_vac":88.83,"s_g":0.343,"s_fv":0.273,"s_ff":0.4,"g_margin":82.65,"g_sig":238.4,"f_margin":111.47,"f_sig":401.6,"ff_margin":69.89,"ff_sig":173.4,"infl_g":1.7,"infl_f":1.54,"ff_1462":70.42},{"target":"Stockholm","globe_km":13087.0,"flat_km":14071.0,"min_ms":217.1,"g_fib":128.17,"f_fib":137.8,"f_vac":93.87,"s_g":0.344,"s_fv":0.258,"s_ff":0.378,"g_margin":88.93,"g_sig":255.8,"f_margin":123.23,"f_sig":468.9,"ff_margin":79.3,"ff_sig":208.0,"infl_g":1.69,"infl_f":1.58,"ff_1462":79.86},{"target":"Mumbai","globe_km":16069.0,"flat_km":20610.0,"min_ms":301.8,"g_fib":157.37,"f_fib":201.84,"f_vac":137.5,"s_g":0.352,"s_fv":0.262,"s_ff":0.384,"g_margin":144.43,"g_sig":406.2,"f_margin":164.3,"f_sig":616.0,"ff_margin":99.96,"ff_sig":258.1,"infl_g":1.92,"infl_f":1.5,"ff_1462":100.78},{"target":"Singapore","globe_km":16398.0,"flat_km":23559.0,"min_ms":338.4,"g_fib":160.59,"f_fib":230.72,"f_vac":157.17,"s_g":0.343,"s_fv":0.234,"s_ff":0.344,"g_margin":177.81,"g_sig":513.0,"f_margin":181.23,"f_sig":757.4,"ff_margin":107.68,"ff_sig":309.8,"infl_g":2.11,"infl_f":1.47,"ff_1462":108.62},{"target":"Tokyo","globe_km":17237.0,"flat_km":19185.0,"min_ms":262.5,"g_fib":168.81,"f_fib":187.89,"f_vac":127.99,"s_g":0.347,"s_fv":0.248,"s_ff":0.364,"g_margin":93.69,"g_sig":267.2,"f_margin":134.51,"f_sig":531.7,"ff_margin":74.61,"ff_sig":203.1,"infl_g":1.56,"infl_f":1.4,"ff_1462":75.38},{"target":"Osaka","globe_km":17610.0,"flat_km":19439.0,"min_ms":276.6,"g_fib":172.46,"f_fib":190.37,"f_vac":129.68,"s_g":0.348,"s_fv":0.251,"s_ff":0.368,"g_margin":104.14,"g_sig":296.2,"f_margin":146.92,"f_sig":574.1,"ff_margin":86.23,"ff_sig":232.2,"infl_g":1.6,"infl_f":1.45,"ff_1462":87.0},{"target":"Seoul","globe_km":18358.0,"flat_km":19365.0,"min_ms":295.1,"g_fib":179.79,"f_fib":189.65,"f_vac":129.19,"s_g":0.349,"s_fv":0.247,"s_ff":0.363,"g_margin":115.31,"g_sig":327.1,"f_margin":165.91,"f_sig":658.3,"ff_margin":105.45,"ff_sig":287.8,"infl_g":1.64,"infl_f":1.56,"ff_1462":106.23}]};
+const V = DATA.vancouver, C3 = DATA.santiago, SP = C3.find(r=>r.target==="Sao Paulo");
+const NS = "http://www.w3.org/2000/svg";
+const MAG = 1;  /* error bars drawn at true scale */
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (x, d=1) => x.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+const sig = s => Math.hypot(s,.05);
+function el(p, tag, a = {}, txt){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;p.appendChild(e);return e}
+const byName = (arr,n) => arr.find(r=>r.target===n);
 
-// headline + findings
-$('hA').textContent=`${fmt(A.flat_margin_ms,1)} ms under (${fmt(A.flat_margin_sigma,1)}σ)`;
-$('dA').textContent=`${fmt(A.min_ms,1)} ms ping; flat map needs ≥ ${fmt(A.flat_vac_ms,1)} ms even at c`;
-$('hP').textContent=`${fmt(P.flat_margin_ms,1)} ms under (${fmt(P.flat_margin_sigma,1)}σ)`;
-$('dP').textContent=`${fmt(P.min_ms,1)} ms ping; flat map needs ≥ ${fmt(P.flat_vac_ms,1)} ms even at c`;
-$('fA').textContent=`${fmt(A.flat_margin_ms,1)} ± ${fmt(A.sigma_flat_vac_ms,2)} ms (${fmt(A.flat_margin_sigma,1)}σ)`;
-$('fP').textContent=`${fmt(P.flat_margin_ms,1)} ± ${fmt(P.sigma_flat_vac_ms,2)} ms (${fmt(P.flat_margin_sigma,1)}σ)`;
-$('fG').textContent=`${fmt(A.globe_margin_ms,1)} ms (${fmt(A.globe_margin_sigma,1)}σ)`;
+/* ---- text ---- */
+const vTight = [...V].sort((a,b)=>a.infl_g-b.infl_g);
+const vNear = [...V].sort((a,b)=>a.ff_margin-b.ff_margin)[0];
+document.getElementById("abstract").innerHTML =
+ `The shortest round-trip time of a signal between two cities sets an upper limit on their separation. From Vancouver and from Santiago we measured the minimum of sixteen ICMP echoes to the coastal datacentres of one provider, keeping the fastest of three independent probes, and compared each with the speed of light in fibre over two figures of the Earth: great-circle distances on the globe, and straight-line distances on the north-pole flat map. From Vancouver all ${V.length} pairs clear both floors, as expected where the two maps differ by at most 14&nbsp;%. From Santiago the round trip to S&atilde;o Paulo, ${fmt(SP.min_ms)}&nbsp;ms, is ${fmt(-SP.ff_margin)}&nbsp;ms (${fmt(-SP.ff_sig)}&sigma;) faster than light in fibre could cover the flat-map distance, and ${fmt(SP.g_margin)}&nbsp;ms (${fmt(SP.g_sig)}&sigma;) slower than the globe floor allows.`;
+document.getElementById("vanText").innerHTML =
+ `Every one of the ${V.length} pairs lies above the <span class="g">globe fibre floor</span> and above the <span class="f">flat-map fibre floor</span>. The tightest globe ratios are ${vTight.slice(0,4).map(r=>`${r.target} ${r.infl_g.toFixed(2)}`).join(", ")}: the cities on direct trans-Pacific cables. The smallest headroom is ${vNear.target}, at ${fmt(vNear.ff_margin)}&nbsp;ms on the flat map (${fmt(vNear.ff_sig)}&sigma;) and ${fmt(vNear.g_margin)}&nbsp;ms on the globe, where the fixed delay of routers outweighs a distance of only 190&nbsp;km. The slowest routes, Seattle, Mumbai and Stockholm, travel the long way round through hubs, and the traceroutes show it. As &sect; II.VII foretold, this series decides nothing; it establishes that the apparatus reads sensibly against known cable geography.`;
+const Syd=byName(C3,"Sydney"), Mel=byName(C3,"Melbourne"), Jnb=byName(C3,"Johannesburg");
+document.getElementById("sclText").innerHTML =
+ `From Santiago the flat map stretches distances far more: to Sydney and Melbourne by more than double, to Johannesburg by 2.2 times. One pair decides. The round trip to <b>S&atilde;o Paulo</b>, ${fmt(SP.globe_km,0)}&nbsp;km on the globe but ${fmt(SP.flat_km,0)}&nbsp;km on the flat map, returned in <b>${fmt(SP.min_ms)}&nbsp;ms</b>. The flat-map fibre floor is ${fmt(SP.f_fib)}&nbsp;ms, so the signal beat light in glass on that map by <span class="f">${fmt(-SP.ff_margin)}&nbsp;ms (${fmt(-SP.ff_sig)}&sigma;)</span>, and still by ${fmt(-SP.ff_1462)}&nbsp;ms with the fastest commercial glass (n&nbsp;=&nbsp;1.462). Against the globe it stands ${fmt(SP.g_margin)}&nbsp;ms (${fmt(SP.g_sig)}&sigma;) above the fibre floor, at ${SP.infl_g.toFixed(2)} times, a fair figure for a cable that must climb over the Andes.</p><p>The pairs that would decide most strongly, Sydney and Melbourne, do not decide at all, because their routes run north through Los Angeles: their round trips of ${fmt(Syd.min_ms)} and ${fmt(Mel.min_ms)}&nbsp;ms are ${Syd.infl_g.toFixed(2)} and ${Mel.infl_g.toFixed(2)} times the globe floor. Johannesburg, at ${Jnb.infl_g.toFixed(2)} times, goes round by the northern hemisphere as well. A direct South Pacific or South Atlantic route, when one is found, will settle these.`;
+document.getElementById("concl").innerHTML =
+ `From a northern station the two figures of the Earth predict floors too close together for any real cable to tell apart, and the Vancouver series, as designed, decides nothing. From Santiago the one pair with a direct overland route, S&atilde;o Paulo, answers ${fmt(-SP.ff_sig)}&sigma; faster than light in fibre could reach it on the flat map, while sitting comfortably above the globe&rsquo;s floor. No measurement in either series falls below the globe&rsquo;s fibre floor. The flat map survives the S&atilde;o Paulo result only if some stretch of that route runs outside glass, for it lies ${fmt(SP.f_margin)}&nbsp;ms above the flat-map vacuum floor.`;
 
-// tables
-const ROUTE={'Auckland':'Direct Tasman cable','Perth':'Overland: Adelaide, Melbourne','Cape Town':'Unresolved hops, then São Paulo IX','Sao Paulo':'Via London, Frankfurt','Johannesburg':'Via London, New York','Sydney':'Via LA, Dallas, Miami, Lima (control)'};
-D.filter(r=>r.run==='Southern').forEach(r=>{const tr=$('stable').appendChild(document.createElement('tr'));const yes=r.flat_margin_ms>0;
-  tr.innerHTML=`<td>${r.source} → ${r.target}</td><td class="n">${fmt(r.globe_km)}</td><td class="n">${fmt(r.flat_km)}</td><td class="n">${fmt(r.min_ms,1)}</td><td class="n">${fmt(r.globe_fiber_ms,1)}</td><td class="n">${fmt(r.flat_vac_ms,1)} ± ${fmt(r.sigma_flat_vac_ms,1)}</td><td class="n ${yes?'yes':'no'}">${yes?'+'+fmt(r.flat_margin_sigma,1):'no'}</td><td>${ROUTE[r.source]}</td>`;});
-D.filter(r=>r.run==='Vancouver').sort((a,b)=>a.globe_km-b.globe_km).forEach(r=>{const tr=$('vtable').appendChild(document.createElement('tr'));
-  tr.innerHTML=`<td>${r.target}</td><td class="n">${fmt(r.globe_km)}</td><td class="n">${fmt(r.flat_km)}</td><td class="n">${fmt(r.min_ms,1)}</td><td class="n">${fmt(r.globe_fiber_ms,1)}</td><td class="n">${fmt(r.min_ms/r.globe_fiber_ms,2)}</td><td class="n">${fmt(r.min_ms/r.flat_fiber_ms,2)}</td>`;});
+/* ---- tables ---- */
+function table(id, head, rows){
+  const t=document.getElementById(id), th=t.createTHead().insertRow();
+  head.forEach(h=>{const c=document.createElement("th");c.innerHTML=h;th.appendChild(c)});
+  const tb=t.createTBody();
+  rows.forEach(r=>{const tr=tb.insertRow(); if(r.cls) tr.className=r.cls; r.cells.forEach(v=>{tr.insertCell().innerHTML=v})});
+}
+const verdict = r => r.ff_sig < -3 ? '<span class="pill out">flat ruled out</span>' : (r.g_sig < -3 ? '<span class="pill out">globe ruled out</span>' : '<span class="pill nd">no decision</span>');
+const head = ["Station","Globe<br>km","Flat<br>km","Min RTT<br>ms","Globe fibre<br>floor &plusmn; &sigma;","Globe<br>headroom","Flat fibre<br>floor &plusmn; &sigma;","Flat<br>headroom","Flat vacuum<br>floor","Verdict"];
+const row = r => [r.target, fmt(r.globe_km,0), fmt(r.flat_km,0), fmt(r.min_ms),
+   `${fmt(r.g_fib)} &plusmn; ${r.s_g.toFixed(2)}`, `<span class="g">${fmt(r.g_margin)}</span> (${fmt(r.g_sig)}&sigma;)`,
+   `${fmt(r.f_fib)} &plusmn; ${r.s_ff.toFixed(2)}`, `<span class="f">${fmt(r.ff_margin)}</span> (${fmt(r.ff_sig)}&sigma;)`,
+   fmt(r.f_vac), verdict(r)];
+const vSorted=[...V].sort((a,b)=>a.globe_km-b.globe_km), cSorted=[...C3].sort((a,b)=>a.globe_km-b.globe_km);
+table("tab1", head, vSorted.map(r=>({cls: r.infl_g<1.3?"tight":"", cells:row(r)})));
+table("tab2", head, cSorted.map(r=>({cls: r.ff_sig < -3 ? "ruled":"", cells:row(r)})));
 
-// 1 · chart
-let show='both',zoom=false;
-function chart(){const s=$('chart');s.innerHTML='';
-  const W=720,H=400,L=58,Rt=30,T=16,B=46,xm=zoom?9000:27000,ym=zoom?180:360;
-  const X=d=>L+d/xm*(W-L-Rt),Y=t=>H-B-t/ym*(H-T-B);
-  const vac=d=>2*d/C*1000,fib=d=>vac(d)*NG;
-  el('path',{d:`M${X(0)},${Y(0)} L${X(xm)},${Y(Math.min(vac(xm),ym))} ${vac(xm)>ym?`L${X(ym*C/2000)},${Y(ym)}`:''} L${X(xm)},${Y(0)} Z`,fill:css('--wedge')},s);
-  const g=el('g',{stroke:css('--rule'),'stroke-width':1},s);
-  const xs=zoom?1500:3000,ys=zoom?30:50;
-  for(let d=0;d<=xm;d+=xs){el('line',{x1:X(d),x2:X(d),y1:Y(0),y2:Y(ym)},g);tx(s,X(d),H-B+16,fmt(d),{'text-anchor':'middle',fill:css('--muted')});}
-  for(let t=0;t<=ym;t+=ys){el('line',{x1:X(0),x2:X(xm),y1:Y(t),y2:Y(t)},g);tx(s,L-6,Y(t)+4,t,{'text-anchor':'end',fill:css('--muted')});}
-  tx(s,(L+W-Rt)/2,H-8,'distance (km)',{'text-anchor':'middle','font-size':12});
-  tx(s,14,(T+H-B)/2,'min ping (ms)',{'text-anchor':'middle','font-size':12,transform:`rotate(-90 14 ${(T+H-B)/2})`});
-  el('line',{x1:X(0),y1:Y(0),x2:X(Math.min(xm,ym*C/2000)),y2:Y(Math.min(vac(xm),ym)),stroke:css('--red'),'stroke-width':1.5},s);
-  el('line',{x1:X(0),y1:Y(0),x2:X(Math.min(xm,ym*C/2000/NG)),y2:Y(Math.min(fib(xm),ym)),stroke:css('--orange'),'stroke-width':2},s);
-  tx(s,X(Math.min(xm,ym*C/2000))-4,Y(Math.min(vac(xm),ym))+14,'vacuum',{'text-anchor':'end',fill:css('--red')});
-  tx(s,X(Math.min(xm,ym*C/2000/NG))-6,Y(Math.min(fib(xm),ym))+2,'fiber',{'text-anchor':'end',fill:css('--orange')});
-  const pts=el('g',{},s);
-  D.forEach(r=>{const y=Y(r.min_ms);if(r.min_ms>ym)return;const gx=X(r.globe_km),fx=X(r.flat_km);
-    const key=(r===A||r===P);
-    if(show==='both'&&fx<=W)el('line',{x1:gx,x2:Math.min(fx,W-Rt),y1:y,y2:y,stroke:css('--muted'),'stroke-width':.8,'stroke-dasharray':'2 3'},pts);
-    if(show!=='flat'&&r.globe_km<=xm)el('circle',{cx:gx,cy:y,r:key?5:3.6,fill:css('--accent')},pts);
-    if(show!=='globe'&&r.flat_km<=xm)el('circle',{cx:fx,cy:y,r:key?5.5:3.8,fill:'none',stroke:css('--red'),'stroke-width':key?2.2:1.4},pts);
-    if(key){const lx=show==='globe'?gx:fx;if(lx<=W-Rt)tx(pts,lx+8,y-7,r.source+' → Sydney',{'font-size':11.5,'font-weight':600});}
+/* ---- chart helpers ---- */
+function axes(svg, X, Y, xt, yt, xl, yl, L, R, T, B, W, H){
+  const ink=css("--ink"), rule=css("--rule"), sep=css("--sepia");
+  yt.forEach(v=>{const y=Y(v); el(svg,"line",{x1:L,x2:W-R,y1:y,y2:y,stroke:rule,"stroke-width":.6,"stroke-dasharray":"1 3"}); el(svg,"text",{x:L-8,y:y+5,"text-anchor":"end","font-size":15},v)});
+  xt.forEach(v=>{const x=X(v); el(svg,"line",{x1:x,x2:x,y1:T,y2:H-B,stroke:rule,"stroke-width":.6,"stroke-dasharray":"1 3"}); el(svg,"text",{x,y:H-B+20,"text-anchor":"middle","font-size":15},v.toLocaleString("en-US"))});
+  el(svg,"rect",{x:L,y:T,width:W-L-R,height:H-T-B,fill:"none",stroke:ink,"stroke-width":1.2});
+  el(svg,"text",{x:(L+W-R)/2,y:H-6,"text-anchor":"middle","font-size":16,"font-style":"italic",fill:sep},xl);
+  if(yl) el(svg,"text",{x:16,y:(T+H-B)/2,"text-anchor":"middle","font-size":16,"font-style":"italic",fill:sep,transform:`rotate(-90 16 ${(T+H-B)/2})`},yl);
+}
+function vbar(svg,x,y0,y1,color,w){el(svg,"line",{x1:x,x2:x,y1:y0,y2:y1,stroke:color,"stroke-width":w});[y0,y1].forEach(y=>el(svg,"line",{x1:x-4,x2:x+4,y1:y,y2:y,stroke:color,"stroke-width":w}))}
+function errbar(svg,y,X,m,s,color,k){ /* k = magnification */
+  const x3a=X(m-3*s*k), x3b=X(m+3*s*k);
+  el(svg,"line",{x1:x3a,x2:x3b,y1:y,y2:y,stroke:color,"stroke-width":1.5});
+  [x3a,x3b].forEach(x=>el(svg,"line",{x1:x,x2:x,y1:y-5,y2:y+5,stroke:color,"stroke-width":1.2}));
+  el(svg,"line",{x1:X(m-s*k),x2:X(m+s*k),y1:y,y2:y,stroke:color,"stroke-width":3.6});
+}
+function dot(svg,x,y,shape,color,hollow){
+  const pd=css("--paper-deep");
+  if(shape==="c") el(svg,"circle",{cx:x,cy:y,r:4.6,fill:color,stroke:pd,"stroke-width":1});
+  else el(svg,"rect",{x:x-4.3,y:y-4.3,width:8.6,height:8.6,fill:hollow?pd:color,stroke:hollow?color:pd,"stroke-width":hollow?1.8:1});
+}
+
+/* Plate I */
+(function(){
+  const svg=document.getElementById("fig1"), W=760,H=470,L=62,R=16,T=14,B=52;
+  const X=v=>L+v/18000*(W-L-R), Y=v=>H-B-v/300*(H-T-B);
+  axes(svg,X,Y,[0,3000,6000,9000,12000,15000,18000],[0,50,100,150,200,250,300],"Globe (great-circle) distance from Vancouver, km","Round-trip time, ms",L,R,T,B,W,H);
+  const g=css("--globe"), f=css("--flat"), ink=css("--ink");
+  const fib=d=>2*d*1.468/299792.458*1000;
+  el(svg,"line",{x1:X(0),y1:Y(0),x2:X(18000),y2:Y(fib(18000)),stroke:g,"stroke-width":2.4});
+  V.forEach(r=>{
+    const x=X(r.globe_km);
+    vbar(svg,x+9,Y(r.g_fib-3*r.s_g*MAG),Y(r.g_fib+3*r.s_g*MAG),g,1.4);
+    vbar(svg,x,Y(r.f_fib-3*r.s_ff*MAG),Y(r.f_fib+3*r.s_ff*MAG),f,1.4);
+    el(svg,"circle",{cx:x,cy:Y(r.f_fib),r:4.2,fill:css("--paper-deep"),stroke:f,"stroke-width":1.8});
+    vbar(svg,x,Y(r.min_ms-3*0.05*MAG),Y(r.min_ms),ink,1.4);
+    const y=Y(r.min_ms); el(svg,"path",{d:`M${x} ${y-6}L${x+6} ${y}L${x} ${y+6}L${x-6} ${y}Z`,fill:ink});
+  });
+  const lab={"Osaka":[10,14,"start"],"Sydney":[10,14,"start"],"Johannesburg":[-8,-6,"end"],"Mumbai":[8,4,"start"],"Seattle":[10,-10,"start"],"Tokyo":[-6,-12,"end"],"Stockholm":[-8,-10,"end"]};
+  V.forEach(r=>{if(lab[r.target]){const[dx,dy,an]=lab[r.target];el(svg,"text",{x:X(r.globe_km)+dx,y:Y(r.min_ms)+dy,"text-anchor":an,"font-size":14,"font-style":"italic"},r.target)}});
+  el(svg,"text",{x:X(17200),y:Y(fib(17200))+24,"text-anchor":"end","font-size":14,fill:g,"font-style":"italic"},"globe fibre floor");
+})();
+
+/* Plates II and III: headroom rows */
+function headroomPlate(id, rows, lo, hi, ticks, H){
+  const svg=document.getElementById(id), W=760,L=128,R=18,T=14,B=52;
+  const X=v=>L+(v-lo)/(hi-lo)*(W-L-R), step=(H-T-B)/rows.length, Y=i=>T+step*(i+.5);
+  axes(svg,X,()=>0,ticks,[],"Headroom above fibre floor, ms (negative = faster than light in glass allows)","",L,R,T,B,W,H);
+  el(svg,"rect",{x:X(lo),y:T,width:X(0)-X(lo),height:H-T-B,fill:css("--flat"),opacity:.07});
+  el(svg,"line",{x1:X(0),x2:X(0),y1:T,y2:H-B,stroke:css("--ink"),"stroke-width":1.6});
+  const g=css("--globe"), f=css("--flat");
+  rows.forEach((r,i)=>{
+    const y=Y(i), bad=r.ff_sig<-3;
+    if(i%2) el(svg,"rect",{x:L,y:y-step/2,width:W-L-R,height:step,fill:css("--ink"),opacity:.035});
+    el(svg,"text",{x:L-8,y:y+5,"text-anchor":"end","font-size":15,"font-weight":bad?600:400,fill:bad?f:css("--ink")},r.target.replace("Sao","São"));
+    errbar(svg,y-5,X,r.g_margin,sig(r.s_g),g,MAG); dot(svg,X(r.g_margin),y-5,"c",g);
+    errbar(svg,y+5,X,r.ff_margin,sig(r.s_ff),f,MAG); dot(svg,X(r.ff_margin),y+5,"s",f);
   });
 }
-document.querySelectorAll('[data-show]').forEach(b=>b.addEventListener('click',()=>{show=b.dataset.show;
-  document.querySelectorAll('[data-show]').forEach(o=>o.setAttribute('aria-pressed',o===b));chart();}));
-$('zoom').addEventListener('click',e=>{zoom=!zoom;e.target.setAttribute('aria-pressed',zoom);e.target.textContent=zoom?'Full range':'Zoom to 0–9,000 km';chart();});
+headroomPlate("fig2", vSorted, -10, 190, [0,25,50,75,100,125,150,175], 620);
+headroomPlate("fig3", cSorted, -20, 270, [0,50,100,150,200,250], 600);
 
-// 2 · maps
-const CITY={Perth:[-31.95,115.86],Sydney:[-33.87,151.21],Auckland:[-36.85,174.76]};
-const EDGES=[['Auckland','Sydney',A],['Perth','Sydney',P]];
-const KPX=45; // km per pixel, same for both maps
-function scalebar(s){const y=340,x=20,w=2000/KPX;el('line',{x1:x,x2:x+w,y1:y,y2:y,stroke:css('--ink'),'stroke-width':2},s);
-  [x,x+w].forEach(v=>el('line',{x1:v,x2:v,y1:y-4,y2:y+4,stroke:css('--ink'),'stroke-width':2},s));tx(s,x+w+6,y+4,'2,000 km (same scale both maps)',{'font-size':9.5,fill:css('--muted')});}
-function flatmap(){const s=$('flatmap');s.innerHTML='';const rot=145;
-  const xy=([la,lo])=>{const r=(90-la)*KD,a=(lo-rot)*Math.PI/180;return[r*Math.sin(a),r*Math.cos(a)];};
-  const cs=Object.values(CITY).map(xy),mx=(Math.min(...cs.map(c=>c[0]))+Math.max(...cs.map(c=>c[0])))/2,my=(Math.min(...cs.map(c=>c[1]))+Math.max(...cs.map(c=>c[1])))/2;
-  const pt=c=>{const [x,y]=xy(c);return[180+(x-mx)/KPX,180+(y-my)/KPX];};
-  const pole=[180-mx/KPX,180-my/KPX];
-  for(let la=-10;la>=-60;la-=10){const r=(90-la)*KD/KPX;el('circle',{cx:pole[0],cy:pole[1],r,fill:'none',stroke:css('--rule'),'stroke-width':1},s);
-    }
-  for(let lo=100;lo<=190;lo+=15){const p=pt([-80,lo]);el('line',{x1:pole[0],y1:pole[1],x2:p[0],y2:p[1],stroke:css('--rule'),'stroke-width':.7},s);}
-  el('rect',{x:0,y:0,width:360,height:28,fill:css('--plate')},s);
-  tx(s,12,18,'Flat map (north-pole centred) · pole is far above',{'font-size':11.5,'font-weight':600});
-  EDGES.forEach(([a,b,r])=>{const p=pt(CITY[a]),q=pt(CITY[b]);el('line',{x1:p[0],y1:p[1],x2:q[0],y2:q[1],stroke:css('--red'),'stroke-width':2.2},s);
-    tx(s,(p[0]+q[0])/2,(p[1]+q[1])/2+18,fmt(r.flat_km)+' km',{'font-size':11,fill:css('--red'),'font-weight':600,'text-anchor':'middle'});});
-  for(const n in CITY){const [x,y]=pt(CITY[n]);el('circle',{cx:x,cy:y,r:4.5,fill:css('--ink')},s);tx(s,x,y-9,n,{'font-size':11.5,'text-anchor':'middle'});}
-  tx(s,340,318,'rings: every 10° of latitude',{'font-size':9.5,fill:css('--muted'),'text-anchor':'end'});
-  scalebar(s);
-}
-function globemap(){const s=$('globemap');s.innerHTML='';const cx=180,cy=180,rr=R/KPX,la0=-34*Math.PI/180,lo0=146*Math.PI/180;
-  const pr=([la,lo])=>{la*=Math.PI/180;lo*=Math.PI/180;const cc=Math.sin(la0)*Math.sin(la)+Math.cos(la0)*Math.cos(la)*Math.cos(lo-lo0);
-    return[cx+rr*Math.cos(la)*Math.sin(lo-lo0),cy-rr*(Math.cos(la0)*Math.sin(la)-Math.sin(la0)*Math.cos(la)*Math.cos(lo-lo0)),cc>0];};
-  el('circle',{cx,cy,r:rr,fill:'none',stroke:css('--muted'),'stroke-width':1.2},s);
-  const line=pts=>{let d='',pen=false;pts.forEach(p=>{if(p[2]){d+=(pen?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1);pen=true;}else pen=false;});return d;};
-  for(let la=-80;la<=80;la+=10){const ps=[];for(let lo=0;lo<=360;lo+=2)ps.push(pr([la,lo]));el('path',{d:line(ps),fill:'none',stroke:css('--rule'),'stroke-width':la===0?1.2:.7},s);}
-  for(let lo=0;lo<360;lo+=15){const ps=[];for(let la=-90;la<=90;la+=2)ps.push(pr([la,lo]));el('path',{d:line(ps),fill:'none',stroke:css('--rule'),'stroke-width':.7},s);}
-  tx(s,12,18,'Globe (same three cities, same scale)',{'font-size':11.5,'font-weight':600});
-  const v=([la,lo])=>{la*=Math.PI/180;lo*=Math.PI/180;return[Math.cos(la)*Math.cos(lo),Math.cos(la)*Math.sin(lo),Math.sin(la)];};
-  const back=p=>[Math.asin(p[2])*180/Math.PI,Math.atan2(p[1],p[0])*180/Math.PI];
-  EDGES.forEach(([a,b,r])=>{const u=v(CITY[a]),w=v(CITY[b]),om=Math.acos(u[0]*w[0]+u[1]*w[1]+u[2]*w[2]),ps=[];
-    for(let i=0;i<=40;i++){const t=i/40,s1=Math.sin((1-t)*om)/Math.sin(om),s2=Math.sin(t*om)/Math.sin(om);ps.push(pr(back([s1*u[0]+s2*w[0],s1*u[1]+s2*w[1],s1*u[2]+s2*w[2]])));}
-    el('path',{d:line(ps),fill:'none',stroke:css('--accent'),'stroke-width':2.4},s);const m=ps[20];
-    tx(s,m[0]+(a==='Auckland'?6:0),m[1]+18,fmt(r.globe_km)+' km',{'font-size':11,fill:css('--accent'),'font-weight':600,'text-anchor':'middle'});});
-  for(const n in CITY){const [x,y]=pr(CITY[n]);el('circle',{cx:x,cy:y,r:4.5,fill:css('--ink')},s);if(n==='Auckland')tx(s,x+8,y-6,n,{'font-size':11.5});else tx(s,x,y-9,n,{'font-size':11.5,'text-anchor':'middle'});}
-  scalebar(s);
-}
-
-// 3 · traceroutes
-const TR={
- trA:{title:'Auckland → Sydney',r:A,hops:[[1,.28,''],[2,.42,''],[3,.81,'Auckland'],[4,24.26,'Tasman crossing'],[5,24.20,''],[6,24.20,''],[7,43.59,'slow ICMP reply'],[10,24.17,''],[11,23.90,'target']]},
- trP:{title:'Perth → Sydney',r:P,hops:[[1,1.09,''],[2,4.06,''],[5,6.49,''],[6,6.38,''],[7,6.20,''],[8,7.40,'Perth'],[9,33.12,'Adelaide'],[10,46.95,'Melbourne'],[11,46.06,''],[12,54.94,''],[13,54.56,''],[14,52.33,''],[15,53.56,''],[18,53.65,''],[19,53.63,'target']]}};
-function trace(id){const t=TR[id],s=$(id);s.innerHTML='';const W=360,H=260,L=40,Rt=12,T=28,B=30;
-  const n=t.hops[t.hops.length-1][0],ym=id==='trA'?60:90;
-  const X=h=>L+(h-1)/(n-1)*(W-L-Rt),Y=v=>H-B-v/ym*(H-T-B);
-  tx(s,12,18,t.title,{'font-size':12,'font-weight':600});
-  for(let v=0;v<=ym;v+=(id==='trA'?10:15)){el('line',{x1:L,x2:W-Rt,y1:Y(v),y2:Y(v),stroke:css('--rule')},s);tx(s,L-5,Y(v)+4,v,{'text-anchor':'end','font-size':10,fill:css('--muted')});}
-  tx(s,(L+W)/2,H-6,'hop',{'text-anchor':'middle','font-size':11,fill:css('--muted')});
-  [[t.r.flat_vac_ms,'--red','flat vacuum floor '+fmt(t.r.flat_vac_ms,1),0],[t.r.globe_fiber_ms,'--green','globe fiber floor '+fmt(t.r.globe_fiber_ms,1),1]].forEach(([v,c,lab,right])=>{
-    el('line',{x1:L,x2:W-Rt,y1:Y(v),y2:Y(v),stroke:css(c),'stroke-width':2,'stroke-dasharray':'6 4'},s);right?tx(s,W-Rt-2,Y(v)+14,lab,{'font-size':10,fill:css(c),'text-anchor':'end'}):tx(s,L+4,Y(v)-5,lab,{'font-size':10,fill:css(c)});});
-  const d=t.hops.map((h,i)=>(i?'L':'M')+X(h[0]).toFixed(1)+','+Y(h[1]).toFixed(1)).join('');
-  el('path',{d,fill:'none',stroke:css('--accent'),'stroke-width':1.5},s);
-  t.hops.forEach((h,i)=>{el('circle',{cx:X(h[0]),cy:Y(h[1]),r:3.2,fill:css('--accent')},s);
-    if(h[2]){const end=h[2]==='target'||h[2]==='Adelaide';const up=['Tasman crossing','Melbourne','slow ICMP reply'].includes(h[2])||(id==='trA'&&h[2]==='target');tx(s,X(h[0])+(end?-6:5),Y(h[1])+(up?-8:(h[2]==='Adelaide'?4:14)),h[2],{'font-size':9.5,fill:css('--ink'),'text-anchor':end?'end':'start'});}});
-}
-function draw(){chart();flatmap();globemap();trace('trA');trace('trP');}
-draw();
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+/* Plate IV: true scale */
+(function(){
+  const rows=[
+    {label:"Santiago → São Paulo",r:SP,vac:true},{label:"Santiago → Miami",r:byName(C3,"Miami")},
+    {label:"Vancouver → Seattle",r:byName(V,"Seattle")},{label:"Vancouver → Osaka",r:byName(V,"Osaka")},{label:"Vancouver → Sydney",r:byName(V,"Sydney")}];
+  const svg=document.getElementById("fig4"), W=760,H=360,L=186,R=18,T=14,B=52, lo=-15, hi=35;
+  const X=v=>L+(Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*(W-L-R), step=(H-T-B)/rows.length, Y=i=>T+step*(i+.5);
+  axes(svg,X,()=>0,[-15,-10,-5,0,5,10,15,20,25,30,35],[],"Headroom above floor, ms (true scale)","",L,R,T,B,W,H);
+  el(svg,"rect",{x:X(lo),y:T,width:X(0)-X(lo),height:H-T-B,fill:css("--flat"),opacity:.07});
+  el(svg,"text",{x:X(-7.5),y:T+16,"text-anchor":"middle","font-size":14,"font-style":"italic",fill:css("--flat")},"faster than the model allows");
+  el(svg,"line",{x1:X(0),x2:X(0),y1:T,y2:H-B,stroke:css("--ink"),"stroke-width":1.6});
+  const g=css("--globe"), f=css("--flat");
+  rows.forEach(({label,r,vac},i)=>{
+    const y=Y(i)+6;
+    el(svg,"text",{x:L-8,y:y+5,"text-anchor":"end","font-size":15},label);
+    const marks=[[r.g_margin,sig(r.s_g),g,-9,"c",false],[r.ff_margin,sig(r.s_ff),f,0,"s",false]];
+    if(vac) marks.push([r.f_margin,sig(r.s_fv),f,9,"s",true]);
+    marks.forEach(([m,s,c,dy,shape,hollow])=>{
+      if(m>hi){el(svg,"text",{x:X(hi)-4,y:y+dy+5,"text-anchor":"end","font-size":13,fill:c,"font-style":"italic"},`${m.toFixed(1)} →`);return}
+      errbar(svg,y+dy,X,m,s,c,1); dot(svg,X(m),y+dy,shape,c,hollow);
+    });
+  });
+})();
 </script>
 </body>
 </html>
