@@ -1,0 +1,3673 @@
+{
+ "n_glass": 1.462,
+ "sigma_pos_km": 25.0,
+ "mc_trials": 200,
+ "targets": {
+  "Honolulu": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 226.179,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 200.797,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 227.062,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 184.856,
+     "city": "vultr-sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 198.582,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 220.738,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 201.077,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 235.517,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 353.993,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.08,
+     "ms": 336.057,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 330.579,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 330.308,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 267.32,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 219.094,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 243.806,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 219.796,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 180.536,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 159.161,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 111.566,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 140.199,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 47.342,
+     "city": "Los Angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 68.899,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 0.248,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.48,
+     "lon": 0.17,
+     "ms": 192.365,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 174.39,
+     "city": "London"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 183.999,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 189.597,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 152.089,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 221.747,
+     "city": "Singapore"
+    },
+    {
+     "lat": 1.38,
+     "lon": 103.96,
+     "ms": 218.04,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 286.744,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 66.31,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 47.59,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 111.721,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 106.527,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 180.539,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 196.759,
+     "city": "vultr-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 145.917,
+     "city": "aws-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 156.223,
+     "city": "aws-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 177.701,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 213.162,
+     "city": "aws-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 282.986,
+     "city": "vultr-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 216.148,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 344.311,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 241.656,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 25.4,
+     "sigma_km": 3.0,
+     "z": 8.6,
+     "mc_p05_km": 15.7,
+     "mc_p95_km": 25.2,
+     "feasible": true,
+     "best_lat": 21.35,
+     "best_lon": -157.88,
+     "km_from_labelled_city": 5.0,
+     "binding": [
+      "Honolulu 0.2 ms",
+      "Los Angeles 47.3 ms",
+      "vultr-silicon-valley 47.6 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -1.4,
+     "sigma_km": 20.9,
+     "z": -0.1,
+     "mc_p05_km": -44.6,
+     "mc_p95_km": 22.1,
+     "feasible": false,
+     "best_lat": 21.51,
+     "best_lon": -157.729,
+     "km_from_labelled_city": 28.0,
+     "binding": [
+      "Honolulu 0.2 ms",
+      "Los Angeles 47.3 ms",
+      "vultr-silicon-valley 47.6 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 37.2,
+     "sigma_km": 4.4,
+     "z": 8.4,
+     "mc_p05_km": 22.6,
+     "mc_p95_km": 36.7,
+     "feasible": true,
+     "best_lat": 21.35,
+     "best_lon": -157.88,
+     "km_from_labelled_city": 5.0,
+     "binding": [
+      "Honolulu 0.2 ms",
+      "Los Angeles 47.3 ms",
+      "vultr-silicon-valley 47.6 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 37.2,
+     "sigma_km": 5.0,
+     "z": 7.5,
+     "mc_p05_km": 21.7,
+     "mc_p95_km": 36.6,
+     "feasible": true,
+     "best_lat": 21.35,
+     "best_lon": -157.88,
+     "km_from_labelled_city": 5.0,
+     "binding": [
+      "Honolulu 0.2 ms",
+      "Los Angeles 47.3 ms",
+      "vultr-silicon-valley 47.6 ms"
+     ]
+    }
+   }
+  },
+  "Johannesburg": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 362.638,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 381.893,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 407.011,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 323.918,
+     "city": "vultr-sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 303.653,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 311.05,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 347.418,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 340.36,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 0.548,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 17.524,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 51.631,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 76.514,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 343.055,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 374.468,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 346.864,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 335.787,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 315.709,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 297.305,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 268.957,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 296.084,
+     "city": "Los Angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 291.626,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 355.594,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.48,
+     "lon": 0.17,
+     "ms": 162.999,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 163.018,
+     "city": "London"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 162.19,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 170.489,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 314.78,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 320.329,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 279.286,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 318.443,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 307.248,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 344.297,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 287.059,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 239.255,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 170.718,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 184.895,
+     "city": "aws-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 241.693,
+     "city": "vultr-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 258.637,
+     "city": "vultr-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 276.968,
+     "city": "vultr-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 174.812,
+     "city": "vultr-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 289.189,
+     "city": "vultr-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 333.507,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 367.893,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 56.2,
+     "sigma_km": 3.1,
+     "z": 18.4,
+     "mc_p05_km": 46.4,
+     "mc_p95_km": 55.7,
+     "feasible": true,
+     "best_lat": -26.2,
+     "best_lon": 28.04,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Johannesburg 0.5 ms",
+      "Cape Town 17.5 ms",
+      "Nairobi 51.6 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -304.3,
+     "sigma_km": 49.7,
+     "z": -6.1,
+     "mc_p05_km": -386.0,
+     "mc_p95_km": -213.3,
+     "feasible": false,
+     "best_lat": -28.641,
+     "best_lon": 26.999,
+     "km_from_labelled_city": 362.0,
+     "binding": [
+      "Cape Town 17.5 ms",
+      "Johannesburg 0.5 ms",
+      "Nairobi 51.6 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 82.1,
+     "sigma_km": 4.5,
+     "z": 18.3,
+     "mc_p05_km": 68.3,
+     "mc_p95_km": 81.7,
+     "feasible": true,
+     "best_lat": -26.2,
+     "best_lon": 28.04,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Johannesburg 0.5 ms",
+      "Cape Town 17.5 ms",
+      "Nairobi 51.6 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 82.1,
+     "sigma_km": 7.3,
+     "z": 11.2,
+     "mc_p05_km": 66.6,
+     "mc_p95_km": 81.6,
+     "feasible": true,
+     "best_lat": -26.2,
+     "best_lon": 28.04,
+     "km_from_labelled_city": 2.0,
+     "binding": [
+      "Johannesburg 0.5 ms",
+      "Cape Town 17.5 ms",
+      "Nairobi 51.6 ms"
+     ]
+    }
+   }
+  },
+  "London": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 268.941,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 279.964,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 251.006,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 243.775,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 246.015,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 242.527,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 259.133,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 206.551,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 152.52,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 143.523,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 154.435,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 104.979,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 178.286,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -23.53,
+     "lon": -46.79,
+     "ms": 179.737,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 223.157,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 187.67,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 170.74,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 140.688,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 104.403,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 94.679,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 128.599,
+     "city": "vultr-los-angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 129.201,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 175.359,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.53,
+     "lon": 0.08,
+     "ms": 2.451,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 2.143,
+     "city": "London"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 16.004,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 14.889,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 220.948,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 156.339,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 130.404,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 131.422,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 137.051,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 174.74,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 107.21,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 70.786,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 5.914,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 28.742,
+     "city": "vultr-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 220.433,
+     "city": "vultr-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 230.299,
+     "city": "aws-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 229.631,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 210.562,
+     "city": "vultr-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 136.71,
+     "city": "aws-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 183.115,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 165.787,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 214.929,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 219.7,
+     "sigma_km": 10.9,
+     "z": 20.2,
+     "mc_p05_km": 184.5,
+     "mc_p95_km": 218.9,
+     "feasible": true,
+     "best_lat": 51.51,
+     "best_lon": -0.13,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "London 2.1 ms",
+      "London 2.5 ms",
+      "vultr-amsterdam 5.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 219.7,
+     "sigma_km": 12.3,
+     "z": 17.9,
+     "mc_p05_km": 178.6,
+     "mc_p95_km": 217.8,
+     "feasible": true,
+     "best_lat": 51.51,
+     "best_lon": -0.13,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "London 2.1 ms",
+      "vultr-amsterdam 5.9 ms",
+      "London 2.5 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 321.2,
+     "sigma_km": 7.9,
+     "z": 40.6,
+     "mc_p05_km": 295.7,
+     "mc_p95_km": 320.6,
+     "feasible": true,
+     "best_lat": 51.51,
+     "best_lon": -0.13,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "London 2.1 ms",
+      "London 2.5 ms",
+      "vultr-amsterdam 5.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 321.2,
+     "sigma_km": 8.0,
+     "z": 39.9,
+     "mc_p05_km": 292.3,
+     "mc_p95_km": 319.1,
+     "feasible": true,
+     "best_lat": 51.51,
+     "best_lon": -0.13,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "London 2.1 ms",
+      "London 2.5 ms",
+      "vultr-amsterdam 5.9 ms"
+     ]
+    }
+   }
+  },
+  "Los Angeles": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 153.284,
+     "city": "Auckland"
+    },
+    {
+     "lat": -36.87,
+     "lon": 174.77,
+     "ms": 136.456,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 136.54,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 155.801,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 133.146,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 149.617,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 161.569,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 146.347,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 179.996,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 306.293,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 271.499,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 287.14,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 228.599,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 167.345,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -23.53,
+     "lon": -46.79,
+     "ms": 170.211,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 170.264,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 153.468,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 128.372,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 95.959,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 60.328,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 63.892,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 0.612,
+     "city": "Los Angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 29.838,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 56.069,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.48,
+     "lon": 0.08,
+     "ms": 135.187,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 128.696,
+     "city": "vultr-london"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 147.058,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 138.251,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 99.139,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 180.531,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 217.552,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 25.87,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 8.037,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 54.436,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 62.104,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 58.134,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 134.704,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 156.163,
+     "city": "aws-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 98.133,
+     "city": "vultr-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 103.952,
+     "city": "vultr-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 122.684,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 187.547,
+     "city": "aws-singapore"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 149.732,
+     "city": "vultr-melbourne"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 223.794,
+     "city": "vultr-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 171.968,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 297.652,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 193.163,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 62.7,
+     "sigma_km": 2.9,
+     "z": 21.5,
+     "mc_p05_km": 52.9,
+     "mc_p95_km": 62.3,
+     "feasible": true,
+     "best_lat": 34.05,
+     "best_lon": -118.24,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "Los Angeles 0.6 ms",
+      "vultr-silicon-valley 8.0 ms",
+      "vultr-seattle 25.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -728.1,
+     "sigma_km": 24.0,
+     "z": -30.3,
+     "mc_p05_km": -771.4,
+     "mc_p95_km": -696.5,
+     "feasible": false,
+     "best_lat": 37.124,
+     "best_lon": -125.0,
+     "km_from_labelled_city": 791.0,
+     "binding": [
+      "Los Angeles 0.6 ms",
+      "Sydney 133.1 ms",
+      "Melbourne 149.6 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 91.7,
+     "sigma_km": 4.4,
+     "z": 20.8,
+     "mc_p05_km": 78.7,
+     "mc_p95_km": 91.4,
+     "feasible": true,
+     "best_lat": 34.05,
+     "best_lon": -118.24,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "Los Angeles 0.6 ms",
+      "vultr-silicon-valley 8.0 ms",
+      "vultr-seattle 25.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 91.7,
+     "sigma_km": 4.4,
+     "z": 21.0,
+     "mc_p05_km": 77.5,
+     "mc_p95_km": 91.2,
+     "feasible": true,
+     "best_lat": 34.05,
+     "best_lon": -118.24,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "Los Angeles 0.6 ms",
+      "vultr-silicon-valley 8.0 ms",
+      "vultr-seattle 25.9 ms"
+     ]
+    }
+   }
+  },
+  "Melbourne": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 35.907,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 44.288,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 13.275,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 10.559,
+     "city": "aws-sydney"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 1.342,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 8.34,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 28.865,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 40.94,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 373.41,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 239.601,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 331.929,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 379.959,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 308.166,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 337.869,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 308.025,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 272.103,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 240.123,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 217.35,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 202.681,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 149.719,
+     "city": "vultr-los-angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 174.859,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 199.264,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.53,
+     "lon": 0.08,
+     "ms": 286.252,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 253.685,
+     "city": "London"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 266.09,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 236.512,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 110.795,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 84.258,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 365.793,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 178.645,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 164.343,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 199.272,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 213.991,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 201.04,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 267.562,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 271.001,
+     "city": "vultr-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 149.216,
+     "city": "aws-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 138.33,
+     "city": "vultr-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 156.53,
+     "city": "vultr-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 84.177,
+     "city": "aws-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 169.556,
+     "city": "vultr-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 316.202,
+     "city": "aws-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 312.433,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 333.292,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 137.6,
+     "sigma_km": 3.0,
+     "z": 45.9,
+     "mc_p05_km": 128.5,
+     "mc_p95_km": 137.4,
+     "feasible": true,
+     "best_lat": -37.75,
+     "best_lon": 144.76,
+     "km_from_labelled_city": 19.0,
+     "binding": [
+      "Melbourne 1.3 ms",
+      "aws-sydney 10.6 ms",
+      "Sydney 13.3 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -2875.0,
+     "sigma_km": 41.7,
+     "z": -69.0,
+     "mc_p05_km": -2946.5,
+     "mc_p95_km": -2806.2,
+     "feasible": false,
+     "best_lat": -21.664,
+     "best_lon": 147.062,
+     "km_from_labelled_city": 1860.0,
+     "binding": [
+      "Auckland 35.9 ms",
+      "Perth 40.9 ms",
+      "Wellington 44.3 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 201.2,
+     "sigma_km": 4.4,
+     "z": 45.4,
+     "mc_p05_km": 187.6,
+     "mc_p95_km": 200.7,
+     "feasible": true,
+     "best_lat": -37.75,
+     "best_lon": 144.76,
+     "km_from_labelled_city": 19.0,
+     "binding": [
+      "Melbourne 1.3 ms",
+      "aws-sydney 10.6 ms",
+      "Melbourne 8.3 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -1116.4,
+     "sigma_km": 37.1,
+     "z": -30.1,
+     "mc_p05_km": -1191.0,
+     "mc_p95_km": -1074.3,
+     "feasible": false,
+     "best_lat": -27.354,
+     "best_lon": 147.421,
+     "km_from_labelled_city": 1301.0,
+     "binding": [
+      "Auckland 35.9 ms",
+      "Melbourne 1.3 ms",
+      "Perth 40.9 ms"
+     ]
+    }
+   }
+  },
+  "Mumbai": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 169.199,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 181.704,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 149.744,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 145.522,
+     "city": "aws-sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 154.39,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 170.709,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 171.584,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 150.521,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 314.667,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 264.851,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 214.847,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 208.781,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 324.074,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 349.866,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 300.025,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 280.355,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 352.79,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 296.6,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 297.059,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 218.981,
+     "city": "vultr-los-angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 242.312,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 284.21,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.53,
+     "lon": 0.08,
+     "ms": 113.709,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 116.172,
+     "city": "aws-london"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 126.134,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 125.898,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 125.958,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 50.87,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 1.189,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 245.744,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 243.515,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 282.997,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 298.32,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 294.083,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 137.744,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 147.729,
+     "city": "aws-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 131.618,
+     "city": "aws-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 132.211,
+     "city": "vultr-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 120.149,
+     "city": "vultr-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 59.909,
+     "city": "aws-singapore"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 279.18,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 289.114,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 379.769,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 121.9,
+     "sigma_km": 3.2,
+     "z": 38.5,
+     "mc_p05_km": 110.8,
+     "mc_p95_km": 121.4,
+     "feasible": true,
+     "best_lat": 19.07,
+     "best_lon": 72.88,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Mumbai 1.2 ms",
+      "Singapore 50.9 ms",
+      "aws-singapore 59.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -25.9,
+     "sigma_km": 21.9,
+     "z": -1.2,
+     "mc_p05_km": -66.0,
+     "mc_p95_km": 7.3,
+     "feasible": false,
+     "best_lat": 19.748,
+     "best_lon": 73.808,
+     "km_from_labelled_city": 147.0,
+     "binding": [
+      "Mumbai 1.2 ms",
+      "Auckland 169.2 ms",
+      "Singapore 50.9 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 178.2,
+     "sigma_km": 4.7,
+     "z": 37.8,
+     "mc_p05_km": 162.6,
+     "mc_p95_km": 177.3,
+     "feasible": true,
+     "best_lat": 19.07,
+     "best_lon": 72.88,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Mumbai 1.2 ms",
+      "Singapore 50.9 ms",
+      "aws-singapore 59.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 178.2,
+     "sigma_km": 4.2,
+     "z": 42.3,
+     "mc_p05_km": 165.0,
+     "mc_p95_km": 177.7,
+     "feasible": true,
+     "best_lat": 19.07,
+     "best_lon": 72.88,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Mumbai 1.2 ms",
+      "Singapore 50.9 ms",
+      "aws-singapore 59.9 ms"
+     ]
+    }
+   }
+  },
+  "Santiago": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 309.622,
+     "city": "Auckland"
+    },
+    {
+     "lat": -36.87,
+     "lon": 174.77,
+     "ms": 340.993,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 305.517,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 313.492,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 346.038,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 301.381,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 341.936,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 306.163,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 393.138,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 370.379,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 329.499,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 350.965,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 283.859,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 48.715,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -23.53,
+     "lon": -46.79,
+     "ms": 47.868,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 20.94,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 1.818,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 30.445,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 66.574,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 99.013,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 152.829,
+     "city": "Los Angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 180.59,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 211.826,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.53,
+     "lon": 0.08,
+     "ms": 223.799,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 188.256,
+     "city": "London"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 200.515,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 239.322,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 259.241,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 339.559,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 348.59,
+     "city": "Mumbai"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 186.4,
+     "sigma_km": 3.2,
+     "z": 58.6,
+     "mc_p05_km": 176.1,
+     "mc_p95_km": 186.0,
+     "feasible": true,
+     "best_lat": -33.46,
+     "best_lon": -70.65,
+     "km_from_labelled_city": 2.0,
+     "binding": [
+      "Santiago 1.8 ms",
+      "Lima 30.4 ms",
+      "Buenos Aires 20.9 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -310.1,
+     "sigma_km": 47.2,
+     "z": -6.6,
+     "mc_p05_km": -391.7,
+     "mc_p95_km": -240.9,
+     "feasible": false,
+     "best_lat": -32.82,
+     "best_lon": -68.594,
+     "km_from_labelled_city": 501.0,
+     "binding": [
+      "Buenos Aires 20.9 ms",
+      "Santiago 1.8 ms",
+      "Sao Paulo 47.9 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 272.5,
+     "sigma_km": 4.3,
+     "z": 62.8,
+     "mc_p05_km": 258.5,
+     "mc_p95_km": 272.1,
+     "feasible": true,
+     "best_lat": -33.46,
+     "best_lon": -70.65,
+     "km_from_labelled_city": 2.0,
+     "binding": [
+      "Santiago 1.8 ms",
+      "Buenos Aires 20.9 ms",
+      "Lima 30.4 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 225.7,
+     "sigma_km": 44.6,
+     "z": 5.1,
+     "mc_p05_km": 130.2,
+     "mc_p95_km": 270.8,
+     "feasible": true,
+     "best_lat": -33.19,
+     "best_lon": -70.5,
+     "km_from_labelled_city": 50.0,
+     "binding": [
+      "Buenos Aires 20.9 ms",
+      "Santiago 1.8 ms",
+      "Sao Paulo 47.9 ms"
+     ]
+    }
+   }
+  },
+  "Sao Paulo": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 302.418,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 314.943,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 309.047,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 298.113,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 333.223,
+     "city": "vultr-melbourne"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 325.446,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 317.094,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 344.834,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 340.65,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 316.694,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 324.431,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 281.832,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 1.389,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -23.53,
+     "lon": -46.79,
+     "ms": 0.358,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 29.119,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 47.78,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 78.213,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 141.203,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 110.768,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 104.854,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 167.611,
+     "city": "Los Angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 171.643,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 216.222,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.48,
+     "lon": 0.08,
+     "ms": 201.395,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 179.25,
+     "city": "vultr-london"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 191.374,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 209.747,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 268.936,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 337.82,
+     "city": "Singapore"
+    },
+    {
+     "lat": 1.38,
+     "lon": 103.96,
+     "ms": 346.975,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 263.286,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 172.033,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 176.691,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 216.156,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 104.712,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 112.809,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 188.03,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 216.14,
+     "city": "vultr-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 269.244,
+     "city": "aws-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 286.791,
+     "city": "vultr-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 298.148,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 330.115,
+     "city": "vultr-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 279.091,
+     "city": "vultr-mumbai"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 333.525,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 53.231,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 36.7,
+     "sigma_km": 3.1,
+     "z": 11.8,
+     "mc_p05_km": 26.8,
+     "mc_p95_km": 36.5,
+     "feasible": true,
+     "best_lat": -23.53,
+     "best_lon": -46.79,
+     "km_from_labelled_city": 16.0,
+     "binding": [
+      "Sao Paulo 0.4 ms",
+      "Sao Paulo 1.4 ms",
+      "Buenos Aires 29.1 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -311.8,
+     "sigma_km": 37.3,
+     "z": -8.4,
+     "mc_p05_km": -389.6,
+     "mc_p95_km": -262.2,
+     "feasible": false,
+     "best_lat": -24.079,
+     "best_lon": -48.344,
+     "km_from_labelled_city": 383.0,
+     "binding": [
+      "Santiago 47.8 ms",
+      "Sao Paulo 0.4 ms",
+      "Sao Paulo 1.4 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 53.7,
+     "sigma_km": 4.4,
+     "z": 12.2,
+     "mc_p05_km": 38.3,
+     "mc_p95_km": 53.1,
+     "feasible": true,
+     "best_lat": -23.53,
+     "best_lon": -46.79,
+     "km_from_labelled_city": 16.0,
+     "binding": [
+      "Sao Paulo 0.4 ms",
+      "Sao Paulo 1.4 ms",
+      "Buenos Aires 29.1 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 53.7,
+     "sigma_km": 9.1,
+     "z": 5.9,
+     "mc_p05_km": 29.7,
+     "mc_p95_km": 53.2,
+     "feasible": true,
+     "best_lat": -23.53,
+     "best_lon": -46.79,
+     "km_from_labelled_city": 35.0,
+     "binding": [
+      "Sao Paulo 0.4 ms",
+      "Sao Paulo 1.4 ms",
+      "Buenos Aires 29.1 ms"
+     ]
+    }
+   }
+  },
+  "Singapore": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 114.984,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 124.891,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 93.493,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 92.592,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 100.439,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -37.75,
+     "lon": 144.76,
+     "ms": 83.353,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 106.313,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 48.521,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 256.161,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 237.652,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 130.034,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 263.901,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 329.364,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -23.53,
+     "lon": -46.79,
+     "ms": 331.941,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 368.008,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -34.85,
+     "lon": -58.53,
+     "ms": 339.615,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 314.284,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 290.331,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 265.827,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 266.612,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 242.55,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 170.594,
+     "city": "Los Angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 195.937,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 219.107,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.48,
+     "lon": 0.08,
+     "ms": 227.767,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 208.712,
+     "city": "vultr-london"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 153.394,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 154.007,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 65.338,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 1.238,
+     "city": "Singapore"
+    },
+    {
+     "lat": 1.38,
+     "lon": 103.96,
+     "ms": 1.226,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 60.162,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 164.133,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 174.109,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 218.883,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 249.756,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 230.706,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 212.492,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 173.328,
+     "city": "vultr-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 69.832,
+     "city": "aws-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 75.334,
+     "city": "aws-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 66.357,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 93.868,
+     "city": "vultr-melbourne"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 55.423,
+     "city": "vultr-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 330.188,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 174.828,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 366.363,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 118.4,
+     "sigma_km": 12.5,
+     "z": 9.5,
+     "mc_p05_km": 75.3,
+     "mc_p95_km": 116.9,
+     "feasible": true,
+     "best_lat": 1.34,
+     "best_lon": 103.908,
+     "km_from_labelled_city": 10.0,
+     "binding": [
+      "Singapore 1.2 ms",
+      "Singapore 1.2 ms",
+      "Perth 48.5 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -1206.8,
+     "sigma_km": 27.2,
+     "z": -44.3,
+     "mc_p05_km": -1262.3,
+     "mc_p95_km": -1173.4,
+     "feasible": false,
+     "best_lat": 4.179,
+     "best_lon": 111.5,
+     "km_from_labelled_city": 1337.0,
+     "binding": [
+      "Auckland 115.0 ms",
+      "Singapore 1.2 ms",
+      "Singapore 1.2 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 176.8,
+     "sigma_km": 11.8,
+     "z": 15.0,
+     "mc_p05_km": 135.9,
+     "mc_p95_km": 172.1,
+     "feasible": true,
+     "best_lat": 1.338,
+     "best_lon": 103.913,
+     "km_from_labelled_city": 10.0,
+     "binding": [
+      "Singapore 1.2 ms",
+      "Singapore 1.2 ms",
+      "Perth 48.5 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 173.9,
+     "sigma_km": 17.0,
+     "z": 10.2,
+     "mc_p05_km": 118.7,
+     "mc_p95_km": 172.1,
+     "feasible": true,
+     "best_lat": 1.349,
+     "best_lon": 103.906,
+     "km_from_labelled_city": 15.0,
+     "binding": [
+      "Singapore 1.2 ms",
+      "Singapore 1.2 ms",
+      "Perth 48.5 ms"
+     ]
+    }
+   }
+  },
+  "Sydney": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 23.711,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 33.323,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 1.487,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 0.303,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 11.114,
+     "city": "vultr-melbourne"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 11.081,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 15.061,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 47.22,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.08,
+     "ms": 479.356,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 440.921,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 398.493,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 283.693,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 413.599,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 302.007,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 337.744,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -34.85,
+     "lon": -58.53,
+     "ms": 359.704,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 296.889,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 273.115,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 228.836,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 190.615,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 138.418,
+     "city": "vultr-los-angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 162.792,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 187.307,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.48,
+     "lon": 0.08,
+     "ms": 289.389,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 249.968,
+     "city": "London"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 281.342,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 331.434,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 100.176,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 92.841,
+     "city": "Singapore"
+    },
+    {
+     "lat": 1.38,
+     "lon": 103.96,
+     "ms": 92.326,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 173.604,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 170.014,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 153.469,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 184.791,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 204.806,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 200.852,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 262.662,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 267.804,
+     "city": "vultr-stockholm"
+    },
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "ms": 106.178,
+     "city": "vultr-tokyo"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 138.085,
+     "city": "aws-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 139.644,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 95.825,
+     "city": "aws-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 158.624,
+     "city": "aws-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 318.949,
+     "city": "vultr-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 323.887,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 332.326,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 31.1,
+     "sigma_km": 3.5,
+     "z": 8.9,
+     "mc_p05_km": 20.2,
+     "mc_p95_km": 30.6,
+     "feasible": true,
+     "best_lat": -33.87,
+     "best_lon": 151.21,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "Sydney 0.3 ms",
+      "Sydney 1.5 ms",
+      "Auckland 23.7 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -3187.9,
+     "sigma_km": 46.7,
+     "z": -68.2,
+     "mc_p05_km": -3271.8,
+     "mc_p95_km": -3116.1,
+     "feasible": false,
+     "best_lat": -14.923,
+     "best_lon": 152,
+     "km_from_labelled_city": 2114.0,
+     "binding": [
+      "Perth 47.2 ms",
+      "Auckland 23.7 ms",
+      "Wellington 33.3 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 45.4,
+     "sigma_km": 4.5,
+     "z": 10.1,
+     "mc_p05_km": 30.6,
+     "mc_p95_km": 45.0,
+     "feasible": true,
+     "best_lat": -33.87,
+     "best_lon": 151.21,
+     "km_from_labelled_city": 0.0,
+     "binding": [
+      "Sydney 0.3 ms",
+      "Sydney 1.5 ms",
+      "Melbourne 11.1 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": -1493.7,
+     "sigma_km": 43.8,
+     "z": -34.1,
+     "mc_p05_km": -1577.3,
+     "mc_p95_km": -1434.1,
+     "feasible": false,
+     "best_lat": -22.353,
+     "best_lon": 154,
+     "km_from_labelled_city": 1431.0,
+     "binding": [
+      "Auckland 23.7 ms",
+      "Perth 47.2 ms",
+      "Sydney 0.3 ms"
+     ]
+    }
+   }
+  },
+  "Tokyo": {
+   "landmarks": [
+    {
+     "lat": -36.85,
+     "lon": 174.76,
+     "ms": 192.935,
+     "city": "Auckland"
+    },
+    {
+     "lat": -41.29,
+     "lon": 174.78,
+     "ms": 146.057,
+     "city": "Wellington"
+    },
+    {
+     "lat": -33.77,
+     "lon": 150.9,
+     "ms": 100.512,
+     "city": "Sydney"
+    },
+    {
+     "lat": -33.87,
+     "lon": 151.21,
+     "ms": 98.829,
+     "city": "Sydney"
+    },
+    {
+     "lat": -37.81,
+     "lon": 144.96,
+     "ms": 149.465,
+     "city": "vultr-melbourne"
+    },
+    {
+     "lat": -37.84,
+     "lon": 144.93,
+     "ms": 149.393,
+     "city": "Melbourne"
+    },
+    {
+     "lat": -27.47,
+     "lon": 153.03,
+     "ms": 114.438,
+     "city": "Brisbane"
+    },
+    {
+     "lat": -31.95,
+     "lon": 115.86,
+     "ms": 112.689,
+     "city": "Perth"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.04,
+     "ms": 308.034,
+     "city": "Johannesburg"
+    },
+    {
+     "lat": -33.93,
+     "lon": 18.42,
+     "ms": 247.121,
+     "city": "Cape Town"
+    },
+    {
+     "lat": -1.28,
+     "lon": 36.82,
+     "ms": 200.392,
+     "city": "Nairobi"
+    },
+    {
+     "lat": 6.45,
+     "lon": 3.39,
+     "ms": 336.045,
+     "city": "Lagos"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.64,
+     "ms": 286.995,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -23.53,
+     "lon": -46.79,
+     "ms": 279.992,
+     "city": "Sao Paulo"
+    },
+    {
+     "lat": -34.61,
+     "lon": -58.38,
+     "ms": 277.755,
+     "city": "Buenos Aires"
+    },
+    {
+     "lat": -33.46,
+     "lon": -70.65,
+     "ms": 261.269,
+     "city": "Santiago"
+    },
+    {
+     "lat": -12.04,
+     "lon": -77.03,
+     "ms": 233.526,
+     "city": "Lima"
+    },
+    {
+     "lat": 4.61,
+     "lon": -74.08,
+     "ms": 206.147,
+     "city": "Bogota"
+    },
+    {
+     "lat": 25.81,
+     "lon": -80.23,
+     "ms": 166.248,
+     "city": "Miami"
+    },
+    {
+     "lat": 25.77,
+     "lon": -80.19,
+     "ms": 180.097,
+     "city": "Miami"
+    },
+    {
+     "lat": 34.05,
+     "lon": -118.24,
+     "ms": 98.162,
+     "city": "vultr-los-angeles"
+    },
+    {
+     "lat": 49.25,
+     "lon": -123.12,
+     "ms": 139.984,
+     "city": "Vancouver"
+    },
+    {
+     "lat": 21.35,
+     "lon": -157.88,
+     "ms": 147.049,
+     "city": "Honolulu"
+    },
+    {
+     "lat": 51.53,
+     "lon": 0.08,
+     "ms": 249.142,
+     "city": "London"
+    },
+    {
+     "lat": 51.51,
+     "lon": -0.13,
+     "ms": 220.419,
+     "city": "vultr-london"
+    },
+    {
+     "lat": 50.1,
+     "lon": 8.63,
+     "ms": 245.298,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 50.12,
+     "lon": 8.68,
+     "ms": 254.44,
+     "city": "Frankfurt"
+    },
+    {
+     "lat": 35.69,
+     "lon": 139.69,
+     "ms": 0.778,
+     "city": "Tokyo"
+    },
+    {
+     "lat": 1.29,
+     "lon": 103.85,
+     "ms": 66.151,
+     "city": "Singapore"
+    },
+    {
+     "lat": 19.07,
+     "lon": 72.88,
+     "ms": 119.871,
+     "city": "Mumbai"
+    },
+    {
+     "lat": 47.61,
+     "lon": -122.33,
+     "ms": 93.839,
+     "city": "vultr-seattle"
+    },
+    {
+     "lat": 37.35,
+     "lon": -121.95,
+     "ms": 104.407,
+     "city": "vultr-silicon-valley"
+    },
+    {
+     "lat": 21.31,
+     "lon": -157.86,
+     "ms": 146.387,
+     "city": "vultr-honolulu"
+    },
+    {
+     "lat": 25.76,
+     "lon": -80.19,
+     "ms": 165.565,
+     "city": "vultr-miami"
+    },
+    {
+     "lat": 40.55,
+     "lon": -74.46,
+     "ms": 149.867,
+     "city": "vultr-new-jersey"
+    },
+    {
+     "lat": 52.37,
+     "lon": 4.9,
+     "ms": 227.253,
+     "city": "vultr-amsterdam"
+    },
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "ms": 255.371,
+     "city": "aws-stockholm"
+    },
+    {
+     "lat": 34.69,
+     "lon": 135.5,
+     "ms": 8.303,
+     "city": "vultr-osaka"
+    },
+    {
+     "lat": 37.57,
+     "lon": 126.98,
+     "ms": 28.276,
+     "city": "aws-seoul"
+    },
+    {
+     "lat": 1.35,
+     "lon": 103.82,
+     "ms": 68.016,
+     "city": "aws-singapore"
+    },
+    {
+     "lat": 19.08,
+     "lon": 72.88,
+     "ms": 122.34,
+     "city": "aws-mumbai"
+    },
+    {
+     "lat": -23.55,
+     "lon": -46.63,
+     "ms": 270.759,
+     "city": "aws-sao-paulo"
+    },
+    {
+     "lat": -26.2,
+     "lon": 28.05,
+     "ms": 241.677,
+     "city": "vultr-johannesburg"
+    },
+    {
+     "lat": -33.45,
+     "lon": -70.67,
+     "ms": 295.619,
+     "city": "aws-santiago"
+    }
+   ],
+   "glass": {
+    "globe": {
+     "max_slack_km": 79.8,
+     "sigma_km": 3.2,
+     "z": 24.8,
+     "mc_p05_km": 69.3,
+     "mc_p95_km": 79.4,
+     "feasible": true,
+     "best_lat": 35.69,
+     "best_lon": 139.69,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Tokyo 0.8 ms",
+      "vultr-osaka 8.3 ms",
+      "vultr-los-angeles 98.2 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 79.8,
+     "sigma_km": 3.1,
+     "z": 26.0,
+     "mc_p05_km": 69.8,
+     "mc_p95_km": 79.4,
+     "feasible": true,
+     "best_lat": 35.69,
+     "best_lon": 139.69,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Tokyo 0.8 ms",
+      "vultr-osaka 8.3 ms",
+      "vultr-los-angeles 98.2 ms"
+     ]
+    }
+   },
+   "vacuum": {
+    "globe": {
+     "max_slack_km": 116.6,
+     "sigma_km": 4.7,
+     "z": 24.9,
+     "mc_p05_km": 102.2,
+     "mc_p95_km": 115.9,
+     "feasible": true,
+     "best_lat": 35.69,
+     "best_lon": 139.69,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Tokyo 0.8 ms",
+      "vultr-osaka 8.3 ms",
+      "aws-seoul 28.3 ms"
+     ]
+    },
+    "flat": {
+     "max_slack_km": 116.6,
+     "sigma_km": 4.9,
+     "z": 23.8,
+     "mc_p05_km": 100.2,
+     "mc_p95_km": 115.9,
+     "feasible": true,
+     "best_lat": 35.69,
+     "best_lon": 139.69,
+     "km_from_labelled_city": 1.0,
+     "binding": [
+      "Tokyo 0.8 ms",
+      "vultr-osaka 8.3 ms",
+      "aws-seoul 28.3 ms"
+     ]
+    }
+   }
+  }
+ }
+}

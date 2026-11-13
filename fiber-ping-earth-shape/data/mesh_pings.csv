@@ -1,0 +1,757 @@
+src,src_provider,src_city,src_lat,src_lon,dst,dst_provider,dst_city,dst_lat,dst_lon,sent,replies,verified_full,kernel_stamped,min_ms,median_ms
+vultr-london,vultr,London,51.51,-0.13,aws-london,aws,London,51.51,-0.13,30,30,30,30,1.477,1.58
+vultr-london,vultr,London,51.51,-0.13,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,139.762,139.804
+vultr-london,vultr,London,51.51,-0.13,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,226.516,226.584
+vultr-london,vultr,London,51.51,-0.13,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,214.966,215.022
+vultr-london,vultr,London,51.51,-0.13,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,190.511,190.551
+vultr-london,vultr,London,51.51,-0.13,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,237.394,237.465
+vultr-london,vultr,London,51.51,-0.13,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,230.349,230.427
+vultr-london,vultr,London,51.51,-0.13,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,33.22,33.317
+vultr-london,vultr,London,51.51,-0.13,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,260.229,260.327
+vultr-london,vultr,London,51.51,-0.13,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,228.297,228.406
+vultr-london,vultr,London,51.51,-0.13,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,5.872,5.96
+vultr-london,vultr,London,51.51,-0.13,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,174.795,174.889
+vultr-london,vultr,London,51.51,-0.13,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,165.81,165.915
+vultr-london,vultr,London,51.51,-0.13,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,128.696,128.753
+vultr-london,vultr,London,51.51,-0.13,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,283.04,283.162
+vultr-london,vultr,London,51.51,-0.13,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,107.281,107.377
+vultr-london,vultr,London,51.51,-0.13,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,149.542,149.641
+vultr-london,vultr,London,51.51,-0.13,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,70.847,70.966
+vultr-london,vultr,London,51.51,-0.13,vultr-osaka,vultr,Osaka,34.69,135.5,30,24,24,24,268.161,270.259
+vultr-london,vultr,London,51.51,-0.13,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,179.25,179.324
+vultr-london,vultr,London,51.51,-0.13,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,131.423,131.512
+vultr-london,vultr,London,51.51,-0.13,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,262.157,262.265
+vultr-london,vultr,London,51.51,-0.13,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,137.08,137.18
+vultr-london,vultr,London,51.51,-0.13,vultr-singapore,vultr,Singapore,1.35,103.82,30,29,29,29,208.712,212.424
+vultr-london,vultr,London,51.51,-0.13,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,28.787,28.86
+vultr-london,vultr,London,51.51,-0.13,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,273.116,273.179
+vultr-london,vultr,London,51.51,-0.13,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,220.419,220.535
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-london,aws,London,51.51,-0.13,30,30,30,30,127.499,127.566
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,239.298,245.787
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,89.843,89.946
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,192.354,192.5
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,172.05,172.11
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,119.378,119.453
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,159.153,159.207
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,151.305,151.341
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,147.75,147.814
+vultr-seattle,vultr,Seattle,47.61,-122.33,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,107.625,107.738
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,134.819,134.949
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,66.31,66.404
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,318.443,318.528
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,131.422,131.482
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,25.87,25.992
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,178.645,178.729
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,90.683,90.791
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,245.744,245.811
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,57.663,57.731
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,97.932,97.983
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,172.033,172.117
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,128.496,128.587
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,18.629,18.692
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,164.133,164.205
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,164.022,164.141
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,170.014,170.111
+vultr-seattle,vultr,Seattle,47.61,-122.33,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,93.839,93.939
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-london,aws,London,51.51,-0.13,30,30,30,30,136.384,136.484
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,247.787,247.832
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,107.279,107.366
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,197.985,198.032
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,186.545,186.588
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,137.037,137.1
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,184.185,184.226
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,167.851,167.926
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,137.24,137.313
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,105.398,105.49
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,147.621,147.759
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,47.59,47.686
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,307.248,307.326
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,137.051,137.146
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,8.037,8.097
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,164.343,164.401
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,73.224,73.303
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,243.515,243.576
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,63.779,63.868
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,113.112,113.209
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,176.691,176.855
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,18.593,18.686
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,134.109,134.196
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,174.109,174.262
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,172.591,172.711
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,153.469,153.568
+vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,104.407,104.539
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-london,aws,London,51.51,-0.13,30,30,30,30,132.492,132.543
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,242.292,242.335
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,107.258,107.356
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,193.132,193.196
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,180.45,180.502
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,122.737,122.781
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,187.612,187.669
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,156.165,156.235
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,145.831,145.911
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,111.856,111.908
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,133.251,134.772
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,54.508,54.592
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,297.642,297.727
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,128.599,128.717
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,149.719,149.831
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,62.078,62.231
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,218.981,219.064
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,58.075,58.228
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,104.001,104.063
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,172.005,172.079
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,25.914,26.026
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,142.27,142.364
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,8.023,8.115
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,191.632,191.721
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,163.689,163.807
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,138.418,138.514
+vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,98.162,98.252
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-london,aws,London,51.51,-0.13,30,30,30,30,180.277,180.348
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,286.207,286.26
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,156.278,156.322
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,241.624,241.691
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,218.719,218.782
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,177.756,177.799
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,213.17,213.222
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,210.341,210.389
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,204.618,204.685
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,145.893,145.978
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,180.551,180.656
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,344.297,344.377
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,174.74,174.844
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,54.436,54.605
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,199.272,199.331
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,111.76,111.815
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,282.997,283.091
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,106.55,106.647
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,160.871,160.961
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,216.156,216.253
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,66.331,66.416
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,186.184,186.263
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,47.593,47.642
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,218.883,218.971
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,196.736,196.827
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,184.791,184.864
+vultr-honolulu,vultr,Honolulu,21.31,-157.86,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,146.387,146.48
+vultr-miami,vultr,Miami,25.76,-80.19,aws-london,aws,London,51.51,-0.13,30,30,30,30,112.018,112.114
+vultr-miami,vultr,Miami,25.76,-80.19,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,275.222,275.309
+vultr-miami,vultr,Miami,25.76,-80.19,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,168.838,168.932
+vultr-miami,vultr,Miami,25.76,-80.19,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,128.401,128.455
+vultr-miami,vultr,Miami,25.76,-80.19,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,111.142,111.205
+vultr-miami,vultr,Miami,25.76,-80.19,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,182.9,182.972
+vultr-miami,vultr,Miami,25.76,-80.19,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,234.721,234.766
+vultr-miami,vultr,Miami,25.76,-80.19,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,126.798,126.857
+vultr-miami,vultr,Miami,25.76,-80.19,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,200.137,200.247
+vultr-miami,vultr,Miami,25.76,-80.19,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,175.046,175.111
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,110.22,112.573
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,111.721,111.798
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,287.059,287.138
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,107.21,107.312
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,62.104,62.209
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,213.991,214.073
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,298.32,298.383
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,34.604,34.684
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,179.327,179.416
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,104.712,104.775
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,90.642,90.756
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,195.946,196.023
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,73.199,73.261
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,249.756,249.945
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,142.631,142.708
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,204.806,204.927
+vultr-miami,vultr,Miami,25.76,-80.19,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,165.565,165.663
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-london,aws,London,51.51,-0.13,30,30,30,30,75.013,75.104
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,237.324,237.418
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,163.394,163.537
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,135.654,135.755
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,114.454,114.525
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,194.847,194.916
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,223.484,223.566
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,94.772,94.843
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,200.28,200.338
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,153.577,153.662
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,81.517,81.65
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,106.527,106.635
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,239.255,239.368
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,70.786,70.879
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,58.134,58.207
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,201.04,201.125
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,34.531,34.702
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,294.083,294.13
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,176.007,176.108
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,112.809,112.912
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,57.628,57.724
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,188.736,188.823
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,63.763,63.851
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,230.706,230.796
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,85.836,85.984
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,200.852,200.946
+vultr-new-jersey,vultr,New Jersey,40.55,-74.46,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,149.867,150.032
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-london,aws,London,51.51,-0.13,30,30,30,30,7.241,7.307
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,174.06,174.164
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,237.074,237.149
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,207.684,207.737
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,191.862,191.924
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,225.561,225.607
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,167.13,167.2
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,24.835,24.881
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,262.933,263.025
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,aws-tokyo,aws,Tokyo,35.68,139.69,30,29,29,29,232.088,232.315
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,180.539,180.664
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,170.718,170.889
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,5.914,6.001
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,134.704,134.795
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,267.562,267.622
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,110.387,112.585
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,137.744,137.838
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,81.581,81.685
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-osaka,vultr,Osaka,34.69,135.5,30,29,29,29,230.142,232.407
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,188.03,188.098
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,134.863,134.997
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,255.006,255.121
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,147.681,147.754
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-singapore,vultr,Singapore,1.35,103.82,30,25,25,25,212.492,214.794
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,24.98,25.044
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,262.662,262.756
+vultr-amsterdam,vultr,Amsterdam,52.37,4.9,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,227.253,227.411
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-london,aws,London,51.51,-0.13,30,30,30,30,26.747,26.799
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,185.558,185.581
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,261.417,261.463
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,215.197,215.27
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,212.3,212.34
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,269.818,269.868
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,189.259,189.323
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,3.176,3.235
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,282.147,282.244
+vultr-stockholm,vultr,Stockholm,59.33,18.07,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,255.136,255.23
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,24.999,25.058
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,196.759,196.838
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,29,29,29,185.325,185.589
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,28.742,28.837
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,163.738,163.806
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,271.001,283.994
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,142.602,142.741
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,182.368,182.44
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,85.797,85.987
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-osaka,vultr,Osaka,34.69,135.5,30,27,27,27,289.132,290.215
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,216.14,216.199
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,163.998,164.102
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,308.175,308.258
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,172.581,172.655
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,173.328,173.447
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,267.804,267.906
+vultr-stockholm,vultr,Stockholm,59.33,18.07,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,277.846,277.949
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-london,aws,London,51.51,-0.13,30,30,30,30,246.23,312.338
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,122.325,122.367
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,10.348,10.45
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,295.561,295.661
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,276.244,276.303
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,28.323,28.373
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,67.949,68.0
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,255.329,269.043
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,173.818,173.915
+vultr-tokyo,vultr,Tokyo,35.68,139.69,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,2.278,2.369
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,227.315,227.42
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,146.342,147.154
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,241.693,241.787
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,220.433,220.557
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,98.133,98.241
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,149.408,149.529
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,165.557,165.696
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,164.859,164.969
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,149.872,150.048
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,8.383,8.455
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,283.467,283.558
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,93.814,93.929
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,35.077,35.134
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,104.403,104.528
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,71.89,72.062
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,277.843,277.974
+vultr-tokyo,vultr,Tokyo,35.68,139.69,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,106.178,106.279
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-london,aws,London,51.51,-0.13,30,29,29,29,279.932,282.558
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,131.665,131.754
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,1.0,1.064
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,306.737,306.835
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,284.245,284.322
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,22.71,22.774
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,76.809,76.867
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-stockholm,aws,Stockholm,59.33,18.07,30,25,25,25,289.183,291.244
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,178.415,178.497
+vultr-osaka,vultr,Osaka,34.69,135.5,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,8.547,8.643
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,230.171,235.81
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,160.839,160.928
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,258.637,258.742
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-london,vultr,London,51.51,-0.13,30,26,26,26,263.786,269.525
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,103.952,104.058
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,138.33,138.441
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,179.326,179.416
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,132.211,132.276
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,176.043,176.126
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,286.791,286.868
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,97.863,97.992
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,39.664,39.757
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,113.012,113.163
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,80.998,81.116
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,23,23,23,287.341,290.024
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,175.734,175.852
+vultr-osaka,vultr,Osaka,34.69,135.5,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,8.303,8.437
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-london,aws,London,51.51,-0.13,30,30,30,30,207.181,207.253
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,126.54,126.594
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,27.777,27.842
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,330.808,330.911
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,307.113,307.191
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,1.973,2.014
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,65.417,65.464
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,236.016,236.1
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,148.724,148.771
+vultr-seoul,vultr,Seoul,37.57,126.98,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,32.736,32.838
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,254.977,255.119
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,186.147,186.241
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,276.968,277.052
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,261.151,261.264
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,142.253,142.363
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,156.53,156.601
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,195.894,196.031
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,120.149,120.226
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,188.761,188.858
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,39.576,39.734
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,306.527,306.605
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,128.421,128.562
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,134.098,134.205
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,96.376,96.549
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,308.148,308.252
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,142.984,143.048
+vultr-seoul,vultr,Seoul,37.57,126.98,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,35.022,35.129
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-london,aws,London,51.51,-0.13,30,29,29,29,221.741,235.591
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,56.832,56.968
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,75.364,75.421
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,351.825,351.964
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,357.429,357.515
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,66.494,66.579
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,1.431,1.566
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,188.573,218.329
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,203.646,203.757
+vultr-singapore,vultr,Singapore,1.35,103.82,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,69.681,69.797
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,29,29,29,211.078,214.668
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,218.834,218.944
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,174.812,174.903
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-london,vultr,London,51.51,-0.13,30,28,28,28,210.562,213.223
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,191.612,191.69
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,93.805,93.875
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,249.886,249.954
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,62.295,62.37
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,230.659,230.836
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,81.036,81.13
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,330.115,330.236
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,164.037,164.191
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,96.47,96.547
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,174.113,174.268
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,173.275,173.389
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,97.059,97.117
+vultr-singapore,vultr,Singapore,1.35,103.82,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,71.929,72.001
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-london,aws,London,51.51,-0.13,30,30,30,30,313.431,313.534
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,158.657,158.707
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,138.051,138.17
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,332.349,332.409
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,323.57,323.657
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,139.715,139.802
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,95.862,95.914
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,313.833,313.889
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,0.73,0.806
+vultr-sydney,vultr,Sydney,-33.87,151.21,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,130.388,130.481
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,262.674,262.809
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,184.856,184.912
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,323.918,324.012
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,273.102,273.203
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,138.403,138.565
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,11.157,11.258
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,204.856,204.956
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,189.414,189.599
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,200.959,201.068
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,175.695,175.839
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,318.958,319.061
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,168.628,168.735
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,143.009,143.079
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,153.445,153.595
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,97.004,97.202
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,267.816,267.971
+vultr-sydney,vultr,Sydney,-33.87,151.21,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,106.227,106.313
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-london,aws,London,51.51,-0.13,30,30,30,30,277.557,277.615
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,241.962,242.046
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,157.383,157.454
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,333.202,333.315
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,316.17,316.221
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,158.521,158.566
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,84.234,84.303
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,324.876,324.948
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,10.521,10.605
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,149.263,149.327
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,267.471,267.594
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,199.185,199.32
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,312.424,312.543
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,283.032,283.124
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,149.732,149.803
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,213.944,214.085
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,169.501,169.64
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,201.007,201.198
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,138.331,138.432
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,333.223,333.327
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-seattle,vultr,Seattle,47.61,-122.33,30,29,29,29,178.603,178.762
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,156.506,156.596
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,29,29,29,164.294,164.414
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,93.868,93.927
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,29,29,29,270.917,270.984
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,11.114,11.224
+vultr-melbourne,vultr,Melbourne,-37.81,144.96,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,149.465,149.517
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-london,aws,London,51.51,-0.13,30,30,30,30,116.163,116.209
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,1.216,1.288
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,141.036,141.11
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,379.772,379.875
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,404.664,404.73
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,133.714,133.771
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,59.873,59.943
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,147.671,147.744
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,145.43,145.55
+vultr-mumbai,vultr,Mumbai,19.08,72.88,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,131.542,131.598
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,137.754,137.829
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,282.986,283.093
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,289.189,289.267
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,149.525,149.621
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,223.794,223.859
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,169.556,169.614
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,298.249,298.365
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,294.099,294.173
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,132.228,132.323
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,279.091,279.268
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,245.658,245.822
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,120.169,120.246
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,243.467,243.592
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,55.423,55.532
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,182.347,182.424
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,189.341,189.483
+vultr-mumbai,vultr,Mumbai,19.08,72.88,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,159.162,159.242
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-london,aws,London,51.51,-0.13,30,30,30,30,184.829,184.877
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,306.29,306.339
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,293.794,293.86
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,53.367,53.453
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,3.724,3.769
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,298.154,298.193
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,357.098,357.143
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,219.506,219.57
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,308.614,308.674
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,269.225,269.309
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,187.993,188.081
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,216.148,216.242
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,333.507,333.614
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,183.115,183.206
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,171.968,172.071
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,333.216,333.324
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,104.662,104.792
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,279.18,279.282
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,112.904,112.979
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,286.797,286.876
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,171.948,172.082
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,306.539,306.633
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,176.748,176.865
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,330.188,330.271
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,217.885,217.945
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,318.949,319.05
+vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,283.476,283.527
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-london,aws,London,51.51,-0.13,30,30,30,30,163.251,163.29
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,339.613,339.655
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,335.443,335.529
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-santiago,aws,Santiago,-33.45,-70.67,30,29,29,29,367.891,367.958
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,28,28,28,374.334,374.566
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,405.47,405.523
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,338.33,338.405
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,193.683,193.735
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,436.691,436.759
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,333.89,333.968
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,170.804,170.869
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,344.311,344.391
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,165.787,165.898
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,297.652,297.725
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,312.433,312.527
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,287.066,287.144
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,289.114,289.278
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,239.296,239.361
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,258.654,258.736
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,333.525,333.592
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,318.359,318.537
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,277.0,277.061
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,307.245,307.345
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,174.828,174.927
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,185.279,185.473
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,323.887,323.994
+vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,241.677,241.766
+aws-london,aws,London,51.51,-0.13,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,110.349,110.383
+aws-london,aws,London,51.51,-0.13,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,221.252,221.295
+aws-london,aws,London,51.51,-0.13,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,205.488,205.554
+aws-london,aws,London,51.51,-0.13,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,185.181,185.224
+aws-london,aws,London,51.51,-0.13,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,237.144,237.17
+aws-london,aws,London,51.51,-0.13,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,160.048,160.08
+aws-london,aws,London,51.51,-0.13,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,28.704,28.794
+aws-london,aws,London,51.51,-0.13,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,262.016,262.053
+aws-london,aws,London,51.51,-0.13,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,216.337,216.389
+aws-london,aws,London,51.51,-0.13,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,7.25,7.348
+aws-london,aws,London,51.51,-0.13,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,180.252,180.39
+aws-london,aws,London,51.51,-0.13,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,163.24,163.314
+aws-london,aws,London,51.51,-0.13,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,1.458,1.546
+aws-london,aws,London,51.51,-0.13,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,132.513,132.591
+aws-london,aws,London,51.51,-0.13,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,277.489,277.615
+aws-london,aws,London,51.51,-0.13,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,112.013,112.127
+aws-london,aws,London,51.51,-0.13,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,116.172,116.222
+aws-london,aws,London,51.51,-0.13,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,75.055,75.157
+aws-london,aws,London,51.51,-0.13,vultr-osaka,vultr,Osaka,34.69,135.5,30,25,25,25,279.993,281.644
+aws-london,aws,London,51.51,-0.13,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,184.833,184.908
+aws-london,aws,London,51.51,-0.13,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,127.444,127.584
+aws-london,aws,London,51.51,-0.13,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,207.178,207.264
+aws-london,aws,London,51.51,-0.13,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,136.428,136.474
+aws-london,aws,London,51.51,-0.13,vultr-singapore,vultr,Singapore,1.35,103.82,30,27,27,27,230.745,237.021
+aws-london,aws,London,51.51,-0.13,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,26.736,26.825
+aws-london,aws,London,51.51,-0.13,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,313.442,313.522
+aws-london,aws,London,51.51,-0.13,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,29,29,29,246.261,290.655
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-london,aws,London,51.51,-0.13,30,30,30,30,28.746,28.78
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,148.953,148.989
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,250.923,250.979
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,243.422,243.503
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,220.567,220.607
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,255.047,255.079
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,176.747,176.785
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,267.857,267.951
+aws-stockholm,aws,Stockholm,59.33,18.07,aws-tokyo,aws,Tokyo,35.68,139.69,30,29,29,29,255.747,255.795
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,24.803,24.89
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,210.326,210.428
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,184.895,184.989
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,33.189,33.263
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,156.163,156.256
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,324.809,324.944
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,126.767,126.901
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,147.729,147.804
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,94.807,94.898
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-osaka,vultr,Osaka,34.69,135.5,30,22,22,22,288.68,293.193
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,219.568,219.651
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,151.205,151.342
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,236.109,236.161
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,167.843,167.955
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,191.327,217.303
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,3.194,3.244
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,313.783,313.867
+aws-stockholm,aws,Stockholm,59.33,18.07,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,255.371,268.681
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-london,aws,London,51.51,-0.13,30,30,30,30,216.321,216.361
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,136.433,136.498
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,9.773,9.865
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,277.54,277.638
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,259.177,259.231
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-seoul,aws,Seoul,37.57,126.98,30,29,29,29,34.889,34.94
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,68.914,68.952
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,255.726,255.827
+aws-tokyo,aws,Tokyo,35.68,139.69,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,100.847,100.911
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,226.035,226.177
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,145.917,146.004
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,333.948,334.013
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,226.682,226.817
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,111.491,111.582
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,149.216,149.38
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,175.032,175.198
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,131.618,131.733
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,153.591,153.786
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,8.526,8.614
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,269.244,269.311
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,107.61,107.723
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,32.593,32.663
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,104.837,104.954
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,69.832,69.958
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,256.905,256.955
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,130.235,130.317
+aws-tokyo,aws,Tokyo,35.68,139.69,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,2.239,2.307
+aws-osaka,aws,Osaka,34.69,135.5,aws-london,aws,London,51.51,-0.13,30,30,30,30,221.267,221.326
+aws-osaka,aws,Osaka,34.69,135.5,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,134.869,134.938
+aws-osaka,aws,Osaka,34.69,135.5,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,276.257,276.371
+aws-osaka,aws,Osaka,34.69,135.5,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,267.858,267.929
+aws-osaka,aws,Osaka,34.69,135.5,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,22.28,22.313
+aws-osaka,aws,Osaka,34.69,135.5,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,74.084,74.118
+aws-osaka,aws,Osaka,34.69,135.5,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,250.938,250.983
+aws-osaka,aws,Osaka,34.69,135.5,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,118.992,119.049
+aws-osaka,aws,Osaka,34.69,135.5,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,9.784,9.849
+aws-osaka,aws,Osaka,34.69,135.5,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,237.061,237.201
+aws-osaka,aws,Osaka,34.69,135.5,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,156.223,156.357
+aws-osaka,aws,Osaka,34.69,135.5,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,335.464,335.546
+aws-osaka,aws,Osaka,34.69,135.5,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,230.299,230.436
+aws-osaka,aws,Osaka,34.69,135.5,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,107.274,107.363
+aws-osaka,aws,Osaka,34.69,135.5,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,157.406,157.496
+aws-osaka,aws,Osaka,34.69,135.5,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,168.837,168.953
+aws-osaka,aws,Osaka,34.69,135.5,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,141.011,141.126
+aws-osaka,aws,Osaka,34.69,135.5,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,163.443,163.612
+aws-osaka,aws,Osaka,34.69,135.5,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,1.03,1.118
+aws-osaka,aws,Osaka,34.69,135.5,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,293.826,293.886
+aws-osaka,aws,Osaka,34.69,135.5,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,89.842,89.973
+aws-osaka,aws,Osaka,34.69,135.5,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,27.817,27.889
+aws-osaka,aws,Osaka,34.69,135.5,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,107.269,107.371
+aws-osaka,aws,Osaka,34.69,135.5,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,75.334,75.49
+aws-osaka,aws,Osaka,34.69,135.5,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,261.461,261.529
+aws-osaka,aws,Osaka,34.69,135.5,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,138.085,138.183
+aws-osaka,aws,Osaka,34.69,135.5,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,10.395,10.494
+aws-seoul,aws,Seoul,37.57,126.98,aws-london,aws,London,51.51,-0.13,30,30,30,30,237.142,237.211
+aws-seoul,aws,Seoul,37.57,126.98,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,128.686,128.747
+aws-seoul,aws,Seoul,37.57,126.98,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,22.287,22.32
+aws-seoul,aws,Seoul,37.57,126.98,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,302.528,302.569
+aws-seoul,aws,Seoul,37.57,126.98,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,294.711,294.747
+aws-seoul,aws,Seoul,37.57,126.98,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,64.988,65.022
+aws-seoul,aws,Seoul,37.57,126.98,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,255.03,255.076
+aws-seoul,aws,Seoul,37.57,126.98,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,140.518,140.549
+aws-seoul,aws,Seoul,37.57,126.98,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,34.893,34.94
+aws-seoul,aws,Seoul,37.57,126.98,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,225.516,225.622
+aws-seoul,aws,Seoul,37.57,126.98,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,177.701,177.828
+aws-seoul,aws,Seoul,37.57,126.98,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,405.493,405.564
+aws-seoul,aws,Seoul,37.57,126.98,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,229.631,229.754
+aws-seoul,aws,Seoul,37.57,126.98,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,122.684,122.768
+aws-seoul,aws,Seoul,37.57,126.98,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,158.504,158.604
+aws-seoul,aws,Seoul,37.57,126.98,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,182.876,182.98
+aws-seoul,aws,Seoul,37.57,126.98,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,133.702,133.786
+aws-seoul,aws,Seoul,37.57,126.98,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,194.854,194.99
+aws-seoul,aws,Seoul,37.57,126.98,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,22.941,23.056
+aws-seoul,aws,Seoul,37.57,126.98,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,298.148,298.202
+aws-seoul,aws,Seoul,37.57,126.98,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,117.21,117.288
+aws-seoul,aws,Seoul,37.57,126.98,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,1.991,2.036
+aws-seoul,aws,Seoul,37.57,126.98,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,137.064,137.119
+aws-seoul,aws,Seoul,37.57,126.98,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,66.357,66.5
+aws-seoul,aws,Seoul,37.57,126.98,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,283.839,283.908
+aws-seoul,aws,Seoul,37.57,126.98,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,139.644,139.723
+aws-seoul,aws,Seoul,37.57,126.98,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,28.276,28.349
+aws-singapore,aws,Singapore,1.35,103.82,aws-london,aws,London,51.51,-0.13,30,30,30,30,160.052,160.092
+aws-singapore,aws,Singapore,1.35,103.82,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,59.895,59.927
+aws-singapore,aws,Singapore,1.35,103.82,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,74.055,74.112
+aws-singapore,aws,Singapore,1.35,103.82,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,352.011,352.114
+aws-singapore,aws,Singapore,1.35,103.82,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,321.856,321.906
+aws-singapore,aws,Singapore,1.35,103.82,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,64.976,65.026
+aws-singapore,aws,Singapore,1.35,103.82,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,176.737,176.769
+aws-singapore,aws,Singapore,1.35,103.82,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,91.652,91.714
+aws-singapore,aws,Singapore,1.35,103.82,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,68.761,68.895
+aws-singapore,aws,Singapore,1.35,103.82,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,170.902,170.993
+aws-singapore,aws,Singapore,1.35,103.82,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,213.162,213.243
+aws-singapore,aws,Singapore,1.35,103.82,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,338.332,338.414
+aws-singapore,aws,Singapore,1.35,103.82,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,228.606,228.688
+aws-singapore,aws,Singapore,1.35,103.82,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,187.547,187.668
+aws-singapore,aws,Singapore,1.35,103.82,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,84.177,84.303
+aws-singapore,aws,Singapore,1.35,103.82,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,234.668,234.793
+aws-singapore,aws,Singapore,1.35,103.82,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,59.909,59.959
+aws-singapore,aws,Singapore,1.35,103.82,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,223.428,223.556
+aws-singapore,aws,Singapore,1.35,103.82,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,75.105,75.226
+aws-singapore,aws,Singapore,1.35,103.82,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,355.411,355.481
+aws-singapore,aws,Singapore,1.35,103.82,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,159.324,159.467
+aws-singapore,aws,Singapore,1.35,103.82,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,65.443,65.532
+aws-singapore,aws,Singapore,1.35,103.82,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,189.784,189.916
+aws-singapore,aws,Singapore,1.35,103.82,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,1.537,1.65
+aws-singapore,aws,Singapore,1.35,103.82,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,189.275,189.39
+aws-singapore,aws,Singapore,1.35,103.82,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,95.825,95.891
+aws-singapore,aws,Singapore,1.35,103.82,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,68.016,68.108
+aws-sydney,aws,Sydney,-33.87,151.21,aws-london,aws,London,51.51,-0.13,30,30,30,30,262.022,262.059
+aws-sydney,aws,Sydney,-33.87,151.21,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,151.292,151.336
+aws-sydney,aws,Sydney,-33.87,151.21,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,118.998,119.034
+aws-sydney,aws,Sydney,-33.87,151.21,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,330.623,330.691
+aws-sydney,aws,Sydney,-33.87,151.21,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,309.449,309.493
+aws-sydney,aws,Sydney,-33.87,151.21,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,140.527,140.586
+aws-sydney,aws,Sydney,-33.87,151.21,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,91.651,91.711
+aws-sydney,aws,Sydney,-33.87,151.21,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,269.582,269.636
+aws-sydney,aws,Sydney,-33.87,151.21,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,100.846,100.932
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,262.944,263.043
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,204.533,204.646
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,436.664,436.784
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,260.226,260.337
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,145.834,145.94
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,10.559,10.624
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,198.294,198.399
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,145.522,145.574
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,200.232,200.44
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,178.471,178.54
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,308.617,308.673
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,147.707,147.851
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,143.539,143.651
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,137.254,137.341
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,203.671,203.778
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,281.285,281.364
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,0.681,0.772
+aws-sydney,aws,Sydney,-33.87,151.21,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,173.879,173.955
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-london,aws,London,51.51,-0.13,30,30,30,30,110.341,110.387
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,134.906,134.946
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,317.093,317.132
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,294.551,294.595
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,128.722,128.765
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,59.865,59.93
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,148.955,148.986
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,151.273,151.333
+aws-mumbai,aws,Mumbai,19.08,72.88,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,136.543,136.585
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,174.432,174.514
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,286.146,286.247
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,30,30,30,339.629,339.69
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,136.71,136.794
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,241.965,242.021
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,242.557,242.646
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,275.267,275.348
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,1.335,1.361
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,237.715,237.773
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,131.671,131.731
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,306.27,306.332
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,247.465,247.61
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,125.899,125.954
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,244.483,244.545
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,56.891,57.032
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,138.26,138.333
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,158.624,158.709
+aws-mumbai,aws,Mumbai,19.08,72.88,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,122.34,122.443
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-london,aws,London,51.51,-0.13,30,30,30,30,185.029,185.089
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,294.69,294.725
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,267.891,267.931
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-santiago,aws,Santiago,-33.45,-70.67,30,30,30,30,53.808,53.912
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,294.706,294.742
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,321.857,321.883
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,220.302,220.598
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,309.437,309.505
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,259.169,259.244
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,188.085,188.188
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,218.688,218.793
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,29,29,29,374.339,374.524
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,190.48,190.555
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,180.434,180.511
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,30,30,30,316.202,316.276
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,111.128,111.233
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,404.668,404.747
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,114.484,114.603
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,284.239,284.35
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,3.729,3.781
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,172.027,172.125
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,307.14,307.258
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,184.832,184.943
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,357.432,357.571
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,212.457,212.524
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,323.587,323.667
+aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,270.759,270.845
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-london,aws,London,51.51,-0.13,30,30,30,30,205.483,205.57
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-mumbai,aws,Mumbai,19.08,72.88,30,30,30,30,313.072,313.151
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-osaka,aws,Osaka,34.69,135.5,30,30,30,30,276.294,276.359
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-sao-paulo,aws,Sao Paulo,-23.55,-46.63,30,30,30,30,53.624,53.705
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-seoul,aws,Seoul,37.57,126.98,30,30,30,30,302.475,302.551
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-singapore,aws,Singapore,1.35,103.82,30,30,30,30,352.068,352.109
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-stockholm,aws,Stockholm,59.33,18.07,30,30,30,30,239.732,239.797
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-sydney,aws,Sydney,-33.87,151.21,30,30,30,30,330.65,330.714
+aws-santiago,aws,Santiago,-33.45,-70.67,aws-tokyo,aws,Tokyo,35.68,139.69,30,30,30,30,277.508,277.573
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-amsterdam,vultr,Amsterdam,52.37,4.9,30,30,30,30,207.64,207.743
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-honolulu,vultr,Honolulu,21.31,-157.86,30,30,30,30,241.656,241.751
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-johannesburg,vultr,Johannesburg,-26.2,28.05,30,27,27,27,367.893,368.053
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-london,vultr,London,51.51,-0.13,30,30,30,30,214.929,215.055
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-los-angeles,vultr,Los Angeles,34.05,-118.24,30,30,30,30,193.163,193.219
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-melbourne,vultr,Melbourne,-37.81,144.96,30,29,29,29,333.292,333.385
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-miami,vultr,Miami,25.76,-80.19,30,30,30,30,128.151,128.239
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-mumbai,vultr,Mumbai,19.08,72.88,30,30,30,30,379.769,379.915
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-new-jersey,vultr,New Jersey,40.55,-74.46,30,30,30,30,135.603,135.827
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-osaka,vultr,Osaka,34.69,135.5,30,30,30,30,306.826,306.921
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-sao-paulo,vultr,Sao Paulo,-23.55,-46.63,30,30,30,30,53.231,53.335
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-seattle,vultr,Seattle,47.61,-122.33,30,30,30,30,192.456,192.562
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-seoul,vultr,Seoul,37.57,126.98,30,30,30,30,330.855,330.96
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-silicon-valley,vultr,Silicon Valley,37.35,-121.95,30,30,30,30,197.988,198.064
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-singapore,vultr,Singapore,1.35,103.82,30,30,30,30,366.363,366.475
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-stockholm,vultr,Stockholm,59.33,18.07,30,30,30,30,215.231,215.305
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-sydney,vultr,Sydney,-33.87,151.21,30,30,30,30,332.326,332.437
+aws-santiago,aws,Santiago,-33.45,-70.67,vultr-tokyo,vultr,Tokyo,35.68,139.69,30,30,30,30,295.619,295.713
