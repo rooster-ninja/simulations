@@ -1,0 +1,518 @@
+target,host,landmark_city,landmark_country,probe_city,probe_asn,probe_network,probe_lat,probe_lon,ping_min_ms,ping_avg_ms,loss_pct,measured_utc
+Sydney,syd-au-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,23.711,23.823,0,2026-11-12T16:28:00Z
+Sydney,syd-au-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,24.122,28.655,0,2026-11-12T16:28:00Z
+Sydney,syd-au-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,33.323,33.377,0,2026-11-12T16:28:07Z
+Sydney,syd-au-ping.vultr.com,Wellington,NZ,Wellington,9500,One New Zealand Group,-41.29,174.78,43.372,45.059,0,2026-11-12T16:28:07Z
+Sydney,syd-au-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,1.487,1.537,0,2026-11-12T16:28:11Z
+Sydney,syd-au-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,0.303,0.459,0,2026-11-12T16:28:11Z
+Sydney,syd-au-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,14.362,14.477,0,2026-11-12T16:28:17Z
+Sydney,syd-au-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,11.081,11.152,0,2026-11-12T16:28:17Z
+Sydney,syd-au-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,15.061,15.332,0,2026-11-12T16:28:23Z
+Sydney,syd-au-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,21.794,22.426,0,2026-11-12T16:28:23Z
+Sydney,syd-au-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,51.28,51.788,0,2026-11-12T16:28:29Z
+Sydney,syd-au-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,47.22,47.491,0,2026-11-12T16:28:29Z
+Sydney,syd-au-ping.vultr.com,Johannesburg,ZA,Johannesburg,329325,Maxko for Gaming Development,-26.2,28.08,479.356,480.378,0,2026-11-12T16:28:36Z
+Sydney,syd-au-ping.vultr.com,Johannesburg,ZA,Johannesburg,37153,Xneelo,-26.2,28.04,440.921,441.021,0,2026-11-12T16:28:36Z
+Sydney,syd-au-ping.vultr.com,Cape Town,ZA,Cape Town,328723,Telasera Technologies,-33.93,18.42,398.493,398.743,0,2026-11-12T16:28:42Z
+Sydney,syd-au-ping.vultr.com,Cape Town,ZA,Cape Town,11845,Vox Telecom,-33.93,18.42,403.653,403.708,0,2026-11-12T16:28:42Z
+Sydney,syd-au-ping.vultr.com,Nairobi,KE,Nairobi,329239,Xcobean Systems,-1.28,36.82,283.693,283.841,0,2026-11-12T16:28:48Z
+Sydney,syd-au-ping.vultr.com,Nairobi,KE,Nairobi,207113,Wofbit Networks,-1.28,36.82,343.948,344.002,0,2026-11-12T16:28:48Z
+Sydney,syd-au-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,413.599,413.749,0,2026-11-12T16:28:58Z
+Sydney,syd-au-ping.vultr.com,Lagos,NG,Lagos,60068,Datacamp,6.45,3.39,,,,2026-11-12T16:28:58Z
+Sydney,syd-au-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,302.007,302.133,0,2026-11-12T16:29:04Z
+Sydney,syd-au-ping.vultr.com,Sao Paulo,BR,Sao Paulo,27699,Telefonica,-23.55,-46.64,310.247,310.53,0,2026-11-12T16:29:04Z
+Sydney,syd-au-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,337.744,337.803,0,2026-11-12T16:29:10Z
+Sydney,syd-au-ping.vultr.com,Buenos Aires,AR,Buenos Aires,271779,FULLNET SOLUTIONS,-34.85,-58.53,359.704,359.797,0,2026-11-12T16:29:10Z
+Sydney,syd-au-ping.vultr.com,Santiago,CL,Santiago,31898,Oracle,-33.46,-70.65,313.323,313.405,0,2026-11-12T16:29:16Z
+Sydney,syd-au-ping.vultr.com,Santiago,CL,Santiago,270013,J AND J SPA (INFOFRACTAL),-33.46,-70.65,296.889,296.946,0,2026-11-12T16:29:16Z
+Sydney,syd-au-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,273.115,273.233,0,2026-11-12T16:29:22Z
+Sydney,syd-au-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,273.267,273.307,0,2026-11-12T16:29:22Z
+Sydney,syd-au-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,228.836,228.878,0,2026-11-12T16:29:28Z
+Sydney,syd-au-ping.vultr.com,Bogota,CO,Bogota,136258,BrainStorm Network,4.61,-74.08,247.484,249.872,0,2026-11-12T16:29:28Z
+Sydney,syd-au-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,204.719,204.729,0,2026-11-12T16:29:34Z
+Sydney,syd-au-ping.vultr.com,Miami,US,Miami,23470,ReliableSite.Net,25.81,-80.23,190.615,190.718,0,2026-11-12T16:29:34Z
+Sydney,syd-au-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,181.534,181.619,0,2026-11-12T16:29:40Z
+Sydney,syd-au-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,162.265,162.342,0,2026-11-12T16:29:40Z
+Sydney,syd-au-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,162.792,163.451,0,2026-11-12T16:29:44Z
+Sydney,syd-au-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,162.984,163.084,0,2026-11-12T16:29:44Z
+Sydney,syd-au-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,187.307,187.374,0,2026-11-12T16:29:50Z
+Sydney,syd-au-ping.vultr.com,London,GB,London,16276,OVH,51.48,0.08,289.389,289.416,0,2026-11-12T16:29:56Z
+Sydney,syd-au-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,249.968,254.143,0,2026-11-12T16:29:56Z
+Sydney,syd-au-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,281.342,281.418,0,2026-11-12T16:30:02Z
+Sydney,syd-au-ping.vultr.com,Frankfurt,DE,Frankfurt,16276,OVH,50.12,8.68,331.434,331.471,0,2026-11-12T16:30:02Z
+Sydney,syd-au-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,113.481,113.554,0,2026-11-12T16:30:08Z
+Sydney,syd-au-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,100.176,100.263,0,2026-11-12T16:30:08Z
+Sydney,syd-au-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,92.841,93.743,0,2026-11-12T16:30:14Z
+Sydney,syd-au-ping.vultr.com,Singapore,SG,Singapore,31898,Oracle,1.38,103.96,92.326,92.368,0,2026-11-12T16:30:14Z
+Sydney,syd-au-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,254.983,255.03,0,2026-11-12T16:30:20Z
+Sydney,syd-au-ping.vultr.com,Mumbai,IN,Mumbai,16509,Amazon.com,19.07,72.88,173.604,174.465,0,2026-11-12T16:30:20Z
+Melbourne,mel-au-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,35.907,35.97,0,2026-11-12T16:30:25Z
+Melbourne,mel-au-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,36.13,36.658,0,2026-11-12T16:30:25Z
+Melbourne,mel-au-ping.vultr.com,Wellington,NZ,Wellington,9500,One New Zealand Group,-41.29,174.78,53.256,54.091,0,2026-11-12T16:30:31Z
+Melbourne,mel-au-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,44.288,45.272,0,2026-11-12T16:30:31Z
+Melbourne,mel-au-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,13.275,13.342,0,2026-11-12T16:30:35Z
+Melbourne,mel-au-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,10.766,10.826,0,2026-11-12T16:30:35Z
+Melbourne,mel-au-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,1.342,1.404,0,2026-11-12T16:30:41Z
+Melbourne,mel-au-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,8.34,12.322,0,2026-11-12T16:30:41Z
+Melbourne,mel-au-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,31.895,36.559,0,2026-11-12T16:30:47Z
+Melbourne,mel-au-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,28.865,32.839,0,2026-11-12T16:30:47Z
+Melbourne,mel-au-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,43.204,43.385,0,2026-11-12T16:30:52Z
+Melbourne,mel-au-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,40.94,43.919,0,2026-11-12T16:30:52Z
+Melbourne,mel-au-ping.vultr.com,Johannesburg,ZA,Johannesburg,37153,Xneelo,-26.2,28.04,453.201,453.291,0,2026-11-12T16:30:58Z
+Melbourne,mel-au-ping.vultr.com,Johannesburg,ZA,Johannesburg,61138,Zappie Host,-26.2,28.04,373.41,373.564,0,2026-11-12T16:30:58Z
+Melbourne,mel-au-ping.vultr.com,Cape Town,ZA,Cape Town,329206,Rackzar,-33.93,18.42,401.07,401.196,0,2026-11-12T16:31:04Z
+Melbourne,mel-au-ping.vultr.com,Cape Town,ZA,Cape Town,37497,Network Platforms,-33.93,18.42,239.601,239.651,0,2026-11-12T16:31:04Z
+Melbourne,mel-au-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,418.784,418.863,0,2026-11-12T16:31:16Z
+Melbourne,mel-au-ping.vultr.com,Nairobi,KE,Nairobi,207113,Wofbit Networks,-1.28,36.82,331.929,332.001,0,2026-11-12T16:31:16Z
+Melbourne,mel-au-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,379.959,380.013,0,2026-11-12T16:31:22Z
+Melbourne,mel-au-ping.vultr.com,Lagos,NG,Lagos,8849,Melbikomas,6.45,3.39,389.841,389.894,0,2026-11-12T16:31:22Z
+Melbourne,mel-au-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,308.166,309.265,0,2026-11-12T16:31:28Z
+Melbourne,mel-au-ping.vultr.com,Sao Paulo,BR,Sao Paulo,27699,Telefonica,-23.55,-46.64,310.978,311.274,0,2026-11-12T16:31:28Z
+Melbourne,mel-au-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,337.869,337.987,0,2026-11-12T16:31:34Z
+Melbourne,mel-au-ping.vultr.com,Buenos Aires,AR,Buenos Aires,7303,Telecom Argentina,-34.61,-58.38,344.993,345.625,0,2026-11-12T16:31:34Z
+Melbourne,mel-au-ping.vultr.com,Santiago,CL,Santiago,31898,Oracle,-33.46,-70.65,308.049,308.783,0,2026-11-12T16:31:40Z
+Melbourne,mel-au-ping.vultr.com,Santiago,CL,Santiago,61138,Zappie Host,-33.46,-70.65,308.025,311.525,0,2026-11-12T16:31:40Z
+Melbourne,mel-au-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,283.555,283.65,0,2026-11-12T16:31:46Z
+Melbourne,mel-au-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,272.103,272.239,0,2026-11-12T16:31:46Z
+Melbourne,mel-au-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,240.123,240.225,0,2026-11-12T16:31:52Z
+Melbourne,mel-au-ping.vultr.com,Bogota,CO,Bogota,58061,Scalaxy,4.61,-74.08,245.571,245.685,0,2026-11-12T16:31:52Z
+Melbourne,mel-au-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,217.35,217.474,0,2026-11-12T16:31:58Z
+Melbourne,mel-au-ping.vultr.com,Miami,US,Miami,60068,Datacamp,25.77,-80.19,202.681,202.786,0,2026-11-12T16:31:58Z
+Melbourne,mel-au-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,168.435,168.672,0,2026-11-12T16:32:05Z
+Melbourne,mel-au-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,169.005,169.054,0,2026-11-12T16:32:05Z
+Melbourne,mel-au-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,174.859,174.891,0,2026-11-12T16:32:09Z
+Melbourne,mel-au-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,175.132,175.25,0,2026-11-12T16:32:09Z
+Melbourne,mel-au-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,199.264,199.341,0,2026-11-12T16:32:15Z
+Melbourne,mel-au-ping.vultr.com,London,GB,London,16276,OVH,51.53,0.08,286.252,287.041,0,2026-11-12T16:32:21Z
+Melbourne,mel-au-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,253.685,253.766,0,2026-11-12T16:32:21Z
+Melbourne,mel-au-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,266.09,266.154,0,2026-11-12T16:32:26Z
+Melbourne,mel-au-ping.vultr.com,Frankfurt,DE,Frankfurt,44486,synlinq.de,50.12,8.68,236.512,236.584,0,2026-11-12T16:32:26Z
+Melbourne,mel-au-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,118.078,122.103,0,2026-11-12T16:32:32Z
+Melbourne,mel-au-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,110.795,110.874,0,2026-11-12T16:32:32Z
+Melbourne,mel-au-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,117.424,117.623,0,2026-11-12T16:32:38Z
+Melbourne,mel-au-ping.vultr.com,Singapore,SG,Singapore,16276,OVH,1.29,103.85,84.258,84.372,0,2026-11-12T16:32:38Z
+Melbourne,mel-au-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,374.988,375.042,0,2026-11-12T16:32:44Z
+Melbourne,mel-au-ping.vultr.com,Mumbai,IN,Mumbai,47583,Hostinger International,19.07,72.88,365.793,365.833,0,2026-11-12T16:32:44Z
+Johannesburg,jnb-za-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,362.638,362.691,0,2026-11-12T16:32:50Z
+Johannesburg,jnb-za-ping.vultr.com,Auckland,NZ,Auckland,56030,Voyager Internet,-36.85,174.76,424.635,424.926,0,2026-11-12T16:32:50Z
+Johannesburg,jnb-za-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,461.66,462.03,0,2026-11-12T16:32:56Z
+Johannesburg,jnb-za-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,381.893,382.517,0,2026-11-12T16:32:56Z
+Johannesburg,jnb-za-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,407.011,407.098,0,2026-11-12T16:33:02Z
+Johannesburg,jnb-za-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,404.725,404.789,0,2026-11-12T16:33:02Z
+Johannesburg,jnb-za-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,303.653,303.757,0,2026-11-12T16:33:08Z
+Johannesburg,jnb-za-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,311.05,311.096,0,2026-11-12T16:33:08Z
+Johannesburg,jnb-za-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,347.418,349.423,0,2026-11-12T16:33:15Z
+Johannesburg,jnb-za-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,412.469,412.637,0,2026-11-12T16:33:15Z
+Johannesburg,jnb-za-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,340.36,341.527,0,2026-11-12T16:33:21Z
+Johannesburg,jnb-za-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,356.426,356.668,0,2026-11-12T16:33:21Z
+Johannesburg,jnb-za-ping.vultr.com,Johannesburg,ZA,Johannesburg,31898,Oracle,-26.2,28.04,0.548,0.625,0,2026-11-12T16:33:27Z
+Johannesburg,jnb-za-ping.vultr.com,Johannesburg,ZA,Johannesburg,61138,Zappie Host,-26.2,28.04,1.172,1.198,0,2026-11-12T16:33:27Z
+Johannesburg,jnb-za-ping.vultr.com,Cape Town,ZA,Cape Town,328029,Web Telecom Services,-33.93,18.42,17.524,17.797,0,2026-11-12T16:33:33Z
+Johannesburg,jnb-za-ping.vultr.com,Cape Town,ZA,Cape Town,37053,RSAWEB,-33.93,18.42,22.166,22.371,0,2026-11-12T16:33:33Z
+Johannesburg,jnb-za-ping.vultr.com,Nairobi,KE,Nairobi,207113,Wofbit Networks,-1.28,36.82,59.526,59.594,0,2026-11-12T16:33:41Z
+Johannesburg,jnb-za-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,51.631,51.685,0,2026-11-12T16:33:41Z
+Johannesburg,jnb-za-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,76.514,77.177,0,2026-11-12T16:33:47Z
+Johannesburg,jnb-za-ping.vultr.com,Lagos,NG,Lagos,136258,BrainStorm Network,6.45,3.39,264.069,264.144,0,2026-11-12T16:33:47Z
+Johannesburg,jnb-za-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,343.055,343.229,0,2026-11-12T16:33:53Z
+Johannesburg,jnb-za-ping.vultr.com,Sao Paulo,BR,Sao Paulo,27699,Telefonica,-23.55,-46.64,382.361,383.006,0,2026-11-12T16:33:53Z
+Johannesburg,jnb-za-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,385.791,386.087,0,2026-11-12T16:34:00Z
+Johannesburg,jnb-za-ping.vultr.com,Buenos Aires,AR,Buenos Aires,58061,Scalaxy,-34.61,-58.38,374.468,374.537,0,2026-11-12T16:34:00Z
+Johannesburg,jnb-za-ping.vultr.com,Santiago,CL,Santiago,61138,Zappie Host,-33.46,-70.65,402.993,404.983,0,2026-11-12T16:34:06Z
+Johannesburg,jnb-za-ping.vultr.com,Santiago,CL,Santiago,31898,Oracle,-33.46,-70.65,346.864,346.921,0,2026-11-12T16:34:06Z
+Johannesburg,jnb-za-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,335.787,335.849,0,2026-11-12T16:34:12Z
+Johannesburg,jnb-za-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,349.966,350.51,0,2026-11-12T16:34:12Z
+Johannesburg,jnb-za-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,315.709,315.8,0,2026-11-12T16:34:18Z
+Johannesburg,jnb-za-ping.vultr.com,Bogota,CO,Bogota,136258,BrainStorm Network,4.61,-74.08,317.424,317.899,0,2026-11-12T16:34:18Z
+Johannesburg,jnb-za-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,297.305,299.198,0,2026-11-12T16:34:24Z
+Johannesburg,jnb-za-ping.vultr.com,Miami,US,Miami,53724,EXTRAVM,25.77,-80.19,268.957,269.014,0,2026-11-12T16:34:24Z
+Johannesburg,jnb-za-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,296.084,296.148,0,2026-11-12T16:34:30Z
+Johannesburg,jnb-za-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,369.046,369.116,0,2026-11-12T16:34:30Z
+Johannesburg,jnb-za-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,308.89,308.959,0,2026-11-12T16:34:36Z
+Johannesburg,jnb-za-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,291.626,292.098,0,2026-11-12T16:34:36Z
+Johannesburg,jnb-za-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,355.594,355.639,0,2026-11-12T16:34:43Z
+Johannesburg,jnb-za-ping.vultr.com,London,GB,London,16276,OVH,51.48,0.17,162.999,163.065,0,2026-11-12T16:34:49Z
+Johannesburg,jnb-za-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,163.018,163.06,0,2026-11-12T16:34:49Z
+Johannesburg,jnb-za-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,162.19,162.245,0,2026-11-12T16:34:53Z
+Johannesburg,jnb-za-ping.vultr.com,Frankfurt,DE,Frankfurt,16276,OVH,50.12,8.68,170.489,170.555,0,2026-11-12T16:34:53Z
+Johannesburg,jnb-za-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,314.78,314.988,0,2026-11-12T16:34:59Z
+Johannesburg,jnb-za-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,387.069,387.213,0,2026-11-12T16:34:59Z
+Johannesburg,jnb-za-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,320.329,321.103,0,2026-11-12T16:35:07Z
+Johannesburg,jnb-za-ping.vultr.com,Singapore,SG,Singapore,16276,OVH,1.29,103.85,337.116,337.205,0,2026-11-12T16:35:07Z
+Johannesburg,jnb-za-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,279.286,279.329,0,2026-11-12T16:35:13Z
+Johannesburg,jnb-za-ping.vultr.com,Mumbai,IN,Mumbai,16509,Amazon.com,19.07,72.88,339.643,339.682,0,2026-11-12T16:35:13Z
+Sao Paulo,sao-br-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,302.418,302.473,0,2026-11-12T16:35:19Z
+Sao Paulo,sao-br-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,302.864,303.004,0,2026-11-12T16:35:19Z
+Sao Paulo,sao-br-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,316.941,318.185,0,2026-11-12T16:35:25Z
+Sao Paulo,sao-br-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,314.943,314.998,0,2026-11-12T16:35:25Z
+Sao Paulo,sao-br-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,309.047,309.101,0,2026-11-12T16:35:31Z
+Sao Paulo,sao-br-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,298.113,298.236,0,2026-11-12T16:35:31Z
+Sao Paulo,sao-br-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,367.357,367.711,0,2026-11-12T16:35:38Z
+Sao Paulo,sao-br-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,325.446,325.518,0,2026-11-12T16:35:38Z
+Sao Paulo,sao-br-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,317.094,320.099,0,2026-11-12T16:35:44Z
+Sao Paulo,sao-br-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,323.586,325.766,0,2026-11-12T16:35:44Z
+Sao Paulo,sao-br-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,452.763,453.255,0,2026-11-12T16:35:50Z
+Sao Paulo,sao-br-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,344.834,345.179,0,2026-11-12T16:35:50Z
+Sao Paulo,sao-br-ping.vultr.com,Johannesburg,ZA,Johannesburg,37153,Xneelo,-26.2,28.04,348.628,348.69,0,2026-11-12T16:35:56Z
+Sao Paulo,sao-br-ping.vultr.com,Johannesburg,ZA,Johannesburg,136907,HUAWEI CLOUDS,-26.2,28.04,340.65,340.703,0,2026-11-12T16:35:56Z
+Sao Paulo,sao-br-ping.vultr.com,Cape Town,ZA,Cape Town,328170,DataKeepers,-33.93,18.42,316.694,316.795,0,2026-11-12T16:36:03Z
+Sao Paulo,sao-br-ping.vultr.com,Cape Town,ZA,Cape Town,329206,Rackzar,-33.93,18.42,328.999,329.041,0,2026-11-12T16:36:03Z
+Sao Paulo,sao-br-ping.vultr.com,Nairobi,KE,Nairobi,329636,Imani Labs,-1.28,36.82,325.933,326.144,0,2026-11-12T16:36:09Z
+Sao Paulo,sao-br-ping.vultr.com,Nairobi,KE,Nairobi,207113,Wofbit Networks,-1.28,36.82,324.431,324.509,0,2026-11-12T16:36:09Z
+Sao Paulo,sao-br-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,281.832,281.884,0,2026-11-12T16:36:15Z
+Sao Paulo,sao-br-ping.vultr.com,Lagos,NG,Lagos,136258,BrainStorm Network,6.45,3.39,282.027,282.076,0,2026-11-12T16:36:15Z
+Sao Paulo,sao-br-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,1.389,1.465,0,2026-11-12T16:36:21Z
+Sao Paulo,sao-br-ping.vultr.com,Sao Paulo,BR,Sao Paulo,20473,The Constant Company,-23.53,-46.79,0.358,0.52,0,2026-11-12T16:36:21Z
+Sao Paulo,sao-br-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,29.119,29.161,0,2026-11-12T16:36:27Z
+Sao Paulo,sao-br-ping.vultr.com,Buenos Aires,AR,Buenos Aires,11014,CPS,-34.61,-58.38,29.62,31.331,0,2026-11-12T16:36:27Z
+Sao Paulo,sao-br-ping.vultr.com,Santiago,CL,Santiago,270013,J AND J SPA (INFOFRACTAL),-33.46,-70.65,49.431,49.465,0,2026-11-12T16:36:33Z
+Sao Paulo,sao-br-ping.vultr.com,Santiago,CL,Santiago,31898,Oracle,-33.46,-70.65,47.78,47.863,0,2026-11-12T16:36:33Z
+Sao Paulo,sao-br-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,129.686,129.725,0,2026-11-12T16:36:40Z
+Sao Paulo,sao-br-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,78.213,78.326,0,2026-11-12T16:36:40Z
+Sao Paulo,sao-br-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,141.203,141.281,0,2026-11-12T16:36:46Z
+Sao Paulo,sao-br-ping.vultr.com,Bogota,CO,Bogota,19429,ETB - Colombia,4.61,-74.08,152.186,152.474,0,2026-11-12T16:36:46Z
+Sao Paulo,sao-br-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,110.768,110.92,0,2026-11-12T16:36:52Z
+Sao Paulo,sao-br-ping.vultr.com,Miami,US,Miami,60068,Datacamp,25.77,-80.19,104.854,104.918,0,2026-11-12T16:36:52Z
+Sao Paulo,sao-br-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,167.611,168.188,0,2026-11-12T16:36:58Z
+Sao Paulo,sao-br-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,175.902,176.011,0,2026-11-12T16:36:58Z
+Sao Paulo,sao-br-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,171.643,171.919,0,2026-11-12T16:37:04Z
+Sao Paulo,sao-br-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,173.511,173.585,0,2026-11-12T16:37:04Z
+Sao Paulo,sao-br-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,216.222,216.293,0,2026-11-12T16:37:10Z
+Sao Paulo,sao-br-ping.vultr.com,London,GB,London,16276,OVH,51.48,0.08,201.395,201.426,0,2026-11-12T16:37:16Z
+Sao Paulo,sao-br-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,180.525,187.998,0,2026-11-12T16:37:16Z
+Sao Paulo,sao-br-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,191.374,191.382,0,2026-11-12T16:37:22Z
+Sao Paulo,sao-br-ping.vultr.com,Frankfurt,DE,Frankfurt,16276,OVH,50.12,8.68,209.747,209.819,0,2026-11-12T16:37:22Z
+Sao Paulo,sao-br-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,268.936,269.025,0,2026-11-12T16:37:28Z
+Sao Paulo,sao-br-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,276.546,276.616,0,2026-11-12T16:37:28Z
+Sao Paulo,sao-br-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,337.82,338.871,0,2026-11-12T16:37:34Z
+Sao Paulo,sao-br-ping.vultr.com,Singapore,SG,Singapore,31898,Oracle,1.38,103.96,346.975,347.195,0,2026-11-12T16:37:34Z
+Sao Paulo,sao-br-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,270.069,270.343,0,2026-11-12T16:37:41Z
+Sao Paulo,sao-br-ping.vultr.com,Mumbai,IN,Mumbai,47583,Hostinger International,19.07,72.88,263.286,263.33,0,2026-11-12T16:37:41Z
+Santiago,scl-cl-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,309.622,309.723,0,2026-11-12T16:37:47Z
+Santiago,scl-cl-ping.vultr.com,Auckland,NZ,Auckland,56030,Voyager Internet,-36.87,174.77,340.993,341.079,0,2026-11-12T16:37:47Z
+Santiago,scl-cl-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,307.882,308.805,0,2026-11-12T16:37:55Z
+Santiago,scl-cl-ping.vultr.com,Wellington,NZ,Wellington,9500,One New Zealand Group,-41.29,174.78,305.517,307.919,0,2026-11-12T16:37:55Z
+Santiago,scl-cl-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,313.492,313.591,0,2026-11-12T16:38:01Z
+Santiago,scl-cl-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,346.038,346.281,0,2026-11-12T16:38:01Z
+Santiago,scl-cl-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,301.381,301.445,0,2026-11-12T16:38:07Z
+Santiago,scl-cl-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,341.936,342.011,0,2026-11-12T16:38:07Z
+Santiago,scl-cl-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,306.163,307.888,0,2026-11-12T16:38:13Z
+Santiago,scl-cl-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,367.536,369.221,0,2026-11-12T16:38:13Z
+Santiago,scl-cl-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,422.399,422.841,0,2026-11-12T16:38:19Z
+Santiago,scl-cl-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,393.138,393.274,0,2026-11-12T16:38:19Z
+Santiago,scl-cl-ping.vultr.com,Johannesburg,ZA,Johannesburg,136907,HUAWEI CLOUDS,-26.2,28.04,405.821,405.927,0,2026-11-12T16:38:26Z
+Santiago,scl-cl-ping.vultr.com,Johannesburg,ZA,Johannesburg,61138,Zappie Host,-26.2,28.04,370.379,370.468,0,2026-11-12T16:38:26Z
+Santiago,scl-cl-ping.vultr.com,Cape Town,ZA,Cape Town,328170,DataKeepers,-33.93,18.42,332.974,333.284,0,2026-11-12T16:38:32Z
+Santiago,scl-cl-ping.vultr.com,Cape Town,ZA,Cape Town,329206,Rackzar,-33.93,18.42,329.499,329.59,0,2026-11-12T16:38:32Z
+Santiago,scl-cl-ping.vultr.com,Nairobi,KE,Nairobi,207113,Wofbit Networks,-1.28,36.82,396.858,404.473,0,2026-11-12T16:38:43Z
+Santiago,scl-cl-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,350.965,351.029,0,2026-11-12T16:38:43Z
+Santiago,scl-cl-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,283.859,283.964,0,2026-11-12T16:38:50Z
+Santiago,scl-cl-ping.vultr.com,Lagos,NG,Lagos,136258,BrainStorm Network,6.45,3.39,291.115,291.135,0,2026-11-12T16:38:50Z
+Santiago,scl-cl-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,48.715,48.804,0,2026-11-12T16:38:56Z
+Santiago,scl-cl-ping.vultr.com,Sao Paulo,BR,Sao Paulo,20473,The Constant Company,-23.53,-46.79,47.868,47.922,0,2026-11-12T16:38:56Z
+Santiago,scl-cl-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,21.062,21.138,0,2026-11-12T16:39:00Z
+Santiago,scl-cl-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136258,BrainStorm Network,-34.61,-58.38,20.94,21.033,0,2026-11-12T16:39:00Z
+Santiago,scl-cl-ping.vultr.com,Santiago,CL,Santiago,61138,Zappie Host,-33.46,-70.65,1.946,3.734,0,2026-11-12T16:39:06Z
+Santiago,scl-cl-ping.vultr.com,Santiago,CL,Santiago,270013,J AND J SPA (INFOFRACTAL),-33.46,-70.65,1.818,1.871,0,2026-11-12T16:39:06Z
+Santiago,scl-cl-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,31.81,31.877,0,2026-11-12T16:39:12Z
+Santiago,scl-cl-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,30.445,30.517,0,2026-11-12T16:39:12Z
+Santiago,scl-cl-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,103.645,103.724,0,2026-11-12T16:39:18Z
+Santiago,scl-cl-ping.vultr.com,Bogota,CO,Bogota,58061,Scalaxy,4.61,-74.08,66.574,66.675,0,2026-11-12T16:39:18Z
+Santiago,scl-cl-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,99.013,99.058,0,2026-11-12T16:39:22Z
+Santiago,scl-cl-ping.vultr.com,Miami,US,Miami,23470,ReliableSite.Net,25.81,-80.23,123.699,123.776,0,2026-11-12T16:39:22Z
+Santiago,scl-cl-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,169.621,170.078,0,2026-11-12T16:39:29Z
+Santiago,scl-cl-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,152.829,152.918,0,2026-11-12T16:39:29Z
+Santiago,scl-cl-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,180.59,180.675,0,2026-11-12T16:39:35Z
+Santiago,scl-cl-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,196.239,196.429,0,2026-11-12T16:39:35Z
+Santiago,scl-cl-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,211.826,211.875,0,2026-11-12T16:39:41Z
+Santiago,scl-cl-ping.vultr.com,London,GB,London,16276,OVH,51.53,0.08,223.799,224.838,0,2026-11-12T16:39:47Z
+Santiago,scl-cl-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,188.256,188.337,0,2026-11-12T16:39:47Z
+Santiago,scl-cl-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,200.515,200.552,0,2026-11-12T16:39:52Z
+Santiago,scl-cl-ping.vultr.com,Frankfurt,DE,Frankfurt,16276,OVH,50.12,8.68,239.322,239.389,0,2026-11-12T16:39:52Z
+Santiago,scl-cl-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,259.241,259.296,0,2026-11-12T16:39:59Z
+Santiago,scl-cl-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,288.219,288.302,0,2026-11-12T16:39:59Z
+Santiago,scl-cl-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,352.567,353.045,0,2026-11-12T16:40:05Z
+Santiago,scl-cl-ping.vultr.com,Singapore,SG,Singapore,16276,OVH,1.29,103.85,339.559,339.605,0,2026-11-12T16:40:05Z
+Santiago,scl-cl-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,348.59,348.847,0,2026-11-12T16:40:11Z
+Santiago,scl-cl-ping.vultr.com,Mumbai,IN,Mumbai,47583,Hostinger International,19.07,72.88,370.9,371.407,0,2026-11-12T16:40:11Z
+Singapore,sgp-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,114.984,117.376,0,2026-11-12T16:40:18Z
+Singapore,sgp-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,116.141,118.416,0,2026-11-12T16:40:18Z
+Singapore,sgp-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,149.074,159.29,0,2026-11-12T16:40:24Z
+Singapore,sgp-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,124.891,138.344,0,2026-11-12T16:40:24Z
+Singapore,sgp-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,93.493,104.868,0,2026-11-12T16:40:30Z
+Singapore,sgp-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,92.592,109.314,0,2026-11-12T16:40:30Z
+Singapore,sgp-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,100.439,119.154,0,2026-11-12T16:40:36Z
+Singapore,sgp-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,83.353,125.403,0,2026-11-12T16:40:36Z
+Singapore,sgp-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,106.313,113.421,0,2026-11-12T16:40:42Z
+Singapore,sgp-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,112.883,118.701,0,2026-11-12T16:40:42Z
+Singapore,sgp-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,99.2,109.423,0,2026-11-12T16:40:48Z
+Singapore,sgp-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,48.521,51.473,0,2026-11-12T16:40:48Z
+Singapore,sgp-ping.vultr.com,Johannesburg,ZA,Johannesburg,136907,HUAWEI CLOUDS,-26.2,28.04,256.161,264.255,0,2026-11-12T16:40:54Z
+Singapore,sgp-ping.vultr.com,Johannesburg,ZA,Johannesburg,31898,Oracle,-26.2,28.04,328.137,352.946,0,2026-11-12T16:40:54Z
+Singapore,sgp-ping.vultr.com,Cape Town,ZA,Cape Town,328029,Web Telecom Services,-33.93,18.42,237.652,244.091,0,2026-11-12T16:41:00Z
+Singapore,sgp-ping.vultr.com,Cape Town,ZA,Cape Town,16509,Amazon.com,-33.93,18.42,325.998,328.623,0,2026-11-12T16:41:00Z
+Singapore,sgp-ping.vultr.com,Nairobi,KE,Nairobi,329636,Imani Labs,-1.28,36.82,130.034,142.977,0,2026-11-12T16:41:07Z
+Singapore,sgp-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,297.432,337.573,0,2026-11-12T16:41:07Z
+Singapore,sgp-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,263.901,269.972,0,2026-11-12T16:41:13Z
+Singapore,sgp-ping.vultr.com,Lagos,NG,Lagos,37271,Workonline Communications(Pty),6.45,3.39,295.791,305.539,0,2026-11-12T16:41:13Z
+Singapore,sgp-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,329.364,340.203,0,2026-11-12T16:41:19Z
+Singapore,sgp-ping.vultr.com,Sao Paulo,BR,Sao Paulo,20473,The Constant Company,-23.53,-46.79,331.941,338.552,0,2026-11-12T16:41:19Z
+Singapore,sgp-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,368.008,371.48,0,2026-11-12T16:41:25Z
+Singapore,sgp-ping.vultr.com,Buenos Aires,AR,Buenos Aires,271779,FULLNET SOLUTIONS,-34.85,-58.53,339.615,343.49,0,2026-11-12T16:41:25Z
+Singapore,sgp-ping.vultr.com,Santiago,CL,Santiago,61138,Zappie Host,-33.46,-70.65,348.151,353.355,0,2026-11-12T16:41:31Z
+Singapore,sgp-ping.vultr.com,Santiago,CL,Santiago,270013,J AND J SPA (INFOFRACTAL),-33.46,-70.65,314.284,320.513,0,2026-11-12T16:41:31Z
+Singapore,sgp-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,290.331,291.47,0,2026-11-12T16:41:37Z
+Singapore,sgp-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,312.141,314.795,0,2026-11-12T16:41:37Z
+Singapore,sgp-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,275.829,279.091,0,2026-11-12T16:41:43Z
+Singapore,sgp-ping.vultr.com,Bogota,CO,Bogota,58061,Scalaxy,4.61,-74.08,265.827,269.521,0,2026-11-12T16:41:43Z
+Singapore,sgp-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,266.612,271.987,0,2026-11-12T16:41:49Z
+Singapore,sgp-ping.vultr.com,Miami,US,Miami,60068,Datacamp,25.77,-80.19,242.55,245.604,0,2026-11-12T16:41:49Z
+Singapore,sgp-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,170.594,191.74,0,2026-11-12T16:41:55Z
+Singapore,sgp-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,227.463,230.138,0,2026-11-12T16:41:55Z
+Singapore,sgp-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,199.739,212.483,0,2026-11-12T16:42:01Z
+Singapore,sgp-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,195.937,209.658,0,2026-11-12T16:42:01Z
+Singapore,sgp-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,219.107,229.326,0,2026-11-12T16:42:07Z
+Singapore,sgp-ping.vultr.com,London,GB,London,16276,OVH,51.48,0.08,227.767,230.53,0,2026-11-12T16:42:13Z
+Singapore,sgp-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,220.519,224.62,0,2026-11-12T16:42:13Z
+Singapore,sgp-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,153.394,157.407,0,2026-11-12T16:42:19Z
+Singapore,sgp-ping.vultr.com,Frankfurt,DE,Frankfurt,3214,xTom,50.12,8.68,154.007,157.059,0,2026-11-12T16:42:19Z
+Singapore,sgp-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,65.338,68.82,0,2026-11-12T16:42:25Z
+Singapore,sgp-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,67.078,76.74,0,2026-11-12T16:42:25Z
+Singapore,sgp-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,1.238,24.017,0,2026-11-12T16:42:29Z
+Singapore,sgp-ping.vultr.com,Singapore,SG,Singapore,31898,Oracle,1.38,103.96,1.226,6.373,0,2026-11-12T16:42:29Z
+Singapore,sgp-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,75.198,110.317,0,2026-11-12T16:42:35Z
+Singapore,sgp-ping.vultr.com,Mumbai,IN,Mumbai,63949,Akamai Connected Cloud,19.07,72.88,60.162,75.682,0,2026-11-12T16:42:35Z
+Mumbai,bom-in-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,172.97,173.187,0,2026-11-12T16:42:42Z
+Mumbai,bom-in-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,169.199,169.323,0,2026-11-12T16:42:42Z
+Mumbai,bom-in-ping.vultr.com,Wellington,NZ,Wellington,9500,One New Zealand Group,-41.29,174.78,187.83,194.967,0,2026-11-12T16:42:48Z
+Mumbai,bom-in-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,181.704,181.742,0,2026-11-12T16:42:48Z
+Mumbai,bom-in-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,149.744,149.788,0,2026-11-12T16:42:54Z
+Mumbai,bom-in-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,149.195,149.233,0,2026-11-12T16:42:54Z
+Mumbai,bom-in-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,154.39,154.534,0,2026-11-12T16:43:00Z
+Mumbai,bom-in-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,170.709,170.773,0,2026-11-12T16:43:00Z
+Mumbai,bom-in-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,171.584,172.937,0,2026-11-12T16:43:06Z
+Mumbai,bom-in-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,200.447,201.237,0,2026-11-12T16:43:06Z
+Mumbai,bom-in-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,156.728,156.982,0,2026-11-12T16:43:11Z
+Mumbai,bom-in-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,150.521,150.745,0,2026-11-12T16:43:11Z
+Mumbai,bom-in-ping.vultr.com,Johannesburg,ZA,Johannesburg,31898,Oracle,-26.2,28.04,400.677,400.761,0,2026-11-12T16:43:18Z
+Mumbai,bom-in-ping.vultr.com,Johannesburg,ZA,Johannesburg,37153,Xneelo,-26.2,28.04,314.667,314.737,0,2026-11-12T16:43:18Z
+Mumbai,bom-in-ping.vultr.com,Cape Town,ZA,Cape Town,11845,Vox Telecom,-33.93,18.42,264.851,264.906,0,2026-11-12T16:43:24Z
+Mumbai,bom-in-ping.vultr.com,Cape Town,ZA,Cape Town,37053,RSAWEB,-33.93,18.42,266.861,267.054,0,2026-11-12T16:43:24Z
+Mumbai,bom-in-ping.vultr.com,Nairobi,KE,Nairobi,207113,Wofbit Networks,-1.28,36.82,214.847,214.892,0,2026-11-12T16:43:30Z
+Mumbai,bom-in-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,284.961,285.009,0,2026-11-12T16:43:30Z
+Mumbai,bom-in-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,219.269,219.299,0,2026-11-12T16:43:36Z
+Mumbai,bom-in-ping.vultr.com,Lagos,NG,Lagos,209179,AfriCloud,6.45,3.39,208.781,208.844,0,2026-11-12T16:43:36Z
+Mumbai,bom-in-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,363.075,364.284,0,2026-11-12T16:43:42Z
+Mumbai,bom-in-ping.vultr.com,Sao Paulo,BR,Sao Paulo,27699,Telefonica,-23.55,-46.64,324.074,324.221,0,2026-11-12T16:43:42Z
+Mumbai,bom-in-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,349.866,349.899,0,2026-11-12T16:43:49Z
+Mumbai,bom-in-ping.vultr.com,Buenos Aires,AR,Buenos Aires,11014,CPS,-34.61,-58.38,383.146,385.144,0,2026-11-12T16:43:49Z
+Mumbai,bom-in-ping.vultr.com,Santiago,CL,Santiago,270013,J AND J SPA (INFOFRACTAL),-33.46,-70.65,300.025,300.076,0,2026-11-12T16:43:55Z
+Mumbai,bom-in-ping.vultr.com,Santiago,CL,Santiago,31898,Oracle,-33.46,-70.65,318.28,318.331,0,2026-11-12T16:43:55Z
+Mumbai,bom-in-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,325.576,325.63,0,2026-11-12T16:44:01Z
+Mumbai,bom-in-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,280.355,280.401,0,2026-11-12T16:44:01Z
+Mumbai,bom-in-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,352.79,352.914,0,2026-11-12T16:44:07Z
+Mumbai,bom-in-ping.vultr.com,Bogota,CO,Bogota,58061,Scalaxy,4.61,-74.08,353.031,353.066,0,2026-11-12T16:44:07Z
+Mumbai,bom-in-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,296.6,296.645,0,2026-11-12T16:44:13Z
+Mumbai,bom-in-ping.vultr.com,Miami,US,Miami,9009,M247,25.77,-80.19,297.059,297.128,0,2026-11-12T16:44:13Z
+Mumbai,bom-in-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,256.459,256.88,0,2026-11-12T16:44:19Z
+Mumbai,bom-in-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,253.267,253.373,0,2026-11-12T16:44:19Z
+Mumbai,bom-in-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,246.026,246.334,0,2026-11-12T16:44:25Z
+Mumbai,bom-in-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,242.312,242.354,0,2026-11-12T16:44:25Z
+Mumbai,bom-in-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,284.21,284.266,0,2026-11-12T16:44:31Z
+Mumbai,bom-in-ping.vultr.com,London,GB,London,16276,OVH,51.53,0.08,113.709,113.764,0,2026-11-12T16:44:36Z
+Mumbai,bom-in-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,164.825,165.258,0,2026-11-12T16:44:36Z
+Mumbai,bom-in-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,126.134,126.18,0,2026-11-12T16:44:42Z
+Mumbai,bom-in-ping.vultr.com,Frankfurt,DE,Frankfurt,16276,OVH,50.12,8.68,125.898,125.962,0,2026-11-12T16:44:42Z
+Mumbai,bom-in-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,125.958,126.091,0,2026-11-12T16:44:48Z
+Mumbai,bom-in-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,127.272,127.301,0,2026-11-12T16:44:48Z
+Mumbai,bom-in-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,58.791,66.571,0,2026-11-12T16:44:54Z
+Mumbai,bom-in-ping.vultr.com,Singapore,SG,Singapore,16276,OVH,1.29,103.85,50.87,50.906,0,2026-11-12T16:44:54Z
+Mumbai,bom-in-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,1.195,1.262,0,2026-11-12T16:44:58Z
+Mumbai,bom-in-ping.vultr.com,Mumbai,IN,Mumbai,47583,Hostinger International,19.07,72.88,1.189,1.219,0,2026-11-12T16:44:58Z
+Honolulu,hon-hi-us-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,226.179,226.268,0,2026-11-12T16:45:04Z
+Honolulu,hon-hi-us-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,226.478,229.659,0,2026-11-12T16:45:04Z
+Honolulu,hon-hi-us-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,200.797,201.943,0,2026-11-12T16:45:11Z
+Honolulu,hon-hi-us-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,210.1,210.203,0,2026-11-12T16:45:11Z
+Honolulu,hon-hi-us-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,227.062,227.113,0,2026-11-12T16:45:17Z
+Honolulu,hon-hi-us-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,188.758,188.843,0,2026-11-12T16:45:17Z
+Honolulu,hon-hi-us-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,198.582,206.476,0,2026-11-12T16:45:23Z
+Honolulu,hon-hi-us-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,220.738,220.806,0,2026-11-12T16:45:23Z
+Honolulu,hon-hi-us-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,201.077,204.772,0,2026-11-12T16:45:29Z
+Honolulu,hon-hi-us-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,201.467,202.139,0,2026-11-12T16:45:29Z
+Honolulu,hon-hi-us-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,320.279,323.021,0,2026-11-12T16:45:35Z
+Honolulu,hon-hi-us-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,235.517,235.742,0,2026-11-12T16:45:35Z
+Honolulu,hon-hi-us-ping.vultr.com,Johannesburg,ZA,Johannesburg,61138,Zappie Host,-26.2,28.04,353.993,354.057,0,2026-11-12T16:45:41Z
+Honolulu,hon-hi-us-ping.vultr.com,Johannesburg,ZA,Johannesburg,329325,Maxko for Gaming Development,-26.2,28.08,336.057,336.635,0,2026-11-12T16:45:41Z
+Honolulu,hon-hi-us-ping.vultr.com,Cape Town,ZA,Cape Town,37053,RSAWEB,-33.93,18.42,330.579,330.719,0,2026-11-12T16:45:47Z
+Honolulu,hon-hi-us-ping.vultr.com,Cape Town,ZA,Cape Town,328029,Web Telecom Services,-33.93,18.42,337.32,337.385,0,2026-11-12T16:45:47Z
+Honolulu,hon-hi-us-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,341.288,341.391,0,2026-11-12T16:45:53Z
+Honolulu,hon-hi-us-ping.vultr.com,Nairobi,KE,Nairobi,329636,Imani Labs,-1.28,36.82,330.308,330.575,0,2026-11-12T16:45:53Z
+Honolulu,hon-hi-us-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,276.697,276.836,0,2026-11-12T16:45:59Z
+Honolulu,hon-hi-us-ping.vultr.com,Lagos,NG,Lagos,8849,Melbikomas,6.45,3.39,267.32,267.403,0,2026-11-12T16:45:59Z
+Honolulu,hon-hi-us-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,219.094,219.14,0,2026-11-12T16:46:05Z
+Honolulu,hon-hi-us-ping.vultr.com,Sao Paulo,BR,Sao Paulo,27699,Telefonica,-23.55,-46.64,220.555,220.849,0,2026-11-12T16:46:05Z
+Honolulu,hon-hi-us-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,249.515,249.571,0,2026-11-12T16:46:11Z
+Honolulu,hon-hi-us-ping.vultr.com,Buenos Aires,AR,Buenos Aires,11014,CPS,-34.61,-58.38,243.806,245.211,0,2026-11-12T16:46:11Z
+Honolulu,hon-hi-us-ping.vultr.com,Santiago,CL,Santiago,270013,J AND J SPA (INFOFRACTAL),-33.46,-70.65,240.299,240.484,0,2026-11-12T16:46:17Z
+Honolulu,hon-hi-us-ping.vultr.com,Santiago,CL,Santiago,20473,The Constant Company,-33.46,-70.65,219.796,219.84,0,2026-11-12T16:46:17Z
+Honolulu,hon-hi-us-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,182.588,182.723,0,2026-11-12T16:46:23Z
+Honolulu,hon-hi-us-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,180.536,180.585,0,2026-11-12T16:46:23Z
+Honolulu,hon-hi-us-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,169.514,169.546,0,2026-11-12T16:46:30Z
+Honolulu,hon-hi-us-ping.vultr.com,Bogota,CO,Bogota,136258,BrainStorm Network,4.61,-74.08,159.161,159.3,0,2026-11-12T16:46:30Z
+Honolulu,hon-hi-us-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,111.566,111.635,0,2026-11-12T16:46:36Z
+Honolulu,hon-hi-us-ping.vultr.com,Miami,US,Miami,53667,FranTech Solutions,25.77,-80.19,140.199,140.247,0,2026-11-12T16:46:36Z
+Honolulu,hon-hi-us-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,48.096,48.367,0,2026-11-12T16:46:42Z
+Honolulu,hon-hi-us-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,47.342,47.423,0,2026-11-12T16:46:42Z
+Honolulu,hon-hi-us-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,68.899,69.361,0,2026-11-12T16:46:47Z
+Honolulu,hon-hi-us-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,98.392,98.589,0,2026-11-12T16:46:47Z
+Honolulu,hon-hi-us-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,0.248,0.371,0,2026-11-12T16:46:51Z
+Honolulu,hon-hi-us-ping.vultr.com,London,GB,London,16276,OVH,51.48,0.17,192.365,192.529,0,2026-11-12T16:46:56Z
+Honolulu,hon-hi-us-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,174.39,174.496,0,2026-11-12T16:46:56Z
+Honolulu,hon-hi-us-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,183.999,184.07,0,2026-11-12T16:47:02Z
+Honolulu,hon-hi-us-ping.vultr.com,Frankfurt,DE,Frankfurt,44486,synlinq.de,50.12,8.68,189.597,189.905,0,2026-11-12T16:47:02Z
+Honolulu,hon-hi-us-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,152.089,152.126,0,2026-11-12T16:47:08Z
+Honolulu,hon-hi-us-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,155.938,156.087,0,2026-11-12T16:47:08Z
+Honolulu,hon-hi-us-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,221.747,221.902,0,2026-11-12T16:47:14Z
+Honolulu,hon-hi-us-ping.vultr.com,Singapore,SG,Singapore,31898,Oracle,1.38,103.96,218.04,218.063,0,2026-11-12T16:47:14Z
+Honolulu,hon-hi-us-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,290.104,290.15,0,2026-11-12T16:47:20Z
+Honolulu,hon-hi-us-ping.vultr.com,Mumbai,IN,Mumbai,47583,Hostinger International,19.07,72.88,286.744,286.812,0,2026-11-12T16:47:20Z
+Tokyo,hnd-jp-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,193.124,193.258,0,2026-11-12T16:47:26Z
+Tokyo,hnd-jp-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,192.935,193.393,0,2026-11-12T16:47:26Z
+Tokyo,hnd-jp-ping.vultr.com,Wellington,NZ,Wellington,9500,One New Zealand Group,-41.29,174.78,222.608,241.301,0,2026-11-12T16:47:33Z
+Tokyo,hnd-jp-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,146.057,146.128,0,2026-11-12T16:47:33Z
+Tokyo,hnd-jp-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,100.512,100.567,0,2026-11-12T16:47:39Z
+Tokyo,hnd-jp-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,98.829,98.863,0,2026-11-12T16:47:39Z
+Tokyo,hnd-jp-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,174.881,180.858,0,2026-11-12T16:47:45Z
+Tokyo,hnd-jp-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,149.393,149.44,0,2026-11-12T16:47:45Z
+Tokyo,hnd-jp-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,114.438,119.458,0,2026-11-12T16:47:51Z
+Tokyo,hnd-jp-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,192.319,193.204,0,2026-11-12T16:47:51Z
+Tokyo,hnd-jp-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,136.831,137.402,0,2026-11-12T16:47:57Z
+Tokyo,hnd-jp-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,112.689,113.023,0,2026-11-12T16:47:57Z
+Tokyo,hnd-jp-ping.vultr.com,Johannesburg,ZA,Johannesburg,31898,Oracle,-26.2,28.04,411.776,411.924,0,2026-11-12T16:48:03Z
+Tokyo,hnd-jp-ping.vultr.com,Johannesburg,ZA,Johannesburg,61138,Zappie Host,-26.2,28.04,308.034,308.093,0,2026-11-12T16:48:03Z
+Tokyo,hnd-jp-ping.vultr.com,Cape Town,ZA,Cape Town,37497,Network Platforms,-33.93,18.42,247.121,247.329,0,2026-11-12T16:48:09Z
+Tokyo,hnd-jp-ping.vultr.com,Cape Town,ZA,Cape Town,213481,Hevis Co Systems,-33.93,18.42,248.87,249.579,0,2026-11-12T16:48:09Z
+Tokyo,hnd-jp-ping.vultr.com,Nairobi,KE,Nairobi,329636,Imani Labs,-1.28,36.82,200.392,200.677,0,2026-11-12T16:48:15Z
+Tokyo,hnd-jp-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,387.884,388.034,0,2026-11-12T16:48:15Z
+Tokyo,hnd-jp-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,336.045,336.172,0,2026-11-12T16:48:22Z
+Tokyo,hnd-jp-ping.vultr.com,Lagos,NG,Lagos,8849,Melbikomas,6.45,3.39,340.321,340.927,0,2026-11-12T16:48:22Z
+Tokyo,hnd-jp-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,286.995,287.817,0,2026-11-12T16:48:28Z
+Tokyo,hnd-jp-ping.vultr.com,Sao Paulo,BR,Sao Paulo,20473,The Constant Company,-23.53,-46.79,279.992,280.043,0,2026-11-12T16:48:28Z
+Tokyo,hnd-jp-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,310.932,310.994,0,2026-11-12T16:48:34Z
+Tokyo,hnd-jp-ping.vultr.com,Buenos Aires,AR,Buenos Aires,58061,Scalaxy,-34.61,-58.38,277.755,277.924,0,2026-11-12T16:48:34Z
+Tokyo,hnd-jp-ping.vultr.com,Santiago,CL,Santiago,136907,HUAWEI CLOUDS,-33.46,-70.65,306.643,306.681,0,2026-11-12T16:48:40Z
+Tokyo,hnd-jp-ping.vultr.com,Santiago,CL,Santiago,20473,The Constant Company,-33.46,-70.65,261.269,261.411,0,2026-11-12T16:48:40Z
+Tokyo,hnd-jp-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,237.627,237.724,0,2026-11-12T16:48:46Z
+Tokyo,hnd-jp-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,233.526,233.635,0,2026-11-12T16:48:46Z
+Tokyo,hnd-jp-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,206.783,206.838,0,2026-11-12T16:48:52Z
+Tokyo,hnd-jp-ping.vultr.com,Bogota,CO,Bogota,136258,BrainStorm Network,4.61,-74.08,206.147,206.181,0,2026-11-12T16:48:52Z
+Tokyo,hnd-jp-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,166.248,166.294,0,2026-11-12T16:48:58Z
+Tokyo,hnd-jp-ping.vultr.com,Miami,US,Miami,53724,EXTRAVM,25.77,-80.19,180.097,180.153,0,2026-11-12T16:48:58Z
+Tokyo,hnd-jp-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,107.688,108.636,0,2026-11-12T16:49:05Z
+Tokyo,hnd-jp-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,232.009,232.067,0,2026-11-12T16:49:05Z
+Tokyo,hnd-jp-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,139.984,140.285,0,2026-11-12T16:49:09Z
+Tokyo,hnd-jp-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,143.78,143.88,0,2026-11-12T16:49:09Z
+Tokyo,hnd-jp-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,147.049,147.532,0,2026-11-12T16:49:15Z
+Tokyo,hnd-jp-ping.vultr.com,London,GB,London,16276,OVH,51.53,0.08,249.142,250.288,0,2026-11-12T16:49:22Z
+Tokyo,hnd-jp-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,226.917,227.002,0,2026-11-12T16:49:22Z
+Tokyo,hnd-jp-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,245.298,245.37,0,2026-11-12T16:49:26Z
+Tokyo,hnd-jp-ping.vultr.com,Frankfurt,DE,Frankfurt,16276,OVH,50.12,8.68,254.44,254.694,0,2026-11-12T16:49:26Z
+Tokyo,hnd-jp-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,1.357,1.451,0,2026-11-12T16:49:32Z
+Tokyo,hnd-jp-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,0.778,0.984,0,2026-11-12T16:49:32Z
+Tokyo,hnd-jp-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,74.284,79.069,0,2026-11-12T16:49:38Z
+Tokyo,hnd-jp-ping.vultr.com,Singapore,SG,Singapore,8888,xTom,1.29,103.85,66.151,66.218,0,2026-11-12T16:49:38Z
+Tokyo,hnd-jp-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,126.549,128.092,0,2026-11-12T16:49:44Z
+Tokyo,hnd-jp-ping.vultr.com,Mumbai,IN,Mumbai,63949,Akamai Connected Cloud,19.07,72.88,119.871,119.954,0,2026-11-12T16:49:44Z
+London,lon-gb-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,268.941,269.146,0,2026-11-12T16:49:50Z
+London,lon-gb-ping.vultr.com,Auckland,NZ,Auckland,152586,Kuroit,-36.85,174.76,269.333,269.864,12.5,2026-11-12T16:49:50Z
+London,lon-gb-ping.vultr.com,Wellington,NZ,Wellington,55850,Mercury NZ,-41.29,174.78,279.964,281.049,0,2026-11-12T16:49:56Z
+London,lon-gb-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,290.027,290.094,0,2026-11-12T16:49:56Z
+London,lon-gb-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,251.006,252.691,0,2026-11-12T16:50:02Z
+London,lon-gb-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,243.775,243.824,0,2026-11-12T16:50:02Z
+London,lon-gb-ping.vultr.com,Melbourne,AU,Melbourne,4764,Aussie Fibre,-37.81,144.96,246.015,247.464,0,2026-11-12T16:50:08Z
+London,lon-gb-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,242.527,242.686,0,2026-11-12T16:50:08Z
+London,lon-gb-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,270.892,272.16,0,2026-11-12T16:50:15Z
+London,lon-gb-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,259.133,259.433,0,2026-11-12T16:50:15Z
+London,lon-gb-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,253.096,253.49,0,2026-11-12T16:50:21Z
+London,lon-gb-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,206.551,206.708,0,2026-11-12T16:50:21Z
+London,lon-gb-ping.vultr.com,Johannesburg,ZA,Johannesburg,31898,Oracle,-26.2,28.04,152.52,152.563,0,2026-11-12T16:50:27Z
+London,lon-gb-ping.vultr.com,Johannesburg,ZA,Johannesburg,61138,Zappie Host,-26.2,28.04,163.832,163.92,0,2026-11-12T16:50:27Z
+London,lon-gb-ping.vultr.com,Cape Town,ZA,Cape Town,37053,RSAWEB,-33.93,18.42,151.521,151.801,0,2026-11-12T16:50:33Z
+London,lon-gb-ping.vultr.com,Cape Town,ZA,Cape Town,329206,Rackzar,-33.93,18.42,143.523,143.647,0,2026-11-12T16:50:33Z
+London,lon-gb-ping.vultr.com,Nairobi,KE,Nairobi,329636,Imani Labs,-1.28,36.82,154.435,154.637,0,2026-11-12T16:50:39Z
+London,lon-gb-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,170.07,170.126,0,2026-11-12T16:50:39Z
+London,lon-gb-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,104.979,105.135,0,2026-11-12T16:50:44Z
+London,lon-gb-ping.vultr.com,Lagos,NG,Lagos,136258,BrainStorm Network,6.45,3.39,105.39,105.457,0,2026-11-12T16:50:44Z
+London,lon-gb-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,178.286,178.362,0,2026-11-12T16:50:50Z
+London,lon-gb-ping.vultr.com,Sao Paulo,BR,Sao Paulo,20473,The Constant Company,-23.53,-46.79,179.737,181.727,0,2026-11-12T16:50:50Z
+London,lon-gb-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,225.107,225.163,0,2026-11-12T16:50:56Z
+London,lon-gb-ping.vultr.com,Buenos Aires,AR,Buenos Aires,7303,Telecom Argentina,-34.61,-58.38,223.157,223.888,0,2026-11-12T16:50:56Z
+London,lon-gb-ping.vultr.com,Santiago,CL,Santiago,20473,The Constant Company,-33.46,-70.65,187.67,187.743,0,2026-11-12T16:51:02Z
+London,lon-gb-ping.vultr.com,Santiago,CL,Santiago,15311,TELEFONICA EMPRESAS CHILE,-33.46,-70.65,211.934,212.261,0,2026-11-12T16:51:02Z
+London,lon-gb-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,171.385,171.419,0,2026-11-12T16:51:08Z
+London,lon-gb-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,170.74,170.901,0,2026-11-12T16:51:08Z
+London,lon-gb-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,140.688,140.747,0,2026-11-12T16:51:14Z
+London,lon-gb-ping.vultr.com,Bogota,CO,Bogota,19429,ETB - Colombia,4.61,-74.08,162.219,162.367,0,2026-11-12T16:51:14Z
+London,lon-gb-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,104.403,104.527,0,2026-11-12T16:51:19Z
+London,lon-gb-ping.vultr.com,Miami,US,Miami,53667,FranTech Solutions,25.77,-80.19,94.679,94.734,0,2026-11-12T16:51:19Z
+London,lon-gb-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,135.516,135.953,0,2026-11-12T16:51:25Z
+London,lon-gb-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,131.976,132.034,0,2026-11-12T16:51:25Z
+London,lon-gb-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,134.437,134.522,0,2026-11-12T16:51:29Z
+London,lon-gb-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,129.201,129.314,0,2026-11-12T16:51:29Z
+London,lon-gb-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,175.359,175.405,0,2026-11-12T16:51:36Z
+London,lon-gb-ping.vultr.com,London,GB,London,16276,OVH,51.53,0.08,2.451,3.349,0,2026-11-12T16:51:40Z
+London,lon-gb-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,2.143,2.184,0,2026-11-12T16:51:40Z
+London,lon-gb-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,16.004,17.062,0,2026-11-12T16:51:44Z
+London,lon-gb-ping.vultr.com,Frankfurt,DE,Frankfurt,44486,synlinq.de,50.12,8.68,14.889,14.964,0,2026-11-12T16:51:44Z
+London,lon-gb-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,225.122,225.211,0,2026-11-12T16:51:51Z
+London,lon-gb-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,220.948,221.048,0,2026-11-12T16:51:51Z
+London,lon-gb-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,163.046,163.107,0,2026-11-12T16:51:57Z
+London,lon-gb-ping.vultr.com,Singapore,SG,Singapore,8888,xTom,1.29,103.85,156.339,156.378,0,2026-11-12T16:51:57Z
+London,lon-gb-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,130.404,130.44,0,2026-11-12T16:52:01Z
+London,lon-gb-ping.vultr.com,Mumbai,IN,Mumbai,16509,Amazon.com,19.07,72.88,144.101,144.15,0,2026-11-12T16:52:01Z
+Los Angeles,lax-ca-us-ping.vultr.com,Auckland,NZ,Auckland,61138,Zappie Host,-36.85,174.76,153.284,153.383,0,2026-11-12T16:52:07Z
+Los Angeles,lax-ca-us-ping.vultr.com,Auckland,NZ,Auckland,56030,Voyager Internet,-36.87,174.77,136.456,136.511,0,2026-11-12T16:52:07Z
+Los Angeles,lax-ca-us-ping.vultr.com,Wellington,NZ,Wellington,9500,One New Zealand Group,-41.29,174.78,155.031,165.378,0,2026-11-12T16:52:13Z
+Los Angeles,lax-ca-us-ping.vultr.com,Wellington,NZ,Wellington,24324,Kordia,-41.29,174.78,136.54,136.613,0,2026-11-12T16:52:13Z
+Los Angeles,lax-ca-us-ping.vultr.com,Sydney,AU,Sydney,31898,Oracle,-33.77,150.9,155.801,155.874,0,2026-11-12T16:52:20Z
+Los Angeles,lax-ca-us-ping.vultr.com,Sydney,AU,Sydney,142064,VERGETEL,-33.87,151.21,133.146,133.257,0,2026-11-12T16:52:20Z
+Los Angeles,lax-ca-us-ping.vultr.com,Melbourne,AU,Melbourne,20473,The Constant Company,-37.84,144.93,149.617,149.653,0,2026-11-12T16:52:24Z
+Los Angeles,lax-ca-us-ping.vultr.com,Melbourne,AU,Melbourne,31898,Oracle,-37.75,144.76,161.569,161.615,0,2026-11-12T16:52:24Z
+Los Angeles,lax-ca-us-ping.vultr.com,Brisbane,AU,Brisbane,4764,Aussie Fibre,-27.47,153.03,156.153,156.846,0,2026-11-12T16:52:30Z
+Los Angeles,lax-ca-us-ping.vultr.com,Brisbane,AU,Brisbane,151660,Neptune Internet,-27.47,153.03,146.347,146.7,0,2026-11-12T16:52:30Z
+Los Angeles,lax-ca-us-ping.vultr.com,Perth,AU,Perth,4804,Microplex,-31.95,115.86,196.642,197.368,0,2026-11-12T16:52:37Z
+Los Angeles,lax-ca-us-ping.vultr.com,Perth,AU,Perth,151660,Neptune Internet,-31.95,115.86,179.996,180.173,0,2026-11-12T16:52:37Z
+Los Angeles,lax-ca-us-ping.vultr.com,Johannesburg,ZA,Johannesburg,395092,Shock Hosting,-26.2,28.04,313.486,313.59,0,2026-11-12T16:52:43Z
+Los Angeles,lax-ca-us-ping.vultr.com,Johannesburg,ZA,Johannesburg,31898,Oracle,-26.2,28.04,306.293,306.321,0,2026-11-12T16:52:43Z
+Los Angeles,lax-ca-us-ping.vultr.com,Cape Town,ZA,Cape Town,37053,RSAWEB,-33.93,18.42,285.787,286.509,0,2026-11-12T16:52:49Z
+Los Angeles,lax-ca-us-ping.vultr.com,Cape Town,ZA,Cape Town,16509,Amazon.com,-33.93,18.42,271.499,271.72,0,2026-11-12T16:52:49Z
+Los Angeles,lax-ca-us-ping.vultr.com,Nairobi,KE,Nairobi,329239,Xcobean Systems,-1.28,36.82,314.816,315.029,0,2026-11-12T16:52:55Z
+Los Angeles,lax-ca-us-ping.vultr.com,Nairobi,KE,Nairobi,37271,Workonline Communications(Pty),-1.28,36.82,287.14,287.204,0,2026-11-12T16:52:55Z
+Los Angeles,lax-ca-us-ping.vultr.com,Lagos,NG,Lagos,214354,SiteHUB Agency,6.45,3.39,228.599,228.668,0,2026-11-12T16:53:01Z
+Los Angeles,lax-ca-us-ping.vultr.com,Lagos,NG,Lagos,209179,AfriCloud,6.45,3.39,285.351,285.39,0,2026-11-12T16:53:01Z
+Los Angeles,lax-ca-us-ping.vultr.com,Sao Paulo,BR,Sao Paulo,31898,Oracle,-23.55,-46.64,167.345,167.567,0,2026-11-12T16:53:07Z
+Los Angeles,lax-ca-us-ping.vultr.com,Sao Paulo,BR,Sao Paulo,20473,The Constant Company,-23.53,-46.79,170.211,170.299,0,2026-11-12T16:53:07Z
+Los Angeles,lax-ca-us-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136907,HUAWEI CLOUDS,-34.61,-58.38,205.508,205.571,0,2026-11-12T16:53:14Z
+Los Angeles,lax-ca-us-ping.vultr.com,Buenos Aires,AR,Buenos Aires,136258,BrainStorm Network,-34.61,-58.38,170.264,170.482,0,2026-11-12T16:53:14Z
+Los Angeles,lax-ca-us-ping.vultr.com,Santiago,CL,Santiago,31898,Oracle,-33.46,-70.65,170.511,170.55,0,2026-11-12T16:53:20Z
+Los Angeles,lax-ca-us-ping.vultr.com,Santiago,CL,Santiago,61138,Zappie Host,-33.46,-70.65,153.468,154.665,0,2026-11-12T16:53:20Z
+Los Angeles,lax-ca-us-ping.vultr.com,Lima,PE,Lima,58061,Scalaxy,-12.04,-77.03,129.485,129.574,0,2026-11-12T16:53:24Z
+Los Angeles,lax-ca-us-ping.vultr.com,Lima,PE,Lima,136907,HUAWEI CLOUDS,-12.04,-77.03,128.372,128.421,0,2026-11-12T16:53:24Z
+Los Angeles,lax-ca-us-ping.vultr.com,Bogota,CO,Bogota,7195,EdgeUno,4.61,-74.08,95.959,96.013,0,2026-11-12T16:53:30Z
+Los Angeles,lax-ca-us-ping.vultr.com,Bogota,CO,Bogota,19429,ETB - Colombia,4.61,-74.08,114.196,114.301,0,2026-11-12T16:53:30Z
+Los Angeles,lax-ca-us-ping.vultr.com,Miami,US,Miami,20473,The Constant Company,25.81,-80.23,60.328,60.46,0,2026-11-12T16:53:35Z
+Los Angeles,lax-ca-us-ping.vultr.com,Miami,US,Miami,23470,ReliableSite.Net,25.77,-80.19,63.892,63.942,0,2026-11-12T16:53:35Z
+Los Angeles,lax-ca-us-ping.vultr.com,Los Angeles,US,Los Angeles,36352,HostPapa,34.05,-118.24,0.612,0.709,0,2026-11-12T16:53:39Z
+Los Angeles,lax-ca-us-ping.vultr.com,Los Angeles,US,Los Angeles,35916,MULTACOM,34.05,-118.24,8.268,8.456,0,2026-11-12T16:53:39Z
+Los Angeles,lax-ca-us-ping.vultr.com,Vancouver,CA,Vancouver,394256,Tech Futures Interactive,49.25,-123.12,36.17,36.278,0,2026-11-12T16:53:44Z
+Los Angeles,lax-ca-us-ping.vultr.com,Vancouver,CA,Vancouver,136258,BrainStorm Network,49.25,-123.12,29.838,29.933,0,2026-11-12T16:53:44Z
+Los Angeles,lax-ca-us-ping.vultr.com,Honolulu,US,Honolulu,20473,The Constant Company,21.35,-157.88,56.069,56.131,0,2026-11-12T16:53:48Z
+Los Angeles,lax-ca-us-ping.vultr.com,London,GB,London,16276,OVH,51.48,0.08,135.187,135.24,0,2026-11-12T16:53:52Z
+Los Angeles,lax-ca-us-ping.vultr.com,London,GB,London,31898,Oracle,51.51,-0.13,135.64,135.684,0,2026-11-12T16:53:52Z
+Los Angeles,lax-ca-us-ping.vultr.com,Frankfurt,DE,Frankfurt,31898,Oracle,50.1,8.63,147.058,147.188,0,2026-11-12T16:53:57Z
+Los Angeles,lax-ca-us-ping.vultr.com,Frankfurt,DE,Frankfurt,44486,synlinq.de,50.12,8.68,138.251,138.324,0,2026-11-12T16:53:57Z
+Los Angeles,lax-ca-us-ping.vultr.com,Tokyo,JP,Tokyo,3258,xTom,35.69,139.69,99.941,100.049,0,2026-11-12T16:54:01Z
+Los Angeles,lax-ca-us-ping.vultr.com,Tokyo,JP,Tokyo,31898,Oracle,35.69,139.69,99.139,99.204,0,2026-11-12T16:54:01Z
+Los Angeles,lax-ca-us-ping.vultr.com,Singapore,SG,Singapore,59253,LeaseWeb,1.29,103.85,180.531,180.644,0,2026-11-12T16:54:08Z
+Los Angeles,lax-ca-us-ping.vultr.com,Singapore,SG,Singapore,16276,OVH,1.29,103.85,185.621,186.139,0,2026-11-12T16:54:08Z
+Los Angeles,lax-ca-us-ping.vultr.com,Mumbai,IN,Mumbai,31898,Oracle,19.07,72.88,217.552,217.621,0,2026-11-12T16:54:14Z
+Los Angeles,lax-ca-us-ping.vultr.com,Mumbai,IN,Mumbai,16509,Amazon.com,19.07,72.88,242.589,242.626,0,2026-11-12T16:54:14Z
