@@ -18,6 +18,7 @@ https://rooster-ninja.github.io/simulations/
 | Flat plane, lumpy triangles | [flat-plane-chains/](https://rooster-ninja.github.io/simulations/flat-plane-chains/) |
 | Survey triangles across America: Gauss vs Tarski | [survey-triangles-gauss-vs-tarski/](https://rooster-ninja.github.io/simulations/survey-triangles-gauss-vs-tarski/) |
 | Fibre ping and the figure of the Earth | [fiber-ping-earth-shape/](https://rooster-ninja.github.io/simulations/fiber-ping-earth-shape/) |
+| Building Gauss's Great Triangle | [gauss-great-triangle/](https://rooster-ninja.github.io/simulations/gauss-great-triangle/) |
 
 ## Layout
 
