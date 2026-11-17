@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Gauss's Great Triangle, Hanover 1820–1823</title>
+<meta property="og:title" content="Building Gauss's Great Triangle, Hanover 1820–1823">
+<meta property="og:description" content="Step by step from the Braak base to the triangle Hohehagen–Brocken–Inselsberg, with Gauss's own angles, excess and reductions.">
+<meta name="theme-color" content="#F3E6CF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F6ECD8;--paper2:#EFE0C2;--ink:#3E2A18;--dark:#5C3A21;--brown:#6B4423;--rust:#A0522D;--mid:#8B5E3C;--line:#D9C49C;--gold:#C9962E;
+--serif:"EB Garamond",Georgia,"Iowan Old Style","Palatino Linotype",serif;--display:"IM Fell English","EB Garamond",Georgia,serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif)}
+header{padding:24px 32px 4px;max-width:1280px;margin:0 auto}
+.eyebrow{font:600 11px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
+h1{font-family:var(--display);font-weight:400;font-size:42px;line-height:1.08;margin:6px 0 4px}
+.sub{color:var(--mid);font-style:italic;margin:0 0 8px;font-size:19px}
+main{max-width:1280px;margin:0 auto;padding:8px 32px 32px;display:grid;grid-template-columns:minmax(300px,440px) 1fr;gap:32px;align-items:start}
+.mapcol{position:sticky;top:12px}
+.plate{background:var(--paper2);border:1px solid var(--mid);border-radius:3px;padding:10px;box-shadow:inset 0 0 0 4px var(--paper2),inset 0 0 0 5px var(--line)}
+.mapwrap{position:relative}
+#map{display:block;width:100%;height:min(82vh,860px)}
+.cap{font-size:13.5px;color:var(--mid);font-style:italic;margin-top:6px;line-height:1.35}
+#scalebar{position:absolute;left:14px;bottom:12px;font:11px var(--mono);color:var(--dark);pointer-events:none}
+#scalebar i{display:block;height:6px;border:1.5px solid var(--dark);border-top:none;margin-top:2px}
+#north{position:absolute;right:12px;top:30px;width:30px;height:44px;pointer-events:none}
+.ln{vector-effect:non-scaling-stroke;stroke:#8B5E3C;stroke-width:1.3;stroke-linecap:round;fill:none}
+.ln.base{stroke:#A0522D;stroke-width:4.5}
+.ln.great{stroke:#5C3A21;stroke-width:3}
+.hl{vector-effect:non-scaling-stroke;stroke:#C9962E;stroke-width:7;stroke-linecap:round;opacity:0;animation:hl 1.15s ease forwards}
+@keyframes hl{0%{opacity:0}25%{opacity:.95}100%{opacity:0}}
+.gr{vector-effect:non-scaling-stroke;stroke:#D9C49C;stroke-width:.8}
+.gr.minor{stroke-width:.5;stroke-dasharray:2 4}
+.river{vector-effect:non-scaling-stroke;stroke:#9FB7C4;stroke-width:2.4;fill:none;opacity:.75;stroke-linecap:round}
+.tf{fill:#E3C08F;transition:opacity .7s}
+.tf.g{fill:#C98A5A}
+.st{transition:opacity .5s}
+.beam{fill:#F7DD72;stroke:#C9962E;stroke-width:1}
+.lab{font-family:var(--serif);fill:#3E2A18;paint-order:stroke;stroke:#EFE0C2;stroke-width:3.5px;stroke-linejoin:round}
+.geo{font-family:var(--serif);font-style:italic;fill:#8B5E3C;letter-spacing:.08em}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-size:16px;background:var(--paper);color:var(--ink);border:1px solid var(--mid);border-radius:3px;padding:5px 14px;cursor:pointer}
+button:hover{background:#fff8ea}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+button.primary{background:var(--brown);color:var(--paper);border-color:var(--brown);min-width:96px}
+button.primary:hover{background:var(--dark)}
+.dots{display:flex;gap:6px;margin-left:8px;flex-wrap:wrap}
+.dot{width:12px;height:12px;border-radius:50%;border:1px solid var(--mid);background:transparent;padding:0}
+.dot.on{background:var(--mid);border-color:var(--mid)}
+.dot.cur{background:var(--dark);border-color:var(--dark);box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--gold)}
+.track{height:2px;background:var(--line);margin:10px 0 14px}
+#bar{height:2px;width:0;background:var(--rust)}
+.keys{font:11px var(--mono);color:var(--mid);margin-left:auto}
+.stepno{font:600 11px/1.4 var(--mono);letter-spacing:.16em;color:var(--rust)}
+.panel h2{font-family:var(--display);font-weight:400;font-size:31px;line-height:1.15;margin:4px 0 6px}
+.body{font-size:19px;line-height:1.5;max-width:44em}
+.body p{margin:.5em 0}
+.big{font-size:24px}
+table{border-collapse:collapse;width:100%;max-width:520px;font-size:17px;margin:8px 0}
+th{font-variant:small-caps;letter-spacing:.04em;font-weight:600;text-align:left;border-bottom:1px solid var(--mid);padding:3px 6px;color:var(--brown)}
+td{padding:3px 6px;border-bottom:1px solid var(--line)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13.5px}
+.exhibit{margin-top:14px}
+#tri{display:block;width:100%;height:auto;max-height:52vh}
+.ladder h3{font:600 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin:2px 4px 8px;font-weight:600}
+.lrow{display:grid;grid-template-columns:190px 1fr 78px;gap:10px;align-items:center;font-size:15px;padding:2px 4px;opacity:.28;transition:opacity .6s}
+.lrow.on{opacity:1}
+.lrow .bar{height:10px;background:var(--line);position:relative}
+.lrow .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--mid);transition:width .9s ease}
+.lrow.cur .bar i{background:var(--rust)}
+.lrow .v{font:12.5px var(--mono);text-align:right}
+.src{font-size:14.5px;color:var(--mid);border-top:1px solid var(--line);margin-top:14px;padding-top:8px}
+.tag{display:inline-block;font:600 10px/1.6 var(--mono);letter-spacing:.1em;padding:1px 7px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.tag.raw{background:var(--brown);color:var(--paper)}
+.tag.approx{background:#E3C08F;color:var(--dark)}
+.srcbtn{background:var(--ink);color:var(--paper);border-color:var(--ink);font-size:14px}
+.srcbtn:hover{background:#000}
+#sources{display:none;background:#fff8ea;border:1px solid var(--line);padding:12px 16px;margin-top:10px;font-size:15px;line-height:1.5}
+#sources.show{display:block}
+#sources a,footer a{color:var(--rust)}
+.notes{max-width:1280px;margin:0 auto;padding:0 32px 28px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.note{padding:14px 18px;font-size:17px;line-height:1.5}
+.note p{margin:.5em 0}
+@media (max-width:860px){.notes{grid-template-columns:1fr;padding:0 16px 24px}}
+footer{max-width:1280px;margin:0 auto;padding:0 32px 40px;font-size:14px;color:var(--mid)}
+.back{font:600 11px/1.4 var(--mono);letter-spacing:.12em;color:var(--rust);text-decoration:none}
+@media (max-width:860px){main{grid-template-columns:1fr;padding:8px 16px 24px}header{padding:18px 16px 4px}h1{font-size:30px}.mapcol{position:static}#map{height:58vh}.keys{display:none}.lrow{grid-template-columns:130px 1fr 70px}}
+@media (prefers-reduced-motion:reduce){.hl{animation:none}.st,.tf,.lrow,.lrow .bar i{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<a class="back" href="../">← All simulations</a>
+<div class="eyebrow" style="margin-top:12px">Theorema Egregium · Hanoverian arc measurement</div>
+<h1>Building Gauss's Great Triangle</h1>
+<p class="sub">From a 5.9 km line of rods at Braak to the triangle Hohehagen – Brocken – Inselsberg, one step at a time.</p>
+</header>
+<main>
+<div class="mapcol">
+<div class="plate">
+<div class="mapwrap">
+<svg id="map" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the Hanover triangulation chain from Braak to Inselsberg"></svg>
+<svg id="north" viewBox="0 0 30 44" aria-hidden="true"><path d="M15 2L22 30L15 25L8 30Z" fill="#5C3A21"/><path d="M15 2L15 25L8 30Z" fill="#EFE0C2" stroke="#5C3A21" stroke-width=".8"/><text x="15" y="42" text-anchor="middle" font-size="10" font-family="Georgia,serif" fill="#5C3A21">N</text></svg>
+<div id="scalebar"><span></span><i></i></div>
+</div>
+<div class="cap">Station positions are approximate modern locations and the chain is a reconstruction. Gauss's network had more stations and check diagonals.</div>
+</div>
+</div>
+<div class="panel">
+<div class="controls">
+<button id="prev" aria-label="Previous step">◀ Back</button>
+<button id="play" class="primary">▶ Play</button>
+<button id="next" aria-label="Next step">Next ▶</button>
+<div class="dots" id="dots"></div>
+<span class="keys">← → step · space play</span>
+</div>
+<div class="track"><div id="bar"></div></div>
+<div class="stepno" id="stepno"></div>
+<h2 id="title"></h2>
+<div class="body" id="body"></div>
+<div class="plate exhibit ladder" id="ladder"></div>
+<div class="plate exhibit" id="triplate" style="display:none"><svg id="tri" viewBox="0 0 620 430" role="img" aria-label="The great triangle with Gauss's angles"></svg></div>
+<div class="src" id="src"></div>
+<div style="margin-top:14px"><button class="srcbtn" id="srcbtn" aria-expanded="false">Sources for this page (pages and quotes)</button>
+<div id="sources">
+<p><b>Braak base, 1820:</b> 5 875.219 m, measured with calibrated 4 m rods under H. C. Schumacher; Gauss took part. — <a href="https://www.vermessungsgeschichte.de/detail/daenische-basismessung-in-braak-1820">vermessungsgeschichte.de, Dänische Basismessung in Braak 1820</a>; <a href="https://www.vermessungsgeschichte.de/detail/778-hannoversche-gradmessung-1821-1823">Hannoversche Gradmessung 1821–1823</a> (12-inch Reichenbach/Ertel theodolite, heliotropes, Göttingen–Altona arc).</p>
+<p><b>Observed angles</b> Hohehagen 86°13′58.366″, Brocken 53°6′45.642″, Inselsberg 40°39′30.165″, sum 180°0′14.173″ — as quoted from Gauss in the Berkeley Physics Course, vol. 1 (Kittel et al.), ch. 1. Breitenberger (1984), reconstructing from Gauss's data, gives the sum as 180°0′14.211″ and the closure after reduction as −0.642″ — cited in E. Scholz, <a href="https://arxiv.org/html/math/0409578">C.F. Gauß' Präzisionsmessungen terrestrischer Dreiecke</a>.</p>
+<p><b>Excess 14.85348″ and reductions</b> Hohehagen −4.95113″, Brocken −4.95104″, Inselsberg −4.95131″ — Gauss, Disquisitiones generales circa superficies curvas (1827), quoted in <a href="https://arxiv.org/pdf/2208.12757">arXiv:2208.12757</a>.</p>
+<p><b>Side Inselsberg–Brocken 105 972.85 m</b> and latitudes Inselsberg 50°51′9″, Hohehagen 51°28′31″, Brocken 51°48′2″ — W. Jordan, <a href="https://digital.ub.uni-paderborn.de/download/pdf/7975294.pdf">Handbuch der Vermessungskunde</a> (1896), worked example on Gauss's triangle. Latitudes Göttingen 51°31′47.85″, Altona 53°32′45.27″ — Jordan (1895), citing Gauss, Bestimmung des Breitenunterschiedes (1828).</p>
+<p><b>Station heights</b> Brocken 1156 m, Hohehagen 508 m, Inselsberg 916 m; mean error of a net direction 0.48″ (Gauss to Bessel, 1823) — Scholz, citing Breitenberger (1984) and Gauss Werke IX, 366.</p>
+<p><b>Deflection of the vertical on the Brocken:</b> Gauss's geodetic latitude differed from von Zach's astronomical latitude by about 10″ — <a href="https://geodaesie.info/images/zfv/141-jahrgang-2016/downloads/zfv_2016_3_Brosche_Heckmann.pdf">Brosche &amp; Heckmann, zfv 2016</a>.</p>
+<p><b>Chain stations</b> (Braak, Hamburg, Hohenhorn, Lüneburg, Nindorf, Wilsede, Wulfsode, Hauselberg, Falkenberg, Garssen, Deister, Lichtenberg, Hils, Brocken, Hohehagen, Göttingen, Inselsberg) from Jordan (1895) Fig. 3; sight lines Deister → Hils, Lichtenberg, Garssen, Falkenberg (<a href="https://www.myheimat.de/springe/c-freizeit/240-jahre-carl-friedrich-gauss-landvermessung-und-der-deister_a2827047">myheimat.de</a>); triangles Hauselberg–Wulfsode–Wilsede and Wulfsode–Hauselberg–Falkenberg (Lüneburg Heath histories). The order of the other chain triangles and all station positions here are approximate reconstructions, not Gauss's data.</p>
+</div></div>
+</div>
+</main>
+<section class="notes">
+<div class="plate note"><div class="eyebrow">1 · Methods</div>
+<p>Steps 1–8 trace how a length grows from the Braak base down the chain by the law of sines, <i>b</i> = <i>a</i> sin <i>B</i> / sin <i>A</i>. The chain stations are real, but their positions are approximate modern locations and the triangle order is a reconstruction; those lengths are illustrative only.</p>
+<p>Steps 9–13 use Gauss's own numbers for the great triangle: the observed angles, his computed excess and per-vertex reductions, and Jordan's side Inselsberg–Brocken. The plane angles are the observed angles minus Gauss's reductions, with the closing error split evenly. The other sides follow by the law of sines, the area as ½ · <i>b</i> · <i>c</i> · sin <i>A</i>, and the implied radius as R = √(area / observed excess).</p></div>
+<div class="plate note"><div class="eyebrow">2 · Error budget</div>
+<table><tr><th>Source</th><th style="text-align:right">Size</th><th>Effect</th></tr>
+<tr><td>One direction (Gauss, 1823)</td><td class="n">± 0.48″</td><td>per pointing, network mean</td></tr>
+<tr><td>One angle (two directions)</td><td class="n">± 0.68″</td><td>0.48″ × √2</td></tr>
+<tr><td>Angle sum (three angles)</td><td class="n">± 1.18″</td><td>0.68″ × √3</td></tr>
+<tr><td>Observed excess</td><td class="n">14.17 ± 1.18″</td><td>12σ above zero</td></tr>
+<tr><td>Closing error vs Gauss's excess</td><td class="n">−0.68″</td><td>0.6σ, consistent</td></tr>
+<tr><td>Implied radius, one triangle</td><td class="n">6 533 ± 270 km</td><td>±4%, 1σ</td></tr>
+<tr><td>Brocken deflection of the vertical</td><td class="n">≈ 10″</td><td>systematic, not in the ±</td></tr>
+<tr><td>Sum discrepancy, two sources</td><td class="n">14.173 vs 14.211″</td><td>0.04″, well inside 1σ</td></tr></table>
+<p>The ± figures are instrument scatter only. Plumb-line deflections and sideways refraction on 70–106 km sight lines are not included and can each reach the arcsecond level.</p></div>
+</section>
+<footer>Computed figures on this page (plane sides, area, radius) are worked from the quoted values with the law of sines. They are shown to the precision of the inputs and are fallible inductive results, not Gauss's own printed numbers.</footer>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+const S={b1:[53.600,10.225],b2:[53.640,10.285],Hamburg:[53.5483,9.9789],Altona:[53.5487,9.9413],Hohenhorn:[53.484,10.360],'Lüneburg':[53.248,10.408],Nindorf:[53.262,9.975],Wilsede:[53.166,9.947],Wulfsode:[53.020,10.295],Hauselberg:[52.935,10.055],Falkenberg:[52.860,9.960],Garssen:[52.660,10.140],Deister:[52.262,9.540],Lichtenberg:[52.100,10.310],Hils:[51.890,9.740],Brocken:[51.800,10.616],Hohehagen:[51.484,9.764],'Göttingen':[51.528,9.943],Inselsberg:[50.852,10.468]};
+const ALL=Object.keys(S), GREAT=['Brocken','Hohehagen','Inselsberg'];
+const KX=111.32*Math.cos(52.2*Math.PI/180), KY=111.2;
+const X=lon=>(lon-10)*KX, Y=lat=>(53.75-lat)*KY;
+const P=n=>[X(S[n][1]),Y(S[n][0])];
+const km=(a,b)=>{const R=6371,r=Math.PI/180,[la1,lo1]=S[a],[la2,lo2]=S[b];const h=Math.sin((la2-la1)*r/2)**2+Math.cos(la1*r)*Math.cos(la2*r)*Math.sin((lo2-lo1)*r/2)**2;return 2*R*Math.asin(Math.sqrt(h));};
+const fmt=v=>v.toFixed(0)+' km';
+const NS='http://www.w3.org/2000/svg',map=$('map');
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(p||map).appendChild(e);return e;};
+const L={grat:el('g',{}),minor:el('g',{}),geo:el('g',{}),fill:el('g',{}),line:el('g',{}),fx:el('g',{}),st:el('g',{})};
+let view=null,curS=0.4,vis={x:0,y:0,w:1,h:1};
+const statics=[],latLabs=[],lonLabs=[];let dyn=[];
+const place=o=>o.e.setAttribute('transform',`translate(${o.x} ${o.y}) scale(${curS})`);
+// graticule
+for(let i=505;i<=540;i++){const lat=i/10,major=i%5===0;el('line',{x1:X(7),x2:X(13),y1:Y(lat),y2:Y(lat),class:'gr'+(major?'':' minor')},major?L.grat:L.minor);
+ const g=el('g',{},major?L.grat:L.minor);const t=el('text',{'font-size':10.5,class:'geo','letter-spacing':0},g);t.textContent=lat.toFixed(1)+'° N';const o={e:g,x:0,y:Y(lat)};statics.push(o);latLabs.push(o);}
+for(let i=85;i<=115;i++){const lon=i/10,major=i%5===0;el('line',{x1:X(lon),x2:X(lon),y1:Y(55),y2:Y(49.5),class:'gr'+(major?'':' minor')},major?L.grat:L.minor);
+ const g=el('g',{},major?L.grat:L.minor);const t=el('text',{'font-size':10.5,class:'geo','letter-spacing':0},g);t.textContent=lon.toFixed(1)+'° E';const o={e:g,x:X(lon),y:0};statics.push(o);lonLabs.push(o);}
+el('polyline',{points:[[53.57,9.62],[53.545,9.95],[53.47,10.18],[53.40,10.45],[53.36,10.66]].map(p=>X(p[1])+','+Y(p[0])).join(' '),class:'river'},L.geo);
+[['Elbe',53.335,10.52],['Harz',51.70,10.74],['Lüneburg Heath',52.80,10.62],['Thuringian Forest',50.765,10.30]].forEach(([s,la,lo])=>{const g=el('g',{},L.geo);const t=el('text',{'font-size':11.5,class:'geo','text-anchor':'middle'},g);t.textContent=s;statics.push({e:g,x:X(lo),y:Y(la)});});
+// camera
+function fit(names,pad,minKm){const xs=names.map(n=>P(n)[0]),ys=names.map(n=>P(n)[1]);const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+ let w=Math.max(x1-x0,minKm||0),h=Math.max(y1-y0,minKm||0);const m=Math.max(w,h)*pad;w+=2*m;h+=2*m;return {x:(x0+x1)/2-w/2,y:(y0+y1)/2-h/2,w,h};}
+function applyView(){map.setAttribute('viewBox',`${view.x} ${view.y} ${view.w} ${view.h}`);
+ const r=map.getBoundingClientRect();if(!r.width)return;curS=Math.max(view.w/r.width,view.h/r.height);
+ vis.w=r.width*curS;vis.h=r.height*curS;vis.x=view.x-(vis.w-view.w)/2;vis.y=view.y-(vis.h-view.h)/2;
+ latLabs.forEach(o=>{o.x=vis.x+10*curS;o.y2=o.y;});lonLabs.forEach(o=>{o.y=vis.y+16*curS;});
+ statics.forEach(o=>{if(latLabs.includes(o))o.e.setAttribute('transform',`translate(${o.x} ${o.y-4*curS}) scale(${curS})`);else if(lonLabs.includes(o))o.e.setAttribute('transform',`translate(${o.x+4*curS} ${o.y}) scale(${curS})`);else place(o);});
+ dyn.forEach(place);
+ L.minor.style.opacity=curS<0.16?1:0;
+ const nice=[1,2,5,10,20,50,100];let len=1;nice.forEach(v=>{if(v/curS<=120)len=v;});
+ const sb=$('scalebar');sb.firstElementChild.textContent=len+' km';sb.lastElementChild.style.width=(len/curS)+'px';}
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+let gen=0,timers=[];
+const later=(fn,ms)=>{const g=gen;timers.push(setTimeout(()=>{if(g===gen)fn();},RM?0:ms));};
+function tween(dur,fn,done){const g=gen;if(RM||dur<=0){fn(1);done&&done();return;}const t0=performance.now();
+ (function f(now){if(g!==gen)return;const t=Math.max(0,Math.min(1,(now-t0)/dur));fn(ease(t));if(t<1)requestAnimationFrame(f);else done&&done();})(t0);}
+function camTo(target,anim){if(!view||!anim){view=target;applyView();return;}
+ const a=Object.assign({},view),ac=[a.x+a.w/2,a.y+a.h/2],tc=[target.x+target.w/2,target.y+target.h/2];
+ tween(1300,t=>{const w=Math.exp(Math.log(a.w)+(Math.log(target.w)-Math.log(a.w))*t),h=Math.exp(Math.log(a.h)+(Math.log(target.h)-Math.log(a.h))*t);
+  const cx=ac[0]+(tc[0]-ac[0])*t,cy=ac[1]+(tc[1]-ac[1])*t;view={x:cx-w/2,y:cy-h/2,w,h};applyView();});}
+// drawing
+const lk=(a,b)=>[a,b].sort().join('|');
+let lineEls={},stEls={};
+const LAB={Altona:{l:1,dy:-5},Hamburg:{l:1,dy:14},Nindorf:{l:1},Wilsede:{l:1},Falkenberg:{l:1},Deister:{l:1},Hils:{l:1},Hohehagen:{l:1},b2:{t:'Braak base'},b1:{t:''}};
+function addStation(n,anim,delay){if(stEls[n])return;const [x,y]=P(n);const g=el('g',{class:'st'},L.st);const o={e:g,x,y};dyn.push(o);place(o);stEls[n]=g;
+ const big=GREAT.includes(n),obsv=n==='Göttingen'||n==='Altona',c=LAB[n]||{};
+ if(n==='b1'||n==='b2')el('circle',{r:3.4,fill:'#A0522D',stroke:'#5C3A21','stroke-width':1},g);
+ else if(obsv)el('path',{d:'M0 -8L2.2 -2.6L8 -2.6L3.4 1L5.2 7L0 3.4L-5.2 7L-3.4 1L-8 -2.6L-2.2 -2.6Z',fill:'#C9962E',stroke:'#5C3A21','stroke-width':.9},g);
+ else el('polygon',{points:big?'0,-8 7,5 -7,5':'0,-6 5,3.5 -5,3.5',fill:big?'#5C3A21':'#F6ECD8',stroke:'#5C3A21','stroke-width':1.3},g);
+ const txt=c.t!==undefined?c.t:n;if(txt){const t=el('text',{x:c.l?-10:10,y:c.dy||4,'font-size':big?14:12.5,'font-weight':big?600:400,'text-anchor':c.l?'end':'start',class:'lab'},g);t.textContent=txt;}
+ if(anim&&!RM){g.style.opacity=0;later(()=>{g.style.opacity=1;},delay);}}
+function addLine(a,b,kind,anim,delay){const k=lk(a,b);if(lineEls[k]){if(kind==='great')lineEls[k].setAttribute('class','ln great');return;}
+ const [x1,y1]=P(a),[x2,y2]=P(b);const e=el('line',{x1,y1,x2,y2,class:'ln '+kind},L.line);lineEls[k]=e;
+ if(anim&&!RM){e.setAttribute('x2',x1);e.setAttribute('y2',y1);e.style.opacity=0;
+  later(()=>{e.style.opacity=1;tween(750,t=>{e.setAttribute('x2',x1+(x2-x1)*t);e.setAttribute('y2',y1+(y2-y1)*t);});},delay);}}
+function addFill(names,great,anim,delay){const e=el('polygon',{points:names.map(n=>P(n).join(',')).join(' '),class:'tf'+(great?' g':'')},L.fill);
+ const rest=great?.3:.16;if(anim&&!RM){e.style.opacity=0;later(()=>{e.style.opacity=great?.38:.5;},delay);}else e.style.opacity=rest;}
+function helio(){if(RM)return;const pairs=[['Brocken','Hohehagen'],['Hohehagen','Inselsberg'],['Inselsberg','Brocken']];
+ const dots=pairs.map(()=>el('circle',{r:4.5,class:'beam'},L.fx));const g=gen,t0=performance.now();
+ (function f(now){if(g!==gen)return;pairs.forEach(([a,b],j)=>{const [x1,y1]=P(a),[x2,y2]=P(b);let u=((now-t0)/1700+j/3)%2;if(u>1)u=2-u;dots[j].setAttribute('transform',`translate(${x1+(x2-x1)*u} ${y1+(y2-y1)*u}) scale(${curS})`);});requestAnimationFrame(f);})(t0);}
+function applyStep(s,anim){
+ (s.st||[]).forEach((n,j)=>addStation(n,anim,200+j*350));
+ if(s.base)addLine('b1','b2','base',anim,700);
+ let t=anim?900:0;
+ (s.ops||[]).forEach(op=>{
+  if(op.l){addLine(op.l[0],op.l[1],'chain',anim,t);t+=800;return;}
+  const [a,b]=op.k,c=op.n,g=c==='Inselsberg';
+  if(anim&&!RM)later(()=>{const [x1,y1]=P(a),[x2,y2]=P(b);el('line',{x1,y1,x2,y2,class:'hl'},L.fx);},t);
+  addFill([a,b,c],g,anim,t+800);
+  addLine(a,c,g?'great':'chain',anim,t+300);addLine(b,c,g?'great':'chain',anim,t+300);
+  if(g)addLine(a,b,'great',false);
+  addStation(c,anim,t+900);
+  t+=1100;});
+ if(anim&&s.flash)later(helio,t);}
+const T=(k,n)=>({k,n});
+const steps=[
+ {t:'The arc from Göttingen to Altona',st:['Göttingen','Altona'],cam:[ALL,.07],
+  b:`<p>In 1820 King George IV, King of Great Britain and of Hanover, charged Gauss with an arc measurement through the Kingdom of Hanover, joining Schumacher's Danish triangulation at Altona. Gauss observed it himself in the summers of 1821–1823 with a 12-inch Reichenbach/Ertel theodolite.</p><p>The two observatories anchor the arc in latitude: <b>Göttingen 51°31′47.85″</b>, <b>Altona 53°32′45.27″</b>, a difference of <b>2°0′57.42″</b>.</p>`,
+  s:'<span class="tag raw">GAUSS</span>Latitudes from Gauss (1828) via Jordan (1895).'},
+ {t:'One line of rods: the Braak base, 1820',st:['b1','b2'],base:true,cam:[['b1','b2'],.3,14],
+  b:`<p>Angles fix shapes; only a measured length fixes size. The whole network's scale comes from a single base near Braak, east of Hamburg, measured in 1820 under H. C. Schumacher with calibrated 4-metre rods laid end to end. Gauss took part.</p><p class="big">Braak base = <b>5 875.219 m</b></p><p>Every later distance in the chain is this length, multiplied by ratios of sines of measured angles.</p>`,
+  s:'<span class="tag raw">MEASURED</span>Base length: vermessungsgeschichte.de. <span class="tag approx">APPROX</span>End points drawn near Braak.'},
+ {t:'Growing the base: 6 km to 26 km',ops:[T(['b1','b2'],'Hamburg'),T(['b1','b2'],'Hohenhorn'),{l:['Hamburg','Hohenhorn']}],cam:[['b1','b2','Hamburg','Hohenhorn'],.32],
+  b:`<p>A short base is enlarged through a small net. From each end of the base the observer measures angles to two far stations, Hamburg and Hohenhorn. With one known side and the angles, the law of sines gives the other sides:</p><p class="big"><i>b</i> = <i>a</i> · sin <i>B</i> / sin <i>A</i></p><p>Two triangles carry the 5.9 km base out to the side Hamburg–Hohenhorn, about <b>${fmt(km('Hamburg','Hohenhorn'))}</b>: four times longer, and still resting only on rods and angles.</p>`,
+  s:'<span class="tag approx">APPROX</span>Lengths in km on these steps come from approximate station positions; the geometry, not the digits, is the point.'},
+ {t:'South across the Lüneburg Heath',ops:[T(['Hamburg','Hohenhorn'],'Lüneburg'),T(['Hamburg','Lüneburg'],'Nindorf'),T(['Nindorf','Lüneburg'],'Wilsede'),T(['Wilsede','Lüneburg'],'Wulfsode')],cam:[['b2','Hamburg','Hohenhorn','Lüneburg','Nindorf','Wilsede','Wulfsode'],.22],
+  b:`<p>Each new triangle shares one side with the last. That side is known (it flashes gold on the map); the observer occupies the stations, measures the angles, and the two new sides follow. Hamburg → Lüneburg → Nindorf → Wilsede → Wulfsode.</p><p>The heath is flat and wooded, so Gauss had to cut sight lines through forest and light distant stations with his heliotrope, a mirror that throws sunlight at the observer.</p>`,
+  s:'<span class="tag approx">APPROX</span>Station order reconstructed; Gauss\'s network had extra diagonals as checks.'},
+ {t:'The heath triangles Gauss named',ops:[T(['Wilsede','Wulfsode'],'Hauselberg'),T(['Wulfsode','Hauselberg'],'Falkenberg')],cam:[['Wilsede','Wulfsode','Hauselberg','Falkenberg','Lüneburg'],.28],
+  b:`<p>Two triangles here are recorded by name: <b>Hauselberg – Wulfsode – Wilsede</b> and <b>Wulfsode – Hauselberg – Falkenberg</b>. Together they turn the chain south toward the Aller valley.</p><p>Side Hauselberg–Falkenberg ≈ <b>${fmt(km('Hauselberg','Falkenberg'))}</b>.</p>`,
+  s:'<span class="tag raw">RECORDED</span>Triangle names from Lüneburg Heath histories. <span class="tag approx">APPROX</span>Positions.'},
+ {t:'Down to the Deister',ops:[T(['Falkenberg','Wulfsode'],'Garssen'),T(['Falkenberg','Garssen'],'Deister'),T(['Garssen','Deister'],'Lichtenberg')],cam:[['Falkenberg','Wulfsode','Garssen','Deister','Lichtenberg'],.2],
+  b:`<p>From Falkenberg the chain reaches Garssen near Celle and then the Deister ridge, from which Gauss sighted <b>Hils, Lichtenberg, Garssen and Falkenberg</b>. The sides are now long: Falkenberg–Deister ≈ <b>${fmt(km('Falkenberg','Deister'))}</b>.</p><p>Every one of these lengths still traces back to the 5.9 km at Braak.</p>`,
+  s:'<span class="tag raw">RECORDED</span>Deister sight lines (myheimat.de). <span class="tag approx">APPROX</span>Positions.'},
+ {t:'To the Harz: Hils and the Brocken',ops:[T(['Deister','Lichtenberg'],'Hils'),T(['Hils','Lichtenberg'],'Brocken'),T(['Hils','Brocken'],'Hohehagen')],cam:[['Deister','Lichtenberg','Hils','Brocken','Hohehagen','Göttingen'],.22],
+  b:`<p>Deister → Lichtenberg → Hils → Brocken → Hohehagen. The Brocken, highest point of the Harz at about 1156 m, can be seen across most of the region, and the mountain stations let the sides grow past 60 km.</p><p>Side Brocken–Hohehagen ≈ <b>${fmt(km('Brocken','Hohehagen'))}</b>. Göttingen observatory, the arc's southern anchor, is tied in close by.</p>`,
+  s:'<span class="tag approx">APPROX</span>Order and positions reconstructed. Heights from Breitenberger (1984) via Scholz.'},
+ {t:'The great triangle: Hohehagen – Brocken – Inselsberg',ops:[T(['Brocken','Hohehagen'],'Inselsberg')],flash:true,cam:[['Hils','Brocken','Hohehagen','Inselsberg'],.2],tri:'sides',
+  b:`<p>The last step adds the Inselsberg in the Thuringian Forest. Its sides are about 69, 85 and 106 km, too long for any lamp of the day: Gauss could only observe them with heliotropes flashing sunlight between the summits.</p><p>The side Inselsberg–Brocken comes out of the chain as <b>105 972.85 m</b>, eighteen times the base it grew from.</p>`,
+  s:'<span class="tag raw">GAUSS</span>Side length via Jordan (1896), who uses it in his worked example of this triangle.'},
+ {t:'The raw angles',cam:[ALL,.07],tri:'angles',
+  b:`<p>Gauss's measured angles, each in the level plane of its own station:</p><table><tr><th>Station</th><th style="text-align:right">Observed angle</th></tr><tr><td>Hohehagen</td><td class="n">86° 13′ 58.366″</td></tr><tr><td>Brocken</td><td class="n">53° 06′ 45.642″</td></tr><tr><td>Inselsberg</td><td class="n">40° 39′ 30.165″</td></tr><tr><td><b>Sum</b></td><td class="n"><b>180° 00′ 14.173″</b></td></tr></table><p>The three angles exceed 180° by <b>14.173″</b>. Breitenberger's reconstruction from Gauss's papers gives 14.211″.</p>`,
+  s:'<span class="tag raw">GAUSS</span>Angles as quoted from Gauss in the Berkeley Physics Course, vol. 1; 14.211″ per Breitenberger (1984) via Scholz.'},
+ {t:'Excess and Gauss\'s reductions',cam:[ALL,.07],tri:'reduce',
+  b:`<p>On his spheroid, Gauss computed the triangle's excess as <b>14.85348″</b>, and the amount to take off each angle to reach a plane triangle with the same sides:</p><table><tr><th>Station</th><th style="text-align:right">Reduction</th></tr><tr><td>Hohehagen</td><td class="n">−4.95113″</td></tr><tr><td>Brocken</td><td class="n">−4.95104″</td></tr><tr><td>Inselsberg</td><td class="n">−4.95131″</td></tr><tr><td><b>Total</b></td><td class="n"><b>−14.85348″</b></td></tr></table><p>The three shares differ only in the fourth decimal: Legendre's equal ε/3, refined for the spheroid's changing curvature. This computed excess rests on Gauss's spheroid, a presumed radius.</p>`,
+  s:'<span class="tag raw">GAUSS</span>Disquisitiones generales (1827), quoted in arXiv:2208.12757.'},
+ {t:'Closing the plane triangle',cam:[ALL,.07],tri:'close',
+  b:`<p>Observed sum minus the computed excess leaves the <b>closing error</b>:</p><p class="big">14.173″ − 14.853″ = <b>−0.680″</b></p><p>(Breitenberger: −0.642″.) Split evenly, each angle takes +0.227″. The mean error of one direction in Gauss's net was 0.48″, so an angle carries about ±0.68″ and the sum about ±1.2″. The closure is well within the noise.</p>`,
+  s:'<span class="tag raw">GAUSS</span>0.48″ per direction: Gauss to Bessel 1823 (Werke IX, 366), via Scholz. <span class="tag approx">COMPUTED</span>Even split.'},
+ {t:'Solving the sides',cam:[ALL,.07],tri:'solve',
+  b:`<p>With the plane angles and the known side, the law of sines gives the rest:</p><table><tr><th>Side</th><th style="text-align:right">Length</th></tr><tr><td>Inselsberg – Brocken (from chain)</td><td class="n">105 972.85 m</td></tr><tr><td>Hohehagen – Brocken</td><td class="n" id="sHB"></td></tr><tr><td>Hohehagen – Inselsberg</td><td class="n" id="sHI"></td></tr><tr><td>Area</td><td class="n" id="sA"></td></tr></table>`,
+  s:'<span class="tag approx">COMPUTED</span>Law of sines on the reduced angles, with Jordan\'s side.'},
+ {t:'What the excess alone says',cam:[ALL,.07],tri:'radius',
+  b:`<p>Turn it around and ask what radius the <i>observed</i> excess implies, with no spheroid fed in: R = √(area / excess).</p><table><tr><th>Excess used</th><th style="text-align:right">Implied R</th></tr><tr><td>Observed, 14.173″</td><td class="n" id="rObs"></td></tr><tr><td>Gauss's computed, 14.853″</td><td class="n" id="rG"></td></tr></table><p>With ±1.2″ on the observed sum, one triangle pins R only to about <b id="rErr"></b>, roughly ±4%. And the angles hang on plumb lines: on the Brocken itself Gauss found his geodetic latitude about <b>10″</b> off von Zach's astronomical one, a deflection of the vertical comparable to the whole excess.</p>`,
+  s:'<span class="tag approx">COMPUTED</span>One triangle, one sigma from Gauss\'s direction error. Brocken deflection: Brosche &amp; Heckmann (2016).'}
+];
+// numbers for the great triangle
+const d=(D,M,Sx)=>D+M/60+Sx/3600,r=Math.PI/180;
+const obs={H:d(86,13,58.366),B:d(53,6,45.642),I:d(40,39,30.165)},red={H:4.95113,B:4.95104,I:4.95131};
+const sumEx=(obs.H+obs.B+obs.I-180)*3600,gEx=red.H+red.B+red.I,clo=sumEx-gEx;
+const pl={H:obs.H-(red.H+clo/3)/3600,B:obs.B-(red.B+clo/3)/3600,I:obs.I-(red.I+clo/3)/3600};
+const BI=105972.85,HB=BI*Math.sin(pl.I*r)/Math.sin(pl.H*r),HI=BI*Math.sin(pl.B*r)/Math.sin(pl.H*r);
+const area=0.5*HB*HI*Math.sin(pl.H*r),Rof=e=>Math.sqrt(area/(e/206264.806))/1000;
+const fm=v=>Math.round(v).toLocaleString('en-US').replace(/,/g,' ');
+// ladder
+const nm=n=>n==='b1'||n==='b2'?'Braak':n;
+const ladder=[{name:'Braak base',v:5.875,txt:'5.875 km'}];
+for(let i=2;i<=7;i++){let best=null;steps[i].ops.forEach(op=>{const ls=op.l?[op.l]:[[op.k[0],op.n],[op.k[1],op.n]];ls.forEach(([a,b])=>{const v=km(a,b);if(!best||v>best.v)best={name:nm(a)+' – '+nm(b),v};});});
+ if(i===7)best={name:'Inselsberg – Brocken',v:105.973,txt:'105.97 km'};else best.txt='≈ '+best.v.toFixed(0)+' km';ladder.push(best);}
+const lad=$('ladder');lad.innerHTML='<h3>Longest side added at each step</h3>'+ladder.map(x=>`<div class="lrow"><span>${x.name}</span><span class="bar"><i></i></span><span class="v">${x.txt}</span></div>`).join('');
+function showLadder(i){[...lad.querySelectorAll('.lrow')].forEach((row,j)=>{const on=j+1<=i;row.classList.toggle('on',on);row.classList.toggle('cur',j+1===i);row.querySelector('i').style.width=on?(ladder[j].v/105.973*100)+'%':'0';});}
+// triangle plate
+const tri=$('tri');
+function drawTri(mode){tri.innerHTML='';const t=(n,a)=>el(n,a,tri);
+ const sc=430/BI,Hx=95,Hy=372,hi=HI*sc,hb=HB*sc,I2=[Hx+hi,Hy],ang=pl.H*r,B2=[Hx+hb*Math.cos(ang),Hy-hb*Math.sin(ang)],H2=[Hx,Hy];
+ t('polygon',{points:`${H2} ${I2} ${B2}`,fill:'#E3C08F','fill-opacity':.45,stroke:'#5C3A21','stroke-width':2.5,'stroke-linejoin':'round'});
+ const F='EB Garamond,Georgia,serif',M='ui-monospace,Menlo,Consolas,monospace';
+ const lab=(x,y,s,o)=>{const e=t('text',Object.assign({x,y,'font-size':16,fill:'#3E2A18','font-family':F},o||{}));e.textContent=s;return e;};
+ lab(Hx-10,Hy+24,'Hohehagen',{'text-anchor':'middle','font-weight':600});lab(I2[0]+10,I2[1]+24,'Inselsberg',{'text-anchor':'middle','font-weight':600});lab(B2[0]-8,B2[1]-12,'Brocken',{'text-anchor':'middle','font-weight':600});
+ const angTo=(a,b)=>Math.atan2(-(b[1]-a[1]),b[0]-a[0]);
+ const arc=(c,a1,a2,rad)=>{const p1=[c[0]+rad*Math.cos(a1),c[1]-rad*Math.sin(a1)],p2=[c[0]+rad*Math.cos(a2),c[1]-rad*Math.sin(a2)];t('path',{d:`M${p1} A${rad} ${rad} 0 0 0 ${p2}`,fill:'none',stroke:'#A0522D','stroke-width':1.5});};
+ arc(H2,angTo(H2,I2),angTo(H2,B2),34);arc(I2,angTo(I2,B2),angTo(I2,H2),40);arc(B2,angTo(B2,H2),angTo(B2,I2),36);
+ [H2,I2,B2].forEach(p=>t('circle',{cx:p[0],cy:p[1],r:4,fill:'#5C3A21'}));
+ const dms=x=>{const D=Math.floor(x),m=(x-D)*60,Mi=Math.floor(m),s=(m-Mi)*60;return `${D}° ${String(Mi).padStart(2,'0')}′ ${s.toFixed(3).padStart(6,'0')}″`;};
+ const reduced=['close','solve','radius'].includes(mode),val=reduced?pl:obs;
+ const sty={'font-size':13,fill:'#5C3A21','font-family':M},s2={'font-size':12,fill:'#A0522D','font-family':M};
+ if(mode!=='sides'){lab(Hx+44,Hy-14,dms(val.H),sty);lab(I2[0]-50,I2[1]-12,dms(val.I),Object.assign({'text-anchor':'end'},sty));lab(B2[0]+32,B2[1]+6,dms(val.B),sty);}
+ if(mode==='reduce'){lab(Hx+44,Hy-30,'−4.95113″',s2);lab(I2[0]-50,I2[1]-28,'−4.95131″',Object.assign({'text-anchor':'end'},s2));lab(B2[0]+32,B2[1]-10,'−4.95104″',s2);}
+ const mid=(a,b)=>[(a[0]+b[0])/2,(a[1]+b[1])/2];
+ const side=(a,b,txt,dx,dy)=>{const m=mid(a,b);lab(m[0]+dx,m[1]+dy,txt,{'font-size':15,'font-style':'italic',fill:'#8B5E3C','text-anchor':'middle'});};
+ side(B2,I2,'105 972.85 m',52,-8);
+ if(mode==='solve'||mode==='radius'){side(H2,B2,fm(HB)+' m',-50,0);side(H2,I2,fm(HI)+' m',0,24);}else{side(H2,B2,'≈ 69 km',-40,0);side(H2,I2,'≈ 85 km',0,24);}
+ const head={sides:'Sides carried down the chain',angles:'Observed angles',reduce:'Observed angles and Gauss\'s reductions',close:'Plane angles after reduction and closure',solve:'The plane triangle, solved',radius:'Radius implied by the observed excess'}[mode];
+ lab(20,26,head,{'font-size':19,fill:'#6B4423','font-style':'italic'});
+ const rows=[];const sg=v=>(v<0?'−':'+')+Math.abs(v).toFixed(3)+'″';
+ if(mode!=='sides')rows.push(['Observed sum − 180°',sg(sumEx)]);
+ if(['reduce','close','solve','radius'].includes(mode))rows.push(['Computed excess',sg(-gEx)]);
+ if(reduced)rows.push(['Closing error',sg(clo)]);
+ if(mode==='solve'||mode==='radius')rows.push(['Area',fm(area/1e6)+' km²']);
+ if(mode==='radius')rows.push(['R = √(area / excess)',fm(Rof(sumEx))+' km']);
+ rows.forEach((rw,j)=>{const y=66+j*24,last=j===rows.length-1;lab(376,y,rw[0],{'font-size':15,'font-weight':last?600:400});lab(606,y,rw[1],{'font-size':13,'font-family':M,'text-anchor':'end','font-weight':last?700:400,fill:last?'#A0522D':'#3E2A18'});t('line',{x1:376,x2:606,y1:y+7,y2:y+7,stroke:'#D9C49C','stroke-width':1});});
+ if(!RM&&tri.animate)tri.animate([{opacity:.15},{opacity:1}],{duration:450});}
+// stepper
+let cur=-1,playing=false,pt=null;
+const dotsEl=$('dots'),bar=$('bar');
+steps.forEach((s,i)=>{const b=document.createElement('button');b.className='dot';b.title=(i+1)+'. '+s.t;b.setAttribute('aria-label','Step '+(i+1)+': '+s.t);b.onclick=()=>{stop();go(i);};dotsEl.appendChild(b);});
+function render(i,anim){gen++;timers.forEach(clearTimeout);timers=[];
+ ['fill','line','fx','st'].forEach(k=>{L[k].innerHTML='';});lineEls={};stEls={};dyn=[];
+ for(let k=0;k<i;k++)applyStep(steps[k],false);
+ applyStep(steps[i],anim);
+ const c=steps[i].cam;camTo(fit(c[0],c[1],c[2]),anim);}
+function go(i,anim){if(i<0||i>=steps.length)return;cur=i;const s=steps[i];
+ $('stepno').textContent='STEP '+(i+1)+' OF '+steps.length;$('title').textContent=s.t;const body=$('body');body.innerHTML=s.b;$('src').innerHTML=s.s;
+ if(!RM&&body.animate)body.animate([{opacity:.2},{opacity:1}],{duration:400});
+ [...dotsEl.children].forEach((dd,k)=>{dd.classList.toggle('on',k<i);dd.classList.toggle('cur',k===i);});
+ render(i,anim!==false);
+ const showTri=!!s.tri;$('triplate').style.display=showTri?'block':'none';lad.style.display=showTri||i===0?'none':'block';
+ if(showTri)drawTri(s.tri);else showLadder(i);
+ const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
+ set('sHB',fm(HB)+' m');set('sHI',fm(HI)+' m');set('sA',fm(area/1e6)+' km²');set('rObs',fm(Rof(sumEx))+' km');set('rG',fm(Rof(gEx))+' km');
+ set('rErr',fm(Rof(sumEx+1.18))+' to '+fm(Rof(sumEx-1.18))+' km');}
+const stepDur=i=>6500+((steps[i].ops||[]).length*1100)+(steps[i].tri?2000:0);
+function resetBar(){bar.style.transition='none';bar.style.width='0';}
+function schedule(){clearTimeout(pt);const dd=stepDur(cur);resetBar();void bar.offsetWidth;bar.style.transition=`width ${dd}ms linear`;bar.style.width='100%';
+ pt=setTimeout(()=>{if(cur>=steps.length-1){stop();return;}go(cur+1);schedule();},dd);}
+function stop(){playing=false;clearTimeout(pt);resetBar();$('play').textContent=cur>=steps.length-1?'↺ Replay':'▶ Play';}
+function play(){if(cur>=steps.length-1)go(0);playing=true;$('play').textContent='❚❚ Pause';schedule();}
+$('next').onclick=()=>{stop();go(Math.min(cur+1,steps.length-1));stop();};
+$('prev').onclick=()=>{stop();go(Math.max(cur-1,0));stop();};
+$('play').onclick=()=>{playing?stop():play();};
+document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('a,input,textarea'))return;
+ if(e.key==='ArrowRight'){$('next').click();e.preventDefault();}else if(e.key==='ArrowLeft'){$('prev').click();e.preventDefault();}
+ else if(e.key===' '&&!(e.target.tagName==='BUTTON')){$('play').click();e.preventDefault();}});
+$('srcbtn').onclick=()=>{const on=$('sources').classList.toggle('show');$('srcbtn').setAttribute('aria-expanded',on);};
+window.addEventListener('resize',()=>{if(view)applyView();});
+go(0,false);
+})();
+</script>
+</body>
+</html>
