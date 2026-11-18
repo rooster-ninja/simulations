@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Level Planes and the Angle Excess</title>
+<meta property="og:title" content="Level Planes and the Angle Excess">
+<meta property="og:description" content="A perfect, error-free triangle whose angles are read in each station's own horizontal plane. Change the sphere's radius all the way to infinity (a plane) and the triangle's size, and watch the angle excess appear from the convergence of the verticals.">
+<meta name="theme-color" content="#f3efe4">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3efe4; --card:#f8f5ec; --plate:#ffffff; --ink:#1a1813; --muted:#6b6658; --rule:#ddd5c2;
+  --accent:#4a8fb0; --orange:#e0913a; --red:#c8543a; --purple:#7a56b8; --station:#3c3489;
+  --e1:#cfe9de; --e2:#8fcfb4; --e3:#3fa77f; --e4:#1d6e53; --estroke:#1d6e53;
+  --bar:#16140f; --bar-ink:#f3efe4;
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif; --f-body:"Archivo",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2;
+  --e1:#2c4a3f; --e2:#2f6e57; --e3:#3a9a76; --e4:#6fd0a6; --estroke:#6fd0a6;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
+  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2;
+  --e1:#2c4a3f; --e2:#2f6e57; --e3:#3a9a76; --e4:#6fd0a6; --estroke:#6fd0a6;
+  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding-top:28px}
+.back{margin:0 0 14px;font-family:var(--f-mono);font-size:13px}.back a{color:var(--muted);text-decoration:none}.back a:hover{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,56px);line-height:1.04;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance;max-width:22ch}
+.sub{color:var(--ink);font-size:18px;max-width:66ch;margin:14px 0 0}
+.panel{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px}
+.ptitle{font-family:var(--f-mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.svgbox{background:var(--plate);border:1.5px solid var(--rule);border-radius:12px;overflow-x:auto}
+.svgbox svg{display:block;width:100%;height:auto;min-width:620px}
+.cvbox{background:var(--plate);border:1.5px solid var(--rule);border-radius:12px;position:relative;touch-action:none}
+.cvbox canvas{display:block;width:100%;height:480px;cursor:grab}
+.cvbox canvas:active{cursor:grabbing}
+.hint{position:absolute;right:12px;bottom:8px;font-family:var(--f-mono);font-size:11.5px;color:var(--muted);pointer-events:none}
+.math{font-family:var(--f-display);font-style:italic;font-size:19px;text-align:center;line-height:1.7;overflow-x:auto;padding:2px 4px}
+svg text{font-family:var(--f-mono);fill:var(--ink)}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px 22px}
+.ctl{display:flex;flex-direction:column;gap:6px}
+.ctl label,.lab{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:var(--muted)}
+.ctl .val{font-family:var(--f-display);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:500 13.5px var(--f-mono);letter-spacing:.05em;color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:8px 12px;cursor:pointer}
+button:hover{border-color:var(--muted)}button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.on{border-color:var(--accent);color:var(--accent)}
+.chk{font-family:var(--f-mono);font-size:13px;color:var(--ink);display:inline-flex;gap:6px;align-items:center;margin-right:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:16px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.cap{font-size:16px;margin:0;max-width:74ch}
+.note{font-family:var(--f-mono);font-size:12.5px;color:var(--red);min-height:1em}
+.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 22px}
+.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--muted)}
+.kv .v{font-family:var(--f-display);font-weight:700;font-size:21px;line-height:1.2;font-variant-numeric:tabular-nums}
+.kv .s{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.kv.hl .v{color:var(--e4)}
+.prose p{margin:0 0 10px;max-width:74ch}.prose p:last-child{margin:0}
+ol.steps{margin:0;padding-left:22px;max-width:74ch}ol.steps li{margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-family:var(--f-display);font-variant:small-caps;font-weight:700;letter-spacing:.03em;text-align:left;border-bottom:1.5px solid var(--rule);padding:8px 10px;font-size:16px}
+td{border-bottom:1px solid var(--rule);padding:8px 10px;vertical-align:top}
+td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.cur td{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.tablebox{overflow-x:auto}
+details.src{background:var(--bar);color:var(--bar-ink);border-radius:12px;padding:14px 18px;font-family:var(--f-mono);font-size:14px}
+details.src summary{cursor:pointer;font-weight:600}
+details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
+details.src a{color:var(--bar-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="back"><a href="../">← All simulations</a></p>
+    <p class="eyebrow">Theorema Egregium · level planes</p>
+    <h1>Three level planes and the angle excess</h1>
+    <p class="sub">A perfect triangle with no errors at all. At each station the theodolite is levelled, so every angle is read in that station's own horizontal plane, square to its own vertical. Push the radius out to infinity and the verticals become parallel, the three planes become one, and the excess goes to zero. Bring it back and the excess returns, because the planes are tilted against each other.</p>
+  </header>
+
+  <section class="panel">
+    <div class="controls">
+      <div class="ctl">
+        <label for="rr">Sphere radius R</label>
+        <div class="val" id="rval"></div>
+        <input type="range" id="rr" min="1" max="8.2" step="any" value="3.80422">
+        <div class="row">
+          <button data-r="1000">1,000 km</button>
+          <button data-r="6371.0088">Earth 6,371 km</button>
+          <button data-r="63710">10 × Earth</button>
+          <button data-r="inf">∞ plane</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <label for="ss">Triangle side s (along the surface)</label>
+        <div class="val" id="sval"></div>
+        <input type="range" id="ss" min="0" max="5.301" step="any" value="2">
+        <div class="row">
+          <button data-s="1">1 km</button>
+          <button data-s="100">100 km</button>
+          <button data-s="1000">1,000 km</button>
+          <button data-s="octant">Octant (90°+90°+90°)</button>
+        </div>
+        <div class="note" id="clamp"></div>
+      </div>
+    </div>
+    <div class="row">
+      <button id="sweep">Sweep R → ∞</button>
+      <button id="resetv">Reset view</button>
+      <label class="chk"><input type="checkbox" id="cPlanes" checked>Level planes</label>
+      <label class="chk"><input type="checkbox" id="cVert" checked>Verticals</label>
+      <label class="chk"><input type="checkbox" id="cChord" checked>Sight lines</label>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">1 · The triangle and its three level planes</div>
+    <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Level plane at each station</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span></div>
+    <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
+    <p class="cap" id="cap1"></p>
+    <div class="math">measured excess&nbsp; E = α + β + γ − 180°&nbsp;&nbsp;&nbsp;&nbsp; measured curvature&nbsp; K = E / A</div>
+  </section>
+
+  <section class="readout" id="res" aria-live="polite"></section>
+
+  <section class="panel">
+    <div class="ptitle">2 · What each theodolite reads</div>
+    <div class="svgbox"><svg id="dials" viewBox="0 0 680 250" role="img" aria-label="Horizontal circle of the theodolite at each station"></svg></div>
+    <p class="cap">Each dial is the station's level plane seen from directly above, along its own vertical. The two sight lines are projected onto that plane, which is all a levelled theodolite can do, and the angle between them is read off. Nothing else goes in.</p>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">3 · Side view along one side: the verticals converge</div>
+    <div class="row"><label class="chk"><input type="checkbox" id="cExag">Exaggerate the angle so it can be seen</label><span class="lab" id="exagtag"></span></div>
+    <div class="svgbox"><svg id="side" viewBox="0 0 680 390" role="img" aria-label="Cross-section through two stations showing their verticals and horizontal planes"></svg></div>
+    <p class="cap">The angle between the two stations' horizontal planes equals the angle between their verticals. Each sight line drops below its own station's horizontal by half that angle. On the plane (R = ∞) the verticals are parallel, both horizontals are the same plane, and the dip is zero.</p>
+    <div class="math">angle between verticals&nbsp; δ = s / R,&nbsp;&nbsp;&nbsp; dip of each sight line&nbsp; δ / 2</div>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">4 · Excess against area, for any radius</div>
+    <div class="svgbox"><svg id="chart" viewBox="0 0 680 340" role="img" aria-label="Log-log plot of measured angle excess against measured area"></svg></div>
+    <p class="cap">Every point is measured the same way as the readouts: angles from the dials, area from tiling. On log axes each sphere gives a straight line of slope 1, meaning the excess is proportional to area, and the line's height is K. Lines move down as R grows. At R = ∞ the excess is zero for every area, and zero has no place on a log axis.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Same triangle side, different sphere</th><th class="n">K = 1/R² <span style="font-variant:normal">(m⁻²)</span></th><th class="n">Area A</th><th class="n">Angle sum</th><th class="n">Excess E</th><th class="n">(E / A) ÷ (1/R²)</th></tr></thead>
+      <tbody id="rtable"></tbody>
+    </table></div>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">5 · What the excess is measuring</div>
+    <p><b>The surface between stations never enters.</b> A theodolite only knows two things: the direction of its own vertical, which sets its horizontal plane, and the directions of the sight lines to the other stations. Draw the same three stations with parallel verticals and the angles add up to exactly 180°, whatever the ground in between is doing.</p>
+    <p><b>The excess comes from the verticals not being parallel.</b> Tilt the three planes against each other and the projected angles no longer close to 180°. Gauss showed the excess equals the area that the triangle's normals sweep out on a unit sphere (his "total curvature", <i>Disquisitiones generales</i>, Art. 20). For a sphere of radius R that area is A / R².</p>
+    <p><b>What this page assumes.</b> Here the verticals are the sphere's normals by construction, so the page shows what a perfect sphere would give. It does not show that Earth is one. On Earth the vertical is set by gravity, so a real survey measures the shape of the level surface, and any deflection of the vertical feeds straight into the angles.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle">6 · Methods</div>
+    <ol class="steps">
+      <li><b>Stations.</b> An equilateral triangle with sides s measured along the surface. On a sphere the three stations sit on a circle of angular radius ρ around the centroid:</li>
+    </ol>
+    <div class="math">sin ρ = (2/√3) · sin(s / 2R)</div>
+    <ol class="steps" start="2">
+      <li><b>Verticals and level planes.</b> At station i the vertical is the unit normal <b>u</b><sub>i</sub>. The level plane is spanned by two tangent vectors <b>e</b><sub>1</sub>, <b>e</b><sub>2</sub> square to it.</li>
+      <li><b>Angles, as a theodolite reads them.</b> Each sight line to station j is projected onto the plane, d = (<b>u</b><sub>j</sub>·<b>e</b><sub>1</sub>, <b>u</b><sub>j</sub>·<b>e</b><sub>2</sub>). The angle is the angle between the two projected directions:</li>
+    </ol>
+    <div class="math">α = atan2( d<sub>j</sub> × d<sub>k</sub>, d<sub>j</sub> · d<sub>k</sub> )</div>
+    <ol class="steps" start="4">
+      <li><b>Area, without the angles.</b> The triangle is cut into 9,216 small flat facets whose corners lie on the surface. Their areas are summed, and the result is repeated at 2,304 facets and extrapolated (Richardson) to the true surface area.</li>
+      <li><b>Curvature.</b> K = E / A from the two measured quantities. The page never uses E = A / R²; agreement with 1 / R² is a check, shown in the readouts. On the plane, everything is the same calculation with parallel verticals.</li>
+      <li><b>Precision.</b> All arithmetic is double precision and arranged to avoid cancellation, so excesses down to about 10⁻¹⁴ rad (2 × 10⁻⁹″) are reliable. Below that the check column shows rounding noise.</li>
+    </ol>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">7 · Errors in this simulation</div>
+    <p class="cap">None, by design. Each result is exact to the arithmetic, so no σ is attached. The table lists what a real survey would add. Section 5 of the <a href="../triangulation-chain/">triangulation chain</a> and <a href="../gauss-great-triangle/">Gauss's great triangle</a> pages carry these errors.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Effect</th><th class="n">Here</th><th>In a real survey</th></tr></thead>
+      <tbody>
+        <tr><td>Angle reading</td><td class="n">0</td><td>Gauss gave 0.48″ for one direction, about 1.2″ for a triangle's angle sum</td></tr>
+        <tr><td>Deflection of the vertical</td><td class="n">0</td><td>Tilts a station's level plane by several arcseconds; about 10″ measured on the Brocken</td></tr>
+        <tr><td>Refraction of sight lines</td><td class="n">0</td><td>Bends lines vertically and sideways; sideways bending changes horizontal angles</td></tr>
+        <tr><td>Sight lines through the ground</td><td class="n">allowed</td><td>Straight lines here; for triangles beyond about 100–200 km the chord runs below the horizon and could not be sighted</td></tr>
+        <tr><td>Shape</td><td class="n">sphere</td><td>Earth's level surface is close to an ellipsoid with K about 1.3% higher at the equator than at the poles</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <details class="src">
+    <summary>Sources for this page (pages and quotes)</summary>
+    <ul>
+      <li>C. F. Gauss (1827), <i>Disquisitiones generales circa superficies curvas</i>, translated by J. C. Morehead and A. M. Hiltebeitel as <a href="https://www.gutenberg.org/ebooks/36856">General Investigations of Curved Surfaces</a> (1902), Art. 20: the excess of the angle sum of a triangle of shortest lines over 180° equals its total curvature, the area its normals cover on the unit sphere.</li>
+      <li>H. Moritz, <a href="https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm">Geodetic Reference System 1980</a>, Geodesist's Handbook (IAG): mean radius R<sub>1</sub> = 6 371 008.7714 m, used for the Earth preset.</li>
+      <li>Real-survey error values in section 7 are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const D2R=Math.PI/180, AS=180/Math.PI*3600, RE=6371.0088, SIG_MAX=Math.acos(-1/3); // side angle where E = π
+const PHI=[90,210,330].map(d=>d*D2R), NAMES=["A","B","C"];
+const RMAXLOG=8.0; // slider above this is ∞
+
+// ---------- formatting ----------
+const SUP={"-":"⁻","0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹"};
+function sci(x,d=3){if(x===0)return"0";const e=Math.floor(Math.log10(Math.abs(x)));const m=x/10**e;return m.toFixed(d-1)+" × 10"+String(e).split("").map(c=>SUP[c]).join("");}
+function grp(x,dec=0){return x.toLocaleString("en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec});}
+function fLen(km){if(km<1)return grp(km*1000,1)+" m";if(km<100)return grp(km,3)+" km";if(km<1e5)return grp(km,1)+" km";return sci(km,4)+" km";}
+function fArea(a){if(a<1)return grp(a,4)+" km²";if(a<1e4)return grp(a,2)+" km²";if(a<1e9)return grp(a,0)+" km²";return sci(a,4)+" km²";}
+function fR(R){if(!isFinite(R))return"∞ (plane)";return R<1e6?grp(R,R<1e4?1:0)+" km":sci(R,3)+" km";}
+function dms(rad,dec=4){ // full angle in deg ° ′ ″
+  let neg=rad<0;rad=Math.abs(rad);const q=10**dec;let tot=Math.round(rad*AS*q);
+  let d=Math.floor(tot/(3600*q));tot-=d*3600*q;let m=Math.floor(tot/(60*q));tot-=m*60*q;let ss=(tot/q).toFixed(dec);
+  return (neg?"−":"")+d+"° "+String(m).padStart(2,"0")+"′ "+ss.padStart(dec+3,"0")+"″";}
+function fExc(rad){ // excess / small angle
+  const s=rad*AS;if(Math.abs(s)<1e-15||rad===0)return"0″";
+  if(s<0.001)return sci(s,3)+"″";if(s<60)return s.toFixed(s<1?5:4)+"″";if(s<3600)return (s/60).toFixed(4)+"′";return dms(rad,2);}
+
+// ---------- geometry: everything "measured" ----------
+// Returns stations (unit normals or plane points), measured angles, measured area (km²).
+function vadd(a,b){return[a[0]+b[0],a[1]+b[1],a[2]+b[2]];}
+function vsub(a,b){return[a[0]-b[0],a[1]-b[1],a[2]-b[2]];}
+function vmul(a,k){return[a[0]*k,a[1]*k,a[2]*k];}
+function dot(a,b){return a[0]*b[0]+a[1]*b[1]+a[2]*b[2];}
+function cross(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+function norm(a){return Math.hypot(a[0],a[1],a[2]);}
+function unit(a){return vmul(a,1/norm(a));}
+
+function stations(R,s){
+  if(!isFinite(R)){const r=s/Math.sqrt(3);return{plane:true,p:PHI.map(f=>[r*Math.cos(f),r*Math.sin(f)])};}
+  const sig=s/R, sr=2/Math.sqrt(3)*Math.sin(sig/2), cr=Math.sqrt(1-sr*sr);
+  const u=PHI.map(f=>[sr*Math.cos(f),sr*Math.sin(f),cr]);
+  const e1=PHI.map(f=>[-cr*Math.cos(f),-cr*Math.sin(f),sr]);   // toward centroid, in the level plane
+  const e2=PHI.map(f=>[-Math.sin(f),Math.cos(f),0]);
+  return{plane:false,sig,sr,cr,u,e1,e2};
+}
+// projected sight-line direction (2D, in the level plane at i) toward j
+function sightDir(st,i,j){
+  if(st.plane){return[st.p[j][0]-st.p[i][0],st.p[j][1]-st.p[i][1]];}
+  // components of u_j on the tangent basis at i; the u_i component drops out (projection)
+  return[dot(st.u[j],st.e1[i]),dot(st.u[j],st.e2[i])];
+}
+function angleAt(st,i){const j=(i+1)%3,k=(i+2)%3;const a=sightDir(st,i,j),b=sightDir(st,i,k);
+  return Math.abs(Math.atan2(a[0]*b[1]-a[1]*b[0],a[0]*b[0]+a[1]*b[1]));}
+// area by flat-facet tiling of the surface, Richardson-extrapolated. Returns km².
+function tileArea(st,R,n){
+  if(st.plane){const P=st.p;const a=vsub([...P[1],0],[...P[0],0]),b=vsub([...P[2],0],[...P[0],0]);return Math.abs(a[0]*b[1]-a[1]*b[0])/2;}
+  const U=st.u;
+  // local coords about centroid axis: (X, Y, H) with H = z-1, computed without cancellation
+  const pt=(w0,w1,w2)=>{const x=w0*U[0][0]+w1*U[1][0]+w2*U[2][0],y=w0*U[0][1]+w1*U[1][1]+w2*U[2][1],z=(w0+w1+w2)*st.cr;
+    const N=Math.hypot(x,y,z),X=x/N,Y=y/N,q=X*X+Y*Y;return[X,Y,-q/(1+Math.sqrt(1-q))];};
+  const grid=[];for(let i=0;i<=n;i++){grid[i]=[];for(let j=0;j<=n-i;j++)grid[i][j]=pt(i/n,j/n,(n-i-j)/n);}
+  let A=0;const tri=(a,b,c)=>{A+=norm(cross(vsub(b,a),vsub(c,a)))/2;};
+  for(let i=0;i<n;i++)for(let j=0;j<n-i;j++){tri(grid[i][j],grid[i+1][j],grid[i][j+1]);if(j<n-i-1)tri(grid[i+1][j],grid[i+1][j+1],grid[i][j+1]);}
+  return A*R*R;
+}
+function measure(R,s,n=96){
+  const st=stations(R,s);const ang=[0,1,2].map(i=>angleAt(st,i));
+  let A;if(st.plane)A=tileArea(st,R,1);else{const a1=tileArea(st,R,n/2),a2=tileArea(st,R,n);A=(4*a2-a1)/3;}
+  const E=ang[0]+ang[1]+ang[2]-Math.PI;
+  let vert=0;if(!st.plane){const d=vsub(st.u[0],st.u[1]);vert=2*Math.asin(Math.min(1,norm(d)/2));}
+  return{st,ang,A,E,vert};
+}
+function sMax(R){return isFinite(R)?SIG_MAX*R*0.9999:2e5;}
+
+// ---------- state ----------
+let R=RE,S=100,view={yaw:-28*D2R,pitch:60*D2R,zoom:1},M=null;
+function rFromSlider(){const v=+$("rr").value;return v>=RMAXLOG?Infinity:10**v;}
+function setRSlider(r){$("rr").value=isFinite(r)?Math.log10(r):8.2;}
+function sFromSlider(){return 10**(+$("ss").value);}
+function setSSlider(s){$("ss").value=Math.log10(s);}
+
+function update(){
+  R=rFromSlider();let s=sFromSlider();const sm=sMax(R);
+  $("clamp").textContent=s>sm?(isFinite(R)?"Limited to "+fLen(sm)+": a larger equilateral triangle would cover more than a quarter of this sphere.":"Limited to "+fLen(sm)+" on the plane."):"";
+  S=Math.min(s,sm);
+  M=measure(R,S);
+  $("rval").textContent=fR(R)+(isFinite(R)&&Math.abs(R-RE)<0.01?"  · Earth mean":"");
+  $("sval").textContent=fLen(S);
+  readouts();drawDials();drawSide();drawChart();table();draw3d();caption();
+}
+function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
+function readouts(){
+  const K=isFinite(R)?1/(R*1000)**2:0, Km=M.E/(M.A*1e6);
+  const tiny=isFinite(R)&&M.E<1e-14;
+  const ratio=isFinite(R)?(tiny?"below double precision":"ratio to 1/R²: "+(Km/K).toFixed(6)):"";
+  $("res").innerHTML=
+    kv("Radius R",fR(R),"K = 1/R² = "+(K?sci(K,4)+" m⁻²":"0"))+
+    kv("Area A (tiled)",fArea(M.A),"side "+fLen(S))+
+    kv("Each angle (measured)",dms(M.ang[0],4),"A, B and C read the same")+
+    kv("Angle sum",dms(M.ang[0]+M.ang[1]+M.ang[2],4),"")+
+    kv("Excess E",fExc(Math.abs(M.E)<1e-15?0:M.E),M.E>1e-15?sci(M.E,4)+" rad":"verticals parallel",true)+
+    kv("Measured K = E / A",Math.abs(M.E)<1e-15?"0 m⁻²":sci(Km,5)+" m⁻²",ratio,true)+
+    kv("Angle between verticals",fExc(M.vert),"adjacent stations")+
+    kv("Dip of each sight line",fExc(M.vert/2),"below the station's horizontal");
+}
+function caption(){
+  let t;
+  if(!isFinite(R))t="R = ∞: every vertical points the same way, so the three level planes are one plane. The projected angles are the plane triangle's angles and sum to exactly 180°.";
+  else{const e=M.E*AS;
+    t=`The verticals at neighbouring stations differ by ${fExc(M.vert)}. Each level plane is tilted by that much against its neighbours, and the three readings add up to 180° + ${fExc(M.E)}. `+
+      (e<1?"That is less than an arcsecond: at this size the three planes are nearly one plane.":e<3600?"":"The planes are visibly tilted.");}
+  $("cap1").textContent=t;
+}
+
+// ---------- 3D view (orthographic) ----------
+const cv=$("cv"),ctx=cv.getContext("2d");let W=0,H=0,DPR=1;
+function resize(){DPR=window.devicePixelRatio||1;const r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);draw3d();}
+// world -> scene units of s
+function P(st,u){ // unit normal -> local position in units of S
+  const k=R/S,q=u[0]*u[0]+u[1]*u[1];return[k*u[0],k*u[1],-k*q/(1+u[2])];}
+function slerp(a,b,t){const om=Math.acos(Math.max(-1,Math.min(1,dot(a,b))));if(om<1e-12)return a;const sa=Math.sin((1-t)*om)/Math.sin(om),sb=Math.sin(t*om)/Math.sin(om);return vadd(vmul(a,sa),vmul(b,sb));}
+function slerpStable(st,i,j,t){ // great-circle point between stations, built from small components
+  const a=st.u[i],b=st.u[j];const x=a[0]*(1-t)+b[0]*t,y=a[1]*(1-t)+b[1]*t,z=st.cr;
+  // direction of chord-interpolation, normalised; same great circle (lies in plane of a,b,O)
+  const N=Math.hypot(x,y,z);return[x/N,y/N,z/N];}
+let proj;
+function setupProj(ext,zc){
+  const cy=Math.cos(view.yaw),sy=Math.sin(view.yaw),cp=Math.cos(view.pitch),sp=Math.sin(view.pitch);
+  const ppu=view.zoom*Math.min(W,H)*0.46/ext;
+  proj=v=>{const x=v[0],y=v[1],z=v[2]+zc;const x1=x*cy-y*sy,y1=x*sy+y*cy;const sx=x1,syy=y1*cp+z*sp,dz=-y1*sp+z*cp;return[W/2+sx*ppu,H/2-syy*ppu,dz];};
+  proj.ppu=ppu;
+  proj.vv=[-sy*sp,-cy*sp,cp]; // toward the viewer, world coords
+}
+function line(pts,color,w,dash,alpha){ctx.save();ctx.globalAlpha=alpha??1;ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();ctx.restore();}
+function poly(pts,fill,alpha,stroke,w){ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=fill;ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();ctx.fill();if(stroke){ctx.globalAlpha=1;ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}ctx.restore();}
+function label(p,txt,color,dx=0,dy=0,font){const q=proj(p);ctx.save();ctx.fillStyle=color;ctx.font=font||"600 13px 'IBM Plex Mono', monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
+function arrow(a,b,color,w){line([a,b],color,w);const qa=proj(a),qb=proj(b);const ang=Math.atan2(qb[1]-qa[1],qb[0]-qa[0]);ctx.save();ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(qb[0],qb[1]);ctx.lineTo(qb[0]-9*Math.cos(ang-0.4),qb[1]-9*Math.sin(ang-0.4));ctx.lineTo(qb[0]-9*Math.cos(ang+0.4),qb[1]-9*Math.sin(ang+0.4));ctx.closePath();ctx.fill();ctx.restore();}
+
+function draw3d(){
+  if(!M||!W)return;const st=M.st;
+  ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
+  const C={ink:css("--ink"),muted:css("--muted"),rule:css("--rule"),acc:css("--accent"),or:css("--orange"),st:css("--station"),e2:css("--e2"),e4:css("--e4")};
+  const k=isFinite(R)?R/S:Infinity;
+  const rho=st.plane?0:Math.asin(st.sr);
+  const thMax=st.plane?0:Math.min(Math.PI,Math.max(2.1*rho,1e-300));
+  const whole=!st.plane&&thMax>Math.PI/2;
+  const ext=whole?Math.max(0.8,k*1.3):0.95;
+  const zc=whole?k*0.85:0;
+  setupProj(ext,zc);
+  const vv=proj.vv;
+  // ---- ground grid ----
+  if(st.plane){
+    const r0=2.4/Math.sqrt(3);
+    for(let g=1;g<=8;g++){const r=r0*g/8,pts=[];for(let t=0;t<=96;t++){const f=t/96*2*Math.PI;pts.push([r*Math.cos(f),r*Math.sin(f),0]);}line(pts,C.rule,1);}
+    for(let m=0;m<12;m++){const f=m/12*2*Math.PI;line([[0,0,0],[r0*Math.cos(f),r0*Math.sin(f),0]],C.rule,1);}
+  }else{
+    const seg=(pts,us)=>{ // split into visible/hidden runs
+      let run=[],vis=null;const flush=()=>{if(run.length>1)line(run,C.rule,vis?1.1:0.8,vis?[]:[3,4],vis?1:0.55);};
+      pts.forEach((p,i)=>{const v=dot(us[i],vv)>-1e-9||!whole;if(vis===null)vis=v;if(v!==vis){run.push(p);flush();run=[p];vis=v;}else run.push(p);});flush();};
+    for(let g=1;g<=8;g++){const th=thMax*g/8,pts=[],us=[];for(let t=0;t<=120;t++){const f=t/120*2*Math.PI;const u=[Math.sin(th)*Math.cos(f),Math.sin(th)*Math.sin(f),Math.cos(th)];us.push(u);const sn=Math.sin(th),q=2*Math.sin(th/2)**2;pts.push([k*sn*Math.cos(f),k*sn*Math.sin(f),-k*q]);}seg(pts,us);}
+    for(let m=0;m<12;m++){const f=m/12*2*Math.PI,pts=[],us=[];for(let t=0;t<=80;t++){const th=thMax*t/80;const u=[Math.sin(th)*Math.cos(f),Math.sin(th)*Math.sin(f),Math.cos(th)];us.push(u);pts.push([k*Math.sin(th)*Math.cos(f),k*Math.sin(th)*Math.sin(f),-k*2*Math.sin(th/2)**2]);}seg(pts,us);}
+    if(whole){const c=proj([0,0,-k]);ctx.save();ctx.strokeStyle=C.muted;ctx.lineWidth=1.3;ctx.beginPath();ctx.arc(c[0],c[1],k*proj.ppu,0,2*Math.PI);ctx.stroke();ctx.restore();}
+  }
+  // ---- station positions ----
+  const pos=[0,1,2].map(i=>st.plane?[st.p[i][0]/S,st.p[i][1]/S,0]:P(st,st.u[i]));
+  const nrm=[0,1,2].map(i=>st.plane?[0,0,1]:st.u[i]);
+  const E1=[0,1,2].map(i=>st.plane?unit([-pos[i][0],-pos[i][1],0]):st.e1[i]);
+  const E2=[0,1,2].map(i=>st.plane?cross([0,0,1],E1[i]):st.e2[i]);
+  // ---- triangle (geodesic edges) ----
+  const edge=(i,j)=>{const pts=[];for(let t=0;t<=48;t++){const tt=t/48;pts.push(st.plane?vadd(vmul(pos[i],1-tt),vmul(pos[j],tt)):P(st,slerpStable(st,i,j,tt)));}return pts;};
+  const tri=[...edge(0,1),...edge(1,2),...edge(2,0)];
+  poly(tri,C.e2,0.45);
+  line(edge(0,1),C.e4,2.2);line(edge(1,2),C.e4,2.2);line(edge(2,0),C.e4,2.2);
+  // ---- verticals ----
+  if($("cVert").checked){
+    const toC=isFinite(k)&&k<=3.2;
+    for(let i=0;i<3;i++){
+      const down=toC?vmul(nrm[i],-k):vmul(nrm[i],-0.75);
+      line([pos[i],vadd(pos[i],down)],C.st,1.3,[5,4],0.85);
+      arrow(pos[i],vadd(pos[i],vmul(nrm[i],0.42)),C.st,2);
+    }
+    if(toC){const c=[0,0,-k];const q=proj(c);ctx.save();ctx.fillStyle=C.st;ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill();ctx.restore();label(c,"centre",C.st,0,14,"500 12px 'IBM Plex Mono'");}
+    else{const mid=vmul(vadd(vadd(pos[0],pos[1]),pos[2]),1/3);label(vadd(mid,[0,0,-0.82]),isFinite(R)?"verticals meet "+fR(R)+" below":"verticals parallel: never meet",C.st,0,0,"500 12px 'IBM Plex Mono'");}
+  }
+  // ---- sight lines (straight chords) ----
+  if($("cChord").checked){for(const [i,j] of [[0,1],[1,2],[2,0]])line([pos[i],pos[j]],C.or,1.6,[7,5],0.95);}
+  // ---- level planes + angle arcs ----
+  for(let i=0;i<3;i++){
+    const h=0.24,p=pos[i],a=E1[i],b=E2[i];
+    if($("cPlanes").checked){
+      const sq=[vadd(p,vadd(vmul(a,h),vmul(b,h))),vadd(p,vadd(vmul(a,h),vmul(b,-h))),vadd(p,vadd(vmul(a,-h),vmul(b,-h))),vadd(p,vadd(vmul(a,-h),vmul(b,h)))];
+      poly(sq,C.acc,0.2,C.acc,1.2);
+    }
+    // projected sight directions in the plane (3D)
+    const j=(i+1)%3,kk=(i+2)%3;
+    const dj=sightDir(st,i,j),dk=sightDir(st,i,kk);
+    const D=(d)=>{const l=Math.hypot(d[0],d[1]);return st.plane?[d[0]/l,d[1]/l,0]:vadd(vmul(a,d[0]/l),vmul(b,d[1]/l));};
+    const vj=D(dj),vk=D(dk);
+    const r=0.16,ang=M.ang[i];const w=unit(vsub(vk,vmul(vj,dot(vk,vj))));
+    const arc=[p];for(let t=0;t<=24;t++){const th=ang*t/24;arc.push(vadd(p,vadd(vmul(vj,r*Math.cos(th)),vmul(w,r*Math.sin(th)))));}
+    poly(arc,C.or,0.55,C.or,1.2);
+    line([p,vadd(p,vmul(vj,0.3))],C.or,2);line([p,vadd(p,vmul(vk,0.3))],C.or,2);
+    const q=proj(p);ctx.save();ctx.fillStyle=C.ink;ctx.beginPath();ctx.arc(q[0],q[1],4.2,0,7);ctx.fill();ctx.restore();
+    label(vadd(p,vmul(a,-0.36)),NAMES[i],C.ink,0,0,"700 15px 'IBM Plex Mono'");
+  }
+}
+// pointer
+let drag=null;
+cv.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,yaw:view.yaw,pitch:view.pitch};cv.setPointerCapture(e.pointerId);});
+cv.addEventListener("pointermove",e=>{if(!drag)return;view.yaw=drag.yaw+(e.clientX-drag.x)*0.008;view.pitch=Math.max(0,Math.min(Math.PI/2,drag.pitch-(e.clientY-drag.y)*0.008));draw3d();});
+cv.addEventListener("pointerup",()=>drag=null);cv.addEventListener("pointercancel",()=>drag=null);
+cv.addEventListener("wheel",e=>{e.preventDefault();view.zoom=Math.max(0.3,Math.min(6,view.zoom*Math.exp(-e.deltaY*0.0015)));draw3d();},{passive:false});
+cv.addEventListener("dblclick",()=>{view={yaw:-28*D2R,pitch:60*D2R,zoom:1};draw3d();});
+
+// ---------- dials ----------
+function svgEl(tag,attrs,parent){const el=document.createElementNS("http://www.w3.org/2000/svg",tag);for(const k in attrs)el.setAttribute(k,attrs[k]);if(parent)parent.appendChild(el);return el;}
+function drawDials(){
+  const g=$("dials");g.innerHTML="";const st=M.st;
+  for(let i=0;i<3;i++){
+    const cx=115+i*225,cy=112,r=78;
+    svgEl("circle",{cx,cy,r,fill:"none",stroke:css("--rule"),"stroke-width":1.5},g);
+    for(let t=0;t<72;t++){const a=t*5*D2R,l=t%18===0?10:t%6===0?6:3;svgEl("line",{x1:cx+r*Math.sin(a),y1:cy-r*Math.cos(a),x2:cx+(r-l)*Math.sin(a),y2:cy-(r-l)*Math.cos(a),stroke:css("--muted"),"stroke-width":1},g);}
+    const j=(i+1)%3,k=(i+2)%3;const dj=sightDir(st,i,j),dk=sightDir(st,i,k);
+    let aj=Math.atan2(dj[1],dj[0]),ak=Math.atan2(dk[1],dk[0]);
+    // rotate so the bisector points up; plane-coords (e1,e2) -> screen
+    let bis=Math.atan2(Math.sin(aj)+Math.sin(ak),Math.cos(aj)+Math.cos(ak));
+    const tip=(a,L)=>{const t=a-bis;return[cx+L*Math.sin(t),cy-L*Math.cos(t)];};
+    let d0=aj-bis,d1=ak-bis;while(d0>Math.PI)d0-=2*Math.PI;while(d0<-Math.PI)d0+=2*Math.PI;while(d1>Math.PI)d1-=2*Math.PI;while(d1<-Math.PI)d1+=2*Math.PI;
+    const ra=36,lo=Math.min(d0,d1),hi=Math.max(d0,d1);
+    let path=`M${cx},${cy} L${cx+ra*Math.sin(lo)},${cy-ra*Math.cos(lo)} A${ra},${ra} 0 ${hi-lo>Math.PI?1:0} 1 ${cx+ra*Math.sin(hi)},${cy-ra*Math.cos(hi)} Z`;
+    svgEl("path",{d:path,fill:css("--orange"),"fill-opacity":0.35,stroke:css("--orange")},g);
+    for(const [a,n] of [[aj,NAMES[j]],[ak,NAMES[k]]]){const p=tip(a,r-4),q=tip(a,r+12);svgEl("line",{x1:cx,y1:cy,x2:p[0],y2:p[1],stroke:css("--orange"),"stroke-width":2.2},g);const t=svgEl("text",{x:q[0],y:q[1]+4,"text-anchor":"middle","font-size":13,"font-weight":600},g);t.textContent="to "+n;}
+    svgEl("circle",{cx,cy,r:3.5,fill:css("--ink")},g);
+    const t1=svgEl("text",{x:cx,y:cy+r+30,"text-anchor":"middle","font-size":14,"font-weight":600},g);t1.textContent="At "+NAMES[i]+": "+dms(M.ang[i],4);
+  }
+}
+
+// ---------- side view ----------
+function drawSide(){
+  const g=$("side");g.innerHTML="";const ink=css("--ink"),mut=css("--muted"),or=css("--orange"),stc=css("--station"),e4=css("--e4");
+  const exag=$("cExag").checked;let sig=M.vert,f=1;
+  if(exag&&isFinite(R)&&sig>0&&sig<0.5){f=0.5/sig;}
+  const sd=sig*f;
+  $("exagtag").textContent=exag&&f>1?"angle drawn "+(f<1e4?grp(f,0):sci(f,2))+" × larger than true":(exag?"(no exaggeration needed)":"");
+  const ax=120,bx=560,yy=150,half=(bx-ax)/2,mx=(ax+bx)/2;
+  // geometry in screen: stations on circle radius Rp
+  const flat=sd<1e-12;
+  const Rp=flat?Infinity:half/Math.sin(sd/2);
+  const cy=flat?Infinity:yy+Rp*Math.cos(sd/2);
+  // surface arc
+  if(flat){svgEl("line",{x1:30,y1:yy,x2:650,y2:yy,stroke:e4,"stroke-width":2.5},g);}
+  else{let d="";const extra=Math.min(0.5*sd,0.25*Math.PI);const n=80;for(let t=0;t<=n;t++){const a=-sd/2-extra+(sd+2*extra)*t/n;const x=mx+Rp*Math.sin(a),y=cy-Rp*Math.cos(a);d+=(t?"L":"M")+x.toFixed(2)+","+y.toFixed(2);}svgEl("path",{d,fill:"none",stroke:e4,"stroke-width":2.5},g);}
+  // chord (sight line)
+  svgEl("line",{x1:ax,y1:yy,x2:bx,y2:yy,stroke:or,"stroke-width":2,"stroke-dasharray":"7 5"},g);
+  // at each station: vertical up, vertical down toward centre, horizontal
+  const st=[[ax,-sd/2],[bx,sd/2]];
+  st.forEach(([x,a],idx)=>{
+    const nx=Math.sin(a),ny=-Math.cos(a); // outward normal (screen)
+    const tx=Math.cos(a),ty=Math.sin(a);  // tangent
+    svgEl("line",{x1:x-tx*95,y1:yy-ty*95,x2:x+tx*95,y2:yy+ty*95,stroke:css("--accent"),"stroke-width":3,"stroke-opacity":0.7},g);
+    // up arrow
+    const ux=x+nx*60,uy=yy+ny*60;svgEl("line",{x1:x,y1:yy,x2:ux,y2:uy,stroke:stc,"stroke-width":2},g);
+    const bx1=ux-nx*11+tx*5,by1=uy-ny*11+ty*5,bx2=ux-nx*11-tx*5,by2=uy-ny*11-ty*5;
+    svgEl("path",{d:`M${ux.toFixed(2)},${uy.toFixed(2)} L${bx1.toFixed(2)},${by1.toFixed(2)} L${bx2.toFixed(2)},${by2.toFixed(2)} Z`,fill:stc},g);
+    // down toward centre: clip to y=305
+    let L=flat?1000:Rp;const ylim=375;const dy=-ny;let Lc=dy>0?Math.min(L,(ylim-yy)/dy):L;
+    svgEl("line",{x1:x,y1:yy,x2:x-nx*Lc,y2:yy-ny*Lc,stroke:stc,"stroke-width":1.4,"stroke-dasharray":"5 4"},g);
+    svgEl("circle",{cx:x,cy:yy,r:4.5,fill:ink},g);
+    const t=svgEl("text",{x:x+(idx?18:-18),y:yy-14,"text-anchor":"middle","font-size":15,"font-weight":700},g);t.textContent=idx?"B":"A";
+  });
+  const lab=(x,y,txt,col,anchor="middle",fs=12.5)=>{const t=svgEl("text",{x,y,"text-anchor":anchor,"font-size":fs,fill:col||ink},g);t.textContent=txt;return t;};
+  lab(ax-60,yy+30,"A's horizontal",css("--accent"),"middle",12);
+  lab(bx+60,yy+30,"B's horizontal",css("--accent"),"middle",12);
+  lab(mx,yy+18,"sight line A–B",or);
+  if(!flat&&cy<365){svgEl("circle",{cx:mx,cy,r:4,fill:stc},g);lab(mx,cy+18,"centre · verticals meet at angle δ",stc);}
+  else lab(mx,372,flat?"verticals parallel: they never meet":"verticals meet "+fR(R)+" below (off the page)",stc);
+  lab(20,22,"δ (true) = "+fExc(M.vert),ink,"start",13);
+  lab(20,42,"dip of sight line = δ/2 = "+fExc(M.vert/2),ink,"start",13);
+  lab(660,22,"s = "+fLen(S)+",  R = "+fR(R),mut,"end",12.5);
+}
+
+// ---------- chart ----------
+function drawChart(){
+  const g=$("chart");g.innerHTML="";const mut=css("--muted"),rule=css("--rule"),ink=css("--ink");
+  const L=70,Rr=650,T=20,B=290,x0=-1,x1=9,y0=-8,y1=6;
+  const X=v=>L+(Math.log10(v)-x0)/(x1-x0)*(Rr-L),Y=v=>B-(Math.log10(v)-y0)/(y1-y0)*(B-T);
+  for(let e=x0;e<=x1;e++){const x=L+(e-x0)/(x1-x0)*(Rr-L);svgEl("line",{x1:x,y1:T,x2:x,y2:B,stroke:rule},g);const t=svgEl("text",{x,y:B+16,"text-anchor":"middle","font-size":11,fill:mut},g);t.textContent="10"+String(e).split("").map(c=>SUP[c]).join("");}
+  for(let e=y0;e<=y1;e+=2){const y=B-(e-y0)/(y1-y0)*(B-T);svgEl("line",{x1:L,y1:y,x2:Rr,y2:y,stroke:rule},g);const t=svgEl("text",{x:L-6,y:y+4,"text-anchor":"end","font-size":11,fill:mut},g);t.textContent="10"+String(e).split("").map(c=>SUP[c]).join("")+"″";}
+  const tx=svgEl("text",{x:(L+Rr)/2,y:B+36,"text-anchor":"middle","font-size":12,fill:mut},g);tx.textContent="measured area A (km²)";
+  const ty=svgEl("text",{x:16,y:(T+B)/2,"text-anchor":"middle","font-size":12,fill:mut,transform:`rotate(-90 16 ${(T+B)/2})`},g);ty.textContent="measured excess E";
+  // 1″ reference
+  svgEl("line",{x1:L,y1:Y(1),x2:Rr,y2:Y(1),stroke:mut,"stroke-dasharray":"2 3"},g);
+  const curve=(Rv,col,w,dash,name)=>{let d="",last=null,first=null;const smax=sMax(Rv);for(let t=0;t<=50;t++){const s=10**(0+(Math.log10(smax))*t/50);const m=measure(Rv,s,32);const ex=m.E*AS;if(!(ex>0)||m.A<10**x0)continue;const x=X(m.A),y=Y(ex);if(y<T-2||y>B+2)continue;d+=(d?"L":"M")+x.toFixed(1)+","+y.toFixed(1);if(!first)first=[x,y];last=[x,y];}
+    if(d){svgEl("path",{d,fill:"none",stroke:col,"stroke-width":w,"stroke-dasharray":dash||""},g);if(first){const t=svgEl("text",{x:first[0]+4,y:first[1]-8,"text-anchor":"start","font-size":11.5,fill:col},g);t.textContent=name;}}};
+  for(const rv of [1000,63710,637100]){if(isFinite(R)&&Math.abs(rv-R)/rv<1e-3)continue;curve(rv,mut,1,"4 4","R = "+fR(rv));}
+  if(!(isFinite(R)&&Math.abs(R-RE)<0.01))curve(RE,css("--e4"),1.6,"6 3","Earth");
+  if(isFinite(R)){curve(R,css("--accent"),2.6,"","R = "+fR(R));
+    if(M.E*AS>10**y0){const cx=X(M.A),cy=Y(M.E*AS);svgEl("circle",{cx,cy,r:6,fill:css("--orange"),stroke:ink,"stroke-width":1.2},g);}}
+  else{const t=svgEl("text",{x:Rr-8,y:B-10,"text-anchor":"end","font-size":13,"font-weight":600,fill:css("--accent")},g);t.textContent="R = ∞: E = 0 at every area (below the axis)";}
+}
+function table(){
+  const rows=[1000,RE,63710,637100,6371000,Infinity];if(isFinite(R)&&!rows.some(r=>Math.abs(r-R)/r<1e-6))rows.push(R);rows.sort((a,b)=>a-b);
+  $("rtable").innerHTML=rows.map(rv=>{
+    const cur=(isFinite(R)?Math.abs(rv-R)/rv<1e-6:!isFinite(rv));
+    if(S>sMax(rv))return`<tr class="${cur?"cur":""}"><td>R = ${fR(rv)}</td><td class="n">${sci(1/(rv*1000)**2,3)}</td><td class="n" colspan="4">side longer than this sphere allows</td></tr>`;
+    const m=measure(rv,S,64);const K=isFinite(rv)?1/(rv*1000)**2:0;const Km=m.E/(m.A*1e6);
+    const chk=!isFinite(rv)?"—":(m.E<1e-14?"below precision":(Km/K).toFixed(6));
+    return`<tr class="${cur?"cur":""}"><td>R = ${fR(rv)}${Math.abs(rv-RE)<0.01?" (Earth)":""}</td><td class="n">${K?sci(K,3):"0"}</td><td class="n">${fArea(m.A)}</td><td class="n">${dms(m.ang[0]+m.ang[1]+m.ang[2],4)}</td><td class="n">${fExc(Math.abs(m.E)<1e-15?0:m.E)}</td><td class="n">${chk}</td></tr>`;}).join("");
+}
+
+// ---------- controls ----------
+$("rr").addEventListener("input",update);$("ss").addEventListener("input",update);
+["cPlanes","cVert","cChord"].forEach(id=>$(id).addEventListener("change",draw3d));
+$("cExag").addEventListener("change",drawSide);
+document.querySelectorAll("button[data-r]").forEach(b=>b.addEventListener("click",()=>{stopSweep();const v=b.dataset.r;setRSlider(v==="inf"?Infinity:+v);update();}));
+document.querySelectorAll("button[data-s]").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.s;let s=v==="octant"?(isFinite(R)?Math.PI/2*R:Math.PI/2*RE):+v;setSSlider(s);update();}));
+$("resetv").addEventListener("click",()=>{view={yaw:-28*D2R,pitch:60*D2R,zoom:1};draw3d();});
+let sweepId=null;
+function stopSweep(){if(sweepId){cancelAnimationFrame(sweepId);sweepId=null;$("sweep").classList.remove("on");$("sweep").textContent="Sweep R → ∞";}}
+$("sweep").addEventListener("click",()=>{
+  if(sweepId){stopSweep();return;}
+  let v0=+$("rr").value;if(v0>=RMAXLOG)v0=+$("rr").min+1;
+  const t0=performance.now(),dur=6000;$("sweep").classList.add("on");$("sweep").textContent="Stop";
+  const step=t=>{const f=Math.min(1,(t-t0)/dur);const e=f<0.5?2*f*f:1-2*(1-f)**2;$("rr").value=v0+(8.2-v0)*e;update();if(f<1)sweepId=requestAnimationFrame(step);else stopSweep();};
+  sweepId=requestAnimationFrame(step);
+});
+new ResizeObserver(resize).observe(cv);
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",update);
+setRSlider(RE);setSSlider(100);update();resize();
+</script>
+</body>
+</html>

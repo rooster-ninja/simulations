@@ -19,6 +19,7 @@ https://rooster-ninja.github.io/simulations/
 | Survey triangles across America: Gauss vs Tarski | [survey-triangles-gauss-vs-tarski/](https://rooster-ninja.github.io/simulations/survey-triangles-gauss-vs-tarski/) |
 | Fibre ping and the figure of the Earth | [fiber-ping-earth-shape/](https://rooster-ninja.github.io/simulations/fiber-ping-earth-shape/) |
 | Building Gauss's Great Triangle | [gauss-great-triangle/](https://rooster-ninja.github.io/simulations/gauss-great-triangle/) |
+| Three level planes and the angle excess | [level-planes-excess/](https://rooster-ninja.github.io/simulations/level-planes-excess/) |
 
 ## Layout
 
