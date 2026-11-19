@@ -44,7 +44,10 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,56px)
 .cvbox canvas:active{cursor:grabbing}
 .hint{position:absolute;right:12px;bottom:8px;font-family:var(--f-mono);font-size:11.5px;color:var(--muted);pointer-events:none}
 .math{font-family:var(--f-display);font-style:italic;font-size:19px;text-align:center;line-height:1.7;overflow-x:auto;padding:2px 4px}
-svg text{font-family:var(--f-mono);fill:var(--ink)}
+svg text{font-family:var(--f-mono)}
+svg text:not([fill]){fill:var(--ink)}
+.prose a,.cap a{color:var(--accent)}
+details.mx .cap{max-width:76ch}
 .controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px 22px}
 .ctl{display:flex;flex-direction:column;gap:6px}
 .ctl label,.lab{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:var(--muted)}
@@ -60,8 +63,10 @@ select{font:500 13.5px var(--f-mono);color:var(--ink);background:var(--card);bor
 .legend i{display:inline-block;width:16px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 .cap{font-size:16px;margin:0;max-width:74ch}
 .note{font-family:var(--f-mono);font-size:12.5px;color:var(--red);min-height:1em}
-.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 22px}
-.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--muted)}
+.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px 22px}
+@media (max-width:1000px){.readout{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.readout{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}.kv .v{font-size:17px}.cvbox canvas{height:360px}}
+.kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted)}
 .kv .v{font-family:var(--f-display);font-weight:700;font-size:21px;line-height:1.2;font-variant-numeric:tabular-nums}
 .kv .s{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 .kv.hl .v{color:var(--e4)}
@@ -145,13 +150,13 @@ details.src a{color:var(--bar-ink)}
   <section class="panel">
     <div class="ptitle">2 · What each theodolite reads</div>
     <div class="svgbox"><svg id="dials" viewBox="0 0 680 275" role="img" aria-label="Horizontal circle of the theodolite at each station"></svg></div>
-    <p class="cap">Each dial is the theodolite's horizontal circle, seen along its vertical axis. The two sight lines are projected onto the circle's plane, which is all a theodolite can do, and the angle between them is read off. Nothing else goes in. Normally the axis is the station's own plumb line; with the axes aligned it is tilted off plumb by the amount shown.</p>
+    <p class="cap">Each dial is the theodolite's horizontal circle, seen along its vertical axis. The two sight lines are projected onto the circle's plane, which is all a theodolite can do, and the angle between them is read off. Nothing else goes in. Normally the axis is the station's own plumb line; with the plumbs corrected it is tipped off plumb by the amount shown.</p>
   </section>
 
   <section class="panel">
     <div class="ptitle">3 · Overhead, zoomed: each plumb line against the planar axis</div>
     <div class="row" id="errctl">
-      <span class="lab">Error circles (1σ)</span>
+      <span class="lab">Error circles, 1<span style="text-transform:none">σ</span></span>
       <label class="chk"><input type="checkbox" data-err="cam" checked>Zenith camera 0.1″</label>
       <label class="chk"><input type="checkbox" data-err="comp" checked>Compensator 0.5″</label>
       <label class="chk"><input type="checkbox" data-err="dov10" checked>Deflection 10″</label>
@@ -171,7 +176,7 @@ details.src a{color:var(--bar-ink)}
 
   <section class="panel">
     <div class="ptitle">4 · Side view along one side: the verticals converge</div>
-    <div class="row"><label class="chk"><input type="checkbox" id="cExag">Exaggerate the angle so it can be seen</label><span class="lab" id="exagtag"></span></div>
+    <div class="row"><label class="chk"><input type="checkbox" id="cExag" checked>Exaggerate the angle so it can be seen</label><span class="lab" id="exagtag"></span></div>
     <div class="svgbox"><svg id="side" viewBox="0 0 680 390" role="img" aria-label="Cross-section through two stations showing their verticals and horizontal planes"></svg></div>
     <p class="cap">The angle between the two stations' horizontal planes equals the angle between their verticals. Each sight line drops below its own station's horizontal by half that angle. On the plane (R = ∞) the verticals are parallel, both horizontals are the same plane, and the dip is zero.</p>
     <div class="math">angle between verticals&nbsp; δ = s / R,&nbsp;&nbsp;&nbsp; dip of each sight line&nbsp; δ / 2</div>
@@ -357,16 +362,16 @@ function readouts(){
   const sg=v=>Math.abs(v)<1e-15?"0″":fExc(Math.abs(v))+(v<0?" rise":"");
   const dipTxt=Math.abs(dmax-dmin)<1e-13?sg(dmax):Math.abs(dmax+dmin)<1e-13?"± "+fExc(dmax):sg(dmin)+" to "+sg(dmax);
   $("res").innerHTML=
-    kv("Radius R",fR(R),"K = 1/R² = "+(K?sci(K,4)+" m⁻²":"0"))+
+    kv("Radius R",fR(R),"1/R² = "+(K?sci(K,4)+" m⁻²":"0"))+
     kv("Area A (tiled)",fArea(M.A),"side "+fLen(S))+
     kv(same?"Each angle (measured)":"Angle at A (measured)",dms(M.ang[0],4),same?"A, B and C read the same":"B "+dms(M.ang[1],3)+" · C "+dms(M.ang[2],3))+
     kv("Angle sum",dms(M.ang[0]+M.ang[1]+M.ang[2],4),"")+
     kv("Excess E",fExc(Math.abs(M.E)<1e-15?0:M.E),M.E>1e-15?sci(M.E,4)+" rad":(al?"zenith axes corrected parallel":"verticals parallel"),true)+
     kv("Measured K = E / A",Math.abs(M.E)<1e-15?"0 m⁻²":sci(Km,5)+" m⁻²",ratio,true)+
-    kv("Angle between plumb lines",fExc(M.vert),"adjacent stations")+
-    kv("Plumb correction per station",!isFinite(R)?"0″ (already one plane)":fExc(rhoNow()),al?"applied: A, B, C each tipped toward the centre":"needed to make one horizontal plane (not applied)",al)+
-    kv("Correction rate",isFinite(R)?fExc(1/R)+" per km":"0″ per km","of distance from the triangle's centre ("+fLen(S/Math.sqrt(3))+" here)")+
-    kv("Dip of sight lines",dipTxt,Math.abs(dmax-dmin)<1e-13?"below each theodolite's horizontal":"dip (+) or rise (−) against each theodolite's horizontal");
+    kv("Plumb-line angle δ",fExc(M.vert),"between adjacent stations")+
+    kv("Plumb correction Δ",!isFinite(R)?"0″ (already one plane)":fExc(rhoNow()),al?"applied at A, B and C":"per station, not applied",al)+
+    kv("Correction rate",isFinite(R)?fExc(1/R)+" per km":"0″ per km","from the centre ("+fLen(S/Math.sqrt(3))+" here)")+
+    kv("Dip of sight lines",dipTxt,Math.abs(dmax-dmin)<1e-13?"below the horizontal":"dip (+) or rise (−)");
 }
 function caption(){
   let t;
@@ -399,7 +404,7 @@ function setupProj(ext,zc){
 }
 function line(pts,color,w,dash,alpha){ctx.save();ctx.globalAlpha=alpha??1;ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();ctx.restore();}
 function poly(pts,fill,alpha,stroke,w){ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=fill;ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();ctx.fill();if(stroke){ctx.globalAlpha=1;ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}ctx.restore();}
-function label(p,txt,color,dx=0,dy=0,font){const q=proj(p);ctx.save();ctx.fillStyle=color;ctx.font=font||"600 13px 'IBM Plex Mono', monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
+function label(p,txt,color,dx=0,dy=0,font){const q=proj(p);ctx.save();ctx.fillStyle=color;ctx.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
 function arrow(a,b,color,w){line([a,b],color,w);const qa=proj(a),qb=proj(b);const ang=Math.atan2(qb[1]-qa[1],qb[0]-qa[0]);ctx.save();ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(qb[0],qb[1]);ctx.lineTo(qb[0]-9*Math.cos(ang-0.4),qb[1]-9*Math.sin(ang-0.4));ctx.lineTo(qb[0]-9*Math.cos(ang+0.4),qb[1]-9*Math.sin(ang+0.4));ctx.closePath();ctx.fill();ctx.restore();}
 
 function draw3d(){
@@ -410,7 +415,7 @@ function draw3d(){
   const rho=st.plane?0:Math.asin(st.sr);
   const thMax=st.plane?0:Math.min(Math.PI,Math.max(2.1*rho,1e-300));
   const whole=!st.plane&&thMax>Math.PI/2;
-  const ext=whole?Math.max(0.8,k*1.3):0.95;
+  const ext=whole?Math.max(0.8,k*1.3):0.82;
   const zc=whole?k*0.85:0;
   setupProj(ext,zc);
   const vv=proj.vv;
@@ -443,13 +448,13 @@ function draw3d(){
   if($("cVert").checked){
     const toC=isFinite(k)&&k<=3.2;
     for(let i=0;i<3;i++){
-      const down=toC?vmul(nrm[i],-k):vmul(nrm[i],-0.75);
+      const down=toC?vmul(nrm[i],-k):vmul(nrm[i],-0.5);
       line([pos[i],vadd(pos[i],down)],C.st,1.3,[5,4],0.85);
       arrow(pos[i],vadd(pos[i],vmul(nrm[i],0.42)),C.st,2);
-      if(aligned&&M.tilt[i]>1e-12){arrow(pos[i],vadd(pos[i],vmul(FR[i].n,0.5)),css("--red"),2.4);label(vadd(pos[i],vmul(FR[i].n,0.56)),"Δ "+fExc(M.tilt[i]),css("--red"),0,-8,"600 12px 'IBM Plex Mono'");}
+      if(aligned&&M.tilt[i]>1e-12){arrow(pos[i],vadd(pos[i],vmul(FR[i].n,0.5)),css("--red"),2.4);label(vadd(pos[i],vmul(FR[i].n,0.56)),"Δ "+fExc(M.tilt[i]),css("--red"),0,-8,"600 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
     }
-    if(toC){const c=[0,0,-k];const q=proj(c);ctx.save();ctx.fillStyle=C.st;ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill();ctx.restore();label(c,"centre",C.st,0,14,"500 12px 'IBM Plex Mono'");}
-    else{const mid=vmul(vadd(vadd(pos[0],pos[1]),pos[2]),1/3);label(vadd(mid,[0,0,-0.82]),isFinite(R)?"verticals meet "+fR(R)+" below":"verticals parallel: never meet",C.st,0,0,"500 12px 'IBM Plex Mono'");}
+    if(toC){const c=[0,0,-k];const q=proj(c);ctx.save();ctx.fillStyle=C.st;ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill();ctx.restore();label(c,"centre",C.st,0,14,"500 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
+    else{const mid=vmul(vadd(vadd(pos[0],pos[1]),pos[2]),1/3);label(vadd(mid,[0,0,-0.5]),isFinite(R)?"verticals meet "+fR(R)+" below":"verticals parallel: never meet",C.st,0,34,"500 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
   }
   // ---- sight lines (straight chords) ----
   if($("cChord").checked){for(const [i,j] of [[0,1],[1,2],[2,0]])line([pos[i],pos[j]],C.or,1.6,[7,5],0.95);}
@@ -470,7 +475,7 @@ function draw3d(){
     poly(arc,C.or,0.55,C.or,1.2);
     line([p,vadd(p,vmul(vj,0.3))],C.or,2);line([p,vadd(p,vmul(vk,0.3))],C.or,2);
     const q=proj(p);ctx.save();ctx.fillStyle=C.ink;ctx.beginPath();ctx.arc(q[0],q[1],4.2,0,7);ctx.fill();ctx.restore();
-    label(vadd(p,vmul(unit([p[0],p[1],0]),0.36)),NAMES[i],C.ink,0,0,"700 15px 'IBM Plex Mono'");
+    label(vadd(p,vmul(unit([p[0],p[1],0]),0.36)),NAMES[i],C.ink,0,0,"700 15px 'IBM Plex Mono', ui-monospace, Menlo, monospace");
   }
 }
 // pointer
@@ -634,7 +639,7 @@ function whatItTakes(st,rho){
   const tx=(st.u[0][0]).toFixed(9),ty=(st.u[0][1]).toFixed(9);
   return sub("9a · What a level bubble can tell you",
      `Only which way is down <i>at its own station</i>. In the instrument's own frame its plumb line is always (0, 0, 1), by definition. The bubble has no way to say how that frame is turned relative to any other station's. Three stations give three frames, each with three unknown rotations against a common frame: two tilts (where its vertical points) and one azimuth. A bubble fixes none of them.`)+
-   sub("9b · What R<sub>i</sub> actually needs",
+   sub("9b · What the rotation actually needs",
      `Each plumb line written in one shared frame: two numbers per station, the tilt toward the centre and the tilt sideways. For A these are the x and y parts of u<sub>A</sub>: <span class="num" style="margin:0">(${fm(st.u[0][0])}, ${fm(st.u[0][1])})</span>, a tilt of ${fExc(rho)} toward the centre and 0 sideways. Six numbers for the triangle, none of which a station can measure alone. The third rotation, azimuth, is not needed: an angle is the difference of two circle readings, so where the circle's zero sits drops out.`)+
    sub("9c · Comparing plumb lines is measuring curvature, at first order",
      `The angle between two stations' plumb lines is δ = s / R. That is first order in curvature: one comparison gives R = s / δ directly. The angle excess is only second order, E ≈ (√3/4) δ². Here δ<sub>AB</sub> = ${fExc(dAB)} while E = ${fExc(E)}, so the plumb comparison is ${E>0?(dAB/E>=100?grp(dAB/E,0):(dAB/E).toFixed(1)):"—"} × larger than the signal the triangle closure sees. The correction to one horizontal plane removes exactly the information this comparison measures.`)+
@@ -683,18 +688,19 @@ function drawSide(){
     const bx1=ux-nx*11+tx*5,by1=uy-ny*11+ty*5,bx2=ux-nx*11-tx*5,by2=uy-ny*11-ty*5;
     svgEl("path",{d:`M${ux.toFixed(2)},${uy.toFixed(2)} L${bx1.toFixed(2)},${by1.toFixed(2)} L${bx2.toFixed(2)},${by2.toFixed(2)} Z`,fill:stc},g);
     // down toward centre: clip to y=305
-    let L=flat?1000:Rp;const ylim=375;const dy=-ny;let Lc=dy>0?Math.min(L,(ylim-yy)/dy):L;
+    let L=flat?1000:Rp;const ylim=352;const dy=-ny;let Lc=dy>0?Math.min(L,(ylim-yy)/dy):L;
     svgEl("line",{x1:x,y1:yy,x2:x-nx*Lc,y2:yy-ny*Lc,stroke:stc,"stroke-width":1.4,"stroke-dasharray":"5 4"},g);
     svgEl("circle",{cx:x,cy:yy,r:4.5,fill:ink},g);
     const t=svgEl("text",{x:x+(idx?18:-18),y:yy-14,"text-anchor":"middle","font-size":15,"font-weight":700},g);t.textContent=idx?"B":"A";
   });
   const lab=(x,y,txt,col,anchor="middle",fs=12.5)=>{const t=svgEl("text",{x,y,"text-anchor":anchor,"font-size":fs,fill:col||ink},g);t.textContent=txt;return t;};
   const tw=isFinite(R)&&MODE!=="plumb"?"theodolite":"horizontal";
-  lab(ax-60,yy+30,"A's "+tw,css("--accent"),"middle",12);
-  lab(bx+60,yy+30,"B's "+tw,css("--accent"),"middle",12);
-  lab(mx,yy+18,"sight line A–B",or);
+  const halo=t=>{t.setAttribute("stroke",css("--plate"));t.setAttribute("stroke-width",4);t.setAttribute("paint-order","stroke");t.setAttribute("stroke-linejoin","round");return t;};
+  halo(lab(ax-62,yy+66,"A's "+tw,css("--accent"),"middle",12));
+  halo(lab(bx+62,yy+66,"B's "+tw,css("--accent"),"middle",12));
+  halo(lab(mx,yy+18,"sight line A–B",or));
   if(!flat&&cy<365){svgEl("circle",{cx:mx,cy,r:4,fill:stc},g);lab(mx,cy+18,"centre · verticals meet at angle δ",stc);}
-  else lab(mx,372,flat?"verticals parallel: they never meet":"verticals meet "+fR(R)+" below (off the page)",stc);
+  else halo(lab(mx,372,flat?"verticals parallel: they never meet":"verticals meet "+fR(R)+" below (off the page)",stc));
   lab(20,22,"δ (true) = "+fExc(M.vert),ink,"start",13);
   if(isFinite(R)&&MODE!=="plumb"){const d0=M.dip[0],d1=M.dip[3];const f2=v=>Math.abs(v)<1e-15?"0″":(v<0?"rise ":"")+fExc(Math.abs(v));
     lab(20,42,"dip from A = "+f2(d0)+",  from B = "+f2(d1)+"  (red: corrected zenith axis)",ink,"start",13);}
@@ -713,12 +719,15 @@ function drawChart(){
   const ty=svgEl("text",{x:16,y:(T+B)/2,"text-anchor":"middle","font-size":12,fill:mut,transform:`rotate(-90 16 ${(T+B)/2})`},g);ty.textContent="measured excess E";
   // 1″ reference
   svgEl("line",{x1:L,y1:Y(1),x2:Rr,y2:Y(1),stroke:mut,"stroke-dasharray":"2 3"},g);
-  const curve=(Rv,col,w,dash,name)=>{let d="",last=null,first=null;const smax=sMax(Rv);for(let t=0;t<=50;t++){const s=10**(0+(Math.log10(smax))*t/50);const m=measure(Rv,s,32);const ex=m.E*AS;if(!(ex>0)||m.A<10**x0)continue;const x=X(m.A),y=Y(ex);if(y<T-2||y>B+2)continue;d+=(d?"L":"M")+x.toFixed(1)+","+y.toFixed(1);if(!first)first=[x,y];last=[x,y];}
-    if(d){svgEl("path",{d,fill:"none",stroke:col,"stroke-width":w,"stroke-dasharray":dash||""},g);if(first){const t=svgEl("text",{x:first[0]+4,y:first[1]-8,"text-anchor":"start","font-size":11.5,fill:col},g);t.textContent=name;}}};
+  const labs=[];
+  const curve=(Rv,col,w,dash,name)=>{let d="",last=null,first=null;const smax=sMax(Rv);for(let t=0;t<=50;t++){const s=10**(0+(Math.log10(smax))*t/50);const m=measure(Rv,s,32);const ex=m.E*AS;if(!(ex>0)||m.A<10**x0)continue;const x=X(m.A),y=Y(ex);if(y<T-2||y>B+2||x>Rr+1)continue;d+=(d?"L":"M")+x.toFixed(1)+","+y.toFixed(1);if(!first)first=[x,y];last=[x,y];}
+    if(d){svgEl("path",{d,fill:"none",stroke:col,"stroke-width":w,"stroke-dasharray":dash||""},g);if(first)labs.push([first,col,name.replace("R = ","").replace(/\.\d km/," km")]);}};
   if(MODE==="plumb")for(const rv of [1000,63710,637100]){if(isFinite(R)&&Math.abs(rv-R)/rv<1e-3)continue;curve(rv,mut,1,"4 4","R = "+fR(rv));}
   if(MODE==="plumb"&&!(isFinite(R)&&Math.abs(R-RE)<0.01))curve(RE,css("--e4"),1.6,"6 3","Earth");
   if(isFinite(R)&&MODE==="plumb"){curve(R,css("--accent"),2.6,"","R = "+fR(R));
     if(M.E*AS>10**y0){const cx=X(M.A),cy=Y(M.E*AS);svgEl("circle",{cx,cy,r:6,fill:css("--orange"),stroke:ink,"stroke-width":1.2},g);}}
+  for(const [f,col,name] of labs){const t=svgEl("text",{x:f[0]+8,y:f[1]+12,"text-anchor":"start","font-size":11,"font-weight":600,fill:col},g);t.textContent=name;}
+  if(isFinite(R)&&MODE==="plumb"){}
   else{const t=svgEl("text",{x:Rr-8,y:B-10,"text-anchor":"end","font-size":13,"font-weight":600,fill:css("--accent")},g);t.textContent=isFinite(R)?"Plumbs corrected: E = 0 at every area, on every sphere":"R = ∞: E = 0 at every area (below the axis)";}
 }
 function table(){
