@@ -18,6 +18,15 @@ side (1 km to 200,000 km) can be changed.
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional
   exaggeration makes small angles visible and is labelled with its factor.
+- **Theodolite axes selector.** Normally each instrument stands on its own
+  plumb line. Two aligned options tilt the instruments in 3D instead of
+  correcting any angle: *one common plane through A, B, C* (every axis along
+  the centroid's vertical, so all three horizontals are the same plane and
+  every sight line has zero dip), or *all parallel to A's plumb line* (A
+  unchanged, B and C tilted by the angle between plumb lines). Either way the
+  readings sum to exactly 180° on any sphere. The readouts show the tilt each
+  instrument needed, which is the convergence of the plumb lines: the
+  alignment needs the curvature it removes.
 - **Excess against area.** Log-log plot: straight lines of slope 1 whose height
   is K. A table runs the same side length on spheres from 1,000 km to ∞.
 
@@ -31,6 +40,9 @@ side (1 km to 200,000 km) can be changed.
   corners lie on the sphere (2,304 and 9,216 facets, Richardson-extrapolated).
 - Measured K = E / A. The page never uses E = A / R²; the ratio to 1/R² is
   shown as a check and comes out 1.000000.
+- Aligned axes: each station's frame (axis, plane basis) is replaced by the
+  common one, and sight lines are the chords projected onto that plane.
+  Tilt = angle between plumb line and axis; dip = asin(chord · axis / |chord|).
 - Arithmetic is arranged to avoid cancellation, so excesses down to about
   10⁻¹⁴ rad are reliable.
 
