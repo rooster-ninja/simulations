@@ -14,6 +14,11 @@ side (1 km to 200,000 km) can be changed.
   and the angle measured in each plane.
 - **Theodolite dials.** Each station's level plane seen along its own vertical,
   with the two projected sight lines and the angle read.
+- **Overhead, zoomed.** Looking straight down the planar axis: the triangle
+  with an arrow at each station showing the direction of its correction, and
+  a zoomed bullseye per station with the planar axis at the centre and the
+  station's own plumb line as a dot. The gap is Δ (auto-scaled rings), always
+  straight toward the triangle's centre with no sideways part.
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional

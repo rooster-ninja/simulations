@@ -141,7 +141,14 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">3 · Side view along one side: the verticals converge</div>
+    <div class="ptitle">3 · Overhead, zoomed: each plumb line against the planar axis</div>
+    <div class="svgbox"><svg id="over" viewBox="0 0 680 340" role="img" aria-label="Overhead view of the triangle and zoomed plumb-line offsets at each station"></svg></div>
+    <p class="cap">Looking straight down the planar axis, the vertical of the one horizontal plane through A, B and C. Left: the triangle, with each station's correction drawn as an arrow toward the centre. Right: each station zoomed in. The cross is the planar axis; the dot is where the station's own plumb line points. The distance between them is the correction Δ, always straight toward the triangle's centre, with no sideways part.</p>
+    <div class="math">Δ = d / R&nbsp;&nbsp;&nbsp; (d = distance of the station from the triangle's centre)</div>
+  </section>
+
+  <section class="panel">
+    <div class="ptitle">4 · Side view along one side: the verticals converge</div>
     <div class="row"><label class="chk"><input type="checkbox" id="cExag">Exaggerate the angle so it can be seen</label><span class="lab" id="exagtag"></span></div>
     <div class="svgbox"><svg id="side" viewBox="0 0 680 390" role="img" aria-label="Cross-section through two stations showing their verticals and horizontal planes"></svg></div>
     <p class="cap">The angle between the two stations' horizontal planes equals the angle between their verticals. Each sight line drops below its own station's horizontal by half that angle. On the plane (R = ∞) the verticals are parallel, both horizontals are the same plane, and the dip is zero.</p>
@@ -149,7 +156,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">4 · Excess against area, for any radius</div>
+    <div class="ptitle">5 · Excess against area, for any radius</div>
     <div class="svgbox"><svg id="chart" viewBox="0 0 680 340" role="img" aria-label="Log-log plot of measured angle excess against measured area"></svg></div>
     <p class="cap">Every point is measured the same way as the readouts: angles from the dials, area from tiling. On log axes each sphere gives a straight line of slope 1, meaning the excess is proportional to area, and the line's height is K. Lines move down as R grows. At R = ∞ the excess is zero for every area, and zero has no place on a log axis.</p>
     <div class="tablebox"><table>
@@ -159,7 +166,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel prose">
-    <div class="ptitle">5 · What the excess is measuring</div>
+    <div class="ptitle">6 · What the excess is measuring</div>
     <p><b>The surface between stations never enters.</b> A theodolite only knows two things: the direction of its own vertical, which sets its horizontal plane, and the directions of the sight lines to the other stations. Draw the same three stations with parallel verticals and the angles add up to exactly 180°, whatever the ground in between is doing.</p>
     <p><b>The excess comes from the verticals not being parallel.</b> Tilt the three planes against each other and the projected angles no longer close to 180°. Gauss showed the excess equals the area that the triangle's normals sweep out on a unit sphere (his "total curvature", <i>Disquisitiones generales</i>, Art. 20). For a sphere of radius R that area is A / R².</p>
     <p><b>Correcting the plumbs to one horizontal plane.</b> The toggle tips every station's zenith axis toward the triangle's centre by Δ, the station's angular distance from the centre (Δ = d / R for a distance d from the centre; 32.4″ per km on Earth). Nothing is subtracted from any reading: each instrument is turned in 3D, so its horizontal circle turns in a different plane and the projections change. All three horizontals become one horizontal plane through A, B and C, every sight line runs along it with zero dip, and the sum is exactly 180° on any sphere.</p>
@@ -168,7 +175,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel prose">
-    <div class="ptitle">6 · Methods</div>
+    <div class="ptitle">7 · Methods</div>
     <ol class="steps">
       <li><b>Stations.</b> An equilateral triangle with sides s measured along the surface. On a sphere the three stations sit on a circle of angular radius ρ around the centroid:</li>
     </ol>
@@ -187,8 +194,8 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">7 · Errors in this simulation</div>
-    <p class="cap">None, by design. Each result is exact to the arithmetic, so no σ is attached. The table lists what a real survey would add. Section 5 of the <a href="../triangulation-chain/">triangulation chain</a> and <a href="../gauss-great-triangle/">Gauss's great triangle</a> pages carry these errors.</p>
+    <div class="ptitle">8 · Errors in this simulation</div>
+    <p class="cap">None, by design. Each result is exact to the arithmetic, so no σ is attached. The table lists what a real survey would add. The <a href="../triangulation-chain/">triangulation chain</a> and <a href="../gauss-great-triangle/">Gauss's great triangle</a> pages carry these errors.</p>
     <div class="tablebox"><table>
       <thead><tr><th>Effect</th><th class="n">Here</th><th>In a real survey</th></tr></thead>
       <tbody>
@@ -206,7 +213,7 @@ details.src a{color:var(--bar-ink)}
     <ul>
       <li>C. F. Gauss (1827), <i>Disquisitiones generales circa superficies curvas</i>, translated by J. C. Morehead and A. M. Hiltebeitel as <a href="https://www.gutenberg.org/ebooks/36856">General Investigations of Curved Surfaces</a> (1902), Art. 20: the excess of the angle sum of a triangle of shortest lines over 180° equals its total curvature, the area its normals cover on the unit sphere.</li>
       <li>H. Moritz, <a href="https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm">Geodetic Reference System 1980</a>, Geodesist's Handbook (IAG): mean radius R<sub>1</sub> = 6 371 008.7714 m, used for the Earth preset.</li>
-      <li>Real-survey error values in section 7 are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
+      <li>Real-survey error values in section 8 are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
     </ul>
   </details>
 </div>
@@ -310,7 +317,7 @@ function update(){
   M=measure(R,S);
   $("rval").textContent=fR(R)+(isFinite(R)&&Math.abs(R-RE)<0.01?"  · Earth mean":"");
   $("sval").textContent=fLen(S);
-  readouts();drawDials();drawSide();drawChart();table();draw3d();caption();
+  readouts();drawDials();drawOver();drawSide();drawChart();table();draw3d();caption();
 }
 function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
 function rhoNow(){return M.st.plane?0:Math.asin(M.st.sr);} // angular distance of each station from the centre
@@ -470,6 +477,59 @@ function drawDials(){
     const t1=svgEl("text",{x:cx,y:cy+r+30,"text-anchor":"middle","font-size":14,"font-weight":600},g);t1.textContent="At "+NAMES[i]+": "+dms(M.ang[i],4);
     const t2=svgEl("text",{x:cx,y:cy+r+52,"text-anchor":"middle","font-size":12,fill:M.tilt[i]>1e-12?css("--red"):css("--muted")},g);t2.textContent=M.tilt[i]>1e-12?"zenith axis corrected "+fExc(M.tilt[i]):"axis on plumb line";
   }
+}
+
+// ---------- overhead, zoomed ----------
+function niceStep(x){const e=10**Math.floor(Math.log10(x));const m=x/e;return(m<1.5?1:m<3.5?2:m<7.5?5:10)*e;}
+function fStep(rad){const a=rad*AS;if(a>=3600)return grp(a/3600,a%3600?2:0)+"°";if(a>=60)return grp(a/60,a%60?1:0)+"′";return a>=1?grp(a,0)+"″":sci(a,1)+"″";}
+function drawOver(){
+  const g=$("over");g.innerHTML="";const st=M.st,ink=css("--ink"),mut=css("--muted"),rule=css("--rule"),red=css("--red"),stc=css("--station"),acc=css("--accent");
+  const applied=MODE!=="plumb";
+  const lab=(x,y,txt,col,anchor="middle",fs=12,fw=400)=>{const t=svgEl("text",{x,y,"text-anchor":anchor,"font-size":fs,"font-weight":fw,fill:col||ink},g);t.textContent=txt;return t;};
+  // station offsets in the common horizontal plane (x, y), unit-free
+  const xy=[0,1,2].map(i=>st.plane?[st.p[i][0],st.p[i][1]]:[st.u[i][0],st.u[i][1]]);
+  const rmax=Math.max(...xy.map(v=>Math.hypot(v[0],v[1])));
+  // ---- left: map ----
+  const mcx=150,mcy=195,mr=98,sc=mr/rmax;const P2=v=>[mcx+v[0]*sc,mcy-v[1]*sc];
+  svgEl("circle",{cx:mcx,cy:mcy,r:mr,fill:"none",stroke:rule,"stroke-dasharray":"3 4"},g);
+  const pts=xy.map(P2);
+  svgEl("path",{d:"M"+pts.map(p=>p.map(v=>v.toFixed(1)).join(",")).join("L")+"Z",fill:css("--e2"),"fill-opacity":0.45,stroke:css("--e4"),"stroke-width":2},g);
+  svgEl("line",{x1:mcx-6,y1:mcy,x2:mcx+6,y2:mcy,stroke:ink},g);svgEl("line",{x1:mcx,y1:mcy-6,x2:mcx,y2:mcy+6,stroke:ink},g);
+  lab(mcx,mcy+20,"centre",mut,"middle",11);
+  pts.forEach((p,i)=>{const dx=mcx-p[0],dy=mcy-p[1],L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L;
+    if(M.vert>0||!st.plane){const a0=[p[0],p[1]],a1=[p[0]+ux*34,p[1]+uy*34];
+      svgEl("line",{x1:a0[0],y1:a0[1],x2:a1[0],y2:a1[1],stroke:red,"stroke-width":2.4},g);
+      svgEl("path",{d:`M${a1[0]},${a1[1]} L${a1[0]-ux*9-uy*4.5},${a1[1]-uy*9+ux*4.5} L${a1[0]-ux*9+uy*4.5},${a1[1]-uy*9-ux*4.5}Z`,fill:red},g);}
+    svgEl("circle",{cx:p[0],cy:p[1],r:4.5,fill:ink},g);
+    lab(p[0]-ux*18,p[1]-uy*18+5,NAMES[i],ink,"middle",15,700);});
+  lab(20,24,"Overhead, down the planar axis",ink,"start",13,600);
+  lab(20,42,"d = "+fLen(S/Math.sqrt(3))+" to each station · arrows: direction of Δ",mut,"start",11.5);
+  // ---- right: zoomed bullseyes ----
+  const D=st.plane?0:Math.asin(st.sr);          // correction at every station
+  const step=D>0?niceStep(D/2):0;
+  for(let i=0;i<3;i++){
+    const cx=355+i*112,cy=175,r=48;
+    // rings: planar axis at centre, rings every `step`
+    for(let k=1;k<=3;k++)svgEl("circle",{cx,cy,r:r*k/3,fill:"none",stroke:rule},g);
+    svgEl("line",{x1:cx-r,y1:cy,x2:cx+r,y2:cy,stroke:rule},g);svgEl("line",{x1:cx,y1:cy-r,x2:cx,y2:cy+r,stroke:rule},g);
+    // plumb tip: offset away from centre by D, direction = station's direction from centre
+    const v=xy[i],L=Math.hypot(v[0],v[1]),ux=v[0]/L,uy=v[1]/L;
+    const off=D>0?(D/(3*step))*r:0;const px=cx+ux*off,py=cy-uy*off;
+    if(off>0.5){svgEl("line",{x1:px,y1:py,x2:cx+ux*5,y2:cy-uy*5,stroke:red,"stroke-width":2},g);
+      const tx=cx+ux*5,ty=cy-uy*5;svgEl("path",{d:`M${tx},${ty} L${tx+ux*8-uy*4},${ty-uy*8-ux*4} L${tx+ux*8+uy*4},${ty-uy*8+ux*4}Z`,fill:red},g);}
+    svgEl("line",{x1:cx-7,y1:cy,x2:cx+7,y2:cy,stroke:ink,"stroke-width":2},g);svgEl("line",{x1:cx,y1:cy-7,x2:cx,y2:cy+7,stroke:ink,"stroke-width":2},g);
+    svgEl("circle",{cx:px,cy:py,r:5,fill:stc,stroke:css("--plate"),"stroke-width":1.2},g);
+    lab(cx,cy-r-26,"Station "+NAMES[i],ink,"middle",13,700);
+    lab(cx,cy+r+22,"Δ "+fExc(D),D>0?red:mut,"middle",12.5,600);
+    lab(cx,cy+r+39,D>0?"toward centre":"plumb on",mut,"middle",11);
+    lab(cx,cy+r+53,D>0?"sideways 0″":"planar axis",mut,"middle",11);
+  }
+  lab(355+112,62,step?"zoomed: rings every "+fStep(step):"zoomed: Δ = 0, plumb and planar axis coincide",mut,"middle",11.5);
+  lab(355+112,80,applied?"correction applied (toggle on)":"correction needed (toggle off)",applied?red:mut,"middle",11.5);
+  // legend
+  svgEl("circle",{cx:330,cy:306+12,r:5,fill:stc},g);lab(340,322,"own plumb line",mut,"start",11);
+  svgEl("line",{x1:452,y1:318,x2:466,y2:318,stroke:ink,"stroke-width":2},g);svgEl("line",{x1:459,y1:311,x2:459,y2:325,stroke:ink,"stroke-width":2},g);lab(472,322,"planar axis",mut,"start",11);
+  svgEl("line",{x1:560,y1:318,x2:580,y2:318,stroke:red,"stroke-width":2},g);lab(586,322,"correction Δ",mut,"start",11);
 }
 
 // ---------- side view ----------
