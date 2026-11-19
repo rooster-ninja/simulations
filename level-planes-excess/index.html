@@ -117,12 +117,7 @@ details.src a{color:var(--bar-ink)}
     <div class="row">
       <button id="sweep">Sweep R → ∞</button>
       <button id="resetv">Reset view</button>
-      <label class="chk">Theodolite axes
-        <select id="mode">
-          <option value="plumb">Each on its own plumb line</option>
-          <option value="common">Aligned: one common plane through A, B, C</option>
-          <option value="A">Aligned: all parallel to A's plumb line</option>
-        </select></label>
+      <label class="chk"><input type="checkbox" id="cAlign">Correct plumbs to one horizontal plane</label>
       <label class="chk"><input type="checkbox" id="cPlanes" checked>Level planes</label>
       <label class="chk"><input type="checkbox" id="cVert" checked>Verticals</label>
       <label class="chk"><input type="checkbox" id="cChord" checked>Sight lines</label>
@@ -131,7 +126,7 @@ details.src a{color:var(--bar-ink)}
 
   <section class="panel">
     <div class="ptitle">1 · The triangle and its three level planes</div>
-    <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Theodolite axis, when aligned off plumb</span></div>
+    <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ = correction)</span></div>
     <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
     <p class="cap" id="cap1"></p>
     <div class="math">measured excess&nbsp; E = α + β + γ − 180°&nbsp;&nbsp;&nbsp;&nbsp; measured curvature&nbsp; K = E / A</div>
@@ -167,8 +162,8 @@ details.src a{color:var(--bar-ink)}
     <div class="ptitle">5 · What the excess is measuring</div>
     <p><b>The surface between stations never enters.</b> A theodolite only knows two things: the direction of its own vertical, which sets its horizontal plane, and the directions of the sight lines to the other stations. Draw the same three stations with parallel verticals and the angles add up to exactly 180°, whatever the ground in between is doing.</p>
     <p><b>The excess comes from the verticals not being parallel.</b> Tilt the three planes against each other and the projected angles no longer close to 180°. Gauss showed the excess equals the area that the triangle's normals sweep out on a unit sphere (his "total curvature", <i>Disquisitiones generales</i>, Art. 20). For a sphere of radius R that area is A / R².</p>
-    <p><b>Aligning the theodolites.</b> The axis selector tilts each instrument off its own plumb line so the three vertical axes are parallel. Nothing is subtracted from any reading: each instrument is turned in 3D, so its horizontal circle turns in a different plane and the projections change. With the axes parallel every angle is a projection onto one plane, and the sum is exactly 180° on any sphere. With the common-plane option the three horizontals are literally one plane, the flat plane through A, B and C, and every sight line runs along it with zero dip.</p>
-    <p><b>The alignment needs the curvature it removes.</b> To set those tilts you must know, at every station, how its plumb line points relative to the others' (the angle between plumb lines in the readouts). That is the convergence of the verticals, which is the curvature. A level bubble can't supply it, because a bubble only finds the local plumb line. It has to come from outside the triangle, such as stars, or from the excess itself.</p>
+    <p><b>Correcting the plumbs to one horizontal plane.</b> The toggle tips every station's zenith axis toward the triangle's centre by Δ, the station's angular distance from the centre (Δ = d / R for a distance d from the centre; 32.4″ per km on Earth). Nothing is subtracted from any reading: each instrument is turned in 3D, so its horizontal circle turns in a different plane and the projections change. All three horizontals become one horizontal plane through A, B and C, every sight line runs along it with zero dip, and the sum is exactly 180° on any sphere.</p>
+    <p><b>The correction needs the curvature it removes.</b> To set Δ you must know, at every station, how its plumb line points relative to the others' (the angle between plumb lines in the readouts). That is the convergence of the verticals, which is the curvature. On a plane, Δ = 0 at every station. A level bubble can't supply it, because a bubble only finds the local plumb line. It has to come from outside the triangle, such as stars, or from the excess itself.</p>
     <p><b>What this page assumes.</b> Here the verticals are the sphere's normals by construction, so the page shows what a perfect sphere would give. It does not show that Earth is one. On Earth the vertical is set by gravity, so a real survey measures the shape of the level surface, and any deflection of the vertical feeds straight into the angles.</p>
   </section>
 
@@ -185,7 +180,7 @@ details.src a{color:var(--bar-ink)}
     <div class="math">α = atan2( d<sub>j</sub> × d<sub>k</sub>, d<sub>j</sub> · d<sub>k</sub> )</div>
     <ol class="steps" start="4">
       <li><b>Area, without the angles.</b> The triangle is cut into 9,216 small flat facets whose corners lie on the surface. Their areas are summed, and the result is repeated at 2,304 facets and extrapolated (Richardson) to the true surface area.</li>
-      <li><b>Aligned axes.</b> When the axes are aligned, each instrument's frame (axis n, plane basis e<sub>1</sub>, e<sub>2</sub>) is replaced by the common one: the centroid's vertical, or A's plumb line. Sight lines are the chords u<sub>j</sub> − u<sub>i</sub> projected onto that plane. Tilt off plumb = angle between u<sub>i</sub> and n; dip = asin(chord · n / |chord|).</li>
+      <li><b>Corrected plumbs.</b> With the plumbs corrected, each instrument's frame (axis n, plane basis e<sub>1</sub>, e<sub>2</sub>) is replaced by the centroid's vertical and its horizontal. Sight lines are the chords u<sub>j</sub> − u<sub>i</sub> projected onto that plane. Correction Δ = angle between u<sub>i</sub> and n, which equals ρ; dip = asin(chord · n / |chord|).</li>
       <li><b>Curvature.</b> K = E / A from the two measured quantities. The page never uses E = A / R²; agreement with 1 / R² is a check, shown in the readouts. On the plane, everything is the same calculation with parallel verticals.</li>
       <li><b>Precision.</b> All arithmetic is double precision and arranged to avoid cancellation, so excesses down to about 10⁻¹⁴ rad (2 × 10⁻⁹″) are reliable. Below that the check column shows rounding noise.</li>
     </ol>
@@ -263,8 +258,7 @@ let MODE="plumb";
 function frame(st,i){
   if(st.plane)return{n:[0,0,1]};
   if(MODE==="plumb")return{n:st.u[i],e1:st.e1[i],e2:st.e2[i]};
-  if(MODE==="common")return{n:[0,0,1],e1:[1,0,0],e2:[0,1,0]};      // axis along the centroid's vertical
-  return{n:st.u[0],e1:st.e1[0],e2:st.e2[0]};                          // axis parallel to A's plumb line
+  return{n:[0,0,1],e1:[1,0,0],e2:[0,1,0]};      // corrected: every axis along the centroid's vertical
 }
 // projected sight-line direction (2D, in the theodolite's horizontal plane at i) toward j
 function sightDir(st,i,j){
@@ -319,10 +313,11 @@ function update(){
   readouts();drawDials();drawSide();drawChart();table();draw3d();caption();
 }
 function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
+function rhoNow(){return M.st.plane?0:Math.asin(M.st.sr);} // angular distance of each station from the centre
 function readouts(){
   const K=isFinite(R)?1/(R*1000)**2:0, Km=M.E/(M.A*1e6);
   const tiny=isFinite(R)&&M.E<1e-14;
-  const ratio=isFinite(R)?(MODE!=="plumb"?"axes aligned: curvature not seen":tiny?"below double precision":"ratio to 1/R²: "+(Km/K).toFixed(6)):"";
+  const ratio=isFinite(R)?(MODE!=="plumb"?"plumbs corrected: curvature not seen":tiny?"below double precision":"ratio to 1/R²: "+(Km/K).toFixed(6)):"";
   const al=MODE!=="plumb"&&isFinite(R);
   const same=Math.abs(M.ang[0]-M.ang[1])<1e-12&&Math.abs(M.ang[1]-M.ang[2])<1e-12;
   const dmin=Math.min(...M.dip),dmax=Math.max(...M.dip);
@@ -333,17 +328,17 @@ function readouts(){
     kv("Area A (tiled)",fArea(M.A),"side "+fLen(S))+
     kv(same?"Each angle (measured)":"Angle at A (measured)",dms(M.ang[0],4),same?"A, B and C read the same":"B "+dms(M.ang[1],3)+" · C "+dms(M.ang[2],3))+
     kv("Angle sum",dms(M.ang[0]+M.ang[1]+M.ang[2],4),"")+
-    kv("Excess E",fExc(Math.abs(M.E)<1e-15?0:M.E),M.E>1e-15?sci(M.E,4)+" rad":(al?"theodolite axes parallel":"verticals parallel"),true)+
+    kv("Excess E",fExc(Math.abs(M.E)<1e-15?0:M.E),M.E>1e-15?sci(M.E,4)+" rad":(al?"zenith axes corrected parallel":"verticals parallel"),true)+
     kv("Measured K = E / A",Math.abs(M.E)<1e-15?"0 m⁻²":sci(Km,5)+" m⁻²",ratio,true)+
     kv("Angle between plumb lines",fExc(M.vert),"adjacent stations")+
-    kv("Theodolite tilt off plumb",!al?"0″":Math.abs(M.tilt[0]-M.tilt[1])<1e-13?fExc(M.tilt[0])+" each":"A 0″ · B, C "+fExc(M.tilt[1]),al?"set by rotating each instrument in 3D":"each levelled to its own plumb line")+
+    kv("Plumb correction per station",!isFinite(R)?"0″ (already one plane)":fExc(rhoNow()),al?"applied: A, B, C each tipped toward the centre":"needed to make one horizontal plane (not applied)",al)+
+    kv("Correction rate",isFinite(R)?fExc(1/R)+" per km":"0″ per km","of distance from the triangle's centre ("+fLen(S/Math.sqrt(3))+" here)")+
     kv("Dip of sight lines",dipTxt,Math.abs(dmax-dmin)<1e-13?"below each theodolite's horizontal":"dip (+) or rise (−) against each theodolite's horizontal");
 }
 function caption(){
   let t;
   if(!isFinite(R))t="R = ∞: every vertical points the same way, so the three level planes are one plane. The projected angles are the plane triangle's angles and sum to exactly 180°.";
-  else if(MODE==="common")t=`Each theodolite is tilted ${fExc(M.tilt[0])} off its plumb line so that all three vertical axes point the same way. Their horizontal planes are then one plane, the flat plane through A, B and C, and the readings sum to exactly 180° on this sphere. Nothing was subtracted from any angle: the instruments were turned in 3D.`;
-  else if(MODE==="A")t=`B and C are tilted ${fExc(M.tilt[1])} off their plumb lines so their axes are parallel to A's. All three horizontal planes are now parallel (at different heights), the readings are projections onto one direction, and they sum to exactly 180°. The angles at B and C change because their planes were turned, not because a correction was applied.`;
+  else if(MODE==="common")t=`Each station's zenith axis is corrected by ${fExc(M.tilt[0])}, tipped toward the triangle's centre, so all three axes point the same way. The three horizontals are then one horizontal plane through A, B and C, and the readings sum to exactly 180° on this sphere. Nothing was subtracted from any angle: the instruments were turned in 3D.`;
   else{const e=M.E*AS;
     t=`The verticals at neighbouring stations differ by ${fExc(M.vert)}. Each level plane is tilted by that much against its neighbours, and the three readings add up to 180° + ${fExc(M.E)}. `+
       (e<1?"That is less than an arcsecond: at this size the three planes are nearly one plane.":e<3600?"":"The planes are visibly tilted.");}
@@ -418,7 +413,7 @@ function draw3d(){
       const down=toC?vmul(nrm[i],-k):vmul(nrm[i],-0.75);
       line([pos[i],vadd(pos[i],down)],C.st,1.3,[5,4],0.85);
       arrow(pos[i],vadd(pos[i],vmul(nrm[i],0.42)),C.st,2);
-      if(aligned&&M.tilt[i]>1e-12)arrow(pos[i],vadd(pos[i],vmul(FR[i].n,0.5)),css("--red"),2.4);
+      if(aligned&&M.tilt[i]>1e-12){arrow(pos[i],vadd(pos[i],vmul(FR[i].n,0.5)),css("--red"),2.4);label(vadd(pos[i],vmul(FR[i].n,0.56)),"Δ "+fExc(M.tilt[i]),css("--red"),0,-8,"600 12px 'IBM Plex Mono'");}
     }
     if(toC){const c=[0,0,-k];const q=proj(c);ctx.save();ctx.fillStyle=C.st;ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill();ctx.restore();label(c,"centre",C.st,0,14,"500 12px 'IBM Plex Mono'");}
     else{const mid=vmul(vadd(vadd(pos[0],pos[1]),pos[2]),1/3);label(vadd(mid,[0,0,-0.82]),isFinite(R)?"verticals meet "+fR(R)+" below":"verticals parallel: never meet",C.st,0,0,"500 12px 'IBM Plex Mono'");}
@@ -473,7 +468,7 @@ function drawDials(){
     for(const [a,n] of [[aj,NAMES[j]],[ak,NAMES[k]]]){const p=tip(a,r-4),q=tip(a,r+12);svgEl("line",{x1:cx,y1:cy,x2:p[0],y2:p[1],stroke:css("--orange"),"stroke-width":2.2},g);const t=svgEl("text",{x:q[0],y:q[1]+4,"text-anchor":"middle","font-size":13,"font-weight":600},g);t.textContent="to "+n;}
     svgEl("circle",{cx,cy,r:3.5,fill:css("--ink")},g);
     const t1=svgEl("text",{x:cx,y:cy+r+30,"text-anchor":"middle","font-size":14,"font-weight":600},g);t1.textContent="At "+NAMES[i]+": "+dms(M.ang[i],4);
-    const t2=svgEl("text",{x:cx,y:cy+r+52,"text-anchor":"middle","font-size":12,fill:M.tilt[i]>1e-12?css("--red"):css("--muted")},g);t2.textContent=M.tilt[i]>1e-12?"axis "+fExc(M.tilt[i])+" off plumb":"axis on plumb line";
+    const t2=svgEl("text",{x:cx,y:cy+r+52,"text-anchor":"middle","font-size":12,fill:M.tilt[i]>1e-12?css("--red"):css("--muted")},g);t2.textContent=M.tilt[i]>1e-12?"zenith axis corrected "+fExc(M.tilt[i]):"axis on plumb line";
   }
 }
 
@@ -501,7 +496,7 @@ function drawSide(){
     const tx=Math.cos(a),ty=Math.sin(a);  // tangent
     // theodolite axis: own plumb line, the common (mid) vertical, or A's plumb line
     const al=isFinite(R)&&MODE!=="plumb";
-    const axv=!al?[nx,ny]:MODE==="common"?[0,-1]:[Math.sin(-sd/2),-Math.cos(-sd/2)];
+    const axv=!al?[nx,ny]:[0,-1];
     const hx=-axv[1],hy=axv[0]; // theodolite horizontal, square to its axis
     svgEl("line",{x1:x-hx*95,y1:yy-hy*95,x2:x+hx*95,y2:yy+hy*95,stroke:css("--accent"),"stroke-width":3,"stroke-opacity":0.7},g);
     if(al&&Math.hypot(axv[0]-nx,axv[1]-ny)>1e-9){const rx=x+axv[0]*75,ry=yy+axv[1]*75;svgEl("line",{x1:x,y1:yy,x2:rx,y2:ry,stroke:css("--red"),"stroke-width":2.4},g);
@@ -525,7 +520,7 @@ function drawSide(){
   else lab(mx,372,flat?"verticals parallel: they never meet":"verticals meet "+fR(R)+" below (off the page)",stc);
   lab(20,22,"δ (true) = "+fExc(M.vert),ink,"start",13);
   if(isFinite(R)&&MODE!=="plumb"){const d0=M.dip[0],d1=M.dip[3];const f2=v=>Math.abs(v)<1e-15?"0″":(v<0?"rise ":"")+fExc(Math.abs(v));
-    lab(20,42,"dip from A = "+f2(d0)+",  from B = "+f2(d1)+"  (red: theodolite axis)",ink,"start",13);}
+    lab(20,42,"dip from A = "+f2(d0)+",  from B = "+f2(d1)+"  (red: corrected zenith axis)",ink,"start",13);}
   else lab(20,42,"dip of sight line = δ/2 = "+fExc(M.vert/2),ink,"start",13);
   lab(660,22,"s = "+fLen(S)+",  R = "+fR(R),mut,"end",12.5);
 }
@@ -547,7 +542,7 @@ function drawChart(){
   if(MODE==="plumb"&&!(isFinite(R)&&Math.abs(R-RE)<0.01))curve(RE,css("--e4"),1.6,"6 3","Earth");
   if(isFinite(R)&&MODE==="plumb"){curve(R,css("--accent"),2.6,"","R = "+fR(R));
     if(M.E*AS>10**y0){const cx=X(M.A),cy=Y(M.E*AS);svgEl("circle",{cx,cy,r:6,fill:css("--orange"),stroke:ink,"stroke-width":1.2},g);}}
-  else{const t=svgEl("text",{x:Rr-8,y:B-10,"text-anchor":"end","font-size":13,"font-weight":600,fill:css("--accent")},g);t.textContent=isFinite(R)?"Axes aligned: E = 0 at every area, on every sphere":"R = ∞: E = 0 at every area (below the axis)";}
+  else{const t=svgEl("text",{x:Rr-8,y:B-10,"text-anchor":"end","font-size":13,"font-weight":600,fill:css("--accent")},g);t.textContent=isFinite(R)?"Plumbs corrected: E = 0 at every area, on every sphere":"R = ∞: E = 0 at every area (below the axis)";}
 }
 function table(){
   const rows=[1000,RE,63710,637100,6371000,Infinity];if(isFinite(R)&&!rows.some(r=>Math.abs(r-R)/r<1e-6))rows.push(R);rows.sort((a,b)=>a-b);
@@ -563,7 +558,7 @@ function table(){
 $("rr").addEventListener("input",update);$("ss").addEventListener("input",update);
 ["cPlanes","cVert","cChord"].forEach(id=>$(id).addEventListener("change",draw3d));
 $("cExag").addEventListener("change",drawSide);
-$("mode").addEventListener("change",e=>{MODE=e.target.value;update();});
+$("cAlign").addEventListener("change",e=>{MODE=e.target.checked?"common":"plumb";update();});
 document.querySelectorAll("button[data-r]").forEach(b=>b.addEventListener("click",()=>{stopSweep();const v=b.dataset.r;setRSlider(v==="inf"?Infinity:+v);update();}));
 document.querySelectorAll("button[data-s]").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.s;let s=v==="octant"?(isFinite(R)?Math.PI/2*R:Math.PI/2*RE):+v;setSSlider(s);update();}));
 $("resetv").addEventListener("click",()=>{view={yaw:-28*D2R,pitch:60*D2R,zoom:1};draw3d();});
