@@ -19,6 +19,12 @@ side (1 km to 200,000 km) can be changed.
   a zoomed bullseye per station with the planar axis at the centre and the
   station's own plumb line as a dot. The gap is Δ (auto-scaled rings), always
   straight toward the triangle's centre with no sideways part.
+- **Show the math (collapsed by default).** Under the overhead view: the
+  nine steps from three plumb lines to one planar plane, each with live
+  numbers for the current radius and side: plumb directions, the planar axis,
+  Δ exactly and as d/R, the rotation axis, the Rodrigues rotation matrix for
+  A (with a check that it maps A's plumb line onto the planar axis), the
+  corrected readings, and the change per station (E/3).
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional

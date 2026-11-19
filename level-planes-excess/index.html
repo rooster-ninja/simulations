@@ -75,6 +75,14 @@ tr.cur td{background:color-mix(in srgb,var(--accent) 12%,transparent)}
 .tablebox{overflow-x:auto}
 details.src{background:var(--bar);color:var(--bar-ink);border-radius:12px;padding:14px 18px;font-family:var(--f-mono);font-size:14px}
 details.src summary{cursor:pointer;font-weight:600}
+details.mx{border:1.5px solid var(--rule);border-radius:12px;background:var(--plate);padding:12px 16px}
+details.mx summary{cursor:pointer;font-family:var(--f-mono);font-size:13.5px;letter-spacing:.06em;color:var(--accent);font-weight:600}
+details.mx .stp{margin:14px 0 0;max-width:76ch}
+details.mx .stp b{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+details.mx .eq{font-family:var(--f-display);font-style:italic;font-size:18px;line-height:1.7;margin:4px 0 2px 14px;overflow-x:auto;white-space:nowrap}
+details.mx .num{font-family:var(--f-mono);font-size:13px;color:var(--e4);margin:2px 0 0 14px;max-width:96ch}
+details.mx table.mat td{border:none;padding:1px 10px;font-family:var(--f-mono);font-size:12.5px;text-align:right}
+details.mx table.mat{width:auto;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);margin:4px 0 0 14px}
 details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
 details.src a{color:var(--bar-ink)}
 </style>
@@ -145,6 +153,7 @@ details.src a{color:var(--bar-ink)}
     <div class="svgbox"><svg id="over" viewBox="0 0 680 340" role="img" aria-label="Overhead view of the triangle and zoomed plumb-line offsets at each station"></svg></div>
     <p class="cap">Looking straight down the planar axis, the vertical of the one horizontal plane through A, B and C. Left: the triangle, with each station's correction drawn as an arrow toward the centre. Right: each station zoomed in. The cross is the planar axis; the dot is where the station's own plumb line points. The distance between them is the correction Δ, always straight toward the triangle's centre, with no sideways part.</p>
     <div class="math">Δ = d / R&nbsp;&nbsp;&nbsp; (d = distance of the station from the triangle's centre)</div>
+    <details class="mx" id="mxbox"><summary>Show the math: from three plumb lines to one planar plane</summary><div id="mx"></div></details>
   </section>
 
   <section class="panel">
@@ -317,7 +326,7 @@ function update(){
   M=measure(R,S);
   $("rval").textContent=fR(R)+(isFinite(R)&&Math.abs(R-RE)<0.01?"  · Earth mean":"");
   $("sval").textContent=fLen(S);
-  readouts();drawDials();drawOver();drawSide();drawChart();table();draw3d();caption();
+  readouts();drawDials();drawOver();drawMath();drawSide();drawChart();table();draw3d();caption();
 }
 function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
 function rhoNow(){return M.st.plane?0:Math.asin(M.st.sr);} // angular distance of each station from the centre
@@ -530,6 +539,51 @@ function drawOver(){
   svgEl("circle",{cx:330,cy:306+12,r:5,fill:stc},g);lab(340,322,"own plumb line",mut,"start",11);
   svgEl("line",{x1:452,y1:318,x2:466,y2:318,stroke:ink,"stroke-width":2},g);svgEl("line",{x1:459,y1:311,x2:459,y2:325,stroke:ink,"stroke-width":2},g);lab(472,322,"planar axis",mut,"start",11);
   svgEl("line",{x1:560,y1:318,x2:580,y2:318,stroke:red,"stroke-width":2},g);lab(586,322,"correction Δ",mut,"start",11);
+}
+
+// ---------- the math, with live numbers ----------
+function anglesFor(st,mode){const keep=MODE;MODE=mode;const a=[0,1,2].map(i=>angleAt(st,i));MODE=keep;return a;}
+function rodrigues(k,c,sn){const[x,y,z]=k,C=1-c;return[[c+x*x*C,x*y*C-z*sn,x*z*C+y*sn],[y*x*C+z*sn,c+y*y*C,y*z*C-x*sn],[z*x*C-y*sn,z*y*C+x*sn,c+z*z*C]];}
+function fm(v){if(Math.abs(v)<5e-16)return"0";const a=Math.abs(v);return a>=1e-3?v.toFixed(9):sci(v,4);}
+function drawMath(){
+  const box=$("mx");const st=M.st;
+  const step=(t,eqs,nums)=>`<div class="stp"><b>${t}</b>${eqs.map(e=>`<div class="eq">${e}</div>`).join("")}${(nums||[]).map(n=>`<div class="num">${n}</div>`).join("")}</div>`;
+  if(st.plane){box.innerHTML=step("R = ∞",["every plumb line u<sub>i</sub> = (0, 0, 1) already","Δ = 0,&nbsp;&nbsp; rotation R<sub>i</sub> = I"],["Nothing to correct: the three horizontals are already one plane. Angle sum = 180° exactly."]);return;}
+  const rho=Math.asin(st.sr),d=S/Math.sqrt(3),sig=st.sig,chord=2*R*Math.sin(sig/2);
+  const ap=anglesFor(st,"plumb"),aq=anglesFor(st,"common");
+  const sinD=st.sr,cosD=st.cr;
+  const k=[Math.sin(PHI[0]),-Math.cos(PHI[0]),0];
+  const Rm=rodrigues(k,cosD,sinD);
+  const chk=Rm.map(r=>r[0]*st.u[0][0]+r[1]*st.u[0][1]+r[2]*st.u[0][2]);
+  const mat=Rm.map(r=>`<tr>${r.map(v=>`<td>${fm(v)}</td>`).join("")}</tr>`).join("");
+  box.innerHTML=
+   step("1 · Where each plumb line points",[
+     "u<sub>i</sub> = ( sin ρ cos φ<sub>i</sub>,&nbsp; sin ρ sin φ<sub>i</sub>,&nbsp; cos ρ ),&nbsp;&nbsp; φ = 90°, 210°, 330°",
+     "sin ρ = (2/√3) · sin( s / 2R )"],
+     [`s = ${fLen(S)},  R = ${fR(R)},  s/R = ${fExc(sig)}  →  ρ = ${fExc(rho)}`,
+      `u_A = ( ${fm(st.u[0][0])}, ${fm(st.u[0][1])}, ${fm(st.u[0][2])} )`])+
+   step("2 · The planar axis",["n = ( 0, 0, 1 )&nbsp;&nbsp; — the vertical at the triangle's centre, square to the plane through A, B, C"],
+     ["All three stations have the same height along n (z = cos ρ), so that plane is level in this frame."])+
+   step("3 · How far each axis must turn",["cos Δ<sub>i</sub> = u<sub>i</sub> · n = cos ρ&nbsp;&nbsp; ⇒&nbsp;&nbsp; Δ<sub>i</sub> = ρ","small triangles:&nbsp; Δ ≈ d / R,&nbsp;&nbsp; d = s / √3"],
+     [`Δ = ${fExc(rho)} exactly;  d/R = ${fLen(d)} / ${fR(R)} = ${fExc(d/R)}  (difference ${fExc(Math.abs(rho-d/R))})`])+
+   step("4 · Which way: the rotation axis",["k<sub>i</sub> = ( u<sub>i</sub> × n ) / | u<sub>i</sub> × n | = ( sin φ<sub>i</sub>,&nbsp; −cos φ<sub>i</sub>,&nbsp; 0 )"],
+     ["k is level and square to the line from the centre to the station, so the tilt is purely toward the centre: sideways part 0.",
+      `k_A = ( ${fm(k[0])}, ${fm(k[1])}, 0 )`])+
+   step("5 · The 3D rotation (Rodrigues)",["R<sub>i</sub> = I cos Δ + (1 − cos Δ) k k<sup>T</sup> + sin Δ [k]<sub>×</sub>,&nbsp;&nbsp; R<sub>i</sub> u<sub>i</sub> = n"],
+     ["R_A at these values:"])+`<table class="mat">${mat}</table>`+
+     `<div class="num">check: R_A · u_A = ( ${chk.map(fm).join(", ")} )</div>`+
+   step("6 · Turn the whole instrument, not the reading",["e′<sub>1</sub> = R<sub>i</sub> e<sub>1</sub>,&nbsp;&nbsp; e′<sub>2</sub> = R<sub>i</sub> e<sub>2</sub>&nbsp;&nbsp; (the horizontal circle turns with the axis)"],
+     ["Here every corrected circle ends up in the same plane, spanned by (1, 0, 0) and (0, 1, 0)."])+
+   step("7 · Read the angles in the corrected plane",["d<sub>ij</sub> = ( (u<sub>j</sub> − u<sub>i</sub>) · e′<sub>1</sub>,&nbsp; (u<sub>j</sub> − u<sub>i</sub>) · e′<sub>2</sub> ),&nbsp;&nbsp; α′<sub>i</sub> = atan2( d<sub>ij</sub> × d<sub>ik</sub>,&nbsp; d<sub>ij</sub> · d<sub>ik</sub> )",
+     "dip = asin( (u<sub>j</sub> − u<sub>i</sub>) · n / | u<sub>j</sub> − u<sub>i</sub> | ) = 0"],
+     [`sides become straight chords: c = 2R sin(s/2R) = ${fLen(chord)}  (arc ${fLen(S)}, shorter by ${fLen(S-chord)})`])+
+   step("8 · Result",["α′ + β′ + γ′ = 180°&nbsp;&nbsp; (a plane triangle of chords)","α<sub>i</sub> − α′<sub>i</sub> = E / 3&nbsp;&nbsp; at each station (equilateral case)"],
+     [`plumb readings:  ${ap.map(a=>dms(a,4)).join("  ")}   sum ${dms(ap[0]+ap[1]+ap[2],4)}`,
+      `planar readings: ${aq.map(a=>dms(a,4)).join("  ")}   sum ${dms(aq[0]+aq[1]+aq[2],4)}`,
+      `change per station: ${fExc(ap[0]-aq[0])}  ×3 = ${fExc(3*(ap[0]-aq[0]))}  = E`,
+      "The correction removes exactly the excess, because the excess was the tilt between the three planes."])+
+   step("9 · What it takes",["to build R<sub>i</sub> you need u<sub>i</sub> relative to n: the direction of every plumb line, compared across stations"],
+     ["A level bubble only finds u_i at its own station. Comparing u_i between stations needs an outside reference (stars) — and that comparison is the curvature."]);
 }
 
 // ---------- side view ----------
