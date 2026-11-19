@@ -33,7 +33,11 @@ side (1 km to 200,000 km) can be changed.
   numbers for the current radius and side: plumb directions, the planar axis,
   Δ exactly and as d/R, the rotation axis, the Rodrigues rotation matrix for
   A (with a check that it maps A's plumb line onto the planar axis), the
-  corrected readings, and the change per station (E/3).
+  corrected readings, the change per station (E/3), and an expanded "what it
+  takes": what a bubble can and can't give, the six tilts the rotation needs,
+  why comparing plumb lines is first order in curvature (δ = s/R) while the
+  excess is second order, the ways to compare plumb lines and what each
+  assumes, and the zenith-camera error budget.
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional

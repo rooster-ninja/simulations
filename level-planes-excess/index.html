@@ -625,8 +625,28 @@ function drawMath(){
       `planar readings: ${aq.map(a=>dms(a,4)).join("  ")}   sum ${dms(aq[0]+aq[1]+aq[2],4)}`,
       `change per station: ${fExc(ap[0]-aq[0])}  ×3 = ${fExc(3*(ap[0]-aq[0]))}  = E`,
       "The correction removes exactly the excess, because the excess was the tilt between the three planes."])+
-   step("9 · What it takes",["to build R<sub>i</sub> you need u<sub>i</sub> relative to n: the direction of every plumb line, compared across stations"],
-     ["A level bubble only finds u_i at its own station. Comparing u_i between stations needs an outside reference (stars) — and that comparison is the curvature."]);
+   step("9 · What it takes",["to build R<sub>i</sub> you need u<sub>i</sub> relative to n: the direction of every plumb line, compared across stations"],[])+
+   whatItTakes(st,rho);
+}
+function whatItTakes(st,rho){
+  const dAB=M.vert,E=M.E,camS=0.1/AS,dErr=Math.SQRT2*camS;
+  const sub=(t,html)=>`<div class="stp" style="margin-left:14px"><b style="letter-spacing:.08em">${t}</b><div class="cap" style="font-size:15px;margin-top:4px">${html}</div></div>`;
+  const tx=(st.u[0][0]).toFixed(9),ty=(st.u[0][1]).toFixed(9);
+  return sub("9a · What a level bubble can tell you",
+     `Only which way is down <i>at its own station</i>. In the instrument's own frame its plumb line is always (0, 0, 1), by definition. The bubble has no way to say how that frame is turned relative to any other station's. Three stations give three frames, each with three unknown rotations against a common frame: two tilts (where its vertical points) and one azimuth. A bubble fixes none of them.`)+
+   sub("9b · What R<sub>i</sub> actually needs",
+     `Each plumb line written in one shared frame: two numbers per station, the tilt toward the centre and the tilt sideways. For A these are the x and y parts of u<sub>A</sub>: <span class="num" style="margin:0">(${fm(st.u[0][0])}, ${fm(st.u[0][1])})</span>, a tilt of ${fExc(rho)} toward the centre and 0 sideways. Six numbers for the triangle, none of which a station can measure alone. The third rotation, azimuth, is not needed: an angle is the difference of two circle readings, so where the circle's zero sits drops out.`)+
+   sub("9c · Comparing plumb lines is measuring curvature, at first order",
+     `The angle between two stations' plumb lines is δ = s / R. That is first order in curvature: one comparison gives R = s / δ directly. The angle excess is only second order, E ≈ (√3/4) δ². Here δ<sub>AB</sub> = ${fExc(dAB)} while E = ${fExc(E)}, so the plumb comparison is ${E>0?(dAB/E>=100?grp(dAB/E,0):(dAB/E).toFixed(1)):"—"} × larger than the signal the triangle closure sees. The correction to one horizontal plane removes exactly the information this comparison measures.`)+
+   sub("9d · Ways to compare plumb lines between stations",
+     `<table style="margin-top:6px"><thead><tr><th>Method</th><th>What it compares</th><th>What it assumes</th></tr></thead><tbody>
+      <tr><td>Zenith camera on stars</td><td>Each plumb line against the same star field at the same instant; the difference is u<sub>i</sub> − u<sub>j</sub> directly, both tilts</td><td>Starlight arrives parallel at both stations (testable: every star must give the same δ); clocks synchronised; refraction near zenith small</td></tr>
+      <tr><td>Reciprocal zenith angles</td><td>Each station sights the other: z<sub>ij</sub> + z<sub>ji</sub> − 180° = δ along that line only; three lines give the in-line parts</td><td>Refraction along the ground path, about 13% of δ and changing with temperature</td></tr>
+      <tr><td>Carried inertial reference</td><td>A gyro-stabilised platform levelled at one station and carried to the next</td><td>Gyro drift and Earth-rotation sensing below δ over the trip</td></tr>
+      <tr><td>The excess itself</td><td>One number for the whole triangle, E = K·A</td><td>A shape model to turn one number into six tilts: circular for testing the shape</td></tr>
+      <tr><td>GNSS ellipsoid normals</td><td>Model normals at each station from coordinates</td><td>The reference ellipsoid: circular for testing the shape</td></tr></tbody></table>`)+
+   sub("9e · How well a zenith camera could do it",
+     `With 0.1″ per station, the error on δ between two stations is about √2 × 0.1″ = ${fExc(dErr)}. The predicted δ<sub>AB</sub> = ${fExc(dAB)} is then ${dAB>0?grp(dAB/dErr,0):"0"} σ from zero. The limit is not the instrument but the difference in deflection of the vertical between the two stations, a few arcseconds and up to an arcminute in mountains. That has to be modelled or averaged over many station pairs, and it is the same term the overhead view's dashed circles show.`);
 }
 
 // ---------- side view ----------
