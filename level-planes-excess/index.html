@@ -150,9 +150,22 @@ details.src a{color:var(--bar-ink)}
 
   <section class="panel">
     <div class="ptitle">3 · Overhead, zoomed: each plumb line against the planar axis</div>
+    <div class="row" id="errctl">
+      <span class="lab">Error circles (1σ)</span>
+      <label class="chk"><input type="checkbox" data-err="cam" checked>Zenith camera 0.1″</label>
+      <label class="chk"><input type="checkbox" data-err="comp" checked>Compensator 0.5″</label>
+      <label class="chk"><input type="checkbox" data-err="dov10" checked>Deflection 10″</label>
+      <label class="chk"><input type="checkbox" data-err="dov60" checked>Deflection 60″</label>
+      <label class="chk"><input type="checkbox" id="cErrZoom">Zoom to the error circles</label>
+    </div>
     <div class="svgbox"><svg id="over" viewBox="0 0 680 340" role="img" aria-label="Overhead view of the triangle and zoomed plumb-line offsets at each station"></svg></div>
     <p class="cap">Looking straight down the planar axis, the vertical of the one horizontal plane through A, B and C. Left: the triangle, with each station's correction drawn as an arrow toward the centre. Right: each station zoomed in. The cross is the planar axis; the dot is where the station's own plumb line points. The distance between them is the correction Δ, always straight toward the triangle's centre, with no sideways part.</p>
     <div class="math">Δ = d / R&nbsp;&nbsp;&nbsp; (d = distance of the station from the triangle's centre)</div>
+    <p class="cap">The error circles are drawn around each station's plumb line: how far its measured or assumed direction can be off. The first two are measurement errors in finding the local plumb line. The deflections are not measurement errors: they are how far real gravity can point away from a smooth model surface, and they move the dot itself.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Error source</th><th class="n">Size</th><th class="n">Δ ÷ size</th><th>Kind</th><th>Basis</th></tr></thead>
+      <tbody id="errtable"></tbody>
+    </table></div>
     <details class="mx" id="mxbox"><summary>Show the math: from three plumb lines to one planar plane</summary><div id="mx"></div></details>
   </section>
 
@@ -222,6 +235,10 @@ details.src a{color:var(--bar-ink)}
     <ul>
       <li>C. F. Gauss (1827), <i>Disquisitiones generales circa superficies curvas</i>, translated by J. C. Morehead and A. M. Hiltebeitel as <a href="https://www.gutenberg.org/ebooks/36856">General Investigations of Curved Surfaces</a> (1902), Art. 20: the excess of the angle sum of a triangle of shortest lines over 180° equals its total curvature, the area its normals cover on the unit sphere.</li>
       <li>H. Moritz, <a href="https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm">Geodetic Reference System 1980</a>, Geodesist's Handbook (IAG): mean radius R<sub>1</sub> = 6 371 008.7714 m, used for the Earth preset.</li>
+      <li>C. Hirt, B. Bürki, A. Somieski, G. Seeber (2010), <a href="https://espace.curtin.edu.au/handle/20.500.11937/34194">Modern Determination of Vertical Deflections Using Digital Zenith Cameras</a>, J. Surveying Eng. 136(1): repeated observations and comparisons show vertical-deflection accuracy <q>better than 0.1 arc sec</q>. Used for the 0.1″ zenith-camera circle.</li>
+      <li>NOAA, <a href="https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf">comparison of four astrogeodetic systems</a>: portable systems reach 0.15–0.20″ for 45-minute occupations. Supports the zenith-camera circle as a best case.</li>
+      <li>Leica Geosystems, <a href="https://dr.leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica_flexline_ts10_lr.ashx">FlexLine TS10 datasheet</a>: compensator setting accuracy 0.5″ for the 1″ instrument. Used for the 0.5″ compensator circle.</li>
+      <li>NOAA NGS, <a href="https://webarchive.library.unt.edu/eot2008/20090116065704/http://www.ngs.noaa.gov/GEOID/DMEX97">DMEX97 deflection model</a>: deflections are <q>typically a few arc seconds</q> but can reach an arcminute. Used for the 60″ circle; the 10″ circle is the Brocken value already sourced on the Gauss's great triangle page.</li>
       <li>Real-survey error values in section 8 are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
     </ul>
   </details>
@@ -326,7 +343,7 @@ function update(){
   M=measure(R,S);
   $("rval").textContent=fR(R)+(isFinite(R)&&Math.abs(R-RE)<0.01?"  · Earth mean":"");
   $("sval").textContent=fLen(S);
-  readouts();drawDials();drawOver();drawMath();drawSide();drawChart();table();draw3d();caption();
+  readouts();drawDials();drawOver();errTable();drawMath();drawSide();drawChart();table();draw3d();caption();
 }
 function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
 function rhoNow(){return M.st.plane?0:Math.asin(M.st.sr);} // angular distance of each station from the centre
@@ -489,8 +506,16 @@ function drawDials(){
 }
 
 // ---------- overhead, zoomed ----------
-function niceStep(x){const e=10**Math.floor(Math.log10(x));const m=x/e;return(m<1.5?1:m<3.5?2:m<7.5?5:10)*e;}
-function fStep(rad){const a=rad*AS;if(a>=3600)return grp(a/3600,a%3600?2:0)+"°";if(a>=60)return grp(a/60,a%60?1:0)+"′";return a>=1?grp(a,0)+"″":sci(a,1)+"″";}
+function niceStep(x){ // x in radians; pick 1-2-5 steps in arcseconds (or arcminutes/degrees when large)
+  let a=x*AS,u=1;if(a>=3600){u=3600;}else if(a>=60){u=60;}a/=u;
+  const e=10**Math.floor(Math.log10(a));const m=a/e;return(m<1.5?1:m<3.5?2:m<7.5?5:10)*e*u/AS;}
+function fStep(rad){const a=rad*AS;if(a>=3600)return +(a/3600).toPrecision(3)+"°";if(a>=60)return +(a/60).toPrecision(3)+"′";return +a.toPrecision(3)+"″";}
+const ERRS=[
+  {k:"cam",v:0.1,name:"Digital zenith camera",kind:"measuring the plumb line",basis:"Hirt et al. 2010: better than 0.1″",col:"--e4",dash:""},
+  {k:"comp",v:0.5,name:"Total-station compensator",kind:"levelling to the plumb line",basis:"Leica FlexLine TS10, 1″ class: setting accuracy 0.5″",col:"--accent",dash:""},
+  {k:"dov10",v:10,name:"Deflection of the vertical, hills",kind:"plumb line vs smooth surface",basis:"Brocken, about 10″ (Brosche & Heckmann 2016)",col:"--orange",dash:"5 3"},
+  {k:"dov60",v:60,name:"Deflection of the vertical, mountains",kind:"plumb line vs smooth surface",basis:"NGS: typically a few arcseconds, can reach an arcminute",col:"--purple",dash:"5 3"}];
+function errOn(k){const el=document.querySelector(`input[data-err="${k}"]`);return el&&el.checked;}
 function drawOver(){
   const g=$("over");g.innerHTML="";const st=M.st,ink=css("--ink"),mut=css("--muted"),rule=css("--rule"),red=css("--red"),stc=css("--station"),acc=css("--accent");
   const applied=MODE!=="plumb";
@@ -515,32 +540,50 @@ function drawOver(){
   lab(20,42,"d = "+fLen(S/Math.sqrt(3))+" to each station · arrows: direction of Δ",mut,"start",11.5);
   // ---- right: zoomed bullseyes ----
   const D=st.plane?0:Math.asin(st.sr);          // correction at every station
-  const step=D>0?niceStep(D/2):0;
+  const on=ERRS.filter(e=>errOn(e.k));const emax=on.length?Math.max(...on.map(e=>e.v))/AS:0;
+  const zoomE=$("cErrZoom").checked&&on.length>0;
+  const step=zoomE?niceStep(emax/1.5):(D>0?niceStep(D/2):(emax?niceStep(emax/1.5):0));
+  const toPx=a=>step?a/(3*step)*48:0;
   for(let i=0;i<3;i++){
     const cx=355+i*112,cy=175,r=48;
-    // rings: planar axis at centre, rings every `step`
+    const defs=svgEl("defs",{},g),cp=svgEl("clipPath",{id:"bc"+i},defs);svgEl("circle",{cx,cy,r:r+6},cp);
     for(let k=1;k<=3;k++)svgEl("circle",{cx,cy,r:r*k/3,fill:"none",stroke:rule},g);
     svgEl("line",{x1:cx-r,y1:cy,x2:cx+r,y2:cy,stroke:rule},g);svgEl("line",{x1:cx,y1:cy-r,x2:cx,y2:cy+r,stroke:rule},g);
-    // plumb tip: offset away from centre by D, direction = station's direction from centre
     const v=xy[i],L=Math.hypot(v[0],v[1]),ux=v[0]/L,uy=v[1]/L;
-    const off=D>0?(D/(3*step))*r:0;const px=cx+ux*off,py=cy-uy*off;
-    if(off>0.5){svgEl("line",{x1:px,y1:py,x2:cx+ux*5,y2:cy-uy*5,stroke:red,"stroke-width":2},g);
-      const tx=cx+ux*5,ty=cy-uy*5;svgEl("path",{d:`M${tx},${ty} L${tx+ux*8-uy*4},${ty-uy*8-ux*4} L${tx+ux*8+uy*4},${ty-uy*8+ux*4}Z`,fill:red},g);}
-    svgEl("line",{x1:cx-7,y1:cy,x2:cx+7,y2:cy,stroke:ink,"stroke-width":2},g);svgEl("line",{x1:cx,y1:cy-7,x2:cx,y2:cy+7,stroke:ink,"stroke-width":2},g);
-    svgEl("circle",{cx:px,cy:py,r:5,fill:stc,stroke:css("--plate"),"stroke-width":1.2},g);
+    // zoomE: plumb dot at the centre of the bullseye; else the planar axis is
+    const off=toPx(D);
+    let px,py,ax,ay;
+    if(zoomE){px=cx;py=cy;ax=cx-ux*off;ay=cy+uy*off;}else{ax=cx;ay=cy;px=cx+ux*off;py=cy-uy*off;}
+    const axIn=Math.hypot(ax-cx,ay-cy)<=r-4;
+    // correction arrow plumb -> planar axis (clipped to the bullseye)
+    if(off>14){const ex=axIn?ax+ux*5:cx-ux*(r-2),ey=axIn?ay-uy*5:cy+uy*(r-2);
+      svgEl("line",{x1:px,y1:py,x2:ex,y2:ey,stroke:red,"stroke-width":2},g);
+      svgEl("path",{d:`M${ex},${ey} L${ex+ux*8-uy*4},${ey-uy*8-ux*4} L${ex+ux*8+uy*4},${ey-uy*8+ux*4}Z`,fill:red},g);}
+    if(axIn){svgEl("line",{x1:ax-7,y1:ay,x2:ax+7,y2:ay,stroke:ink,"stroke-width":2},g);svgEl("line",{x1:ax,y1:ay-7,x2:ax,y2:ay+7,stroke:ink,"stroke-width":2},g);}
+    // error circles around the plumb dot
+    for(const e of on){const rp=toPx(e.v/AS);const c=css(e.col);
+      if(rp>=1.2)svgEl("circle",{cx:px,cy:py,r:Math.min(rp,400),fill:c,"fill-opacity":0.08,stroke:c,"stroke-width":1.6,"stroke-dasharray":e.dash,"clip-path":`url(#bc${i})`},g);
+      else svgEl("circle",{cx:px,cy:py,r:1.2,fill:"none",stroke:c,"stroke-width":1},g);}
+    svgEl("circle",{cx:px,cy:py,r:zoomE?3:5,fill:stc,stroke:css("--plate"),"stroke-width":1.2},g);
     lab(cx,cy-r-26,"Station "+NAMES[i],ink,"middle",13,700);
     lab(cx,cy+r+22,"Δ "+fExc(D),D>0?red:mut,"middle",12.5,600);
     lab(cx,cy+r+39,D>0?"toward centre":"plumb on",mut,"middle",11);
     lab(cx,cy+r+53,D>0?"sideways 0″":"planar axis",mut,"middle",11);
   }
-  lab(355+112,62,step?"zoomed: rings every "+fStep(step):"zoomed: Δ = 0, plumb and planar axis coincide",mut,"middle",11.5);
-  lab(355+112,80,applied?"correction applied (toggle on)":"correction needed (toggle off)",applied?red:mut,"middle",11.5);
+  const offs=zoomE&&D>0&&toPx(D)>44;
+  lab(355+112,62,(zoomE?"centred on the plumb line · ":"")+(step?"rings every "+fStep(step):"Δ = 0: plumb = planar axis"),mut,"middle",11.5);
+  lab(355+112,80,(offs?"planar axis off the edge (arrow) · ":"")+(applied?"correction applied":"correction needed"),applied?red:mut,"middle",11.5);
   // legend
   svgEl("circle",{cx:330,cy:306+12,r:5,fill:stc},g);lab(340,322,"own plumb line",mut,"start",11);
   svgEl("line",{x1:452,y1:318,x2:466,y2:318,stroke:ink,"stroke-width":2},g);svgEl("line",{x1:459,y1:311,x2:459,y2:325,stroke:ink,"stroke-width":2},g);lab(472,322,"planar axis",mut,"start",11);
   svgEl("line",{x1:560,y1:318,x2:580,y2:318,stroke:red,"stroke-width":2},g);lab(586,322,"correction Δ",mut,"start",11);
 }
 
+function errTable(){
+  const D=M.st.plane?0:Math.asin(M.st.sr);
+  $("errtable").innerHTML=ERRS.map(e=>{const rat=D>0?D*AS/e.v:0;
+    return`<tr><td><span style="display:inline-block;width:12px;height:12px;border-radius:50%;border:2px ${e.dash?"dashed":"solid"} var(${e.col});margin-right:8px;vertical-align:-1px"></span>${e.name}</td><td class="n">${e.v}″</td><td class="n">${D>0?(rat>=100?grp(rat,0):rat.toFixed(rat>=10?1:2))+" ×":"—"}</td><td>${e.kind}</td><td>${e.basis}</td></tr>`;}).join("");
+}
 // ---------- the math, with live numbers ----------
 function anglesFor(st,mode){const keep=MODE;MODE=mode;const a=[0,1,2].map(i=>angleAt(st,i));MODE=keep;return a;}
 function rodrigues(k,c,sn){const[x,y,z]=k,C=1-c;return[[c+x*x*C,x*y*C-z*sn,x*z*C+y*sn],[y*x*C+z*sn,c+y*y*C,y*z*C-x*sn],[z*x*C-y*sn,z*y*C+x*sn,c+z*z*C]];}
@@ -672,6 +715,7 @@ function table(){
 $("rr").addEventListener("input",update);$("ss").addEventListener("input",update);
 ["cPlanes","cVert","cChord"].forEach(id=>$(id).addEventListener("change",draw3d));
 $("cExag").addEventListener("change",drawSide);
+document.querySelectorAll("#errctl input").forEach(el=>el.addEventListener("change",drawOver));
 $("cAlign").addEventListener("change",e=>{MODE=e.target.checked?"common":"plumb";update();});
 document.querySelectorAll("button[data-r]").forEach(b=>b.addEventListener("click",()=>{stopSweep();const v=b.dataset.r;setRSlider(v==="inf"?Infinity:+v);update();}));
 document.querySelectorAll("button[data-s]").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.s;let s=v==="octant"?(isFinite(R)?Math.PI/2*R:Math.PI/2*RE):+v;setSSlider(s);update();}));

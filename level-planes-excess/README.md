@@ -19,6 +19,15 @@ side (1 km to 200,000 km) can be changed.
   a zoomed bullseye per station with the planar axis at the centre and the
   station's own plumb line as a dot. The gap is Δ (auto-scaled rings), always
   straight toward the triangle's centre with no sideways part.
+- **Error circles (overhead view).** 1σ circles drawn around each plumb
+  line: digital zenith camera 0.1″ (Hirt et al. 2010), total-station
+  compensator 0.5″ (Leica TS10 datasheet), and deflection of the vertical
+  10″ (Brocken) and 60″ (NGS: can reach an arcminute). Each can be switched
+  off; "Zoom to the error circles" centres the bullseye on the plumb line and
+  scales the rings to the errors, with the planar axis shown by an arrow when
+  it is off the edge. A table gives Δ ÷ each error. The first two are
+  measurement errors; deflections are real departures of gravity from a
+  smooth surface.
 - **Show the math (collapsed by default).** Under the overhead view: the
   nine steps from three plumb lines to one planar plane, each with live
   numbers for the current radius and side: plumb directions, the planar axis,
@@ -72,6 +81,11 @@ Gauss's great triangle pages, which carry them.
   of arc).
 
 ## Sources
+
+- C. Hirt et al. (2010), [Modern Determination of Vertical Deflections Using Digital Zenith Cameras](https://espace.curtin.edu.au/handle/20.500.11937/34194), J. Surveying Eng. 136(1)
+- NOAA, [comparison of four astrogeodetic systems](https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf)
+- Leica Geosystems, [FlexLine TS10 datasheet](https://dr.leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica_flexline_ts10_lr.ashx)
+- NOAA NGS, [DMEX97 deflection model page](https://webarchive.library.unt.edu/eot2008/20090116065704/http://www.ngs.noaa.gov/GEOID/DMEX97)
 
 - C. F. Gauss (1827), *Disquisitiones generales circa superficies curvas*,
   Art. 20, in the Morehead & Hiltebeitel translation:
