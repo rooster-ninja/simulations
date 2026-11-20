@@ -12,6 +12,12 @@ side (1 km to 200,000 km) can be changed.
 - **3D view.** The triangle, the three level planes, the verticals (which
   meet at the centre, or never meet on the plane), the straight sight lines
   and the angle measured in each plane.
+- **Drop between stations.** Readouts for how far B sits below A's level
+  plane over the side s (2R sin²(s/2R) along A's vertical, ≈ s²/2R: 785 m
+  over 100 km on Earth), how far A's plane is above B measured up B's own
+  plumb line (R(sec(s/R) − 1)), and how far the straight sight line A–B runs
+  below the surface at the midpoint (≈ s²/8R). The drop is also marked at B
+  in the 3D view and stated in its caption.
 - **Theodolite dials.** Each station's level plane seen along its own vertical,
   with the two projected sight lines and the angle read.
 - **Overhead, zoomed.** Looking straight down the planar axis: the triangle

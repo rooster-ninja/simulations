@@ -63,7 +63,7 @@ select{font:500 13.5px var(--f-mono);color:var(--ink);background:var(--card);bor
 .legend i{display:inline-block;width:16px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 .cap{font-size:16px;margin:0;max-width:74ch}
 .note{font-family:var(--f-mono);font-size:12.5px;color:var(--red);min-height:1em}
-.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px 22px}
+.readout{background:var(--card);border:1.5px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 22px}
 @media (max-width:1000px){.readout{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.readout{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}.kv .v{font-size:17px}.cvbox canvas{height:360px}}
 .kv .k{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted)}
@@ -140,7 +140,7 @@ details.src a{color:var(--bar-ink)}
 
   <section class="panel">
     <div class="ptitle">1 · The triangle and its three level planes</div>
-    <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ = correction)</span></div>
+    <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ) · drop of B below A's level</span></div>
     <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
     <p class="cap" id="cap1"></p>
     <div class="math">measured excess&nbsp; E = α + β + γ − 180°&nbsp;&nbsp;&nbsp;&nbsp; measured curvature&nbsp; K = E / A</div>
@@ -362,6 +362,10 @@ function update(){
   readouts();drawDials();drawOver();errTable();drawMath();drawSide();drawPyr();pyrReadouts();drawChart();table();draw3d();caption();
 }
 function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
+function fDrop(km){const m=km*1000;if(m===0)return"0 m";if(m<0.01)return(m*1000).toPrecision(3)+" mm";if(m<1)return(m*100).toPrecision(3)+" cm";if(m<1e4)return grp(m,m<100?2:1)+" m";return fLen(km);}
+function dropAB(){ // B below A's level plane, along A's vertical; and A's plane above B, along B's vertical
+  if(!isFinite(R))return{a:0,b:0,approx:0,sag:0};const sg=S/R;
+  return{a:2*R*Math.sin(sg/2)**2,b:2*R*Math.sin(sg/2)**2/Math.cos(sg),approx:S*S/(2*R),sag:2*R*Math.sin(sg/4)**2};}
 function rhoNow(){return M.st.plane?0:Math.asin(M.st.sr);} // angular distance of each station from the centre
 function readouts(){
   const K=isFinite(R)?1/(R*1000)**2:0, Km=M.E/(M.A*1e6);
@@ -382,14 +386,17 @@ function readouts(){
     kv("Plumb-line angle δ",fExc(M.vert),"between adjacent stations")+
     kv("Plumb correction Δ",!isFinite(R)?"0″ (already one plane)":fExc(rhoNow()),al?"applied at A, B and C":"per station, not applied",al)+
     kv("Correction rate",isFinite(R)?fExc(1/R)+" per km":"0″ per km","from the centre ("+fLen(S/Math.sqrt(3))+" here)")+
-    kv("Dip of sight lines",dipTxt,Math.abs(dmax-dmin)<1e-13?"below the horizontal":"dip (+) or rise (−)");
+    kv("Dip of sight lines",dipTxt,Math.abs(dmax-dmin)<1e-13?"below the horizontal":"dip (+) or rise (−)")+
+    kv("Drop of B below A's level",fDrop(dropAB().a),isFinite(R)?"over "+fLen(S)+" · ≈ s²/2R = "+fDrop(dropAB().approx):"plane: no drop",true)+
+    kv("A's level above B",fDrop(dropAB().b),isFinite(R)?"measured up B's own plumb line":"plane: no drop")+
+    kv("Sight line below midpoint",fDrop(dropAB().sag),isFinite(R)?"chord A–B under the surface · ≈ s²/8R":"plane: on the surface");
 }
 function caption(){
   let t;
   if(!isFinite(R))t="R = ∞: every vertical points the same way, so the three level planes are one plane. The projected angles are the plane triangle's angles and sum to exactly 180°.";
   else if(MODE==="common")t=`Each station's zenith axis is corrected by ${fExc(M.tilt[0])}, tipped toward the triangle's centre, so all three axes point the same way. The three horizontals are then one horizontal plane through A, B and C, and the readings sum to exactly 180° on this sphere. Nothing was subtracted from any angle: the instruments were turned in 3D.`;
   else{const e=M.E*AS;
-    t=`The verticals at neighbouring stations differ by ${fExc(M.vert)}. Each level plane is tilted by that much against its neighbours, and the three readings add up to 180° + ${fExc(M.E)}. `+
+    t=`Over the ${fLen(S)} from A, B sits ${fDrop(dropAB().a)} below A's level plane (≈ s²/2R). The verticals at neighbouring stations differ by ${fExc(M.vert)}. Each level plane is tilted by that much against its neighbours, and the three readings add up to 180° + ${fExc(M.E)}. `+
       (e<1?"That is less than an arcsecond: at this size the three planes are nearly one plane.":e<3600?"":"The planes are visibly tilted.");}
   $("cap1").textContent=t;
 }
@@ -415,7 +422,7 @@ function setupProj(ext,zc){
 }
 function line(pts,color,w,dash,alpha){ctx.save();ctx.globalAlpha=alpha??1;ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();ctx.restore();}
 function poly(pts,fill,alpha,stroke,w){ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=fill;ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();ctx.fill();if(stroke){ctx.globalAlpha=1;ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}ctx.restore();}
-function label(p,txt,color,dx=0,dy=0,font){const q=proj(p);ctx.save();ctx.fillStyle=color;ctx.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
+function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p);ctx.save();if(halo){ctx.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
 function arrow(a,b,color,w){line([a,b],color,w);const qa=proj(a),qb=proj(b);const ang=Math.atan2(qb[1]-qa[1],qb[0]-qa[0]);ctx.save();ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(qb[0],qb[1]);ctx.lineTo(qb[0]-9*Math.cos(ang-0.4),qb[1]-9*Math.sin(ang-0.4));ctx.lineTo(qb[0]-9*Math.cos(ang+0.4),qb[1]-9*Math.sin(ang+0.4));ctx.closePath();ctx.fill();ctx.restore();}
 
 function draw3d(){
@@ -477,6 +484,13 @@ function draw3d(){
     for(let m=0;m<3;m++)line([L(P0),L(Qe[m])],css("--red"),2.2);
     const q=proj(L(P0));ctx.save();ctx.fillStyle=css("--red");ctx.beginPath();ctx.arc(q[0],q[1],4.5,0,7);ctx.fill();ctx.restore();
     label(L(P0),"apex",css("--red"),0,-14,"600 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");
+  }
+  // ---- drop of B below A's level plane ----
+  if(!st.plane&&$("cPlanes").checked){
+    const A0=pos[0],nA=nrm[0],B0=pos[1];
+    const top=vadd(B0,vmul(nA,dot(vsub(A0,B0),nA)));       // point on A's level plane straight above B (along A's vertical)
+    line([B0,top],css("--red"),2,[3,3]);line([A0,top],C.acc,1.4,[6,4],0.9);
+    label(B0,"↓ "+fDrop(dropAB().a)+" below A's level",css("--red"),0,26,"600 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace",true);
   }
   // ---- sight lines (straight chords) ----
   if($("cChord").checked){for(const [i,j] of [[0,1],[1,2],[2,0]])line([pos[i],pos[j]],C.or,1.6,[7,5],0.95);}
