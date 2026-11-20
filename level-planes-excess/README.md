@@ -38,6 +38,16 @@ side (1 km to 200,000 km) can be changed.
   why comparing plumb lines is first order in curvature (δ = s/R) while the
   excess is second order, the ways to compare plumb lines and what each
   assumes, and the zenith-camera error budget.
+- **The planes extended: a three-sided pyramid.** Each level plane is extended
+  until it meets the other two. Overhead, the three ridges run along the
+  medians, crossing each side's midpoint, and meet at an apex above the
+  triangle's centre; a vertical cut along A's median shows A's plane rising to
+  the apex and the B–C ridge falling away (heights exaggerated, with the
+  factor shown). Readouts give the apex and ridge heights above the surface,
+  the fold at each ridge (= δ), the face angles at the apex, and the angle
+  defect 360° − sum, which equals the excess E (ratio 1.000000 at every size;
+  the octant gives a cube corner, 270°, defect 90°). The same faces can be
+  drawn in the 3D view with "Extend planes to pyramid".
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional
@@ -66,6 +76,12 @@ side (1 km to 200,000 km) can be changed.
 - Corrected plumbs: each station's frame (axis, plane basis) is replaced by
   the centroid's vertical and horizontal, and sight lines are the chords projected onto that plane.
   Δ = angle between plumb line and axis; dip = asin(chord · axis / |chord|).
+- Pyramid: plane i is u_i · x = 1 on the unit sphere. The apex is at
+  1/cos ρ on the centre's vertical; the ridge over a side's midpoint is at
+  1/cos(s/2R) along the midpoint's vertical, with the midpoint at angular
+  distance μ from the centre, tan μ = tan ρ / 2. Heights use 1/cos x − 1 =
+  2 sin²(x/2) / cos x to avoid cancellation; face angles use atan2 of the
+  cross and dot products of the ridge directions.
 - Arithmetic is arranged to avoid cancellation, so excesses down to about
   10⁻¹⁴ rad are reliable.
 
