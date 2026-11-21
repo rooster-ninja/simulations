@@ -54,6 +54,12 @@ side (1 km to 200,000 km) can be changed.
   defect 360° − sum, which equals the excess E (ratio 1.000000 at every size;
   the octant gives a cube corner, 270°, defect 90°). The same faces can be
   drawn in the 3D view with "Extend planes to pyramid".
+  The three face pieces (station → ridge over each midpoint → apex) are
+  highlighted in both views, with their areas: each is a flat kite with
+  right angles at the ridges, area R² tan(s/2R) √(tan²ρ − tan²(s/2R)).
+  For 100 km on Earth each piece is 1,443.49 km²; the three total
+  4,330.48 km², 0.22 km² more than the sphere's triangle, while the flat
+  triangle through A, B, C is 0.22 km² less.
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional
