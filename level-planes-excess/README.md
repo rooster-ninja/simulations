@@ -158,4 +158,5 @@ Gauss's great triangle pages, which carry them.
 - H. Moritz, [Geodetic Reference System 1980](https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm):
   mean radius R₁ = 6 371 008.7714 m (Earth preset)
 
-- **Banner and brief.** An armoured goose with a plumb staff and an armoured frog with a levelling staff face each other across the title, which sits on a ribbon between them (original line drawings, inline SVG). An "In brief" panel under the header gives the conclusions in six lines.
+- **The assumed picture.** § I and its readouts are boxed and stamped "The assumed picture": the sphere, surface arcs and converging verticals that the words K and angular excess bring to mind. None of it is measured; later sections show what the instruments read.
+- **In brief.** A panel under the header gives the conclusions in six lines.

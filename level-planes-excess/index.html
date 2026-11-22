@@ -92,18 +92,10 @@ details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-
 details.src a{color:var(--bar-ink)}
 
 
-/* ---- banner figures and brief ---- */
-.banner{position:relative;z-index:0;display:grid;grid-template-columns:minmax(90px,170px) 1fr minmax(90px,170px);align-items:end;gap:6px;margin-top:14px}
-.banner svg{stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.banner svg.an{width:100%;height:auto;display:block}
-.banner svg .pf{fill:var(--card)}
-.banner svg .hd{stroke-width:1;stroke-dasharray:5 3}
-.banner svg .dk{fill:var(--ink);stroke:none}
-.ribbon{position:relative;border:1.5px solid var(--ink);background:var(--card);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--rule);padding:14px 18px 16px;margin:0 30px 26px;min-width:0}
-.ribbon h1{margin:0;font-size:clamp(27px,4.4vw,50px);line-height:1.12}
-.ribbon .tail{position:absolute;top:13px;width:34px;height:100%;z-index:-1;stroke-width:1.5}
-.ribbon .tail.l{left:-31px}.ribbon .tail.r{right:-31px;transform:scaleX(-1)}
-@media(max-width:640px){.banner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 26px}.banner svg.an{width:122px;justify-self:start}.banner svg.an:first-child{justify-self:end}.banner .ribbon{grid-column:1/-1;order:3;margin-top:6px}}
+/* ---- brief ---- */
+.panel.assumed,.readout.assumed{border:2px solid var(--red);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--red);position:relative}
+.assumed .stamp{display:block;margin:0 auto 12px;width:max-content;max-width:100%;font-family:var(--f-sc);letter-spacing:.14em;font-size:14px;color:var(--red);border:1.5px solid var(--red);padding:3px 12px;transform:rotate(-1.2deg)}
+.assumed .anote{font-style:italic;text-align:center;margin:12px auto 0;max-width:68ch;color:var(--red)}
 .brief{margin-top:18px}
 .brief ul{margin:10px 0 0;padding-left:20px}
 .brief li{margin:5px 0}
@@ -162,55 +154,7 @@ ol.steps li{text-align:justify}
   <header>
     <p class="back"><a href="../">← All simulations</a></p>
     <p class="eyebrow">Of level planes and plumb lines</p>
-    <div class="banner">
-      <svg class="an" viewBox="0 0 170 210" role="img" aria-label="Engraving of a goose in a kettle hat and breastplate holding a plumb staff">
-        <path class="hd" d="M30 200 L160 200"/>
-        <path d="M150 62 L150 200"/><path d="M146 62 L150 54 L154 62"/><path d="M150 66 L164 66"/><path class="hd" d="M164 66 L164 96"/><path class="pf" d="M164 96 L160 104 L164 112 L168 104 Z"/>
-        <path class="pf" d="M32 112 L10 100 L22 116 L8 121 L26 128 L14 139 L38 138 Z"/>
-        <path class="pf" d="M30 118 C30 96 58 88 84 92 C108 96 118 116 110 136 C102 154 70 160 50 152 C38 147 30 134 30 118 Z"/>
-        <path class="pf" d="M88 96 C92 76 96 60 98 46 C99 34 108 26 118 28 C126 30 128 38 126 46 C120 46 116 48 114 54 C112 68 114 84 114 100 Z"/>
-        <path class="pf" d="M126 33 L146 40 L126 46 Z"/><path d="M127 40 L139 40"/>
-        <circle class="dk" cx="117" cy="36" r="1.9"/>
-        <path class="pf" d="M102 26 C102 9 127 8 129 24 Z"/><path class="pf" d="M93 29 C104 21 127 19 137 26 C127 30 104 32 93 29 Z"/>
-        <circle class="dk" cx="108" cy="19" r="1"/><circle class="dk" cx="116" cy="16" r="1"/><circle class="dk" cx="124" cy="19" r="1"/>
-        <path class="hd" d="M102 52 C104 62 104 72 104 82 M108 56 L109 70"/>
-        <path class="pf" d="M84 94 C104 96 119 112 112 134 C108 145 100 151 92 153 C97 134 95 112 84 94 Z"/>
-        <path class="hd" d="M100 104 C106 116 106 132 100 146"/><path d="M95 140 L110 138 M94 146 L106 145"/>
-        <path class="pf" d="M85 90 C94 84 108 87 116 96 L114 105 C105 98 94 96 85 100 Z"/>
-        <path class="pf" d="M110 114 C122 110 134 110 146 113 L146 123 C134 121 122 123 112 127 Z"/><path class="pf" d="M144 110 L156 110 L156 126 L144 126 Z"/><path d="M148 110 L148 126 M152 110 L152 126"/>
-        <path class="pf" d="M42 112 C58 99 82 104 92 119 C80 133 58 135 42 127 C49 122 49 117 42 112 Z"/>
-        <path class="hd" d="M52 113 C62 110 74 112 82 119 M52 119 C62 117 72 119 80 124 M54 125 C62 124 70 126 76 129"/>
-        <circle class="dk" cx="46" cy="140" r=".9"/><circle class="dk" cx="56" cy="146" r=".9"/><circle class="dk" cx="70" cy="149" r=".9"/><circle class="dk" cx="40" cy="130" r=".9"/>
-        <path d="M62 155 L60 186 M68 156 L66 186 M84 155 L86 186 M90 153 L92 186"/>
-        <path class="pf" d="M60 186 L46 200 L58 196 L66 201 L72 196 L82 199 L66 186 Z"/><path class="pf" d="M86 186 L74 200 L86 196 L94 201 L100 196 L110 199 L92 186 Z"/>
-      </svg>
-      <div class="ribbon"><svg class="tail l" viewBox="0 0 34 100" preserveAspectRatio="none" aria-hidden="true"><path class="pf" vector-effect="non-scaling-stroke" d="M34 0 L0 0 L12 50 L0 100 L34 100 Z"/></svg><svg class="tail r" viewBox="0 0 34 100" preserveAspectRatio="none" aria-hidden="true"><path class="pf" vector-effect="non-scaling-stroke" d="M34 0 L0 0 L12 50 L0 100 L34 100 Z"/></svg>
-        <h1>Three level planes and the angle excess</h1>
-      </div>
-      <svg class="an" viewBox="0 0 170 210" role="img" aria-label="Engraving of a frog in a plumed helm and breastplate holding a levelling staff">
-        <path class="hd" d="M10 200 L150 200"/>
-        <path class="pf" d="M14 34 L24 34 L24 200 L14 200 Z"/><path d="M14 50 L19 50 M14 66 L24 66 M14 82 L19 82 M14 98 L24 98 M14 114 L19 114 M14 130 L24 130 M14 146 L19 146 M14 162 L24 162 M14 178 L19 178"/>
-        <circle class="pf" cx="19" cy="24" r="10"/><path d="M9 24 L29 24 M19 14 L19 34"/>
-        <path class="pf" d="M92 22 C100 2 124 4 132 22 C122 14 110 16 100 26 Z"/><path class="hd" d="M100 16 C108 10 118 10 126 16"/>
-        <path class="pf" d="M40 64 C36 52 46 42 58 40 C70 34 90 36 98 46 C106 56 104 70 96 76 C84 84 60 84 50 78 C44 74 41 70 40 64 Z"/>
-        <path d="M40 64 C56 71 78 71 94 62"/><circle class="dk" cx="45" cy="56" r="1.1"/>
-        <path class="hd" d="M52 76 C62 80 76 80 86 76"/>
-        <circle class="pf" cx="64" cy="42" r="10"/><circle class="dk" cx="62" cy="43" r="4.4"/>
-        <path class="pf" d="M72 34 C78 16 108 20 108 52 L99 55 C97 42 88 34 72 34 Z"/><path class="hd" d="M82 28 C94 30 102 40 104 50"/><circle class="dk" cx="101" cy="52" r="1"/>
-        <path class="pf" d="M60 82 C48 94 46 116 54 134 L106 134 C114 116 112 94 98 78 Z"/>
-        <path class="hd" d="M78 84 L78 132"/><path d="M72 100 L84 100 M78 94 L78 110"/>
-        <path class="hd" d="M58 122 L102 122 M56 128 L104 128"/>
-        <path class="pf" d="M52 134 L108 134 L108 143 L52 143 Z"/><path class="pf" d="M74 132 L84 132 L84 145 L74 145 Z"/>
-        <path class="pf" d="M54 143 L44 166 L116 166 L106 143 Z"/>
-        <path class="hd" d="M50 151 L110 151 M47 159 L113 159 M66 143 L62 166 M80 143 L80 166 M94 143 L98 166"/>
-        <path class="pf" d="M84 100 C70 106 52 108 36 103 L34 113 C52 120 74 118 90 110 Z"/><path class="hd" d="M50 106 L48 115 M60 108 L59 117"/>
-        <path class="pf" d="M26 98 C34 96 40 102 38 110 C36 118 26 118 22 114 C18 108 20 100 26 98 Z"/><path d="M24 103 L34 103 M23 108 L35 108"/>
-        <path class="pf" d="M78 86 C80 73 100 70 107 82 C110 93 101 101 91 101 C83 99 78 93 78 86 Z"/><path class="hd" d="M82 82 C90 78 98 80 104 86 M82 90 C90 86 98 88 104 94"/>
-        <path class="pf" d="M58 166 C42 172 38 188 50 196 L70 196 C64 186 70 174 78 166 Z"/><path class="pf" d="M86 166 C98 173 102 186 94 196 L112 196 C120 184 116 172 106 166 Z"/>
-        <path class="pf" d="M52 194 L28 198 L40 200 L30 205 L46 204 L42 208 L72 204 L70 195 Z"/><path class="pf" d="M94 195 L76 201 L86 202 L80 207 L114 205 L112 195 Z"/>
-        <circle class="dk" cx="52" cy="180" r=".9"/><circle class="dk" cx="58" cy="188" r=".9"/><circle class="dk" cx="104" cy="178" r=".9"/><circle class="dk" cx="108" cy="188" r=".9"/><circle class="dk" cx="88" cy="68" r=".9"/><circle class="dk" cx="94" cy="60" r=".9"/>
-      </svg>
-    </div>
+    <h1>Three level planes and the angle excess</h1>
   </header>
 
   <section class="panel prose brief">
@@ -262,15 +206,17 @@ ol.steps li{text-align:justify}
     </div>
   </section>
 
-  <section class="panel">
+  <section class="panel assumed">
+    <span class="stamp">The assumed picture</span>
     <div class="ptitle"><span class="sec">§ I.</span> The triangle and its three level planes</div>
+    <p class="anote">This is what is assumed on hearing "K" and "angular excess": a sphere, arcs along its surface, and verticals meeting at its centre. None of it is measured. The sections after this one show what the instruments actually read.</p>
     <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ) · drop of B below A's level</span></div>
     <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
     <p class="cap" id="cap1"></p>
     <div class="math">measured excess&nbsp; E = α + β + γ − 180°&nbsp;&nbsp;&nbsp;&nbsp; measured curvature&nbsp; K = E / A</div>
   </section>
 
-  <section class="readout" id="res" aria-live="polite"></section>
+  <section class="readout assumed" id="res" aria-live="polite"></section>
 
   <section class="panel">
     <div class="ptitle"><span class="sec">§ II.</span> What each theodolite reads</div>
