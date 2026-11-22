@@ -12,6 +12,12 @@ side (1 km to 200,000 km) can be changed.
 - **3D view.** The triangle, the three level planes, the verticals (which
   meet at the centre, or never meet on the plane), the straight sight lines
   and the angle measured in each plane.
+- **Drop between stations.** Readouts for how far B sits below A's level
+  plane over the side s (2R sin²(s/2R) along A's vertical, ≈ s²/2R: 785 m
+  over 100 km on Earth), how far A's plane is above B measured up B's own
+  plumb line (R(sec(s/R) − 1)), and how far the straight sight line A–B runs
+  below the surface at the midpoint (≈ s²/8R). The drop is also marked at B
+  in the 3D view and stated in its caption.
 - **Theodolite dials.** Each station's level plane seen along its own vertical,
   with the two projected sight lines and the angle read.
 - **Overhead, zoomed.** Looking straight down the planar axis: the triangle
@@ -38,6 +44,27 @@ side (1 km to 200,000 km) can be changed.
   why comparing plumb lines is first order in curvature (δ = s/R) while the
   excess is second order, the ways to compare plumb lines and what each
   assumes, and the zenith-camera error budget.
+- **The planes extended: a three-sided pyramid.** Each level plane is extended
+  until it meets the other two. Overhead, the three ridges run along the
+  medians, crossing each side's midpoint, and meet at an apex above the
+  triangle's centre; a vertical cut along A's median shows A's plane rising to
+  the apex and the B–C ridge falling away (heights exaggerated, with the
+  factor shown). Readouts give the apex and ridge heights above the surface,
+  the fold at each ridge (= δ), the face angles at the apex, and the angle
+  defect 360° − sum, which equals the excess E (ratio 1.000000 at every size;
+  the octant gives a cube corner, 270°, defect 90°). The same faces can be
+  drawn in the 3D view with "Extend planes to pyramid".
+  The three face pieces (station → ridge over each midpoint → apex) are
+  highlighted in both views, with their areas: each is a flat kite with
+  right angles at the ridges, area R² tan(s/2R) √(tan²ρ − tan²(s/2R)).
+  For 100 km on Earth each piece is 1,443.49 km²; the three total
+  4,330.48 km², 0.22 km² more than the sphere's triangle, while the flat
+  triangle through A, B, C is 0.22 km² less.
+  A rotatable, zoomable 3D view of the pyramid alone sits under the
+  diagrams: the three flat planes, the face pieces, ridges, apex, straight
+  sight lines, the plane through A, B, C as a reference grid, and each
+  station's vertical square to its face (optionally extended downward). No
+  sphere is drawn. Heights follow the same exaggeration setting.
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional
@@ -53,6 +80,16 @@ side (1 km to 200,000 km) can be changed.
 - **Excess against area.** Log-log plot: straight lines of slope 1 whose height
   is K. A table runs the same side length on spheres from 1,000 km to ∞.
 
+- **Where is the sphere?** A closing part of the pyramid section: a table of
+  every ingredient (sight lines, level planes, angles, ridges, apex, face
+  areas) marked as plain Euclidean, with the sphere entering only in the
+  direction given to each vertical, and the straight-line test that would
+  make it a finding (do the plumb lines of many stations meet in one point?).
+
+Styling: the page is set as an 1800s treatise (Old Standard TT and IM Fell
+English, ruled plates, § numerals, figure numbers) rather than the repo's
+usual Surface Lab look, at the author's request.
+
 ## How it works
 
 - Stations sit on a circle of angular radius ρ, sin ρ = (2/√3) sin(s/2R).
@@ -66,6 +103,12 @@ side (1 km to 200,000 km) can be changed.
 - Corrected plumbs: each station's frame (axis, plane basis) is replaced by
   the centroid's vertical and horizontal, and sight lines are the chords projected onto that plane.
   Δ = angle between plumb line and axis; dip = asin(chord · axis / |chord|).
+- Pyramid: plane i is u_i · x = 1 on the unit sphere. The apex is at
+  1/cos ρ on the centre's vertical; the ridge over a side's midpoint is at
+  1/cos(s/2R) along the midpoint's vertical, with the midpoint at angular
+  distance μ from the centre, tan μ = tan ρ / 2. Heights use 1/cos x − 1 =
+  2 sin²(x/2) / cos x to avoid cancellation; face angles use atan2 of the
+  cross and dot products of the ridge directions.
 - Arithmetic is arranged to avoid cancellation, so excesses down to about
   10⁻¹⁴ rad are reliable.
 
