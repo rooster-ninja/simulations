@@ -89,7 +89,9 @@ side (1 km to 200,000 km) can be changed.
 - **Conclusion.** Every reading is Euclidean; the excess comes from the
   directions given to the verticals; it fixes only a total; K = E / A divides
   by an unmeasured area and adds nothing; the convergence of the verticals is
-  inferred by triangulation, not measured. The closure cannot be the evidence
+  inferred by triangulation, not measured. The survey excess is not
+  intrinsic in the Theorema Egregium sense: it is read through gravity's
+  verticals and straight sight lines, not along the surface. The closure cannot be the evidence
   that the verticals converge.
 - **Appendix A · Measuring the verticals directly.** Shared star field,
   ranged targets, reciprocal vertical angles and a carried gyro direction,
