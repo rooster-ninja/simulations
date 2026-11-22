@@ -80,6 +80,16 @@ side (1 km to 200,000 km) can be changed.
 - **Excess against area.** Log-log plot: straight lines of slope 1 whose height
   is K. A table runs the same side length on spheres from 1,000 km to ∞.
 
+- **Where is the sphere?** A closing part of the pyramid section: a table of
+  every ingredient (sight lines, level planes, angles, ridges, apex, face
+  areas) marked as plain Euclidean, with the sphere entering only in the
+  direction given to each vertical, and the straight-line test that would
+  make it a finding (do the plumb lines of many stations meet in one point?).
+
+Styling: the page is set as an 1800s treatise (Old Standard TT and IM Fell
+English, ruled plates, § numerals, figure numbers) rather than the repo's
+usual Surface Lab look, at the author's request.
+
 ## How it works
 
 - Stations sit on a circle of angular radius ρ, sin ρ = (2/√3) sin(s/2R).

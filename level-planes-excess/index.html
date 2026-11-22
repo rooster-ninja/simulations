@@ -6,26 +6,26 @@
 <title>Level Planes and the Angle Excess</title>
 <meta property="og:title" content="Level Planes and the Angle Excess">
 <meta property="og:description" content="A perfect, error-free triangle whose angles are read in each station's own horizontal plane. Change the sphere's radius all the way to infinity (a plane) and the triangle's size, and watch the angle excess appear from the convergence of the verticals.">
-<meta name="theme-color" content="#f3efe4">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<meta name="theme-color" content="#efe5cc">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap">
 <style>
 :root{
-  --bg:#f3efe4; --card:#f8f5ec; --plate:#ffffff; --ink:#1a1813; --muted:#6b6658; --rule:#ddd5c2;
-  --accent:#4a8fb0; --orange:#e0913a; --red:#c8543a; --purple:#7a56b8; --station:#3c3489;
-  --e1:#cfe9de; --e2:#8fcfb4; --e3:#3fa77f; --e4:#1d6e53; --estroke:#1d6e53;
-  --bar:#16140f; --bar-ink:#f3efe4;
-  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif; --f-body:"Archivo",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --bg:#efe5cc; --card:#f3ead4; --plate:#f8f1de; --ink:#2a2017; --muted:#6f5f49; --rule:#b8a783;
+  --accent:#2c5a78; --orange:#a9701c; --red:#a3371f; --purple:#5a4879; --station:#33295f;
+  --e1:#d9dfc2; --e2:#a8bf98; --e3:#5c8c66; --e4:#2c5741; --estroke:#2c5741;
+  --bar:#2a2017; --bar-ink:#efe5cc;
+  --f-display:"Old Standard TT","Century Schoolbook",Georgia,"Times New Roman",serif; --f-body:"Old Standard TT","Century Schoolbook",Georgia,serif; --f-mono:"Old Standard TT","Century Schoolbook",Georgia,serif; --f-title:"IM Fell English","Old Standard TT",Georgia,serif; --f-sc:"IM Fell English SC","Old Standard TT",Georgia,serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
-  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2;
-  --e1:#2c4a3f; --e2:#2f6e57; --e3:#3a9a76; --e4:#6fd0a6; --estroke:#6fd0a6;
-  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}}
+  --bg:#1b1711; --card:#221d15; --plate:#28221a; --ink:#eadfc6; --muted:#a89a80; --rule:#4a4030;
+  --accent:#8db4cc; --orange:#d9a04e; --red:#d9735a; --purple:#a892cf; --station:#c3b8ea;
+  --e1:#2b3a2c; --e2:#3d5c44; --e3:#5c8c66; --e4:#9cc7a3; --estroke:#9cc7a3;
+  --bar:#0f0d09; --bar-ink:#eadfc6; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#17150f; --card:#1f1c15; --plate:#25221a; --ink:#efe9da; --muted:#a59e8b; --rule:#3a352a;
-  --accent:#6fb3d3; --orange:#f0a656; --red:#e47a5f; --purple:#a888e6; --station:#c7bff2;
-  --e1:#2c4a3f; --e2:#2f6e57; --e3:#3a9a76; --e4:#6fd0a6; --estroke:#6fd0a6;
-  --bar:#0d0c09; --bar-ink:#efe9da; color-scheme:dark}
+  --bg:#1b1711; --card:#221d15; --plate:#28221a; --ink:#eadfc6; --muted:#a89a80; --rule:#4a4030;
+  --accent:#8db4cc; --orange:#d9a04e; --red:#d9735a; --purple:#a892cf; --station:#c3b8ea;
+  --e1:#2b3a2c; --e2:#3d5c44; --e3:#5c8c66; --e4:#9cc7a3; --estroke:#9cc7a3;
+  --bar:#0f0d09; --bar-ink:#eadfc6; color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
@@ -90,6 +90,54 @@ details.mx table.mat td{border:none;padding:1px 10px;font-family:var(--f-mono);f
 details.mx table.mat{width:auto;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);margin:4px 0 0 14px}
 details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
 details.src a{color:var(--bar-ink)}
+
+/* ---- 1800s treatise styling ---- */
+body{font-size:17.5px;line-height:1.5;background-image:radial-gradient(ellipse at 50% 30%,transparent 55%,rgba(110,80,30,.10))}
+header{text-align:center;border-bottom:4px double var(--ink);padding-bottom:20px}
+header::after{content:"❦";display:block;font-size:22px;color:var(--muted);margin-top:10px}
+.back{text-align:left;font-style:italic;font-size:15px}
+.eyebrow{font-family:var(--f-sc);font-size:17px;letter-spacing:.22em;text-transform:none;color:var(--ink)}
+h1{font-family:var(--f-title);font-weight:400;font-size:clamp(34px,5.6vw,60px);letter-spacing:0;max-width:none;margin:12px auto 0}
+.sub{margin:16px auto 0;font-style:italic;font-size:18.5px;max-width:64ch;text-align:justify;hyphens:auto}
+.panel,.readout{border:1px solid var(--ink);border-radius:0;box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--rule);padding:22px 22px 20px}
+.ptitle{font-family:var(--f-sc);font-size:19px;letter-spacing:.08em;text-transform:none;text-align:center;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.ptitle .sec{font-family:var(--f-title);font-style:italic;margin-right:6px}
+.svgbox,.cvbox{border:1px solid var(--ink);border-radius:0;box-shadow:inset 0 0 0 4px var(--plate),inset 0 0 0 5px var(--rule)}
+.wrap{counter-reset:fig}
+.svgbox,.cvbox{counter-increment:fig}
+.svgbox::after{content:"Fig. " counter(fig) ".";display:block;text-align:center;font-style:italic;font-size:14px;color:var(--muted);padding:0 0 10px;position:sticky;left:0}
+.cvbox::after{content:"Fig. " counter(fig) ".";position:absolute;left:14px;bottom:9px;font-style:italic;font-size:14px;color:var(--muted);pointer-events:none}
+.hint{font-style:italic;font-size:13px;right:14px;bottom:9px}
+.cap{font-size:17px;text-align:justify;hyphens:auto}
+.prose p{text-align:justify;hyphens:auto}
+.math{font-size:20px}
+.ctl label,.lab,.kv .k{font-family:var(--f-sc);text-transform:none;letter-spacing:.1em;font-size:14.5px}
+.ctl .val,.kv .v{font-family:var(--f-display)}
+.kv .s,.legend,.chk,.note{font-family:var(--f-body);font-style:italic;font-size:14.5px}
+.chk{font-style:normal;font-size:15.5px}
+button,select{font:400 15px var(--f-body);letter-spacing:.02em;border:1px solid var(--ink);border-radius:0;background:var(--plate);padding:6px 12px}
+button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=range],input[type=checkbox]{accent-color:var(--ink)}
+th{font-family:var(--f-sc);font-variant:normal;font-weight:400;border-bottom:3px double var(--ink);border-top:1px solid var(--ink)}
+td{border-bottom:1px solid var(--rule)}
+td.n,th.n{font-family:var(--f-body)}
+tbody tr:last-child td{border-bottom:1px solid var(--ink)}
+svg text{font-family:var(--f-body)}
+details.mx{border:1px solid var(--ink);border-radius:0}
+details.mx summary{font-family:var(--f-sc);font-size:16px;color:var(--ink);letter-spacing:.06em;font-weight:400}
+details.mx .stp b{font-family:var(--f-sc);text-transform:none;font-size:15.5px;letter-spacing:.06em;color:var(--ink);font-weight:400}
+details.mx .num{font-family:var(--f-body);font-size:15px}
+details.mx table.mat td{font-family:var(--f-body);font-size:14.5px}
+details.src{border-radius:0;font-family:var(--f-sc);font-size:16px;border:1px solid var(--ink);box-shadow:inset 0 0 0 3px var(--bar),inset 0 0 0 4px var(--muted)}
+details.src summary{font-weight:400;letter-spacing:.08em}
+details.src ul{font-size:15.5px}
+.prose a,.cap a,.back a{color:var(--accent)}
+@media (max-width:560px){.kv .v{font-size:17px}.panel,.readout{padding:16px 14px}}
+.ptitle.sub2{margin-top:14px;border-top:1px solid var(--rule);padding-top:14px;font-style:italic;font-family:var(--f-title);font-size:22px;letter-spacing:.02em}
+.cap,.prose p,ol.steps,details.mx .cap{max-width:96ch;margin-left:auto;margin-right:auto}
+.prose p{margin-bottom:10px}
+.panel .readout{box-shadow:none;border:none;padding:8px 0 0}
+ol.steps li{text-align:justify}
 </style>
 </head>
 <body>
@@ -139,7 +187,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">1 · The triangle and its three level planes</div>
+    <div class="ptitle"><span class="sec">§ I.</span> The triangle and its three level planes</div>
     <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ) · drop of B below A's level</span></div>
     <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
     <p class="cap" id="cap1"></p>
@@ -149,13 +197,13 @@ details.src a{color:var(--bar-ink)}
   <section class="readout" id="res" aria-live="polite"></section>
 
   <section class="panel">
-    <div class="ptitle">2 · What each theodolite reads</div>
+    <div class="ptitle"><span class="sec">§ II.</span> What each theodolite reads</div>
     <div class="svgbox"><svg id="dials" viewBox="0 0 680 275" role="img" aria-label="Horizontal circle of the theodolite at each station"></svg></div>
     <p class="cap">Each dial is the theodolite's horizontal circle, seen along its vertical axis. The two sight lines are projected onto the circle's plane, which is all a theodolite can do, and the angle between them is read off. Nothing else goes in. Normally the axis is the station's own plumb line; with the plumbs corrected it is tipped off plumb by the amount shown.</p>
   </section>
 
   <section class="panel">
-    <div class="ptitle">3 · Overhead, zoomed: each plumb line against the planar axis</div>
+    <div class="ptitle"><span class="sec">§ III.</span> Overhead, zoomed: each plumb line against the planar axis</div>
     <div class="row" id="errctl">
       <span class="lab">Error circles, 1<span style="text-transform:none">σ</span></span>
       <label class="chk"><input type="checkbox" data-err="cam" checked>Zenith camera 0.1″</label>
@@ -176,7 +224,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">4 · Side view along one side: the verticals converge</div>
+    <div class="ptitle"><span class="sec">§ IV.</span> Side view along one side: the verticals converge</div>
     <div class="row"><label class="chk"><input type="checkbox" id="cExag" checked>Exaggerate the angle so it can be seen</label><span class="lab" id="exagtag"></span></div>
     <div class="svgbox"><svg id="side" viewBox="0 0 680 390" role="img" aria-label="Cross-section through two stations showing their verticals and horizontal planes"></svg></div>
     <p class="cap">The angle between the two stations' horizontal planes equals the angle between their verticals. Each sight line drops below its own station's horizontal by half that angle. On the plane (R = ∞) the verticals are parallel, both horizontals are the same plane, and the dip is zero.</p>
@@ -184,7 +232,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">5 · The three planes extended: a three-sided pyramid</div>
+    <div class="ptitle"><span class="sec">§ V.</span> The three planes extended: a three-sided pyramid</div>
     <div class="row"><label class="chk"><input type="checkbox" id="cPyrExag" checked>Exaggerate heights so they can be seen</label><span class="lab" id="pyrtag"></span></div>
     <div class="svgbox"><svg id="pyr" viewBox="0 0 680 330" role="img" aria-label="Overhead and profile views of the three level planes extended until they meet"></svg></div>
     <div class="cvbox"><canvas id="cv2" style="height:440px" aria-label="Rotatable 3D view of the pyramid built from the three flat level planes"></canvas><div class="hint">drag to turn · scroll to zoom · double-click to reset</div></div>
@@ -202,10 +250,35 @@ details.src a{color:var(--bar-ink)}
     <p class="cap">The highlighted pieces are the triangle as the three level planes see it: each runs from its station along the two sight lines to the ridges over the side midpoints, and up the ridges to the apex. Each is a flat kite with right angles where it meets the ridges, so its area is exact:</p>
     <div class="math">piece = R² · tan(s/2R) · √( tan²ρ − tan²(s/2R) ),&nbsp;&nbsp;&nbsp; sin ρ = (2/√3) sin(s/2R)</div>
     <p class="cap">Three pieces always come out a little larger than the sphere's triangle, and the flat triangle through A, B and C a little smaller. On the plane all three are equal.</p>
+    <div class="ptitle sub2">Where is the sphere?</div>
+    <p class="cap">Nowhere in the measurement. Every quantity a theodolite touches on this page is a straight line, a flat plane, or an angle between two lines: plain Euclidean geometry in three dimensions. The pyramid gives the same readings with nothing round in it.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Ingredient</th><th>What it is</th><th>Sphere needed?</th></tr></thead>
+      <tbody>
+        <tr><td>Sight lines</td><td>Straight lines between stations (chords)</td><td>No</td></tr>
+        <tr><td>Level planes</td><td>Flat planes, each square to one vertical</td><td>No</td></tr>
+        <tr><td>Measured angles and the excess</td><td>Angles between lines projected onto a plane; their sum less 180°</td><td>No</td></tr>
+        <tr><td>Ridges, apex, angle defect</td><td>Where flat planes cross</td><td>No</td></tr>
+        <tr><td>Face pieces and their areas</td><td>Flat four-sided figures</td><td>No</td></tr>
+        <tr><td>Direction of each vertical</td><td>Set by hand to point away from one common centre</td><td><b>Yes: the only place it enters</b></td></tr>
+        <tr><td>Side s "along the surface", tiled area A, K = E / A</td><td>Labels and a divisor taken from the assumed surface</td><td>Yes, but no instrument reads them</td></tr>
+      </tbody>
+    </table></div>
+    <p class="cap" id="sphwhere"></p>
+    <p class="cap"><b>The assumptions put in by hand.</b> None of these is measured by the triangle; each is supplied before the first angle is read.</p>
+    <ol class="steps">
+      <li><b>A common centre.</b> The plumb lines of A, B and C, produced downward, are made to meet in a single point.</li>
+      <li><b>Equal distance.</b> Every station is placed at the same distance R from that point.</li>
+      <li><b>The same everywhere.</b> The convergence is taken to be equal in every direction and at every place, so that any other station would point at the same centre.</li>
+      <li><b>The ground between.</b> The surface between stations is taken to follow the same rule, though no instrument stands there. The pyramid shows it need not.</li>
+      <li><b>The vertical is the plumb line.</b> Each instrument's axis is taken to be that line exactly, with nothing local pulling it aside.</li>
+    </ol>
+    <p class="cap">Grant the first alone, for these three stations only, and the excess follows. The remaining four are what the word sphere adds, and a single triangle is silent on all of them.</p>
+    <p class="cap">So the sphere is an assumption about the verticals, not a finding. What would make it a finding is itself a matter of straight lines: produce the plumb lines of many stations downward and see whether they all pass through one point, at one distance from every station. Three lines in space generally miss one another, so their meeting is a real test; three stations are too few to tell a sphere from this pyramid, and many stations are needed. Arcs and spherical trigonometry are a convenience for working on a surface already assumed, never the evidence for it.</p>
   </section>
 
   <section class="panel">
-    <div class="ptitle">6 · Excess against area, for any radius</div>
+    <div class="ptitle"><span class="sec">§ VI.</span> Excess against area, for any radius</div>
     <div class="svgbox"><svg id="chart" viewBox="0 0 680 340" role="img" aria-label="Log-log plot of measured angle excess against measured area"></svg></div>
     <p class="cap">Every point is measured the same way as the readouts: angles from the dials, area from tiling. On log axes each sphere gives a straight line of slope 1, meaning the excess is proportional to area, and the line's height is K. Lines move down as R grows. At R = ∞ the excess is zero for every area, and zero has no place on a log axis.</p>
     <div class="tablebox"><table>
@@ -215,7 +288,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel prose">
-    <div class="ptitle">7 · What the excess is measuring</div>
+    <div class="ptitle"><span class="sec">§ VII.</span> What the excess is measuring</div>
     <p><b>The surface between stations never enters.</b> A theodolite only knows two things: the direction of its own vertical, which sets its horizontal plane, and the directions of the sight lines to the other stations. Draw the same three stations with parallel verticals and the angles add up to exactly 180°, whatever the ground in between is doing.</p>
     <p><b>The excess comes from the verticals not being parallel.</b> Tilt the three planes against each other and the projected angles no longer close to 180°. Gauss showed the excess equals the area that the triangle's normals sweep out on a unit sphere (his "total curvature", <i>Disquisitiones generales</i>, Art. 20). For a sphere of radius R that area is A / R².</p>
     <p><b>Correcting the plumbs to one horizontal plane.</b> The toggle tips every station's zenith axis toward the triangle's centre by Δ, the station's angular distance from the centre (Δ = d / R for a distance d from the centre; 32.4″ per km on Earth). Nothing is subtracted from any reading: each instrument is turned in 3D, so its horizontal circle turns in a different plane and the projections change. All three horizontals become one horizontal plane through A, B and C, every sight line runs along it with zero dip, and the sum is exactly 180° on any sphere.</p>
@@ -224,7 +297,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel prose">
-    <div class="ptitle">8 · Methods</div>
+    <div class="ptitle"><span class="sec">§ VIII.</span> Methods</div>
     <ol class="steps">
       <li><b>Stations.</b> An equilateral triangle with sides s measured along the surface. On a sphere the three stations sit on a circle of angular radius ρ around the centroid:</li>
     </ol>
@@ -243,7 +316,7 @@ details.src a{color:var(--bar-ink)}
   </section>
 
   <section class="panel">
-    <div class="ptitle">9 · Errors in this simulation</div>
+    <div class="ptitle"><span class="sec">§ IX.</span> Errors in this simulation</div>
     <p class="cap">None, by design. Each result is exact to the arithmetic, so no σ is attached. The table lists what a real survey would add. The <a href="../triangulation-chain/">triangulation chain</a> and <a href="../gauss-great-triangle/">Gauss's great triangle</a> pages carry these errors.</p>
     <div class="tablebox"><table>
       <thead><tr><th>Effect</th><th class="n">Here</th><th>In a real survey</th></tr></thead>
@@ -266,7 +339,7 @@ details.src a{color:var(--bar-ink)}
       <li>NOAA, <a href="https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf">comparison of four astrogeodetic systems</a>: portable systems reach 0.15–0.20″ for 45-minute occupations. Supports the zenith-camera circle as a best case.</li>
       <li>Leica Geosystems, <a href="https://dr.leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica_flexline_ts10_lr.ashx">FlexLine TS10 datasheet</a>: compensator setting accuracy 0.5″ for the 1″ instrument. Used for the 0.5″ compensator circle.</li>
       <li>NOAA NGS, <a href="https://webarchive.library.unt.edu/eot2008/20090116065704/http://www.ngs.noaa.gov/GEOID/DMEX97">DMEX97 deflection model</a>: deflections are <q>typically a few arc seconds</q> but can reach an arcminute. Used for the 60″ circle; the 10″ circle is the Brocken value already sourced on the Gauss's great triangle page.</li>
-      <li>Real-survey error values in section 9 are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
+      <li>Real-survey error values in § IX are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
     </ul>
   </details>
 </div>
@@ -433,7 +506,7 @@ function setupProj(ext,zc){
 }
 function line(pts,color,w,dash,alpha){ctx.save();ctx.globalAlpha=alpha??1;ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();ctx.restore();}
 function poly(pts,fill,alpha,stroke,w){ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=fill;ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();ctx.fill();if(stroke){ctx.globalAlpha=1;ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}ctx.restore();}
-function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p);ctx.save();if(halo){ctx.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
+function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p);ctx.save();if(halo){ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
 function arrow(a,b,color,w){line([a,b],color,w);const qa=proj(a),qb=proj(b);const ang=Math.atan2(qb[1]-qa[1],qb[0]-qa[0]);ctx.save();ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(qb[0],qb[1]);ctx.lineTo(qb[0]-9*Math.cos(ang-0.4),qb[1]-9*Math.sin(ang-0.4));ctx.lineTo(qb[0]-9*Math.cos(ang+0.4),qb[1]-9*Math.sin(ang+0.4));ctx.closePath();ctx.fill();ctx.restore();}
 
 function draw3d(){
@@ -480,10 +553,10 @@ function draw3d(){
       const down=toC?vmul(nrm[i],-k):vmul(nrm[i],-0.5);
       line([pos[i],vadd(pos[i],down)],C.st,1.3,[5,4],0.85);
       arrow(pos[i],vadd(pos[i],vmul(nrm[i],0.42)),C.st,2);
-      if(aligned&&M.tilt[i]>1e-12){arrow(pos[i],vadd(pos[i],vmul(FR[i].n,0.5)),css("--red"),2.4);label(vadd(pos[i],vmul(FR[i].n,0.56)),"Δ "+fExc(M.tilt[i]),css("--red"),0,-8,"600 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
+      if(aligned&&M.tilt[i]>1e-12){arrow(pos[i],vadd(pos[i],vmul(FR[i].n,0.5)),css("--red"),2.4);label(vadd(pos[i],vmul(FR[i].n,0.56)),"Δ "+fExc(M.tilt[i]),css("--red"),0,-8,"600 12px 'Old Standard TT', Georgia, serif");}
     }
-    if(toC){const c=[0,0,-k];const q=proj(c);ctx.save();ctx.fillStyle=C.st;ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill();ctx.restore();label(c,"centre",C.st,0,14,"500 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
-    else{const mid=vmul(vadd(vadd(pos[0],pos[1]),pos[2]),1/3);label(vadd(mid,[0,0,-0.5]),isFinite(R)?"verticals meet "+fR(R)+" below":"verticals parallel: never meet",C.st,0,34,"500 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
+    if(toC){const c=[0,0,-k];const q=proj(c);ctx.save();ctx.fillStyle=C.st;ctx.beginPath();ctx.arc(q[0],q[1],4,0,7);ctx.fill();ctx.restore();label(c,"centre",C.st,0,14,"500 12px 'Old Standard TT', Georgia, serif");}
+    else{const mid=vmul(vadd(vadd(pos[0],pos[1]),pos[2]),1/3);label(vadd(mid,[0,0,-0.5]),isFinite(R)?"verticals meet "+fR(R)+" below":"verticals parallel: never meet",C.st,0,34,"500 12px 'Old Standard TT', Georgia, serif");}
   }
   // ---- extended planes: pyramid ----
   if($("cPyr").checked&&!st.plane){
@@ -495,14 +568,14 @@ function draw3d(){
     for(let i=0;i<3;i++)poly([py.U[i],py.Q[fr[i][0]],P0,py.Q[fr[i][1]]].map(L),tints[i],0.55,tints[i],2.2);
     for(let m=0;m<3;m++)line([L(P0),L(Qe[m])],css("--red"),2.2);
     const q=proj(L(P0));ctx.save();ctx.fillStyle=css("--red");ctx.beginPath();ctx.arc(q[0],q[1],4.5,0,7);ctx.fill();ctx.restore();
-    label(L(P0),"apex",css("--red"),0,-14,"600 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace");
+    label(L(P0),"apex",css("--red"),0,-14,"600 12px 'Old Standard TT', Georgia, serif");
   }
   // ---- drop of B below A's level plane ----
   if(!st.plane&&$("cPlanes").checked){
     const A0=pos[0],nA=nrm[0],B0=pos[1];
     const top=vadd(B0,vmul(nA,dot(vsub(A0,B0),nA)));       // point on A's level plane straight above B (along A's vertical)
     line([B0,top],css("--red"),2,[3,3]);line([A0,top],C.acc,1.4,[6,4],0.9);
-    label(B0,"↓ "+fDrop(dropAB().a)+" below A's level",css("--red"),0,26,"600 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace",true);
+    label(B0,"↓ "+fDrop(dropAB().a)+" below A's level",css("--red"),0,26,"600 12px 'Old Standard TT', Georgia, serif",true);
   }
   // ---- sight lines (straight chords) ----
   if($("cChord").checked){for(const [i,j] of [[0,1],[1,2],[2,0]])line([pos[i],pos[j]],C.or,1.6,[7,5],0.95);}
@@ -523,7 +596,7 @@ function draw3d(){
     poly(arc,C.or,0.55,C.or,1.2);
     line([p,vadd(p,vmul(vj,0.3))],C.or,2);line([p,vadd(p,vmul(vk,0.3))],C.or,2);
     const q=proj(p);ctx.save();ctx.fillStyle=C.ink;ctx.beginPath();ctx.arc(q[0],q[1],4.2,0,7);ctx.fill();ctx.restore();
-    label(vadd(p,vmul(unit([p[0],p[1],0]),0.36)),NAMES[i],C.ink,0,0,"700 15px 'IBM Plex Mono', ui-monospace, Menlo, monospace");
+    label(vadd(p,vmul(unit([p[0],p[1],0]),0.36)),NAMES[i],C.ink,0,0,"700 15px 'Old Standard TT', Georgia, serif");
   }
 }
 // pointer
@@ -731,6 +804,7 @@ function fDA(x){const a=Math.abs(x),sg=x<0?"−":"+";if(a<1e-15)return"±0";if(a
 function chordTri(){const c=2*R*Math.sin(S/(2*R));return Math.sqrt(3)/4*c*c;}
 function pyrReadouts(){
   const py=pyramid(M.st);const box=$("pyrres");
+  $("sphwhere").textContent=isFinite(R)?`At the present setting the three plumb lines were made to meet in one point ${fR(R)} below each station, and that single choice produces the whole ${fExc(M.E)} of excess. Had they been set parallel the excess would be nothing; on each face of the pyramid every plumb line is parallel, and all the turning is gathered at the apex.`:"At the present setting the three plumb lines are parallel and never meet; there is no excess, no pyramid, and no centre.";
   const fH=km=>{const mm=km*1000;return Math.abs(mm)<1?(mm*1000).toPrecision(3)+" mm":mm<1e4?grp(mm,mm<10?2:1)+" m":fLen(km);};
   if(!py){box.innerHTML=kv("Apex height","0","planes coincide")+kv("Face angles at apex","120° each","sum 360° exactly")+kv("Angle defect","0","= excess 0")+kv("Each face piece",fArea(M.A/3),"one third of the triangle",true)+kv("Pyramid = sphere = chord",fArea(M.A),"all three are the same plane",true);return;}
   const ratio=M.E>1e-14?(py.defect/M.E).toFixed(6):"below precision";
@@ -770,7 +844,7 @@ function draw3dPyr(){
   const pr=v=>{const x=v[0],y=v[1],z=v[2]+zc;const x1=x*cy-y*sy,y1=x*sy+y*cy;return[W2/2+x1*ppu,H2/2-(y1*cp+z*sp)*ppu];};
   const L=(pts,col,w,dash,a)=>{ctx2.save();ctx2.globalAlpha=a??1;ctx2.strokeStyle=col;ctx2.lineWidth=w;ctx2.setLineDash(dash||[]);ctx2.beginPath();pts.forEach((p,i)=>{const q=pr(p);i?ctx2.lineTo(q[0],q[1]):ctx2.moveTo(q[0],q[1]);});ctx2.stroke();ctx2.restore();};
   const F=(pts,col,a,stroke,w)=>{ctx2.save();ctx2.globalAlpha=a;ctx2.fillStyle=col;ctx2.beginPath();pts.forEach((p,i)=>{const q=pr(p);i?ctx2.lineTo(q[0],q[1]):ctx2.moveTo(q[0],q[1]);});ctx2.closePath();ctx2.fill();if(stroke){ctx2.globalAlpha=1;ctx2.strokeStyle=stroke;ctx2.lineWidth=w||1;ctx2.stroke();}ctx2.restore();};
-  const T2=(p,txt,col,dx,dy,font)=>{const q=pr(p);ctx2.save();ctx2.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx2.textAlign="center";ctx2.textBaseline="middle";ctx2.lineWidth=5;ctx2.lineJoin="round";ctx2.strokeStyle=C.plate;ctx2.strokeText(txt,q[0]+(dx||0),q[1]+(dy||0));ctx2.fillStyle=col;ctx2.fillText(txt,q[0]+(dx||0),q[1]+(dy||0));ctx2.restore();};
+  const T2=(p,txt,col,dx,dy,font)=>{const q=pr(p);ctx2.save();ctx2.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx2.textAlign="center";ctx2.textBaseline="middle";ctx2.lineWidth=5;ctx2.lineJoin="round";ctx2.strokeStyle=C.plate;ctx2.strokeText(txt,q[0]+(dx||0),q[1]+(dy||0));ctx2.fillStyle=col;ctx2.fillText(txt,q[0]+(dx||0),q[1]+(dy||0));ctx2.restore();};
   const dot=(p,col,r)=>{const q=pr(p);ctx2.save();ctx2.fillStyle=col;ctx2.beginPath();ctx2.arc(q[0],q[1],r,0,7);ctx2.fill();ctx2.restore();};
   const lerp=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];
   const tints=[C.e2,C.acc,C.or],fr=[[0,2],[0,1],[1,2]];
@@ -793,9 +867,9 @@ function draw3dPyr(){
       if($("p2Down").checked){const dn=[U[i][0]-n[0]*1.6,U[i][1]-n[1]*1.6,U[i][2]-n[2]*1.6];L([U[i],dn],C.st,1.3,[5,4],0.85);}}
   }
   for(let m=0;m<3;m++){const q=pr(Q[m]);ctx2.save();ctx2.fillStyle=C.plate;ctx2.strokeStyle=C.red;ctx2.lineWidth=1.6;ctx2.beginPath();ctx2.arc(q[0],q[1],3.6,0,7);ctx2.fill();ctx2.stroke();ctx2.restore();}
-  for(let i=0;i<3;i++){dot(U[i],C.ink,4.5);const o=[U[i][0]*0.28,U[i][1]*0.28,0];T2([U[i][0]+o[0],U[i][1]+o[1],U[i][2]],NAMES[i],C.ink,0,0,"700 15px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
+  for(let i=0;i<3;i++){dot(U[i],C.ink,4.5);const o=[U[i][0]*0.28,U[i][1]*0.28,0];T2([U[i][0]+o[0],U[i][1]+o[1],U[i][2]],NAMES[i],C.ink,0,0,"700 15px 'Old Standard TT', Georgia, serif");}
   if(py){dot(P,C.red,5);T2(P,"apex",C.red,0,-16);}
-  ctx2.save();ctx2.font="500 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx2.fillStyle=C.mut;ctx2.textAlign="left";
+  ctx2.save();ctx2.font="500 12px 'Old Standard TT', Georgia, serif";ctx2.fillStyle=C.mut;ctx2.textAlign="left";
   ctx2.fillText(py?(f>1.01?"heights × "+(f<1e4?grp(f,0):sci(f,2)):"heights true scale"):"R = ∞: the three planes are one plane",12,20);
   if(py)ctx2.fillText("apex "+fDrop(py.apexOverChord*R)+" above the plane through A, B, C",12,38);
   ctx2.restore();
