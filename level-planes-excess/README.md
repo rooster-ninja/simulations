@@ -65,12 +65,6 @@ side (1 km to 200,000 km) can be changed.
   sight lines, the plane through A, B, C as a reference grid, and each
   station's vertical square to its face (optionally extended downward). No
   sphere is drawn. Heights follow the same exaggeration setting.
-  Gable walls: the roof's edges run station → ridge point → station, above
-  the straight sight line. The gap under each edge is a vertical triangle
-  (height R sin²(s/2R)/cos(s/2R) ≈ s²/4R at the midpoint, area
-  R² sin³(s/2R)/cos(s/2R)). They are drawn in the 3D view and reported
-  separately (58.86 km² for the three at 100 km on Earth), together with the
-  closed tent: roof + walls + chord-triangle floor.
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional
