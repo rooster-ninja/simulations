@@ -136,6 +136,7 @@ details.src ul{font-size:15.5px}
 .ptitle.sub2{margin-top:14px;border-top:1px solid var(--rule);padding-top:14px;font-style:italic;font-family:var(--f-title);font-size:22px;letter-spacing:.02em}
 .cap,.prose p,ol.steps,details.mx .cap{max-width:96ch;margin-left:auto;margin-right:auto}
 .prose p{margin-bottom:10px}
+.prose p:last-child{margin:0 auto}
 .panel .readout{box-shadow:none;border:none;padding:8px 0 0}
 ol.steps li{text-align:justify}
 </style>
@@ -330,6 +331,35 @@ ol.steps li{text-align:justify}
     </table></div>
   </section>
 
+  <section class="panel prose">
+    <div class="ptitle"><span class="sec">Conclusion.</span></div>
+    <ol class="steps">
+      <li><b>Every reading is Euclidean.</b> Sight lines are straight, level planes are flat, and each angle is two straight lines projected onto one plane. No arc, circle or sphere enters any measurement on this page.</li>
+      <li><b>The excess comes from one input.</b> It is produced entirely by the directions given to the three verticals. Set them to meet in a point and the excess appears; set them parallel and it vanishes. The flat pyramid of § V gives the same readings with nothing round in it.</li>
+      <li><b>The excess fixes only a total.</b> It equals the angle defect at the pyramid's apex exactly. It cannot say where the turning lies, or what shape carries it.</li>
+      <li><b>K adds nothing.</b> K = E / A divides a measured angle by an area that is not measured: the area depends on the surface assumed to span the triangle, and the sphere, the pyramid and the flat chord triangle each give a different one. K says nothing the excess does not already say, and its name brings in a surface the instruments never touched.</li>
+      <li><b>Computation is not measurement.</b> Triangulation measures flat angles, computes an area, and attributes the excess to converging verticals. The convergence is inferred from that assumption, not observed. A computation from an assumption cannot also be the evidence for it.</li>
+    </ol>
+    <p>None of this shows that the verticals do not converge. It shows that the triangle closure cannot be the evidence that they do. That question needs the verticals themselves to be measured: Appendix A.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle"><span class="sec">Appendix A.</span> Measuring the verticals directly</div>
+    <p>To measure the angle between two stations' plumb lines, each plumb line has to be compared with something both stations share. Four ways are known; each rests on one assumption of its own, and each assumption can be tested.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Method</th><th>How</th><th>Assumes</th><th>How the assumption is tested</th></tr></thead>
+      <tbody>
+        <tr><td><b>1 · Shared star field</b></td><td>A zenith camera at each station photographs the stars overhead at the same instant (GPS time). Each frame shows where that plumb line points among the stars; the difference between frames is the angle between the two plumb lines, in both directions.</td><td>Light from each star arrives parallel at both stations.</td><td>Every star in the frame must give the same offset. A near source shows different offsets for different stars and directions.</td></tr>
+        <tr><td><b>2 · Ranged targets</b></td><td>Flashes, a drone or a balloon in the air. All station-to-target distances measured by time of flight fix every point in space by straight lines alone. Each station then reads the zenith angle to each target from its own plumb line; two or three targets fix each plumb line in that shared frame.</td><td>Straight light paths to the targets.</td><td>Near-vertical sightlines keep bending small; more targets than needed must agree with one another.</td></tr>
+        <tr><td><b>3 · Reciprocal vertical angles</b></td><td>A and B sight each other at the same instant, and each reads the dip of the line below its own horizontal. The two dips add to the angle between the plumb lines, along that line only.</td><td>A straight sight line.</td><td>Weakest of the four: near the ground the line bends by an amount that changes with temperature and time of day. Simultaneous reading cancels part of it.</td></tr>
+        <tr><td><b>4 · Carried direction</b></td><td>A gyro-stabilised platform is levelled at A, carried to B, and compared with B's level.</td><td>Gyro drift known to better than the angle sought.</td><td>Carry the platform out and back: it must return to A's level.</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>What a direct result is.</b> With method 1 or 2 the angle between two plumb lines is read, and the chord between the stations is ranged. Their ratio, angle per unit of chord, is the convergence, with no area, no excess and no surface.</p>
+    <p><b>The test for a common centre.</b> With three or more stations, carry each measured plumb line downward in the ranged frame. Lines in space generally pass one another without meeting, so whether they meet in a single point, at one distance from every station, is a real test. Their closest-approach distances, against the measurement error, are the result. Three stations are the minimum; many are needed to say the same holds everywhere.</p>
+    <p><b>What limits it.</b> A zenith camera reads a plumb line to about 0.1″. The plumb line itself is pulled aside by nearby masses, a few arcseconds and up to an arcminute in mountains (§ III), so that pull, not the instrument, sets the limit, and it must be averaged over many station pairs. For method 3, the bending of a sight line near the ground is far from steady: the coefficient Gauss averaged at about 0.13 has been observed to range from −4 to +16 near the ground on sunny days.</p>
+  </section>
+
   <details class="src">
     <summary>Sources for this page (pages and quotes)</summary>
     <ul>
@@ -339,6 +369,7 @@ ol.steps li{text-align:justify}
       <li>NOAA, <a href="https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf">comparison of four astrogeodetic systems</a>: portable systems reach 0.15–0.20″ for 45-minute occupations. Supports the zenith-camera circle as a best case.</li>
       <li>Leica Geosystems, <a href="https://dr.leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica_flexline_ts10_lr.ashx">FlexLine TS10 datasheet</a>: compensator setting accuracy 0.5″ for the 1″ instrument. Used for the 0.5″ compensator circle.</li>
       <li>NOAA NGS, <a href="https://webarchive.library.unt.edu/eot2008/20090116065704/http://www.ngs.noaa.gov/GEOID/DMEX97">DMEX97 deflection model</a>: deflections are <q>typically a few arc seconds</q> but can reach an arcminute. Used for the 60″ circle; the 10″ circle is the Brocken value already sourced on the Gauss's great triangle page.</li>
+      <li>C. Hirt, S. Guillaume, A. Wisbar, B. Bürki, H. Sternberg (2010), <a href="https://ddfe.curtin.edu.au/models/ERTM2160/pdf/Hirt2010_JGR_D21102_refraction_av.pdf">Monitoring of the refraction coefficient in the lower atmosphere using a controlled set-up of simultaneous reciprocal vertical angle measurements</a>, J. Geophys. Res. 115, D21102: <q>a variation range of k between –4 and +16 near the ground on sunny summer days</q>; Gauss's average about +0.13. Used in Appendix A.</li>
       <li>Real-survey error values in § IX are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
     </ul>
   </details>

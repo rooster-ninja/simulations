@@ -86,6 +86,18 @@ side (1 km to 200,000 km) can be changed.
   direction given to each vertical, and the straight-line test that would
   make it a finding (do the plumb lines of many stations meet in one point?).
 
+- **Conclusion.** Every reading is Euclidean; the excess comes from the
+  directions given to the verticals; it fixes only a total; K = E / A divides
+  by an unmeasured area and adds nothing; the convergence of the verticals is
+  inferred by triangulation, not measured. The closure cannot be the evidence
+  that the verticals converge.
+- **Appendix A · Measuring the verticals directly.** Shared star field,
+  ranged targets, reciprocal vertical angles and a carried gyro direction,
+  each with its assumption and how to test it; the convergence as measured
+  angle per ranged chord; the common-centre test (closest approach of the
+  measured plumb lines); limits (0.1″ zenith camera, deflections, and
+  near-ground refraction k from −4 to +16, Hirt et al. 2010 JGR).
+
 Styling: the page is set as an 1800s treatise (Old Standard TT and IM Fell
 English, ruled plates, § numerals, figure numbers) rather than the repo's
 usual Surface Lab look, at the author's request.
@@ -128,6 +140,8 @@ Gauss's great triangle pages, which carry them.
   of arc).
 
 ## Sources
+
+- C. Hirt et al. (2010), [Monitoring of the refraction coefficient in the lower atmosphere](https://ddfe.curtin.edu.au/models/ERTM2160/pdf/Hirt2010_JGR_D21102_refraction_av.pdf), J. Geophys. Res. 115, D21102
 
 - C. Hirt et al. (2010), [Modern Determination of Vertical Deflections Using Digital Zenith Cameras](https://espace.curtin.edu.au/handle/20.500.11937/34194), J. Surveying Eng. 136(1)
 - NOAA, [comparison of four astrogeodetic systems](https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf)
