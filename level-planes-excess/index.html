@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Level Planes and the Angle Excess</title>
 <meta property="og:title" content="Level Planes and the Angle Excess">
-<meta property="og:description" content="A perfect, error-free triangle whose angles are read in each station's own horizontal plane. Change the sphere's radius all the way to infinity (a plane) and the triangle's size, and watch the angle excess appear from the convergence of the verticals.">
+<meta property="og:description" content="A perfect, error-free triangle whose angles are read in each station's own level plane. Every reading is a straight line or a flat plane; the angle excess comes only from the directions assumed for the verticals, and a flat pyramid gives the same readings.">
 <meta name="theme-color" content="#efe5cc">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap">
 <style>
@@ -91,6 +91,19 @@ details.mx table.mat{width:auto;border-left:1.5px solid var(--ink);border-right:
 details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
 details.src a{color:var(--bar-ink)}
 
+
+/* ---- brief ---- */
+.math .eq{display:inline-block;margin:0 12px;white-space:nowrap}
+.tablebox{scrollbar-width:thin}
+.panel.assumed,.readout.assumed{border:2px solid var(--red);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--red);position:relative}
+.assumed .stamp{display:block;margin:0 auto 12px;width:max-content;max-width:100%;font-family:var(--f-sc);letter-spacing:.14em;font-size:14px;color:var(--red);border:1.5px solid var(--red);padding:3px 12px;transform:rotate(-1.2deg)}
+.panel.flat{border:2px solid var(--e4);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--e4)}
+.flat .stamp{display:block;margin:0 auto 12px;width:max-content;max-width:100%;font-family:var(--f-sc);letter-spacing:.14em;font-size:14px;color:var(--e4);border:1.5px solid var(--e4);padding:3px 12px;transform:rotate(1.2deg)}
+.flat .anote{font-style:italic;text-align:center;margin:12px auto 0;max-width:68ch;color:var(--e4)}
+.assumed .anote{font-style:italic;text-align:center;margin:12px auto 0;max-width:68ch;color:var(--red)}
+.brief{margin-top:18px}
+.brief ul{margin:10px 0 0;padding-left:20px}
+.brief li{margin:5px 0}
 /* ---- 1800s treatise styling ---- */
 body{font-size:17.5px;line-height:1.5;background-image:radial-gradient(ellipse at 50% 30%,transparent 55%,rgba(110,80,30,.10))}
 header{text-align:center;border-bottom:4px double var(--ink);padding-bottom:20px}
@@ -136,18 +149,37 @@ details.src ul{font-size:15.5px}
 .ptitle.sub2{margin-top:14px;border-top:1px solid var(--rule);padding-top:14px;font-style:italic;font-family:var(--f-title);font-size:22px;letter-spacing:.02em}
 .cap,.prose p,ol.steps,details.mx .cap{max-width:96ch;margin-left:auto;margin-right:auto}
 .prose p{margin-bottom:10px}
+.prose p:last-child{margin:0 auto}
 .panel .readout{box-shadow:none;border:none;padding:8px 0 0}
 ol.steps li{text-align:justify}
+@media(max-width:640px){
+  .tablebox table{min-width:560px}
+  .tablebox table:has(th:nth-child(4)){min-width:680px}
+  .tablebox::after{content:"swipe the table sideways →";display:block;font-style:italic;font-size:12.5px;color:var(--muted);text-align:right;padding-top:4px;position:sticky;left:0}
+  .wrap .prose p,.wrap .cap,.wrap .steps li,.wrap .sub,.wrap .prose li{text-align:left;hyphens:manual}
+  .math{font-size:17px}.math .eq{margin:0 4px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <p class="back"><a href="../">← All simulations</a></p>
-    <p class="eyebrow">Theorema Egregium · level planes</p>
+    <p class="eyebrow">Of level planes and plumb lines</p>
     <h1>Three level planes and the angle excess</h1>
-    <p class="sub">A perfect triangle with no errors at all. At each station the theodolite is levelled, so every angle is read in that station's own horizontal plane, square to its own vertical. Push the radius out to infinity and the verticals become parallel, the three planes become one, and the excess goes to zero. Bring it back and the excess returns, because the planes are tilted against each other.</p>
   </header>
+
+  <section class="panel prose brief">
+    <div class="ptitle"><span class="sec">In brief.</span></div>
+    <ul>
+      <li><b>Every reading is Euclidean:</b> straight sight lines, flat level planes, no arc or sphere in any measurement.</li>
+      <li><b>The excess comes from one input:</b> the directions given to the verticals. Parallel, it vanishes; meeting at a point, it appears. A flat pyramid gives the same readings.</li>
+      <li><b>It fixes only a total,</b> equal to the apex angle defect, and cannot say where the turning lies.</li>
+      <li><b>K adds nothing:</b> it divides the excess by an area that was never measured.</li>
+      <li><b>Computation is not measurement:</b> the converging verticals are assumed, not observed, and the survey excess is neither intrinsic nor a measurement of the verticals.</li>
+      <li><b>So the closure is not evidence of a sphere.</b> The verticals must be measured directly: Appendix A.</li>
+    </ul>
+  </section>
 
   <section class="panel">
     <div class="controls">
@@ -186,15 +218,17 @@ ol.steps li{text-align:justify}
     </div>
   </section>
 
-  <section class="panel">
+  <section class="panel assumed">
+    <span class="stamp">The assumed picture</span>
     <div class="ptitle"><span class="sec">§ I.</span> The triangle and its three level planes</div>
+    <p class="anote">This is what is assumed on hearing "K" and "angular excess": a sphere, arcs along its surface, and verticals meeting at its centre. None of it is measured. The sections after this one show what the instruments actually read.</p>
     <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ) · drop of B below A's level</span></div>
     <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
     <p class="cap" id="cap1"></p>
-    <div class="math">measured excess&nbsp; E = α + β + γ − 180°&nbsp;&nbsp;&nbsp;&nbsp; measured curvature&nbsp; K = E / A</div>
+    <div class="math"><span class="eq">measured excess&nbsp; E = α + β + γ − 180°</span> <span class="eq">measured curvature&nbsp; K = E / A</span></div>
   </section>
 
-  <section class="readout" id="res" aria-live="polite"></section>
+  <section class="readout assumed" id="res" aria-live="polite"></section>
 
   <section class="panel">
     <div class="ptitle"><span class="sec">§ II.</span> What each theodolite reads</div>
@@ -231,8 +265,10 @@ ol.steps li{text-align:justify}
     <div class="math">angle between verticals&nbsp; δ = s / R,&nbsp;&nbsp;&nbsp; dip of each sight line&nbsp; δ / 2</div>
   </section>
 
-  <section class="panel">
+  <section class="panel flat">
+    <span class="stamp">The flat space</span>
     <div class="ptitle"><span class="sec">§ V.</span> The three planes extended: a three-sided pyramid</div>
+    <p class="anote">This is what the instruments give: straight sight lines, flat level planes and the angles between them, in plain three-dimensional space. No sphere, arc or curved surface is drawn or used here. Heights are read from the flat plane through A, B and C.</p>
     <div class="row"><label class="chk"><input type="checkbox" id="cPyrExag" checked>Exaggerate heights so they can be seen</label><span class="lab" id="pyrtag"></span></div>
     <div class="svgbox"><svg id="pyr" viewBox="0 0 680 330" role="img" aria-label="Overhead and profile views of the three level planes extended until they meet"></svg></div>
     <div class="cvbox"><canvas id="cv2" style="height:440px" aria-label="Rotatable 3D view of the pyramid built from the three flat level planes"></canvas><div class="hint">drag to turn · scroll to zoom · double-click to reset</div></div>
@@ -249,7 +285,7 @@ ol.steps li{text-align:justify}
     <p class="cap">The angle defect at the apex, 360° minus the three face angles that meet there, comes out equal to the triangle's angle excess. On the flat-faced pyramid all of the triangle's curvature sits at that one point. This is Descartes' angle defect, the polyhedral form of Gauss's result: the face normals are the three plumb lines, and the defect is the area of the triangle they span on the unit sphere. Check with the octant preset: the planes form a cube corner, 90° + 90° + 90° = 270°, a defect of 90°.</p>
     <p class="cap">The highlighted pieces are the triangle as the three level planes see it: each runs from its station along the two sight lines to the ridges over the side midpoints, and up the ridges to the apex. Each is a flat kite with right angles where it meets the ridges, so its area is exact:</p>
     <div class="math">piece = R² · tan(s/2R) · √( tan²ρ − tan²(s/2R) ),&nbsp;&nbsp;&nbsp; sin ρ = (2/√3) sin(s/2R)</div>
-    <p class="cap">Three pieces always come out a little larger than the sphere's triangle, and the flat triangle through A, B and C a little smaller. On the plane all three are equal.</p>
+    <p class="cap">The three pieces always come out a little larger than the flat triangle through A, B and C, because they rise to the apex. When the verticals are parallel the pyramid flattens and both are the same.</p>
     <div class="ptitle sub2">Where is the sphere?</div>
     <p class="cap">Nowhere in the measurement. Every quantity a theodolite touches on this page is a straight line, a flat plane, or an angle between two lines: plain Euclidean geometry in three dimensions. The pyramid gives the same readings with nothing round in it.</p>
     <div class="tablebox"><table>
@@ -330,6 +366,36 @@ ol.steps li{text-align:justify}
     </table></div>
   </section>
 
+  <section class="panel prose">
+    <div class="ptitle"><span class="sec">Conclusion.</span></div>
+    <ol class="steps">
+      <li><b>Every reading is Euclidean.</b> Sight lines are straight, level planes are flat, and each angle is two straight lines projected onto one plane. No arc, circle or sphere enters any measurement on this page.</li>
+      <li><b>The excess comes from one input.</b> It is produced entirely by the directions given to the three verticals. Set them to meet in a point and the excess appears; set them parallel and it vanishes. The flat pyramid of § V gives the same readings with nothing round in it.</li>
+      <li><b>The excess fixes only a total.</b> It equals the angle defect at the pyramid's apex exactly. It cannot say where the turning lies, or what shape carries it.</li>
+      <li><b>K adds nothing.</b> K = E / A divides a measured angle by an area that is not measured: the area depends on the surface assumed to span the triangle, and the sphere, the pyramid and the flat chord triangle each give a different one. K says nothing the excess does not already say, and its name brings in a surface the instruments never touched.</li>
+      <li><b>Computation is not measurement.</b> Triangulation measures flat angles, computes an area, and attributes the excess to converging verticals. The convergence is inferred from that assumption, not observed. A computation from an assumption cannot also be the evidence for it.</li>
+      <li><b>The survey excess is not an intrinsic measurement.</b> The Theorema Egregium concerns what can be found from within a surface: the lengths of its own shortest lines and the angles between them, measured along it. A theodolite measures neither. Its angles lie between straight sight lines through the air, read in a plane set by gravity at each instrument. That is the outside route, through the directions of the verticals, which is Gauss's own definition of total curvature as the area the normals sweep out. The theorem says the outside and inside quantities agree for a surface and its own normals; it cannot supply the assumption that gravity's verticals are the normals of the surface under the instruments. The survey excess is therefore not a measurement of the surface. It is not a measurement of the verticals either: they are never observed in the survey, only assumed, and the excess is computed from that assumption.</li>
+    </ol>
+    <p>None of this shows that the verticals do not converge. It shows that the triangle closure cannot be the evidence that they do. That question needs the verticals themselves to be measured: Appendix A.</p>
+  </section>
+
+  <section class="panel prose">
+    <div class="ptitle"><span class="sec">Appendix A.</span> Measuring the verticals directly</div>
+    <p>To measure the angle between two stations' plumb lines, each plumb line has to be compared with something both stations share. Four ways are known; each rests on one assumption of its own, and each assumption can be tested.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>Method</th><th>How</th><th>Assumes</th><th>How the assumption is tested</th></tr></thead>
+      <tbody>
+        <tr><td><b>1 · Shared star field</b></td><td>A zenith camera at each station photographs the stars overhead at the same instant (GPS time). Each frame shows where that plumb line points among the stars; the difference between frames is the angle between the two plumb lines, in both directions.</td><td>Light from each star arrives parallel at both stations.</td><td>Every star in the frame must give the same offset. A near source shows different offsets for different stars and directions.</td></tr>
+        <tr><td><b>2 · Ranged targets</b></td><td>Flashes, a drone or a balloon in the air. All station-to-target distances measured by time of flight fix every point in space by straight lines alone. Each station then reads the zenith angle to each target from its own plumb line; two or three targets fix each plumb line in that shared frame.</td><td>Straight light paths to the targets.</td><td>Near-vertical sightlines keep bending small; more targets than needed must agree with one another.</td></tr>
+        <tr><td><b>3 · Reciprocal vertical angles</b></td><td>A and B sight each other at the same instant, and each reads the dip of the line below its own horizontal. The two dips add to the angle between the plumb lines, along that line only.</td><td>A straight sight line.</td><td>Weakest of the four: near the ground the line bends by an amount that changes with temperature and time of day. Simultaneous reading cancels part of it.</td></tr>
+        <tr><td><b>4 · Carried direction</b></td><td>A gyro-stabilised platform is levelled at A, carried to B, and compared with B's level.</td><td>Gyro drift known to better than the angle sought.</td><td>Carry the platform out and back: it must return to A's level.</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>What a direct result is.</b> With method 1 or 2 the angle between two plumb lines is read, and the chord between the stations is ranged. Their ratio, angle per unit of chord, is the convergence, with no area, no excess and no surface.</p>
+    <p><b>The test for a common centre.</b> With three or more stations, carry each measured plumb line downward in the ranged frame. Lines in space generally pass one another without meeting, so whether they meet in a single point, at one distance from every station, is a real test. Their closest-approach distances, against the measurement error, are the result. Three stations are the minimum; many are needed to say the same holds everywhere.</p>
+    <p><b>What limits it.</b> A zenith camera reads a plumb line to about 0.1″. The plumb line itself is pulled aside by nearby masses, a few arcseconds and up to an arcminute in mountains (§ III), so that pull, not the instrument, sets the limit, and it must be averaged over many station pairs. For method 3, the bending of a sight line near the ground is far from steady: the coefficient Gauss averaged at about 0.13 has been observed to range from −4 to +16 near the ground on sunny days.</p>
+  </section>
+
   <details class="src">
     <summary>Sources for this page (pages and quotes)</summary>
     <ul>
@@ -339,6 +405,7 @@ ol.steps li{text-align:justify}
       <li>NOAA, <a href="https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf">comparison of four astrogeodetic systems</a>: portable systems reach 0.15–0.20″ for 45-minute occupations. Supports the zenith-camera circle as a best case.</li>
       <li>Leica Geosystems, <a href="https://dr.leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica_flexline_ts10_lr.ashx">FlexLine TS10 datasheet</a>: compensator setting accuracy 0.5″ for the 1″ instrument. Used for the 0.5″ compensator circle.</li>
       <li>NOAA NGS, <a href="https://webarchive.library.unt.edu/eot2008/20090116065704/http://www.ngs.noaa.gov/GEOID/DMEX97">DMEX97 deflection model</a>: deflections are <q>typically a few arc seconds</q> but can reach an arcminute. Used for the 60″ circle; the 10″ circle is the Brocken value already sourced on the Gauss's great triangle page.</li>
+      <li>C. Hirt, S. Guillaume, A. Wisbar, B. Bürki, H. Sternberg (2010), <a href="https://ddfe.curtin.edu.au/models/ERTM2160/pdf/Hirt2010_JGR_D21102_refraction_av.pdf">Monitoring of the refraction coefficient in the lower atmosphere using a controlled set-up of simultaneous reciprocal vertical angle measurements</a>, J. Geophys. Res. 115, D21102: <q>a variation range of k between –4 and +16 near the ground on sunny summer days</q>; Gauss's average about +0.13. Used in Appendix A.</li>
       <li>Real-survey error values in § IX are those already sourced on the <a href="../gauss-great-triangle/">Gauss's great triangle</a> page (Gauss to Bessel, 1823; Brosche &amp; Heckmann, zfv 2016).</li>
     </ul>
   </details>
@@ -506,7 +573,7 @@ function setupProj(ext,zc){
 }
 function line(pts,color,w,dash,alpha){ctx.save();ctx.globalAlpha=alpha??1;ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();ctx.restore();}
 function poly(pts,fill,alpha,stroke,w){ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=fill;ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();ctx.fill();if(stroke){ctx.globalAlpha=1;ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}ctx.restore();}
-function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p);ctx.save();if(halo){ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
+function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p).slice();ctx.save();ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";{const hw=ctx.measureText(txt).width/2+8,cw=ctx.canvas.clientWidth;if(cw>2*hw)q[0]=Math.min(cw-hw-dx,Math.max(hw-dx,q[0]));}if(halo){ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
 function arrow(a,b,color,w){line([a,b],color,w);const qa=proj(a),qb=proj(b);const ang=Math.atan2(qb[1]-qa[1],qb[0]-qa[0]);ctx.save();ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(qb[0],qb[1]);ctx.lineTo(qb[0]-9*Math.cos(ang-0.4),qb[1]-9*Math.sin(ang-0.4));ctx.lineTo(qb[0]-9*Math.cos(ang+0.4),qb[1]-9*Math.sin(ang+0.4));ctx.closePath();ctx.fill();ctx.restore();}
 
 function draw3d(){
@@ -774,9 +841,7 @@ function drawPyr(){
   let f=1;if(exag){const want=150/(span*hs);f=Math.max(1,want);}
   $("pyrtag").textContent=exag&&f>1.01?"heights drawn "+(f<1e4?grp(f,0):sci(f,2))+" × true":"";
   const Y=w=>200-(w)*hs*f;                                   // w = z − 1
-  const W=x=>-2*Math.sin(Math.asin(Math.max(-1,Math.min(1,x)))/2)**2;  // sphere surface along the cut
-  let d="";for(let t=0;t<=80;t++){const x=xmin+(xmax-xmin)*t/80;d+=(t?"L":"M")+X(x).toFixed(1)+","+Y(W(x)).toFixed(1);}
-  svgEl("path",{d,fill:"none",stroke:e4,"stroke-width":2.5},g);
+  const W=x=>-py.sag;                                        // heights read from the flat plane through A, B, C
   // chord plane through A, B, C (the corrected planar plane)
   svgEl("line",{x1:L0,y1:Y(-py.sag),x2:L1,y2:Y(-py.sag),stroke:mut,"stroke-dasharray":"4 4"},g);
   lab(L0+4,Y(-py.sag)+16,"plane through A, B, C",mut,"start",11);
@@ -794,8 +859,8 @@ function drawPyr(){
   svgEl("line",{x1:X(0),y1:Y(py.pz1),x2:X(0),y2:Y(W(0)),stroke:mut,"stroke-dasharray":"2 3"},g);
   svgEl("line",{x1:X(xQ),y1:Y(py.qz1),x2:X(xQ),y2:Y(W(xQ)),stroke:mut,"stroke-dasharray":"2 3"},g);
   const fH=km=>{const mm=km*1000;return Math.abs(mm)<1?(mm*1000).toPrecision(3)+" mm":mm<1e4?grp(mm,mm<10?2:0)+" m":fLen(km);};
-  lab(X(0)-6,(Y(py.pz1)+Y(W(0)))/2+14,fH(py.pz1*R),mut,"end",11.5);
-  lab(X(xQ)+6,(Y(py.qz1)+Y(W(xQ)))/2,fH(py.ridgeUp*R),mut,"start",11.5);
+  lab(X(0)-6,(Y(py.pz1)+Y(W(0)))/2+14,fH(py.apexOverChord*R),mut,"end",11.5);
+  lab(X(xQ)+6,(Y(py.qz1)+Y(W(xQ)))/2,fH((py.qz1+py.sag)*R),mut,"start",11.5);
   lab(L0,24,"Cut along A's median",ink,"start",13,600);
   lab(L0,42,"A's plane to the apex, then ridge B–C",mut,"start",11.5);
   lab((X(xA)+X(0))/2+10,(Y(-py.sag)+Y(py.pz1))/2-10,"A's level plane",acc,"start",11.5);
@@ -806,21 +871,19 @@ function pyrReadouts(){
   const py=pyramid(M.st);const box=$("pyrres");
   $("sphwhere").textContent=isFinite(R)?`At the present setting the three plumb lines were made to meet in one point ${fR(R)} below each station, and that single choice produces the whole ${fExc(M.E)} of excess. Had they been set parallel the excess would be nothing; on each face of the pyramid every plumb line is parallel, and all the turning is gathered at the apex.`:"At the present setting the three plumb lines are parallel and never meet; there is no excess, no pyramid, and no centre.";
   const fH=km=>{const mm=km*1000;return Math.abs(mm)<1?(mm*1000).toPrecision(3)+" mm":mm<1e4?grp(mm,mm<10?2:1)+" m":fLen(km);};
-  if(!py){box.innerHTML=kv("Apex height","0","planes coincide")+kv("Face angles at apex","120° each","sum 360° exactly")+kv("Angle defect","0","= excess 0")+kv("Each face piece",fArea(M.A/3),"one third of the triangle",true)+kv("Pyramid = sphere = chord",fArea(M.A),"all three are the same plane",true);return;}
+  if(!py){box.innerHTML=kv("Apex height","0","planes coincide")+kv("Face angles at apex","120° each","sum 360° exactly")+kv("Angle defect","0","= excess 0")+kv("Each face piece",fArea(M.A/3),"one third of the triangle",true)+kv("Pyramid = flat triangle",fArea(M.A),"both are the same plane",true);return;}
   const ratio=M.E>1e-14?(py.defect/M.E).toFixed(6):"below precision";
   box.innerHTML=
-    kv("Apex above the surface",fH(py.pz1*R),"over the triangle's centre")+
-    kv("Ridge above the surface",fH(py.ridgeUp*R),"over each side's midpoint")+
-    kv("Apex above plane A B C",fH(py.apexOverChord*R),"the corrected planar plane")+
+    kv("Apex above plane A B C",fH(py.apexOverChord*R),"over the triangle's centre")+
+    kv("Ridge above plane A B C",fH((py.qz1+py.sag)*R),"over each side's midpoint")+
     kv("Fold at each ridge",fExc(M.vert),"= angle between plumb lines δ")+
     kv("Each face angle at apex",dms(py.face,4),"three faces meet at the apex")+
     kv("Sum of face angles",dms(3*py.face,4),"360° − defect")+
     kv("Angle defect",fExc(py.defect),"360° − sum",true)+
     kv("Defect ÷ excess E",ratio,"excess E = "+fExc(M.E),true)+
     kv("Each face piece",fArea(py.piece*R*R),"station → ridge → apex → ridge",true)+
-    kv("Pyramid, three pieces",fArea(3*py.piece*R*R),fDA(3*py.piece*R*R-M.A)+" vs sphere",true)+
-    kv("Sphere triangle",fArea(M.A),"tiled surface area")+
-    kv("Flat chord triangle",fArea(chordTri()),fDA(chordTri()-M.A)+" vs sphere (plane through A, B, C)");
+    kv("Pyramid, three pieces",fArea(3*py.piece*R*R),fDA(3*py.piece*R*R-chordTri())+" vs flat triangle",true)+
+    kv("Flat triangle A B C",fArea(chordTri()),"the plane through A, B, C");
 }
 // ---------- standalone 3D pyramid ----------
 const cv2=$("cv2"),ctx2=cv2.getContext("2d");let W2=0,H2=0,view2={yaw:-28*D2R,pitch:46*D2R,zoom:1},PF=1;

@@ -86,6 +86,22 @@ side (1 km to 200,000 km) can be changed.
   direction given to each vertical, and the straight-line test that would
   make it a finding (do the plumb lines of many stations meet in one point?).
 
+- **Conclusion.** Every reading is Euclidean; the excess comes from the
+  directions given to the verticals; it fixes only a total; K = E / A divides
+  by an unmeasured area and adds nothing; the convergence of the verticals is
+  inferred by triangulation, not measured. The survey excess is not
+  intrinsic in the Theorema Egregium sense: it uses straight sight
+  lines and assumed verticals, not lengths and angles along the surface. Nor
+  is it a measurement of the verticals: they are not observed in the survey,
+  only assumed, and the excess is computed from that assumption. The closure
+  cannot be the evidence that the verticals converge.
+- **Appendix A · Measuring the verticals directly.** Shared star field,
+  ranged targets, reciprocal vertical angles and a carried gyro direction,
+  each with its assumption and how to test it; the convergence as measured
+  angle per ranged chord; the common-centre test (closest approach of the
+  measured plumb lines); limits (0.1″ zenith camera, deflections, and
+  near-ground refraction k from −4 to +16, Hirt et al. 2010 JGR).
+
 Styling: the page is set as an 1800s treatise (Old Standard TT and IM Fell
 English, ruled plates, § numerals, figure numbers) rather than the repo's
 usual Surface Lab look, at the author's request.
@@ -129,6 +145,8 @@ Gauss's great triangle pages, which carry them.
 
 ## Sources
 
+- C. Hirt et al. (2010), [Monitoring of the refraction coefficient in the lower atmosphere](https://ddfe.curtin.edu.au/models/ERTM2160/pdf/Hirt2010_JGR_D21102_refraction_av.pdf), J. Geophys. Res. 115, D21102
+
 - C. Hirt et al. (2010), [Modern Determination of Vertical Deflections Using Digital Zenith Cameras](https://espace.curtin.edu.au/handle/20.500.11937/34194), J. Surveying Eng. 136(1)
 - NOAA, [comparison of four astrogeodetic systems](https://repository.library.noaa.gov/view/noaa/72066/noaa_72066_DS1.pdf)
 - Leica Geosystems, [FlexLine TS10 datasheet](https://dr.leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica_flexline_ts10_lr.ashx)
@@ -139,3 +157,7 @@ Gauss's great triangle pages, which carry them.
   [Project Gutenberg #36856](https://www.gutenberg.org/ebooks/36856)
 - H. Moritz, [Geodetic Reference System 1980](https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm):
   mean radius R₁ = 6 371 008.7714 m (Earth preset)
+
+- **The assumed picture.** § I and its readouts are boxed and stamped "The assumed picture": the sphere, surface arcs and converging verticals that the words K and angular excess bring to mind. None of it is measured; later sections show what the instruments read.
+- **In brief.** A panel under the header gives the conclusions in six lines.
+- **The flat space.** § V is boxed and stamped "The flat space". It draws no sphere: the profile and readouts give heights above the flat plane through A, B and C, and compare the pyramid's three pieces with that flat triangle.
