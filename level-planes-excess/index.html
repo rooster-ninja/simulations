@@ -95,6 +95,9 @@ details.src a{color:var(--bar-ink)}
 /* ---- brief ---- */
 .panel.assumed,.readout.assumed{border:2px solid var(--red);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--red);position:relative}
 .assumed .stamp{display:block;margin:0 auto 12px;width:max-content;max-width:100%;font-family:var(--f-sc);letter-spacing:.14em;font-size:14px;color:var(--red);border:1.5px solid var(--red);padding:3px 12px;transform:rotate(-1.2deg)}
+.panel.flat{border:2px solid var(--e4);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--e4)}
+.flat .stamp{display:block;margin:0 auto 12px;width:max-content;max-width:100%;font-family:var(--f-sc);letter-spacing:.14em;font-size:14px;color:var(--e4);border:1.5px solid var(--e4);padding:3px 12px;transform:rotate(1.2deg)}
+.flat .anote{font-style:italic;text-align:center;margin:12px auto 0;max-width:68ch;color:var(--e4)}
 .assumed .anote{font-style:italic;text-align:center;margin:12px auto 0;max-width:68ch;color:var(--red)}
 .brief{margin-top:18px}
 .brief ul{margin:10px 0 0;padding-left:20px}
@@ -253,8 +256,10 @@ ol.steps li{text-align:justify}
     <div class="math">angle between verticals&nbsp; δ = s / R,&nbsp;&nbsp;&nbsp; dip of each sight line&nbsp; δ / 2</div>
   </section>
 
-  <section class="panel">
+  <section class="panel flat">
+    <span class="stamp">The flat space</span>
     <div class="ptitle"><span class="sec">§ V.</span> The three planes extended: a three-sided pyramid</div>
+    <p class="anote">This is what the instruments give: straight sight lines, flat level planes and the angles between them, in plain three-dimensional space. No sphere, arc or curved surface is drawn or used here. Heights are read from the flat plane through A, B and C.</p>
     <div class="row"><label class="chk"><input type="checkbox" id="cPyrExag" checked>Exaggerate heights so they can be seen</label><span class="lab" id="pyrtag"></span></div>
     <div class="svgbox"><svg id="pyr" viewBox="0 0 680 330" role="img" aria-label="Overhead and profile views of the three level planes extended until they meet"></svg></div>
     <div class="cvbox"><canvas id="cv2" style="height:440px" aria-label="Rotatable 3D view of the pyramid built from the three flat level planes"></canvas><div class="hint">drag to turn · scroll to zoom · double-click to reset</div></div>
@@ -271,7 +276,7 @@ ol.steps li{text-align:justify}
     <p class="cap">The angle defect at the apex, 360° minus the three face angles that meet there, comes out equal to the triangle's angle excess. On the flat-faced pyramid all of the triangle's curvature sits at that one point. This is Descartes' angle defect, the polyhedral form of Gauss's result: the face normals are the three plumb lines, and the defect is the area of the triangle they span on the unit sphere. Check with the octant preset: the planes form a cube corner, 90° + 90° + 90° = 270°, a defect of 90°.</p>
     <p class="cap">The highlighted pieces are the triangle as the three level planes see it: each runs from its station along the two sight lines to the ridges over the side midpoints, and up the ridges to the apex. Each is a flat kite with right angles where it meets the ridges, so its area is exact:</p>
     <div class="math">piece = R² · tan(s/2R) · √( tan²ρ − tan²(s/2R) ),&nbsp;&nbsp;&nbsp; sin ρ = (2/√3) sin(s/2R)</div>
-    <p class="cap">Three pieces always come out a little larger than the sphere's triangle, and the flat triangle through A, B and C a little smaller. On the plane all three are equal.</p>
+    <p class="cap">The three pieces always come out a little larger than the flat triangle through A, B and C, because they rise to the apex. When the verticals are parallel the pyramid flattens and both are the same.</p>
     <div class="ptitle sub2">Where is the sphere?</div>
     <p class="cap">Nowhere in the measurement. Every quantity a theodolite touches on this page is a straight line, a flat plane, or an angle between two lines: plain Euclidean geometry in three dimensions. The pyramid gives the same readings with nothing round in it.</p>
     <div class="tablebox"><table>
@@ -827,9 +832,7 @@ function drawPyr(){
   let f=1;if(exag){const want=150/(span*hs);f=Math.max(1,want);}
   $("pyrtag").textContent=exag&&f>1.01?"heights drawn "+(f<1e4?grp(f,0):sci(f,2))+" × true":"";
   const Y=w=>200-(w)*hs*f;                                   // w = z − 1
-  const W=x=>-2*Math.sin(Math.asin(Math.max(-1,Math.min(1,x)))/2)**2;  // sphere surface along the cut
-  let d="";for(let t=0;t<=80;t++){const x=xmin+(xmax-xmin)*t/80;d+=(t?"L":"M")+X(x).toFixed(1)+","+Y(W(x)).toFixed(1);}
-  svgEl("path",{d,fill:"none",stroke:e4,"stroke-width":2.5},g);
+  const W=x=>-py.sag;                                        // heights read from the flat plane through A, B, C
   // chord plane through A, B, C (the corrected planar plane)
   svgEl("line",{x1:L0,y1:Y(-py.sag),x2:L1,y2:Y(-py.sag),stroke:mut,"stroke-dasharray":"4 4"},g);
   lab(L0+4,Y(-py.sag)+16,"plane through A, B, C",mut,"start",11);
@@ -847,8 +850,8 @@ function drawPyr(){
   svgEl("line",{x1:X(0),y1:Y(py.pz1),x2:X(0),y2:Y(W(0)),stroke:mut,"stroke-dasharray":"2 3"},g);
   svgEl("line",{x1:X(xQ),y1:Y(py.qz1),x2:X(xQ),y2:Y(W(xQ)),stroke:mut,"stroke-dasharray":"2 3"},g);
   const fH=km=>{const mm=km*1000;return Math.abs(mm)<1?(mm*1000).toPrecision(3)+" mm":mm<1e4?grp(mm,mm<10?2:0)+" m":fLen(km);};
-  lab(X(0)-6,(Y(py.pz1)+Y(W(0)))/2+14,fH(py.pz1*R),mut,"end",11.5);
-  lab(X(xQ)+6,(Y(py.qz1)+Y(W(xQ)))/2,fH(py.ridgeUp*R),mut,"start",11.5);
+  lab(X(0)-6,(Y(py.pz1)+Y(W(0)))/2+14,fH(py.apexOverChord*R),mut,"end",11.5);
+  lab(X(xQ)+6,(Y(py.qz1)+Y(W(xQ)))/2,fH((py.qz1+py.sag)*R),mut,"start",11.5);
   lab(L0,24,"Cut along A's median",ink,"start",13,600);
   lab(L0,42,"A's plane to the apex, then ridge B–C",mut,"start",11.5);
   lab((X(xA)+X(0))/2+10,(Y(-py.sag)+Y(py.pz1))/2-10,"A's level plane",acc,"start",11.5);
@@ -859,21 +862,19 @@ function pyrReadouts(){
   const py=pyramid(M.st);const box=$("pyrres");
   $("sphwhere").textContent=isFinite(R)?`At the present setting the three plumb lines were made to meet in one point ${fR(R)} below each station, and that single choice produces the whole ${fExc(M.E)} of excess. Had they been set parallel the excess would be nothing; on each face of the pyramid every plumb line is parallel, and all the turning is gathered at the apex.`:"At the present setting the three plumb lines are parallel and never meet; there is no excess, no pyramid, and no centre.";
   const fH=km=>{const mm=km*1000;return Math.abs(mm)<1?(mm*1000).toPrecision(3)+" mm":mm<1e4?grp(mm,mm<10?2:1)+" m":fLen(km);};
-  if(!py){box.innerHTML=kv("Apex height","0","planes coincide")+kv("Face angles at apex","120° each","sum 360° exactly")+kv("Angle defect","0","= excess 0")+kv("Each face piece",fArea(M.A/3),"one third of the triangle",true)+kv("Pyramid = sphere = chord",fArea(M.A),"all three are the same plane",true);return;}
+  if(!py){box.innerHTML=kv("Apex height","0","planes coincide")+kv("Face angles at apex","120° each","sum 360° exactly")+kv("Angle defect","0","= excess 0")+kv("Each face piece",fArea(M.A/3),"one third of the triangle",true)+kv("Pyramid = flat triangle",fArea(M.A),"both are the same plane",true);return;}
   const ratio=M.E>1e-14?(py.defect/M.E).toFixed(6):"below precision";
   box.innerHTML=
-    kv("Apex above the surface",fH(py.pz1*R),"over the triangle's centre")+
-    kv("Ridge above the surface",fH(py.ridgeUp*R),"over each side's midpoint")+
-    kv("Apex above plane A B C",fH(py.apexOverChord*R),"the corrected planar plane")+
+    kv("Apex above plane A B C",fH(py.apexOverChord*R),"over the triangle's centre")+
+    kv("Ridge above plane A B C",fH((py.qz1+py.sag)*R),"over each side's midpoint")+
     kv("Fold at each ridge",fExc(M.vert),"= angle between plumb lines δ")+
     kv("Each face angle at apex",dms(py.face,4),"three faces meet at the apex")+
     kv("Sum of face angles",dms(3*py.face,4),"360° − defect")+
     kv("Angle defect",fExc(py.defect),"360° − sum",true)+
     kv("Defect ÷ excess E",ratio,"excess E = "+fExc(M.E),true)+
     kv("Each face piece",fArea(py.piece*R*R),"station → ridge → apex → ridge",true)+
-    kv("Pyramid, three pieces",fArea(3*py.piece*R*R),fDA(3*py.piece*R*R-M.A)+" vs sphere",true)+
-    kv("Sphere triangle",fArea(M.A),"tiled surface area")+
-    kv("Flat chord triangle",fArea(chordTri()),fDA(chordTri()-M.A)+" vs sphere (plane through A, B, C)");
+    kv("Pyramid, three pieces",fArea(3*py.piece*R*R),fDA(3*py.piece*R*R-chordTri())+" vs flat triangle",true)+
+    kv("Flat triangle A B C",fArea(chordTri()),"the plane through A, B, C");
 }
 // ---------- standalone 3D pyramid ----------
 const cv2=$("cv2"),ctx2=cv2.getContext("2d");let W2=0,H2=0,view2={yaw:-28*D2R,pitch:46*D2R,zoom:1},PF=1;

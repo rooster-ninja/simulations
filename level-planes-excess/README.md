@@ -160,3 +160,4 @@ Gauss's great triangle pages, which carry them.
 
 - **The assumed picture.** § I and its readouts are boxed and stamped "The assumed picture": the sphere, surface arcs and converging verticals that the words K and angular excess bring to mind. None of it is measured; later sections show what the instruments read.
 - **In brief.** A panel under the header gives the conclusions in six lines.
+- **The flat space.** § V is boxed and stamped "The flat space". It draws no sphere: the profile and readouts give heights above the flat plane through A, B and C, and compare the pyramid's three pieces with that flat triangle.
