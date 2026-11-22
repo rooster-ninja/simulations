@@ -193,6 +193,7 @@ details.src a{color:var(--bar-ink)}
       <label class="chk"><input type="checkbox" id="p2Vert" checked>Verticals (face normals)</label>
       <label class="chk"><input type="checkbox" id="p2Chord" checked>Sight lines and plane through A, B, C</label>
       <label class="chk"><input type="checkbox" id="p2Down">Verticals extended downward</label>
+      <label class="chk"><input type="checkbox" id="p2Wall" checked>Gable walls (roof edge to sight line)</label>
     </div>
     <p class="cap">The pyramid on its own, in plain 3D space: three flat planes, straight sight lines, and nothing else. No sphere is drawn. The shaded kites are the face pieces; the faint wedges are the rest of each plane. Each vertical is square to its own face. Heights follow the exaggeration setting above.</p>
     <p class="cap">Extend each station's level plane until it meets the other two. Each pair meets in a straight ridge, and seen from above every ridge runs along a median, crossing the midpoint of a side. All three meet at one apex above the triangle's centre. Left: overhead. Right: a vertical cut along A's median, through A, the apex and the ridge over the midpoint of BC. On the plane (R = ∞) the three planes are one plane and the pyramid has no height.</p>
@@ -202,6 +203,8 @@ details.src a{color:var(--bar-ink)}
     <p class="cap">The highlighted pieces are the triangle as the three level planes see it: each runs from its station along the two sight lines to the ridges over the side midpoints, and up the ridges to the apex. Each is a flat kite with right angles where it meets the ridges, so its area is exact:</p>
     <div class="math">piece = R² · tan(s/2R) · √( tan²ρ − tan²(s/2R) ),&nbsp;&nbsp;&nbsp; sin ρ = (2/√3) sin(s/2R)</div>
     <p class="cap">Three pieces always come out a little larger than the sphere's triangle, and the flat triangle through A, B and C a little smaller. On the plane all three are equal.</p>
+    <p class="cap">The roof's edges are not the sight lines. Each edge runs from a station up to the ridge point and down to the next station, while the sight line runs straight beneath it. The gap is a vertical triangle, a gable wall, with the sight line as its base and the ridge point as its peak. The walls are not part of any level plane, so they are not in the roof area; with them and the chord triangle as a floor, the pyramid closes into a solid tent.</p>
+    <div class="math">gable height = R sin²(s/2R) / cos(s/2R) ≈ s²/4R,&nbsp;&nbsp;&nbsp; each wall = ½ · chord · height = R² sin³(s/2R) / cos(s/2R)</div>
   </section>
 
   <section class="panel">
@@ -653,7 +656,9 @@ function pyramid(st){
   return{rho,h,mu,pz1,qz1,Sh,face,defect:2*Math.PI-3*face,P:[0,0,pz1],Q,U,
     apexOverChord:Math.sin(rho)**2/Math.cos(rho),sag:2*Math.sin(rho/2)**2,
     ridgeUp:2*Math.sin(h/2)**2/Math.cos(h),
-    piece:Math.tan(h)*Math.sqrt(Math.tan(rho)**2-Math.tan(h)**2)};      // area of one face piece, × R²                         // ridge above the surface, along the midpoint's vertical
+    piece:Math.tan(h)*Math.sqrt(Math.tan(rho)**2-Math.tan(h)**2),
+    gableH:Math.sin(h)**2/Math.cos(h),                                   // ridge point above the sight line's midpoint
+    wall:Math.sin(h)**3/Math.cos(h)};                                    // one gable wall: ½ · chord · gableH, × R²      // area of one face piece, × R²                         // ridge above the surface, along the midpoint's vertical
 }
 function drawPyr(){
   const g=$("pyr");g.innerHTML="";const st=M.st,py=pyramid(st);
@@ -746,7 +751,9 @@ function pyrReadouts(){
     kv("Each face piece",fArea(py.piece*R*R),"station → ridge → apex → ridge",true)+
     kv("Pyramid, three pieces",fArea(3*py.piece*R*R),fDA(3*py.piece*R*R-M.A)+" vs sphere",true)+
     kv("Sphere triangle",fArea(M.A),"tiled surface area")+
-    kv("Flat chord triangle",fArea(chordTri()),fDA(chordTri()-M.A)+" vs sphere (plane through A, B, C)");
+    kv("Flat chord triangle",fArea(chordTri()),fDA(chordTri()-M.A)+" vs sphere (plane through A, B, C)")+
+    kv("Gable walls, three",fDA(3*py.wall*R*R).slice(1),"each "+fDrop(py.gableH*R)+" high at the midpoint",true)+
+    kv("Closed tent",fArea((3*py.piece+3*py.wall)*R*R+chordTri()),"roof + walls + floor (chord triangle)");
 }
 // ---------- standalone 3D pyramid ----------
 const cv2=$("cv2"),ctx2=cv2.getContext("2d");let W2=0,H2=0,view2={yaw:-28*D2R,pitch:46*D2R,zoom:1},PF=1;
@@ -781,8 +788,11 @@ function draw3dPyr(){
     for(let i=0;i<3;i++)F([P,Qe[fr[i][0]],Ue[i],Qe[fr[i][1]]],tints[i],0.16);}
   // plane through A, B, C and sight lines
   if($("p2Chord").checked){F(U,C.mut,0.07);for(const [i,j] of [[0,1],[1,2],[2,0]])L([U[i],U[j]],C.or,1.8,[7,5]);}
+  // gable walls: vertical triangles between each bent roof edge (station → ridge point → station) and the straight sight line
+  if(py&&$("p2Wall").checked)for(const [i,j,m] of [[0,1,0],[1,2,1],[2,0,2]])F([U[i],Q[m],U[j]],css("--purple"),0.3,css("--purple"),1.6);
   // face pieces
   for(let i=0;i<3;i++)F([U[i],Q[fr[i][0]],P,Q[fr[i][1]]],tints[i],0.55,tints[i],2);
+
   // ridges
   if(py){const e=1.6;for(let m=0;m<3;m++)L([P,lerp(P,Q[m],e)],C.red,2.4);}
   // verticals: normal to each (exaggerated) face
@@ -805,7 +815,7 @@ cv2.addEventListener("pointermove",e=>{const d=cv2._d;if(!d)return;view2.yaw=d.y
 cv2.addEventListener("pointerup",()=>cv2._d=null);cv2.addEventListener("pointercancel",()=>cv2._d=null);
 cv2.addEventListener("wheel",e=>{e.preventDefault();view2.zoom=Math.max(0.3,Math.min(8,view2.zoom*Math.exp(-e.deltaY*0.0015)));draw3dPyr();},{passive:false});
 cv2.addEventListener("dblclick",()=>{view2={yaw:-28*D2R,pitch:46*D2R,zoom:1};draw3dPyr();});
-["p2Faces","p2Vert","p2Chord","p2Down"].forEach(id=>$(id).addEventListener("change",draw3dPyr));
+["p2Faces","p2Vert","p2Chord","p2Down","p2Wall"].forEach(id=>$(id).addEventListener("change",draw3dPyr));
 // ---------- the math, with live numbers ----------
 function anglesFor(st,mode){const keep=MODE;MODE=mode;const a=[0,1,2].map(i=>angleAt(st,i));MODE=keep;return a;}
 function rodrigues(k,c,sn){const[x,y,z]=k,C=1-c;return[[c+x*x*C,x*y*C-z*sn,x*z*C+y*sn],[y*x*C+z*sn,c+y*y*C,y*z*C-x*sn],[z*x*C-y*sn,z*y*C+x*sn,c+z*z*C]];}
