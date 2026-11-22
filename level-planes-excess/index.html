@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Level Planes and the Angle Excess</title>
 <meta property="og:title" content="Level Planes and the Angle Excess">
-<meta property="og:description" content="A perfect, error-free triangle whose angles are read in each station's own horizontal plane. Change the sphere's radius all the way to infinity (a plane) and the triangle's size, and watch the angle excess appear from the convergence of the verticals.">
+<meta property="og:description" content="A perfect, error-free triangle whose angles are read in each station's own level plane. Every reading is a straight line or a flat plane; the angle excess comes only from the directions assumed for the verticals, and a flat pyramid gives the same readings.">
 <meta name="theme-color" content="#efe5cc">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap">
 <style>
@@ -93,6 +93,8 @@ details.src a{color:var(--bar-ink)}
 
 
 /* ---- brief ---- */
+.math .eq{display:inline-block;margin:0 12px;white-space:nowrap}
+.tablebox{scrollbar-width:thin}
 .panel.assumed,.readout.assumed{border:2px solid var(--red);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--red);position:relative}
 .assumed .stamp{display:block;margin:0 auto 12px;width:max-content;max-width:100%;font-family:var(--f-sc);letter-spacing:.14em;font-size:14px;color:var(--red);border:1.5px solid var(--red);padding:3px 12px;transform:rotate(-1.2deg)}
 .panel.flat{border:2px solid var(--e4);box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px var(--e4)}
@@ -150,6 +152,13 @@ details.src ul{font-size:15.5px}
 .prose p:last-child{margin:0 auto}
 .panel .readout{box-shadow:none;border:none;padding:8px 0 0}
 ol.steps li{text-align:justify}
+@media(max-width:640px){
+  .tablebox table{min-width:560px}
+  .tablebox table:has(th:nth-child(4)){min-width:680px}
+  .tablebox::after{content:"swipe the table sideways →";display:block;font-style:italic;font-size:12.5px;color:var(--muted);text-align:right;padding-top:4px;position:sticky;left:0}
+  .wrap .prose p,.wrap .cap,.wrap .steps li,.wrap .sub,.wrap .prose li{text-align:left;hyphens:manual}
+  .math{font-size:17px}.math .eq{margin:0 4px}
+}
 </style>
 </head>
 <body>
@@ -216,7 +225,7 @@ ol.steps li{text-align:justify}
     <div class="legend"><span><i style="background:var(--e2)"></i>Surface triangle (shortest lines)</span><span><i style="background:var(--accent);opacity:.5"></i>Theodolite's horizontal plane</span><span><i style="background:var(--station)"></i>Vertical (plumb line)</span><span><i style="background:var(--orange)"></i>Sight line and measured angle</span><span><i style="background:var(--red)"></i>Corrected zenith axis (Δ) · drop of B below A's level</span></div>
     <div class="cvbox"><canvas id="cv" aria-label="3D view of the triangle, its stations and their horizontal planes"></canvas><div class="hint">drag to turn · scroll to zoom</div></div>
     <p class="cap" id="cap1"></p>
-    <div class="math">measured excess&nbsp; E = α + β + γ − 180°&nbsp;&nbsp;&nbsp;&nbsp; measured curvature&nbsp; K = E / A</div>
+    <div class="math"><span class="eq">measured excess&nbsp; E = α + β + γ − 180°</span> <span class="eq">measured curvature&nbsp; K = E / A</span></div>
   </section>
 
   <section class="readout assumed" id="res" aria-live="polite"></section>
@@ -564,7 +573,7 @@ function setupProj(ext,zc){
 }
 function line(pts,color,w,dash,alpha){ctx.save();ctx.globalAlpha=alpha??1;ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();ctx.restore();}
 function poly(pts,fill,alpha,stroke,w){ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=fill;ctx.beginPath();pts.forEach((p,i)=>{const q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();ctx.fill();if(stroke){ctx.globalAlpha=1;ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}ctx.restore();}
-function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p);ctx.save();if(halo){ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
+function label(p,txt,color,dx=0,dy=0,font,halo){const q=proj(p).slice();ctx.save();ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";{const hw=ctx.measureText(txt).width/2+8,cw=ctx.canvas.clientWidth;if(cw>2*hw)q[0]=Math.min(cw-hw-dx,Math.max(hw-dx,q[0]));}if(halo){ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.lineWidth=5;ctx.lineJoin="round";ctx.strokeStyle=css("--plate");ctx.strokeText(txt,q[0]+dx,q[1]+dy);}ctx.fillStyle=color;ctx.font=font||"600 13px 'Old Standard TT', Georgia, serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,q[0]+dx,q[1]+dy);ctx.restore();}
 function arrow(a,b,color,w){line([a,b],color,w);const qa=proj(a),qb=proj(b);const ang=Math.atan2(qb[1]-qa[1],qb[0]-qa[0]);ctx.save();ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(qb[0],qb[1]);ctx.lineTo(qb[0]-9*Math.cos(ang-0.4),qb[1]-9*Math.sin(ang-0.4));ctx.lineTo(qb[0]-9*Math.cos(ang+0.4),qb[1]-9*Math.sin(ang+0.4));ctx.closePath();ctx.fill();ctx.restore();}
 
 function draw3d(){
