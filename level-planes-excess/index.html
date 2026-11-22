@@ -91,6 +91,19 @@ details.mx table.mat{width:auto;border-left:1.5px solid var(--ink);border-right:
 details.src ul{margin:12px 0 0;padding-left:18px;font-family:var(--f-body);font-size:14px;line-height:1.6}
 details.src a{color:var(--bar-ink)}
 
+
+/* ---- banner figures and brief ---- */
+.banner{display:grid;grid-template-columns:minmax(64px,120px) 1fr minmax(64px,120px);align-items:end;gap:10px}
+.banner .mid{min-width:0}
+.banner svg{width:100%;height:auto;display:block;stroke:var(--ink);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.banner svg .pf{fill:var(--card)}
+.banner svg .hd{stroke-width:.9;stroke-dasharray:5 3}
+.banner svg .dk{fill:var(--ink);stroke:none}
+.banner .fr{transform:scaleX(-1)}
+.brief{margin-top:18px}
+.brief ul{margin:10px 0 0;padding-left:20px}
+.brief li{margin:5px 0}
+@media(max-width:560px){.banner{grid-template-columns:52px 1fr 52px;gap:4px}}
 /* ---- 1800s treatise styling ---- */
 body{font-size:17.5px;line-height:1.5;background-image:radial-gradient(ellipse at 50% 30%,transparent 55%,rgba(110,80,30,.10))}
 header{text-align:center;border-bottom:4px double var(--ink);padding-bottom:20px}
@@ -145,10 +158,49 @@ ol.steps li{text-align:justify}
 <div class="wrap">
   <header>
     <p class="back"><a href="../">← All simulations</a></p>
+    <div class="banner">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Engraving of a goose beside a plumb staff">
+        <path class="hd" d="M12 112 L12 22"/><path d="M6 26 L18 26"/><path d="M6 26 L6 62"/><path class="pf" d="M6 62 L3 68 L6 74 L9 68 Z"/>
+        <path class="pf" d="M34 82 C32 64 54 60 72 66 C86 70 92 80 82 90 C70 100 42 98 34 82 Z"/>
+        <path class="pf" d="M34 82 L20 72 L25 86 Z"/>
+        <path class="pf" d="M72 66 C84 58 76 42 78 32 C79 24 86 20 92 22 L92 34 C90 46 100 56 84 68 Z"/>
+        <circle class="pf" cx="92" cy="22" r="6"/><circle class="dk" cx="94" cy="21" r="1.3"/>
+        <path class="pf" d="M97 20 L110 24 L97 27 Z"/>
+        <path class="pf" d="M46 76 C56 70 70 72 76 80 C66 88 52 88 46 76 Z"/>
+        <path class="hd" d="M52 78 L66 80 M54 82 L66 84"/>
+        <path class="hd" d="M80 36 C82 44 86 50 90 56"/>
+        <path d="M58 98 L58 112 M54 112 L66 112 M72 96 L72 112 M68 112 L80 112"/>
+      </svg>
+      <div class="mid">
     <p class="eyebrow">Theorema Egregium · level planes</p>
     <h1>Three level planes and the angle excess</h1>
+      </div>
+      <svg class="fr" viewBox="0 0 120 120" role="img" aria-label="Engraving of a frog beside a levelling staff">
+        <path class="hd" d="M104 112 L104 30"/><circle class="pf" cx="104" cy="24" r="7"/><path d="M99 24 L109 24"/><circle class="dk" cx="104" cy="24" r="1.4"/>
+        <path class="pf" d="M26 104 C14 84 26 62 52 60 C80 58 92 80 84 104 Z"/>
+        <path class="pf" d="M28 98 C12 96 10 112 24 114 L44 114 L44 100 Z"/>
+        <path class="pf" d="M42 100 L32 114 L50 114 L52 100 M74 100 L84 114 L66 114 L64 100"/>
+        <circle class="pf" cx="40" cy="58" r="9"/><circle class="pf" cx="68" cy="58" r="9"/>
+        <circle class="dk" cx="42" cy="58" r="3.6"/><circle class="dk" cx="66" cy="58" r="3.6"/>
+        <path d="M34 74 C48 84 68 82 82 72"/>
+        <path class="hd" d="M38 90 L70 90 M40 95 L68 95"/>
+        <path class="pf" d="M82 84 C90 82 98 80 102 76 L100 84 C94 90 88 92 82 92 Z"/>
+      </svg>
+    </div>
     <p class="sub">A perfect triangle with no errors at all. At each station the theodolite is levelled, so every angle is read in that station's own horizontal plane, square to its own vertical. Push the radius out to infinity and the verticals become parallel, the three planes become one, and the excess goes to zero. Bring it back and the excess returns, because the planes are tilted against each other.</p>
   </header>
+
+  <section class="panel prose brief">
+    <div class="ptitle"><span class="sec">In brief.</span></div>
+    <ul>
+      <li><b>Every reading is Euclidean:</b> straight sight lines, flat level planes, no arc or sphere in any measurement.</li>
+      <li><b>The excess comes from one input:</b> the directions given to the verticals. Parallel, it vanishes; meeting at a point, it appears. A flat pyramid gives the same readings.</li>
+      <li><b>It fixes only a total,</b> equal to the apex angle defect, and cannot say where the turning lies.</li>
+      <li><b>K adds nothing:</b> it divides the excess by an area that was never measured.</li>
+      <li><b>Computation is not measurement:</b> the converging verticals are assumed, not observed, and the survey excess is neither intrinsic nor a measurement of the verticals.</li>
+      <li><b>So the closure is not evidence of a sphere.</b> The verticals must be measured directly: Appendix A.</li>
+    </ul>
+  </section>
 
   <section class="panel">
     <div class="controls">

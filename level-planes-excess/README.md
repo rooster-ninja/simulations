@@ -157,3 +157,5 @@ Gauss's great triangle pages, which carry them.
   [Project Gutenberg #36856](https://www.gutenberg.org/ebooks/36856)
 - H. Moritz, [Geodetic Reference System 1980](https://iag.dgfi.tum.de/media/archives/HB2000/part4/grs80_corr.htm):
   mean radius R₁ = 6 371 008.7714 m (Earth preset)
+
+- **Banner and brief.** An engraved goose and frog flank the title (original line drawings, inline SVG), and an "In brief" panel under the header gives the conclusions in six lines.
