@@ -90,9 +90,11 @@ side (1 km to 200,000 km) can be changed.
   directions given to the verticals; it fixes only a total; K = E / A divides
   by an unmeasured area and adds nothing; the convergence of the verticals is
   inferred by triangulation, not measured. The survey excess is not
-  intrinsic in the Theorema Egregium sense: it is read through gravity's
-  verticals and straight sight lines, not along the surface. The closure cannot be the evidence
-  that the verticals converge.
+  intrinsic in the Theorema Egregium sense: it uses straight sight
+  lines and assumed verticals, not lengths and angles along the surface. Nor
+  is it a measurement of the verticals: they are not observed in the survey,
+  only assumed, and the excess is computed from that assumption. The closure
+  cannot be the evidence that the verticals converge.
 - **Appendix A · Measuring the verticals directly.** Shared star field,
   ranged targets, reciprocal vertical angles and a carried gyro direction,
   each with its assumption and how to test it; the convergence as measured
