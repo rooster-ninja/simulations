@@ -187,6 +187,14 @@ details.src a{color:var(--bar-ink)}
     <div class="ptitle">5 · The three planes extended: a three-sided pyramid</div>
     <div class="row"><label class="chk"><input type="checkbox" id="cPyrExag" checked>Exaggerate heights so they can be seen</label><span class="lab" id="pyrtag"></span></div>
     <div class="svgbox"><svg id="pyr" viewBox="0 0 680 330" role="img" aria-label="Overhead and profile views of the three level planes extended until they meet"></svg></div>
+    <div class="cvbox"><canvas id="cv2" style="height:440px" aria-label="Rotatable 3D view of the pyramid built from the three flat level planes"></canvas><div class="hint">drag to turn · scroll to zoom · double-click to reset</div></div>
+    <div class="row">
+      <label class="chk"><input type="checkbox" id="p2Faces" checked>Extended faces</label>
+      <label class="chk"><input type="checkbox" id="p2Vert" checked>Verticals (face normals)</label>
+      <label class="chk"><input type="checkbox" id="p2Chord" checked>Sight lines and plane through A, B, C</label>
+      <label class="chk"><input type="checkbox" id="p2Down">Verticals extended downward</label>
+    </div>
+    <p class="cap">The pyramid on its own, in plain 3D space: three flat planes, straight sight lines, and nothing else. No sphere is drawn. The shaded kites are the face pieces; the faint wedges are the rest of each plane. Each vertical is square to its own face. Heights follow the exaggeration setting above.</p>
     <p class="cap">Extend each station's level plane until it meets the other two. Each pair meets in a straight ridge, and seen from above every ridge runs along a median, crossing the midpoint of a side. All three meet at one apex above the triangle's centre. Left: overhead. Right: a vertical cut along A's median, through A, the apex and the ridge over the midpoint of BC. On the plane (R = ∞) the three planes are one plane and the pyramid has no height.</p>
     <section class="readout" id="pyrres" aria-live="polite" style="border:none;padding:4px 0 0;background:none"></section>
     <div class="math">face angles at the apex:&nbsp; α<sub>A</sub> + α<sub>B</sub> + α<sub>C</sub> = 360° − E&nbsp;&nbsp;&nbsp; (angle defect = excess)</div>
@@ -362,7 +370,7 @@ function update(){
   M=measure(R,S);
   $("rval").textContent=fR(R)+(isFinite(R)&&Math.abs(R-RE)<0.01?"  · Earth mean":"");
   $("sval").textContent=fLen(S);
-  readouts();drawDials();drawOver();errTable();drawMath();drawSide();drawPyr();pyrReadouts();drawChart();table();draw3d();caption();
+  readouts();drawDials();drawOver();errTable();drawMath();drawSide();drawPyr();pyrReadouts();draw3dPyr();drawChart();table();draw3d();caption();
 }
 function kv(k,v,s,hl){return`<div class="kv${hl?" hl":""}"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`;}
 function fDrop(km){const m=km*1000;if(m===0)return"0 m";if(m<0.01)return(m*1000).toPrecision(3)+" mm";if(m<1)return(m*100).toPrecision(3)+" cm";if(m<1e4)return grp(m,m<100?2:1)+" m";return fLen(km);}
@@ -740,6 +748,64 @@ function pyrReadouts(){
     kv("Sphere triangle",fArea(M.A),"tiled surface area")+
     kv("Flat chord triangle",fArea(chordTri()),fDA(chordTri()-M.A)+" vs sphere (plane through A, B, C)");
 }
+// ---------- standalone 3D pyramid ----------
+const cv2=$("cv2"),ctx2=cv2.getContext("2d");let W2=0,H2=0,view2={yaw:-28*D2R,pitch:74*D2R,zoom:1},PF=1;
+function resize2(){const d=window.devicePixelRatio||1;const r=cv2.getBoundingClientRect();W2=r.width;H2=r.height;cv2.width=Math.round(W2*d);cv2.height=Math.round(H2*d);draw3dPyr();}
+function draw3dPyr(){
+  if(!M||!W2)return;const st=M.st,py=pyramid(st),d=window.devicePixelRatio||1;
+  ctx2.setTransform(d,0,0,d,0,0);ctx2.clearRect(0,0,W2,H2);
+  const C={ink:css("--ink"),mut:css("--muted"),rule:css("--rule"),acc:css("--accent"),or:css("--orange"),st:css("--station"),red:css("--red"),e2:css("--e2"),e4:css("--e4"),plate:css("--plate")};
+  const k=isFinite(R)?R/S:0;
+  // exaggeration (shared with the profile)
+  let f=1;if(py&&$("cPyrExag").checked){f=Math.max(1,0.38/(py.apexOverChord*k));}PF=f;
+  // scene coords: (x, y, w) on unit sphere frame → (k x, k y, k f (w + sag)), so the plane through A, B, C sits at height 0
+  const sag=py?py.sag:0;
+  const T=v=>[k*v[0],k*v[1],k*f*(v[2]+sag)];
+  let U,Q,P;
+  if(py){U=py.U.map(T);Q=py.Q.map(T);P=T(py.P);}
+  else{U=st.p.map(p=>[p[0]/S,p[1]/S,0]);Q=[[0,1],[1,2],[2,0]].map(([i,j])=>[(U[i][0]+U[j][0])/2,(U[i][1]+U[j][1])/2,0]);P=[0,0,0];}
+  const zc=py?-P[2]*0.4:0,ext=0.78;
+  const cy=Math.cos(view2.yaw),sy=Math.sin(view2.yaw),cp=Math.cos(view2.pitch),sp=Math.sin(view2.pitch);
+  const ppu=view2.zoom*Math.min(W2,H2)*0.46/ext;
+  const pr=v=>{const x=v[0],y=v[1],z=v[2]+zc;const x1=x*cy-y*sy,y1=x*sy+y*cy;return[W2/2+x1*ppu,H2/2-(y1*cp+z*sp)*ppu];};
+  const L=(pts,col,w,dash,a)=>{ctx2.save();ctx2.globalAlpha=a??1;ctx2.strokeStyle=col;ctx2.lineWidth=w;ctx2.setLineDash(dash||[]);ctx2.beginPath();pts.forEach((p,i)=>{const q=pr(p);i?ctx2.lineTo(q[0],q[1]):ctx2.moveTo(q[0],q[1]);});ctx2.stroke();ctx2.restore();};
+  const F=(pts,col,a,stroke,w)=>{ctx2.save();ctx2.globalAlpha=a;ctx2.fillStyle=col;ctx2.beginPath();pts.forEach((p,i)=>{const q=pr(p);i?ctx2.lineTo(q[0],q[1]):ctx2.moveTo(q[0],q[1]);});ctx2.closePath();ctx2.fill();if(stroke){ctx2.globalAlpha=1;ctx2.strokeStyle=stroke;ctx2.lineWidth=w||1;ctx2.stroke();}ctx2.restore();};
+  const T2=(p,txt,col,dx,dy,font)=>{const q=pr(p);ctx2.save();ctx2.font=font||"600 13px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx2.textAlign="center";ctx2.textBaseline="middle";ctx2.lineWidth=5;ctx2.lineJoin="round";ctx2.strokeStyle=C.plate;ctx2.strokeText(txt,q[0]+(dx||0),q[1]+(dy||0));ctx2.fillStyle=col;ctx2.fillText(txt,q[0]+(dx||0),q[1]+(dy||0));ctx2.restore();};
+  const dot=(p,col,r)=>{const q=pr(p);ctx2.save();ctx2.fillStyle=col;ctx2.beginPath();ctx2.arc(q[0],q[1],r,0,7);ctx2.fill();ctx2.restore();};
+  const lerp=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];
+  const tints=[C.e2,C.acc,C.or],fr=[[0,2],[0,1],[1,2]];
+  // reference grid on the plane through A, B, C (height 0)
+  const gr=1.25;for(let t=-6;t<=6;t++){const v=t/6*gr;L([[v,-gr,0],[v,gr,0]],C.rule,1,[],0.7);L([[-gr,v,0],[gr,v,0]],C.rule,1,[],0.7);}
+  // extended faces
+  if($("p2Faces").checked){const e=1.6;const Qe=Q.map(q=>lerp(P,q,e)),Ue=U.map(u=>lerp(P,u,e*1.35));
+    for(let i=0;i<3;i++)F([P,Qe[fr[i][0]],Ue[i],Qe[fr[i][1]]],tints[i],0.16);}
+  // plane through A, B, C and sight lines
+  if($("p2Chord").checked){F(U,C.mut,0.07);for(const [i,j] of [[0,1],[1,2],[2,0]])L([U[i],U[j]],C.or,1.8,[7,5]);}
+  // face pieces
+  for(let i=0;i<3;i++)F([U[i],Q[fr[i][0]],P,Q[fr[i][1]]],tints[i],0.55,tints[i],2);
+  // ridges
+  if(py){const e=1.6;for(let m=0;m<3;m++)L([P,lerp(P,Q[m],e)],C.red,2.4);}
+  // verticals: normal to each (exaggerated) face
+  if($("p2Vert").checked){
+    for(let i=0;i<3;i++){let n=py?[py.U[i][0],py.U[i][1],(1-py.sag)/f]:[0,0,1];const l=Math.hypot(...n);n=n.map(c=>c/l);
+      const tip=[U[i][0]+n[0]*0.45,U[i][1]+n[1]*0.45,U[i][2]+n[2]*0.45];L([U[i],tip],C.st,2.2);
+      const a=pr(U[i]),b=pr(tip),an=Math.atan2(b[1]-a[1],b[0]-a[0]);ctx2.save();ctx2.fillStyle=C.st;ctx2.beginPath();ctx2.moveTo(b[0],b[1]);ctx2.lineTo(b[0]-9*Math.cos(an-0.4),b[1]-9*Math.sin(an-0.4));ctx2.lineTo(b[0]-9*Math.cos(an+0.4),b[1]-9*Math.sin(an+0.4));ctx2.closePath();ctx2.fill();ctx2.restore();
+      if($("p2Down").checked){const dn=[U[i][0]-n[0]*1.6,U[i][1]-n[1]*1.6,U[i][2]-n[2]*1.6];L([U[i],dn],C.st,1.3,[5,4],0.85);}}
+  }
+  for(let m=0;m<3;m++){const q=pr(Q[m]);ctx2.save();ctx2.fillStyle=C.plate;ctx2.strokeStyle=C.red;ctx2.lineWidth=1.6;ctx2.beginPath();ctx2.arc(q[0],q[1],3.6,0,7);ctx2.fill();ctx2.stroke();ctx2.restore();}
+  for(let i=0;i<3;i++){dot(U[i],C.ink,4.5);const o=[U[i][0]*0.28,U[i][1]*0.28,0];T2([U[i][0]+o[0],U[i][1]+o[1],U[i][2]],NAMES[i],C.ink,0,0,"700 15px 'IBM Plex Mono', ui-monospace, Menlo, monospace");}
+  if(py){dot(P,C.red,5);T2(P,"apex",C.red,0,-16);}
+  ctx2.save();ctx2.font="500 12px 'IBM Plex Mono', ui-monospace, Menlo, monospace";ctx2.fillStyle=C.mut;ctx2.textAlign="left";
+  ctx2.fillText(py?(f>1.01?"heights × "+(f<1e4?grp(f,0):sci(f,2)):"heights true scale"):"R = ∞: the three planes are one plane",12,20);
+  if(py)ctx2.fillText("apex "+fDrop(py.apexOverChord*R)+" above the plane through A, B, C",12,38);
+  ctx2.restore();
+}
+cv2.addEventListener("pointerdown",e=>{cv2._d={x:e.clientX,y:e.clientY,yaw:view2.yaw,pitch:view2.pitch};cv2.setPointerCapture(e.pointerId);});
+cv2.addEventListener("pointermove",e=>{const d=cv2._d;if(!d)return;view2.yaw=d.yaw+(e.clientX-d.x)*0.008;view2.pitch=Math.max(0,Math.min(Math.PI/2,d.pitch-(e.clientY-d.y)*0.008));draw3dPyr();});
+cv2.addEventListener("pointerup",()=>cv2._d=null);cv2.addEventListener("pointercancel",()=>cv2._d=null);
+cv2.addEventListener("wheel",e=>{e.preventDefault();view2.zoom=Math.max(0.3,Math.min(8,view2.zoom*Math.exp(-e.deltaY*0.0015)));draw3dPyr();},{passive:false});
+cv2.addEventListener("dblclick",()=>{view2={yaw:-28*D2R,pitch:74*D2R,zoom:1};draw3dPyr();});
+["p2Faces","p2Vert","p2Chord","p2Down"].forEach(id=>$(id).addEventListener("change",draw3dPyr));
 // ---------- the math, with live numbers ----------
 function anglesFor(st,mode){const keep=MODE;MODE=mode;const a=[0,1,2].map(i=>angleAt(st,i));MODE=keep;return a;}
 function rodrigues(k,c,sn){const[x,y,z]=k,C=1-c;return[[c+x*x*C,x*y*C-z*sn,x*z*C+y*sn],[y*x*C+z*sn,c+y*y*C,y*z*C-x*sn],[z*x*C-y*sn,z*y*C+x*sn,c+z*z*C]];}
@@ -894,7 +960,7 @@ function table(){
 // ---------- controls ----------
 $("rr").addEventListener("input",update);$("ss").addEventListener("input",update);
 ["cPlanes","cVert","cChord","cPyr"].forEach(id=>$(id).addEventListener("change",draw3d));
-$("cPyrExag").addEventListener("change",drawPyr);
+$("cPyrExag").addEventListener("change",()=>{drawPyr();draw3dPyr();});
 $("cExag").addEventListener("change",drawSide);
 document.querySelectorAll("#errctl input").forEach(el=>el.addEventListener("change",drawOver));
 $("cAlign").addEventListener("change",e=>{MODE=e.target.checked?"common":"plumb";update();});
@@ -910,7 +976,7 @@ $("sweep").addEventListener("click",()=>{
   const step=t=>{const f=Math.min(1,(t-t0)/dur);const e=f<0.5?2*f*f:1-2*(1-f)**2;$("rr").value=v0+(8.2-v0)*e;update();if(f<1)sweepId=requestAnimationFrame(step);else stopSweep();};
   sweepId=requestAnimationFrame(step);
 });
-new ResizeObserver(resize).observe(cv);
+new ResizeObserver(resize).observe(cv);new ResizeObserver(resize2).observe(cv2);
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",update);
 setRSlider(RE);setSSlider(100);update();resize();
 </script>

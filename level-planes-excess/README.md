@@ -60,6 +60,11 @@ side (1 km to 200,000 km) can be changed.
   For 100 km on Earth each piece is 1,443.49 km²; the three total
   4,330.48 km², 0.22 km² more than the sphere's triangle, while the flat
   triangle through A, B, C is 0.22 km² less.
+  A rotatable, zoomable 3D view of the pyramid alone sits under the
+  diagrams: the three flat planes, the face pieces, ridges, apex, straight
+  sight lines, the plane through A, B, C as a reference grid, and each
+  station's vertical square to its face (optionally extended downward). No
+  sphere is drawn. Heights follow the same exaggeration setting.
 - **Side view.** The cross-section along one side. The angle between the two
   stations' horizontals equals the angle between their verticals, and each
   sight line dips half that angle below its own horizontal. An optional
